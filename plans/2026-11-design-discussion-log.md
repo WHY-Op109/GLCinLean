@@ -387,6 +387,7 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
   - tracker and tracker-graph-explorer stay **external dependencies**, not vendored; adapted numlib-auto prompts carry attribution (C1).
 - **Files changed now:** only `prompts/2026-11-02-synthesise-feasible-plan.md` (one sentence asking the plan to keep the system separate). `AGENTS.md` gets a "no project-specific code in the system folder" rule once that folder exists on the Mac mini.
 - **Conflict found:** the user wrote that the separated system could be "a single private" repository. A public `GLCinLean` whose CI and website depend on a **private** repository cannot fetch it without a secret, and nobody outside could rebuild the site. Open as P3.
+- **Resolved (user, 2026-11-03, option 1):** the system is **public from the start**: it begins as a folder inside public `GLCinLean` and becomes its own public repository once its data format settles. P3 closed.
 
 ## Conflicts
 
@@ -514,7 +515,7 @@ User's notes: the formalisation Mac normally has 50–100 GB free; the user want
 
 - **P2 (from D29), 2026-11-03:** the rules for which foundation nodes are formalised inside Tau Ceti in phase 2. Parked until phase 1 ends, so they can be set with the blueprint's real node data. Draft starting point: B5 amendment 4.
 - **P1 (from D8), 2026-11-03:** who the outside expert is, and how to find one. Not answered; left until expert review approaches. The user decides (D2).
-- **P3 (from D35), 2026-11-03:** whether the separated system repository is private or public, given that public `GLCinLean` would depend on it.
+- **P3 (from D35), 2026-11-03:** closed the same day: public, a folder first, split later (D35).
 
 ## To verify when planning
 

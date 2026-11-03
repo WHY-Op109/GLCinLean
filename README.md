@@ -20,7 +20,8 @@
 Open Claude Code in the root of this repository (so it loads `AGENTS.md`) and paste the prompt file's contents, or say: `Process the prompt in prompts/<file>`.
 
 1. **`prompts/2026-11-02-synthesise-feasible-plan.md`**, on the discussion Mac. It runs tests and searches and writes `plans/<date>-implementation-plan.md`, then commits it. Afterwards, `git push`.
-2. **On the Mac mini:** `git clone` this repository, open Claude Code in it, and follow the implementation plan's first steps. Machine-specific settings (parallel agents, threads, storage thresholds) are measured and decided there (V8 in the log).
+2. **`prompts/2026-11-03-review-implementation-plan.md`**, on the discussion Mac, in a fresh Claude Code session at a higher effort. It reviews the drafted plan against what the project is really for.
+3. **On the Mac mini:** `git clone` this repository, open Claude Code in it, and follow the implementation plan's first steps. Machine-specific settings (parallel agents, threads, storage thresholds) are measured and decided there (V8 in the log).
 
 Prompts that have been run are deleted; the log records what they settled.
 
