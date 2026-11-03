@@ -12,4 +12,6 @@
 - My skills (V9): `git clone https://github.com/WHY-Op109/prop.git ~/.codex/skills/prop`, linked as `~/.claude/skills/prop`; `grilling` copied from `private/skills/grilling` into `~/.claude/skills/`.
 - No `CLAUDE.md` in this folder or any folder above it, so Claude Code reads `AGENTS.md` (D33).
 
+`GLCinLeanPrivate` and `prop` are private repositories, so `gh` must be logged in and set up as git's credential helper (`gh auth setup-git`) before they can be cloned.
+
 Tools that are already installed and working stay as they are.
