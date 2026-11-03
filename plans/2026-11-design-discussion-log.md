@@ -28,7 +28,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | §13.5 Check tauceti-explorer scripts first | superseded by D12 |
 | §13.5 Ask Tau Ceti maintainers on Zulip | D2 (the user's call; public text in the user's own words) |
 | New: target statement | D14 (V5 on the field hypothesis) |
-| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35; P2, P3 parked |
+| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37; P2 parked |
 | New: fidelity and review | D8, D17, D19, D27 |
 | New: Tau Ceti pace | D26 |
 | New: other machines, papers, models | D4, D6, D25 |
@@ -388,6 +388,19 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 - **Files changed now:** only `prompts/2026-11-02-synthesise-feasible-plan.md` (one sentence asking the plan to keep the system separate). `AGENTS.md` gets a "no project-specific code in the system folder" rule once that folder exists on the Mac mini.
 - **Conflict found:** the user wrote that the separated system could be "a single private" repository. A public `GLCinLean` whose CI and website depend on a **private** repository cannot fetch it without a secret, and nobody outside could rebuild the site. Open as P3.
 - **Resolved (user, 2026-11-03, option 1):** the system is **public from the start**: it begins as a folder inside public `GLCinLean` and becomes its own public repository once its data format settles. P3 closed.
+
+### D36. Prompt review by the user's principle: scope kept, plan written on the Mac mini (2026-11-03)
+
+- **Principle (user):** "Before acting, figure out what I really want to achieve, not just the approach I described. If my plan looks like a detour, first point out the more fundamental approach and ask me whether I have the conditions for it. If I confirm I don't have the conditions or insist on the original plan, then carry out the original plan carefully. A plan that eliminates steps takes priority over a plan that automates cumbersome steps."
+- **Detour 1, raised:** planning the full machinery before goal 1a, which is small (D16). **User:** the reusable system is a goal in itself (D35), so the full scope stays.
+- **Detour 2, raised:** feasibility tests on the discussion Mac would be repeated on the Mac mini (Tau Ceti build and cache, V4; `codex exec`, V6; hardware, V8). **User:** the Mac mini becomes usable today. **Decision:** the plan prompt runs on the Mac mini, which also measures itself and proposes the V8 settings. **Revises D33** ("drafted on the discussion Mac").
+- **Not in `AGENTS.md`:** the principle includes "ask me first", which would stall the 24/7 loop (D20). It goes only in prompts the user runs interactively.
+
+### D37. One private companion repository, cloned into `private/` (2026-11-03)
+
+- **Decision (user, option 1):** a private repository **`GLCinLeanPrivate`** (https://github.com/WHY-Op109/GLCinLeanPrivate, created 2026-11-03), cloned into the git-ignored `private/` folder of the `GLCinLean` checkout. It holds `archive/` (the October reports and AI assessments, now backed up and reachable from the Mac mini), `scout/` (scout reports, B7.4) and `permissions/` (the bridgekat author's permission, C1). The **escalation queue** (B6.4) stays in the public repository as plain files, not GitHub issues.
+- **Revises:** B6.4 and B7.4 ("notes repository"), C1's follow-up, D34 (the one exception to a single repository).
+- **Rejected:** local-only `private/` on the Mac mini; everything public.
 
 ## Conflicts
 

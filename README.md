@@ -13,6 +13,7 @@
 | `prompts/` | Prompts still to run (see below). |
 | `reports/` | Current assessments (2–3 Nov 2026). |
 | `references/tau-ceti/` | Copies of Tau Ceti roadmap files, with provenance headers. |
+| `private/` | Git-ignored; clone of the private companion repository `GLCinLeanPrivate` (archive, scout reports, permissions; D37). |
 | `AGENTS.md` | Standing rules that Claude Code and Codex load automatically. |
 
 ## How to use the prompts
