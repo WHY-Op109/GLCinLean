@@ -1,5 +1,7 @@
 # GLCinLean
 
+> **Status:** unreviewed, agent-generated, in progress. Nothing here is checked by an expert yet.
+
 **GLCinLean**: a planned Lean 4 formalisation of the global unramified de Rham geometric Langlands conjecture: first a faithful statement (GLC I, arXiv 2405.03599 v3, Conjecture 1.6.7), then the five-paper proof. For now this repository holds the planning; the Lean code, blueprint and roadmap will be added here (D34).
 
 ## Contents

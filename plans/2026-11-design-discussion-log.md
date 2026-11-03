@@ -11,7 +11,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | Prompt item | Where settled |
 |---|---|
 | Conflict: §12.5 private vs §13.2 TauCetiTools public-only | D1 (public, unannounced), D2 |
-| Conflict: §12.1 monorepo vs §13.4 separate repositories | D3; D16 (roadmap repository deferred to phase 2) |
+| Conflict: §12.1 monorepo vs §13.4 separate repositories | D3, superseded by D34 (one repository); D16; D35 (reusable system) |
 | Conflict: §13 partly answers §11 harness and §12.6 explorer tooling | D16, D20 (harness); D12 (tracker + explorer instead of tauceti-explorer) |
 | §11 YAML atlas or `leanblueprint` | D12 (bridgekat tracker) |
 | §11 Website hosting and access | D1, D12 (public GitHub Pages from CI, unannounced) |
@@ -89,6 +89,8 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 - **Follow-up for planning:** put this rule in `AGENTS.md` and enforce it technically where possible (no tokens with write access to Tau Ceti or `project-intentions` in agent environments).
 
 ### D3. Repositories: two public plus one private notes repository, one local workspace (2026-11-03)
+
+> **Superseded by D34 (2026-11-03):** one public repository `GLCinLean`; no notes or roadmap repository for now.
 
 - **Question:** one repository (§12.1) or several (§13.4)? The user asked whether content and roadmap could be a single repository for a cleaner workspace.
 - **Facts checked [R], 2026-11-03:** TauCetiTools `docs/project-setup.md` at commit `451109e` requires only a content and a roadmap repository; data, CI, claims and custom rubrics are optional extras. The roadmap is a separate Lake package depending on the content package, with separate human-owned protection, and the guide says "Do not merge the two repositories merely to avoid the dependency update." `kim-em/Arcturus` runs on exactly two repositories (`Arcturus`, `ArcturusRoadmap`), with data, CI and claims commented out in its `tauceti.toml`.
@@ -261,7 +263,7 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 
 - **Question:** who starts Claude's work on the second Mac: the user per session, a scheduled local loop, or cloud agents?
 - **Position (user):** the second Mac runs around the clock and is never turned off; automation may be very high.
-- **Decision:** a **continuous local loop** on the second Mac (option (b)), with a high degree of autonomy. Design under B6. A short supervised bootstrap (the first cycles started by hand while prompts and guards are tuned) is recommended but not yet confirmed.
+- **Decision:** a **continuous local loop** on the second Mac (option (b)), with a high degree of autonomy. Design under B6. A short supervised bootstrap (the first cycles started by hand while prompts and guards are tuned) is recommended but not yet confirmed. *Settled by D27: no supervised bootstrap.*
 - **Rejected:** (a) user-started sessions only; (c) cloud scheduled agents (blindness rule D17, Codex and the Tau Ceti cache are harder off the local machine).
 
 ### D21. Blueprint revisions in the 24/7 loop: user for the initial blueprint and restructuring, the loop calls Astra for local repairs (2026-11-03)
@@ -496,7 +498,7 @@ Extends brainstorm option 1 (watcher), which covered Tau Ceti, Mathlib and arXiv
 User's notes: the formalisation Mac normally has 50–100 GB free; the user wants to keep using the Mac smoothly; formalisation should be as fast as possible; never build Mathlib from source, always use `lake exe cache get`; warn, and clean automatically when storage gets low enough to affect progress.
 1. **What uses storage [R/E]:** Lean toolchains (about 4–5 GB each, accumulating over bumps); a Mathlib dependency's `.lake` (about 8 GB per checkout); Tau Ceti's build outputs on top (size unknown, V4); and, the largest risk, **one `.lake` per sub-agent git worktree**, which multiplies everything by the number of parallel agents.
 2. **Avoiding the multiplication:** share one dependency build across worktrees (symlinked `.lake/packages`, or Lake's shared artifact cache if the toolchain supports it, to verify); cap concurrent worktrees; delete a worktree and its `.lake` as soon as its work is merged.
-3. **Never build Mathlib (or Tau Ceti) from source:** always `lake exe cache get` (Mathlib) or Tau Ceti's cache (V4); a guard aborts a build that starts compiling Mathlib modules.
+3. **Never build Mathlib (or Tau Ceti) from source:** always `lake exe cache get` (Mathlib) or Tau Ceti's cache (V4); a guard aborts a build that starts compiling Mathlib modules. *Revised by D33: a preference, not a ban, and no abort guard.*
 4. **Thresholds (proposal):** warn below 40 GB free; clean automatically below 25 GB; pause the loop below 10 GB and notify.
 5. **What automatic cleaning may delete (proposal):** only **rebuildable** artefacts, in this order: finished worktrees; stale GLCinLean build outputs; toolchains no project references (`elan toolchain gc`); old Mathlib cache archives; scratch directories; then the `.lake` directories of **other, inactive** Lean projects (untouched for N days). Never source files, git history, uncommitted work, papers or notes.
 6. **Keeping the Mac responsive:** run builds and agents at background priority (macOS `taskpolicy -b` / `nice`); detect when the user is active (input idle time) and then cap Lean threads and parallel agents; run at full speed when idle; watch memory pressure (Lean with Mathlib uses several GB per process).

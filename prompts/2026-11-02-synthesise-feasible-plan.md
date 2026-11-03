@@ -10,7 +10,7 @@
 **Inputs, in priority order:**
 1. `plans/2026-11-design-discussion-log.md`. The design discussion is finished; my decisions there override everything else.
 2. `plans/2026-11-02-design-brainstorm.md`.
-3. `reports/`. Its 2 Nov recheck supersedes the earlier reports where they conflict.
+3. `reports/`. The 2 Nov recheck supersedes the archived October reports where they conflict.
 4. `references/`.
 5. `private/archive/` (git-ignored, local to this Mac): the superseded October reports and AI assessments, including the project structure proposal.
 
