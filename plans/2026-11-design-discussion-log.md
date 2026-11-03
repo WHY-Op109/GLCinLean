@@ -395,6 +395,7 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 - **Detour 1, raised:** planning the full machinery before goal 1a, which is small (D16). **User:** the reusable system is a goal in itself (D35), so the full scope stays.
 - **Detour 2, raised:** feasibility tests on the discussion Mac would be repeated on the Mac mini (Tau Ceti build and cache, V4; `codex exec`, V6; hardware, V8). **User:** the Mac mini becomes usable today. **Decision:** the plan prompt runs on the Mac mini, which also measures itself and proposes the V8 settings. **Revises D33** ("drafted on the discussion Mac").
 - **Review endpoint (user, option 1):** the review session raises findings with the user one at a time; once agreed, it revises the plan file, commits and pushes. No separate fixing session.
+- **Start prompt (user, option 1):** the plan ends with a ready-to-run prompt for the first implementation session, reviewed with the rest of the plan.
 - **Not in `AGENTS.md`:** the principle includes "ask me first", which would stall the 24/7 loop (D20). It goes only in prompts the user runs interactively.
 
 ### D37. One private companion repository, cloned into `private/` (2026-11-03)
