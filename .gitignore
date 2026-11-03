@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local-only material, never published (D34)
+private/
+
+# Local agent settings and scratch work
+.claude/settings.local.json
+CLAUDE.local.md
+scratch/
+tmp/
+
+# Lean / Lake build outputs (if experiments land here)
+.lake/
+lake-packages/
+build/
+
+# Papers are never committed (D6)
+papers/
+references/papers/
+*.pdf
+*.tex
+*.tar.gz
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets
+.env
+*.pem
+*.key
