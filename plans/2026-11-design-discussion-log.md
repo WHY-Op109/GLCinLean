@@ -28,7 +28,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | §13.5 Check tauceti-explorer scripts first | superseded by D12 |
 | §13.5 Ask Tau Ceti maintainers on Zulip | D2 (the user's call; public text in the user's own words) |
 | New: target statement | D14 (V5 on the field hypothesis) |
-| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34; P2 parked |
+| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35; P2, P3 parked |
 | New: fidelity and review | D8, D17, D19, D27 |
 | New: Tau Ceti pace | D26 |
 | New: other machines, papers, models | D4, D6, D25 |
@@ -374,6 +374,18 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 - **Archive (user chose option 1):** `archive/` (third-party AI assessments; reports with judgements about other people's projects and a named individual) stays out of the public repository. It was moved to a git-ignored `private/archive/` on the discussion Mac and the initial commit was rewritten so it never appears in public history. An Apache-2.0 `LICENSE` (D22) was added; files in `references/` keep their own licences.
 - **Not a strict rule (user, 2026-11-03):** one repository is the starting point, not a constraint. Once finished, the review, key-definition and blueprint system can become a separate repository of its own (the user said "a single private" one), reusable for other projects, as numlib-auto uses tracker and the graph explorer as separate tools.
 
+### D35. Make the review, key-definition and blueprint system reusable (2026-11-03)
+
+- **User's aim:** once finished, the review and key-definition system combined with the blueprint system can become a repository of its own, adaptable to other projects, as numlib-auto uses tracker and the graph explorer.
+- **Decision:** adopt brainstorm §12.3 ("generic tools from day one"), which no earlier decision had settled:
+  - **Generic part** (no GLC-specific code): the `review` command and fingerprints (D9, V7), definition cards and badges on the explorer (D12), the blind read-back harness and comparator (D17), the Foundations-boundary CI check parameterised by namespace (D10), the fault-injection tests (D27), the Codex model resolver (D25), the dependency-bump repair step (D26), and the prompt templates for blueprint drafting, read-backs, the orchestrator and the scout (D18, D19, D21, D24).
+  - **GLC-specific part**, in one project config plus data: papers manifest (D6), target statement (D14), key-definition rule (D29), atlas data, key list and review records (D9), Tau Ceti pin, scout sources.
+  - **Machine-level settings** (D31 never-touch list and inactivity days, D32 modes, B8 thresholds) belong to the Mac mini, not to either part.
+  - **Interface:** a documented, versioned data format (brainstorm §12.1) for the extras file beside tracker's TOML (D12) and the review records. Splitting out the system later is then a mechanical move.
+  - tracker and tracker-graph-explorer stay **external dependencies**, not vendored; adapted numlib-auto prompts carry attribution (C1).
+- **Files changed now:** only `prompts/2026-11-02-synthesise-feasible-plan.md` (one sentence asking the plan to keep the system separate). `AGENTS.md` gets a "no project-specific code in the system folder" rule once that folder exists on the Mac mini.
+- **Conflict found:** the user wrote that the separated system could be "a single private" repository. A public `GLCinLean` whose CI and website depend on a **private** repository cannot fetch it without a secret, and nobody outside could rebuild the site. Open as P3.
+
 ## Conflicts
 
 - **C1 (2026-11-03): bridgekat licences. Resolved the same day [S, user]:** the user has the author's permission to use `tracker`, `tracker-graph-explorer`, `numlib-auto` and `metrics`, and is a contributor to numlib-auto. Follow-up: record the permission in writing (for example an issue comment or email, quoted with date in the notes repository) and a provenance note in GLCinLean, since the public repository will depend on unlicensed code; a licence file upstream (numlib-auto's pending Apache-2.0) would remove the need. Original finding: The user says the repositories are licensed; GitHub reports no licence and no licence file in any of the four, and numlib-auto's README says a move to Apache-2.0 is pending. Until resolved: read and borrow ideas only; no copying of code or prompts, and no public dependency. Ask the user where the licence is stated (for example a written permission or another branch).
@@ -500,6 +512,7 @@ User's notes: the formalisation Mac normally has 50–100 GB free; the user want
 
 - **P2 (from D29), 2026-11-03:** the rules for which foundation nodes are formalised inside Tau Ceti in phase 2. Parked until phase 1 ends, so they can be set with the blueprint's real node data. Draft starting point: B5 amendment 4.
 - **P1 (from D8), 2026-11-03:** who the outside expert is, and how to find one. Not answered; left until expert review approaches. The user decides (D2).
+- **P3 (from D35), 2026-11-03:** whether the separated system repository is private or public, given that public `GLCinLean` would depend on it.
 
 ## To verify when planning
 
