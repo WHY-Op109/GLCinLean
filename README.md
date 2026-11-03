@@ -16,14 +16,52 @@
 | `private/` | Git-ignored; clone of the private companion repository `GLCinLeanPrivate` (archive, scout reports, permissions; D37). |
 | `AGENTS.md` | Standing rules that Claude Code and Codex load automatically. |
 
-## How to use the prompts
+## Next steps on the Mac mini
 
-Everything runs on the Mac mini (D36). Open Claude Code in the repository root (so it loads `AGENTS.md`) and say `Process the prompt in prompts/<file>`.
+Work on the discussion Mac ended on 3 Nov 2026. Everything from here runs on the Mac mini (D36).
 
-0. **Setup:** `git clone` this repository, then `git clone https://github.com/WHY-Op109/GLCinLeanPrivate.git private` inside it. Install the `prop` and `grilling` skills as on the discussion Mac (V9 in the log).
-1. **`prompts/2026-11-02-synthesise-feasible-plan.md`** at effort `high`, optionally in plan mode (`claude --permission-mode plan`). It tests, searches, measures the machine and writes `plans/<date>-implementation-plan.md`, ending with a start prompt; it commits the plan. Then `git push`.
-2. **`prompts/2026-11-03-review-implementation-plan.md`** in a fresh session at effort `xhigh` or `max`. It goes through its findings with you, revises the plan, commits and pushes.
-3. **Implementation:** paste the start prompt from the end of the plan into a new session.
+### 0. Setup (once)
+
+1. Install and log in to the tools (interactive, so do these yourself):
+   - Claude Code, then log in;
+   - GitHub CLI: `brew install gh`, then `gh auth login` (add the `workflow` scope);
+   - Codex CLI, then `codex login` (ChatGPT login);
+   - Lean: `curl https://elan.lean-lang.org/elan-init.sh -sSf | sh`.
+2. Clone both repositories:
+   ```sh
+   git clone https://github.com/WHY-Op109/GLCinLean.git
+   cd GLCinLean
+   git clone https://github.com/WHY-Op109/GLCinLeanPrivate.git private
+   ```
+3. Install the two skills the prompts rely on (V9):
+   ```sh
+   mkdir -p ~/.codex/skills ~/.claude/skills
+   git clone https://github.com/WHY-Op109/prop.git ~/.codex/skills/prop
+   ln -s ~/.codex/skills/prop ~/.claude/skills/prop
+   cp -R private/skills/grilling ~/.claude/skills/
+   ```
+4. Make sure no `CLAUDE.md` sits in this folder or any folder above it, or Claude Code will ignore `AGENTS.md` (D33).
+5. Save the bridgekat author's permission (screenshot or dated text) in `private/permissions/` and commit it there (C1).
+
+### 1. Write the plan
+
+Open Claude Code in this folder, run `/effort high` (optionally start with `claude --permission-mode plan`), and say:
+
+> Process the prompt in prompts/2026-11-02-synthesise-feasible-plan.md
+
+It tests, searches, measures the Mac mini, writes `plans/<date>-implementation-plan.md` ending with a start prompt, and commits it. Then `git push`.
+
+### 2. Review the plan
+
+In a fresh session, run `/effort xhigh` (or `max`) and say:
+
+> Process the prompt in prompts/2026-11-03-review-implementation-plan.md
+
+It goes through its findings with you one at a time, revises the plan, commits and pushes.
+
+### 3. Start implementing
+
+Paste the start prompt from the end of the plan into a new session.
 
 Prompts that have been run are deleted; the log records what they settled.
 
