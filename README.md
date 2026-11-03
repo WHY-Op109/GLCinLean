@@ -9,7 +9,7 @@
 | Path | What it is |
 |---|---|
 | `plans/2026-11-02-design-brainstorm.md` | The first consolidated design. |
-| `plans/2026-11-design-discussion-log.md` | Decisions D1–D37, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
+| `plans/2026-11-design-discussion-log.md` | Decisions D1–D38, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
 | `prompts/` | Prompts still to run (see below). |
 | `reports/` | Current assessments (2–3 Nov 2026). |
 | `references/tau-ceti/` | Copies of Tau Ceti roadmap files, with provenance headers. |
@@ -22,26 +22,19 @@ Work on the discussion Mac ended on 3 Nov 2026. Everything from here runs on the
 
 ### 0. Setup (once)
 
-1. Install and log in to the tools (interactive, so do these yourself):
-   - Claude Code, then log in;
-   - GitHub CLI: `brew install gh`, then `gh auth login` (add the `workflow` scope);
-   - Codex CLI, then `codex login` (ChatGPT login);
-   - Lean: `curl https://elan.lean-lang.org/elan-init.sh -sSf | sh`.
-2. Clone both repositories:
-   ```sh
-   git clone https://github.com/WHY-Op109/GLCinLean.git
-   cd GLCinLean
-   git clone https://github.com/WHY-Op109/GLCinLeanPrivate.git private
-   ```
-3. Install the two skills the prompts rely on (V9):
-   ```sh
-   mkdir -p ~/.codex/skills ~/.claude/skills
-   git clone https://github.com/WHY-Op109/prop.git ~/.codex/skills/prop
-   ln -s ~/.codex/skills/prop ~/.claude/skills/prop
-   cp -R private/skills/grilling ~/.claude/skills/
-   ```
-4. Make sure no `CLAUDE.md` sits in this folder or any folder above it, or Claude Code will ignore `AGENTS.md` (D33).
-5. Save the bridgekat author's permission (screenshot or dated text) in `private/permissions/` and commit it there (C1).
+Claude Code is already installed. Clone this repository and open Claude Code in it:
+```sh
+git clone https://github.com/WHY-Op109/GLCinLean.git
+cd GLCinLean
+claude
+```
+Then say:
+
+> Process the prompt in prompts/2026-11-03-set-up-mac-mini.md
+
+It checks and installs the tools (Homebrew, Python, Node, `uv`, Lean, `gh`, Codex, the lean-lsp MCP server), clones `GLCinLeanPrivate` into `private/`, and installs the `prop` and `grilling` skills. It tells you which logins to run yourself (`gh auth login`, `codex login`), then checks again.
+
+Afterwards, save the bridgekat author's permission (screenshot or dated text) in `private/permissions/` and commit it there (C1).
 
 ### 1. Write the plan
 

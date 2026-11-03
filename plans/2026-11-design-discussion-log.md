@@ -28,7 +28,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | §13.5 Check tauceti-explorer scripts first | superseded by D12 |
 | §13.5 Ask Tau Ceti maintainers on Zulip | D2 (the user's call; public text in the user's own words) |
 | New: target statement | D14 (V5 on the field hypothesis) |
-| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37; P2 parked |
+| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38; P2 parked |
 | New: fidelity and review | D8, D17, D19, D27 |
 | New: Tau Ceti pace | D26 |
 | New: other machines, papers, models | D4, D6, D25 |
@@ -403,6 +403,12 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 - **Decision (user, option 1):** a private repository **`GLCinLeanPrivate`** (https://github.com/WHY-Op109/GLCinLeanPrivate, created 2026-11-03), cloned into the git-ignored `private/` folder of the `GLCinLean` checkout. It holds `archive/` (the October reports and AI assessments, now backed up and reachable from the Mac mini), `scout/` (scout reports, B7.4) and `permissions/` (the bridgekat author's permission, C1). The **escalation queue** (B6.4) stays in the public repository as plain files, not GitHub issues.
 - **Revises:** B6.4 and B7.4 ("notes repository"), C1's follow-up, D34 (the one exception to a single repository).
 - **Rejected:** local-only `private/` on the Mac mini; everything public.
+
+### D38. A separate set-up prompt for the Mac mini (2026-11-03)
+
+- **Position (user):** the Mac mini has Claude Code, Python, git, Lean and basic tools; the rest is unknown, so Claude Code should check and add what is missing.
+- **Decision:** a short, separate prompt, `prompts/2026-11-03-set-up-mac-mini.md`, run before the plan prompt. It checks and installs the tools, clones `GLCinLeanPrivate`, installs the skills (V9) and hands the user only the interactive logins. It replaces the README's manual setup list.
+- **Why separate [J]:** installing is mechanical and needs permissions that the plan session (possibly in plan mode) should not stop for. The plan prompt can then assume a ready machine.
 
 ## Conflicts
 
