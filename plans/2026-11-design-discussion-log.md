@@ -28,7 +28,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | §13.5 Check tauceti-explorer scripts first | superseded by D12 |
 | §13.5 Ask Tau Ceti maintainers on Zulip | D2 (the user's call; public text in the user's own words) |
 | New: target statement | D14 (V5 on the field hypothesis) |
-| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38; P2 parked |
+| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38, D39; P2 parked |
 | New: fidelity and review | D8, D17, D19, D27 |
 | New: Tau Ceti pace | D26 |
 | New: other machines, papers, models | D4, D6, D25 |
@@ -409,6 +409,20 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 - **Position (user):** the Mac mini has Claude Code, Python, git, Lean and basic tools; the rest is unknown, so Claude Code should check and add what is missing.
 - **Decision:** a short, separate prompt, `prompts/2026-11-03-set-up-mac-mini.md`, run before the plan prompt. It checks and installs the tools, clones `GLCinLeanPrivate`, installs the skills (V9) and hands the user only the interactive logins. It replaces the README's manual setup list.
 - **Why separate [J]:** installing is mechanical and needs permissions that the plan session (possibly in plan mode) should not stop for. The plan prompt can then assume a ready machine.
+
+### D39. Adopt the formal abstract and loose-ends' run discipline in the reusable system (2026-11-04)
+
+- **Decision (user accepted the recommendation):**
+  1. **Formal abstract (B10).** `GLCinLean/Abstract.lean` states Conj. 1.6.7 and every GLC-specific definition its statement needs, importing only Mathlib, Tau Ceti and `Foundations` (D10). It is the review surface for read-backs, the comparator, the user's one-time check and the expert (D8, D17). A CheckAbstract-style **closure check** in CI fails if the abstract's types or definition bodies depend on project code outside it. An **axiom audit** allows only `propext`, `Classical.choice` and `Quot.sound`. The closure, minus background libraries, **is the key-definition list**, and the number of placeholders in it measures goal 1b. **Revises D29** (the key rule is computed, not hand-applied). Abstract definitions double as the working ones in goals 1a and 1b; an `AbstractBridge` is added only if goal 2 needs other presentations.
+  2. **Run discipline from loose-ends (B9 items 1–6)**, as requirements for the generic system (D35):
+     - agent outputs are JSON checked against a schema, by the agent and again by the host, with one repair turn;
+     - result freshness covers the input, prompt, schema, model settings and validation code, and stale results are labelled (extends D9, V7);
+     - agents work in disposable staged workspaces, failed ones are kept;
+     - review axes use fixed vocabularies and the queue priority is computed from them (D17, B6.4);
+     - scout and literature results never invalidate fidelity reviews (D24);
+     - the definition-card pages get filters, stable URLs, KaTeX and current/stale labels (D12).
+  3. **Watch list only:** Mean (a possible later deterministic third read-back channel, added to the scout's sources, D24) and B9 item 7 (optional).
+- **Pattern sources:** `edemaine/lean-wang` (Apache-2.0), `edemaine/lean-canny`, `edemaine/loose-ends` and `edemaine/mean` (MIT). Ideas are adopted, not code; any copied code keeps its licence and attribution.
 
 ## Conflicts
 
