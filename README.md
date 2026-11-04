@@ -9,53 +9,19 @@
 | Path | What it is |
 |---|---|
 | `plans/2026-11-02-design-brainstorm.md` | The first consolidated design. |
-| `plans/2026-11-design-discussion-log.md` | Decisions D1–D39, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
+| `plans/2026-11-design-discussion-log.md` | Decisions D1–D40, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
+| `plans/2026-11-04-implementation-plan.md` | The implementation plan, reviewed 4 Nov 2026; ends with the start prompt. |
 | `plans/2026-11-04-synthesis-session-plan.md` | The approved session plan for the synthesis prompt (not the implementation plan itself). |
-| `prompts/` | Prompts still to run (see below). |
 | `reports/` | Current assessments (2–3 Nov 2026). |
 | `references/tau-ceti/` | Copies of Tau Ceti roadmap files, with provenance headers. |
-| `private/` | Git-ignored; clone of the private companion repository `GLCinLeanPrivate` (archive, scout reports, permissions; D37). |
+| `private/` | Git-ignored; clone of the private companion repository `GLCinLeanPrivate` (archive, feasibility evidence, scout reports, permissions; D37). |
 | `AGENTS.md` | Standing rules that Claude Code and Codex load automatically. |
 
 ## Next steps on the Mac mini
 
-Work on the discussion Mac ended on 3 Nov 2026. Everything from here runs on the Mac mini (D36).
+Done: the Mac mini set-up (D38), the implementation plan, and its review (D40, 4 Nov 2026).
 
-### 0. Setup (once)
-
-Claude Code is already installed. Clone this repository and open Claude Code in it:
-```sh
-git clone https://github.com/WHY-Op109/GLCinLean.git
-cd GLCinLean
-claude
-```
-Then say:
-
-> Process the prompt in prompts/2026-11-03-set-up-mac-mini.md
-
-It checks and installs the tools (Homebrew, Python, Node, `uv`, Lean, `gh`, Codex, the lean-lsp MCP server), clones `GLCinLeanPrivate` into `private/`, and installs the `prop` and `grilling` skills. It tells you which logins to run yourself (`gh auth login`, `codex login`), then checks again.
-
-Afterwards, save the bridgekat author's permission (screenshot or dated text) in `private/permissions/` and commit it there (C1).
-
-### 1. Write the plan
-
-Open Claude Code in this folder, run `/effort high` (optionally start with `claude --permission-mode plan`), and say:
-
-> Process the prompt in prompts/2026-11-02-synthesise-feasible-plan.md
-
-It tests, searches, measures the Mac mini, writes `plans/<date>-implementation-plan.md` ending with a start prompt, and commits it. Then `git push`.
-
-### 2. Review the plan
-
-In a fresh session, run `/effort xhigh` (or `max`) and say:
-
-> Process the prompt in prompts/2026-11-03-review-implementation-plan.md
-
-It goes through its findings with you one at a time, revises the plan, commits and pushes.
-
-### 3. Start implementing
-
-Paste the start prompt from the end of the plan into a new session.
+**Start implementing:** open a new Claude Code session in this checkout, run `/effort high`, and paste the start prompt from §12 of `plans/2026-11-04-implementation-plan.md`.
 
 Prompts that have been run are deleted; the log records what they settled.
 
