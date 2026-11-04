@@ -28,7 +28,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | §13.5 Check tauceti-explorer scripts first | superseded by D12 |
 | §13.5 Ask Tau Ceti maintainers on Zulip | D2 (the user's call; public text in the user's own words) |
 | New: target statement | D14 (V5 on the field hypothesis) |
-| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38, D39; P2 parked |
+| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38, D39, D40; P2 timing set by D40 |
 | New: fidelity and review | D8, D17, D19, D27 |
 | New: Tau Ceti pace | D26 |
 | New: other machines, papers, models | D4, D6, D25 |
@@ -423,6 +423,19 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
      - the definition-card pages get filters, stable URLs, KaTeX and current/stale labels (D12).
   3. **Watch list only:** Mean (a possible later deterministic third read-back channel, added to the scout's sources, D24) and B9 item 7 (optional).
 - **Pattern sources:** `edemaine/lean-wang` (Apache-2.0), `edemaine/lean-canny`, `edemaine/loose-ends` and `edemaine/mean` (MIT). Ideas are adopted, not code; any copied code keeps its licence and attribution.
+
+### D40. Plan review: nine findings decided (2026-11-04)
+
+- **Context:** the review session for `plans/2026-11-04-implementation-plan.md` (prompt `prompts/2026-11-03-review-implementation-plan.md`, deleted after the session). Findings were put to the user one at a time; each decision below is recorded in the plan, marked "decided in review". Evidence and tags are in the plan's §4 rows added that day.
+- **1. Goal-1b route (Q8), revises P2's timing and D28:** decided straight after the blueprint's review, in a new step B1b, node by node: *wait* (a Tau Ceti roadmap covers it), *build locally*, or *propose* a Tau Ceti roadmap. The user does not aim to submit roadmaps; proposing stays optional (D2). D28's "phase 1 sends nothing to Tau Ceti" now reads "nothing is sent unless the user chooses to". The B1 review also checks each node's Tau Ceti field, the foundational/frontier call and the size estimates. Fact checked [R, TauCetiRoadmap @ `a0ad405`, 2026-11-04]: merged roadmaps EnhancedDerivedSheaves and SchemeAndStackFoundations plan ∞-categories and stacks (not yet built); no roadmap covers D-modules, IndCoh, de Rham local systems or Bun_G of a curve.
+- **2. Tau Ceti is reviewed, revises D39's closure boundary:** Tau Ceti is AI-written and AI-reviewed [R, its README], so the closure walks into it and stops only at Mathlib and Lean core. Tau Ceti objects that are key definitions (standing for objects the statement names) get the full D17 pipeline including the user's one-time check and are tagged *to be reviewed* until it passes; the other Tau Ceti definitions in the closure get tiers 1–3. Tau Ceti bodies are fingerprinted, so a meaning change at a bump triggers re-review.
+- **3. Ownership:** the "never edit human-owned paths" rule moves from `AGENTS.md` (read by every session) to the worker template. `Abstract.lean` is not CODEOWNED; a human-owned `reviews/statement-pin.toml` fixes the fingerprints of the main theorem and hypotheses, checked by CI.
+- **4. Tokens:** both keyring tokens stay (the user needs them). From B2, workers run in the Claude Code Bash sandbox with GitHub off the network allow-list (no disk cost, small token cost), tested in A3; Edit and Write get path rules; the tracker submodule has no push URL.
+- **5. Evidence kept:** the feasibility reports and prototypes are committed to GLCinLeanPrivate under `feasibility/2026-11-04/`; the scratch folder is deleted.
+- **6. Torus case, revises D28 item 6 and D30's checkpoint:** Conj. 1.6.7 at a torus is a restatement and adds no evidence. Goal 1b adds proved degenerate-case lemmas; the checkpoint reads "degenerate-case lemmas proved; torus case stated"; the torus comparison with Fourier–Mukai is a goal-2 target. In goal 1a the review pipeline is the only fidelity evidence.
+- **7. Read-backs and names:** D27 test 3 gains a misleading-name case (pass: the body is described correctly and the comparator says *mismatch*), run in A3 and after model, CLI or prompt changes; on failure, read-backs use neutral names with a legend.
+- **8. Questions A1 needs (Q5, Q6, Q12–Q14, Q19), after an independent evaluation by GPT-6 Astra reviewed by Claude:** hypotheses as in the plan's §2.3 (algebraically closed, connected curve, square root as data, Ǧ with a root-datum identification and a stated existence theorem, assumptions labelled as coming from the cited conventions and GLC II); $\mathbb L_G$ defined as *the* functor with Cor. 1.6.5's two properties, chosen from its existence statement (one budgeted sorry), uniqueness stated; Foundations walked and reviewed; the sorry budget bound to statement fingerprints, every reachable sorry traced, placeholder and proof debt reported separately (rewords D39); an explicit Foundations-name list with a warning-only check (refines D10); `reviewkit` until the split.
+- **9. Small corrections:** papers manifest moved to A1; read-back batches run per session until launchd exists; CI frees runner disk; tags and status corrected; run prompts deleted.
 
 ## Conflicts
 
