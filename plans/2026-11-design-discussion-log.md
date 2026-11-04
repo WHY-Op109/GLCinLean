@@ -532,6 +532,23 @@ User's notes: the formalisation Mac normally has 50–100 GB free; the user want
    - *Proposed modes:* `full` (idle >5 min: all cores, maximum agents), `shared` (user active: running work in background mode, new builds with fewer threads, no new parallel agents), `pause` (stop starting work; optionally suspend), `auto` (switch between full and shared by idle time; the default).
    - *Manual override:* a local command (e.g. `glc-mode shared`) or a menu-bar or Shortcuts button that writes the mode file. **Not a button on the project website:** the site is a public static page and cannot safely control the Mac; adding a local web server for it brings risk for little gain.
 
+### B9. Evaluation: `edemaine/loose-ends` as a source of ideas for the reusable system (2026-11-04, raised by the user)
+
+**Facts [R], commit `cd2e5a9` (27 Oct 2026), MIT licence, created 17 Aug 2026:** a Python and JavaScript tool that runs Codex CLI agents over arXiv papers. The pipeline is: fetch, analyse (summary, results catalogue, open problems), triage, literature search, solution attempts, independent critic reviews, manuscript writing, then a human-review dashboard and a live local "workbench". **It contains no Lean, Mathlib or formalisation features.** The repository has no occurrence of "Lean" as a word; the only "abstract" features concern the abstracts of the LaTeX papers it writes.
+
+**As a dependency [J]: no.** Its domain is informal open-problem solving, it is Codex-only, and it overlaps nothing in the Lean layer. Its MIT licence allows borrowing code with attribution.
+
+**Ideas worth adapting into the generic system (D35) [J]:**
+1. **Structured outputs with a validation contract.** Each agent writes `agent-result.json` against a JSON Schema and runs a staged validator before finishing. The host re-runs the same check before installing anything, and allows exactly one repair turn on contract errors. This fits the read-back, comparator and blueprint-revision outputs (D17, D19, D21) and the D35 data format.
+2. **Freshness digests that cover the whole job.** A result is reused only if the input content, the prompt, the schema, the model settings *and the validation code* are unchanged; otherwise it is labelled stale, not deleted. This extends D9/V7: a review record's fingerprint should cover the read-back prompt, schema and resolved model (D25), not only the Lean declaration.
+3. **Staged workspaces.** Agents work on disposable copies in a temporary workspace; output is installed only after validation; a failed workspace is kept for inspection. This matches the blind read-back isolation (D17, V6) and gives the loop clean failure records.
+4. **Separate review axes, deterministic priority.** Critics record fixed-vocabulary axes (correctness: incorrect … well_supported; coverage; importance; verification confidence; claim-by-claim reviews; blocking gaps). Human priority is *computed* from the axes, not judged freely. This fits the comparator verdicts (D17) and the order of the escalation queue (B6.4).
+5. **Separation of concerns.** Its critic does not assess novelty, so literature changes never invalidate mathematical reviews. The same holds here: scout hits (D24) must not reset fidelity reviews; only Lean or blueprint changes do.
+6. **The review dashboard.** Filters (status, verdict, current versus stale), stable URL identities that survive reordering, KaTeX rendering of Markdown with explicit math delimiters, and evidence tabs. These are directly usable for the definition cards on the explorer (D12): a read-back beside the paper's LaTeX, with its verdict and freshness shown.
+7. **Smaller items:** recovering completed runs without a new model turn; tests that check prompt conventions (for example, required math delimiters); per-invocation usage records (fits D7's usage-limit tracking); every run records its model and reasoning effort (as D25 requires).
+
+**Not adopted:** the live local workbench server (the 24/7 loop plus the static site and queue files cover it; B8.7 already avoided a control server); the Windows/Cygwin machinery; the solver and manuscript stages.
+
 ## Parked questions
 
 - **P2 (from D29), 2026-11-03:** the rules for which foundation nodes are formalised inside Tau Ceti in phase 2. Parked until phase 1 ends, so they can be set with the blueprint's real node data. Draft starting point: B5 amendment 4.
