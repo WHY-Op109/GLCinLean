@@ -10,6 +10,7 @@
 |---|---|
 | `plans/2026-11-02-design-brainstorm.md` | The first consolidated design. |
 | `plans/2026-11-design-discussion-log.md` | Decisions D1–D39, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
+| `plans/2026-11-04-synthesis-session-plan.md` | The approved session plan for the synthesis prompt (not the implementation plan itself). |
 | `prompts/` | Prompts still to run (see below). |
 | `reports/` | Current assessments (2–3 Nov 2026). |
 | `references/tau-ceti/` | Copies of Tau Ceti roadmap files, with provenance headers. |
