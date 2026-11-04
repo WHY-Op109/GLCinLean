@@ -665,6 +665,7 @@ Paste the block below into a new Claude Code session opened in the GLCinLean che
 - `tracker check && tracker lint`, run with `--dir blueprint/plans`, pass on a minimal plan that covers the stub.
 - The papers manifest and fetch script exist (D6), and `references/papers/` stays git-ignored.
 - `AGENTS.md` has items 1–8 of the plan's §10, and `THIRD_PARTY_NOTICES.md` exists.
+- Before finishing, you have reviewed the whole project and done a full clean: every file, cache, worktree, branch and so on that the plan does not need is deleted, so that there is enough disk and a clean, simple workspace to continue.
 - The work is in local commits on `main`. Your report says what was done, what did not work, and what is left for A2.
 
 **Context:**
