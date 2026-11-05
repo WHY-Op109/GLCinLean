@@ -9,8 +9,8 @@
 | Path | What it is |
 |---|---|
 | `plans/2026-11-02-design-brainstorm.md` | The first consolidated design. |
-| `plans/2026-11-design-discussion-log.md` | Decisions D1–D41, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
-| `plans/2026-11-04-implementation-plan.md` | The implementation plan, reviewed 4 Nov 2026 and redrafted 5 Nov 2026 to use the formalised Stacks project (D41); ends with the start prompt. |
+| `plans/2026-11-design-discussion-log.md` | Decisions D1–D42, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
+| `plans/2026-11-04-implementation-plan.md` | The implementation plan, reviewed 4 Nov 2026 and redrafted 5 Nov 2026 to use the formalised Stacks project (D41), and reviewed again the same day (D42); ends with the start prompt. |
 | `plans/2026-11-04-synthesis-session-plan.md` | The approved session plan for the synthesis prompt (not the implementation plan itself). |
 | `reports/` | Current assessments (2–3 Nov 2026). |
 | `references/tau-ceti/` | Copies of Tau Ceti roadmap files, with provenance headers. |
@@ -19,7 +19,7 @@
 
 ## Next steps on the Mac mini
 
-Done: the Mac mini set-up (D38), the implementation plan, its review (D40, 4 Nov 2026), and its Stacks redraft (D41, 5 Nov 2026).
+Done: the Mac mini set-up (D38), the implementation plan, its review (D40, 4 Nov 2026), its Stacks redraft (D41, 5 Nov 2026) and its second review (D42, 5 Nov 2026).
 
 **Start implementing:** open a new Claude Code session in this checkout, run `/effort high`, and paste the start prompt from §12 of `plans/2026-11-04-implementation-plan.md`.
 

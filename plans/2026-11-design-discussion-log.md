@@ -28,7 +28,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | §13.5 Check tauceti-explorer scripts first | superseded by D12 |
 | §13.5 Ask Tau Ceti maintainers on Zulip | D2 (the user's call; public text in the user's own words) |
 | New: target statement | D14 (V5 on the field hypothesis) |
-| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38, D39, D40, D41; P2 timing set by D40 |
+| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38, D39, D40, D41, D42; P2 timing set by D40 |
 | New: fidelity and review | D8, D17, D19, D27 |
 | New: Tau Ceti pace | D26 |
 | New: other machines, papers, models | D4, D6, D25 |
@@ -448,6 +448,29 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
 - **5. Review:** closure tag `[stacks]`; copied key definitions get tiers 1–5 and are tagged *to be reviewed* (as D40 item 2 for Tau Ceti), other copied definitions tiers 1–3; a CI check compares each copied file with its recorded upstream text and allows only renames from a recorded map, sorry'd proofs and import changes; anything else needs the user's approval in `reviews/`.
 - **6. Upstream:** the scout watches Stacks; a re-copy happens only when a copied declaration changes upstream or a needed one appears. If Stacks ever matches Tau Ceti's versions and publishes a cache, the scout flags it and the user decides whether to switch to importing.
 - **7. Cache:** no Stacks cache is needed; the copy is compiled as part of GLCinLean and kept by the local `.lake` and the CI build cache. Rejected options, with reasons, are in the plan's §2.3a.
+- *Items 3–5 are revised by D42* (timing of the copy tool and pilot, copied proof debt, renames, comparator sources).
+
+### D42. Second plan review after the Stacks redraft: four findings decided (2026-11-05)
+
+- **Context:** a second review of `plans/2026-11-04-implementation-plan.md`, after the D41 redraft (prompt `prompts/2026-11-03-review-implementation-plan.md`, deleted after the session). Findings were put to the user one at a time; the plan marks the changes "D42", and its §4 holds the evidence rows of the day.
+- **Facts [R, 2026-11-05]:**
+  - Stacks @ `012108f6` (still its newest commit): an algebraic stack is a category fibred in groupoids over Stacks' own big fppf site, with its own stack condition; group schemes are its structure `GroupSchemeOverPoints`. The commit fixes the first published commit `f8e70c5d` "so that lake build succeeds"; there is no CI, so "every proof is kernel-checked" is [S].
+  - Tau Ceti at tag `v4.36.0-rc2` (still the newest tag): stacks are `Cat`-valued pseudofunctors with Mathlib's `Pseudofunctor.IsStack`; the tag holds `TauCeti.AlgebraicGeometry.Spaces.IsAlgebraicSpace` (2026-11-02) and `CategoryTheory.Sheaf.Torsor` (2026-10-30); $G$ is defined through Hopf algebras; no algebraic stacks yet. SchemeAndStackFoundations' convention 3 (TauCetiRoadmap @ `156df567`): stacks are pseudofunctors with Mathlib's `IsStack`, group objects `GrpObj` in `Over S`.
+  - The Stacks Project LaTeX: `stacks/stacks-project` @ `a04446e5` (2026-07-28), GFDL 1.2.
+- **1. Stacks after the blueprint (revises D41 item 4):** B1's blueprint fixes one formalism for every geometric object in the statement, faithful to the papers' conventions, and lists per node the Stacks declarations it would use (in definitions or only in theorems) and the bridges to Tau Ceti's objects. The copy tool (K15) and a pilot are built after B1's review, only if B1b sends a node to *copy from Stacks*; the pilot copies that node with its bridges. A2 no longer has the pilot; A1 still reserves `[stacks]`.
+  - **Reasoning:** the two formalisms need bridge definitions the plan did not list, each a key definition, and a Stacks site would become a standing parameter of the statement. On GLC's own route (D-modules on prestacks, after AGKRRV and Gaitsgory–Rozenblyum) the statement may need $\mathrm{Bun}_G$ only as a functor of torsors, so no Stacks definition at all [J]. The A2 pilot measured copy breakage, not the larger bridge cost.
+  - **Weighed with the user:** the work happens only if needed and on the right target, and no second formalism is committed early, at the cost of one session in series before B1b and a blueprint drafted on estimates.
+  - **Rejected:** keep the A2 pilot (D41 as drafted); retarget the A2 pilot to the torsor stack plus a bridge (it must guess the formalism before the blueprint).
+- **2. Copied proof debt (revises D41 items 3 and 5):** a copied theorem is accepted by K1 when the copy record lists it and the K15 diff check confirms its statement matches upstream; it is reported as a third count, *copied proof debt* (upstream claims a proof [S]), with no entry in the human-owned sorry budget. A rename passes the diff check automatically only if our Mathlib marks the old name `@[deprecated]` as an alias of the new one; other renames and changes go to `reviews/stacks-approvals.toml`.
+  - **Reasoning:** per-entry approval meant tens to hundreds of approvals the user cannot judge, while the diff check is the stronger evidence. The alias rule closes a gap: the rename map is agent-editable.
+  - **Rejected:** per-entry approval in `reviews/sorry-budget.toml`.
+- **3. Comparator sources for foundation definitions (refines D17, D40 item 2, D41 item 5):** the GLC papers do not define the foundations, so the comparator's source for a Tau Ceti or Stacks definition is what its declaration cites: a Stacks tag's LaTeX from the pinned Stacks Project, fetched through the papers manifest into the git-ignored `references/` and never committed (as D6); otherwise a *secondary source* (citation plus docstring) or *no source*, and a key definition with no source moves up the user's queue. New verdict *equivalent, different presentation*. Built with K6 in A3.
+  - **Rejected:** comparing only the two read-backs for foundation definitions.
+- **4. Small corrections:**
+  - the start prompt's clean-up is bounded by the user's principle (delete what later work does not need, including useless Mathlib cache archives and similar files): inside the checkout, and outside it only rebuildable files this project left behind; `private/`, the pinned Mathlib archives, toolchains any project names, other projects and anything unpushed are kept; deletions are listed with sizes;
+  - A1 pins §8's tag and only reports a newer one;
+  - the plan's facts are refreshed to 5 Nov;
+  - the run prompt is deleted.
 
 ## Conflicts
 
