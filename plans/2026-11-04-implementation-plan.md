@@ -1,12 +1,12 @@
 # GLCinLean implementation plan
 
-Date: 2026-11-04. Written on the Mac mini M4 that will run the implementation (D36), by Claude Opus 5.5, from `prompts/2026-11-02-synthesise-feasible-plan.md` (deleted after it ran). Status: **reviewed 2026-11-04** in the review session (`prompts/2026-11-03-review-implementation-plan.md`, since deleted). The decisions taken there are recorded as D40 in the log and marked "decided in review" below. **Redrafted 2026-11-05** to use the formalised Stacks project (`AxiomMath/Stacks`) by copying the pieces it needs; those decisions are D41, marked "D41" below, and §2.3a holds the design.
+Date: 2026-11-04. Written on the Mac mini M4 that will run the implementation (D36), by Claude Opus 5.5, from `prompts/2026-11-02-synthesise-feasible-plan.md` (deleted after it ran). Status: **reviewed 2026-11-04** in the review session (`prompts/2026-11-03-review-implementation-plan.md`, since deleted). The decisions taken there are recorded as D40 in the log and marked "decided in review" below. **Redrafted 2026-11-05** to use the formalised Stacks project (`AxiomMath/Stacks`) by copying the pieces it needs; those decisions are D41, marked "D41" below, and §2.3a holds the design. **Reviewed again 2026-11-05** after the redraft (the same review prompt, since deleted): four findings, recorded as D42 and marked "D42" below.
 
 Tags: [R] tested or read directly, [S] a source's claim about itself, [E] estimate, [J] judgement. All tests and checks were run on 2026-11-04 (UTC) on this Mac unless a row says otherwise.
 
 Evidence: thirteen feasibility runs (N1–N9, L1–L4) and a completeness critique. Their reports, and the prototypes A1 starts from, are committed to the private repository GLCinLeanPrivate under `private/feasibility/2026-11-04/` (decided in review, Q20), because they contain account and usage details. The git-ignored `scratch/2026-11-04-feasibility/` (9.3 GB of logs, clones and the built probe) was deleted in the review after everything reusable was copied there. §4 restates every result the plan relies on, so this file stands on its own.
 
-Decision numbers (D…, B…, V…, P…) refer to `plans/2026-11-design-discussion-log.md`; the review decisions are D40, the Stacks decisions D41.
+Decision numbers (D…, B…, V…, P…) refer to `plans/2026-11-design-discussion-log.md`; the review decisions are D40, the Stacks decisions D41, the second review's decisions D42.
 
 ---
 
@@ -33,10 +33,10 @@ Decision numbers (D…, B…, V…, P…) refer to `plans/2026-11-design-discuss
    - D7 rules out API billing, so there is no fallback.
    - Q1 therefore comes first. The build order defers the unattended parts until it is answered.
 3. **Goal 1b needs foundations that no provider has built**: stable or presentable ∞-categories, derived algebraic geometry, D-modules and IndCoh [R]. Classical algebraic stacks are now built in the formalised Stacks project, but not $\mathrm{Bun}_G$ itself (see the Stacks point below; D41). The effort is "many person-years" [E, low confidence].
-   - Some of this ground is already *planned* by Tau Ceti: the merged roadmaps EnhancedDerivedSheaves (#908: stable and presentable ∞-categories, Ind, spectra, animated rings) and SchemeAndStackFoundations (#779: algebraic spaces and stacks) cover it, but almost none is built [R, TauCetiRoadmap @ `a0ad405` and its STATUS files of 2026-10-23/25]. No roadmap covers D-modules on schemes or stacks, IndCoh, de Rham local systems or $\mathrm{Bun}_G$ of a curve [R, text search, 2026-11-04].
+   - Some of this ground is already *planned* by Tau Ceti: the merged roadmaps EnhancedDerivedSheaves (#908: stable and presentable ∞-categories, Ind, spectra, animated rings) and SchemeAndStackFoundations (#779: algebraic spaces and stacks) cover it, but almost none is built [R, TauCetiRoadmap @ `a0ad405` and its STATUS files of 2026-10-23/25]. Since then Tau Ceti's tag has gained an algebraic-space predicate and sheaf torsors, but no algebraic stacks [R, 2026-11-05, D42]. No roadmap covers D-modules on schemes or stacks, IndCoh, de Rham local systems or $\mathrm{Bun}_G$ of a curve [R, text search, 2026-11-04].
    - A one-worker loop will not deliver goal 1b alone. Each foundation node is therefore *waited for* (Tau Ceti has planned it), *built locally*, or, optionally, *proposed* as a Tau Ceti roadmap. Proposing is an outward signal (D2); you do not aim for it, but keep it open where feasible.
    - **Decided in review (Q8):** this choice is made in step B1b, straight after the blueprint's review. It adds no outward step and does not change Stages A and B.
-   - **Stacks (D41).** The formalised Stacks project has **built** much of the classical stack layer: algebraic spaces and stacks, quotient stacks and $BG$, torsors, $\mathrm{Mor}_B$ between spaces, Coh, Pic and Quot, genus and $\omega_X$, QCoh and D_QCoh on a stack [R, inventory 2026-11-05]. It is on an older Lean and Mathlib than Tau Ceti, so the plan **copies only the needed declarations** into GLCinLean and ports them to our pins: statements first, with proofs as budgeted sorries (proof debt). A fourth B1b route, *copy from Stacks*, joins wait, build locally and propose. Stacks lacks the Hom stack (so $\mathrm{Bun}_G$), reductive groups, D-modules, all ∞- or DG-enhanced sheaf theory, derived stacks, IndCoh, the Ran space and Hecke stacks [R], so those parts of goal 1b remain as before.
+   - **Stacks (D41).** The formalised Stacks project has **built** much of the classical stack layer: algebraic spaces and stacks, quotient stacks and $BG$, torsors, $\mathrm{Mor}_B$ between spaces, Coh, Pic and Quot, genus and $\omega_X$, QCoh and D_QCoh on a stack [R, inventory 2026-11-05]. It is on an older Lean and Mathlib than Tau Ceti, so the plan **copies only the needed declarations** into GLCinLean and ports them to our pins: statements first, with proofs as budgeted sorries (proof debt). A fourth B1b route, *copy from Stacks*, joins wait, build locally and propose. Stacks and Tau Ceti use different stack formalisms (§2.3a), so B1's blueprint first fixes one formalism for the statement, and the copy tool and a pilot are built only if B1b sends a node to Stacks (D42). Stacks lacks the Hom stack (so $\mathrm{Bun}_G$), reductive groups, D-modules, all ∞- or DG-enhanced sheaf theory, derived stacks, IndCoh, the Ran space and Hecke stacks [R], so those parts of goal 1b remain as before.
 4. **Several decisions need new wording before they can be implemented:**
    - D39's axiom audit fails throughout phase 1 unless it is scoped with a sorry budget.
    - Placeholders need an attribute, because `opaque` is invisible to `#print axioms` and tracker counts it as `proved`.
@@ -50,7 +50,7 @@ Decision numbers (D…, B…, V…, P…) refer to `plans/2026-11-design-discuss
 - Stage C, unattended running: only after Q1, Q2 and Q4.
 - Then goal 1b → the checkpoint → goal 2.
 
-Stacks enters in Stage A as a copy tool, an upstream-diff check and a pilot copy (A2), and in bulk in goal 1b (D41).
+Stacks enters only after B1's review: if B1b sends a node to *copy from Stacks*, the copy tool, the upstream-diff check and a pilot on that node are built then, and the bulk follows in goal 1b (D41, D42).
 
 **First step:** the start prompt in §12. It builds the Lake skeleton from caches, the kit's Lean checks with their fault fixtures, and the tracker wiring, all as local commits.
 
@@ -75,7 +75,7 @@ D36 raised two detours: planning full machinery before goal 1a, and repeating te
 | E6 | **Cards as our own pages** that link into the unmodified explorer | an explorer fork or patch (the explorer ignores extra fields [R]) | None | Adopt |
 | E7 | **The driver selects tasks deterministically** (tracker `ready` plus attempt counts) instead of a standing orchestrator LLM session. Workers may reject a task; rejections go to Astra repair (D21) | about 11% of the Claude week [E] and a long-lived session | You accept less cross-task judgement; a daily orchestrator call can be added later | Adopt [J] |
 | E8 | **Daily scout checks as a plain script** (API diffs), with models used only for the weekly search and for triaging hits | daily model use | None | Adopt |
-| E9 | **Copy the needed Stacks declarations instead of importing or building Stacks** (D41) | a 1–2-day, about-45 GB build of all of Stacks [E]; a second Mathlib; local re-proving of stack foundations Stacks already has | None beyond the copy tool and the diff check (§2.3a) | **Decided (D41)** |
+| E9 | **Copy the needed Stacks declarations instead of importing or building Stacks** (D41) | a 1–2-day, about-45 GB build of all of Stacks [E]; a second Mathlib; local re-proving of stack foundations Stacks already has (their proofs carry over only where the statement uses Stacks' formalism, D42) | B1's blueprint shows that a node needs Stacks declarations and names the bridges to Tau Ceti's objects (D42); then the copy tool and the diff check (§2.3a) | **Decided (D41); timing set by D42** |
 
 **Not removed:**
 - the option of a 24/7 loop (your D20 position: Q1, Q2);
@@ -99,7 +99,7 @@ GLCinLean/
   .lake-config/lake-config.toml   Tau Ceti cache service entry; scripts and CI set LAKE_CONFIG to it
   GLCinLean.lean
   GLCinLean/Foundations/…     thin `abbrev` re-exports of Mathlib, Tau Ceti and copied Stacks objects, plus provider-less generic placeholders (N3's F1–F10)
-  GLCinLean/Stacks/…          declarations copied from AxiomMath/Stacks @ 012108f6, Stacks names kept, each file with a provenance header (D41, §2.3a)
+  GLCinLean/Stacks/…          declarations copied from AxiomMath/Stacks @ 012108f6, Stacks names kept, each file with a provenance header (D41, §2.3a); only if B1b sends a node to Stacks (D42)
   GLCinLean/Abstract.lean     the formal abstract: hypotheses, the L_G chain, placeholders, Conj. 1.6.7 (D39)
   GLCinLean/Sanity/…          the torus case and other sanity statements (D8, D28)
   GLCinLean/Faults/…          fault-injection fixtures, built only by the CI fault job (D27 test 1)
@@ -107,10 +107,10 @@ GLCinLean/
   blueprint/nodes/…           Markdown blueprint with stable node ids (D19)
   glc/project.toml            the project config the kit reads (§2.3)
   glc/extras.toml             GLC extras keyed by absolute declaration id (D12)
-  glc/stacks-copy.toml        the copy record: upstream commit, copied declarations and their source files, the Mathlib rename map (D41)
+  glc/stacks-copy.toml        the copy record: upstream commit, copied declarations and their source files, the Mathlib rename map, copied proof debt (D41, D42)
   reviews/                    human-owned: review records, sorry budget, key overrides (D9)
   queue/                      escalation queue as files (D37, B6.4)
-  references/papers/          manifest.toml committed; papers git-ignored (D6); fetch script in scripts/
+  references/papers/          manifest.toml committed; papers git-ignored (D6); fetch script in scripts/; from A3 the manifest also pins the Stacks Project LaTeX (GFDL, git-ignored) as a comparator source (D42)
   reviewkit/                  the generic system (§2.2); no GLC-specific code
   tools/tracker/              git submodule bridgekat/tracker @ c223b67 (L2 route 1)
   docbuild/                   nested Lake project for doc-gen4 (fork, L4)
@@ -127,12 +127,12 @@ Notes:
 
 | Id | Component | What it does | Built from | State |
 |---|---|---|---|---|
-| K1 | `review` Lean executable (Lake package `ReviewKit`, `lean_exe review`, `supportInterpreter = true`) | Subcommands, all with JSON output:<br>• `closure`: walks types, definition bodies **and constructors**, stops only at **Mathlib and Lean core**. It walks **into Tau Ceti**, because Tau Ceti is AI-written and AI-reviewed (its README) [R]. Its output **is** the key-definition list (D39), with four tags: `[abstract]`, `[foundations]`, `[tauceti]` (decided in review, Finding 2) and `[stacks]` for copied Stacks code (D41). The background set is configurable in the project config.<br>• `axioms`: scoped audit (Q13, decided in review). Project axioms and non-standard axioms fail. A `sorry` is allowed only at a source listed in the human-owned **sorry budget**, and each entry is **bound to the fingerprint of that declaration's statement**, not just its name, so a budgeted theorem whose statement changes (for example to `False`) fails until you re-approve it. Every `sorry` reachable from the abstract is traced to its source, Tau Ceti included (the prototype checked only project declarations and matched by name: `Review.lean` l.377–395 [R]). Statement-level and with-proofs views; placeholder debt and proof debt are reported as separate counts.<br>• `placeholders`: census = `@[placeholder]` ∪ `opaque` ∪ sorry-valued definitions.<br>• `imports`: the D10 import rule from a prefix table. It also prints, as a **warning only**, every Mathlib name the abstract refers to directly that is neither in the basic-vocabulary list nor reached through a Foundations name (Q14).<br>• `fingerprint`: a name-free Merkle hash of a canonical serialisation. It unfolds Foundations abbrevs and a notation list, and stores the canonical text for diffs. Tau Ceti definitions in the closure are hashed **by body**, not only by name and type, so a pin bump that changes their meaning triggers re-review (the prototype's shallow type hash missed this: L3 report l.355).<br>• `impact`: reverse dependencies, proofs included. | L3 prototype `Review.lean`, 464 lines | prototype; every check passes on the clean toy and fails on its planted fault [R] |
+| K1 | `review` Lean executable (Lake package `ReviewKit`, `lean_exe review`, `supportInterpreter = true`) | Subcommands, all with JSON output:<br>• `closure`: walks types, definition bodies **and constructors**, stops only at **Mathlib and Lean core**. It walks **into Tau Ceti**, because Tau Ceti is AI-written and AI-reviewed (its README) [R]. Its output **is** the key-definition list (D39), with four tags: `[abstract]`, `[foundations]`, `[tauceti]` (decided in review, Finding 2) and `[stacks]` for copied Stacks code (D41). The background set is configurable in the project config.<br>• `axioms`: scoped audit (Q13, decided in review). Project axioms and non-standard axioms fail. A `sorry` is allowed only at a source listed in the human-owned **sorry budget**, or at a copied theorem that the copy record lists and whose statement passes the K15 diff check (D42), and each budget entry is **bound to the fingerprint of that declaration's statement**, not just its name, so a budgeted theorem whose statement changes (for example to `False`) fails until you re-approve it. Every `sorry` reachable from the abstract is traced to its source, Tau Ceti included (the prototype checked only project declarations and matched by name: `Review.lean` l.377–395 [R]). Statement-level and with-proofs views; placeholder debt, proof debt and **copied proof debt** (copied theorems whose upstream claims a proof [S], D42) are reported as separate counts.<br>• `placeholders`: census = `@[placeholder]` ∪ `opaque` ∪ sorry-valued definitions.<br>• `imports`: the D10 import rule from a prefix table. It also prints, as a **warning only**, every Mathlib name the abstract refers to directly that is neither in the basic-vocabulary list nor reached through a Foundations name (Q14).<br>• `fingerprint`: a name-free Merkle hash of a canonical serialisation. It unfolds Foundations abbrevs and a notation list, and stores the canonical text for diffs. Tau Ceti definitions in the closure are hashed **by body**, not only by name and type, so a pin bump that changes their meaning triggers re-review (the prototype's shallow type hash missed this: L3 report l.355).<br>• `impact`: reverse dependencies, proofs included. | L3 prototype `Review.lean`, 464 lines | prototype; every check passes on the clean toy and fails on its planted fault [R] |
 | K2 | `@[placeholder]` attribute and the `NonemptyType` placeholder convention | marks data-only placeholders, including structures that no other scan sees | L3, N3 | tested [R] |
 | K3 | Data format v0 (versioned) | project config; extras file; review records; sorry budget; JSON Schemas for every agent output (task record, worker result, read-back, comparator verdict, blueprint revision, scout digest) | D35, D39, N9 §4.1 | designed, not written |
 | K4 | Checks over tracker output | extras join (fails on stale ids and unknown keys); owned-paths check; flagged-entries check (D19); no-progress snapshots (B6.5); hard failure on tracker's "plan has errors / stale cache" warning | L2 `join_extras.py` | join tested [R] |
 | K5 | Read-back harness | stages the slice into `mktemp -d`: the declaration and its dependent definitions, with doc comments and source hints stripped. Runs Claude and Codex with hardened, tool-less settings. Schema-validated output, one repair turn. Records model, effort, prompt hash, schema hash and usage (D25, D39) | N4, N5 | both CLIs tested separately [R] |
-| K6 | Comparator | a fresh Claude call with the paper's LaTeX slice, both read-backs, and numlib-auto's semantic-alignment checklist, adapted with the registered-placeholder rule. Outputs *agree*, *mismatch* or *models disagree*, plus fixed-vocabulary axes | N9 §4.5 | not written |
+| K6 | Comparator | a fresh Claude call with the source slice, both read-backs, and numlib-auto's semantic-alignment checklist, adapted with the registered-placeholder rule. **Source (D42):** the paper's LaTeX for GLC definitions; for Tau Ceti and Stacks definitions, the source the declaration cites: a Stacks tag's LaTeX from the pinned Stacks Project, otherwise the citation and the docstring's wording as a *secondary source*, or *no source* (a key definition with no source moves up your queue). Outputs *agree*, *equivalent, different presentation*, *mismatch* or *models disagree*, plus the source kind and fixed-vocabulary axes | N9 §4.5 | not written |
 | K7 | Codex model resolver (D25) | picks the frontier tier by description, falls back to an allow-list, uses the highest effort; stops rather than downgrades | N4 `resolve_model()` | tested [R] |
 | K8 | Usage gate | Claude `/usage` (costs nothing) and Codex `rate_limits`; a pace line; sleep until reset | N5, N8 | pieces tested [R] |
 | K9 | Driver (`cycle`) | one task per invocation; see §2.5. Runs from a session or from launchd (E1) | N5 §6, N9, L1 | pieces tested; not assembled |
@@ -140,7 +140,7 @@ Notes:
 | K11 | Site builder | tracker graph → explorer bake; doc-gen4 fork with local roots and outward links; card pages (KaTeX, filters, stable URLs, current/stale labels); optional badge injection | L2, L4 | explorer inspected [R]; doc-gen4 fork tested on the probe [R]; cards not written |
 | K12 | Bump step (D26) | tries the next Tau Ceti tag that has a revision map; one repair attempt; otherwise holds the pin and queues | L1 | cache side tested [R] |
 | K13 | Scout | a daily script over Tau Ceti watched paths, the copied Stacks declarations against Stacks `main` (D41), Mathlib PRs and arXiv versions, writing a JSON digest to `private/scout/`; a weekly broad search by both models (D24, E8) | N1's commands | commands used in N1 [R]; not written |
-| K15 | Copy tool and upstream-diff check (D41) | **copy:** given declaration names and a source repository at a pinned commit, copies each declaration with what it depends on, statements only for theorems (proof `sorry`, entered in the budget as proof debt), with a provenance header per file and an entry in the copy record. The selection is worked out from source text and completed by compiling the copy at our pins and adding what is missing, because the source is never built. **diff check:** compares every copied declaration with its upstream text and allows only renames from the recorded map, proofs replaced by `sorry` (or later ported proofs), and import lines; any other change fails until approved in `reviews/stacks-approvals.toml`. Generic: any Apache-2.0 Lean source can be copied this way (the fallback for Tau Ceti, D41) | D41 | not written |
+| K15 | Copy tool and upstream-diff check (D41) | **copy:** given declaration names and a source repository at a pinned commit, copies each declaration with what it depends on, statements only for theorems (proof `sorry`, listed in the copy record as copied proof debt, with no entry in the human-owned budget: D42), with a provenance header per file and an entry in the copy record. The selection is worked out from source text and completed by compiling the copy at our pins and adding what is missing, because the source is never built. **diff check:** compares every copied declaration with its upstream text and allows only renames that our Mathlib backs with a `@[deprecated]` alias from the old name to the new one (D42: the rename map is agent-editable, so a bare map entry is not enough), proofs replaced by `sorry` (or later ported proofs), and import lines; any other change, including any other rename, fails until approved in `reviews/stacks-approvals.toml`. Generic: any Apache-2.0 Lean source can be copied this way (the fallback for Tau Ceti, D41) | D41, D42 | not written; built only if B1b sends a node to Stacks (D42) |
 | K14 | CI templates | `build` (lean-action pinned); kit checks; the K15 diff check; `tracker check && tracker lint`; a fault-injection job expected to fail; owned paths; flagged entries; Pages job. Each job first deletes the runner's unused preinstalled toolchains, because the disk margin is about 2.5 GB [E] (common practice; verify in A2) | N7, L4 | not written |
 
 Packaging [R/J]:
@@ -189,13 +189,13 @@ Estimates [E]: 20–25 key definitions, of which about 15–20 are placeholders 
 
 **Data:**
 - plans, blueprint, extras, reviews and the sorry budget;
-- the papers manifest (D6);
+- the papers manifest (D6), which from A3 also pins the Stacks Project LaTeX as a comparator source (D42);
 - scout sources;
 - the Tau Ceti pin.
 
 ### 2.3a Using the formalised Stacks project (D41)
 
-**Source** [R, shallow clone, 2026-11-05]: `AxiomMath/Stacks` @ `012108f61d7f92a6ffc35ec3f263b6da5d438125` (2026-11-05), Apache-2.0. 62,972 modules, 18.0M lines (about 7.7 times Mathlib). Lean v4.34.0-rc2, Mathlib `16edf57d` (2026-09-01). No `sorry` and only the standard axioms [S, README]; no CI, tags or published build cache; a cache service is "planned" [S]. Two tiers: StacksCore (human-reviewed, 445 files, no algebraic geometry) and StacksFrontier (AI-written; each statement checked against its Stacks tag, no human review yet [S]). **Every item below is in StacksFrontier.**
+**Source** [R, shallow clone, 2026-11-05]: `AxiomMath/Stacks` @ `012108f61d7f92a6ffc35ec3f263b6da5d438125` (2026-11-05), Apache-2.0. 62,972 modules, 18.0M lines (about 7.7 times Mathlib). Lean v4.34.0-rc2, Mathlib `16edf57d` (2026-09-01). No `sorry` and only the standard axioms [S, README]; no CI, tags or published build cache; a cache service is "planned" [S]. Two tiers: StacksCore (human-reviewed, 445 files, no algebraic geometry) and StacksFrontier (AI-written; each statement checked against its Stacks tag, no human review yet [S]). **Every item below is in StacksFrontier.** Re-checked 2026-11-05 [R]: `012108f6` is still the newest commit. It fixes the first published commit (`f8e70c5d`, 2026-11-04) "so that lake build succeeds", and there is no CI, so "Lean's kernel checks every proof" is the source's claim [S], not something we have checked.
 
 **What can be used directly** [R, source reading; "real" means a definition with a body, no sorry found]:
 
@@ -217,11 +217,18 @@ Estimates [E]: 20–25 key definitions, of which about 15–20 are placeholders 
 
 **Absent** [R, search]: the Hom stack $\mathrm{Mor}(X,\mathcal Y)$ for a stack $\mathcal Y$ (its own `Examples/Stacks/NonAlgebraicHomStack.lean` says it "does not exist in this library"), hence $\mathrm{Bun}_G$; reductive groups, root data, Borels, pinnings, the Langlands dual; square roots of $\omega_X$; D-modules and local systems in GLC's sense; ∞-categories, stable or presentable categories, Ind-completion in the enhanced sense; derived stacks and quasi-smooth morphisms; IndCoh and Nilp; the Ran space, Hecke stacks, the affine Grassmannian, $\mathrm{Rep}(\check G)$.
 
+**Two stack formalisms** (D42) [R, 2026-11-05]:
+- **Stacks** @ `012108f6`: an algebraic stack is a category fibred in groupoids over Stacks' own big fppf site of $S$, with Stacks' own stack condition (`StacksFrontier/AlgebraicGeometry/Stacks/AlgebraicStack.lean`); a group scheme is Stacks' structure `GroupSchemeOverPoints` (`StacksFrontier/AlgebraicGeometry/GroupScheme/Defs.lean`).
+- **Tau Ceti** at our pin (tag `v4.36.0-rc2`): stacks are `Cat`-valued pseudofunctors on schemes with Mathlib's `Pseudofunctor.IsStack` (`TauCeti.AlgebraicGeometry.SchPseudofunctor`). The tag already holds an algebraic-space predicate on presheaves of sets on schemes (`TauCeti.AlgebraicGeometry.Spaces.IsAlgebraicSpace`, added 2026-11-02) and torsors under a sheaf of groups on a site (`CategoryTheory.Sheaf.Torsor`, 2026-10-30); $G$ lives in a full subcategory of finite-type affine group schemes defined through Hopf algebras. There are no algebraic stacks yet. Its roadmap fixes the convention for everything it will build: "Stacks are pseudofunctors with Mathlib's `IsStack` … group objects are `GrpObj` in the cartesian monoidal categories `Over S`" (SchemeAndStackFoundations README, convention 3, TauCetiRoadmap @ `156df567`). Layer 1 has started since the STATUS file of 2026-10-25.
+- **Consequence [J]:** building $\mathrm{Bun}_G$ from Stacks' torsor stacks with Tau Ceti's $G$ needs bridge definitions: Tau Ceti's $G$ into Stacks' group schemes, Mathlib's fppf topology into Stacks' site with its cardinal cutoff, and later Stacks' stacks into the ∞-categorical sheaf theory D-modules need. Each bridge is a key definition in the closure, and the Stacks site would become a standing parameter of the main statement.
+- **The statement may need no Stacks definition at all [J, from N3's reading of the conventions]:** GLC takes its D-modules on prestacks from AGKRRV, which follows Gaitsgory–Rozenblyum (crystals). On that route the statement needs $\mathrm{Bun}_G$ only as a functor, $S\mapsto$ the $G$-torsors on $X\times S$; algebraicity and smoothness appear only in theorems, which are sorry'd anyway.
+
 **How this changes the design:**
-- **Bun_G** becomes a local goal-1b node built on copied pieces: the stack of $G$-torsors on $X\times S$ (from Stacks' torsor stacks and quotient stacks), with Tau Ceti's $G$. Its algebraicity is a theorem it needs, so it starts as a budgeted sorry like any other.
-- **Foundations** re-export Stacks objects the same way as Tau Ceti objects (§2.3 import rules); the Foundations-name list gains them.
-- **Universes and sites:** Stacks states everything over a chosen `BigFppfSite` with a cardinal cutoff; the abstract fixes one such site in its standing parameters [J]. A1's hypotheses do not change, because the stub does not use Stacks yet.
-- **Build order:** the copy tool and pilot in A2, blueprint links in B1, a fourth B1b route, the bulk in goal 1b, the proofs before goal 2 (§3).
+- **The blueprint decides first (D42).** B1's blueprint fixes one formalism for every geometric object in the statement and lists, per node, the Stacks declarations it would use (in definitions, or only in theorems) and the bridges to Tau Ceti's objects. The copy tool (K15) and a pilot are built only if B1b then sends a node to *copy from Stacks*, and the pilot copies that node with its bridges.
+- **Bun_G** is a local goal-1b node. Which pieces it is built from (Tau Ceti's sheaf torsors and pseudofunctors, Stacks' torsor and quotient stacks through bridges, or a later Tau Ceti stack layer) is the blueprint's call above. Its algebraicity is a theorem, so it starts as a budgeted sorry like any other.
+- **Foundations** re-export Stacks objects, if any are copied, the same way as Tau Ceti objects (§2.3 import rules); the Foundations-name list gains them.
+- **Universes and sites:** only if the blueprint chooses Stacks' formalism does the abstract fix one Stacks `BigFppfSite` with a cardinal cutoff among its standing parameters [J]. A1's hypotheses do not change, because the stub does not use Stacks.
+- **Build order:** the formalism choice and the Stacks links in B1, a fourth B1b route, then (only if B1b uses it) the copy tool and a pilot on that node, the bulk in goal 1b, the proofs before goal 2 (§3, D42).
 - **Dependencies:** none added. Stacks is source material, not a Lake dependency (§8).
 
 **Build-time estimate for Stacks** [E, not measured, by instruction]. Base: Mathlib is 2.35M lines and 6.1 GB compiled on this Mac [R]; a full Mathlib build here is taken as 2–3 h [E, public reports], about 1 h per million lines, times 1–2.5 for AI-written proofs and 16 GB of memory [J].
@@ -246,7 +253,7 @@ A GitHub runner job (6 h, 4 CPUs, 14 GB disk) could build none of the first thre
 | **Copy the needed declarations, statements first, Tau Ceti kept as a dependency** | **no Stacks cache: the copy is compiled as part of GLCinLean and kept by the local `.lake` and the CI build cache** | **chosen (D41)** |
 | Copy Tau Ceti the same way | compiled locally, about 30–60 min [E] | kept as a fallback only: Tau Ceti is already on the newest Lean and comes compiled for free |
 
-**Meaning preservation** (D41): every copied declaration records its upstream file and commit (`glc/stacks-copy.toml`). The K15 diff check allows only recorded renames, sorry'd or ported proofs, and import lines. Copied key definitions get tiers 1–5 and are tagged *to be reviewed*; other copied definitions get tiers 1–3 (§2.6).
+**Meaning preservation** (D41, D42): every copied declaration records its upstream file and commit (`glc/stacks-copy.toml`). The K15 diff check allows only renames backed by a Mathlib `@[deprecated]` alias, sorry'd or ported proofs, and import lines; anything else needs your approval. Copied theorems whose statements pass it count as copied proof debt, with no entry in the human-owned budget (D42). Copied key definitions get tiers 1–5 and are tagged *to be reviewed*; other copied definitions get tiers 1–3 (§2.6), compared against the Stacks tags they cite.
 
 ### 2.4 The machine part (Mac mini only, D35)
 
@@ -292,7 +299,7 @@ A GitHub runner job (6 h, 4 CPUs, 14 GB disk) could build none of the first thre
   - A batch runs over the queued entries that have been stable for 6 h or more (E5): at 02:00 local once launchd exists (Stage C); before that, at the start of each session you start, or on demand.
 - **Tier 1:** a Claude read-back on the strongest model at max effort (Fable, or Opus if the Fable sub-limit binds: Q3).
 - **Tier 2:** a Codex read-back on the resolved frontier model (today `gpt-6-astra`), at `ultra` or `max` (Q3).
-- **Tier 3:** the comparator.
+- **Tier 3:** the comparator, against the source slice (D42): the paper's LaTeX for GLC definitions; for Tau Ceti and Stacks definitions, the source their declaration cites (a Stacks tag's LaTeX from the pinned Stacks Project, else a *secondary source*: the citation plus the docstring's wording, else *no source*). The read-backs never see the source.
 - **Tier 4:** you, once per key definition; then again only on *mismatch*, *models disagree* or a flagged edit.
 - **Tier 5:** the expert (P1).
 
@@ -300,8 +307,9 @@ A GitHub runner job (6 h, 4 CPUs, 14 GB disk) could build none of the first thre
 - A Tau Ceti definition that **is a key definition**, meaning it stands for an object the statement names, gets the **full pipeline, tiers 1–5**, including your one-time check. Today these are the Tau Ceti objects that Foundations re-exports for GLC I §1's objects: reductive group, pinning, curve, canonical bundle, DG categories, and later any provider that replaces a placeholder. Its card is tagged *to be reviewed* until those tiers pass, like any other key definition (D17, D28 criterion 4).
 - **Every other Tau Ceti definition in the closure** (the ones those definitions are built from) gets tiers 1–3. You see it only on *mismatch* or *models disagree*.
 - The A1 closure run reports the counts. If the second group is large, its first pass runs in order of distance from the abstract, within the budget of §6.
+- **Sources (D42):** the GLC papers do not define these objects, so the comparator uses the source each declaration cites. Tau Ceti docstrings often cite Stacks tags (for example `IsAlgebraicSpace` cites Stacks 025Y) [R]; reductive groups and pinnings are not in the Stacks Project, so they get a *secondary source*. Each card shows the source kind, and a key definition with *no source* moves up your queue.
 
-**Copied Stacks definitions** (D41): the same rule. A copied definition that is a key definition (for example the algebraic stack, $BG$, the stack of torsors, QCoh or D_QCoh of a stack, once Foundations re-exports them) gets tiers 1–5 and is tagged *to be reviewed*; the other copied definitions in the closure get tiers 1–3. The K15 diff check runs in CI on every change, and the read-backs see the copied text, not the upstream one.
+**Copied Stacks definitions** (D41): the same rule. A copied definition that is a key definition (for example the algebraic stack, $BG$, the stack of torsors, QCoh or D_QCoh of a stack, once Foundations re-exports them) gets tiers 1–5 and is tagged *to be reviewed*; the other copied definitions in the closure get tiers 1–3. The K15 diff check runs in CI on every change, and the read-backs see the copied text, not the upstream one. The comparator's source is the Stacks tag the declaration carries (`@[stacks TAG]`), from the pinned Stacks Project LaTeX (D42).
 
 **Tested read-back invocations** (each step was tested on 2026-11-04 [R]; not yet assembled into one harness):
 
@@ -358,7 +366,7 @@ CODEX_HOME=$CLEAN codex exec -m "$MODEL" -c model_reasoning_effort="$EFFORT" \
    - emit JSON;
    - port the toy library and its planted faults as the kit's own tests;
    - make the review decisions real, since the prototype predates them:
-     - the closure walks into Tau Ceti and stops only at Mathlib and core, with `[tauceti]` entries (Finding 2; the prototype stops at every non-project module, `Review.lean` l.125–128 [R]); the `[stacks]` tag is assigned by module prefix (`GLCinLean.Stacks`) from the config, ready for A2's pilot (D41);
+     - the closure walks into Tau Ceti and stops only at Mathlib and core, with `[tauceti]` entries (Finding 2; the prototype stops at every non-project module, `Review.lean` l.125–128 [R]); the `[stacks]` tag is assigned by module prefix (`GLCinLean.Stacks`) from the config, ready for a later copy (D41, D42);
      - Tau Ceti bodies are fingerprinted (Finding 2);
      - budget entries are bound to statement fingerprints, and every reachable `sorry` is traced, Tau Ceti included (Q13);
      - the Foundations-name warning (Q14);
@@ -380,12 +388,13 @@ CODEX_HOME=$CLEAN codex exec -m "$MODEL" -c model_reasoning_effort="$EFFORT" \
 - Write CI (K14). You run N7's repository-settings commands and create the GitHub App (Q4).
 - Write data format v0 and the schemas (K3), and the K4 checks.
 - Write the `review` command (D9) that writes records with fingerprints. Use SHA-256 over the canonical text; the FNV-1a hash is for the prototype only.
-- **Stacks pilot (D41):** write K15 (copy tool, copy record, diff check, with planted faults: an edited definition body and an edited statement must fail). Then copy `AlgebraicGeometry.Stack.IsAlgebraicStack` and `AlgebraicStacks` with what they need (file-level closure 100 modules, 24k lines [R]) from Stacks @ `012108f6`, statements first, into `GLCinLean/Stacks/`, and make it compile at our pins. Record per file: compiled unchanged, renames only, or other fixes, and the declarations pulled in. The rates replace the [E] in §2.3a and size goal 1b's copying. Keep the source clone outside the repository and delete it afterwards. Stacks itself is not built.
+- *Moved by D42:* the Stacks copy tool and pilot are no longer in A2. They follow B1's review and run only if B1b sends a node to Stacks (see B1b).
 
 **A3: session 3.**
 - K5, K7 and K8.
 - **D27 test 2 as one script:** both CLIs, from a `mktemp -d` working directory, with markers in the repository and in a fake `references/papers/`.
-- K6, and **D27 test 3**: a swapped quantifier and a dropped hypothesis must give *mismatch*.
+- K6 with the source rule of §2.6 (D42): add the Stacks Project LaTeX (`stacks/stacks-project` @ `a04446e5`, GFDL 1.2) to the papers manifest, fetched into the git-ignored `references/` and never committed, with the tag-to-label map from its `tags/tags` file; fetch only the `.tex` files the cited tags need.
+- **D27 test 3**: a swapped quantifier and a dropped hypothesis must give *mismatch*.
   - **Misleading-name case (decided in review, Finding 7):** a definition whose name says the paper's object while its body is a different construction (for example `poincareObject` with the wrong character, or a missing twist).
   - **Pass rule:** both read-backs describe the body correctly, and the comparator says *mismatch*. Mentioning the name is allowed.
   - **When it runs:** in A3, then after any Claude or Codex model change, CLI update, or edit of the read-back or comparator prompt, not on every commit. Cost: about 0.3–0.5% of a Claude week and under 0.1% of a Codex week per run [E].
@@ -404,16 +413,27 @@ CODEX_HOME=$CLEAN codex exec -m "$MODEL" -c model_reasoning_effort="$EFFORT" \
    - (i) each node's "covered by a Tau Ceti roadmap" field, against TauCetiRoadmap and Tau Ceti's code at the pinned commit (read-only, D27), and its Stacks field against Stacks @ `012108f6` (D41);
    - (ii) "foundational or frontier", judged independently, by Tau Ceti's test "what graduate students in the area would know" (B5, amendment 4);
    - (iii) size estimates, tagged [E] with low confidence;
-   - (iv) the list of degenerate-case lemmas for goal 1b (Q7), for correctness and for whether each tests a different part of the construction.
+   - (iv) the list of degenerate-case lemmas for goal 1b (Q7), for correctness and for whether each tests a different part of the construction;
+   - (v) the formalism choice and the bridges (D42): one formalism for every geometric object, faithful to the papers' conventions, and every bridge between formalisms named as a node.
 5. You settle disagreements by prompting Astra.
 
 Astra should also plan the Foundations nodes; N9 C-3 found that nobody else is assigned them. Each Foundations node names the Stacks declaration that can provide it, if any (§2.3a; Stacks' `#stacks_tags` index and website list them by tag), next to its Tau Ceti field (D41).
 
+**The formalism (D42).** The blueprint prompt asks Astra to fix one formalism for every geometric object in the statement, faithful to the papers' conventions (GLC takes prestacks and crystals from AGKRRV and Gaitsgory–Rozenblyum), and Tau Ceti's and Stacks' stack formalisms differ (§2.3a). For each node it lists the Stacks declarations it would use, split into those used in definitions and those used only in theorems, and the bridges to Tau Ceti's objects (for example from Tau Ceti's $G$ to Stacks' group schemes).
+
 **B1b: the goal-1b route, decided per node (Q8, decided in review).** Straight after the review, every foundation node is classified, and you choose for each unbuilt one:
 - **wait** (a Tau Ceti roadmap covers it; picked up later by a pin bump, K12);
 - **copy from Stacks** (D41): the node's Stacks declarations are copied with K15, statements first;
-- **build locally** (Staging, goal 1b), on copied Stacks pieces where they help (for example $\mathrm{Bun}_G$ from Stacks' torsor and quotient stacks);
+- **build locally** (Staging, goal 1b), on copied Stacks pieces where they help and fit the blueprint's formalism (for example $\mathrm{Bun}_G$ from Stacks' torsor and quotient stacks, through bridges), or on Tau Ceti's sheaf torsors and pseudofunctors (D42);
 - **propose** a Tau Ceti roadmap, optionally and only if you choose to make that outward signal (D2). A narrow roadmap resting on existing code or merged roadmaps is the feasible kind (§4 row "Tau Ceti roadmap acceptance").
+
+**If any node is sent to Stacks (D42),** one session first builds K15 (copy tool, copy record, diff check, with planted faults: an edited definition body, an edited statement and a rename without a deprecated alias must fail) and pilots that node:
+- copy its declarations with what they need from Stacks @ `012108f6` (or the newest commit, recorded), statements first, into `GLCinLean/Stacks/`, and make them compile at our pins;
+- write the bridges the blueprint names, for example from Tau Ceti's $G$;
+- record per file: compiled unchanged, renames only, or other fixes; the declarations pulled in; and the bridge definitions written. The rates replace the [E] in §2.3a and size goal 1b's copying;
+- keep the source clone outside the repository and delete it afterwards. Stacks itself is not built.
+
+If the measured costs are far above the estimates, you revisit that node's route. If no node is sent to Stacks, K15 is not built.
 
 Nothing is sent anywhere unless you choose to. The answer also shows how much goal-1b work is local, which informs Q2 (whether a 24/7 loop is worth building).
 
@@ -450,13 +470,13 @@ Reached when goal 1b is done, the key definitions are reviewed (D17), the **dege
 ### Goal 2
 
 - The proof.
-- Port the proofs of the copied Stacks theorems from the recorded commit (or a newer one through the scout), so their budget entries close (D41).
+- Port the proofs of the copied Stacks theorems, if any, from the recorded commit (or a newer one through the scout), so their copied proof debt closes (D41, D42).
 - A final axiom audit with an **empty** sorry budget, with lean-action's `axiom-audit` as an extra gate.
 - TauCetiTools if scale or upstreaming needs it (D16).
 
 ---
 
-## 4. What was tested or checked (on 2026-11-04; Stacks rows on 2026-11-05)
+## 4. What was tested or checked (on 2026-11-04; Stacks and D42 rows on 2026-11-05)
 
 | Component / question | Test or check | Result | Tag |
 |---|---|---|---|
@@ -494,7 +514,7 @@ Reached when goal 1b is done, the key definitions are reviewed (D17), the **dege
 | D27 test 3 (comparator sensitivity) | Read-back with planted weaknesses | Fable 3 of 3, with honest names; no comparator prompt yet. Not yet tested: a misleading name (added in review, Finding 7) | R (partial) |
 | V5 hypotheses | GLC I v3 l.717; AGKRRV l.2066, 2087, 15123; GLC II l.1497, 37294 | GLC II: "a fixed algebraically closed field $k$ of characteristic 0". AGKRRV: $X$ connected. GLC I l.1511 fixes $\omega_X^{1/2}$, and §1.3 needs a pinning. The Lean hypothesis block elaborates | R |
 | Abstract inventory | GLC I §1 read; Mathlib `1b1ccf4b` and Tau Ceti `7ed979dc` searched | 5 parameters, 23 constructions, about 10 generic foundation families, 8 theorems used inside definitions. **No provider has** D-modules, stacks, Bun_G, de Rham local systems, IndCoh, DAG, Ran space or presentable ∞-categories. Tau Ceti has reductive groups, pinnings, curves, line bundles, DG categories and the DG nerve | R |
-| Tau Ceti roadmap coverage (review, Q8) | TauCetiRoadmap @ `a0ad405` (2026-11-04T11:19Z): text search of merged roadmaps; STATUS files | EnhancedDerivedSheaves (#908) plans stable and presentable ∞-categories, PrL tensor products, Ind, spectra, animated rings, cotangent complex; "the enhancement itself … does not yet exist" (STATUS 2026-10-23). SchemeAndStackFoundations (#779) plans algebraic spaces and stacks; Layers 1–3 untouched (STATUS 2026-10-25). **No roadmap** for D-modules on schemes or stacks, IndCoh, de Rham local systems, $\mathrm{Bun}_G$ of a curve, or derived stacks | R |
+| Tau Ceti roadmap coverage (review, Q8) | TauCetiRoadmap @ `a0ad405` (2026-11-04T11:19Z): text search of merged roadmaps; STATUS files | EnhancedDerivedSheaves (#908) plans stable and presentable ∞-categories, PrL tensor products, Ind, spectra, animated rings, cotangent complex; "the enhancement itself … does not yet exist" (STATUS 2026-10-23). SchemeAndStackFoundations (#779) plans algebraic spaces and stacks; Layers 1–3 untouched (STATUS 2026-10-25; Layer 1 has since started, see the D42 row "Stack formalisms"). **No roadmap** for D-modules on schemes or stacks, IndCoh, de Rham local systems, $\mathrm{Bun}_G$ of a curve, or derived stacks | R |
 | Tau Ceti roadmap acceptance (review, Q8) | CONTRIBUTING, README, CODEOWNERS @ `a0ad405`; all 1,517 PRs via `gh` | Requirements: PR touches only `TauCetiRoadmap/<Area>/` (README definitive, `Suggested.lean`, `metadata.toml` arXiv topic); `build` passes; one approval from `roadmap-reviewers` auto-merges; models named; "no gaps", lowest rung close to existing material, full library not just a headline; a subject-area expert "often the difference between a roadmap merging and sitting". Outside authors' new roadmaps: 73 (30 merged, 4 closed, 39 open); of 18 opened ≥30 days ago, 10 merged (2 within 30 days), 8 open, 0 closed; 26 of 30 approvals by one reviewer. Estimate: a narrow, well-grounded roadmap merges eventually at about 50–70%, one for IndCoh or D-modules on stacks at about 20–40%; merged is not built | R / E |
 | Torus case (§1.5) | Read | No labelled theorem. "It is known" (uncited) and "Unwinding the definitions". Typo at l.1773 | R |
 | **Upstream since 3 Nov** | Tau Ceti `git ls-remote`, `gh api`, roadmaps, claims; Mathlib; arXiv | Newest tag still `v4.36.0-rc2` (re-checked 10:55Z). `main` = `7ed979dc` (06:35Z), with 110–1,107 commits a day; its Mathlib pin is still `1b1ccf4b`. **No progress on GLC paths** (D-modules, IndCoh, LocSys, stacks). Bun_G is planned only over finite fields, in unmerged roadmap PRs #999 and #1490. #1056 and #848 unchanged. GLC I–V arXiv versions unchanged | R |
@@ -503,6 +523,9 @@ Reached when goal 1b is done, the key definitions are reviewed (D17), the **dege
 | **Stacks closure sizes** (D41) | file-level import graph from source headers (script; not compiled) | algebraic stack: 100 modules, 24k lines; $BG$: 676, 248k; stack of torsors: 33; D_QCoh on ringed sites: 22; the statement's definitions together: 4,964, 1.6M; with algebraicity theorems: 18,914, 5.9M; all `Stacks/`: 23,794, 7.2M | R |
 | **Stacks build time** (D41) | estimate only, by instruction; Mathlib measured here as base (8,666 files, 2.35M lines, 6.1 GB compiled) | §2.3a's table: all of Stacks 1–2 days and about 45 GB | R (base) / E |
 | Stacks and Tau Ceti names (D41) | `git grep` at Tau Ceti `e0610cce` for `BigFppfSite`, `IsAlgebraicSpace`, `IsAlgebraicStack`, `AlgebraicStacks`, `namespace AlgebraicGeometry.Stack` | no clash found; the copy keeps Stacks' names. A full clash check is the pilot's compile | R |
+| **Stack formalisms** (D42) | `gh api` reads of Stacks @ `012108f6` (`Stacks/AlgebraicStack.lean`, `GroupScheme/Defs.lean`), Tau Ceti at tag `v4.36.0-rc2` (`AlgebraicGeometry/Stack/Basic.lean`, `AlgebraicGeometry/AlgebraicSpace/Basic.lean`, `CategoryTheory/Sites/NonabelianCohomology/Torsor.lean`, `AffineGroupScheme/Reductive/Basic.lean`), SchemeAndStackFoundations README and STATUS @ TauCetiRoadmap `156df567` | Stacks: categories fibred in groupoids over its own big fppf site, its own stack condition, `GroupSchemeOverPoints`. Tau Ceti: `Cat`-valued pseudofunctors with Mathlib's `Pseudofunctor.IsStack`; `IsAlgebraicSpace` on presheaves of sets on schemes (2026-11-02, in the tag); `Sheaf.Torsor` (2026-10-30, in the tag); $G$ via Hopf algebras; no algebraic stacks. The roadmap's convention 3 fixes pseudofunctors and `GrpObj` in `Over S` for everything it builds; its Layer 1, "untouched" in the STATUS of 2026-10-25, has started | R |
+| Upstream on 5 Nov (D42) | `git ls-remote` Tau Ceti tags; `gh api` Stacks commits | Newest Tau Ceti tag still `v4.36.0-rc2`. Stacks' newest commit still `012108f6`; it fixes the first published commit `f8e70c5d` "so that lake build succeeds"; no CI | R |
+| Stacks Project LaTeX (D42) | `gh api repos/stacks/stacks-project` | `master` @ `a04446e5` (2026-07-28); `COPYING` is GFDL 1.2; `tags/tags` maps tags to labels. Fetch locally like the papers; never commit | R |
 | Licences (C1) | LICENSE files | tracker `c223b67`, numlib-auto `ac8840c0` and metrics: Apache-2.0. tracker-graph-explorer `bbd8cc6`: MIT. No NOTICE files. numlib-auto's tracker submodule points at an old commit, so pin tracker directly | R |
 | V1 (claims repository) | TauCetiWorker @ `cae2886`, read | None needed for one worker; phase 2 only | R (code reading) |
 | V2 (announcements) | Toy package; Reservoir rules | TauCetiTools set-up announces nothing. **Reservoir auto-lists** public repositories that have a manifest, an OSI licence and at least 2 stars. `reservoir = false` gives `doIndex=false` [R toy] | R / S |
@@ -601,9 +624,11 @@ Calibration [R polls, E ratio]:
 | The torus case cannot be proved at the checkpoint | D30's checkpoint never fires as written | Q7: the checkpoint now needs proved degenerate-case lemmas, not the torus case |
 | CI runner disk (14 GB) runs out | Random CI failures | Delete unused preinstalled toolchains at the start of each job (K14) |
 | Memory with a lean-lsp server plus a build | Swap and stalls on 16 GB | The memory guard; A3 measures it |
-| The Stacks copy breaks badly on our pins, or pulls in far more than expected (D41) | Goal-1b copying takes much longer than §2.3a estimates | A2's pilot measures both before any bulk work; B1b can then prefer waiting or local building for expensive nodes |
-| A copied Stacks definition is wrong (AI-written, not human-reviewed upstream) | A wrong foundation under the statement | Same review rule as Tau Ceti (§2.6); the scout raises upstream fixes to copied declarations |
-| A port fix changes meaning | The copy differs from Stacks in substance | The K15 diff check allows only recorded renames, proofs and imports; anything else needs your approval |
+| Two stack formalisms in one statement (D42) | Bridge definitions in the closure; a Stacks site as a standing parameter of the main statement; re-review when Tau Ceti's own stacks land | B1 fixes one formalism and names every bridge as a node; B1b weighs *wait* for Tau Ceti's Layer 1 against *copy*; no copying before that |
+| The Stacks copy breaks badly on our pins, or pulls in far more than expected (D41) | Goal-1b copying takes much longer than §2.3a estimates | The pilot after B1b measures both, bridges included, before any bulk work; you can then switch the node to waiting or local building (D42) |
+| A copied Stacks definition is wrong (AI-written, not human-reviewed upstream) | A wrong foundation under the statement | Same review rule as Tau Ceti (§2.6), with the comparator reading the cited Stacks tag (D42); the scout raises upstream fixes to copied declarations |
+| A copied theorem statement is false (upstream's "no sorry, kernel-checked" is [S]; no CI; its first commit did not build) | Copied proof debt that cannot be paid | Reported as its own count (D42); found when goal 2 ports the proofs, as your per-entry approval could not have found it either |
+| A port fix changes meaning | The copy differs from Stacks in substance | The K15 diff check allows only renames backed by a Mathlib deprecated alias, proofs and imports; anything else needs your approval (D42) |
 | Tau Ceti later blocks the Stacks port (for example by lagging behind a Mathlib it needs) | No common pin | Fallback (D41): copy the needed Tau Ceti pieces with K15 as well |
 | Reboot with FileVault | The loop stops until the Mac is unlocked | Pre-boot SSH unlock; the digest reports the gap |
 
@@ -622,7 +647,8 @@ Calibration [R polls, E ratio]:
 | lean-action | `v1.7.0` = `fe408643ea7367d8c0404a8be3975bb145f5fb64` | Apache-2.0 | its global axiom audit only in goal 2 |
 | numlib-auto prompts | `ac8840c062a17098388b34407a8dad0e0eaad084` | Apache-2.0 | adapted, with attribution |
 | Claude Code / Codex CLI | 2.1.318 / 0.163.0 | — | pin; re-run D27 test 2 after updates |
-| Stacks (source material, not a dependency) | `AxiomMath/Stacks` @ `012108f61d7f92a6ffc35ec3f263b6da5d438125` | Apache-2.0 (the Stacks Project text itself is GFDL; link to it, do not copy it) | copied declarations only, recorded in `glc/stacks-copy.toml`; the scout watches `main` (D41) |
+| Stacks (source material, not a dependency) | `AxiomMath/Stacks` @ `012108f61d7f92a6ffc35ec3f263b6da5d438125` | Apache-2.0 (the Stacks Project text itself is GFDL; link to it, do not copy it) | copied declarations only, recorded in `glc/stacks-copy.toml`, and only if B1b sends a node to Stacks; the scout watches `main` (D41, D42) |
+| Stacks Project LaTeX (comparator source, not a dependency; D42) | `stacks/stacks-project` @ `a04446e57ec1fbc252a871afcec7752fb2807b14` (2026-07-28) | GFDL 1.2 | fetched by the papers manifest into the git-ignored `references/` from A3; never committed |
 | Pattern sources | `edemaine/lean-canny@af8d9dc`, `lean-wang@64268a3` (Apache-2.0); `loose-ends@cd2e5a9`, `mean@67d23a6` (MIT) | as stated | ideas only (D39) |
 
 ---
@@ -718,7 +744,7 @@ Ordered by how much each one reshapes the plan. "Blocks" says which stage must w
 | Q18 | **`setup-token`** before 2026-11-14 | now, or only with Stage C | only with Stage C; sessions keep working with `/login` | Stage C |
 | Q19 | **The kit's name** | **Decided in review:** `reviewkit` (Lake package `ReviewKit`) until the split. The data format's identifiers do not contain the name, so a rename is a folder move | — | — |
 | Q20 | **Where the feasibility reports go** | **Decided in review (Finding 5): done.** Reports and A1's prototypes committed to GLCinLeanPrivate under `private/feasibility/2026-11-04/` (commit `4757757`; you push) | — | — |
-| Q21 | **Using the formalised Stacks project** | **Decided (D41, 2026-11-05):** stay on Tau Ceti's newest tag; copy only the needed Stacks declarations, statements first, Tau Ceti kept as a dependency; pilot in A2, bulk in goal 1b; same review tiers as Tau Ceti plus the diff check; scout watches upstream, re-copy on need; no Stacks cache needed | — | — |
+| Q21 | **Using the formalised Stacks project** | **Decided (D41, 2026-11-05):** stay on Tau Ceti's newest tag; copy only the needed Stacks declarations, statements first, Tau Ceti kept as a dependency; pilot in A2, bulk in goal 1b; same review tiers as Tau Ceti plus the diff check; scout watches upstream, re-copy on need; no Stacks cache needed. **Revised in the second review (D42, 2026-11-05):** B1's blueprint fixes one formalism and names the bridges; the copy tool and a pilot on a linked node follow B1's review, only if B1b sends a node to Stacks; copied theorems are budgeted by the copy record and the diff check (copied proof debt), renames only through Mathlib deprecated aliases; the comparator reads cited Stacks tags | — | — |
 
 ---
 
@@ -745,13 +771,18 @@ Paste the block below into a new Claude Code session opened in the GLCinLean che
 - `tracker check && tracker lint`, run with `--dir blueprint/plans`, pass on a minimal plan that covers the stub.
 - The papers manifest and fetch script exist (D6), and `references/papers/` stays git-ignored.
 - `AGENTS.md` has items 1–8 of the plan's §10, and `THIRD_PARTY_NOTICES.md` exists.
-- You have reviewed the whole project and deleted every file, cache, worktree, branch and the like that the further work in the plan does not need, because the Mac mini's disk is very limited and the next stages need a clean, simple workspace.
+- You have deleted everything that later work in the plan does not need, because the Mac mini's disk is very limited and the next stages need a clean, simple workspace:
+  - inside the checkout (not `private/`): worktrees, branches, scratch and stale build outputs that no later step needs;
+  - outside it, rebuildable or re-downloadable files this project's work left behind: Mathlib cache archives for commits other than the pinned one, leftover clones and probes from the feasibility and Stacks sessions, tool caches that their tools re-create on demand, and toolchains that no `lean-toolchain` file under `~/Documents/Projects` names;
+  - keep `private/` (its prototypes feed A2, A3 and Stage C), the pinned Mathlib's archives in `~/.cache/mathlib` (457 MB; they save a 40-minute download if `.lake` is rebuilt), every toolchain a project names, other projects and their build folders (D31 applies only from Stage C, after Q17), and anything uncommitted or unpushed;
+  - before deleting anything outside the checkout, list each item with its size; the report gives every deletion, its size, and free disk before and after.
 - The work is in local commits on `main`. Your report says what was done, what did not work, and what is left for A2.
 
 **Context:**
 - The plan and `plans/2026-11-design-discussion-log.md` hold the design and decisions. Read the plan's §2.1–2.3, §3 A1, §4, §10 and §11, including any answers the review session recorded.
-- The review session decided every §11 question A1 touches (Q5, Q6, Q12–Q14, Q19), and several design changes (Findings 2–7). §3 A1 lists what the prototype must gain because of them. Follow the plan as revised.
-- Stacks code is copied, not imported or built (D41, §2.3a). A1 only reserves the `[stacks]` closure tag; the copy tool and the pilot are A2's.
+- The review session decided every §11 question A1 touches (Q5, Q6, Q12–Q14, Q19), and several design changes (Findings 2–7). §3 A1 lists what the prototype must gain because of them. The second review (D42) changed only later stages. Follow the plan as revised.
+- Stacks code is copied, not imported or built (D41, §2.3a). A1 only reserves the `[stacks]` closure tag; the copy tool and a pilot come only after B1's review, and only if B1b sends a node to Stacks (D42).
+- Pin Tau Ceti to the tag in §8 (`v4.36.0-rc2`, still the newest on 2026-11-05). If a newer tag exists when you start, report it and do not bump; bumps are K12's job.
 - Starting material from the 2026-11-04 feasibility runs, in `private/feasibility/2026-11-04/` (see its README). If `private/` is missing, clone GLCinLeanPrivate there first.
   - `prototypes/L3/review/Review.lean` and `prototypes/L3/glcprobe/Toy/`: the prototype checks and the toy library with planted faults.
   - `prototypes/L1/lakecfg/lake-config.toml`: the Tau Ceti cache service entry.
