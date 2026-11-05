@@ -28,7 +28,7 @@ The discussion is complete: every question named in the prompt is decided or par
 | §13.5 Check tauceti-explorer scripts first | superseded by D12 |
 | §13.5 Ask Tau Ceti maintainers on Zulip | D2 (the user's call; public text in the user's own words) |
 | New: target statement | D14 (V5 on the field hypothesis) |
-| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38, D39, D40, D41, D42; P2 timing set by D40 |
+| New: overall strategy and phases | D13, D15, D18, D28, D29, D30, D31, D32, D33, D34, D35, D36, D37, D38, D39, D40, D41, D42, D43; P2 timing set by D40 |
 | New: fidelity and review | D8, D17, D19, D27 |
 | New: Tau Ceti pace | D26 |
 | New: other machines, papers, models | D4, D6, D25 |
@@ -471,6 +471,38 @@ Brainstorm status: B1 and B4 are superseded by D26 except where D26 keeps them; 
   - A1 pins §8's tag and only reports a newer one;
   - the plan's facts are refreshed to 5 Nov;
   - the run prompt is deleted.
+
+### D43. Cross-model plan review by GPT-6 Astra: 21 findings dispositioned (2026-11-05)
+
+- **Context:** the user had a read-only review prompt regenerated (with `prop`) and ran it in Codex on GPT-6 Astra, parallel to the D40/D42 sessions. Astra's report (21 findings F01–F21, two executed Lean probes, no files changed) is kept as evidence in GLCinLeanPrivate under `plan-reviews/2026-11-05-astra-plan-review.md`. Claude verified the load-bearing evidence against the prototype code, the feasibility reports and the log before judging [R]; the user decided the disposition. The plan marks the changes "D43/F…".
+- **Verified highlights [R, 2026-11-05]:**
+  - **F03:** the prototype fingerprint is name-free and serialises an opaque constant by kind and type only (`Review.lean:240–272`), so distinct opaque objects of the same type collide — Astra's probe got identical hashes for `TestA → TestA` and `TestA → TestB`. A swapped object in the statement would have evaded the pin.
+  - **F01:** the closure rejects project modules outside {abstract, Foundations} (`Review.lean:129–137`) and §2.3 forbade Foundations importing Staging, while goal 1b's main route is local Staging work: locally built foundations had no legal route into the statement.
+  - **F05:** the Seatbelt sandbox covers Bash and its children only; lean-lsp's `lean_run_code` is a working file-read path once allowed (N5). §2.5's worker isolation did not cover its own MCP server.
+  - **F02:** identical declaration text elaborates differently under a different local instance (Astra's probe: a local `OfNat` made the same `def value : Nat := 0` evaluate to 7), so K15's text diff is a lexical guard, not meaning preservation.
+  - **F07:** N8's per-run costs ($3–8 read-back, $4–10 comparator, never run) put a 25-definition pass at 10–35% of the Claude week; E5's "about 5%" was unsupported.
+- **Disposition (user, 2026-11-05):** accept F01–F06, F09, F11, F12, F14–F16, F19–F21 as proposed; accept F07, F08, F13, F17 with Claude's modifications; F10 decided by the user. Nothing rejected.
+  - **F10 (user chose the two-level pin; revises D40 Finding 3):** the hard pin holds the main theorem's and hypothesis block's own statements with named references and fails CI on mismatch; the full transitive digest only marks reviews stale and queues re-review, so goal-1b placeholder replacements and tag bumps do not stop CI. Rejected: the strict transitive pin (about 15–20 clerical stops across goal 1b plus one per bump).
+  - **F01:** `GLCinLean/Staging/` is a named local provider; Foundations may re-export it; the closure walks into it (tag `[staging]`) and its definitions are reviewed like upstream providers. Implements D10's "Staging defines; Foundations re-exports".
+  - **F02 (revises D41/D42's wording):** §2.3a's "meaning preservation" renamed provenance and change control; the copy record keeps each file's elaboration context; the pilot inspects elaborated types, dependencies and instances of key copied definitions.
+  - **F03:** the fingerprint keeps declaration identity (qualified names); renames trigger re-review; a name-free variant may serve as a presentation diff only. A1 gains the exact collision fault, and F21's constructor-cycle memoisation fix.
+  - **F04:** all of `reviewkit/` and `glc/project.toml` are policy: human-owned, and CI runs the checker and config from the approved base revision, so a change cannot approve itself.
+  - **F05:** workers start without MCP and call Lean through sandboxed Bash; lean-lsp returns only behind a launcher that passes A3's boundary test.
+  - **F06:** record fields separate specification agreement, source independence, the owner's check and the expert's review; "reviewed" at the D30 checkpoint means tiers 1–4; the expert's tier gates nothing (restates D8/D30).
+  - **F07 (modified):** the 5% figure removed; A3 measures a full cycle; comparator on Opus high for non-key members, Fable max for key definitions.
+  - **F08 (modified):** Cor. 1.6.5's contract (continuous, QCoh-linear, enhanced; isomorphism, not equality; enhanced uniqueness) stated as provisional placeholder-interface fields in goal 1a, in §2.3 and §12.
+  - **F09:** the driver joins tracker output with K1's census, goal and attempt history; task kinds state / replace placeholder / prove; deferred debt never selectable early; B2 fixture.
+  - **F11:** machine evidence lives in `evidence/` (machine-writable); `reviews/` holds only human attestations bound to fingerprints and evidence ids; staleness is computed.
+  - **F12:** final acceptance defined: the admitted main theorem is retired or replaced, zero placeholders, empty budget, zero copied proof debt, inventory by modules and packages, transitive axiom closure of the exact final theorem; copied proofs port during goal 2 before that audit (reconciling §2.3a with §3).
+  - **F13 (modified; decides Q15):** the non-vacuity probe narrowed to an easy-proof heuristic excluding the target's own admitted declaration, with found-proof dependency inspection; tactic failure is never a certificate.
+  - **F14:** B1's coverage includes asserted, unnumbered obligations (T3, T4, T8) and standing conventions, and reviews the assembled target.
+  - **F15:** memory reclamation terminates and requeues after exit, never SIGSTOP-and-requeue; watchdog liveness separate from intentional waits (Stage C).
+  - **F16:** any B2 cycle that pushes or merges needs the Q4 identity and A2/A3 protections, however started; otherwise local-only mode.
+  - **F17 (modified; restores D33):** "Built Mathlib" is a stop-and-report symptom guard, not a ban; a deliberate fallback source build stays possible with the user's authorisation.
+  - **F18:** D26's early-`main`-commit exception restored beside the tags-default pin policy ("tags only" had miscited D26).
+  - **F19:** A3's fingerprint-stability step no longer cites the deleted scratch builds; rebuild from caches or defer to the first real bump; retained L2 scripts are recipes with dead paths.
+  - **F20:** the papers manifest is explicitly tracked while payloads stay ignored; A1 verifies both.
+  - **F21:** every fault fixture carries an expected diagnostic with a passing control.
 
 ## Conflicts
 
