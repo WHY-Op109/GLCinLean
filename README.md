@@ -11,7 +11,6 @@
 | `plans/2026-11-02-design-brainstorm.md` | The first consolidated design. |
 | `plans/2026-11-design-discussion-log.md` | Decisions D1–D43, ideas, parked questions and items to verify. **Overrides the brainstorm.** |
 | `plans/2026-11-04-implementation-plan.md` | The implementation plan, reviewed 4 Nov 2026 and redrafted 5 Nov 2026 to use the formalised Stacks project (D41), and reviewed again the same day (D42) and cross-model-reviewed by GPT-6 Astra (D43); ends with the start prompt. |
-| `plans/2026-11-04-synthesis-session-plan.md` | The approved session plan for the synthesis prompt (not the implementation plan itself). |
 | `reports/` | Current assessments (2–3 Nov 2026). |
 | `references/tau-ceti/` | Copies of Tau Ceti roadmap files, with provenance headers. |
 | `private/` | Git-ignored; clone of the private companion repository `GLCinLeanPrivate` (archive, feasibility evidence, scout reports, permissions; D37). |
