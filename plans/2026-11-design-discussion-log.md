@@ -627,6 +627,41 @@ User's notes: the formalisation Mac normally has 50–100 GB free; the user want
 
 **Effects if adopted:** D29's key rule becomes computed; D17 and D9 review records attach to the abstract's declarations; a CheckAbstract-style closure check and the axiom audit become CI checks (alongside D27 test 1); tracker plans include the abstract module.
 
+### B11. Evaluation: a human-reviewed core beside an AI-written surface (2026-11-05, raised by the user)
+
+**Question (user):** should GLCinLean have two tiers, like numlib-auto and Stacks: a core that people review, abstract and polish, reusable later and fit for Mathlib or another higher-quality library, and a surface that is purely AI-generated? The user's worries: (1) they cannot judge abstractions, since they do not understand the mathematics, so they would have to trust the agents; (2) if the aim is verification rather than a long-term maintainable library, the design may be unnecessary.
+
+**Facts [R, 2026-11-05]:**
+- numlib-auto (README @ `e0be78b2`): **both layers are LLM-generated**. The backbone seeks Mathlib-like generality "despite being LLM-generated"; the surface matches each textbook item by item and acts as "integration tests" for the backbone. Its split is about **generality**, not review.
+- Stacks (CONTRIBUTING @ `012108f6`): StacksCore is code "checked against the Stacks Project and brought to Mathlib standards of naming, generality and style", and four named human maintainers review every PR. Its split is about **review and quality**. StacksCore is 445 files against 62,972 modules, under 1%.
+
+**Assessment [J]:** "core plus surface" bundles three separate questions.
+1. **Trust (meaning):** which declarations must someone check say what they should. For verification this is the only one needed: the kernel checks proofs, and only the meaning of the statement's definitional closure needs review. The plan already has this core, defined by meaning, not code quality: the formal abstract and its closure (D39), reviewed by D17's tiers, the user's statement comparison and later the expert (D8, P1). Its size is fixed by the mathematics. What matters for it is readability against the paper: definitions close to the paper's wording, one formalism (D42), no generality beyond what the source uses.
+2. **Generality (backbone versus surface):** general theory versus paper-shaped statements. Useful for proof cost in goal 1b and goal 2, and agents can do it. N9 already mapped numlib's backbone rubrics to Staging and its surface rubrics to the abstract (plan K10, by reference to N9 §4). D39's `AbstractBridge` is numlib's "equivalence proofs to the backbone versions".
+3. **Quality (polished for reuse and upstreaming):** serves maintainability and upstreaming only.
+
+**Good parts of a human-reviewed core:** review effort concentrates on a small, stable set; general foundations avoid rebuilding theory across GLC II–V; a stable API means fewer fingerprint changes and re-reviews; Mathlib-standard code can be upstreamed, and the upstream then maintains it (B4.7); a visible quality signal for outside readers.
+
+**Bad parts:**
+1. Nobody can staff it. Reviewing abstractions needs someone who knows the mathematics and Lean; the user does not, the expert is parked (P1), and the quiet phase (D1, D2) rules out recruiting. A tier labelled human-reviewed that only agents polished invites unearned trust, against D8. Even Stacks, with four expert maintainers, has under 1% in its core.
+2. Verification does not need it (worry 2).
+3. Cost: the budget supports about one paced worker (plan §6); polishing competes with goal 1b and goal 2.
+4. Premature abstraction: the right generality shows only once the proofs use the objects (numlib picks it "by which structures are being used downstream" [S]).
+5. Drift from the paper: generalising and then specialising can change meaning (universes, base, folded hypotheses), and each step needs review.
+6. Duplication: Tau Ceti is building the same foundations (its stack layer started 2026-11-02; derived sheaves are on a roadmap), the kind of building ahead D11 rejected.
+7. More machinery: promotion renames and rewrites code, changes fingerprints and triggers re-review; a second set of rules and CI paths.
+
+**Recommendation [J]:** no human-reviewed code tier now.
+- **Trust:** keep the formal abstract and its closure as the only trusted core.
+- **Generality:** numlib's backbone/surface split as an organising rule for agents only (Staging general; the abstract and the proof surface faithful), with no human tier.
+- **Quality and upstreaming:** left to the upstream libraries: Tau Ceti through B1b's *wait* or *propose* routes, Mathlib only if the user chooses, through Mathlib's human reviewers (D2). An agent can apply Mathlib's linters and style first as a mechanical gate.
+- The only human-reviewed core worth paying for is the expert's check of the 5–10 most load-bearing definitions (D8, P1), which is about meaning, not polish.
+- The review kit (D35) needs nothing new: its review tags and human-owned paths let a future project with human reviewers define a core as a set of paths.
+
+**Revisit if:** an expert collaborator joins; the user decides to upstream; goal 2 shows that poor abstractions make proofs expensive; Tau Ceti does not take the foundations.
+
+**Status:** idea, not a decision.
+
 ## Parked questions
 
 - **P2 (from D29), 2026-11-03:** the rules for which foundation nodes are formalised inside Tau Ceti in phase 2. Parked until phase 1 ends, so they can be set with the blueprint's real node data. Draft starting point: B5 amendment 4.
