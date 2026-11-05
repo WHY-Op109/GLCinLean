@@ -22,9 +22,11 @@ tmp/
 lake-packages/
 build/
 
-# Papers are never committed (D6)
-papers/
-references/papers/
+# Papers are never committed (D6). The payloads under references/papers/ are ignored; the
+# manifest is tracked through the explicit exception below (D43/F20).
+/papers/
+references/papers/*
+!references/papers/manifest.toml
 *.pdf
 *.tex
 *.tar.gz

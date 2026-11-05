@@ -1,0 +1,76 @@
+# tracker plan (bridgekat/tracker @ c223b67). A1 stub plan covering the declarations of
+# GLCinLean/Foundations.lean; the blueprint (B1, Astra) replaces it. GLC extras (key flags,
+# reviews, fingerprints) never go here: they go in glc/extras.toml (D12, L2 §4.3).
+namespace = "GLCinLean.Foundations"
+
+[[node]]
+id = "DGCat"
+source = 'N3 foundation family: presentable stable k-linear ∞-categories (AGKRRV conventions)'
+
+[[node]]
+id = "DGCat.Obj"
+source = 'N3 foundation family'
+
+[[node]]
+id = "DGCat.IsCompact"
+source = 'N3 foundation family'
+
+[[node]]
+id = "DGCat.IsEventuallyCoconnective"
+source = 'GLC I v3 Cor. 1.6.5 (eventually coconnective)'
+
+[[node]]
+id = "LinFun"
+source = 'GLC I v3 Cor. 1.6.5 (continuous QCoh(LS)-linear functors); D43/F08'
+
+[[node]]
+id = "LinFun.obj"
+source = 'N3 foundation family'
+
+[[node]]
+id = "LinFun.comp"
+source = 'N3 foundation family'
+
+[[node]]
+id = "LinFun.id"
+source = 'N3 foundation family'
+
+[[node]]
+id = "LinIso"
+source = 'D43/F08: isomorphism, never equality'
+
+[[node]]
+id = "LinFun.IsEquivalence"
+source = 'N3 §6: equivalence in DGCat'
+
+[[node]]
+id = "Scheme"
+source = 'Mathlib AlgebraicGeometry.Scheme'
+
+[[node]]
+id = "SpecField"
+source = 'Mathlib AlgebraicGeometry.Spec'
+
+[[node]]
+id = "ReductiveGroup"
+source = 'Tau Ceti ReductiveAffineGroupSchemeCat @ e0610cce'
+
+[[node]]
+id = "ReductiveGroup.coordinateRing"
+source = 'Tau Ceti anti-equivalence @ e0610cce'
+
+[[node]]
+id = "Pinning"
+source = 'Tau Ceti Pinning @ e0610cce'
+
+[[node]]
+id = "LineBundle"
+source = 'Tau Ceti InvertibleSheaf @ e0610cce'
+
+[[node]]
+id = "LineBundle.tensor"
+source = 'Tau Ceti InvertibleSheaf.tensorProduct @ e0610cce'
+
+[[node]]
+id = "canonicalSheaf"
+source = 'Tau Ceti Scheme.relativeDifferentials @ e0610cce'
