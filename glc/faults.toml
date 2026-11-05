@@ -1,0 +1,230 @@
+# GLCinLean fault-injection fixtures (D27 test 1) with their expected diagnostics (D43/F21).
+# Each fault names the diagnostic it must produce; any other error also fails the case, and an
+# import or setup failure always fails it, so a crash or a missing module cannot pass for a
+# caught fault. Controls must produce no errors. Run (the CI fault job, A2):
+#   lake build GLCinLeanFaults
+#   lake exe review --config glc/project.toml faults glc/faults.toml
+format = "reviewkit-faults/0"
+
+# --- controls -------------------------------------------------------------------------------
+
+[[case]]
+name = "clean GLCinLean passes every check"
+kind = "control"
+command = "all"
+[[case.key]]
+decl = "TauCeti.ReductiveAffineGroupSchemeCat"   # the walk enters Tau Ceti (D40 Finding 2)
+tag = "tauceti"
+[[case.key]]
+decl = "GLCinLean.Foundations.LinIso"
+tag = "foundations"
+[[case.key]]
+decl = "GLCinLean.Abstract.LG"
+tag = "abstract"
+
+[[case]]
+name = "pin: an exact copy of the main theorem matches the hard pin"
+kind = "control"
+modules = ["GLCinLean.Faults.MainCopy"]
+command = "pin"
+[[case.stand_in]]
+decl = "GLCinLean.Faults.MainCopy.main"
+for = "GLCinLean.Abstract.main"
+
+[[case]]
+name = "pin: the unswapped copy matches (control for the swapped-object fault)"
+kind = "control"
+modules = ["GLCinLean.Faults.SwappedObject"]
+command = "pin"
+pin = "glc/faults/swap-pin.toml"
+pin_decls = ["GLCinLean.Faults.SwappedObject.mainA"]
+[[case.stand_in]]
+decl = "GLCinLean.Faults.SwappedObject.mainCopy"
+for = "GLCinLean.Faults.SwappedObject.mainA"
+
+[[case]]
+name = "Staging route: the abstract reaches a Staging object through Foundations (D43/F01)"
+kind = "control"
+modules = ["GLCinLean.Faults.Staging.Abstract"]
+command = "closure"
+abstract = "GLCinLean.Faults.Staging.Abstract"
+[[case.class]]
+tag = "foundations"
+modules = ["GLCinLean.Faults.Staging.Foundations"]
+[[case.class]]
+tag = "staging"
+modules = ["GLCinLean.Faults.Staging.Object"]
+[[case.key]]
+decl = "GLCinLean.Faults.Staging.LocalObject"
+tag = "staging"
+
+[[case]]
+name = "impact: a change to the Cor. 1.6.5 predicate reaches the main theorem"
+kind = "control"
+command = "impact"
+args = ["GLCinLean.Abstract.IsLanglandsFunctor"]
+[[case.impact]]
+decl = "GLCinLean.Abstract.IsLanglandsFunctor"
+includes = ["GLCinLean.Abstract.LG", "GLCinLean.Abstract.main",
+  "GLCinLean.Abstract.exists_isLanglandsFunctor"]
+
+# --- closure ---------------------------------------------------------------------------------
+
+[[case]]
+name = "closure: abstract definition uses implementation code"
+modules = ["GLCinLean.Faults.AbstractUsesImpl"]
+command = "closure"
+abstract = "GLCinLean.Faults.AbstractUsesImpl"
+[[case.expect]]
+code = "closure-outside-allowed"
+decl = "GLCinLean.Faults.Impl.helperBound"
+
+[[case]]
+name = "closure: leak through a Foundations structure's constructor"
+modules = ["GLCinLean.Faults.AbstractViaLeak"]
+command = "closure"
+abstract = "GLCinLean.Faults.AbstractViaLeak"
+[[case.class]]
+tag = "foundations"
+modules = ["GLCinLean.Faults.FoundationsLeak"]
+[[case.expect]]
+code = "closure-outside-allowed"
+decl = "GLCinLean.Faults.Impl.helperBound"
+
+# --- imports ---------------------------------------------------------------------------------
+
+[[case]]
+name = "imports: code outside Foundations imports Tau Ceti directly"
+modules = ["GLCinLean.Faults.ImportsTauCeti"]
+command = "imports"
+[[case.expect]]
+code = "import-not-allowed"
+decl = "TauCeti.AlgebraicGeometry.LineBundle.Basic"
+[[case.expect]]
+code = "foundations-name"
+severity = "warning"
+
+[[case]]
+name = "imports: Foundations-name warning for Mathlib's schemes used directly (Q14)"
+modules = ["GLCinLean.Faults.FoundationsName"]
+command = "imports"
+abstract = "GLCinLean.Faults.FoundationsName"
+[[case.expect]]
+code = "foundations-name-required"
+decl = "AlgebraicGeometry.Scheme"
+severity = "warning"
+
+# --- axioms ----------------------------------------------------------------------------------
+
+[[case]]
+name = "axioms: a project axiom asserting the conjecture, and its use"
+modules = ["GLCinLean.Faults.ProjectAxiom"]
+command = "axioms"
+[[case.expect]]
+code = "project-axiom"
+decl = "GLCinLean.Faults.ProjectAxiom.glc_holds"
+[[case.expect]]
+code = "nonstandard-axiom"
+decl = "GLCinLean.Faults.ProjectAxiom.main'"
+
+[[case]]
+name = "axioms: a sorry outside the budget"
+modules = ["GLCinLean.Faults.StraySorry"]
+command = "axioms"
+[[case.expect]]
+code = "sorry-not-in-budget"
+decl = "GLCinLean.Faults.StraySorry.stray"
+
+[[case]]
+name = "axioms: budgeted Cor. 1.6.5 existence theorem changed to False (Q13)"
+modules = ["GLCinLean.Faults.BudgetStatementChanged"]
+command = "axioms"
+[[case.stand_in]]
+decl = "GLCinLean.Faults.BudgetStatementChanged.exists_isLanglandsFunctor"
+for = "GLCinLean.Abstract.exists_isLanglandsFunctor"
+[[case.expect]]
+code = "budget-statement-mismatch"
+decl = "GLCinLean.Faults.BudgetStatementChanged.exists_isLanglandsFunctor"
+
+[[case]]
+name = "axioms: sorry inside a constructor, traced in every root order (D43/F21)"
+modules = ["GLCinLean.Faults.ConstructorCycle"]
+command = "axioms"
+abstract = "GLCinLean.Faults.ConstructorCycle"
+orders = ["forward", "reverse"]
+[[case.expect]]
+code = "sorry-not-in-budget"
+[[case.trace]]
+decl = "GLCinLean.Faults.ConstructorCycle.useT"
+contains = ["sorryAx"]
+[[case.trace]]
+decl = "GLCinLean.Faults.ConstructorCycle.aUsesMk"
+contains = ["sorryAx"]
+[[case.trace]]
+decl = "GLCinLean.Faults.ConstructorCycle.T"
+contains = ["sorryAx"]
+
+# --- placeholders ----------------------------------------------------------------------------
+
+[[case]]
+name = "placeholders: untagged opaque category"
+modules = ["GLCinLean.Faults.UntaggedPlaceholder"]
+command = "placeholders"
+[[case.expect]]
+code = "placeholder-untagged"
+decl = "GLCinLean.Faults.UntaggedPlaceholder.HiddenCategory"
+
+# --- statement pin and fingerprint ------------------------------------------------------------
+
+[[case]]
+name = "pin: main theorem naming a different functor fails the hard pin"
+modules = ["GLCinLean.Faults.MainCopy"]
+command = "pin"
+[[case.stand_in]]
+decl = "GLCinLean.Faults.MainCopy.mainCoarse"
+for = "GLCinLean.Abstract.main"
+[[case.expect]]
+code = "pin-statement-mismatch"
+decl = "GLCinLean.Faults.MainCopy.mainCoarse"
+
+[[case]]
+name = "pin: one opaque object swapped for another of the same type (D43/F03)"
+modules = ["GLCinLean.Faults.SwappedObject"]
+command = "pin"
+pin = "glc/faults/swap-pin.toml"
+pin_decls = ["GLCinLean.Faults.SwappedObject.mainA"]
+[[case.stand_in]]
+decl = "GLCinLean.Faults.SwappedObject.mainB"
+for = "GLCinLean.Faults.SwappedObject.mainA"
+[[case.expect]]
+code = "pin-statement-mismatch"
+decl = "GLCinLean.Faults.SwappedObject.mainB"
+
+[[case]]
+name = "pin: transitive digest changed marks reviews stale, without failing (D43/F10)"
+command = "pin"
+pin = "glc/faults/stale-pin.toml"
+[[case.expect]]
+code = "pin-digest-stale"
+decl = "GLCinLean.Abstract.main"
+severity = "warning"
+
+[[case]]
+name = "fingerprint: swapped object differs, exact copy agrees, at both levels"
+kind = "fpcompare"
+modules = ["GLCinLean.Faults.SwappedObject"]
+[[case.compare]]
+a = "GLCinLean.Faults.SwappedObject.mainA"
+b = "GLCinLean.Faults.SwappedObject.mainB"
+level = "statement"
+same = false
+[[case.compare]]
+a = "GLCinLean.Faults.SwappedObject.mainA"
+b = "GLCinLean.Faults.SwappedObject.mainB"
+level = "digest"
+same = false
+[[case.compare]]
+a = "GLCinLean.Faults.SwappedObject.mainA"
+b = "GLCinLean.Faults.SwappedObject.mainCopy"
+level = "digest"
+same = true

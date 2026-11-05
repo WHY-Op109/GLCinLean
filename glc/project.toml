@@ -1,0 +1,100 @@
+# GLCinLean project configuration, read by the review kit (`reviewkit/`, K1–K3, data format v0).
+# Human-owned policy (D43/F04): workers never edit this file; CI runs the checker with this file
+# taken from the approved base revision.
+#   lake exe review --config glc/project.toml all
+format = "reviewkit-config/0"
+
+[project]
+import = ["GLCinLean"]                 # modules the checks load
+modules = ["GLCinLean"]                # project code
+abstract = "GLCinLean.Abstract"        # the formal abstract (D39)
+
+[closure]
+# Not entered by the walk: Lean core, Mathlib and its dependencies, the kit itself.
+background = ["Init", "Std", "Lean", "Lake", "Mathlib", "Batteries", "Aesop", "Qq",
+  "ProofWidgets", "Plausible", "ImportGraph", "LeanSearchClient", "Cli", "ReviewKit", "Tracker"]
+# Entered and listed with a tag (first match wins). Project code reached outside these classes
+# fails the check. Tau Ceti is walked: it is AI-written and AI-reviewed (D40 Finding 2).
+[[closure.class]]
+tag = "abstract"
+modules = ["GLCinLean.Abstract"]
+[[closure.class]]
+tag = "foundations"
+modules = ["GLCinLean.Foundations"]
+[[closure.class]]
+tag = "staging"                        # locally built foundations (D43/F01)
+modules = ["GLCinLean.Staging"]
+[[closure.class]]
+tag = "stacks"                         # copied Stacks declarations (D41, D42); reserved, empty
+modules = ["GLCinLean.Stacks"]
+[[closure.class]]
+tag = "tauceti"
+modules = ["TauCeti"]
+
+[axioms]
+allowed = ["propext", "Classical.choice", "Quot.sound"]
+budget = "reviews/sorry-budget.toml"   # human-owned, bound to statement fingerprints (Q13)
+
+# The D10 import rule (§2.3). First matching module prefix wins.
+[[imports.rule]]
+module = "GLCinLean.Abstract"
+allow = ["Init", "Mathlib", "TauCeti", "GLCinLean.Foundations"]
+[[imports.rule]]
+module = "GLCinLean.Foundations"
+allow = ["Init", "Mathlib", "TauCeti", "ReviewKit", "GLCinLean.Staging", "GLCinLean.Stacks",
+  "GLCinLean.Foundations"]
+[[imports.rule]]
+module = "GLCinLean.Staging"
+allow = ["Init", "Mathlib", "TauCeti", "ReviewKit", "GLCinLean.Stacks", "GLCinLean.Staging"]
+[[imports.rule]]
+module = "GLCinLean.Stacks"
+allow = ["Init", "Mathlib", "GLCinLean.Stacks"]
+[[imports.rule]]
+module = "GLCinLean"                   # everything else: Mathlib and GLCinLean, no Tau Ceti directly
+allow = ["Init", "Mathlib", "GLCinLean"]
+
+# The Foundations-name warning (Q14): warning only.
+[foundations_names]
+foundations = ["GLCinLean.Foundations"]
+checked = ["Mathlib"]
+# Substantial objects that must reach the abstract through a Foundations name.
+required = ["AlgebraicGeometry.Scheme", "AlgebraicGeometry.Spec",
+  "AlgebraicGeometry.Scheme.Modules", "CategoryTheory.Functor", "CategoryTheory.Equivalence"]
+# Basic vocabulary the abstract may use directly: logic, numbers, algebraic structures,
+# general category-theory vocabulary.
+basic = ["Field", "CharZero", "IsAlgClosed", "CommRing", "Ring", "Semiring", "CommSemiring",
+  "NonUnitalNonAssocSemiring", "NonAssocSemiring", "DivisionRing", "Nat", "Int",
+  "CommRingCat", "CategoryTheory.Category", "CategoryTheory.Iso", "CategoryTheory.CategoryStruct",
+  "CategoryTheory.Quiver", "Quiver", "CategoryTheory.ObjectProperty"]
+
+[fingerprint]
+content = ["GLCinLean", "TauCeti"]      # hashed by content, bodies included (D40 Finding 2)
+unfold_abbrevs = ["GLCinLean.Foundations"]
+notations = ["GT.gt", "GE.ge"]
+
+[pin]
+file = "reviews/statement-pin.toml"     # human-owned two-level pin (D43/F10)
+decls = ["GLCinLean.Abstract.main", "GLCinLean.Abstract.Setting"]
+
+[placeholders]
+modules = ["GLCinLean"]
+
+# Data for later kit tools (not read by `review` in A1).
+[papers]
+manifest = "references/papers/manifest.toml"
+fetch = "scripts/fetch-papers.py"
+
+[upstream]
+# Pin policy (D26, D43/F18): Tau Ceti tags by default; an early bump to a named `main` commit
+# that has a cache revision map only when an object goal 1b waits for has just landed.
+tauceti = { rev = "v4.36.0-rc2", commit = "e0610cce4004d628cbd9d2aafdbbb5459fe72938", policy = "tags; D26 early-main exception" }
+cache_service = "tauceti-public"
+
+[scout]
+# Scout sources (K13, Stage C). Watched Tau Ceti paths for the objects the statement names.
+tauceti_paths = ["TauCeti/AlgebraicGeometry/AffineGroupScheme/Reductive", "TauCeti/Algebra/AlgebraicGroup/Pinning",
+  "TauCeti/AlgebraicGeometry/LineBundle", "TauCeti/AlgebraicGeometry/Modules/Differentials",
+  "TauCeti/AlgebraicGeometry/Stack", "TauCeti/AlgebraicGeometry/AlgebraicSpace",
+  "TauCeti/CategoryTheory/DG"]
+stacks = { repo = "AxiomMath/Stacks", commit = "012108f61d7f92a6ffc35ec3f263b6da5d438125" }
+arxiv = ["2405.03599", "2405.03648", "2409.07051", "2409.08670", "2409.09856"]

@@ -1,0 +1,29 @@
+name = "GLCinLean"
+defaultTargets = ["GLCinLean"]
+# Never indexed by Reservoir (V2, D1: public but unannounced).
+reservoir = false
+
+# Tau Ceti at a tag (D26; bumps are K12's job). Mathlib comes through Tau Ceti.
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti"
+rev = "v4.36.0-rc2"
+
+# bridgekat/tracker @ c223b67, a git submodule (L2 route 1).
+[[require]]
+name = "tracker"
+path = "tools/tracker"
+
+# The reusable review kit (D35, K1/K2); no GLC-specific code inside.
+[[require]]
+name = "ReviewKit"
+path = "reviewkit"
+
+[[lean_lib]]
+name = "GLCinLean"
+
+# Fault-injection fixtures (D27 test 1): never part of the default build;
+# built only by the fault job (`lake build GLCinLeanFaults`).
+[[lean_lib]]
+name = "GLCinLeanFaults"
+globs = ["GLCinLean.Faults.+"]
