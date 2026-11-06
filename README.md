@@ -13,15 +13,15 @@ Mathlib. See [`PLAN.md`](PLAN.md).
 | `GLCinLean/Foundations.lean` | re-exports of Mathlib and Tau Ceti objects, and placeholders |
 | `blueprint/plans/` | tracker plans of the declarations |
 | `reviews/` | the sorry budget and the statement pin (approved by the owner) |
-| `evidence/` | fingerprint records behind the budget and the pin |
-| `glc/` | configuration of the review checks, extras, fault fixtures |
+| `glc/project.toml` | configuration of the review checks |
 | `prompts/` | goal-mode prompts: the statement, the proof, the fidelity review |
 | `references/papers/manifest.toml` | the papers, fetched locally by `scripts/fetch-papers.py`, never committed |
 
 Build and check (clone with `--recurse-submodules`):
 
-    scripts/check.sh --caches --faults
+    scripts/check.sh --caches
 
-The review checks come from [reviewkit](https://github.com/WHY-Op109/reviewkit).
+The review checks come from [reviewkit](https://github.com/WHY-Op109/reviewkit), which also holds
+their fault-injection tests.
 
 Apache-2.0 (`LICENSE`); third-party material in `THIRD_PARTY_NOTICES.md`.

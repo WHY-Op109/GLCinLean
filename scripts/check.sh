@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 # GLCinLean checks, as CI runs them. From anywhere in the checkout:
-#   scripts/check.sh [--caches] [--faults]
+#   scripts/check.sh [--caches]
 #     --caches   first fetch the Mathlib and Tau Ceti build caches (a fresh checkout, CI)
-#     --faults   also build and run the fault fixtures (glc/faults.toml)
 # Reports go to .lake/ci/. Exit status: 0 passed, 1 a check failed, 2 bad arguments, 3 the build
 # compiled a Mathlib or Tau Ceti module (wrong pin or missing cache: stop and report it).
 set -eu
 cd "$(dirname "$0")/.."
 export LAKE_CONFIG=$PWD/.lake-config/lake-config.toml LAKE_CACHE_DIR=$PWD/.lake/cache
-faults=0 caches=0
+caches=0
 for arg in "$@"; do
   case $arg in
-    --faults) faults=1 ;;
     --caches) caches=1 ;;
-    *) echo >&2 "usage: scripts/check.sh [--caches] [--faults]"; exit 2 ;;
+    *) echo >&2 "usage: scripts/check.sh [--caches]"; exit 2 ;;
   esac
 done
 out=$PWD/.lake/ci
@@ -50,10 +48,6 @@ for r in d.get("reports", []):
     print("  %s: errors=%d warnings=%d" % (r["check"], r["errors"], r["warnings"]))
     for x in r["diagnostics"]:
         if x["severity"] == "error": print("    error [%s] %s" % (x["code"], x["message"][:200]))
-f = d.get("faults")
-if isinstance(f, dict):
-    for c in f.get("results", []):
-        if not c.get("passed"): print("    FAILED case: %s: %s" % (c.get("case"), c.get("failures")))
 ' "$out/$name.json" "$name" || st=2
   (( st == 0 )) || failed+=("$name")
 }
@@ -76,16 +70,8 @@ guarded_build "$out/build.log"
 check review-all lake exe review --config glc/project.toml all
 tracker check
 tracker lint
-lake exe tracker --dir blueprint/plans --roots GLCinLean graph --all > "$out/graph.json" 2> "$out/graph.err" \
-  || failed+=("tracker graph")
-lake exe review --config glc/project.toml closure > "$out/closure.json" || true
-check extras python3 -I .lake/packages/ReviewKit/scripts/rk_extras.py --config glc/project.toml \
-  --graph "$out/graph.json" --closure "$out/closure.json"
-
-if (( faults )); then
-  guarded_build "$out/build-faults.log" GLCinLeanFaults
-  check faults lake exe review --config glc/project.toml faults glc/faults.toml
-fi
+# The closure of the abstract: the key definitions the fidelity review covers (prompts/review.md).
+lake exe review --config glc/project.toml closure > "$out/closure.json" || failed+=("closure list")
 
 if (( ${#failed[@]} )); then
   (IFS=,; echo >&2 "FAILED: ${failed[*]}  (reports in .lake/ci/)")

@@ -1,6 +1,6 @@
 # tracker plan (bridgekat/tracker @ c223b67). Stub plan covering the declarations of
-# GLCinLean/Abstract.lean; the blueprint replaces it. GLC extras (key flags,
-# reviews, fingerprints) never go here: they go in glc/extras.toml.
+# GLCinLean/Abstract.lean; the blueprint replaces it. Key definitions are computed
+# by `review closure`; review records live in reviews/.
 namespace = "GLCinLean.Abstract"
 
 [[node]]

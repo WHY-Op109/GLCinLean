@@ -28,8 +28,3 @@ rev = "3fd3bfa7ebcf6afb68101df4932c6ce8cfdec0c6"
 
 [[lean_lib]]
 name = "GLCinLean"
-
-# Fault-injection fixtures: never part of the default build; built by `scripts/check.sh --faults`.
-[[lean_lib]]
-name = "GLCinLeanFaults"
-globs = ["GLCinLean.Faults.+"]

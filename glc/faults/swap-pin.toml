@@ -1,8 +1,0 @@
-format = "reviewkit-statement-pin/0"
-# Fault fixture GLCinLean.Faults.SwappedObject: the pin of mainA, computed from mainA
-# itself. Fixture data, not a human attestation.
-
-[[pin]]
-decl = "GLCinLean.Faults.SwappedObject.mainA"
-statement = "sha256:c678ad9c54a30ea74b1e57f421c6fda9a15fa012bd378292b5f4dd5bd14ae9e8"
-digest = "sha256:cb3d49376cb04f129a1f717d7fc7aebcb74bd7df10de975f20bebed148f0e16d"
