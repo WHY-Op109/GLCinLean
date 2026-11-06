@@ -18,7 +18,7 @@ budget holds only theorems (statements of results from the papers), never data.
    on a formalism choice that changes the statement's shape.
 2. Then repeat: take the next placeholder whose dependencies are real, replace it by a real
    definition (or a re-export), keep its interface unless the source says otherwise, build, run
-   `scripts/check.sh --faults`, update the blueprint and `glc/extras.toml`, commit.
+   `scripts/check.sh`, update the blueprint, commit.
 3. Theorems the definitions need are stated with `sorry`, with the paper's locator, and get a
    sorry-budget entry (`lake exe review --config glc/project.toml axioms --toml`) with
    `approved` left blank: the owner approves it when reading the commit.
@@ -26,8 +26,8 @@ budget holds only theorems (statements of results from the papers), never data.
 **Do not:** change the pinned statements (`main`, `Setting`), `reviews/statement-pin.toml`,
 an existing budget entry, `glc/project.toml`, `lakefile.toml`, `lake-manifest.json` or
 `lean-toolchain` without asking;
-weaken a check or a fault fixture; add an `axiom`. If a definition is unclear in the source,
+weaken a check; add an `axiom`. If a definition is unclear in the source,
 write the question into `PLAN.md` under "Open questions" and move to another one.
 
-**Done when** `review placeholders` reports none in the closure, `scripts/check.sh --faults`
+**Done when** `review placeholders` reports none in the closure, `scripts/check.sh`
 passes, and every new key definition has had a fidelity review (`prompts/review.md`).

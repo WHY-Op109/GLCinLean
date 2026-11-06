@@ -13,7 +13,8 @@ abstract = "GLCinLean.Abstract"        # the formal abstract
 background = ["Init", "Std", "Lean", "Lake", "Mathlib", "Batteries", "Aesop", "Qq",
   "ProofWidgets", "Plausible", "ImportGraph", "LeanSearchClient", "Cli", "ReviewKit", "Tracker"]
 # Entered and listed with a tag (first match wins). Project code reached outside these classes
-# fails the check. Tau Ceti is walked: it is AI-written and AI-reviewed.
+# fails the check. Tau Ceti is walked: it is AI-written and AI-reviewed. A `stacks` class (and
+# import rule) is added when the first copied Stacks declaration lands (PLAN.md).
 [[closure.class]]
 tag = "abstract"
 modules = ["GLCinLean.Abstract"]
@@ -23,9 +24,6 @@ modules = ["GLCinLean.Foundations"]
 [[closure.class]]
 tag = "staging"                        # locally built foundations
 modules = ["GLCinLean.Staging"]
-[[closure.class]]
-tag = "stacks"                         # copied Stacks declarations; reserved, empty
-modules = ["GLCinLean.Stacks"]
 [[closure.class]]
 tag = "tauceti"
 modules = ["TauCeti"]
@@ -40,31 +38,14 @@ module = "GLCinLean.Abstract"
 allow = ["Init", "Mathlib", "TauCeti", "GLCinLean.Foundations"]
 [[imports.rule]]
 module = "GLCinLean.Foundations"
-allow = ["Init", "Mathlib", "TauCeti", "ReviewKit", "GLCinLean.Staging", "GLCinLean.Stacks",
+allow = ["Init", "Mathlib", "TauCeti", "ReviewKit", "GLCinLean.Staging",
   "GLCinLean.Foundations"]
 [[imports.rule]]
 module = "GLCinLean.Staging"
-allow = ["Init", "Mathlib", "TauCeti", "ReviewKit", "GLCinLean.Stacks", "GLCinLean.Staging"]
-[[imports.rule]]
-module = "GLCinLean.Stacks"
-allow = ["Init", "Mathlib", "GLCinLean.Stacks"]
+allow = ["Init", "Mathlib", "TauCeti", "ReviewKit", "GLCinLean.Staging"]
 [[imports.rule]]
 module = "GLCinLean"                   # everything else: Mathlib and GLCinLean, no Tau Ceti directly
 allow = ["Init", "Mathlib", "GLCinLean"]
-
-# The Foundations-name warning (warning only).
-[foundations_names]
-foundations = ["GLCinLean.Foundations"]
-checked = ["Mathlib"]
-# Substantial objects that must reach the abstract through a Foundations name.
-required = ["AlgebraicGeometry.Scheme", "AlgebraicGeometry.Spec",
-  "AlgebraicGeometry.Scheme.Modules", "CategoryTheory.Functor", "CategoryTheory.Equivalence"]
-# Basic vocabulary the abstract may use directly: logic, numbers, algebraic structures,
-# general category-theory vocabulary.
-basic = ["Field", "CharZero", "IsAlgClosed", "CommRing", "Ring", "Semiring", "CommSemiring",
-  "NonUnitalNonAssocSemiring", "NonAssocSemiring", "DivisionRing", "Nat", "Int",
-  "CommRingCat", "CategoryTheory.Category", "CategoryTheory.Iso", "CategoryTheory.CategoryStruct",
-  "CategoryTheory.Quiver", "Quiver", "CategoryTheory.ObjectProperty"]
 
 [fingerprint]
 content = ["GLCinLean", "TauCeti"]      # hashed by content, bodies included
@@ -77,15 +58,6 @@ decls = ["GLCinLean.Abstract.main", "GLCinLean.Abstract.Setting"]
 
 [placeholders]
 modules = ["GLCinLean"]
-
-[evidence]
-dir = "evidence"                        # fingerprint records written by `review record`
-
-# Extras keyed by declaration id, joined with the tracker graph by the kit's rk_extras.py.
-[extras]
-file = "glc/extras.toml"
-providers = ["mathlib", "tauceti", "stacks", "staging", "placeholder", "abstract"]
-require_provider = true
 
 [papers]
 manifest = "references/papers/manifest.toml"

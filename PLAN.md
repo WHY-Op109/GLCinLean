@@ -18,7 +18,7 @@ evidence for faithfulness, and no claim of faithfulness is made without an outsi
 - `GLCinLean/Foundations.lean`: re-exports of Mathlib and Tau Ceti objects, plus placeholders.
 - `blueprint/plans/`: a stub tracker plan of those declarations.
 - `reviews/`: the sorry budget and the statement pin (owner-approved records; not yet approved).
-- `glc/`: the review configuration, the extras file, the fault fixtures.
+- `glc/project.toml`: the review configuration.
 - CI (`.github/workflows/ci.yml`): build from caches and every check, on each push to `main`.
 - The review checks come from `github.com/WHY-Op109/reviewkit`, pinned in `lake-manifest.json`.
 
@@ -57,7 +57,8 @@ Sessions commit locally; the owner reads and pushes. `scripts/check.sh` (and CI)
   placeholders. Placeholders are data only: `@[placeholder]` on an `opaque`, never an `axiom` or
   a definition with a trivial witness.
 - Missing foundations, per object: use Mathlib, else Tau Ceti, else copy the needed declarations
-  from `AxiomMath/Stacks` (statements first, into `GLCinLean/Stacks/`, with provenance), else
+  from `AxiomMath/Stacks` (statements first, into `GLCinLean/Stacks/`, with provenance; its
+  closure class and import rule are added to `glc/project.toml` with the first copy), else
   build locally in `GLCinLean/Staging/` (subject folders as in Mathlib; names
   `GLCinLean.<Subject>.…`). Foundations re-exports whatever is chosen.
 - Tau Ceti is pinned to a tag (`v4.36.0-rc2`); Mathlib comes through it; builds use the caches
@@ -68,7 +69,11 @@ Sessions commit locally; the owner reads and pushes. `scripts/check.sh` (and CI)
   budget, bound to its statement's fingerprint.
 - The main theorem's and the hypothesis block's statements are pinned; a change fails CI until
   the owner re-approves.
-- The closure from the abstract (walking into Tau Ceti) lists the key definitions.
+- The closure from the abstract (walking into Tau Ceti) lists the key definitions; the
+  fidelity review takes its scope from that list.
+- The checker's own fault-injection tests live in ReviewKit (`test/faults.toml`), not here.
+  The GLCinLean fixtures, evidence records and extras file were moved to `GLCinLean-archive`
+  (`glcinlean-2026-11-06-slimming/`) on 2026-11-06.
 
 **The project**
 - Public but unannounced; nothing is sent to other projects unless the owner chooses.

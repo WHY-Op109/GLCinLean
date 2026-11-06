@@ -40,8 +40,8 @@ jobs:
           use-mathlib-cache: false
           use-github-cache: false
 
-      - name: Checks (scripts/check.sh --caches --faults)
-        run: scripts/check.sh --caches --faults
+      - name: Checks (scripts/check.sh --caches)
+        run: scripts/check.sh --caches
 
       - name: Disk at the end
         if: always()

@@ -3,9 +3,10 @@
 **Goal.** Check that the Lean definitions mean what the papers say. The owner cannot check the
 mathematics, so this review is the evidence. Do not edit any Lean file.
 
-1. **Scope.** List the key definitions (entries with `key = true` in `glc/extras.toml`, and the
-   declarations of `GLCinLean/Abstract.lean`) changed since the newest file in `fidelity/` (all
-   of them if there is none). If none changed, stop.
+1. **Scope.** List the key definitions: the `key_list` entries with `direct_from_project = true`
+   in `lake exe review --config glc/project.toml closure` (also written by `scripts/check.sh` to
+   `.lake/ci/closure.json`), and the declarations of `GLCinLean/Abstract.lean`, changed since
+   the newest file in `fidelity/` (all of them if there is none). If none changed, stop.
 2. **Blind reading.** For each one, start a subagent that gets ONLY the Lean text of the
    definition and of the definitions it uses: no paper, no doc comments, no plan. It writes, in
    plain mathematics, what the object is, its hypotheses and quantifiers, and which parts are
