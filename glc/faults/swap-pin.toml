@@ -1,6 +1,6 @@
 format = "reviewkit-statement-pin/0"
-# Fault fixture GLCinLean.Faults.SwappedObject (D43/F03): the pin of mainA, computed from mainA
-# itself in stage A1. Fixture data, not a human attestation.
+# Fault fixture GLCinLean.Faults.SwappedObject: the pin of mainA, computed from mainA
+# itself. Fixture data, not a human attestation.
 
 [[pin]]
 decl = "GLCinLean.Faults.SwappedObject.mainA"

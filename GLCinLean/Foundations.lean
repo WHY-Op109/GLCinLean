@@ -1,15 +1,15 @@
 /-
-GLCinLean.Foundations: the thin adapter layer (D10).
+GLCinLean.Foundations: the thin adapter layer.
 
-Every substantial object the formal abstract uses reaches it through a name here (Q14):
+Every substantial object the formal abstract uses reaches it through a name here:
 * re-exports of provider objects (Mathlib, Tau Ceti; later GLCinLean.Staging and copied Stacks
   declarations), as `abbrev`s, wrapping only to expose a hypothesis;
-* provider-less generic placeholders (N3's foundation families), data only, in the
-  `NonemptyType` pattern or as plain `opaque` constants, each tagged `@[placeholder]` (D13, D15).
+* provider-less generic placeholders (generic foundation families), data only, in the
+  `NonemptyType` pattern or as plain `opaque` constants, each tagged `@[placeholder]`.
 
-Status: goal-1a stub written in stage A1 (2026-11-05). Unreviewed. Every placeholder below is
-PROVISIONAL: it stands for an object no provider has yet (N3), and its interface may change when
-the blueprint (B1) fixes the formalism.
+Status: stub written 2026-11-05. Unreviewed. Every placeholder below is PROVISIONAL: it stands
+for an object no provider has yet, and its interface may change when the blueprint fixes the
+formalism.
 -/
 import ReviewKit.Attr
 import Mathlib.AlgebraicGeometry.Morphisms.Smooth
@@ -75,13 +75,13 @@ abbrev canonicalSheaf (k : Type u) [Field k] (X : Scheme.{u}) [X.Over (SpecField
     X.Modules :=
   X.relativeDifferentials k
 
-/-! ## Provider-less placeholders (N3's generic foundation families)
+/-! ## Provider-less placeholders (generic foundation families)
 
 The categories of GLC are presentable stable `k`-linear ∞-categories (DG categories), functors
-are continuous, and equivalences are equivalences in DGCat (AGKRRV conventions, N3 §6). No
-provider has this enhanced theory yet (N3; Tau Ceti roadmap EnhancedDerivedSheaves #908 plans
+are continuous, and equivalences are equivalences in DGCat (AGKRRV conventions). No
+provider has this enhanced theory yet (Tau Ceti roadmap EnhancedDerivedSheaves #908 plans
 it). The placeholders below give the statement the shape it needs, so that a worker cannot fall
-back to a bare `Functor` with propositional equality (D43/F08).
+back to a bare `Functor` with propositional equality.
 
 `DGCat`, `DGCat.Obj` and `LinFun` use the `NonemptyType` pattern: such objects exist. `LinIso`,
 `DGCat.IsCompact` and `DGCat.IsEventuallyCoconnective` are plain `opaque` constants with no
@@ -115,7 +115,7 @@ t-structure (GLC I §1: objects in `IndCoh_Nilp(LS)^{>-∞}`). -/
 /-- Carrier of `LinFun`. -/
 opaque LinFunPt : DGCat → DGCat → DGCat → NonemptyType.{0}
 
-/-- PLACEHOLDER (provisional interface, D43/F08). `LinFun A C D`: the continuous functors
+/-- PLACEHOLDER (provisional interface). `LinFun A C D`: the continuous functors
 `C → D` that are `A`-linear for the given actions of the monoidal category `A` on `C` and `D`,
 in the enhanced sense (GLC I Cor. 1.6.5: continuous `QCoh(LS)`-linear functors). Provisional:
 the monoidal structure of `A` and its actions are not yet data. -/
@@ -132,13 +132,13 @@ instance (A C D : DGCat) : Nonempty (LinFun A C D) := (LinFunPt A C D).property
 /-- PLACEHOLDER (provisional). The identity `A`-linear functor. -/
 @[placeholder] opaque LinFun.id (A C : DGCat) : LinFun A C C
 
-/-- PLACEHOLDER (provisional interface, D43/F08). `LinIso F G`: `A`-linear natural isomorphisms
+/-- PLACEHOLDER (provisional interface). `LinIso F G`: `A`-linear natural isomorphisms
 `F ≅ G` in the enhanced sense. Deliberately not `Nonempty`: two functors need not be
 isomorphic. Isomorphism of functors is always `Nonempty (LinIso F G)`, never an equality. -/
 @[placeholder] opaque LinIso {A C D : DGCat} : LinFun A C D → LinFun A C D → Type
 
 /-- An `A`-linear functor is an equivalence: it has a two-sided inverse up to `A`-linear natural
-isomorphism (equivalence in DGCat, N3 §6). A real definition over the placeholders. -/
+isomorphism (equivalence in DGCat). A real definition over the placeholders. -/
 def LinFun.IsEquivalence {A C D : DGCat} (F : LinFun A C D) : Prop :=
   ∃ G : LinFun A D C,
     Nonempty (LinIso (F.comp G) (LinFun.id A C)) ∧ Nonempty (LinIso (G.comp F) (LinFun.id A D))

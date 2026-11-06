@@ -8,9 +8,6 @@
 *.swp
 *~
 
-# Local-only material, never published (D34)
-private/
-
 # Local agent settings and scratch work
 .claude/settings.local.json
 CLAUDE.local.md
@@ -22,8 +19,8 @@ tmp/
 lake-packages/
 build/
 
-# Papers are never committed (D6). The payloads under references/papers/ are ignored; the
-# manifest is tracked through the explicit exception below (D43/F20).
+# Papers are never committed. The payloads under references/papers/ are ignored; the
+# manifest is tracked through the explicit exception below.
 /papers/
 references/papers/*
 !references/papers/manifest.toml

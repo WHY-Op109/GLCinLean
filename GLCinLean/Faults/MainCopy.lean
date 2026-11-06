@@ -1,4 +1,4 @@
--- Fault-injection fixture (D27 test 1), built only by the fault job; expected diagnostic in glc/faults.toml.
+-- Fault-injection fixture, built only by the fault job; expected diagnostic in glc/faults.toml.
 -- Statement pin: an exact copy of the main theorem (control), and a version naming a different
 -- object of the same type (fault).
 import GLCinLean.Abstract

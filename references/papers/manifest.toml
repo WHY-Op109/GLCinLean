@@ -1,9 +1,8 @@
-# Papers manifest (D6). TRACKED; the papers themselves (PDF, LaTeX) are fetched into this
+# Papers manifest. TRACKED; the papers themselves (PDF, LaTeX) are fetched into this
 # git-ignored folder by scripts/fetch-papers.py and never committed to any repository.
 # Provenance per entry: arXiv id and pinned version, title, licence as stated on arXiv, and
 # SHA-256 of the downloaded e-print source and PDF (recorded at the first fetch).
 # Versions and titles checked against the arXiv API on 2026-11-05 [R].
-# From A3 this manifest also pins the Stacks Project LaTeX as a comparator source (D42).
 format = "glcinlean-papers/0"
 
 [[paper]]
@@ -11,7 +10,7 @@ arxiv = "2405.03599"
 version = 3
 title = "Proof of the geometric Langlands conjecture I: construction of the functor"
 role = "GLC I: the statement (Conj. 1.6.7)"
-licence = "CC BY 4.0 (D6)"
+licence = "CC BY 4.0"
 sha256_source = "0e33e55aee8699244c64aefda0a42ae14f98d7f4f17fbe300053ee1c329ba475"
 sha256_pdf = "a9a1bc11ad0b2749e7cb33d4e2faa2a86b8b511ebd36fd4f005e9e758834e7a0"
 
@@ -20,7 +19,7 @@ arxiv = "2405.03648"
 version = 3
 title = "Proof of the geometric Langlands conjecture II: Kac-Moody localization and the FLE"
 role = "GLC II"
-licence = "CC BY 4.0 (D6; N3 report 2026-11-04)"
+licence = "CC BY 4.0 (checked 2026-11-04)"
 sha256_source = "0a210b276edb710011c7a0600b44aa70511e18ece6bee55bb1055cb2741b90e2"
 sha256_pdf = "7dcd67879365643f8184c069f622cc8f80004e684d9783ebbb6b2b77767fff82"
 
@@ -29,7 +28,7 @@ arxiv = "2409.07051"
 version = 1
 title = "Proof of the geometric Langlands conjecture III: compatibility with parabolic induction"
 role = "GLC III"
-licence = "CC BY 4.0 (D6)"
+licence = "CC BY 4.0"
 sha256_source = "bcc6ed41ce01c7dda8c67a34c17fcd70997f9170231d0f4ff8c4abfa1fa86a72"
 sha256_pdf = "4072f36e60f5a360b5b93a48ff968469c71ba79845254889a54e3de9f0e8bc99"
 
@@ -38,7 +37,7 @@ arxiv = "2409.08670"
 version = 1
 title = "Proof of the geometric Langlands conjecture IV: ambidexterity"
 role = "GLC IV"
-licence = "CC BY 4.0 (D6)"
+licence = "CC BY 4.0"
 sha256_source = "0c2177d13e5102eedd6bc11f360721640e8ddff48fe7836f3083a89b3600b7fa"
 sha256_pdf = "418ac04087ac2f833791b1f0b24d85f8dcd801b388133483013b6aa01d0c2822"
 
@@ -47,7 +46,7 @@ arxiv = "2409.09856"
 version = 3
 title = "Proof of the geometric Langlands conjecture V: the multiplicity one theorem"
 role = "GLC V"
-licence = "CC BY 4.0 (D6)"
+licence = "CC BY 4.0"
 sha256_source = "4a1e452a9672df6df3db2536acbe726d4559489ca0b201b327b527ff6e534d3b"
 sha256_pdf = "d12cfa9b68ab1a29b302e6a439eaf03bc402339e9493e0734ed7020b93e2147e"
 
@@ -55,7 +54,7 @@ sha256_pdf = "d12cfa9b68ab1a29b302e6a439eaf03bc402339e9493e0734ed7020b93e2147e"
 arxiv = "2010.01906"
 version = 2
 title = "The stack of local systems with restricted variation and geometric Langlands theory with nilpotent singular support"
-role = "AGKRRV: the conventions GLC I cites (Q5 labels); local only"
-licence = "arXiv non-exclusive distribution licence 1.0 (N3 report 2026-11-04): never copy, link only"
+role = "AGKRRV: the conventions GLC I cites (the source of the hypotheses' labels); local only"
+licence = "arXiv non-exclusive distribution licence 1.0 (checked 2026-11-04): never copy, link only"
 sha256_source = "f20e49df5d0087e49f3c510bb91d5ce742f4cbc3864cce8a874c09ca77146775"
 sha256_pdf = "4910555c0e2b6ba1bd2d8ef6107019e48f9b28b2c8af0bd872d971476c1837fe"
