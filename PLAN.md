@@ -1,6 +1,7 @@
 # GLCinLean plan
 
-Written 2026-11-06. Replaces the earlier planning documents (they remain in the git history).
+Written 2026-11-06. Replaces the earlier planning documents, which are kept in the private
+repository `GLCinLean-archive`; nothing there is in force.
 
 ## Goal
 
