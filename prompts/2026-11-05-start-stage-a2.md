@@ -33,7 +33,7 @@ Written 2026-11-05 with `prop`. Paste the block below into a new Claude Code ses
 - Everything I must do on GitHub is written out in one place as exact commands, for what is not yet in place:
   - the repository settings (N7 report §6.1);
   - the ruleset, with the final names of the required checks (§6.3);
-  - the GitHub App for Q4's option (a) (D44), which I have not created yet (§6.4; step 5 is superseded by D40 Finding 4: both tokens stay, and workers are sandboxed instead);
+  - the GitHub App for Q4's option (a) (D44): I created it on 2026-11-06 (`glcinlean-agent`, App ID `5640446`, installation id `179214298`, installed on GLCinLean only; private key at `~/glc-machine/glcinlean-agent.pem`, mode 600). Check its permissions and installation read-only and write commands only for what is missing (§6.4; step 5 is superseded by D40 Finding 4: both tokens stay, and workers are sandboxed instead);
   - a one-time test pull request showing that code-owner review is required with zero required approvals (N7 conflict C-N7-3).
 - `scripts/check.sh --faults` passes locally. If I push during the session, read the CI runs with `gh` (read-only) and fix what fails.
 - The work is in local commits on `main`. Your report says what was done, what did not work, and what is left for A3.
@@ -50,7 +50,7 @@ Written 2026-11-05 with `prop`. Paste the block below into a new Claude Code ses
 - The `approved` fields in `reviews/` stay blank (D44): I approve a provisional goal-1a baseline only after this stage's fixes and B1's review of the assembled statement. The kit does not read them. If data format v0 gives `approved` a structure, plan for the date and initials in that field and the scope wording in a linked owner attestation (D44 has the wording).
 - The 16 Foundations-name warnings that `review imports` prints are B1's to decide. Leave them.
 - Layout and namespaces (D44, K4; plan §2.1): any new file follows them. Staging is still empty.
-- GitHub state on 2026-11-06 (read-only `gh api`): N7's §6.1 settings were not applied, the default workflow token was already read-only, and the repository is public. I may have changed this since; check again before writing commands.
+- GitHub state on 2026-11-06 (read-only `gh api`): I applied N7's §6.1 settings (squash-only, auto-merge, delete merged branches, no Issues or wiki, read-only workflow token that cannot approve PRs, approval required for all outside contributors' CI); the repository is public; `allow_update_branch` is off: turn it on in your commands if the ruleset requires up-to-date branches. The ruleset (§6.3) is not applied. Check again before writing commands.
 - Starting material in `private/feasibility/2026-11-04/` (if `private/` is missing, clone GLCinLeanPrivate there):
   - `reports/N7-github.md` §4–§7: identity, required checks, rulesets, CODEOWNERS, the workflow outline;
   - `reports/L2.md` §4.2–4.6 and `prototypes/L2/tools/join_extras.py`: the extras join, tracker's stale cache, the no-progress snapshots;
