@@ -31,7 +31,7 @@
 
 Done: the Mac mini set-up (D38), the implementation plan and its three reviews (D40, D42, D43), and stage A1 (5 Nov 2026).
 
-**Next:** approve `reviews/sorry-budget.toml` and `reviews/statement-pin.toml` (fill in `approved`), then stage A2 of the plan (CI, data format v0, the `review` record command). Clone with `git clone --recurse-submodules`; build with `scripts/check.sh`.
+**Next:** stage A2 (CI, data format v0, the `review` record command): open a new Claude Code session in this checkout, run `/effort high`, and paste the start prompt in `prompts/2026-11-05-start-stage-a2.md`. Clone with `git clone --recurse-submodules`; build with `scripts/check.sh`.
 
 Prompts that have been run are deleted; the log records what they settled.
 
