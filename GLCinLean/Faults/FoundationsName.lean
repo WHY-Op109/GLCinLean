@@ -1,5 +1,5 @@
--- Fault-injection fixture (D27 test 1), built only by the fault job; expected diagnostic in glc/faults.toml.
--- Imports (Q14, warning only): an abstract that names Mathlib's schemes directly instead of
+-- Fault-injection fixture, built only by the fault job; expected diagnostic in glc/faults.toml.
+-- Imports (warning only): an abstract that names Mathlib's schemes directly instead of
 -- the Foundations name.
 import GLCinLean.Foundations
 namespace GLCinLean.Faults.FoundationsName

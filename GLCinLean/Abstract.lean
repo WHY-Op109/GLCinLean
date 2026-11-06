@@ -1,17 +1,16 @@
 /-
-GLCinLean.Abstract: the formal abstract (D39). It states GLC I (arXiv 2405.03599v3) Conj. 1.6.7
+GLCinLean.Abstract: the formal abstract. It states GLC I (arXiv 2405.03599v3) Conj. 1.6.7
 and the definitions its statement needs, and imports only Mathlib, Tau Ceti and
-`GLCinLean.Foundations` (D10, enforced by `review imports`).
+`GLCinLean.Foundations` (enforced by `review imports`).
 
-Status: goal-1a STUB written in stage A1 (2026-11-05) by Claude Opus 5.5. Unreviewed; nothing
-here is checked by an expert. The `𝕃_G` chain (23 constructions, N3) is not written yet: the
-categories and functors it produces appear below as placeholders, and the blueprint (B1) and
-the goal-1a workers replace them by real definitions.
+Status: STUB written 2026-11-05 by Claude Opus 5.5. Unreviewed; nothing here is checked by an
+expert. The `𝕃_G` chain (about 23 constructions) is not written yet: the categories and
+functors it produces appear below as placeholders, to be replaced by real definitions.
 
 Sorry'd theorems in this file are listed in the human-owned sorry budget
-`reviews/sorry-budget.toml`, each bound to the fingerprint of its statement (Q13). The main
+`reviews/sorry-budget.toml`, each bound to the fingerprint of its statement. The main
 theorem's and the hypothesis block's own statements are pinned in
-`reviews/statement-pin.toml` (D40 Finding 3, D43/F10).
+`reviews/statement-pin.toml`.
 -/
 import GLCinLean.Foundations
 
@@ -24,20 +23,20 @@ open AlgebraicGeometry hiding Scheme
 
 universe u
 
-/-! ## Standing hypotheses (Q5, decided in review; GLC I §1, conventions as in AGKRRV)
+/-! ## Standing hypotheses (GLC I §1, conventions as in AGKRRV)
 
 `k` is algebraically closed of characteristic 0; `X` is a smooth, proper, connected curve over
 `k`; `G` is a reductive group over `k`. The statement is made for every square root of `ω_X`,
 taken as data, and for every pinning.
 
-Label (Q5): "algebraically closed" and "connected" come from the conventions GLC I cites
+Label: "algebraically closed" and "connected" come from the conventions GLC I cites
 (AGKRRV, `text.tex` l.2066, l.2087, l.15123) and from GLC II's proof (`Loc.tex` l.1497,
 l.37294), not from GLC I's opening sentence, which says only "a field of characteristic 0"
-(`functor.tex` l.717) [R, N3 report, 2026-11-04]. -/
+(`functor.tex` l.717) [read 2026-11-04]. -/
 
 /-- PLACEHOLDER (provisional). An identification of the root datum of `Gd` with the dual of the
 root datum of `G` (GLC I §1.3: the Langlands dual group). No library defines the root datum of a
-general reductive group yet (N3), so this has content only from goal 1b. Deliberately a plain
+general reductive group yet, so this has content only once it is defined. Deliberately a plain
 `opaque` type, not `NonemptyType`: whether an identification exists is the content. -/
 @[placeholder] opaque RootDatumDuality {k : Type u} [Field k] :
     ReductiveGroup k → ReductiveGroup k → Type u
@@ -45,7 +44,7 @@ general reductive group yet (N3), so this has content only from goal 1b. Deliber
 /-- The standing data of GLC I §1 (the hypothesis block, pinned in `reviews/statement-pin.toml`):
 a smooth proper connected curve `X` over `k`, a reductive group `G` with a pinning, a square
 root of `ω_X` as data (a line bundle with a chosen isomorphism from its square to `ω_X`, GLC I
-l.1511), and the Langlands dual group `Ǧ` as an input with a root-datum identification (Q5). -/
+l.1511), and the Langlands dual group `Ǧ` as an input with a root-datum identification. -/
 structure Setting (k : Type u) [Field k] [CharZero k] [IsAlgClosed k] where
   /-- The curve. -/
   X : Scheme.{u}
@@ -71,8 +70,8 @@ structure Setting (k : Type u) [Field k] [CharZero k] [IsAlgClosed k] where
 attribute [instance] Setting.over Setting.smooth Setting.proper Setting.connected
 
 /-- A Langlands dual group exists (GLC I §1.3). Stated so that a wrongly stated identification
-shows up as a false existence claim instead of making the main statement vacuous (Q5). Budgeted
-sorry: an obligation, not a certificate (D43/F13). -/
+shows up as a false existence claim instead of making the main statement vacuous. Budgeted
+sorry: an obligation, not a certificate. -/
 theorem exists_dualGroup {k : Type u} [Field k] [CharZero k] [IsAlgClosed k]
     (G : ReductiveGroup k) : ∃ Gd : ReductiveGroup k, Nonempty (RootDatumDuality G Gd) := sorry
 
@@ -99,7 +98,7 @@ functor (GLC I §1.6). -/
 `QCoh(LS_Ǧ)`-linear functor (GLC I §1.6). -/
 @[placeholder] opaque LCoarse (S : Setting k) : LinFun (QCohLS S) (DmodHalf S) (QCohLS S)
 
-/-! ## The functor `𝕃_G` (Q6, option C; contract D43/F08) -/
+/-! ## The functor `𝕃_G` (chosen from Cor. 1.6.5's existence statement) -/
 
 /-- The two properties of GLC I Cor. 1.6.5, of a continuous `QCoh(LS_Ǧ)`-linear functor
 `F : Dmod_{1/2}(Bun_G) → IndCoh_Nilp(LS_Ǧ)` in the enhanced sense: `F` sends compact objects to
@@ -122,7 +121,7 @@ theorem isLanglandsFunctor_unique (S : Setting k)
     Nonempty (LinIso F F') := sorry
 
 /-- `𝕃_G : Dmod_{1/2}(Bun_G) → IndCoh_Nilp(LS_Ǧ)` (GLC I Cor. 1.6.5): *the* functor with the
-two properties, chosen from the existence statement (Q6, option C). Nothing is known about it
+two properties, chosen from the existence statement. Nothing is known about it
 beyond the two properties. -/
 def LG (S : Setting k) : LinFun (QCohLS S) (DmodHalf S) (IndCohNilp S) :=
   Classical.choose (exists_isLanglandsFunctor S)

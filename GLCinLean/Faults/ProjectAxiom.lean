@@ -1,5 +1,5 @@
--- Fault-injection fixture (D27 test 1), built only by the fault job; expected diagnostic in glc/faults.toml.
--- Axioms (D27 test 1): a property axiom asserting the conjecture, and a theorem using it.
+-- Fault-injection fixture, built only by the fault job; expected diagnostic in glc/faults.toml.
+-- Axioms: a property axiom asserting the conjecture, and a theorem using it.
 import GLCinLean.Abstract
 namespace GLCinLean.Faults.ProjectAxiom
 open GLCinLean.Abstract

@@ -1,0 +1,6 @@
+format = "reviewkit-sorry-budget/0"
+# Fault fixture: an entry whose evidence id names no record.
+[[entry]]
+decl = "GLCinLean.Abstract.main"
+statement = "sha256:d56a67b6a1637017b6c580799ed43b92c6c5037726c8d50beac15c41dc032959"
+evidence = "fingerprint:GLCinLean.Abstract.main@000000000000.000000000000"

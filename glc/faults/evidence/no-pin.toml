@@ -1,0 +1,2 @@
+format = "reviewkit-statement-pin/0"
+# Fault fixture: a pin file with no entries (no evidence links).

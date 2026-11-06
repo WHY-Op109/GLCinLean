@@ -1,4 +1,4 @@
--- Fault-injection fixture (D27 test 1), built only by the fault job; expected diagnostic in glc/faults.toml.
+-- Fault-injection fixture, built only by the fault job; expected diagnostic in glc/faults.toml.
 -- Closure: an abstract definition depends on implementation code.
 import GLCinLean.Faults.Impl
 namespace GLCinLean.Faults.AbstractUsesImpl

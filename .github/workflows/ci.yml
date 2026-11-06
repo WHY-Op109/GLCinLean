@@ -1,0 +1,48 @@
+# GLCinLean CI: build from caches and run every check, on each push to main.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - name: Free disk (the build needs about 12 GB)
+        run: |
+          df -h /
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/.ghcup \
+            /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h /
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          submodules: true
+          persist-credentials: false
+
+      - name: Install elan
+        uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1.7.0
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: false
+          use-github-cache: false
+
+      - name: Checks (scripts/check.sh --caches --faults)
+        run: scripts/check.sh --caches --faults
+
+      - name: Disk at the end
+        if: always()
+        run: df -h / && du -sh .lake ~/.elan ~/.cache/mathlib 2> /dev/null || true

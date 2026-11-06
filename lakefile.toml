@@ -1,29 +1,35 @@
 name = "GLCinLean"
 defaultTargets = ["GLCinLean"]
-# Never indexed by Reservoir (V2, D1: public but unannounced).
+# Never indexed by Reservoir (public but unannounced).
 reservoir = false
+# Mathlib's linters, as FLT, Carleson and PFR use them: warnings in the build log, never a gate.
+# `lake lint` runs Batteries' runLinter by hand.
+lintDriver = "batteries/runLinter"
 
-# Tau Ceti at a tag (D26; bumps are K12's job). Mathlib comes through Tau Ceti.
+[leanOptions]
+weak.linter.mathlibStandardSet = true
+
+# Tau Ceti at a tag; Mathlib comes through Tau Ceti. Bumps are the owner's decision.
 [[require]]
 name = "TauCeti"
 git = "https://github.com/TauCetiProject/TauCeti"
 rev = "v4.36.0-rc2"
 
-# bridgekat/tracker @ c223b67, a git submodule (L2 route 1).
+# bridgekat/tracker @ c223b67, a git submodule.
 [[require]]
 name = "tracker"
 path = "tools/tracker"
 
-# The reusable review kit (D35, K1/K2); no GLC-specific code inside.
+# The review checks (github.com/WHY-Op109/reviewkit), pinned by commit.
 [[require]]
 name = "ReviewKit"
-path = "reviewkit"
+git = "https://github.com/WHY-Op109/reviewkit"
+rev = "3fd3bfa7ebcf6afb68101df4932c6ce8cfdec0c6"
 
 [[lean_lib]]
 name = "GLCinLean"
 
-# Fault-injection fixtures (D27 test 1): never part of the default build;
-# built only by the fault job (`lake build GLCinLeanFaults`).
+# Fault-injection fixtures: never part of the default build; built by `scripts/check.sh --faults`.
 [[lean_lib]]
 name = "GLCinLeanFaults"
 globs = ["GLCinLean.Faults.+"]

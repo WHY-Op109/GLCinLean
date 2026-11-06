@@ -1,0 +1,26 @@
+{"statement":
+ {"text":
+  "T 1 (Pi (S (s u0)) (Pc (A (C Field u0) #0) (Pc (A (A (C CharZero u0) #1) (A (A (C AddGroupWithOne.toAddMonoidWithOne u0) #1) (A (A (C Ring.toAddGroupWithOne u0) #1) (A (A (C DivisionRing.toRing u0) #1) (A (A (C Field.toDivisionRing u0) #1) #0))))) (Pc (A (A (C IsAlgClosed u0) #2) #1) (Pd (A (A (A (A (C GLCinLean.Abstract.Setting u0) #3) #2) #1) #0) (A (A (A (A (C GLCinLean.Foundations.LinFun.IsEquivalence ) (A (A (A (A (A (C GLCinLean.Abstract.QCohLS u0) #4) #3) #2) #1) #0)) (A (A (A (A (A (C GLCinLean.Abstract.DmodHalf u0) #4) #3) #2) #1) #0)) (A (A (A (A (A (C GLCinLean.Abstract.IndCohNilp u0) #4) #3) #2) #1) #0)) (A (A (A (A (A (C GLCinLean.Abstract.LG u0) #4) #3) #2) #1) #0)))))))",
+  "fingerprint":
+  "sha256:d56a67b6a1637017b6c580799ed43b92c6c5037726c8d50beac15c41dc032959"},
+ "serialisation": "reviewkit-canonical/0",
+ "producer":
+ {"tool": "reviewkit",
+  "lean_version": "4.36.0-rc2",
+  "kit_version": "0.3.0",
+  "config_sha256":
+  "sha256:9b635b411fd927db4c24019e665133ecec39da19bd770b1ee177deb2fdb0914b",
+  "config": "glc/project.toml"},
+ "module": "GLCinLean.Abstract",
+ "kind": "fingerprint",
+ "id": "fingerprint:GLCinLean.Abstract.main@d56a67b6a163.42296b555afd",
+ "format": "reviewkit-evidence/0",
+ "digest":
+ {"text":
+  "[T 1 (Pi (S (s u0)) (Pc (A (C Field:f61fee747702eb6c u0) #0) (Pc (A (A (C CharZero:f6e7c9c0e7a37b73 u0) #1) (A (A (C AddGroupWithOne.toAddMonoidWithOne:8e7c8797fdcbc7db u0) #1) (A (A (C Ring.toAddGroupWithOne:863a42b629e8bf38 u0) #1) (A (A (C DivisionRing.toRing:fb6cd31ac43995a8 u0) #1) (A (A (C Field.toDivisionRing:27adf134058ad411 u0) #1) #0))))) (Pc (A (A (C IsAlgClosed:956430e789c3961e u0) #2) #1) (Pd (A (A (A (A (C GLCinLean.Abstract.Setting#sha256:43f43ab05fd259f09c7fe782f39eb528dd88d2a310c788f8a2beb609dc8c9e8d u0) #3) #2) #1) #0) (A (A (A (A (C GLCinLean.Foundations.LinFun.IsEquivalence#sha256:3a1b1f165ea8ee2e259c91eea89d06d76395322b7a701c9afeee06f4cd1ed3a2 ) (A (A (A (A (A (C GLCinLean.Abstract.QCohLS#sha256:1693a77d5096a831c0bacb8967408113702bb0c64f57acc995d9faa0bcb7b881 u0) #4) #3) #2) #1) #0)) (A (A (A (A (A (C GLCinLean.Abstract.DmodHalf#sha256:1693a77d5096a831c0bacb8967408113702bb0c64f57acc995d9faa0bcb7b881 u0) #4) #3) #2) #1) #0)) (A (A (A (A (A (C GLCinLean.Abstract.IndCohNilp#sha256:1693a77d5096a831c0bacb8967408113702bb0c64f57acc995d9faa0bcb7b881 u0) #4) #3) #2) #1) #0)) (A (A (A (A (A (C GLCinLean.Abstract.LG#sha256:5c5a6902fa653fba47e698780e42ce1e9861f7845f2247805a27ed69d335e777 u0) #4) #3) #2) #1) #0)))))))]",
+  "fingerprint":
+  "sha256:42296b555afd904daf821728fd41edee7e9f1cad011f8fb4682fa6c43440a606",
+  "block_size": 1,
+  "block_index": 0},
+ "decl_kind": "theorem",
+ "decl": "GLCinLean.Abstract.main"}

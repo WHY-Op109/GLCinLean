@@ -1,0 +1,27 @@
+{"statement":
+ {"text":
+  "T 1 (Pi (S (s u0)) (Pc (A (C Field u0) #0) (Pc (A (A (C CharZero u0) #1) (A (A (C AddGroupWithOne.toAddMonoidWithOne u0) #1) (A (A (C Ring.toAddGroupWithOne u0) #1) (A (A (C DivisionRing.toRing u0) #1) (A (A (C Field.toDivisionRing u0) #1) #0))))) (Pc (A (A (C IsAlgClosed u0) #2) #1) (Pd (A (A (C GLCinLean.Foundations.ReductiveGroup u0) #3) #2) (A (A (C Exists (s (s u0))) (A (A (C GLCinLean.Foundations.ReductiveGroup u0) #4) #3)) (Ld (A (A (C GLCinLean.Foundations.ReductiveGroup u0) #4) #3) (A (C Nonempty (s u0)) (A (A (A (A (C GLCinLean.Abstract.RootDatumDuality u0) #5) #4) #1) #0)))))))))",
+  "fingerprint":
+  "sha256:486730f4f78e1a277da0b030db9869be53bec60637ba2ad207a49beedf6f2567"},
+ "serialisation": "reviewkit-canonical/0",
+ "producer":
+ {"tool": "reviewkit",
+  "lean_version": "4.36.0-rc2",
+  "kit_version": "0.3.0",
+  "config_sha256":
+  "sha256:9b635b411fd927db4c24019e665133ecec39da19bd770b1ee177deb2fdb0914b",
+  "config": "glc/project.toml"},
+ "module": "GLCinLean.Abstract",
+ "kind": "fingerprint",
+ "id":
+ "fingerprint:GLCinLean.Abstract.exists_dualGroup@486730f4f78e.c87aef1b7c65",
+ "format": "reviewkit-evidence/0",
+ "digest":
+ {"text":
+  "[T 1 (Pi (S (s u0)) (Pc (A (C Field:f61fee747702eb6c u0) #0) (Pc (A (A (C CharZero:f6e7c9c0e7a37b73 u0) #1) (A (A (C AddGroupWithOne.toAddMonoidWithOne:8e7c8797fdcbc7db u0) #1) (A (A (C Ring.toAddGroupWithOne:863a42b629e8bf38 u0) #1) (A (A (C DivisionRing.toRing:fb6cd31ac43995a8 u0) #1) (A (A (C Field.toDivisionRing:27adf134058ad411 u0) #1) #0))))) (Pc (A (A (C IsAlgClosed:956430e789c3961e u0) #2) #1) (Pd (A (A (C TauCeti.ReductiveAffineGroupSchemeCat#sha256:677d79595169713a574b7b8d5ad6784cd619c360a4fc0a095c82571c59fee927 u0) #3) #2) (A (A (C Exists:9e7fcd7e3d2af75b (s (s u0))) (A (A (C TauCeti.ReductiveAffineGroupSchemeCat#sha256:677d79595169713a574b7b8d5ad6784cd619c360a4fc0a095c82571c59fee927 u0) #4) #3)) (Ld (A (A (C TauCeti.ReductiveAffineGroupSchemeCat#sha256:677d79595169713a574b7b8d5ad6784cd619c360a4fc0a095c82571c59fee927 u0) #4) #3) (A (C Nonempty:76c5ad6b36d6bcbb (s u0)) (A (A (A (A (C GLCinLean.Abstract.RootDatumDuality#sha256:585424d66ba6d8f9d069682cb61cd3fd02c2ce76c97da71af2ac28136b00f2cd u0) #5) #4) #1) #0)))))))))]",
+  "fingerprint":
+  "sha256:c87aef1b7c65f648254ed6bcfceba3fab088fbe7596b89bb7fed137494087c24",
+  "block_size": 1,
+  "block_index": 0},
+ "decl_kind": "theorem",
+ "decl": "GLCinLean.Abstract.exists_dualGroup"}

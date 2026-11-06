@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Fetch the papers pinned in references/papers/manifest.toml (D6).
+"""Fetch the papers pinned in references/papers/manifest.toml.
 
 Downloads each entry's arXiv source (e-print) and PDF at the pinned version into the git-ignored
 folder references/papers/<id>v<version>/, checks the SHA-256 checksums recorded in the manifest,
-and unpacks the source into src/. The papers are never committed to any repository (D6).
+and unpacks the source into src/. The papers are never committed to any repository.
 
 Usage (from the repository root; Python 3.11+, standard library only):
     python3 -I scripts/fetch-papers.py            # fetch what is missing, verify everything
     python3 -I scripts/fetch-papers.py --only 2405.03599
     python3 -I scripts/fetch-papers.py --print-checksums   # TOML lines for unpinned entries
 
-Polite use of arXiv (D6): one request at a time, a pause between requests, a generic
+Polite use of arXiv: one request at a time, a pause between requests, a generic
 User-Agent, and no request for a file that is already present and verified.
 """
 import argparse, gzip, hashlib, io, pathlib, sys, tarfile, time, tomllib, urllib.request
