@@ -1,5 +1,5 @@
 # Papers manifest. TRACKED; the papers themselves (PDF, LaTeX) are fetched into this
-# git-ignored folder by scripts/fetch-papers.py and never committed to any repository.
+# git-ignored folder and never committed to any repository.
 # Provenance per entry: arXiv id and pinned version, title, licence as stated on arXiv, and
 # SHA-256 of the downloaded e-print source and PDF (recorded at the first fetch).
 # Versions and titles checked against the arXiv API on 2026-11-05 [R].

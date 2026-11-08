@@ -15,11 +15,14 @@ Mathlib. See [`PLAN.md`](PLAN.md).
 | `reviews/` | the sorry budget and the statement pin (approved by the owner) |
 | `glc/project.toml` | configuration of the review checks |
 | `prompts/` | goal-mode prompts: the statement, the proof, the fidelity review |
-| `references/papers/manifest.toml` | the papers, fetched locally by `scripts/fetch-papers.py`, never committed |
+| `references/papers/manifest.toml` | the papers, fetched locally, never committed |
 
 Build and check (clone with `--recurse-submodules`):
 
-    scripts/check.sh --caches
+    export LAKE_CONFIG=$PWD/.lake-config/lake-config.toml LAKE_CACHE_DIR=$PWD/.lake/cache
+    lake exe cache get
+    lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti --mappings-only
+    lake build
 
 The review checks come from [reviewkit](https://github.com/WHY-Op109/reviewkit), which also holds
 their fault-injection tests.
