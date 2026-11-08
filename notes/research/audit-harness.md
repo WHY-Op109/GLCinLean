@@ -11,8 +11,7 @@
   (`lake exe tracker --dir blueprint/plans status|lint`) were run locally at the current pins.
   Upstream state of Tau Ceti, tracker and reviewkit came from `gh api` the same day.
 - **Not covered here:** `GLCinLean/Abstract.lean` and `GLCinLean/Foundations.lean` themselves
-  (only how they tie into the files below), and the GLCinLean-archive repository (private and
-  archived, by `gh api` 2026-11-08).
+  (only how they tie into the files below).
 - **Independent re-check, 2026-11-08.** A second agent re-ran `lake build`, `lake lint`,
   `review … all`, `tracker … lint|status` (with and without `--dir`), re-read every file, the
   commit stats and messages, ReviewKit's `Attr.lean`, `Fingerprint.lean` and `lakefile.toml` at
@@ -38,7 +37,7 @@ and then removing it in steps [R]:
 | `ade5089` | 11-05 | "Stage A1": Lake skeleton, ReviewKit inside the repo, abstract stub, tracker submodule, papers manifest, fault fixtures, `check.sh` (+3583 lines, 76 files) |
 | `8b6e339`, `a83d227` | 11-06 | D44; set-up for PRs |
 | `7265f9a` | 11-06 | "Simplify": ReviewKit moved to its own repo, `references/tau-ceti/`, `reports/` removed (−6799 lines); `PLAN.md`, goal-mode prompts and a CI workflow (`.github/workflows/ci.yml`, running `scripts/check.sh`) created |
-| `7ce7bc0` | 11-06 | old `plans/` moved to GLCinLean-archive (−1792 lines) |
+| `7ce7bc0` | 11-06 | old `plans/` removed (−1792 lines) |
 | `f6242cf` | 11-06 | `check.sh` made to run under bash for CI |
 | `a6de757` | 11-06 | fault fixtures, evidence records, `glc/extras.toml` removed (−942 lines) |
 | `0feeb6f` | 11-08 | `scripts/check.sh`, `scripts/fetch-papers.py`, CI workflow and `THIRD_PARTY_NOTICES.md` removed; notes and research prompt added. The commit message names the scripts and CI ("nothing is enforced") but not `THIRD_PARTY_NOTICES.md` |
@@ -209,8 +208,6 @@ note said they appear "nowhere else … except partly" in the Lean]. The stateme
   ("Subscriptions only; no API billing", "public but unannounced", papers), and the open
   questions (formalism for stacks; wait, copy or build per missing foundation; who the outside
   expert is and when the quiet phase ends).
-- It calls GLCinLean-archive "the private repository"; `gh api` confirms it is private and
-  archived, so the link in `notes/ideas.md` works only for the owner.
 - Typo: line 12 "partialevidence".
 
 **`README.md`** — status banner ("unreviewed, agent-generated"), a table of paths, the build
@@ -334,9 +331,6 @@ With `notes/ideas.md`:
 - **Review system location.** ideas.md wants the review system in its own repository, based on
   tracker; here tracker is a submodule of this repository and ReviewKit a separate dependency.
 
-- **Archive link.** ideas.md lists GLCinLean-archive as a reference ("Publish freely" is one of
-  its principles); the repository is private and archived [R `gh api`], so nobody but the owner
-  can follow that link.
 
 Inside the repository [R]:
 - `README.md` names `THIRD_PARTY_NOTICES.md`, which is not in git (untracked locally).
