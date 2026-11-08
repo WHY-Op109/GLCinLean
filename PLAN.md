@@ -1,7 +1,6 @@
 # GLCinLean plan
 
-Written 2026-11-06. Replaces the earlier planning documents, which are kept in the private
-repository `GLCinLean-archive`; nothing there is in force.
+Written 2026-11-06. Replaces the earlier planning documents; nothing there is in force.
 
 ## Goal
 
@@ -70,8 +69,7 @@ Sessions commit locally; the owner reads and pushes.
 - The closure from the abstract (walking into Tau Ceti) lists the key definitions; the
   fidelity review takes its scope from that list.
 - The checker's own fault-injection tests live in ReviewKit (`test/faults.toml`), not here.
-  The GLCinLean fixtures, evidence records and extras file were moved to `GLCinLean-archive`
-  (`glcinlean-2026-11-06-slimming/`) on 2026-11-06.
+  The GLCinLean fixtures, evidence records and extras file were removed on 2026-11-06.
 
 **The project**
 - Public but unannounced; nothing is sent to other projects unless the owner chooses.

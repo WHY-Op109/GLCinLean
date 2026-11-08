@@ -1,53 +1,51 @@
 # Rebuilding GLCinLean: order of work and decisions
 
-Agreed with the owner on 2026-11-08. The owner's ideas and references are in [`ideas.md`](ideas.md); this file holds the order of work, the decisions taken since, and the questions left for after the research.
+Agreed with the owner on 2026-11-08. The owner's ideas and references are in [`ideas.md`](ideas.md); the research is in [`research/`](research/) (start with [`research/summary.md`](research/summary.md)). This file holds the order of work, the decisions, and the questions still open.
 
 ## Order of work
 
-0. **Research** (one session, subagents in parallel; prompt `prompts/research.md`). Read every reference in `ideas.md` and search for more; audit the existing repository. Output: notes per reference and a summary with questions for the owner (`notes/research/`).
-   → The owner reads the summary and answers the questions.
-1. **Rebuild** (one session). From the research, decide what goes in `AGENTS.md`, whether `PLAN.md` stays, what happens to each existing file, and how a session updates the prompt for the next one. Write `AGENTS.md` and the recurring prompts with `/prop` (goal, done when, context). Propose changes to the owner's files rather than making them.
+0. **Research.** Done on 2026-11-08 (`prompts/research.md`, output in `notes/research/`); the owner answered the questions the same day (below).
+1. **Rebuild** (one session). Write the short `AGENTS.md`, `STATUS.md` and the recurring prompts with `/prop` (goal, done when, context), and handle each existing file, following the decisions below and `notes/research/summary.md` §4.
    → The owner reads the diff.
-2. **Plan** (recurring). The blueprint: each object of the GLC statement mapped to Mathlib, Tau Ceti, a Tau Ceti roadmap item, or missing; backbone versus surface. Decide whether `Abstract.lean`, `Foundations.lean` and their placeholders stay or change. A fresh agent reviews it.
-  → The owner reads the verdict.
-3. **Build** (recurring). Tau Ceti roadmap items become Tau Ceti pull requests; the rest goes
-   into this repository's backbone, then the GLC statement surface.
-4. **Review** (recurring). Fresh agents check changed declarations against the papers and the
-   standards.
-5. **Refactor** (recurring). Bump the Tau Ceti pin, adopt new upstream code, act on reviews.
+2. **Plan** (recurring). The blueprint: each object of the GLC statement mapped to Mathlib, Tau Ceti, a Tau Ceti roadmap item, or missing; library versus statement. Redesign `Abstract.lean` and `Foundations.lean` (decision below). A fresh agent reviews it.
+   → The owner reads the verdict.
+3. **Build** (recurring). Tau Ceti roadmap parts go to Tau Ceti through Tau Ceti's Worker; the rest goes into this repository's library, then the GLC statement.
+4. **Review** (recurring). Fresh agents check changed declarations against the papers and the standards.
+5. **Refactor** (recurring). Adopt merged Tau Ceti contributions (moving the pin), act on reviews.
 6. **Proof** (after the statement). The same plan → build → review loop.
 
-Alongside, in its own repository: **the review system**, started after step 0, with its own
-prompt written in step 1.
-
-After every session: check whether the next prompt needs changing; the owner sees any change in
-the commit.
+Alongside, in its own repository: **the review system**, with its own prompt written in step 1.
 
 ## Decisions
 
-- **Shared context** lives in `AGENTS.md`; there is no separate `main.md`. `AGENTS.md` is short and written for agents: the main goal, and the requirement that all text uses plain, understandable, structured words. It follows Anthropic's official guidance for such files.
-- **Prompts** hold only the goal, the completion criteria and the context, with few constraints, written with `/prop`.
-- **Prompts change as work goes on.** A session's output may change the next prompt, so each session checks the prompt for the next step and updates it if needed. (Where this rule is written down is decided in step 1.)
-- **Commit and push** at important steps: after finishing each prompt's session, and at important steps during formalisation. Agents push themselves.
-- **Tau Ceti contributions are fully automated**, following Tau Ceti's own requirements.
-- **Keeping up with Mathlib and Tau Ceti is fully automated**, including their Lean version.
+**Files and instructions**
+- **`AGENTS.md`** is short, written for agents in plain, understandable, structured words, following Anthropic's guidance. It holds (summary §4.1, items as numbered there): the goal (1); the writing style (2); the source order and Tau Ceti rules (3); links to Mathlib's style, naming and documentation pages plus the project's own facts (4); the placeholder rule, and never weakening what a statement says while removing a sorry or a placeholder (5); the build commands and the "done" check (6); when to commit, that pushing to `main` is wanted, and that agents may open Tau Ceti pull requests from the owner's fork (7). Not in it: contacting people (8), downloads and provenance (9), `CLAUDE.md` (10).
+- **Prompts** hold only the goal, the completion criteria and the context, written with `/prop`. Every recurring prompt's "done when" includes: check the prompt for the next step and update it in the same commit (item 11; not in `AGENTS.md`).
+- **`PLAN.md`** is deleted; its content moves as summary §4.2 says, and a short committed `STATUS.md` records what is done, what is next, and Tau Ceti pull requests in flight.
+- **No harness and no tools.** This is a plain, simple Lean project driven by prompts. Step 1 removes `glc/project.toml`, `reviews/`, the ReviewKit requirement and `tools/tracker`; `@[placeholder]` becomes a local attribute.
+- **Papers:** `references/papers/manifest.toml` is dropped; a committed `docs/references.bib` records the arXiv id and version of every cited paper. The TeX files stay untracked.
+- **Copyright and `Authors:` lines:** the contributors and the AI models, following Tau Ceti and Mathlib's documentation rules.
+- **Research notes** are committed and public, without judgements about named people or the owner's private set-up details.
 
-## Questions for after the research
+**The statement**
+- **Scope:** GLC I Conj. 1.6.7: de Rham, characteristic 0, any algebraically closed field `k`; library interfaces keep the ground field and the coefficient field apart.
+- **Placeholders** only in the statement surface: marked, shown as their own state, with characterising theorems where possible, replaced only together with examples; none in the library or in code meant for Tau Ceti.
+- **Statement goal:** a sorry is not enough for what must be proved to state the final goal faithfully (well-definedness and the like); those results are proved in the statement phase. This covers the theorems needed to define 𝕃_G (the existence in Cor. 1.6.5, the spectral action, the bound from compact to coconnective objects).
+- **Redesign:** step 2 may change the statement itself (drop the re-exports, rename, refine `LCoarse`, `IndCohNilp`, `IsEventuallyCoconnective`, `RootDatumDuality`, `DGCat`, `Setting`) as one change, with a fresh-agent review; the owner sees the diff.
+- **Later changes to the statement** or to definitions it reaches: a fresh agent checks them with the review prompt, then the change waits for the owner's approval.
+- **No warnings** in any Lean code.
+- **Final check of the proof:** everything mechanical (it builds, no `sorry`, only `propext`, `Classical.choice` and `Quot.sound`, the kernel accepts it). Whether the statement matches the paper is human work.
 
-Raised on 2026-11-08 and deliberately left open until the research is done:
+**Versions and Tau Ceti**
+- **Versions:** pin once to the newest existing Lean, Mathlib and Tau Ceti versions. Agents move the Tau Ceti pin only when merged Tau Ceti contributions are needed, choosing a commit with a ready-built cache. After the project is finished, the owner does any further upgrade.
+- **Tau Ceti contributions:** roadmap parts go to Tau Ceti through Tau Ceti's Worker, run outside this repository; after they merge, GLCinLean uses them through its Tau Ceti dependency. No reviews of other people's pull requests for now.
+- **Pushing:** sessions push to `main` of `WHY-Op109/GLCinLean` at important steps and open Tau Ceti pull requests from the owner's fork. The owner allows this for Claude Code's auto mode in their own settings.
+- **Roadmaps:** none for now; ask Tau Ceti later, once a first layer exists here.
+- **Never** open pull requests to Mathlib.
 
-- What exactly goes into `AGENTS.md`, and where the rule "update the next prompt" lives.
-- Whether `PLAN.md` is needed, given that the prompts carry the plan.
-- Whether `GLCinLean/Abstract.lean`, `GLCinLean/Foundations.lean` and their placeholder design are reasonable, or need to change.
-- What happens to each existing file (the ReviewKit requirement in `lakefile.toml`, the `@[placeholder]` attribute it provides, `glc/project.toml`, `reviews/`, `blueprint/`, `prompts/`, `references/papers/manifest.toml`).
-- Who reviews the mathematics (fresh agents, an outside expert), and to what standard.
-- Where research notes and session summaries live, and whether they are committed.
+## Questions still open
 
-For each question, the research step should say what the findings suggest with reasons, and the owner decides.
-
-## Known conflicts with the current files
-
-The decisions above replace these older statements; step 1 updates the files:
-
-- `PLAN.md`: "Sessions commit locally; the owner reads and pushes" and "nothing is sent to other projects unless the owner chooses".
-- `AGENTS.md`: "`lake update` moves the pins, so it is best left to the owner", and the owner's-files note covering `lakefile.toml`, `lake-manifest.json` and `lean-toolchain`.
+- **Evidence tags** ([R]/[S]/[E]/[J] with dates): keep them, and where they are written (asked 2026-11-08).
+- **After the blueprint is drafted:** how to use the open Tau Ceti roadmap pull requests (#1828, #999, #1056, #1202); how other Lean libraries may be used (AxiomMath/Stacks, stacks-and-moduli, the Langlands knowledge base, infinity-cosmos); the ∞-categorical layer.
+- **When the review system is built:** its rubrics, what resets a review, and what it is built on (summary Q18–Q20).
+- **For step 1:** the format of the blueprint, now that `tools/tracker` leaves this repository.

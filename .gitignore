@@ -8,7 +8,7 @@
 *.swp
 *~
 
-# The private companion folder (an old clone; its content is in GLCinLean-archive)
+# A private companion folder (an old clone)
 private/
 
 # Local agent settings and scratch work

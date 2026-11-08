@@ -23,7 +23,6 @@
 - [numlib-auto.md](numlib-auto.md): backbone/surface split, tracker loop, good rubrics; no review status per declaration.
 - [nlalib.md](nlalib.md): a compact style digest, read-back reviews, and a successor with an enforced closure hash and owner-only approval of statements.
 - [annals-challenge.md](annals-challenge.md): how curated statements are made and audited; AI audits found errors in 22% of hand-reviewed statements; GLC is beyond its hardest level.
-- [glcinlean-archive.md](glcinlean-archive.md): your earlier design (D1–D44); what the new decisions replace; lessons worth keeping.
 - [tracker.md](tracker.md): the base for the review system; it has the graph and the states, and lacks fingerprints, review records and a placeholder state.
 - [reviewkit.md](reviewkit.md): its per-declaration fingerprint is the part worth carrying over; the rest can go.
 
@@ -115,7 +114,7 @@
 - a fingerprint that also covers the upstream definitions a statement reaches, or a record of the pinned versions. The tracker stops at the project boundary, so a Tau Ceti bump could change the meaning of a reviewed statement without anything showing [R: tracker].
 - the page: a fork of the tracker's graph explorer with a review layer, linking to the doc-gen4 docs.
 
-**"Two patterns, or is one enough?"** One is enough: one mechanism with two scopes [J: numlib-auto, tracker, verso-blueprint, glcinlean-archive].
+**"Two patterns, or is one enough?"** One is enough: one mechanism with two scopes [J: numlib-auto, tracker, verso-blueprint].
 - The library scope reviews every declaration against the library standard. Any change to the source, proofs included, resets the review.
 - The statement scope reviews only the statement and the definitions it reaches, against the papers. The kernel checks the proofs, so only the statement and those definitions count.
 - Both use the same records and the same page.
@@ -200,7 +199,7 @@
 - **Mathlib** [R: mathlib-coverage, riou]:
   - one file's TODO says the canonical t-structure is missing, while another file defines it;
   - Riou's paper says the heart is abelian, while Mathlib still lists that as a TODO.
-- **The pin form.** `PLAN.md` pins Tau Ceti to a tag, and your archive's D26 bumps at tags (its cache advice also allowed "commits that have a map") [R: audit-harness, glcinlean-archive]. The notes then disagree on the alternative [R: tauceti-contributing, automated-bump-dry-run; J]:
+- **The pin form.** `PLAN.md` pins Tau Ceti to a tag [R: audit-harness]. The notes then disagree on the alternative [R: tauceti-contributing, automated-bump-dry-run; J]:
   - `tauceti-contributing.md` suggests `rev = "main"`, so that a bump touches only `lake-manifest.json` and `lean-toolchain` and never `lakefile.toml`, as Tau Ceti does with Mathlib;
   - the bump test found that only 1 of the 12 newest `main` commits had published cache mappings, so it picks a commit with mappings and writes it into `rev`, which edits `lakefile.toml` at every bump.
 - **Keep or retire the statement pin.** `reviewkit.md`, `lake-comparator` and `reference-manual` would retire `reviews/statement-pin.toml` (never approved, unchecked since CI went, partly replaced by comparator) [J]. `nlalib.md` would keep it and move it towards NLAlib's successor (closure hash with proofs erased, owner-only approval); `annals-challenge.md` calls a simple pin file sound practice; `liquid-tensor` would also pin the examples; `tauceti-review.md` finds it consistent with Tau Ceti's model [J: those notes]. §4.4 follows the first group; Q6 asks you.
@@ -209,7 +208,7 @@
   - Formal Conjectures fixes whole snapshots by tag;
   - comparator replaces the hard pin at proof time, but not the "digest" warning that upstream definitions changed.
 - **Notes.** NumLib-Auto keeps round notes out of Git; NLAlib committed everything and later declared it history; Anthropic and the Worker keep state in Git and transcripts local [R]. Tau Ceti keeps review records off `main` (a `reviews` branch and TauCetiData), while most notes suggest committing them [R: tauceti-review; J].
-- **Where "update the next prompt" lives.** Most notes put it in `AGENTS.md` (anthropic-guidance, audit-harness, glcinlean-archive, nlalib); the Worker note puts it in each recurring prompt's "done when" instead (tau-ceti-worker) [J]. §4.1 uses both.
+- **Where "update the next prompt" lives.** Most notes put it in `AGENTS.md` (anthropic-guidance, audit-harness, nlalib); the Worker note puts it in each recurring prompt's "done when" instead (tau-ceti-worker) [J]. §4.1 uses both.
 - **Naming reviewers.** One note first suggested a particular person as an outside reviewer; `further-outside-math-review.md` says agents should list public roles but not pick or approach anyone [J: both notes]. The suggestion was removed before publishing (the owner's decision of 2026-11-08), and the question went to the owner privately.
 - **GLC I's own citations.** GLC I cites a "Sect. 17.8.4" that does not exist in AG v4, cites AG 11.1.6 for `LS^restr`, which AG do not treat, and AG Prop. 4.4.5 (affine schemes) for a t-structure on a stack; l.2312 tensors over `QCoh(LS^restr)` where AGKRRV Prop. 14.5.3 uses `QCoh(LocSys^dR)` [R: arinkin-gaitsgory, agkrrv; J that l.2312 is a typo]. Docstrings must cite the defining source, not copy GLC I's pointers.
 
@@ -218,7 +217,7 @@
 - **"Stacks's code may never be needed, as Tau Ceti has enough."** The conclusion holds, the reason does not: for the GLC surface neither library has enough (§2.1, item 3).
 - **"Perhaps write a roadmap … I might not be able to review a roadmap fully."** Tau Ceti requires whoever posts a roadmap to have read it. The light route is a target filed by a member of the `humans` team [R: tauceti-roadmaps, tauceti-contributing].
 - **"Defer to human-curated libraries."** Tau Ceti's code is written and reviewed by AI; only its roadmaps are curated by humans [R: tauceti-library, outside-math-review].
-- **"Review status tracked by the Git commit hash."** A commit alone cannot say whether one declaration changed; a fingerprint is needed beside it [J: reviewkit, tracker, glcinlean-archive]. Your two states also leave open what happens when only a dependency changes, and where placeholders go. And ReviewKit's statement fingerprint does *not* change on a proof-only or docstring-only refactor, while your idea says any change during a refactor makes a declaration unreviewed again [R: reviewkit].
+- **"Review status tracked by the Git commit hash."** A commit alone cannot say whether one declaration changed; a fingerprint is needed beside it [J: reviewkit, tracker]. Your two states also leave open what happens when only a dependency changes, and where placeholders go. And ReviewKit's statement fingerprint does *not* change on a proof-only or docstring-only refactor, while your idea says any change during a refactor makes a declaration unreviewed again [R: reviewkit].
 - **"Set standards, and meet them … 'clean it up later' is counterproductive."** Opaque placeholders, and `PLAN.md`'s `Staging/` and copied `Stacks/` folders, are a "clean it up later" design; "first the statement" fits this value only if the statement ends up on real definitions [J: formal-conjectures, xena-blog]. §4.3 and Q2 answer this by keeping placeholders visible and temporary.
 - **"I don't see the point of `manifest.toml`."** The file can go, but a record of paper versions cannot (§2.1, item 5).
 - **Lean Quality Indicators, "Kim Morrison uses this metric; quite like Tau Ceti Review."** She is its main author. It resembles Tau Ceti Review in its questions, not its purpose: it measures rates over a whole library, not verdicts on PRs [R: lean-quality-indicators].
@@ -228,7 +227,6 @@
 - **"Review additions publicly."** The Annals reviews were internal, and public review is unlikely to bring expert review of GLC objects [R/J: annals-challenge, outside-math-review].
 - **The style-guide link** points to the older copy at leanprover-community.github.io [R: style-guide].
 - **The example prompts.** The second one ("codex agent in yolo mode in a tmux shell") is a pattern auto mode blocks by default [R: anthropic-guidance]. The `/goal` example's "review other people's PRs" posts reviews under your login, which Tau Ceti intends for people it trusts [R: tauceti-review].
-- **The archive link** points to a private repository, which nobody else can follow [R: audit-harness].
 
 ### 3.3 Between sources and the decisions in `notes/workflow.md`
 
@@ -285,7 +283,7 @@ These are not listed in `workflow.md`; step 1 can fix them while rewriting [R: a
 
 Procedures needed by only one step (the bump recipe, opening a Tau Ceti PR, the review method) go into that step's prompt [R/J: anthropic-guidance, automated-bump-dry-run]. Item 11 is also a "done when" line in every recurring prompt, so that `/goal` checks it.
 
-**Why.** Rules for every session belong in the one file every session loads; a rule inside a prompt is lost when the prompt is rewritten [J: audit-harness, glcinlean-archive]. The Worker keeps its `AGENTS.md` to five lines and puts each task's rules in that task's prompt [R], which supports keeping procedures out.
+**Why.** Rules for every session belong in the one file every session loads; a rule inside a prompt is lost when the prompt is rewritten [J: audit-harness]. The Worker keeps its `AGENTS.md` to five lines and puts each task's rules in that task's prompt [R], which supports keeping procedures out.
 
 ### 4.2 Whether `PLAN.md` is needed
 
@@ -295,7 +293,7 @@ Procedures needed by only one step (the bump recipe, opening a Tau Ceti PR, the 
 - the decisions in force → `notes/workflow.md`, which `AGENTS.md` points to. This includes what only `PLAN.md` now says: the provider order and code layout (into `AGENTS.md` item 3), and "subscriptions only; no API billing", which Q8 revisits [R: audit-harness, tauceti-contributing];
 - state that outlives a session (Tau Ceti PRs open and landed, last bump, what comes next) → a short `STATUS.md`, as in your `/goal` example [anthropic-guidance, tauceti-contributing].
 
-**Why.** Anthropic's long-running examples keep three things: a definition of done, a progress file and Git [R]. Prompts cannot carry state [J]. Your archive shows what a plan that grows by revision costs, and its own principle was one source of truth per fact [R: glcinlean-archive].
+**Why.** Anthropic's long-running examples keep three things: a definition of done, a progress file and Git [R]. Prompts cannot carry state [J].
 
 ### 4.3 Whether `Abstract.lean`, `Foundations.lean` and their placeholder design are reasonable
 
@@ -370,12 +368,12 @@ Many of these are your files (the list in `AGENTS.md`), so step 1 proposes the c
 
 ### 4.6 Where research notes and session summaries live, and whether they are committed
 
-**Recommendation** [J: anthropic-guidance, tau-ceti-worker, numlib-auto, nlalib, glcinlean-archive]:
+**Recommendation** [J: anthropic-guidance, tau-ceti-worker, numlib-auto, nlalib]:
 - research notes: committed and public in `notes/research/`, read as dated reference material, never cited as rules;
 - session summaries: in the commit message; state the next session needs goes in `STATUS.md`;
 - review records: committed, in the review system's format;
 - transcripts and logs: kept local, not committed;
-- nothing with account or usage details, and no judgements about named people (the archive's rule). The archive also kept reports judging other people's projects out of the public repository [R: glcinlean-archive]; several notes here do judge other projects (for example `stacks.md`, `further-langlands-knowledge-base-…`, `further-stacks-and-moduli-…`), and judgements about named people and the owner's private set-up details were removed before publishing (Q26, decided 2026-11-08).
+- nothing with account or usage details, and no judgements about named people; several notes here do judge other projects (for example `stacks.md`, `further-langlands-knowledge-base-…`, `further-stacks-and-moduli-…`), and judgements about named people and the owner's private set-up details were removed before publishing (Q26, decided 2026-11-08).
 
 **Why.**
 - Auto memory lives on one machine; a session on another machine will not see it [R/J: anthropic-guidance].
@@ -541,7 +539,7 @@ Each question gives the options and the recommended one, with the section that e
     - (b) Name the AI models as authors, as some Tau Ceti files do.
 
     **Recommended: (a)**.
-23. **Leftovers.** Keep the archive's rule that agents do not read it, now that this research has taken its useful points? **Recommended: yes.** (`THIRD_PARTY_NOTICES.md` is settled: the owner removed it on purpose on 2026-11-08.)
+23. **Leftovers.** `THIRD_PARTY_NOTICES.md` is settled: the owner removed it on purpose on 2026-11-08.
 
 **F. The open questions of `workflow.md`**
 
@@ -552,7 +550,7 @@ The recommendations of §4 need your answer too; §4.3 to §4.5 are covered by Q
     - (b) The same, plus one deterministic check, for example a `Stop` hook that runs `lake build`.
     - (c) Item 11 in `AGENTS.md` only, added to "done when" only if sessions are seen skipping it (anthropic-guidance's suggestion).
 
-    **Recommended: (a)**. Also: should your archive principle D36 ("figure out what I really want … a plan that eliminates steps takes priority") go in? The archive note suggests it could, now that there is no 24/7 loop.
+    **Recommended: (a)**.
 25. **`PLAN.md`** (§4.2).
     - (a) Move its content as §4.2 says, delete it, and add a short committed `STATUS.md`.
     - (b) Keep a short `PLAN.md` as the one record of decisions, and leave `notes/workflow.md` as history.

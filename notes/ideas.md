@@ -61,7 +61,6 @@ Useful, but not the only ones; searching for more may help.
 - [NumLib-Auto](https://github.com/bridgekat/numlib-auto/tree/main): a Lean project that formalises numerical analysis, with a review system and a dependency graph. It is a good example of how to do the review system. The prompts for the formalisation are in `prompts/` might be useful for GLCinLean.
 - [NLAlib](https://github.com/tchen-research/NLAlib): has review guidance, with a lot on Mathlib's conventions; its system design may also help with the review system I want to make.
 - [Annals Challenge](https://github.com/ImperialCollegeLondon/AnnalsChallenge): they formalise statements. Search online for how they do it and what their metric for a statement is; it may help with how we formalise the statement.
-- [GLCinLean-archive](https://github.com/WHY-Op109/GLCinLean-archive): my previous ideas and a lot of design. Too complicated, I think, but it still contains my ideas and the points I want.
 
 ## Example prompts
 

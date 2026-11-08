@@ -79,10 +79,9 @@
 - Why the attribute exists: a sorry-free `opaque` placeholder rests on no axiom, so `#print axioms`
   cannot see it, and the tracker counts it as `proved` (`tracker.md`: `show DGCat.IsCompact` gives
   `[definition, proved]`). So without a tag, a statement resting on placeholders looks finished.
-  [R, `tracker.md` and the archive note on D44] Correction (second check): an earlier version of
-  this note said that `#print axioms` ignores opaque bodies. It does not: in D44's probe
-  `#print axioms` did report the `sorryAx` inside `opaque … := sorry`; it was the old kit's walk
-  that skipped opaque bodies (`glcinlean-archive.md`, D44). [R, that note]
+  [R, `tracker.md`] Correction (second check): an earlier version of this note said that
+  `#print axioms` ignores opaque bodies. It does not: `#print axioms` does report the `sorryAx`
+  inside `opaque … := sorry`; it was the old kit's walk that skipped opaque bodies. [R]
 - GLCinLean imports it in exactly one place: `GLCinLean/Foundations.lean` line 14,
   `import ReviewKit.Attr`. `Abstract.lean` gets it through Foundations. [R, `git grep`]
 
@@ -154,7 +153,7 @@
   It has **no `[evidence]` and no `[foundations_names]` table**. So `record` stops with a setup
   error (exit 2) unless `--evidence-dir` is given, the `evidence` check passes vacuously (no
   records, no links), and the Foundations-name warnings are off. PLAN.md says the GLCinLean
-  fixtures, evidence records and extras file moved to `GLCinLean-archive`. [R, `Main.lean`,
+  fixtures, evidence records and extras file were removed. [R, `Main.lean`,
   `Evidence.lean`, `PLAN.md`]
 - **`reviews/`**: the two files of §2.4.
 - **Prompts and docs** that name it:
@@ -229,8 +228,8 @@ review system"). Item by item:
 - **Commit hash vs content fingerprint.** `ideas.md` asks for review status "tracked by the Git
   commit hash at which it was reviewed". ReviewKit tracks by content fingerprint and never records
   a commit. These are complementary, not exclusive: a commit alone cannot tell whether one
-  declaration changed without re-deriving its hash at that commit. The archive note
-  (`glcinlean-archive.md`) and `numlib-auto.md` reach the same conclusion. [J]
+  declaration changed without re-deriving its hash at that commit. `numlib-auto.md`
+  reaches the same conclusion. [J]
 - **"Changed during a refactor → unreviewed"** (`ideas.md`). ReviewKit's fingerprints do *not*
   change on a proof-only or docstring-only refactor. For a code-quality review that is a gap; for
   a statement review it is the intended behaviour. [R code; J]
