@@ -32,10 +32,10 @@ Later, in its own repository: **the review system**, with its own prompt written
 **The statement**
 - **Scope:** GLC I Conj. 1.6.7: de Rham, characteristic 0, any algebraically closed field `k`; library interfaces keep the ground field and the coefficient field apart.
 - **Placeholders** only in the statement surface: marked, shown as their own state, with characterising theorems where possible, replaced only together with examples; none in the library or in code meant for Tau Ceti.
-- **Statement goal:** a sorry is not enough for what must be proved to state the final goal faithfully (well-definedness and the like); those results are proved in the statement phase. This covers the theorems needed to define 𝕃_G (the existence in Cor. 1.6.5, the spectral action, the bound from compact to coconnective objects).
+- **Statement goal: no `sorry` except the main theorem's own proof.** The conjecture is stated through 𝕃_G's characterisation, so no definition rests on an unproved theorem: "there is a functor with the two properties of Cor. 1.6.5, and every such functor is an equivalence" (`(∃ F, IsLanglandsFunctor S F) ∧ ∀ F, IsLanglandsFunctor S F → F.IsEquivalence`), replacing `Classical.choose` of a sorried existence. Existence, uniqueness, the spectral action and the coconnectivity bound move to the proof phase. Every definition, instance and lemma of the statement is fully proved, and the "done" check runs `#print axioms` on every definition the statement uses: none may show `sorryAx` (decided 2026-11-08).
 - **Redesign:** step 2 may change the statement itself (drop the re-exports, rename, refine `LCoarse`, `IndCohNilp`, `IsEventuallyCoconnective`, `RootDatumDuality`, `DGCat`, `Setting`) as one change, with a fresh-agent review; the owner sees the diff.
 - **Later changes to the statement** or to definitions it reaches: a fresh agent checks them with the review prompt, then the change waits for the owner's approval.
-- **No warnings** in any Lean code, with one exception: a `sorry` warning on the proof of a lemma or theorem during the formalisation of the statement. What faithfulness of the statement requires (well-definedness and the like) never has a `sorry`.
+- **No warnings** in any Lean code, apart from the `sorry` warning of the main theorem.
 - **Final check of the proof:** everything mechanical (it builds, no `sorry`, only `propext`, `Classical.choice` and `Quot.sound`, the kernel accepts it). Whether the statement matches the paper is human work.
 
 **Versions and Tau Ceti**
