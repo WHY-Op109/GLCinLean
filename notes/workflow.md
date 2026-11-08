@@ -14,13 +14,14 @@ Agreed with the owner on 2026-11-08. The owner's ideas and references are in [`i
 5. **Refactor** (recurring). Adopt merged Tau Ceti contributions (moving the pin), act on reviews.
 6. **Proof** (after the statement). The same plan → build → review loop.
 
-Alongside, in its own repository: **the review system**, with its own prompt written in step 1.
+Later, in its own repository: **the review system**, with its own prompt written when that repository is started.
 
 ## Decisions
 
 **Files and instructions**
 - **`AGENTS.md`** is short, written for agents in plain, understandable, structured words, following Anthropic's guidance. It holds (summary §4.1, items as numbered there): the goal (1); the writing style (2); the source order and Tau Ceti rules (3); links to Mathlib's style, naming and documentation pages plus the project's own facts (4); the placeholder rule, and never weakening what a statement says while removing a sorry or a placeholder (5); the build commands and the "done" check (6); when to commit, that pushing to `main` is wanted, and that agents may open Tau Ceti pull requests from the owner's fork (7). Not in it: contacting people (8), downloads and provenance (9), `CLAUDE.md` (10).
 - **Prompts** hold only the goal, the completion criteria and the context, written with `/prop`. Every recurring prompt's "done when" includes: check the prompt for the next step and update it in the same commit (item 11; not in `AGENTS.md`).
+- **`notes/workflow.md`** (this file) is deleted in step 1, once its content lives in `AGENTS.md`, `STATUS.md` and the prompts.
 - **`PLAN.md`** is deleted; its content moves as summary §4.2 says, and a short committed `STATUS.md` records what is done, what is next, and Tau Ceti pull requests in flight.
 - **No harness and no tools.** This is a plain, simple Lean project driven by prompts. Step 1 removes `glc/project.toml`, `reviews/`, the ReviewKit requirement and `tools/tracker`; `@[placeholder]` becomes a local attribute.
 - **Papers:** `references/papers/manifest.toml` is dropped; a committed `docs/references.bib` records the arXiv id and version of every cited paper. The TeX files stay untracked.
@@ -34,7 +35,7 @@ Alongside, in its own repository: **the review system**, with its own prompt wri
 - **Statement goal:** a sorry is not enough for what must be proved to state the final goal faithfully (well-definedness and the like); those results are proved in the statement phase. This covers the theorems needed to define 𝕃_G (the existence in Cor. 1.6.5, the spectral action, the bound from compact to coconnective objects).
 - **Redesign:** step 2 may change the statement itself (drop the re-exports, rename, refine `LCoarse`, `IndCohNilp`, `IsEventuallyCoconnective`, `RootDatumDuality`, `DGCat`, `Setting`) as one change, with a fresh-agent review; the owner sees the diff.
 - **Later changes to the statement** or to definitions it reaches: a fresh agent checks them with the review prompt, then the change waits for the owner's approval.
-- **No warnings** in any Lean code.
+- **No warnings** in any Lean code, with one exception: a `sorry` warning on the proof of a lemma or theorem during the formalisation of the statement. What faithfulness of the statement requires (well-definedness and the like) never has a `sorry`.
 - **Final check of the proof:** everything mechanical (it builds, no `sorry`, only `propext`, `Classical.choice` and `Quot.sound`, the kernel accepts it). Whether the statement matches the paper is human work.
 
 **Versions and Tau Ceti**
