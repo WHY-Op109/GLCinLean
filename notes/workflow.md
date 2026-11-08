@@ -5,7 +5,7 @@ Agreed with the owner on 2026-11-08. The owner's ideas and references are in [`i
 ## Order of work
 
 0. **Research.** Done on 2026-11-08 (`prompts/research.md`, output in `notes/research/`); the owner answered the questions the same day (below).
-1. **Rebuild** (one session). Write the short `AGENTS.md`, `STATUS.md` and the recurring prompts with `/prop` (goal, done when, context), and handle each existing file, following the decisions below and `notes/research/summary.md` §4.
+1. **Rebuild** (one session; prompt `prompts/rebuild.md`). Write the short `AGENTS.md`, `STATUS.md` and the recurring prompts with `/prop` (goal, done when, context), and handle each existing file, following the decisions below and `notes/research/summary.md` §4.
    → The owner reads the diff.
 2. **Plan** (recurring). The blueprint: each object of the GLC statement mapped to Mathlib, Tau Ceti, a Tau Ceti roadmap item, or missing; library versus statement. Redesign `Abstract.lean` and `Foundations.lean` (decision below). A fresh agent reviews it.
    → The owner reads the verdict.
@@ -25,6 +25,7 @@ Alongside, in its own repository: **the review system**, with its own prompt wri
 - **No harness and no tools.** This is a plain, simple Lean project driven by prompts. Step 1 removes `glc/project.toml`, `reviews/`, the ReviewKit requirement and `tools/tracker`; `@[placeholder]` becomes a local attribute.
 - **Papers:** `references/papers/manifest.toml` is dropped; a committed `docs/references.bib` records the arXiv id and version of every cited paper. The TeX files stay untracked.
 - **Copyright and `Authors:` lines:** the contributors and the AI models, following Tau Ceti and Mathlib's documentation rules.
+- **Evidence tags** ([R] read directly, [S] a source's claim about itself, [E] estimate, [J] judgement, with the date checked) stay. They are written in Markdown text about sources (notes, review reports, `STATUS.md`, commit messages), never in Lean code, where docstrings cite by BibTeX key and locator.
 - **Research notes** are committed and public, without judgements about named people or the owner's private set-up details.
 
 **The statement**
@@ -45,7 +46,6 @@ Alongside, in its own repository: **the review system**, with its own prompt wri
 
 ## Questions still open
 
-- **Evidence tags** ([R]/[S]/[E]/[J] with dates): keep them, and where they are written (asked 2026-11-08).
 - **After the blueprint is drafted:** how to use the open Tau Ceti roadmap pull requests (#1828, #999, #1056, #1202); how other Lean libraries may be used (AxiomMath/Stacks, stacks-and-moduli, the Langlands knowledge base, infinity-cosmos); the ∞-categorical layer.
 - **When the review system is built:** its rubrics, what resets a review, and what it is built on (summary Q18–Q20).
 - **For step 1:** the format of the blueprint, now that `tools/tracker` leaves this repository.
