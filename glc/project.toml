@@ -61,4 +61,3 @@ modules = ["GLCinLean"]
 
 [papers]
 manifest = "references/papers/manifest.toml"
-fetch = "scripts/fetch-papers.py"

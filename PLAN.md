@@ -9,8 +9,7 @@ repository `GLCinLean-archive`; nothing there is in force.
    Conjecture 1.6.7, with every definition it uses real (no placeholders).
 2. **The proof goal:** a proof of it, following GLC I–V.
 
-The owner cannot check the mathematics, so the fidelity review (`prompts/review.md`) is the
-evidence for faithfulness, and no claim of faithfulness is made without an outside expert.
+The fidelity review (`prompts/review.md`) is the partialevidence for faithfulness, and no claim of faithfulness is made without an outside expert.
 
 ## What exists (2026-11-06)
 
@@ -19,7 +18,6 @@ evidence for faithfulness, and no claim of faithfulness is made without an outsi
 - `blueprint/plans/`: a stub tracker plan of those declarations.
 - `reviews/`: the sorry budget and the statement pin (owner-approved records; not yet approved).
 - `glc/project.toml`: the review configuration.
-- CI (`.github/workflows/ci.yml`): build from caches and every check, on each push to `main`.
 - The review checks come from `github.com/WHY-Op109/reviewkit`, pinned in `lake-manifest.json`.
 
 ## How work runs
@@ -32,7 +30,7 @@ One Claude Code session at a time, started by the owner in goal mode with one of
 | `prompts/proof.md` | the proof goal (only after the statement goal) |
 | `prompts/review.md` | the fidelity review of changed key definitions; run now and then |
 
-Sessions commit locally; the owner reads and pushes. `scripts/check.sh` (and CI) must pass.
+Sessions commit locally; the owner reads and pushes.
 
 ## Decisions in force
 
@@ -77,7 +75,7 @@ Sessions commit locally; the owner reads and pushes. `scripts/check.sh` (and CI)
 
 **The project**
 - Public but unannounced; nothing is sent to other projects unless the owner chooses.
-- The GLC papers are fetched locally (`scripts/fetch-papers.py`) and never committed.
+- The GLC papers are fetched locally from arXiv at the versions in `references/papers/manifest.toml` and never committed.
 - Subscriptions only; no API billing.
 
 ## Open questions
