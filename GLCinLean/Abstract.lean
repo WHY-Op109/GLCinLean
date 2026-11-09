@@ -1,11 +1,21 @@
 /-
-GLCinLean.Abstract: the formal abstract. It states GLC I (arXiv 2405.03599v3) Conj. 1.6.7
-and the definitions its statement needs, and imports only Mathlib, Tau Ceti and
-`GLCinLean.Foundations`. The categories and functors of the `𝕃_G` chain appear as placeholders.
+Copyright (c) 2026 The GLCinLean contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The GLCinLean contributors, Claude Opus 5.5
 -/
-import GLCinLean.Foundations
+module
 
-noncomputable section
+public import GLCinLean.Foundations
+
+/-!
+# The formal abstract
+
+It states GLC I (arXiv 2405.03599v3) Conj. 1.6.7 and the definitions its statement needs, and
+imports only Mathlib, Tau Ceti and `GLCinLean.Foundations`. The categories and functors of the
+`𝕃_G` chain appear as placeholders.
+-/
+
+@[expose] public noncomputable section
 
 namespace GLCinLean.Abstract
 

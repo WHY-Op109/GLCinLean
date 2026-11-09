@@ -1,21 +1,31 @@
 /-
-GLCinLean.Foundations: the thin adapter layer.
+Copyright (c) 2026 The GLCinLean contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The GLCinLean contributors, Claude Opus 5.5
+-/
+module
 
-Every substantial object the formal abstract uses reaches it through a name here:
-* re-exports of provider objects (Mathlib, Tau Ceti), as `abbrev`s, wrapping only to expose a hypothesis;
+public import GLCinLean.Placeholder
+public import Mathlib.AlgebraicGeometry.Morphisms.Smooth
+public import Mathlib.AlgebraicGeometry.Morphisms.Proper
+public import Mathlib.FieldTheory.IsAlgClosed.Basic
+public import TauCeti.AlgebraicGeometry.AffineGroupScheme.Reductive.Basic
+public import TauCeti.Algebra.AlgebraicGroup.Pinning.Basic
+public import TauCeti.AlgebraicGeometry.LineBundle.TensorProduct
+public import TauCeti.AlgebraicGeometry.Modules.Differentials.Basic
+
+/-!
+# Foundations of the statement
+
+The thin adapter layer. Every substantial object the formal abstract uses reaches it through a
+name here:
+* re-exports of provider objects (Mathlib, Tau Ceti), as `abbrev`s, wrapping only to expose a
+  hypothesis;
 * provider-less generic placeholders (generic foundation families), data only, in the
   `NonemptyType` pattern or as plain `opaque` constants, each tagged `@[placeholder]`.
 -/
-import GLCinLean.Placeholder
-import Mathlib.AlgebraicGeometry.Morphisms.Smooth
-import Mathlib.AlgebraicGeometry.Morphisms.Proper
-import Mathlib.FieldTheory.IsAlgClosed.Basic
-import TauCeti.AlgebraicGeometry.AffineGroupScheme.Reductive.Basic
-import TauCeti.Algebra.AlgebraicGroup.Pinning.Basic
-import TauCeti.AlgebraicGeometry.LineBundle.TensorProduct
-import TauCeti.AlgebraicGeometry.Modules.Differentials.Basic
 
-noncomputable section
+@[expose] public noncomputable section
 
 namespace GLCinLean.Foundations
 

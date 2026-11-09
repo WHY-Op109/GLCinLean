@@ -3,7 +3,9 @@ Copyright (c) 2026 The GLCinLean contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: The GLCinLean contributors, Claude Opus 5.5
 -/
-import Lean
+module
+
+public meta import Lean
 
 /-!
 # The `@[placeholder]` attribute
@@ -14,9 +16,13 @@ the statement surface, never in the library, so that a statement resting on them
 mistaken for a finished one.
 -/
 
+public meta section
+
 open Lean
 
 /-- `@[placeholder]` marks a declaration that stands for a not-yet-defined object of the GLC
 statement. -/
 initialize placeholderAttr : TagAttribute ←
   registerTagAttribute `placeholder "marks a not-yet-defined object of the GLC statement"
+
+end

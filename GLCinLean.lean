@@ -1,3 +1,5 @@
-import GLCinLean.Placeholder
-import GLCinLean.Foundations
-import GLCinLean.Abstract
+module
+
+public import GLCinLean.Placeholder
+public import GLCinLean.Foundations
+public import GLCinLean.Abstract
