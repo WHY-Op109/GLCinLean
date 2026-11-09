@@ -20,3 +20,10 @@ kind = "definition"
 desc = "The middle-perversity t-structure on Constructible.derivedCategory for a stratification by smooth connected strata, its heart of perverse sheaves (finite length), and intermediate extension along locally closed strata, with IC sheaves of irreducible local systems as the simple objects. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
 deps = ["GLCinLean.Constructible.derivedCategory"]
 source = "[HottaTakeuchiTanisaki] Chapter 8 (perverse sheaves); [MV] §2"
+
+[[node]]
+id = "GLCinLean.DModules.analyticDeRham"
+kind = "definition"
+desc = "For a finite-type C-scheme Y, analytification of algebraic D-modules on Y to analytic D-modules on Y(C), and the analytic de Rham functor DR from bounded holonomic complexes to Constructible.derivedCategory (for a stratification along which the cohomology is lisse), compatible with the perverse t-structures and with Verdier duality. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.Constructible.complexPoints", "GLCinLean.Constructible.derivedCategory", "GLCinLean.Constructible.perverseSheaves", "GLCinLean.DModules.holonomic", "GLCinLean.DModules.verdierDuality"]
+source = "[HottaTakeuchiTanisaki] Chapter 4 (analytic D-modules and the de Rham functor)"
