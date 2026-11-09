@@ -1,0 +1,15 @@
+desc = "Planned library module. GeometricLanglands / Whittaker / Poincare. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Whittaker.vacuumPoincare"
+kind = "definition"
+desc = "p_! χ^*(exp) with the paper normalization and proof that partial !-pushforward is defined. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Whittaker.character", "GLCinLean.Whittaker.twistTrivialization", "GLCinLean.DModules.exponential", "GLCinLean.DModules.holonomicShriek", "GLCinLean.DModules.starPullback"]
+source = "[GLC1] §1.3.7"
+
+[[node]]
+id = "GLCinLean.Whittaker.vacuumPoincare_compact"
+kind = "theorem"
+desc = "Compactness of the vacuum Poincare object; needed to make the coarse right adjoint continuous. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Whittaker.vacuumPoincare", "GLCinLean.Infinity.compactObject"]
+source = "[GLC1] §1.4.2"

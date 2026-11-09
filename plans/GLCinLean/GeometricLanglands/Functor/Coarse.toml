@@ -1,0 +1,22 @@
+desc = "Planned library module. GeometricLanglands / Functor / Coarse. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Langlands.coarseLeftAdjoint"
+kind = "definition"
+desc = "QCoh-linear functor a ↦ a ⋆ Poinc from QCoh(LS_H) to Dmod_1/2(Bun_G). Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Spectral.action", "GLCinLean.Whittaker.vacuumPoincare"]
+source = "[GLC1] §1.4.2"
+
+[[node]]
+id = "GLCinLean.Langlands.coarse"
+kind = "definition"
+desc = "Right adjoint of the Poincare action functor, with proved continuity and QCoh-linearity. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Langlands.coarseLeftAdjoint", "GLCinLean.Whittaker.vacuumPoincare_compact", "GLCinLean.LocalSystems.qcohRigid", "GLCinLean.Infinity.rightAdjoint_continuous", "GLCinLean.Infinity.rightAdjoint_linear"]
+source = "[GLC1] §1.4.5"
+
+[[node]]
+id = "GLCinLean.Langlands.coarse_globalSections_iso_coefficient"
+kind = "theorem"
+desc = "The cohomology of the coarse functor agrees naturally with the vacuum Whittaker coefficient. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Langlands.coarse", "GLCinLean.Whittaker.vacuumCoefficient", "GLCinLean.Sheaves.qcohGlobalSections"]
+source = "[GLC1] §1.4.6"

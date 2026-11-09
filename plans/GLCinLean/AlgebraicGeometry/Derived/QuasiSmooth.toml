@@ -1,0 +1,8 @@
+desc = "Planned library module. AlgebraicGeometry / Derived / QuasiSmooth. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Derived.quasiSmooth"
+kind = "definition"
+desc = "Perfect cotangent complexes of the appropriate Tor amplitude, with stackwise smooth-local definition. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Derived.cotangentComplex"]
+source = "[ArinkinGaitsgory] §2.1.3 and §8.1.1"

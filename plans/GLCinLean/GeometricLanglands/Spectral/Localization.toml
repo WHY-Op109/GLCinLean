@@ -1,0 +1,15 @@
+desc = "Planned library module. GeometricLanglands / Spectral / Localization. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Spectral.localization"
+kind = "definition"
+desc = "Symmetric monoidal localization Rep(H)_Ran → QCoh(LS_H) using the universal local system; retain the Ran source despite the displayed shorthand. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Hecke.ranRepresentations", "GLCinLean.LocalSystems.deRham", "GLCinLean.LocalSystems.qcohRigid", "GLCinLean.Spectral.evaluation", "GLCinLean.Hecke.ranConvolution"]
+source = "[GLC1] §1.2.2; [GaitsgoryOutline] §4.3"
+
+[[node]]
+id = "GLCinLean.Spectral.localization_rightAdjoint_fullyFaithful"
+kind = "theorem"
+desc = "Spectral localization preserves compacts and has continuous fully faithful right adjoint. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Spectral.localization", "GLCinLean.Infinity.rightAdjoint_continuous"]
+source = "[GLC1] §1.2.2"

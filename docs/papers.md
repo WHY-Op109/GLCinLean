@@ -14,6 +14,9 @@ choose which one to search:
 | [AGKRRV] | `2010.01906v2/src/text.tex` | 31.5k | local systems with restricted variation; nilpotent singular support; conventions GLC I cites (§0.9) |
 | [ArinkinGaitsgory] | `1201.6343v4/src/singsupp.tex` | 11.8k | singular support of coherent sheaves; `IndCoh_Nilp`; the original statement of GLC |
 | [IndCoh] | `1105.4857v7/src/IndCohtext.tex` | 9.4k | ind-coherent sheaves on schemes and stacks; the functor `Ψ` |
+| [Crystals] | `1111.2087v4/src/Crystalstext.tex` | 4.9k | de Rham prestacks (§1), crystals (§2), D-modules (§5), gerbes and twisted crystals (§§6–7) |
+| [GaitsgoryOutline] | `1302.2506v3/src/outline.tex` | 7.6k | Ran space, factorization representations, spectral localization, Satake and Hecke action (§4) |
+| [CompactGeneration] | `1112.2402v8/src/DBunG.tex` | 7.3k | enhanced categories and compact generation (§1); D-modules on stacks (§2); compact generation of `Dmod(Bun_G)` (Thm. 0.1.2) |
 
 ## Searching
 

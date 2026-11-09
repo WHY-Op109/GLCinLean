@@ -1,0 +1,8 @@
+desc = "Planned library module. CategoryTheory / Infinity / Stable. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Infinity.stableCategory"
+kind = "definition"
+desc = "Pointed enhanced categories with finite limits and colimits and coincident pullback and pushout squares. Provider: Tau Ceti roadmap BordismFormalGroups F6.5, stable enhancements, consumed by EnhancedDerivedSheaves E0.4 and E0.6 dgNerve_shift_cone_comparison. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Infinity.limits", "TauCeti.dgNerve"]
+source = "[IndCoh] §0.6.4"

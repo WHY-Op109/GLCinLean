@@ -1,0 +1,22 @@
+desc = "Planned library module. GeometricLanglands / Whittaker / Reduction. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Whittaker.rhoTorsor"
+kind = "definition"
+desc = "Push the theta characteristic frame torsor along 2ρ to form ρ(ω_X), without assuming ρ integral. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Groups.twoRho", "GLCinLean.Curves.thetaCharacteristic", "GLCinLean.Stacks.groupTorsor"]
+source = "[GLC1] §§1.3.2–1.3.4"
+
+[[node]]
+id = "GLCinLean.Whittaker.reductionStack"
+kind = "definition"
+desc = "Bun_B ×_{Bun_T} {ρ(ω_X)} and its projection p to Bun_G. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Whittaker.rhoTorsor", "GLCinLean.Stacks.bundleStack", "GLCinLean.Groups.pinnedData"]
+source = "[GLC1] §§1.3.1, 1.3.4"
+
+[[node]]
+id = "GLCinLean.Whittaker.twistTrivialization"
+kind = "definition"
+desc = "Canonical square root of the determinant line restricted to the reduction stack, defining twisted p^!. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Whittaker.reductionStack", "GLCinLean.Stacks.determinantSquareRoot"]
+source = "[GLC1] Corollary 1.3.4 and §1.3.5"

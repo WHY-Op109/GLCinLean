@@ -1,0 +1,15 @@
+desc = "Planned library module. GeometricLanglands / Spectral / Action. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Spectral.heckeAction_factors"
+kind = "theorem"
+desc = "The Hecke action annihilates the localization kernel and factors coherently through QCoh(LS_H). Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Hecke.action", "GLCinLean.Spectral.localization_rightAdjoint_fullyFaithful"]
+source = "[GLC1] Theorem 1.2.4; [GaitsgoryOutline] Corollary 4.5.5"
+
+[[node]]
+id = "GLCinLean.Spectral.action"
+kind = "definition"
+desc = "Canonical QCoh(LS_H)-module structure on the automorphic category, from Hecke factorization. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Spectral.heckeAction_factors"]
+source = "[GLC1] §1.2.5"

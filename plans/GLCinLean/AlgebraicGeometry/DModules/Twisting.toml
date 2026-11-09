@@ -1,0 +1,15 @@
+desc = "Planned library module. AlgebraicGeometry / DModules / Twisting. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.DModules.rootGerbe"
+kind = "definition"
+desc = "Étale μ_n-gerbe of n-th roots of a line bundle; objects, morphisms, descent and tautological character. Provider: Tau Ceti roadmap SchemeAndStackFoundations §1.21 root stacks and quotient stacks for the classical root gerbe; its enhanced realization consumes the derived-stack node. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Derived.artinStack", "GLCinLean.Sheaves.qcoh", "GLCinLean.Stacks.algebraicStack", "TauCeti.AlgebraicGeometry.InvertibleSheaf"]
+source = "[Crystals] §§6.1–6.3; [GLC1] §1.1.3"
+
+[[node]]
+id = "GLCinLean.DModules.twistedCrystals"
+kind = "definition"
+desc = "Twisted right crystals for a specified gerbe and character; comparison with a chosen trivialization. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.DModules.rootGerbe", "GLCinLean.DModules.rightCrystals"]
+source = "[Crystals] §7.2; [GLC1] §1.1.3"

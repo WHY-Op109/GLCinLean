@@ -1,0 +1,15 @@
+desc = "Planned library module for CategoryTheory / Infinity / Module. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+
+[[node]]
+id = "GLCinLean.Infinity.moduleCategory"
+kind = "definition"
+desc = "A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 LM operad and module fibres; EnhancedDerivedSheaves E5:abstract.2 leftModuleObjects and moduleObjects. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Infinity.monoidalCategory"]
+source = "[AGKRRV] §0.9.4; [ArinkinGaitsgory] §1.5.2(viii)"
+
+[[node]]
+id = "GLCinLean.Infinity.internalHom"
+kind = "definition"
+desc = "The Vect_k-valued mapping object characterized by tensor-Hom adjunction. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E3.2 adjointFunctorTheorem applied to the tensor action; E1.4 derivedInternalHom and E1.F3.H1 supply the coefficient-model comparison. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Infinity.linearCategory", "GLCinLean.Infinity.derivedVect", "GLCinLean.Infinity.mappingSpaces", "GLCinLean.Infinity.rightAdjoint", "TauCeti.dgHomComplex"]
+source = "[AGKRRV] §0.9.4"

@@ -1,0 +1,8 @@
+desc = "Planned library module. GeometricLanglands / Whittaker / Coefficient. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Whittaker.vacuumCoefficient"
+kind = "definition"
+desc = "Enhanced k-linear Hom from the vacuum Poincare object; compare with the cohomological Whittaker formula and its sign convention. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Whittaker.vacuumPoincare", "GLCinLean.Infinity.linearCategory", "GLCinLean.Infinity.internalHom"]
+source = "[GLC1] §1.3.8"

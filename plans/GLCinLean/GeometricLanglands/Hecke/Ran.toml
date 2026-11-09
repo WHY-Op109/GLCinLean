@@ -1,0 +1,15 @@
+desc = "Planned library module. GeometricLanglands / Hecke / Ran. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Hecke.ranSpace"
+kind = "definition"
+desc = "Finite nonempty subsets of X as a prestack, diagonals and disjointness/factorization diagrams. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Derived.prestack"]
+source = "[GaitsgoryOutline] §§4.1.1–4.1.4"
+
+[[node]]
+id = "GLCinLean.Hecke.ranUnion"
+kind = "definition"
+desc = "Union of finite nonempty subsets, defining the commutative semigroup law used by factorization convolution. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Hecke.ranSpace"]
+source = "[GaitsgoryOutline] §4.1.4"

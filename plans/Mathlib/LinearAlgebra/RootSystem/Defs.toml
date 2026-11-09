@@ -1,0 +1,22 @@
+desc = '''Existing provider boundary. These nodes refer to upstream declarations, not local wrappers. Recursion stops at this already supplied interface.'''
+
+[[node]]
+id = 'RootPairing'
+kind = 'definition'
+source = '[GLC1] §1.2.1'
+desc = '''Root pairing with character and cocharacter lattices; does not extract one from a reductive group. Provider: Mathlib, pinned commit 1b1ccf4b088b32fa3f23f2de1127433254a81e1e; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
+deps = []
+
+[[node]]
+id = 'RootDatum'
+kind = 'definition'
+source = '[GLC1] §1.2.1'
+desc = '''Integral root pairing abbreviation, with finiteness and reducedness supplied separately when needed. Provider: Mathlib, pinned commit 1b1ccf4b088b32fa3f23f2de1127433254a81e1e; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
+deps = []
+
+[[node]]
+id = 'RootPairing.flip'
+kind = 'definition'
+source = '[GLC1] §1.2.1'
+desc = '''Dualization interchanging roots and coroots and the two lattices. Provider: Mathlib, pinned commit 1b1ccf4b088b32fa3f23f2de1127433254a81e1e; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
+deps = []

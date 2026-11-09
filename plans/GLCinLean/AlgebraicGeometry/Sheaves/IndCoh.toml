@@ -1,0 +1,29 @@
+desc = "Planned library module. AlgebraicGeometry / Sheaves / IndCoh. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Sheaves.indcoh"
+kind = "definition"
+desc = "Ind-completion of coherent sheaves on affines, extended by !-descent to almost finite type derived Artin stacks. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Sheaves.coherent", "GLCinLean.Infinity.indCompletion", "GLCinLean.Derived.artinStack"]
+source = "[IndCoh] Definition 1.1.3; §§10.1, 11.2"
+
+[[node]]
+id = "GLCinLean.Sheaves.indcohTStructure"
+kind = "definition"
+desc = "Standard t-structure on IndCoh, compatible with filtered colimits and smooth descent. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.tStructure"]
+source = "[IndCoh] §1.2"
+
+[[node]]
+id = "GLCinLean.Sheaves.indcohQCohAction"
+kind = "definition"
+desc = "Action of QCoh on IndCoh, compatible with !-pullback. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Sheaves.qcoh", "GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.monoidalCategory"]
+source = "[IndCoh] §1.4"
+
+[[node]]
+id = "GLCinLean.Sheaves.psi"
+kind = "definition"
+desc = "Continuous QCoh-linear coarsening IndCoh → QCoh extending the coherent embedding. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Sheaves.indcohQCohAction", "GLCinLean.Infinity.continuousLinearFunctor"]
+source = "[IndCoh] §1.1.5 and Lemma 1.4.2"

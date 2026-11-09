@@ -1,0 +1,22 @@
+desc = "Planned library module. AlgebraicGeometry / LocalSystems / DeRham. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.LocalSystems.classifyingStack"
+kind = "definition"
+desc = "Classifying stack BH of a reductive group, with tautological torsor. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Stacks.groupTorsor", "GLCinLean.Derived.artinStack"]
+source = "[ArinkinGaitsgory] §10.1.1"
+
+[[node]]
+id = "GLCinLean.LocalSystems.deRham"
+kind = "definition"
+desc = "Derived mapping stack Maps(X_dR,BH); families are H-bundles with flat connection, retaining derived structure. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Derived.deRhamPrestack", "GLCinLean.LocalSystems.classifyingStack", "GLCinLean.Derived.mappingPrestack"]
+source = "[ArinkinGaitsgory] §§10.1.1–10.1.2"
+
+[[node]]
+id = "GLCinLean.LocalSystems.quasiSmooth"
+kind = "theorem"
+desc = "Prove LS_H is a quasi-smooth derived Artin stack with the required finiteness. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.LocalSystems.deRham", "GLCinLean.Derived.quasiSmooth"]
+source = "[ArinkinGaitsgory] Proposition 10.4.5"

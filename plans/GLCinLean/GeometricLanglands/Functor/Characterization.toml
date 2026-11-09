@@ -1,0 +1,15 @@
+desc = "Planned library module. GeometricLanglands / Functor / Characterization. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Langlands.characterization"
+kind = "definition"
+desc = "Continuous QCoh-linear functors sending compacts to bounded-below objects and equipped up to equivalence with ΨF ≃ L_coarse; predicate and iff API. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Langlands.coarse", "GLCinLean.LocalSystems.psiNilpotent", "GLCinLean.Infinity.compactObject", "GLCinLean.Infinity.eventuallyCoconnective", "GLCinLean.Infinity.continuousLinearFunctor"]
+source = "[GLC1] Corollary 1.6.5 and Proposition 1.7.2"
+
+[[node]]
+id = "GLCinLean.Langlands.characterization_unique"
+kind = "theorem"
+desc = "Characterized functors are naturally equivalent; enhanced uniqueness must track the compatibility with coarsening. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Langlands.characterization", "GLCinLean.Automorphic.compactlyGenerated"]
+source = "[GLC1] Corollary 1.6.5 and Proposition 1.7.2"

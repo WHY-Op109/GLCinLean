@@ -1,0 +1,22 @@
+desc = "Planned library module. CategoryTheory / Infinity / Linear. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Infinity.linearCategory"
+kind = "definition"
+desc = "Presentable stable categories with an action of complexes of k-vector spaces; retain the actual field k. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:abstract.2 module objects and E5:presentability.2 presentable tensor product. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Infinity.monoidalCategory", "GLCinLean.Infinity.stableCategory", "GLCinLean.Infinity.presentableCategory", "GLCinLean.Infinity.derivedVect", "GLCinLean.Infinity.moduleCategory"]
+source = "[AGKRRV] §0.9.4; [IndCoh] §0.6.4"
+
+[[node]]
+id = "GLCinLean.Infinity.continuousLinearFunctor"
+kind = "definition"
+desc = "Colimit-preserving coherent module functors and their natural equivalences; composition, identities and mapping spaces. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 coherent module functor spaces; EnhancedDerivedSheaves E5:abstract.2 module objects and E3.3 continuity. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Infinity.linearCategory", "GLCinLean.Infinity.moduleCategory", "GLCinLean.Infinity.limits"]
+source = "[GLC1] Corollary 1.6.5 and Proposition 1.7.2"
+
+[[node]]
+id = "GLCinLean.Infinity.linearEquivalence"
+kind = "definition"
+desc = "Two-sided inverses up to coherent natural equivalence; equivalent to categorical full faithfulness and essential surjectivity. Provider: Tau Ceti roadmap BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Infinity.continuousLinearFunctor"]
+source = "[GLC1] Conjecture 1.6.7"

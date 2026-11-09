@@ -1,0 +1,8 @@
+desc = "Planned library module. GeometricLanglands / Hecke / Action. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Hecke.action"
+kind = "definition"
+desc = "Action of Rep(H)_Ran on Dmod_1/2(Bun_G) by Hecke correspondences and Satake kernels. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Hecke.satake", "GLCinLean.Automorphic.halfTwistedDModules", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.DModules.holonomicShriek"]
+source = "[GLC1] §1.2.1"
