@@ -1,0 +1,22 @@
+desc = "Constructible sheaves on the complex points of finite-type C-schemes: the target of the Riemann–Hilbert comparison used for parity of IC stalks. Used only through DModules.schubertRiemannHilbert. No embedding of the original field into C is assumed anywhere."
+
+[[node]]
+id = "GLCinLean.Constructible.complexPoints"
+kind = "definition"
+desc = "For a finite-type scheme Y over C, the set Y(C) with the classical (analytic) topology, functorial in Y, locally compact Hausdorff, with closed and open embeddings and proper maps sent to the corresponding maps of spaces. Provider: Missing at the pin; a Tau Ceti roadmap on analytification may claim it, so check before implementing. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["AlgebraicGeometry.Scheme"]
+source = "[HottaTakeuchiTanisaki] Chapter 4 (analytic spaces attached to schemes)"
+
+[[node]]
+id = "GLCinLean.Constructible.derivedCategory"
+kind = "definition"
+desc = "For a finite-type C-scheme Y with an algebraic stratification, the bounded derived category of sheaves of C-vector spaces on Y(C) whose cohomology sheaves are locally constant of finite rank on each stratum. Include *- and !-pullback and pushforward along locally closed embeddings, proper pushforward, external products and Verdier duality, with base change and the projection formula, and Hom computed by derived global sections. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.Constructible.complexPoints", "GLCinLean.Infinity.stableCategory", "GLCinLean.Infinity.tStructure"]
+source = "[HottaTakeuchiTanisaki] Chapter 4 and Appendix on derived categories of sheaves"
+
+[[node]]
+id = "GLCinLean.Constructible.perverseSheaves"
+kind = "definition"
+desc = "The middle-perversity t-structure on Constructible.derivedCategory for a stratification by smooth connected strata, its heart of perverse sheaves (finite length), and intermediate extension along locally closed strata, with IC sheaves of irreducible local systems as the simple objects. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.Constructible.derivedCategory"]
+source = "[HottaTakeuchiTanisaki] Chapter 8 (perverse sheaves); [MV] §2"
