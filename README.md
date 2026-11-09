@@ -12,7 +12,7 @@ the statement.
 
 A first draft of the statement exists, built on placeholders for the objects no library has yet
 (DG categories, D-modules on `Bun_G`, `IndCoh_Nilp(LS_Ǧ)`, …). The next step writes the plan of
-every object the statement uses and redesigns the statement to match it. [`STATUS.md`](STATUS.md) has the details.
+every object the statement uses and changes the statement where the plan needs it. [`STATUS.md`](STATUS.md) has the details.
 
 ## How the work runs
 
@@ -21,7 +21,7 @@ Agents do the work, one session per step, each started from a prompt in `prompts
 | Prompt | Step |
 |---|---|
 | [`setup.md`](prompts/setup.md) | on a new computer: check the tools, build from the caches, fetch the papers' LaTeX |
-| [`plan.md`](prompts/plan.md) | write the plan in `plans/` and redesign the statement |
+| [`plan.md`](prompts/plan.md) | write the plan in `plans/` and change the existing code where the plan needs it |
 | [`build.md`](prompts/build.md) | replace placeholders by real definitions, working up the plan |
 | [`review.md`](prompts/review.md) | check that definitions mean what the papers say (run by an agent that did not write them) |
 
