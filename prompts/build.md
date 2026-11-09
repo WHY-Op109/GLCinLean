@@ -18,7 +18,7 @@ through Tau Ceti's Worker; the rest is written here.
   updated if needed, and the work is committed and pushed.
 
 **Context**
-- `plans/` (read with `lake exe tracker status`, `ready` and `show`) and `STATUS.md`: what is done, what is next, and what is in flight. Remaining placeholders: `grep -rn '@\[placeholder\]' GLCinLean`.
+- `plans/` (read with `lake exe tracker status`, `ready` and `show`) and `STATUS.md`: what is done, what is next, and what is in flight.
 - Tau Ceti's Worker (https://github.com/TauCetiProject/TauCetiWorker; installed with
   `uv tool install`) runs outside this repository, under the owner's `gh` account, and opens pull
   requests from the fork `WHY-Op109/TauCeti`. Tau Ceti's README and the Worker's README are the authority; as

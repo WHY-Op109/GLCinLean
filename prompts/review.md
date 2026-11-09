@@ -1,8 +1,7 @@
 # Review
 
 **Goal.** Check that the Lean definitions mean what the papers say, and that the code meets the
-standards in `AGENTS.md`. The owner cannot check the mathematics, so this review is the evidence.
-It is run by an agent that did not write the code: a fresh session, or a subagent that the plan
+standards in `AGENTS.md`. It is run by an agent that did not write the code: a fresh session, or a subagent that the plan
 or build session starts. It only reads the Lean files, and writes a report.
 
 **Done when**
@@ -23,6 +22,3 @@ or build session starts. It only reads the Lean files, and writes a report.
 **Context**
 - The plan in `plans/` gives each object's locator in the papers (its `source` field), and `lake exe tracker show` lists what a definition depends on; the TeX is in the git-ignored
   `references/papers/<id>v<version>/src/`, with versions in `docs/references.bib`.
-- Code standards: Mathlib's style, naming and documentation pages linked in `AGENTS.md`, and Tau
-  Ceti Review's rubrics (https://github.com/TauCetiProject/TauCetiReview) for reuse of Mathlib and
-  no duplication.

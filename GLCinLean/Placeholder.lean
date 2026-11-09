@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2026 The GLCinLean contributors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Authors: The GLCinLean contributors
+Authors: The GLCinLean contributors, Claude Opus 5.5
 -/
 import Lean
 

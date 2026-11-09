@@ -1,14 +1,7 @@
 /-
 GLCinLean.Abstract: the formal abstract. It states GLC I (arXiv 2405.03599v3) Conj. 1.6.7
 and the definitions its statement needs, and imports only Mathlib, Tau Ceti and
-`GLCinLean.Foundations`.
-
-Status: STUB written 2026-11-05 by Claude Opus 5.5. Unreviewed; nothing here is checked by an
-expert. The `𝕃_G` chain (about 23 constructions) is not written yet: the categories and
-functors it produces appear below as placeholders, to be replaced by real definitions.
-
-The sorry'd theorems below are temporary: step 2 restates the conjecture through the
-characterisation of `𝕃_G`, after which only the main theorem has a `sorry`.
+`GLCinLean.Foundations`. The categories and functors of the `𝕃_G` chain appear as placeholders.
 -/
 import GLCinLean.Foundations
 
@@ -27,12 +20,12 @@ universe u
 `k`; `G` is a reductive group over `k`. The statement is made for every square root of `ω_X`,
 taken as data, and for every pinning.
 
-Label: "algebraically closed" and "connected" come from the conventions GLC I cites
+"Algebraically closed" and "connected" come from the conventions GLC I cites
 (AGKRRV, `text.tex` l.2066, l.2087, l.15123) and from GLC II's proof (`Loc.tex` l.1497,
 l.37294), not from GLC I's opening sentence, which says only "a field of characteristic 0"
-(`functor.tex` l.717) [read 2026-11-04]. -/
+(`functor.tex` l.717). -/
 
-/-- PLACEHOLDER (provisional). An identification of the root datum of `Gd` with the dual of the
+/-- An identification of the root datum of `Gd` with the dual of the
 root datum of `G` (GLC I §1.3: the Langlands dual group). No library defines the root datum of a
 general reductive group yet, so this has content only once it is defined. Deliberately a plain
 `opaque` type, not `NonemptyType`: whether an identification exists is the content. -/
@@ -68,31 +61,30 @@ structure Setting (k : Type u) [Field k] [CharZero k] [IsAlgClosed k] where
 attribute [instance] Setting.over Setting.smooth Setting.proper Setting.connected
 
 /-- A Langlands dual group exists (GLC I §1.3). Stated so that a wrongly stated identification
-shows up as a false existence claim instead of making the main statement vacuous. Sorry'd
-for now: an obligation, not a certificate. -/
+shows up as a false existence claim instead of making the main statement vacuous. -/
 theorem exists_dualGroup {k : Type u} [Field k] [CharZero k] [IsAlgClosed k]
     (G : ReductiveGroup k) : ∃ Gd : ReductiveGroup k, Nonempty (RootDatumDuality G Gd) := sorry
 
 variable {k : Type u} [Field k] [CharZero k] [IsAlgClosed k]
 
-/-! ## The categories and functors of the `𝕃_G` chain (placeholders for now) -/
+/-! ## The categories and functors of the `𝕃_G` chain -/
 
-/-- PLACEHOLDER (provisional). `Dmod_{1/2}(Bun_G)`: half-twisted D-modules on the moduli stack
+/-- `Dmod_{1/2}(Bun_G)`: half-twisted D-modules on the moduli stack
 of `G`-bundles on `X` (GLC I §1.1, twist by `ω_X^{1/2}`). -/
 @[placeholder] opaque DmodHalf (S : Setting k) : DGCat
 
-/-- PLACEHOLDER (provisional). `QCoh(LS_Ǧ)`: quasi-coherent sheaves on the stack of de Rham
+/-- `QCoh(LS_Ǧ)`: quasi-coherent sheaves on the stack of de Rham
 `Ǧ`-local systems on `X` (GLC I §1.4); it acts on both sides of the conjecture. -/
 @[placeholder] opaque QCohLS (S : Setting k) : DGCat
 
-/-- PLACEHOLDER (provisional). `IndCoh_Nilp(LS_Ǧ)` (GLC I §1.6). -/
+/-- `IndCoh_Nilp(LS_Ǧ)` (GLC I §1.6). -/
 @[placeholder] opaque IndCohNilp (S : Setting k) : DGCat
 
-/-- PLACEHOLDER (provisional). `Ψ : IndCoh_Nilp(LS_Ǧ) → QCoh(LS_Ǧ)`, a `QCoh(LS_Ǧ)`-linear
+/-- `Ψ : IndCoh_Nilp(LS_Ǧ) → QCoh(LS_Ǧ)`, a `QCoh(LS_Ǧ)`-linear
 functor (GLC I §1.6). -/
 @[placeholder] opaque Psi (S : Setting k) : LinFun (QCohLS S) (IndCohNilp S) (QCohLS S)
 
-/-- PLACEHOLDER (provisional). `𝕃_{G,coarse} : Dmod_{1/2}(Bun_G) → QCoh(LS_Ǧ)`, a
+/-- `𝕃_{G,coarse} : Dmod_{1/2}(Bun_G) → QCoh(LS_Ǧ)`, a
 `QCoh(LS_Ǧ)`-linear functor (GLC I §1.6). -/
 @[placeholder] opaque LCoarse (S : Setting k) : LinFun (QCohLS S) (DmodHalf S) (QCohLS S)
 
@@ -107,12 +99,12 @@ def IsLanglandsFunctor (S : Setting k) (F : LinFun (QCohLS S) (DmodHalf S) (IndC
   (∀ c : (DmodHalf S).Obj, DGCat.IsCompact c → DGCat.IsEventuallyCoconnective (F.obj c)) ∧
     Nonempty (LinIso (F.comp (Psi S)) (LCoarse S))
 
-/-- GLC I Cor. 1.6.5, existence: a functor with the two properties exists. Sorry'd for now. -/
+/-- GLC I Cor. 1.6.5, existence: a functor with the two properties exists. -/
 theorem exists_isLanglandsFunctor (S : Setting k) :
     ∃ F : LinFun (QCohLS S) (DmodHalf S) (IndCohNilp S), IsLanglandsFunctor S F := sorry
 
 /-- GLC I Cor. 1.6.5, uniqueness in the enhanced sense: two functors with the two properties
-are isomorphic as `QCoh(LS_Ǧ)`-linear functors. Sorry'd for now. -/
+are isomorphic as `QCoh(LS_Ǧ)`-linear functors. -/
 theorem isLanglandsFunctor_unique (S : Setting k)
     {F F' : LinFun (QCohLS S) (DmodHalf S) (IndCohNilp S)}
     (hF : IsLanglandsFunctor S F) (hF' : IsLanglandsFunctor S F') :

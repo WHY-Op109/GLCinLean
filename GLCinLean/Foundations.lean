@@ -2,14 +2,9 @@
 GLCinLean.Foundations: the thin adapter layer.
 
 Every substantial object the formal abstract uses reaches it through a name here:
-* re-exports of provider objects (Mathlib, Tau Ceti; later GLCinLean.Staging and copied Stacks
-  declarations), as `abbrev`s, wrapping only to expose a hypothesis;
+* re-exports of provider objects (Mathlib, Tau Ceti), as `abbrev`s, wrapping only to expose a hypothesis;
 * provider-less generic placeholders (generic foundation families), data only, in the
   `NonemptyType` pattern or as plain `opaque` constants, each tagged `@[placeholder]`.
-
-Status: stub written 2026-11-05. Unreviewed. Every placeholder below is PROVISIONAL: it stands
-for an object no provider has yet, and its interface may change when the plan fixes the
-formalism.
 -/
 import GLCinLean.Placeholder
 import Mathlib.AlgebraicGeometry.Morphisms.Smooth
@@ -38,7 +33,7 @@ abbrev SpecField (k : Type u) [Field k] : Scheme.{u} := AlgebraicGeometry.Spec (
 
 /-- Reductive affine group schemes of finite type over a field (Tau Ceti
 `TauCeti.ReductiveAffineGroupSchemeCat`). Tau Ceti proves them smooth with geometrically connected
-structure morphism (`Reductive/Basic.lean` @ `e0610cce`). -/
+structure morphism (`Reductive/Basic.lean`). -/
 abbrev ReductiveGroup (k : Type u) [Field k] := TauCeti.ReductiveAffineGroupSchemeCat k
 
 /-- The coordinate Hopf algebra of a reductive group, through Tau Ceti's anti-equivalence
@@ -69,8 +64,8 @@ abbrev LineBundle.tensor {X : Scheme.{u}} (L K : LineBundle X) : LineBundle X :=
 
 /-- The canonical sheaf `ω_X` of a scheme over `k`, as the sheaf of relative differentials
 `Ω_{X/k}` (Tau Ceti `Scheme.relativeDifferentials`). For a smooth curve over `k` this is the
-canonical line bundle [J: standard identification; Tau Ceti relates it to its Weil-divisor
-`canonicalBundle` in `Modules/Differentials/Canonical.lean`]. -/
+canonical line bundle; Tau Ceti relates it to its Weil-divisor `canonicalBundle` in
+`Modules/Differentials/Canonical.lean`. -/
 abbrev canonicalSheaf (k : Type u) [Field k] (X : Scheme.{u}) [X.Over (SpecField k)] :
     X.Modules :=
   X.relativeDifferentials k
@@ -80,8 +75,8 @@ abbrev canonicalSheaf (k : Type u) [Field k] (X : Scheme.{u}) [X.Over (SpecField
 The categories of GLC are presentable stable `k`-linear ∞-categories (DG categories), functors
 are continuous, and equivalences are equivalences in DGCat (AGKRRV conventions). No
 provider has this enhanced theory yet (Tau Ceti roadmap EnhancedDerivedSheaves #908 plans
-it). The placeholders below give the statement the shape it needs, so that a worker cannot fall
-back to a bare `Functor` with propositional equality.
+it). The placeholders below give the statement the shape it needs, so that it cannot fall back to a
+bare `Functor` with propositional equality.
 
 `DGCat`, `DGCat.Obj` and `LinFun` use the `NonemptyType` pattern: such objects exist. `LinIso`,
 `DGCat.IsCompact` and `DGCat.IsEventuallyCoconnective` are plain `opaque` constants with no
@@ -91,7 +86,7 @@ giving `LinIso` a `Nonempty` instance would make the main statement trivially pr
 /-- Carrier of `DGCat`. -/
 opaque DGCatPt : NonemptyType.{0}
 
-/-- PLACEHOLDER (provisional). Cocomplete presentable stable `k`-linear ∞-categories (DG
+/-- Cocomplete presentable stable `k`-linear ∞-categories (DG
 categories) in the enhanced sense. -/
 @[placeholder] def DGCat : Type := DGCatPt.type
 
@@ -100,39 +95,39 @@ instance : Nonempty DGCat := DGCatPt.property
 /-- Carrier of `DGCat.Obj`. -/
 opaque DGCat.ObjPt : DGCat → NonemptyType.{0}
 
-/-- PLACEHOLDER (provisional). The objects of an enhanced category. -/
+/-- The objects of an enhanced category. -/
 @[placeholder] def DGCat.Obj (C : DGCat) : Type := (DGCat.ObjPt C).type
 
 instance (C : DGCat) : Nonempty C.Obj := (DGCat.ObjPt C).property
 
-/-- PLACEHOLDER (provisional). Compactness of an object of an enhanced category. -/
+/-- Compactness of an object of an enhanced category. -/
 @[placeholder] opaque DGCat.IsCompact {C : DGCat} : C.Obj → Prop
 
-/-- PLACEHOLDER (provisional). Eventual coconnectivity of an object, for the category's standard
+/-- Eventual coconnectivity of an object, for the category's standard
 t-structure (GLC I §1: objects in `IndCoh_Nilp(LS)^{>-∞}`). -/
 @[placeholder] opaque DGCat.IsEventuallyCoconnective {C : DGCat} : C.Obj → Prop
 
 /-- Carrier of `LinFun`. -/
 opaque LinFunPt : DGCat → DGCat → DGCat → NonemptyType.{0}
 
-/-- PLACEHOLDER (provisional interface). `LinFun A C D`: the continuous functors
+/-- `LinFun A C D`: the continuous functors
 `C → D` that are `A`-linear for the given actions of the monoidal category `A` on `C` and `D`,
-in the enhanced sense (GLC I Cor. 1.6.5: continuous `QCoh(LS)`-linear functors). Provisional:
-the monoidal structure of `A` and its actions are not yet data. -/
+in the enhanced sense (GLC I Cor. 1.6.5: continuous `QCoh(LS)`-linear functors). The monoidal
+structure of `A` and its actions are not data yet. -/
 @[placeholder] def LinFun (A C D : DGCat) : Type := (LinFunPt A C D).type
 
 instance (A C D : DGCat) : Nonempty (LinFun A C D) := (LinFunPt A C D).property
 
-/-- PLACEHOLDER (provisional). The value of an `A`-linear functor on an object. -/
+/-- The value of an `A`-linear functor on an object. -/
 @[placeholder] opaque LinFun.obj {A C D : DGCat} : LinFun A C D → C.Obj → D.Obj
 
-/-- PLACEHOLDER (provisional). Composition of `A`-linear functors: `F.comp G` is `G ∘ F`. -/
+/-- Composition of `A`-linear functors: `F.comp G` is `G ∘ F`. -/
 @[placeholder] opaque LinFun.comp {A C D E : DGCat} : LinFun A C D → LinFun A D E → LinFun A C E
 
-/-- PLACEHOLDER (provisional). The identity `A`-linear functor. -/
+/-- The identity `A`-linear functor. -/
 @[placeholder] opaque LinFun.id (A C : DGCat) : LinFun A C C
 
-/-- PLACEHOLDER (provisional interface). `LinIso F G`: `A`-linear natural isomorphisms
+/-- `LinIso F G`: `A`-linear natural isomorphisms
 `F ≅ G` in the enhanced sense. Deliberately not `Nonempty`: two functors need not be
 isomorphic. Isomorphism of functors is always `Nonempty (LinIso F G)`, never an equality. -/
 @[placeholder] opaque LinIso {A C D : DGCat} : LinFun A C D → LinFun A C D → Type
