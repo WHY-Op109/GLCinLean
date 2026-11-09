@@ -12,7 +12,7 @@
 - `STATUS.md` is updated, `prompts/build.md` has been checked and updated if needed, and the work is committed and pushed.
 
 **Context**
-- The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`; GLC I is `2405.03599v3/src/functor.tex` (the conjecture is labelled `c:GLC dR`). Download any other paper you need from arXiv into that folder, and add it to `docs/references.bib`.
+- The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`; GLC I is `2405.03599v3/src/functor.tex` (the conjecture is labelled `c:GLC dR`). A missing paper is fetched from arXiv as `https://arxiv.org/e-print/<id>v<version>` (the versions are in `docs/references.bib`) and unpacked into `src/`. Add any other paper you need to `docs/references.bib`.
 - The tracker's `examples/` folder has a plan that uses every field.
 - Findings of the research of 2026-11-08 (full notes in commit `728da79`). Each says what was checked in a source and what is a judgement. Re-check anything about Mathlib or Tau Ceti live; Tau Ceti changes daily.
   - **`LCoarse` is unspecified.** In the current `Abstract.lean` it is an opaque placeholder tied to nothing, so `main` says "the unique lift of *some* functor is an equivalence". GLC I (`functor.tex` l.1489–1496, l.1720) and Scholze's Bourbaki exposé 1252 (Conj. 2.10, Rem. 9.4) pin it down: `LCoarse` is the right adjoint of `A ↦ A ⋆ Poinc`, which leaves the spectral action and `Poinc` as the objects to define. (The sources were checked; the consequence for `main` is a judgement.)
