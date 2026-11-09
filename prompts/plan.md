@@ -1,66 +1,29 @@
 # Step 2: plan
 
-**Goal.** Write the blueprint of the GLC statement, and redesign the Lean statement to match it.
-The blueprint lists every object that [GLC1] Conj. 1.6.7 uses, down to what Mathlib and Tau Ceti
-already have, and says for each where it comes from and what it depends on. The redesign makes
-the statement say *which* equivalence it claims, in the form `AGENTS.md` describes.
+**Goal.** Write the plan of the GLC statement, and redesign the Lean statement to match it. The plan lists every object that [GLC1] Conj. 1.6.7 uses, down to what Mathlib and Tau Ceti already have, and says for each where it comes from and what it depends on. The redesign makes the statement say *which* equivalence it claims, in the form `AGENTS.md` describes.
 
 **Done when**
-- `blueprint.md` lists every object the statement uses, each with: the exact locator in the papers; its provider (Mathlib, Tau Ceti, a Tau Ceti roadmap item, an open Tau Ceti roadmap pull request, or missing), with the Tau Ceti commit checked; what it depends on; library or statement; and its Lean name and state (planned, placeholder, defined);
-- `blueprint.md` proposes answers, with reasons, to three questions for the owner: how to use the open Tau Ceti roadmap pull requests; how other Lean libraries may be used; and how to handle the ∞-categorical layer;
-- the Lean statement is redesigned as one change: stated through the characterisation of `𝕃_G`, with `sorry` only in the main theorem, no re-export layer, Mathlib-style files, and the placeholders refined so the statement exposes the objects the blueprint names. The owner has already allowed this one change; it is pushed, and the owner reads the diff;
+- `plans/` holds a module plan, in the tracker's format, for every module the statement needs: library modules in subject folders, and the statement's own modules. Every object the statement uses is a planned declaration whose `source` gives the exact locator in the papers and whose `desc` says its provider (Mathlib, Tau Ceti, a Tau Ceti roadmap item, an open Tau Ceti roadmap pull request, or missing, with the Tau Ceti commit checked) and, for a placeholder, that it is one; `deps` lists what it depends on;
+- `lake exe tracker lint` passes;
+- `STATUS.md` proposes answers, with reasons, to three questions for the owner: how to use the open Tau Ceti roadmap pull requests; how other Lean libraries may be used; and how to handle the ∞-categorical layer;
+- the Lean statement is redesigned as one change: stated through the characterisation of `𝕃_G`, with `sorry` only in the main theorem, no re-export layer, Mathlib-style files, and the placeholders refined so the statement exposes the objects the plan names. The owner has already allowed this one change; it is pushed, and the owner reads the diff;
 - the done check in `AGENTS.md` passes;
 - a fresh agent has reviewed the redesigned statement with `prompts/review.md`;
-- `STATUS.md` is updated, `prompts/build.md` has been checked and updated if needed, and the work
-  is committed and pushed.
+- `STATUS.md` is updated, `prompts/build.md` has been checked and updated if needed, and the work is committed and pushed.
 
 **Context**
 - The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`; GLC I is `2405.03599v3/src/functor.tex` (the conjecture is labelled `c:GLC dR`). Download any other paper you need from arXiv into that folder, and add it to `docs/references.bib`.
-- Findings of the research of 2026-11-08 (full notes in commit `728da79`). Re-check anything about Mathlib or Tau Ceti live; Tau Ceti changes daily.
-  - **`LCoarse` is unspecified.** In the current `Abstract.lean` it is an opaque placeholder tied
-    to nothing, so `main` says "the unique lift of *some* functor is an equivalence". GLC I
-    (`functor.tex` l.1489–1496, l.1720) and Scholze's Bourbaki exposé 1252 (Conj. 2.10, Rem. 9.4)
-    pin it down: `LCoarse` is the right adjoint of `A ↦ A ⋆ Poinc`, which leaves the spectral
-    action and `Poinc` as the objects to define. [R; J]
-  - **The `QCoh(LS_Ǧ)`-module structure is data, not a condition**, and in the de Rham setting the
-    spectral action is a deep theorem (Gaitsgory 2015, GLC II). The current `LinFun` interface has
-    no action as data. [R Scholze p. 13; J]
-  - **Scholze's exposé independently confirms the list of objects** and the hypotheses
-    (algebraically closed, connected, a square root of `ω_X` as data); it says "smooth
-    projective" where `Setting` says smooth and proper. [R; J]
-  - **The t-structure on `IndCoh_Nilp(LS_Ǧ)`** that GLC I uses is defined in none of the sources
-    (GLC I, Arinkin–Gaitsgory, [IndCoh]). It can be defined from `Psi` and the canonical
-    t-structure on `QCoh(LS_Ǧ)`, as Arinkin–Gaitsgory §4.4.1 does for affines: `≤ 0` is the
-    preimage of `QCoh(LS_Ǧ)^{≤ 0}` under `Psi`. `Psi` itself is `Ψ_{LS} ∘ Ξ^{Nilp,all}_{LS}`
-    (Arinkin–Gaitsgory Cor. 8.2.6, [IndCoh] §11.7.1; GLC I's `Ψ_{Nilp,{0}}`, `functor.tex`
-    l.1822). [R for the citations; J for the construction]
-  - **Compactness cannot be defined with Mathlib's `IsFinitelyPresentable`**: the homotopy
-    category of a presentable stable ∞-category has coproducts but not, in general, filtered
-    colimits. The triangulated notion (`Hom(X, -)` commutes with coproducts) is missing from
-    Mathlib. Eventual coconnectivity can use Mathlib's `TStructure.plus` on the homotopy category.
-    [R `plus`; J]
-  - **`RootDatumDuality` can be built on Mathlib**: `RootDatum`, `RootPairing.flip` and
-    `RootPairing.Equiv` exist; only "the root datum of a reductive group with a pinning" is
-    missing (in Tau Ceti too). Mathlib's `RootDatum` needs `[Module.Finite ℤ X₁] [Module.Finite ℤ
-    X₂]` added, and the root datum is canonical only up to isomorphism. [R; J]
-  - **Mathlib's template for `LinFun`** is `Functor.LeftLinear` with `μₗIso`
-    (`Monoidal/Action/LinearFunctor.lean`). [R]
-  - **No merged Tau Ceti roadmap covers the core of the statement** (`Bun_G` in characteristic 0,
-    `LS_Ǧ`, D-modules on stacks, IndCoh, DG categories). The closest are open roadmap pull
-    requests in TauCetiRoadmap: #1828 (D-modules on smooth schemes, abelian, scheme-level), #999
-    (`Bun_G`, but over a finite field), #1056 (differential operators, the loop Grassmannian,
-    opers), #1202 (nilpotent singular support, for local L-parameters); and the job #2534 (QCoh
-    of prestacks). [R]
-  - **Other Lean libraries:** AxiomMath/Stacks is a Lean release behind Tau Ceti, has no CI or
-    cache, and its frontier code is AI-written and unreviewed; JarodAlper/stacks-and-moduli is
-    AI-written "with very little supervision"; the candidate sources (Tau Ceti, AxiomMath/Stacks,
-    stacks-and-moduli) use three different definitions of algebraic stack, so the blueprint must
-    pick one carrier before any `Bun_G` work; Langlandsproject/Langlands has little overlap with this library today, but a useful survey of
-    root data; emilyriehl/infinity-cosmos will not supply GLC's categories (it works with
-    ∞-cosmoi and is two Lean releases behind). Mathlib's derived categories are 1-categorical
-    (Riou, Annals of Formalized Mathematics 1, 2025). [R; S; J]
-  - **GLC III–V argue by induction over Levi subgroups**, so `Setting` should allow that. [R; J]
-  - **The "hack answer" test** (from the Annals Challenge): for each placeholder, ask whether a
-    trivial choice (the zero category, the empty type) would make the main theorem easy.
-- Library interfaces keep the ground field and the coefficient field apart, so that other sheaf
-  theories can be added later.
+- The tracker's format is in `tools/tracker/README.md`; its `examples/` folder has a plan that uses every field.
+- Findings of the research of 2026-11-08 (full notes in commit `728da79`). Each says what was checked in a source and what is a judgement. Re-check anything about Mathlib or Tau Ceti live; Tau Ceti changes daily.
+  - **`LCoarse` is unspecified.** In the current `Abstract.lean` it is an opaque placeholder tied to nothing, so `main` says "the unique lift of *some* functor is an equivalence". GLC I (`functor.tex` l.1489–1496, l.1720) and Scholze's Bourbaki exposé 1252 (Conj. 2.10, Rem. 9.4) pin it down: `LCoarse` is the right adjoint of `A ↦ A ⋆ Poinc`, which leaves the spectral action and `Poinc` as the objects to define. (The sources were checked; the consequence for `main` is a judgement.)
+  - **The `QCoh(LS_Ǧ)`-module structure is data, not a condition**, and in the de Rham setting the spectral action is a deep theorem (Gaitsgory 2015, GLC II). The current `LinFun` interface has no action as data. (Checked in Scholze, p. 13.)
+  - **Scholze's exposé independently confirms the list of objects** and the hypotheses (algebraically closed, connected, a square root of `ω_X` as data); it says "smooth projective" where `Setting` says smooth and proper. (Checked.)
+  - **The t-structure on `IndCoh_Nilp(LS_Ǧ)`** that GLC I uses is defined in none of the sources (GLC I, Arinkin–Gaitsgory, [IndCoh]). It can be defined from `Psi` and the canonical t-structure on `QCoh(LS_Ǧ)`, as Arinkin–Gaitsgory §4.4.1 does for affines: `≤ 0` is the preimage of `QCoh(LS_Ǧ)^{≤ 0}` under `Psi`. `Psi` itself is `Ψ_{LS} ∘ Ξ^{Nilp,all}_{LS}` (Arinkin–Gaitsgory Cor. 8.2.6, [IndCoh] §11.7.1; GLC I's `Ψ_{Nilp,{0}}`, `functor.tex` l.1822). (The citations were checked; the construction is a judgement.)
+  - **Compactness cannot be defined with Mathlib's `IsFinitelyPresentable`**: the homotopy category of a presentable stable ∞-category has coproducts but not, in general, filtered colimits. The triangulated notion (`Hom(X, -)` commutes with coproducts) is missing from Mathlib. Eventual coconnectivity can use Mathlib's `TStructure.plus` on the homotopy category. (`plus` was checked in Mathlib; the rest is a judgement.)
+  - **`RootDatumDuality` can be built on Mathlib**: `RootDatum`, `RootPairing.flip` and `RootPairing.Equiv` exist; only "the root datum of a reductive group with a pinning" is missing (in Tau Ceti too). Mathlib's `RootDatum` needs `[Module.Finite ℤ X₁] [Module.Finite ℤ X₂]` added, and the root datum is canonical only up to isomorphism. (Checked in Mathlib; the design is a judgement.)
+  - **Mathlib's template for `LinFun`** is `Functor.LeftLinear` with `μₗIso` (`Monoidal/Action/LinearFunctor.lean`). (Checked.)
+  - **No merged Tau Ceti roadmap covers the core of the statement** (`Bun_G` in characteristic 0, `LS_Ǧ`, D-modules on stacks, IndCoh, DG categories). The closest are open roadmap pull requests in TauCetiRoadmap: #1828 (D-modules on smooth schemes, abelian, scheme-level), #999 (`Bun_G`, but over a finite field), #1056 (differential operators, the loop Grassmannian, opers), #1202 (nilpotent singular support, for local L-parameters); and the job #2534 (QCoh of prestacks). (Checked.)
+  - **Other Lean libraries:** AxiomMath/Stacks is a Lean release behind Tau Ceti, has no CI or cache, and its frontier code is AI-written and unreviewed; JarodAlper/stacks-and-moduli is AI-written "with very little supervision"; the candidate sources (Tau Ceti, AxiomMath/Stacks, stacks-and-moduli) use three different definitions of algebraic stack, so the plan must pick one carrier before any `Bun_G` work; Langlandsproject/Langlands has little overlap with this library today, but a useful survey of root data; emilyriehl/infinity-cosmos will not supply GLC's categories (it works with ∞-cosmoi and is two Lean releases behind). Mathlib's derived categories are 1-categorical (Riou, Annals of Formalized Mathematics 1, 2025). (Facts checked in the repositories; the assessments are judgements.)
+  - **GLC III–V argue by induction over Levi subgroups**, so `Setting` should allow that. (Checked in the papers; the consequence is a judgement.)
+  - **The "hack answer" test** (from the Annals Challenge): for each placeholder, ask whether a trivial choice (the zero category, the empty type) would make the main theorem easy.
+- Library interfaces keep the ground field and the coefficient field apart, so that other sheaf theories can be added later.

@@ -8,8 +8,9 @@ Updated 2026-11-09.
   `prompts/build.md`; the full notes, the owner's ideas (`notes/ideas.md`) and the decisions of
   2026-11-08 (`notes/workflow.md`) are in commit `728da79`.
 - **Rebuild** (2026-11-09): a plain Lean project driven by prompts. The review harness, the
-  tracker, the paper manifest and the old plan are gone; `AGENTS.md`, this file,
-  `docs/references.bib` and the prompts for steps 2–4 are new.
+  paper manifest and the old plan are gone; `AGENTS.md`, this file, `docs/references.bib` and
+  the prompts for steps 2–4 are new. The tracker (`tools/tracker`, a git submodule at `c223b67`)
+  reads the plan in `plans/`, which step 2 writes.
 
 ## Now
 
@@ -21,7 +22,7 @@ Updated 2026-11-09.
 
 ## Next
 
-1. **Plan** (`prompts/plan.md`): the blueprint, and the redesigned statement.
+1. **Plan** (`prompts/plan.md`): the plan in `plans/`, and the redesigned statement.
 2. **Build** (`prompts/build.md`) and **review** (`prompts/review.md`), repeated until the
    statement has no placeholders.
 

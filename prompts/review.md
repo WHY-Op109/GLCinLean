@@ -11,7 +11,7 @@ or build session starts. It only reads the Lean files, and writes a report.
   what the calling session names; if it names nothing, the definitions the statement uses that
   changed since the newest report in `notes/reviews/` (all of them if there is none);
 - each verdict rests on a blind reading: a subagent given only the Lean text of the definition
-  and of the definitions it uses (no paper, no docstrings, no blueprint) writes in plain
+  and of the definitions it uses (no paper, no docstrings, no plan) writes in plain
   mathematics what the object is, its hypotheses and quantifiers, and which parts are
   placeholders; the comparison is then with the paper's TeX, not with the name;
 - each placeholder in scope has the "hack answer" test: would a trivial choice (the zero
@@ -21,7 +21,7 @@ or build session starts. It only reads the Lean files, and writes a report.
 - the report is committed and pushed. When the review runs on its own, `STATUS.md` notes it.
 
 **Context**
-- `blueprint.md` gives each object's locator in the papers; the TeX is in the git-ignored
+- The plan in `plans/` gives each object's locator in the papers (its `source` field), and `lake exe tracker show` lists what a definition depends on; the TeX is in the git-ignored
   `references/papers/<id>v<version>/src/`, with versions in `docs/references.bib`.
 - Code standards: Mathlib's style, naming and documentation pages linked in `AGENTS.md`, and Tau
   Ceti Review's rubrics (https://github.com/TauCetiProject/TauCetiReview) for reuse of Mathlib and

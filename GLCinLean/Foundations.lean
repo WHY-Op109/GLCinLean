@@ -8,7 +8,7 @@ Every substantial object the formal abstract uses reaches it through a name here
   `NonemptyType` pattern or as plain `opaque` constants, each tagged `@[placeholder]`.
 
 Status: stub written 2026-11-05. Unreviewed. Every placeholder below is PROVISIONAL: it stands
-for an object no provider has yet, and its interface may change when the blueprint fixes the
+for an object no provider has yet, and its interface may change when the plan fixes the
 formalism.
 -/
 import GLCinLean.Placeholder
