@@ -6,28 +6,17 @@ already have, and says for each where it comes from and what it depends on. The 
 the statement say *which* equivalence it claims, in the form `AGENTS.md` describes.
 
 **Done when**
-- `blueprint.md` lists every object the statement uses, each with: the exact locator in the
-  papers; its provider (Mathlib, Tau Ceti, a Tau Ceti roadmap item, an open Tau Ceti roadmap pull
-  request, or missing), with the Tau Ceti commit checked; what it depends on; library or
-  statement; and its Lean name and state (planned, placeholder, defined);
-- `blueprint.md` proposes answers, with reasons, to three questions for the owner: how to use the
-  open Tau Ceti roadmap pull requests; how other Lean libraries may be used; and how to handle the
-  ∞-categorical layer;
-- the Lean statement is redesigned as one change: stated through the characterisation of `𝕃_G`,
-  with `sorry` only in the main theorem, no re-export layer, Mathlib-style files, and the
-  placeholders refined so the statement exposes the objects the blueprint names. The owner has
-  already allowed this one change; it is pushed, and the owner reads the diff;
+- `blueprint.md` lists every object the statement uses, each with: the exact locator in the papers; its provider (Mathlib, Tau Ceti, a Tau Ceti roadmap item, an open Tau Ceti roadmap pull request, or missing), with the Tau Ceti commit checked; what it depends on; library or statement; and its Lean name and state (planned, placeholder, defined);
+- `blueprint.md` proposes answers, with reasons, to three questions for the owner: how to use the open Tau Ceti roadmap pull requests; how other Lean libraries may be used; and how to handle the ∞-categorical layer;
+- the Lean statement is redesigned as one change: stated through the characterisation of `𝕃_G`, with `sorry` only in the main theorem, no re-export layer, Mathlib-style files, and the placeholders refined so the statement exposes the objects the blueprint names. The owner has already allowed this one change; it is pushed, and the owner reads the diff;
 - the done check in `AGENTS.md` passes;
 - a fresh agent has reviewed the redesigned statement with `prompts/review.md`;
 - `STATUS.md` is updated, `prompts/build.md` has been checked and updated if needed, and the work
   is committed and pushed.
 
 **Context**
-- The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`; GLC I is
-  `2405.03599v3/src/functor.tex` (the conjecture is labelled `c:GLC dR`). Download any other
-  paper you need from arXiv into that folder, and add it to `docs/references.bib`.
-- Findings of the research of 2026-11-08 (full notes in commit `728da79`). Re-check anything about
-  Mathlib or Tau Ceti live; Tau Ceti changes daily.
+- The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`; GLC I is `2405.03599v3/src/functor.tex` (the conjecture is labelled `c:GLC dR`). Download any other paper you need from arXiv into that folder, and add it to `docs/references.bib`.
+- Findings of the research of 2026-11-08 (full notes in commit `728da79`). Re-check anything about Mathlib or Tau Ceti live; Tau Ceti changes daily.
   - **`LCoarse` is unspecified.** In the current `Abstract.lean` it is an opaque placeholder tied
     to nothing, so `main` says "the unique lift of *some* functor is an equivalence". GLC I
     (`functor.tex` l.1489–1496, l.1720) and Scholze's Bourbaki exposé 1252 (Conj. 2.10, Rem. 9.4)
