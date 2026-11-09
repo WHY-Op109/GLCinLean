@@ -1,7 +1,7 @@
 name = "GLCinLean"
 defaultTargets = ["GLCinLean"]
 reservoir = false
-# Mathlib's linters. The project aims at no warnings (apart from the main theorem's `sorry`).
+# Mathlib's linters.
 # `lake lint` runs Batteries' runLinter by hand.
 lintDriver = "batteries/runLinter"
 

@@ -12,13 +12,13 @@ after the statement.
 ## Sources of code
 
 - Use Mathlib first, then Tau Ceti (search its `main`, not only the pinned version).
-- Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`: pull requests from the fork `WHY-Op109/TauCeti`, no stacked pull requests, never writing to TauCetiRoadmap. Nothing goes to Mathlib directly.
+- Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`, from the fork `WHY-Op109/TauCeti`. Nothing goes to Mathlib directly.
 - Everything else is written here.
 
 ## Plan
 
 - The plan is in `plans/`, in the format of the tracker (`tools/tracker`, a git submodule; read `tools/tracker/README.md` before touching the plan). `lake exe tracker ready` lists what can be worked on now; `lake exe tracker lint` checks the plan against the code.
-- Once a declaration exists, the Lean code and its docstring are the truth; the plan entry shrinks to its id.
+- Once a declaration exists, the Lean code and its docstring are the truth.
 - The tracker counts a placeholder as proved, since it has no `sorry`. Remaining placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`.
 
 ## Lean code
@@ -28,7 +28,7 @@ after the statement.
 - No warnings, apart from the `sorry` of the main theorem.
 - Search before defining: `grep` in `.lake/packages/mathlib` and `.lake/packages/TauCeti`, `exact?` and `apply?`, LeanSearch and Loogle. For a proof longer than a few lines, search for its goal and its key steps too.
 - Never duplicate Mathlib or Tau Ceti, not even as a thin wrapper, a restatement or a parallel API. Factor near-copies in this repository into one construction.
-- Read every statement adversarially: check quantifiers, the direction of implications and degenerate cases (empty, zero). Never move a conclusion into a hypothesis or a structure field, use a `True`-like stand-in, or weaken a statement to make it provable. A new `Prop`-valued definition needs a theorem that uses it or an example where it holds non-trivially.
+- Read every statement adversarially: check quantifiers, the direction of implications and degenerate cases (empty, zero). Never move a conclusion into a hypothesis or a structure field, use a `True`-like stand-in, or weaken a statement to make it provable or to remove a placeholder. A new `Prop`-valued definition needs a theorem that uses it or an example where it holds non-trivially.
 - Use the natural generality: the weakest assumptions the mathematics needs, the general result first and special cases from it. No unused or over-strong hypotheses or instances, and no generality that nothing uses.
 - Give each definition its characterising API (introduction and elimination lemmas, `_def` and `mem_*_iff` forms, `@[simp]` normal forms, its universal property where it has one), so that no other file unfolds it. Bundle a named concept instead of repeating its assumptions, and instantiate the Mathlib structures that emerge (module, ring, topology).
 - Put each declaration in its canonical home, in subject folders as in Mathlib: one concept per file, under 1,000 lines, with minimal imports (never `import Mathlib`).
@@ -41,7 +41,6 @@ after the statement.
 
 - The only `sorry` is the proof of the main theorem. Everything the statement uses (definitions, instances, lemmas, well-definedness) is fully proved. The conjecture is stated through the characterisation of `𝕃_G`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence.
 - An object not defined yet is a placeholder: an `opaque` marked `@[placeholder]` (`GLCinLean/Placeholder.lean`), with a docstring naming the object it stands for. Placeholders live only in the statement, never in the library or in code meant for Tau Ceti. One is replaced only together with examples that show the new definition behaves as expected.
-- Never weaken what a statement says while removing a placeholder.
 - A change to the statement, or to a definition it reaches, is checked by a fresh agent with `prompts/review.md`, then waits for the owner's approval.
 
 ## Builds

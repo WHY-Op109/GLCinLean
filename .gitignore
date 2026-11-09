@@ -1,36 +1,22 @@
-# macOS
+# macOS and editors
 .DS_Store
 ._*
-
-# Editors
 .vscode/
 .idea/
 *.swp
 *~
 
-# Local agent settings and scratch work
+# Local agent settings
 .claude/settings.local.json
 CLAUDE.local.md
-scratch/
-tmp/
 
-# Lean / Lake build outputs (if experiments land here)
+# Lake build outputs
 .lake/
-lake-packages/
-build/
 
 # Papers are never committed: their TeX lives in references/papers/<id>v<version>/.
-/papers/
 references/papers/
 *.pdf
 *.tex
-*.tar.gz
-*.zip
-
-# Python
-__pycache__/
-*.pyc
-.venv/
 
 # Secrets
 .env
