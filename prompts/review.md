@@ -12,7 +12,9 @@ or build session starts. It only reads the Lean files, and writes a report.
 - each verdict rests on a blind reading: a subagent given only the Lean text of the definition
   and of the definitions it uses (no paper, no docstrings, no plan) writes in plain
   mathematics what the object is, its hypotheses and quantifiers, and which parts are
-  placeholders; the comparison is then with the paper's TeX, not with the name;
+  placeholders; the comparison is then with the paper's TeX, not with the name. The Lean text is
+  passed inside the subagent's instructions, and the subagent opens no file of the repository or
+  the papers: a subagent here loads `AGENTS.md`, which already names the statement;
 - each placeholder in scope has the "hack answer" test: would a trivial choice (the zero
   category, the empty type) make the main theorem easy?
 - the report is in `notes/reviews/YYYY-MM-DD.md`, with the commit reviewed and every *mismatch*
