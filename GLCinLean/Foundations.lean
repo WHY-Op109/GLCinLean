@@ -11,7 +11,7 @@ Status: stub written 2026-11-05. Unreviewed. Every placeholder below is PROVISIO
 for an object no provider has yet, and its interface may change when the blueprint fixes the
 formalism.
 -/
-import ReviewKit.Attr
+import GLCinLean.Placeholder
 import Mathlib.AlgebraicGeometry.Morphisms.Smooth
 import Mathlib.AlgebraicGeometry.Morphisms.Proper
 import Mathlib.FieldTheory.IsAlgClosed.Basic

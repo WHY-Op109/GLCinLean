@@ -1,30 +1,19 @@
 name = "GLCinLean"
 defaultTargets = ["GLCinLean"]
-# Never indexed by Reservoir (public but unannounced).
 reservoir = false
-# Mathlib's linters, as FLT, Carleson and PFR use them: warnings in the build log, never a gate.
+# Mathlib's linters. The project aims at no warnings (apart from the main theorem's `sorry`).
 # `lake lint` runs Batteries' runLinter by hand.
 lintDriver = "batteries/runLinter"
 
 [leanOptions]
 weak.linter.mathlibStandardSet = true
 
-# Tau Ceti at a tag; Mathlib comes through Tau Ceti. Bumps are the owner's decision.
+# Tau Ceti at its newest tag; Mathlib and Lean come through Tau Ceti. The pin moves only when
+# merged Tau Ceti contributions are needed.
 [[require]]
 name = "TauCeti"
 git = "https://github.com/TauCetiProject/TauCeti"
 rev = "v4.36.0-rc2"
-
-# bridgekat/tracker @ c223b67, a git submodule.
-[[require]]
-name = "tracker"
-path = "tools/tracker"
-
-# The review checks (github.com/WHY-Op109/reviewkit), pinned by commit.
-[[require]]
-name = "ReviewKit"
-git = "https://github.com/WHY-Op109/reviewkit"
-rev = "3fd3bfa7ebcf6afb68101df4932c6ce8cfdec0c6"
 
 [[lean_lib]]
 name = "GLCinLean"
