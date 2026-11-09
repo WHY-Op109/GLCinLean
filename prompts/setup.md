@@ -13,7 +13,7 @@
 
 **Context**
 - Tools:
-  - `git`, `curl`, `tar`, `gunzip`;
+  - `git`, `curl`, `tar`, `gunzip`, `file`;
   - `elan`, which installs the Lean version in `lean-toolchain` (Lean and `lake` come with it);
   - `gh`, logged in to the GitHub account `WHY-Op109` with push rights on `WHY-Op109/GLCinLean` (`gh auth status`; `gh api repos/WHY-Op109/GLCinLean --jq .permissions.push`), since sessions push to `main`;
   - for contributions to Tau Ceti only (not needed to build): `uv`, and Tau Ceti's Worker (`tauceti`, from https://github.com/TauCetiProject/TauCetiWorker).
@@ -33,5 +33,5 @@
   | ArinkinGaitsgory | [1201.6343v4](https://arxiv.org/abs/1201.6343v4) | `singsupp.tex` |
   | IndCoh | [1105.4857v7](https://arxiv.org/abs/1105.4857v7) | `IndCohtext.tex` |
 
-  The LaTeX source of `<id>v<version>` is at `https://arxiv.org/e-print/<id>v<version>` (follow redirects: `curl -L`). It comes in one of two forms, checked on 2026-11-09: a gzipped tar archive (GLC I and GLC V), unpacked with `tar -xzf source -C src`; or a single gzipped `.tex` file (the others), unpacked with its original name by saving it as `src/source.gz` and running `gunzip -N source.gz` inside `src/`. Fetch one paper at a time, with a pause between requests.
+  The LaTeX source of `<id>v<version>` is at `https://arxiv.org/e-print/<id>v<version>` (follow redirects: `curl -L`). It is either a gzipped tar archive or a single gzipped `.tex` file, and the form may differ between papers and versions, so check each download with `file source`: unpack a tar archive with `tar -xzf source -C src`; save a single file as `src/source.gz` and run `gunzip -N source.gz` inside `src/`, which restores its original name. Fetch one paper at a time, with a pause between requests.
 - `references/papers/` is git-ignored: the papers are never committed.
