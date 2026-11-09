@@ -52,7 +52,7 @@ One line per paper, to choose which one to search:
 | [GaRanII] | `1708.07205v5/src/semiinfinite.tex` | 5.9k | Borel semi-infinite Ran category, invariant-stratum adjunctions (§1.5), local–global IC comparison and finite Zastava restriction (Theorem 3.3.3, Proposition 3.8.3) |
 | [HottaTakeuchiTanisaki] | not pinned | book | regular holonomic D-modules and the Riemann–Hilbert correspondence (Chapters 2–3, 6–8); used only for the comparison over C |
 | [LusztigQAnalog] | not pinned | paper | parity vanishing of IC stalks on the affine Grassmannian (§11), cited through [MV] Lemma 7.1 |
-| [DeligneMilne] | not pinned | paper | Tannakian criteria for finite type, connectedness and reductivity (Props. 2.20, 2.22, 2.23), cited through [MV] §7 |
+| [DeligneMilne] | not pinned | paper | Tannakian criteria for finite type, connectedness and reductivity (Props. 2.20 and 2.23, Cor. 2.22), cited through [MV] §7 |
 | [LurieHA] | not pinned | book | idempotent algebras and their modules (§4.8.2) |
 
 ## Searching

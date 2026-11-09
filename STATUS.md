@@ -24,25 +24,35 @@ it does not certify the missing Lean implementations or resolve the statement pl
 A later recheck, `notes/reviews/2026-11-09-repair-recheck.md`, requested changes to
 `76abe97`: no planned proof that the Tannakian group is reductive (B1), the factorizable
 Satake functor planned into the untwisted spherical category (B2), and three gaps in the
-spectral-decomposition proof (M1–M3). The follow-up repair commit answers them in the plans:
+spectral-decomposition proof (M1–M3). Commit `834cc56` answered them; the fresh review of that
+commit, `notes/reviews/2026-11-09-repair-recheck-2.md`, requested changes again (R1, F1–F3 and
+small points). The follow-up commit answers those. The plan now contains:
 
-- B1: `Satake.sphericalHeart_semisimple`, by comparison through Q̄ and C
-  (`DModules.holonomicHom_fieldBaseChange`, `DModules.schubertRiemannHilbert`), feeding the
-  Tau Ceti criterion `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`.
+- B1 and R1: `Satake.sphericalHeart_semisimple`, proved in D-modules over k from
+  `Satake.icStalkParity`, which comes from `Satake.icStalkParity_complex` ([LusztigQAnalog]
+  §11) by comparison through Q̄ and C. Reductivity then follows from the Tau Ceti criterion
+  `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`. Parity is a very large input.
+- F1: the constructible side of that comparison (`Constructible.complexPoints`,
+  `Constructible.derivedCategory`, `Constructible.perverseSheaves`) and
+  `DModules.regularHolonomic`, feeding `DModules.schubertRiemannHilbert`.
 - B2: the factorization spherical category is half-twisted by `Satake.criticalDeterminantGerbe`;
-  the twisted and untwisted hearts are compared only at a point
-  (`Satake.halfTwistedHeart_equiv_untwistedHeart`).
-- M1: `Hecke.sphericalAction`, `Satake.naiveFactorizationFunctor_renormalized`,
-  `Hecke.action_viaRenormalized` and `Satake.naiveRenormalized_eq_derivedSatakeInverse`.
+  twisted and untwisted hearts are compared only at a point.
+- M1 and F3: `Hecke.sphericalAction`, `Hecke.renormalizedSphericalAction`, the lift
+  `Satake.naiveFactorizationFunctor_renormalized` along non-ren, `Hecke.action_viaRenormalized`,
+  and `SpectralProof.naiveSatake_eq_derivedSatakeInverse` with the exact composite.
 - M2: `SemiInfinite.parabolicIC_colimitDescription` replaces the semisimple simply connected
-  hypothesis of [ParabolicEisensteinFH] Appendix A.
-- M3: `Infinity.moduleOverMonoidalLocalization`, `Hecke.ranRepresentations_rigid` and
-  `Spectral.actionOfVanishing`, with the rank induction stated explicitly.
-- Small fixes: [GaitsgoryOutline] Prop. 11.1.3 (not 11.1.4); `Sheaves.indcohTStructure`
-  depends on `Derived.artinStack`.
+  hypothesis of [ParabolicEisensteinFH] Appendix A; `SemiInfinite.parabolicIC_halfTwistedTransfer`
+  records the transfer from FH's untwisted setting.
+- M3 and F2: `Hecke.unitalIndependentRepresentations`, `Hecke.ranRepresentations_rigid`,
+  `Infinity.moduleOverMonoidalLocalization` (symmetric monoidal case) and
+  `Spectral.actionOfVanishing`, with the rank induction stated explicitly. The restatement
+  `Spectral.heckeAction_factors` is removed.
+- Small fixes: [GaitsgoryOutline] Prop. 11.1.3; `Sheaves.indcohTStructure` depends on
+  `Derived.artinStack`; local Satake nodes no longer depend on the global `Hecke.satake`.
 
-There are now 456 declarations in 216 module-plan files, including 67 direct upstream
-suppliers. The result of the fresh review of these fixes is recorded in `notes/reviews/`.
+There are now 464 declarations in 217 module-plan files, including 67 direct upstream
+suppliers. The owner has not yet decided whether the comparison through Q̄ and C is the
+accepted route for parity and semisimplicity.
 
 No Lean declaration or dependency pin changes in these repairs. The statement remains in
 `GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`. It asserts
