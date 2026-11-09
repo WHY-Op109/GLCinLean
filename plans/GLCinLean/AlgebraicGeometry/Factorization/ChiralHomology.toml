@@ -1,0 +1,36 @@
+desc = "Source-backed commutative chiral/factorization homology, with convenient replacements, flatness hypotheses and central coefficients. X is a smooth proper connected curve and k has characteristic zero."
+
+[[node]]
+id = "GLCinLean.Factorization.chiralHomology"
+kind = "definition"
+desc = "Construct unital chiral homology from the Chevalley–Cousin diagram on finite configurations and de Rham integration, with independence of the auxiliary resolutions and comparison to unital Ran factorization chains. Include its commutative algebra structure for a commutative D_X-algebra and central-module version as the degree-one part of the square-zero construction. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.DModules.commutativeDAlgebra", "GLCinLean.SpectralProof.factorizationGlobalization", "GLCinLean.Hecke.ranSpace", "GLCinLean.DModules.deRhamPushforward", "GLCinLean.Infinity.limits"]
+source = "[BDChiral] §§4.1.1, 4.2.1–4.2.19 and 4.3.1–4.3.5; [GLC2] §§F.1–F.2"
+
+[[node]]
+id = "GLCinLean.Factorization.chiralHomology_filtrationTensor"
+kind = "theorem"
+desc = "Prove compatibility of the chain construction with exhaustive nonnegative algebra/module filtrations and associated graded, and tensor compatibility for pairwise homotopically O_X-Tor-independent factors. For a free algebra use its polynomial-weight grading, so each relevant weight filtration is finite even for an unbounded cohomological complex. Use finite-weight comparisons and filtered colimits instead of an unproved spectral-sequence convergence assertion. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Factorization.chiralHomology", "GLCinLean.DModules.commutativeDAlgebra_semifreeResolution", "GLCinLean.Infinity.limits"]
+source = "[BDChiral] §4.2.18, equations (4.2.18.1)–(4.2.18.3); Theorem 4.3.6 and its filtered remark"
+
+[[node]]
+id = "GLCinLean.Factorization.freeChiralHomology_equiv"
+kind = "theorem"
+desc = "For homotopically O_X-flat V, the canonical algebra map Sym(RGamma_dR(X,V)[1])→C_ch(X,Sym V) is a quasi-isomorphism, with the source convention for conversion of left and right D-modules. Filter the Chevalley–Cousin complex by collision depth and polynomial weight. Identify the diagonal-supported associated graded with the cofree Lie-coalgebra complex and apply the all-degree Com–Lie contraction; use symmetric-power Kunneth and exact characteristic-zero coinvariants. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Factorization.chiralHomology_filtrationTensor", "GLCinLean.Homology.commutativeLieKoszul_contracts", "GLCinLean.DModules.deRhamPushforward"]
+source = "[BDChiral] Proposition 4.6.2 and proof (i)–(iv), especially equations (4.6.2.3)–(4.6.2.7) and footnote 70"
+
+[[node]]
+id = "GLCinLean.Factorization.commutativeChiralHomology_equiv_derivedConstantQuotient"
+kind = "theorem"
+desc = "Prove C_ch(X,R)≃L<R> as commutative algebras. For a convenient semifree resolution F, identify the canonical C_ch(X,F)→<F> by induction on elementary attachments: take the polynomial filtration, use tensor compatibility and the free calculation, then pass to filtered colimits. Convenient generators ensure the free quotient is computed in degree zero. This result does not require a globally bounded DG algebra. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Factorization.freeChiralHomology_equiv", "GLCinLean.Factorization.chiralHomology_filtrationTensor", "GLCinLean.DModules.commutativeDAlgebra_semifreeResolution", "GLCinLean.DModules.maximalConstantQuotient"]
+source = "[BDChiral] Theorem 4.6.1 and proof (a)–(c)"
+
+[[node]]
+id = "GLCinLean.Factorization.centralChiralHomology_equiv_derivedConstantQuotient"
+kind = "theorem"
+desc = "For convenient R and any central DG R^l[D_X]-module M, prove C_ch(X,R,M)≃L<M>_R[-1]≃RGamma_dR(X,M^L_<R>), with the trace map and R-algebra action. Resolve M conveniently, use its semifree filtration and the graded square-zero algebra R{M}; compare its degree-one part with the degree-one part of a relative free symmetric algebra. For arbitrary R first replace R conveniently and transport M by the proved derived scalar-extension equivalence. Retain naturality and affine coefficient extension for the later relative factorization application; do not assert the formula for an arbitrary noncentral chiral module. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Factorization.commutativeChiralHomology_equiv_derivedConstantQuotient", "GLCinLean.Factorization.chiralHomology_filtrationTensor", "GLCinLean.DModules.commutativeDAlgebra_semifreeResolution", "GLCinLean.DModules.maximalConstantQuotient", "GLCinLean.Curves.serreTrace"]
+source = "[BDChiral] §4.6.3, equation (4.6.3.1); Theorem 4.6.4; Lemma and Proposition 4.6.5, equations (4.6.5.1)–(4.6.5.3)"

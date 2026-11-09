@@ -1,0 +1,50 @@
+desc = "Proof inputs for the critical center beyond the complex simple roadmap contract. Finite conformal-weight kernels and finite-support constructions are compared before taking completions or factorization."
+
+[[node]]
+id = "GLCinLean.SpectralProof.simpleComplexCriticalCenter"
+kind = "theorem"
+desc = "Complex simple local Feigin–Frenkel isomorphism, including the normalized coordinate and chiral Poisson structures. Consume the A7 free-field/screening and jet-invariant construction, then A8 completed-center comparison. This is the complex simple supplier, not the final arbitrary-k reductive theorem. Provider: Tau Ceti roadmap AffineLieAlgebras A7.1–A7.3 and A8.1/A8.3; use its own recursive supplier contracts and Worker. Its center theorem is not yet Lean code. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.vacuumCenter", "GLCinLean.SpectralProof.localOpers", "TauCeti.CurrentAlgebra.CompletedEnveloping"]
+source = "[GeometricFeiginFrenkel] Theorem 1.4, §§2–6; [BDHitchin] Theorems 3.2.2 and 3.6.7"
+
+[[node]]
+id = "GLCinLean.SpectralProof.criticalVacuum_invariantsAndReduction"
+kind = "theorem"
+desc = "Over the complex simple supplier, and then on the rational Chevalley model by finite-weight and faithfully-flat descent, prove for the regular-central-character critical category vacuum flatness, flatness of its equivariant self-Ext, nonzero invariants for each nonzero integrable object, the regular vacuum Ext1 vanishing, and the exact faithful Drinfeld–Sokolov reduction with reduction of vacuum equal to its center. Retain the explicit Chevalley and semi-infinite complexes, their bounded-below filtered-colimit property and the PBW/jet-invariant calculation. These are the inputs to the noncircular geometric construction of its oper map. Provider: Tau Ceti roadmap AffineLieAlgebras A7 for free fields/jet invariants; remaining enhanced regular-category and semi-infinite reduction assertions are Missing and implemented here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.vacuumCenter", "GLCinLean.SpectralProof.simpleComplexCriticalCenter", "GLCinLean.SpectralProof.sphericalKL", "GLCinLean.Infinity.tStructure"]
+source = "[GeometricFeiginFrenkel] Theorem 2.1, Proposition 2.3, Theorems 2.4 and 2.9, Proposition 2.6, Theorem 3.2 and Proposition 3.4, with proofs and cited inputs"
+
+[[node]]
+id = "GLCinLean.SpectralProof.criticalSatakeGlobalSections_finiteProjective"
+kind = "theorem"
+desc = "Prove that reduction of finite-support critical Satake global sections is perfect, using almost compactness of the vacuum on bounded-below truncations, the Ind-generation lemma and adjoints of bounded cohomological amplitude. Then prove vanishing of higher global sections and finite projectivity of invariants by finite-height localization and the commutative-algebra argument, rather than invoking the center/oper compatibility being constructed. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.criticalVacuum_invariantsAndReduction", "GLCinLean.Hecke.satake", "GLCinLean.SpectralProof.criticalGlobalSections_flatBaseChange", "GLCinLean.Infinity.compactGeneration"]
+source = "[GeometricFeiginFrenkel] Finiteness Theorem 3.5, proof §6; Theorem 4.1, proof §4"
+
+[[node]]
+id = "GLCinLean.SpectralProof.geometricCenter_operMap"
+kind = "definition"
+desc = "Construct the oper map from the symmetric monoidal functor V↦Gamma(Gr,F_V)^G(O). Form the torsor by Tannaka, its Borel reduction from lowest conformal-weight lines and Plucker relations, and its connection by coordinate equivariance. Check oper transversality and normalization; prove invertibility using the injective Miura map into the big Wakimoto module and matching graded characters. Carry out the finite-support algebraic constructions over the pinned rational Chevalley model; finite presentation and faithful flatness descend the needed projectivity and exactness from C. Preserve their maps and identities before extending scalars. Provider: Missing; implement here. Raskin gives the complete construction over C; the rational-model construction is an explicit adaptation obligation. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.criticalSatakeGlobalSections_finiteProjective", "GLCinLean.SpectralProof.localOpers", "GLCinLean.Satake.tannakaGroup", "GLCinLean.Groups.basedRootDatum"]
+source = "[GeometricFeiginFrenkel] Proposition 5.1, Lemma 5.3 and §§5.4–5.14; [BDHitchin] §§3.5.8–3.5.9 and 5.5"
+
+[[node]]
+id = "GLCinLean.SpectralProof.criticalCenter_fieldBaseChange"
+kind = "theorem"
+desc = "For the rational pinned model, compare vacuum-center invariants in each finite conformal weight: PBW makes the piece finite-dimensional, and only finitely many nonnegative modes act nontrivially, so invariants are the kernel of a finite matrix and commute with flat field extension. Match the oper polynomial generators and the constructed oper map weightwise. Faithfully-flat detection after embedding a finitely generated field of definition into C proves each map an isomorphism; take the graded union, then the specified continuous completion. Prove coordinate/factorization compatibility from the algebraic construction and its descent. Never interchange scalar extension with an unrestricted infinite product. Provider: Missing; implement here. This is the explicit arbitrary-field adaptation of the cited complex proof. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.geometricCenter_operMap", "GLCinLean.SpectralProof.simpleComplexCriticalCenter", "GLCinLean.SpectralProof.criticalGlobalSections_flatBaseChange"]
+source = "[GeometricFeiginFrenkel] §§2.2–2.3, 2.10–2.13 and 5.13–5.14; [GLC2] Theorem 5.1.2 and §0.4 (arbitrary-field target)"
+
+[[node]]
+id = "GLCinLean.SpectralProof.reductiveCriticalCenter_comparison"
+kind = "theorem"
+desc = "Decompose the reductive Lie algebra into its center and simple ideals; tensor their critical vacua and centers. The central-torus level is zero and its center/oper map is the explicit symmetric-algebra/jet pairing. For a central isogeny, compare the normalized oper definition with fixed Cartan bundle and simple-root coefficients equal to one, and separately the representation-lattice components in Satake compatibility; do not replace raw G-oper stacks or full loop groups by isomorphic ones. Combine finite central-kernel descent in characteristic zero with factorization to recover the actual pinned reductive group. Provider: Tau Ceti roadmap ReductiveGroups Layers 6–7 supplies group/isogeny data; the center/oper and Satake comparison is Missing and implemented here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.criticalCenter_fieldBaseChange", "GLCinLean.SpectralProof.criticalLevel", "GLCinLean.SpectralProof.localOpers", "GLCinLean.Hecke.satake", "GLCinLean.Groups.langlandsDual"]
+source = "[GLC2] §§3.1.1–3.1.3, 5.1.3–5.1.5 and Theorem 5.2.5; [GeometricFeiginFrenkel] Theorem 1.4 (semisimple simply connected input)"
+
+[[node]]
+id = "GLCinLean.SpectralProof.criticalGlobalSections_flatBaseChange"
+kind = "theorem"
+desc = "For a critical Satake D-module on a finite Schubert support, flat field extension commutes with ordinary derived global sections of the underlying quasi-coherent O-module and with the finite-weight invariant comparisons used to form its center-linear coefficients. Ordinary sections here are not de Rham direct image: compute them by a finite affine Cech cover of the projective support, use flatness for kernels/cohomology, and preserve the current action and convolution maps. Prove the conformal-weight finiteness needed for invariant kernels separately from cohomological boundedness. Provider: Missing; implement here. This is an explicit scalar-extension adaptation of the cited construction. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Hecke.schubertStratification", "GLCinLean.Sheaves.qcohGlobalSections", "GLCinLean.SpectralProof.vacuumCenter", "GLCinLean.DModules.boundedEquivariantExt_baseChange"]
+source = "[GeometricFeiginFrenkel] §1.10 and §§3.6–3.7; [BDHitchin] §§5.4–5.5"

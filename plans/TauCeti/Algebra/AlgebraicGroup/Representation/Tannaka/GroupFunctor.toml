@@ -1,0 +1,8 @@
+desc = "Existing provider boundary; do not duplicate the given-Hopf-algebra reconstruction."
+
+[[node]]
+id = "TauCeti.Tannaka.pointsFunctorIsoTensorAutFunctor"
+kind = "definition"
+desc = "Provider: Tau Ceti, available at the project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 and checked main 1e668f5e55bc20f2eb87f4ba49b48833470290d1. Natural group-functor reconstruction of a GIVEN commutative Hopf algebra from tensor automorphisms of its finite comodules. It does not construct the Hopf algebra of an arbitrary neutral Tannakian category; that prerequisite remains explicit in Satake.tannakaGroup."
+deps = []
+source = "[MV] §11"

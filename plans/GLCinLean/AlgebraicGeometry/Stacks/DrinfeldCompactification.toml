@@ -1,0 +1,15 @@
+desc = "Corrected relative Drinfeld compactification for arbitrary connected reductive groups."
+
+[[node]]
+id = "GLCinLean.Stacks.correctedDrinfeldCompactification"
+kind = "definition"
+desc = "Construct the relative compactification from the affine closure of Gtilde/N_Ptilde for a z-extension and the quotient-stack target with the central torus retained, followed by generically transverse mapping stacks from X. Prove independence of the extension via its fiber product and recover the original compactification when the derived group is simply connected. Do not replace the corrected quotient stack by the naive affine closure of G/N_P for a general group. Provider: Missing global construction; implement here using the accepted stack and reductive-group interfaces. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Groups.zExtension_exists", "GLCinLean.Stacks.algebraicStack", "GLCinLean.Stacks.bundleStack", "GLCinLean.SpectralProof.parabolicLevi"]
+source = "[DrinfeldCompactificationSchieder] §§7.2.4–7.2.7, Proposition 7.2.5 and §7.4; [ParabolicEisensteinFH] §3.3"
+
+[[node]]
+id = "GLCinLean.Stacks.drinfeldCompactification_zExtensionTorsor"
+kind = "theorem"
+desc = "Prove the bundle/compactification comparison squares for a z-extension Cartesian and the vertical maps smooth Bun_Z-torsors, etale-locally admitting lifts. Use the H2 obstruction vanishing on the curve, then smooth descent in families. Track each connected component and the Bun_Z,0 torsor on chosen lifts; descend defect strata and properness component by component. Extend the same argument to the relative compactification using N_P. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Stacks.correctedDrinfeldCompactification", "GLCinLean.Etale.curve_splitTorus_h2_zero", "GLCinLean.Stacks.groupTorsor"]
+source = "[DrinfeldCompactificationSchieder] Proposition 7.3.2, §§7.3.7–7.3.10 and §7.4"

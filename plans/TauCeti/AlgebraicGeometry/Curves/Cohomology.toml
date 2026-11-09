@@ -1,0 +1,15 @@
+desc = "Existing cohomology suppliers for arbitrary coherent coefficients on smooth proper curves. No local copy of these theorems. The ordinary cohomology is compared with enhanced global sections at the consumer."
+
+[[node]]
+id = "AlgebraicGeometry.Scheme.Modules.finiteDimensional_cohomology_of_smooth"
+kind = "theorem"
+desc = "For a smooth proper connected curve over any field k and every quasi-coherent finite-type sheaf M, H^n(X,M) is finite-dimensional in every degree. Apply to each vector bundle in the twisted unipotent filtration, not only the canonical line bundle. Provider: Tau Ceti, existing at project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 and checked main 1e668f5e55bc20f2eb87f4ba49b48833470290d1. Use the declaration directly; no local wrapper. Roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6; the curve results realize JacobianChallenge Layer B, while the stronger arbitrary-proper-scheme finiteness remains Layer C."
+deps = []
+source = "[StacksProject] Lemma 30.19.2 (Tag 02O6), specialized to smooth proper curves; [GLC2] §12.5.7"
+
+[[node]]
+id = "AlgebraicGeometry.Scheme.Modules.subsingleton_cohomology_of_two_le_of_smooth"
+kind = "theorem"
+desc = "For a smooth proper connected curve over any field and every quasi-coherent sheaf M, H^n(X,M) vanishes for all n≥2. This is the obstruction-vanishing input for additive vector-bundle torsors. Provider: Tau Ceti, existing at project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 and checked main 1e668f5e55bc20f2eb87f4ba49b48833470290d1. Use the declaration directly; no local wrapper. Roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6; the curve results realize JacobianChallenge Layer B, while the stronger arbitrary-proper-scheme finiteness remains Layer C."
+deps = []
+source = "[StacksProject] Proposition 20.20.7 (Tag 02UZ), dimension-one case; [GLC2] §12.5.7"

@@ -1,0 +1,15 @@
+desc = "Central torus extensions used to descend parabolic constructions."
+
+[[node]]
+id = "GLCinLean.Groups.zExtension"
+kind = "definition"
+desc = "A faithfully flat central extension of a connected reductive group by a split torus, whose source has simply connected derived group; include the actual morphism, kernel identification and exactness. The existence theorem supplies witnesses; test GL2→PGL2 and the trivial extension of a torus. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.1.5 targets z-extension and z-extension-existence. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["TauCeti.ReductiveCommHopfAlgCat", "GLCinLean.Groups.rootDatum", "GLCinLean.Stacks.groupTorsor"]
+source = "[DrinfeldCompactificationSchieder] Lemma 7.2.2"
+
+[[node]]
+id = "GLCinLean.Groups.zExtension_exists"
+kind = "theorem"
+desc = "Construct a z-extension from the simply connected derived cover and a torus embedding of its finite central kernel, with compatible parabolic and Levi preimages. Prove splitting of a further central-torus extension when the derived group is simply connected; use this to compare choices through their fiber product. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.1.5 z-extension-existence, with ReductiveGroups Layers 6–9. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Groups.zExtension", "GLCinLean.Groups.basedRootDatum"]
+source = "[DrinfeldCompactificationSchieder] Lemmas 7.2.2–7.2.3 and proof of Proposition 7.2.5"
