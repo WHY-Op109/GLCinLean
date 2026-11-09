@@ -8,9 +8,6 @@
 *.swp
 *~
 
-# A private companion folder (an old clone)
-private/
-
 # Local agent settings and scratch work
 .claude/settings.local.json
 CLAUDE.local.md
@@ -22,11 +19,9 @@ tmp/
 lake-packages/
 build/
 
-# Papers are never committed. The payloads under references/papers/ are ignored; the
-# manifest is tracked through the explicit exception below.
+# Papers are never committed: their TeX lives in references/papers/<id>v<version>/.
 /papers/
-references/papers/*
-!references/papers/manifest.toml
+references/papers/
 *.pdf
 *.tex
 *.tar.gz

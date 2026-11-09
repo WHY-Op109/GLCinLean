@@ -1,16 +1,14 @@
 /-
 GLCinLean.Abstract: the formal abstract. It states GLC I (arXiv 2405.03599v3) Conj. 1.6.7
 and the definitions its statement needs, and imports only Mathlib, Tau Ceti and
-`GLCinLean.Foundations` (enforced by `review imports`).
+`GLCinLean.Foundations`.
 
 Status: STUB written 2026-11-05 by Claude Opus 5.5. Unreviewed; nothing here is checked by an
 expert. The `𝕃_G` chain (about 23 constructions) is not written yet: the categories and
 functors it produces appear below as placeholders, to be replaced by real definitions.
 
-Sorry'd theorems in this file are listed in the human-owned sorry budget
-`reviews/sorry-budget.toml`, each bound to the fingerprint of its statement. The main
-theorem's and the hypothesis block's own statements are pinned in
-`reviews/statement-pin.toml`.
+The sorry'd theorems below are temporary: step 2 restates the conjecture through the
+characterisation of `𝕃_G`, after which only the main theorem has a `sorry`.
 -/
 import GLCinLean.Foundations
 
@@ -41,7 +39,7 @@ general reductive group yet, so this has content only once it is defined. Delibe
 @[placeholder] opaque RootDatumDuality {k : Type u} [Field k] :
     ReductiveGroup k → ReductiveGroup k → Type u
 
-/-- The standing data of GLC I §1 (the hypothesis block, pinned in `reviews/statement-pin.toml`):
+/-- The standing data of GLC I §1 (the hypothesis block):
 a smooth proper connected curve `X` over `k`, a reductive group `G` with a pinning, a square
 root of `ω_X` as data (a line bundle with a chosen isomorphism from its square to `ω_X`, GLC I
 l.1511), and the Langlands dual group `Ǧ` as an input with a root-datum identification. -/
@@ -70,8 +68,8 @@ structure Setting (k : Type u) [Field k] [CharZero k] [IsAlgClosed k] where
 attribute [instance] Setting.over Setting.smooth Setting.proper Setting.connected
 
 /-- A Langlands dual group exists (GLC I §1.3). Stated so that a wrongly stated identification
-shows up as a false existence claim instead of making the main statement vacuous. Budgeted
-sorry: an obligation, not a certificate. -/
+shows up as a false existence claim instead of making the main statement vacuous. Sorry'd
+for now: an obligation, not a certificate. -/
 theorem exists_dualGroup {k : Type u} [Field k] [CharZero k] [IsAlgClosed k]
     (G : ReductiveGroup k) : ∃ Gd : ReductiveGroup k, Nonempty (RootDatumDuality G Gd) := sorry
 
@@ -109,12 +107,12 @@ def IsLanglandsFunctor (S : Setting k) (F : LinFun (QCohLS S) (DmodHalf S) (IndC
   (∀ c : (DmodHalf S).Obj, DGCat.IsCompact c → DGCat.IsEventuallyCoconnective (F.obj c)) ∧
     Nonempty (LinIso (F.comp (Psi S)) (LCoarse S))
 
-/-- GLC I Cor. 1.6.5, existence: a functor with the two properties exists. Budgeted sorry. -/
+/-- GLC I Cor. 1.6.5, existence: a functor with the two properties exists. Sorry'd for now. -/
 theorem exists_isLanglandsFunctor (S : Setting k) :
     ∃ F : LinFun (QCohLS S) (DmodHalf S) (IndCohNilp S), IsLanglandsFunctor S F := sorry
 
 /-- GLC I Cor. 1.6.5, uniqueness in the enhanced sense: two functors with the two properties
-are isomorphic as `QCoh(LS_Ǧ)`-linear functors. Budgeted sorry. -/
+are isomorphic as `QCoh(LS_Ǧ)`-linear functors. Sorry'd for now. -/
 theorem isLanglandsFunctor_unique (S : Setting k)
     {F F' : LinFun (QCohLS S) (DmodHalf S) (IndCohNilp S)}
     (hF : IsLanglandsFunctor S F) (hF' : IsLanglandsFunctor S F') :
@@ -129,7 +127,7 @@ def LG (S : Setting k) : LinFun (QCohLS S) (DmodHalf S) (IndCohNilp S) :=
 /-! ## The conjecture -/
 
 /-- **GLC I Conj. 1.6.7** (proved in GLC I–V): the functor `𝕃_G` is an equivalence.
-Budgeted sorry; its own statement is hard-pinned in `reviews/statement-pin.toml`. -/
+Its proof is the open goal. -/
 theorem main (S : Setting k) : (LG S).IsEquivalence := sorry
 
 end GLCinLean.Abstract

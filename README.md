@@ -2,29 +2,24 @@
 
 > **Status:** unreviewed, agent-generated, in progress. Nothing here is checked by an expert yet.
 
-A Lean 4 formalisation of the global unramified de Rham geometric Langlands conjecture: first a
-faithful statement (GLC I, arXiv 2405.03599 v3, Conjecture 1.6.7) with every definition real,
-then the five-paper proof. Built on [Tau Ceti](https://github.com/TauCetiProject/TauCeti) and
-Mathlib. See [`PLAN.md`](PLAN.md).
+A Lean 4 library for geometric representation theory, built on
+[Tau Ceti](https://github.com/TauCetiProject/TauCeti) and Mathlib, and on it a faithful statement
+of the global unramified de Rham geometric Langlands conjecture (GLC I, arXiv 2405.03599v3,
+Conjecture 1.6.7); the proof comes after the statement. See [`STATUS.md`](STATUS.md).
 
 | Path | What it is |
 |---|---|
-| `GLCinLean/Abstract.lean` | the statement: hypotheses and Conj. 1.6.7, currently over placeholders |
-| `GLCinLean/Foundations.lean` | re-exports of Mathlib and Tau Ceti objects, and placeholders |
-| `blueprint/plans/` | tracker plans of the declarations |
-| `reviews/` | the sorry budget and the statement pin (approved by the owner) |
-| `glc/project.toml` | configuration of the review checks |
-| `prompts/` | goal-mode prompts: the statement, the proof, the fidelity review |
-| `references/papers/manifest.toml` | the papers, fetched locally, never committed |
+| `GLCinLean/` | the Lean code: the statement (`Abstract.lean`) and what it is built from |
+| `blueprint.md` | every object the statement uses, where it comes from, and its state |
+| `prompts/` | one prompt per step of the work (plan, build, review) |
+| `docs/references.bib` | the papers cited, with their arXiv versions |
+| `notes/` | research notes and review reports |
 
-Build and check (clone with `--recurse-submodules`):
+Build:
 
     export LAKE_CONFIG=$PWD/.lake-config/lake-config.toml LAKE_CACHE_DIR=$PWD/.lake/cache
     lake exe cache get
-    lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti --mappings-only
+    lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti
     lake build
 
-The review checks come from [reviewkit](https://github.com/WHY-Op109/reviewkit), which also holds
-their fault-injection tests.
-
-Apache-2.0 (`LICENSE`); third-party material in `THIRD_PARTY_NOTICES.md`.
+Apache-2.0 (`LICENSE`).
