@@ -7,6 +7,7 @@
 - the tracker submodule is checked out at the commit the repository records;
 - the caches are fetched and `lake build` passes without compiling any Mathlib or Tau Ceti module, as `AGENTS.md` describes; `lake exe tracker status` runs;
 - every paper in `docs/references.bib` is unpacked into `references/papers/<id>v<version>/src/`, with its original file names;
+- docstrings in `GLCinLean/` that cite a TeX file and line, or a key without brackets, are checked against `AGENTS.md`, and if they break it, rewritten as `[key]` plus the printed locator;
 - a light way for agents to find and search the papers cheaply is proposed (for example a one-line tag per paper saying what it covers, or a list of each paper's `\label`s and sections), and is added only if the owner agrees;
 - if anything in the repository had to change to get here, it is committed and pushed.
 
