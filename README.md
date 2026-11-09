@@ -12,8 +12,7 @@ the statement.
 
 A first draft of the statement exists, built on placeholders for the objects no library has yet
 (DG categories, D-modules on `Bun_G`, `IndCoh_Nilp(LS_Ǧ)`, …). The next step writes the plan of
-every object the statement uses and redesigns the statement to match it. [`STATUS.md`](STATUS.md)
-has the details.
+every object the statement uses and redesigns the statement to match it. [`STATUS.md`](STATUS.md) has the details.
 
 ## How the work runs
 
@@ -25,9 +24,7 @@ Agents do the work, one session per step, each started from a prompt in `prompts
 | [`build.md`](prompts/build.md) | replace placeholders by real definitions, working up the plan |
 | [`review.md`](prompts/review.md) | check that definitions mean what the papers say (run by an agent that did not write them) |
 
-[`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts
-on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof
-of the main theorem.
+[`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
 
 ## Layout
 
@@ -49,9 +46,6 @@ of the main theorem.
     lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti
     lake build
     lake exe tracker status      # progress against the plan
-
-The papers are not in the repository. Their TeX sources, from arXiv at the versions in
-`docs/references.bib`, go in the git-ignored `references/papers/<id>v<version>/`.
 
 ## Licence
 
