@@ -24,7 +24,7 @@ after the statement.
 ## Lean code
 
 - Follow Mathlib's [style guide](https://mathlib.org/contribute/style.html), [naming conventions](https://mathlib.org/contribute/naming.html) and [documentation style](https://mathlib.org/contribute/doc.html): copyright header, module docstring, a docstring on every definition, American spelling in names. The `Authors:` line names the contributors and the AI models, as Tau Ceti does.
-- Docstrings cite a key of `docs/references.bib` plus an exact locator, for example [GLC1] Cor. 1.6.5. They describe the code as it is: no status text, work history or agent discussion.
+- Docstrings cite a bracketed key of `docs/references.bib` and the paper's own numbering, not TeX lines. They describe the code as it is: no status text, work history or agent discussion.
 - No warnings, apart from the `sorry` of the main theorem.
 - Search before defining: `grep` in `.lake/packages/mathlib` and `.lake/packages/TauCeti`, `exact?` and `apply?`, LeanSearch and Loogle. For a proof longer than a few lines, search for its goal and its key steps too.
 - Never duplicate Mathlib or Tau Ceti, not even as a thin wrapper, a restatement or a parallel API. Factor near-copies in this repository into one construction.

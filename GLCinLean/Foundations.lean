@@ -83,7 +83,7 @@ abbrev canonicalSheaf (k : Type u) [Field k] (X : Scheme.{u}) [X.Over (SpecField
 /-! ## Provider-less placeholders (generic foundation families)
 
 The categories of GLC are presentable stable `k`-linear ∞-categories (DG categories), functors
-are continuous, and equivalences are equivalences in DGCat (AGKRRV conventions). No
+are continuous, and equivalences are equivalences in DGCat ([AGKRRV] conventions). No
 provider has this enhanced theory yet (Tau Ceti roadmap EnhancedDerivedSheaves #908 plans
 it). The placeholders below give the statement the shape it needs, so that it cannot fall back to a
 bare `Functor` with propositional equality.
@@ -114,7 +114,7 @@ instance (C : DGCat) : Nonempty C.Obj := (DGCat.ObjPt C).property
 @[placeholder] opaque DGCat.IsCompact {C : DGCat} : C.Obj → Prop
 
 /-- Eventual coconnectivity of an object, for the category's standard
-t-structure (GLC I §1: objects in `IndCoh_Nilp(LS)^{>-∞}`). -/
+t-structure ([GLC1] §1: objects in `IndCoh_Nilp(LS)^{>-∞}`). -/
 @[placeholder] opaque DGCat.IsEventuallyCoconnective {C : DGCat} : C.Obj → Prop
 
 /-- Carrier of `LinFun`. -/
@@ -122,7 +122,7 @@ opaque LinFunPt : DGCat → DGCat → DGCat → NonemptyType.{0}
 
 /-- `LinFun A C D`: the continuous functors
 `C → D` that are `A`-linear for the given actions of the monoidal category `A` on `C` and `D`,
-in the enhanced sense (GLC I Cor. 1.6.5: continuous `QCoh(LS)`-linear functors). The monoidal
+in the enhanced sense ([GLC1] Cor. 1.6.5: continuous `QCoh(LS)`-linear functors). The monoidal
 structure of `A` and its actions are not data yet. -/
 @[placeholder] def LinFun (A C D : DGCat) : Type := (LinFunPt A C D).type
 
