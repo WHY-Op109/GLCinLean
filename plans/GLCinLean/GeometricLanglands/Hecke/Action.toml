@@ -6,3 +6,17 @@ kind = "definition"
 desc = "Action of Rep(H)_Ran on Dmod_1/2(Bun_G) by Hecke correspondences and Satake kernels. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
 deps = ["GLCinLean.Hecke.satake", "GLCinLean.Automorphic.halfTwistedDModules", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.DModules.holonomicShriek"]
 source = "[GLC1] §1.2.1"
+
+[[node]]
+id = "GLCinLean.Hecke.sphericalAction"
+kind = "definition"
+desc = "The right action of the half-twisted Sph^non-ren_{G,Ran} on Dmod_1/2(Bun_G) through the Ran Hecke correspondence, as an action of a factorization monoidal category integrated over Ran, using the gerbe comparison Satake.criticalTwist_matchesBunDeterminant; and the induced action of the renormalized Sph_{G,Ran} by restriction along non-ren. For a Levi quotient M the same construction gives the Sph_M action on Dmod_1/2(Bun_M) used by enhanced Eisenstein series. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Hecke.correspondence", "GLCinLean.Satake.factorizationSphericalCategory", "GLCinLean.Satake.renormalizedSphericalCategory", "GLCinLean.Satake.criticalTwist_matchesBunDeterminant", "GLCinLean.Automorphic.halfTwistedDModules", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.DModules.holonomicShriek", "GLCinLean.Infinity.moduleCategory"]
+source = "[GLC1] §1.2.1; [GLC2] §§1.5.1–1.5.3 and §H.6.8; [GLC3] §8.2.1"
+
+[[node]]
+id = "GLCinLean.Hecke.action_viaRenormalized"
+kind = "theorem"
+desc = "The monoidal action of Rep(Ǧ)_Ran on Dmod_1/2(Bun_G) given by Hecke.action is isomorphic, as a monoidal action, to the action through Satake.naiveFactorizationFunctor_renormalized followed by the renormalized Sph_G action of Hecke.sphericalAction. Same for every Levi quotient M. This is the comparison through which Sph_G-linear constructions (enhanced Eisenstein series) become Rep(Ǧ)_Ran-linear for the Hecke action. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Hecke.action", "GLCinLean.Hecke.sphericalAction", "GLCinLean.Satake.naiveFactorizationFunctor_renormalized"]
+source = "[GLC2] §§1.5.3 and 1.7.6; [GLC3] §8.2.1"

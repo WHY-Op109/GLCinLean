@@ -3,6 +3,6 @@ desc = "Planned library module. GeometricLanglands / Hecke / Satake. No placehol
 [[node]]
 id = "GLCinLean.Hecke.satake"
 kind = "definition"
-desc = "Descend the normalized naive factorization Satake kernels to the global Hecke correspondence, using the chosen dual-root-datum identification. This is built from the spherical heart equivalence, its continuous DG factorization functor, and the determinant-gerbe comparison, not assumed from a paper summary. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.correspondence", "GLCinLean.Hecke.ranRepresentations", "GLCinLean.Satake.naiveFactorizationFunctor", "GLCinLean.Satake.criticalTwist_matchesBunDeterminant", "GLCinLean.Groups.langlandsDual", "GLCinLean.Satake.dualIdentification_compatible"]
+desc = "The Hecke functors of Rep(Ǧ)_Ran on Dmod_1/2(Bun_G): compose Satake.naiveFactorizationFunctor (into the half-twisted Sph^non-ren) with Hecke.sphericalAction, using the chosen dual-root-datum identification. Built from the spherical heart equivalence, its continuous DG factorization functor and the determinant-gerbe comparison, not assumed from a paper summary. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Hecke.sphericalAction", "GLCinLean.Satake.naiveFactorizationFunctor", "GLCinLean.Hecke.ranRepresentations", "GLCinLean.Groups.langlandsDual", "GLCinLean.Satake.dualIdentification_compatible"]
 source = "[GaitsgoryOutline] Proposition 4.4.4; [MV] Theorems 7.3 and 12.1; [GLys] §§9.2, 9.5; [RaskinCPSI] §6.33; [GLC1] §1.2.1"
