@@ -1,0 +1,8 @@
+desc = "The explicit collision complex used to extend the regular Satake object over powers of the curve."
+
+[[node]]
+id = "GLCinLean.Satake.chiralCousinComplex_concentrated"
+kind = "theorem"
+desc = "Construct the signed complex indexed by surjections of finite sets, with terms extended from collision strata using the chiral multiplication. Prove its concentration in the single prescribed degree by induction on the cardinality, diagonal support, and factorization; derive its coherent diagonal and disjoint-locus identifications. The unsymmetrized X^I construction suffices here. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Satake.geometricSatakeHeartEquivalence", "GLCinLean.Satake.fusion", "GLCinLean.DModules.intermediateExtension", "GLCinLean.DModules.holonomicShriek", "GLCinLean.Infinity.tStructure"]
+source = "[BDChiral] §§3.4.11–3.4.12; [GaitsgoryDeJong] Appendix B, Lemma 7.6 (its older citation to Chiral Algebras Lemma 2.4.12 is numbered 3.4.12 in the checked author text)"

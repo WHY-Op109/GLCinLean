@@ -1,29 +1,43 @@
 desc = "Planned library module. AlgebraicGeometry / Sheaves / IndCoh. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
 
 [[node]]
+id = "GLCinLean.Sheaves.indcohAffine"
+kind = "definition"
+desc = "Ind-completion of coherent complexes on noetherian derived affines, with the fully faithful coherent embedding. This affine construction precedes the prestack extension. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.coherent", "GLCinLean.Infinity.indCompletion"]
+source = "[IndCoh] Definition 1.1.3"
+
+[[node]]
+id = "GLCinLean.Sheaves.indcohShriekOnSchemes"
+kind = "definition"
+desc = "Construct the coherent contravariant !-pullback functor on almost finite type derived schemes, with composition, proper/smooth comparisons and descent. Supply the diagram on eventually coconnective finite-type affines used for right Kan extension. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indcohAffine", "GLCinLean.Derived.locallyAlmostFiniteType", "GLCinLean.Infinity.continuousLinearFunctor", "GLCinLean.Infinity.rightAdjoint"]
+source = "[IndCoh] Theorem 5.2.2; §§6, 8"
+
+[[node]]
 id = "GLCinLean.Sheaves.indcoh"
 kind = "definition"
-desc = "Ind-completion of coherent sheaves on affines, extended by !-descent to almost finite type derived Artin stacks. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Sheaves.coherent", "GLCinLean.Infinity.indCompletion", "GLCinLean.Derived.artinStack"]
-source = "[IndCoh] Definition 1.1.3; §§10.1, 11.2"
+desc = "IndCoh on locally almost finite type PRESTACKS, defined as right Kan extension of the affine !-pullback diagram: its value is the limit of IndCoh(S) over eventually coconnective almost finite type affines S mapping to Y. Include evaluation, functorial !-pullback, and agreement with the scheme and smooth-descent Artin-stack constructions. No Artin atlas is assumed for a general de Rham prestack. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indcohShriekOnSchemes", "GLCinLean.Derived.prestack", "GLCinLean.Derived.locallyAlmostFiniteType", "GLCinLean.Infinity.rightKanExtension"]
+source = "[IndCoh] §§10.1.2–10.1.4, 10.5, 11.2"
 
 [[node]]
 id = "GLCinLean.Sheaves.indcohTStructure"
 kind = "definition"
-desc = "Standard t-structure on IndCoh, compatible with filtered colimits and smooth descent. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+desc = "Standard t-structure on IndCoh of the schemes and Artin stacks in scope, compatible with filtered colimits and smooth descent. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
 deps = ["GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.tStructure"]
-source = "[IndCoh] §1.2"
+source = "[IndCoh] §1.2; §11.7.4"
 
 [[node]]
 id = "GLCinLean.Sheaves.indcohQCohAction"
 kind = "definition"
 desc = "Action of QCoh on IndCoh, compatible with !-pullback. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
 deps = ["GLCinLean.Sheaves.qcoh", "GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.monoidalCategory"]
-source = "[IndCoh] §1.4"
+source = "[IndCoh] §1.4 and §10.3"
 
 [[node]]
 id = "GLCinLean.Sheaves.psi"
 kind = "definition"
-desc = "Continuous QCoh-linear coarsening IndCoh → QCoh extending the coherent embedding. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Sheaves.indcohQCohAction", "GLCinLean.Infinity.continuousLinearFunctor"]
-source = "[IndCoh] §1.1.5 and Lemma 1.4.2"
+desc = "Continuous QCoh-linear coarsening IndCoh → QCoh on locally almost finite type Artin stacks, extending the coherent embedding on schemes and compatible with smooth pullback. Construct it through the Artin smooth-descent comparison; do not assert this coarsening on arbitrary prestacks, where §10.3 instead supplies Upsilon in the opposite direction. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indcohQCohAction", "GLCinLean.Derived.artinStack", "GLCinLean.Infinity.continuousLinearFunctor", "GLCinLean.Infinity.rightKanExtension"]
+source = "[IndCoh] §1.1.5, Lemma 1.4.2 and §§11.7.1–11.7.2"

@@ -1,0 +1,8 @@
+desc = "Existing small etale topology."
+
+[[node]]
+id = "AlgebraicGeometry.Scheme.smallEtaleTopology"
+kind = "definition"
+desc = "Small etale topology on schemes etale over X. Provider: Mathlib at pinned 1b1ccf4b088b32fa3f23f2de1127433254a81e1e, AlgebraicGeometry/Sites/Etale.lean:50. Use the actual topology without redefining the site. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["AlgebraicGeometry.Scheme"]
+source = "[StacksProject] §59.68; [DrinfeldCompactificationSchieder] proof of Proposition 7.3.2"

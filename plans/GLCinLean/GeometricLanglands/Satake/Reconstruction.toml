@@ -1,0 +1,15 @@
+desc = "Satake construction prerequisite. Missing mathematics is planned explicitly; no placeholders belong in library code. The DG enhancement and determinant normalization are separate from the heart equivalence."
+
+[[node]]
+id = "GLCinLean.Satake.weightProjectives"
+kind = "definition"
+desc = "Represent the exact weight functors on each finite Schubert union by projectives; prove existence of a projective generator, compatibility under inclusions and the finite-dimensional freeness statements used to construct the coalgebra. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Satake.cohomologyFiberFunctor", "GLCinLean.DModules.intermediateExtension"]
+source = "[MV] Proposition 9.1, Corollary 9.2 and Proposition 10.1"
+
+[[node]]
+id = "GLCinLean.Satake.tannakaGroup"
+kind = "definition"
+desc = "Construct the Hopf algebra from the dual endomorphism coalgebras of projective generators and fusion, prove the spherical heart equivalent to its finite comodules, and identify its points with tensor automorphisms of the fiber functor. Reuse the existing reconstruction theorem once the Hopf algebra is constructed. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Satake.weightProjectives", "GLCinLean.Satake.cohomologyFiberFunctor", "TauCeti.Tannaka.pointsFunctorIsoTensorAutFunctor"]
+source = "[MV] Proposition 11.1"

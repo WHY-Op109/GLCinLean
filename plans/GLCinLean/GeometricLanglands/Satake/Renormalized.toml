@@ -1,0 +1,15 @@
+desc = "Renormalized spherical convolution and the rigidity needed for parabolic induction."
+
+[[node]]
+id = "GLCinLean.Satake.renormalizedSphericalCategory"
+kind = "definition"
+desc = "Construct the unital factorization monoidal category obtained by renormalizing L+G-equivariant half-twisted D-modules on Gr_G. Specify the finite-support objects compact after equivariant forgetting and their ind-completion, together with the renormalization/forgetting adjunction and the monoidal unit, compact at a geometric point and atomic relative to Dmod(X^I) over configurations. Use the relative finite-configuration formulation of factorization renormalization; retain the flip anti-involution induced by loop-group inversion. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Hecke.affineGrassmannian", "GLCinLean.DModules.equivariantIndscheme", "GLCinLean.Satake.convolution", "GLCinLean.SpectralProof.factorizationRenormalization"]
+source = "[GLC2] §§1.5.1–1.5.4; [FactorizableDerivedSatake] Proposition 6.3.2"
+
+[[node]]
+id = "GLCinLean.Satake.renormalizedSphericalCategory_rigid"
+kind = "theorem"
+desc = "Prove ordinary rigidity at geometric points and rigidity relative to Dmod(X^I) over finite configurations. Treat the latter as a monoidal algebra in Dmod(X^I)-module categories: construct the continuous bilinear right adjoint to relative convolution, the relative evaluation/coevaluation and the atomic unit. Use Verdier duality with loop inversion and ind-proper convolution on the geometric finite-support generators, prove the triangle identities, and retain the relative scalar structure through renormalization and every diagonal/disjoint comparison. At no stage require arbitrary compact base coefficients such as D_X to be tensor-dualizable. Apply the relative evaluation/coevaluation mate calculation to prove that continuous adjoints of spherical module functors are strictly spherical-linear. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Satake.renormalizedSphericalCategory", "GLCinLean.DModules.verdierDuality", "GLCinLean.Hecke.schubertStratification", "GLCinLean.Infinity.rigidMonoidalCategory", "GLCinLean.Infinity.rightAdjoint", "GLCinLean.Infinity.moduleCategory"]
+source = "[GLC2] §1.5.5; [GLC3] §§1.3.6, 1.4.1–1.4.5, §9.6.11 and Lemma 9.6.12 (relative rigidity and adjoint linearity)"

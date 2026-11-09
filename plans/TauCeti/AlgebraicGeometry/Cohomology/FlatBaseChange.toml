@@ -1,0 +1,8 @@
+desc = "Existing flat base-change supplier for the vector-bundle torsor-stack proof."
+
+[[node]]
+id = "TauCeti.AlgebraicGeometry.cohomologyBaseChangeLinearEquiv"
+kind = "definition"
+desc = "For a quasi-compact scheme with affine diagonal over R, quasi-coherent M and a flat R-algebra R′, the canonical equivalence R′ tensor H^n(X,M) ≃ H^n(X_R′,M_R′). Every k-algebra is flat over the field k, so this supplies arbitrary affine test families for the fixed vector bundles on X. Provider: Tau Ceti, existing at project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 and checked main 1e668f5e55bc20f2eb87f4ba49b48833470290d1. Use directly, with the actual affine-diagonal hypothesis. Roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6; SchemeAndStackFoundations §2.6."
+deps = []
+source = "[StacksProject] Lemma 30.5.2 (Tag 02KH); [GLC2] §12.5.7"

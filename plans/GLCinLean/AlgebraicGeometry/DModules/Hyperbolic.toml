@@ -1,0 +1,15 @@
+desc = "Satake construction prerequisite. Missing mathematics is planned explicitly; no placeholders belong in library code. The DG enhancement and determinant normalization are separate from the heart equivalence."
+
+[[node]]
+id = "GLCinLean.DModules.hyperbolicRestriction"
+kind = "definition"
+desc = "Attractor and repeller pull-push functors, initially in pro-categories where a left adjoint is only partially defined, and their canonical comparison for G_m-actions on finite-type algebraic spaces in characteristic zero. Preserve the star/shriek directions; the separate theorem gives representability on all monodromic D-modules. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.DModules.starPullback", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.Infinity.rightAdjoint", "GLCinLean.DModules.equivariantIndscheme", "GLCinLean.Actions.hyperbolicInterpolation", "GLCinLean.DModules.monodromic"]
+source = "[BradenDG] §§3.1.1–3.1.4"
+
+[[node]]
+id = "GLCinLean.DModules.hyperbolicRestriction_isIso"
+kind = "theorem"
+desc = "Prove the two partially defined hyperbolic composites are represented and their canonical comparison is an isomorphism on all monodromic D-modules, using interpolation specialization and contraction. Prove the resulting Braden adjunction; holonomic objects give a special case. The domain is the monodromic category, not every ambient D-module. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.DModules.hyperbolicRestriction", "GLCinLean.Actions.hyperbolicInterpolation", "GLCinLean.DModules.deRhamPushforward", "GLCinLean.Infinity.rightAdjoint"]
+source = "[BradenDG] Theorems 3.1.6, 3.3.4, Proposition 3.2.2 and §§4–5; [MV] Theorem 3.5"

@@ -1,0 +1,43 @@
+desc = "Distinct infinite-type IndCoh! and IndCoh* constructions. Ordinary locally-almost-finite-type IndCoh is used only at the finite stages."
+
+[[node]]
+id = "GLCinLean.Sheaves.indcohBang"
+kind = "definition"
+desc = "On n-coconnective affines, left Kan extend finite-type IndCoh with !-pullback; compare successive n, then right Kan extend from eventually coconnective affines to prestacks. Include !-pullback, dualizing object and agreement with LAFT IndCoh. This left-then-right extension is distinct from directly applying the LAFT diagram to infinite-type opers. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indcohShriekOnSchemes", "GLCinLean.Derived.prestack", "GLCinLean.Infinity.rightKanExtension", "GLCinLean.Infinity.limits"]
+source = "[GLC2] §§A.4.1–A.4.7"
+
+[[node]]
+id = "GLCinLean.Sheaves.indcohStar"
+kind = "definition"
+desc = "On eventually coconnective affines, define IndCoh* as continuous-linear dual of IndCoh! (equivalently the inverse limit of finite-stage IndCoh by pushforward). Extend covariantly to ind-affine indschemes by left Kan extension, computed as the colimit over closed affine pieces. Include pushforward and the LAFT comparison; no extension to all prestacks is asserted. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indcohBang", "GLCinLean.Derived.indscheme", "GLCinLean.Infinity.internalHom", "GLCinLean.Infinity.limits"]
+source = "[GLC2] §§A.5.1–A.5.9"
+
+[[node]]
+id = "GLCinLean.Sheaves.infiniteTypeUpsilon"
+kind = "definition"
+desc = "Construct the symmetric monoidal !-tensor structure, Upsilon:QCoh(Y)→IndCoh!(Y), and the IndCoh! action on IndCoh* with projection formula. Upsilon is a functor, not an assumed equivalence for all Y; the pairing does not assert dualizability before placidity is proved. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indcohBang", "GLCinLean.Sheaves.indcohStar", "GLCinLean.Sheaves.qcoh", "GLCinLean.Infinity.monoidalCategory"]
+source = "[GLC2] §§A.6.1–A.6.7"
+
+[[node]]
+id = "GLCinLean.Sheaves.indPlacidIndCoh_compactDuality"
+kind = "theorem"
+desc = "For ind-placid ind-affine indschemes, prove both sheaf categories compactly generated and mutually dual. For placid affines use flat finite-stage coherence preservation; for ind-presentations prove closed finite-presentation pushforwards preserve compactness, then pass to filtered colimits. Include the external-product equivalence. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Derived.indPlacid", "GLCinLean.Sheaves.indcohBang", "GLCinLean.Sheaves.indcohStar", "GLCinLean.Sheaves.infiniteTypeUpsilon", "GLCinLean.Infinity.compactGeneration"]
+source = "[GLC2] §§A.10.1–A.10.10"
+
+[[node]]
+id = "GLCinLean.Sheaves.indPlacidIndCoh_baseChange"
+kind = "theorem"
+desc = "For locally almost-finite-presentation ind-closed embeddings between ind-placid ind-affine indschemes, construct continuous right adjoints to IndCoh* pushforward and, by duality, left adjoints to IndCoh! pullback. Prove the corresponding Beck–Chevalley maps invertible. Include affine finite-Tor-dimension *-pullback and its pushforward base change with its stated hypotheses. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indPlacidIndCoh_compactDuality", "GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation", "GLCinLean.Sheaves.indcohShriekOnSchemes"]
+source = "[GLC2] §§A.10.4–A.10.6 and A.10.11–A.10.13"
+
+[[node]]
+id = "GLCinLean.Sheaves.indcohBang_formalCompletion"
+kind = "theorem"
+desc = "Over a smooth finite-type affine base, tensoring by QCoh of an almost-finite-type base change maps fully faithfully to IndCoh! of the pullback, and is an equivalence for smooth base change. Formal completion pullback is a colocalization with supported essential image and base-change-compatible fully faithful left adjoint. Derive these from the finite-type IndCoh statements using the Kan extensions. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.indcohBang", "GLCinLean.Sheaves.infiniteTypeUpsilon", "GLCinLean.Derived.formallySmooth", "GLCinLean.Sheaves.indcohShriekOnSchemes"]
+source = "[GLC2] Lemma A.4.10 and Proposition A.4.14, with proofs; [IndCoh] Propositions 4.4.2 and 7.5.7; [DGIndschemes] Propositions 6.7.4 and 7.4.5"

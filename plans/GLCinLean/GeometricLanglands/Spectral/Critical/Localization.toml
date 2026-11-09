@@ -1,0 +1,36 @@
+desc = "Planned library module. Localization, its duality kernel, and generation on quasi-compact opens. No placeholders belong here. The base field remains any algebraically closed field of characteristic zero."
+
+[[node]]
+id = "GLCinLean.SpectralProof.kacMoodyLocalization"
+kind = "definition"
+desc = "Unital Kac–Moody localization from KL at level kappa over Ran to Dmod_kappa(Bun_G), with restriction to quasi-compact opens; critical twisting agrees with the half-determinant convention. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.sphericalKL", "GLCinLean.SpectralProof.factorizationGlobalization", "GLCinLean.Stacks.bundleStack", "GLCinLean.DModules.twistedCrystals", "GLCinLean.Automorphic.halfTwistedDModules"]
+source = "[GLC2] §§11.1–11.2; §13.1"
+
+[[node]]
+id = "GLCinLean.SpectralProof.localization_iff_unitKernel"
+kind = "theorem"
+desc = "For a compact-preserving continuous functor between compactly generated categories, full faithfulness of its right adjoint is equivalent to the canonical map on duality units being an isomorphism. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Infinity.rightAdjoint", "GLCinLean.Infinity.compactGeneration", "GLCinLean.Infinity.moduleCategory"]
+source = "[GLC2] Lemma 13.4.7; [GenVan] §2.15"
+
+[[node]]
+id = "GLCinLean.SpectralProof.chiralDifferentialOperators"
+kind = "definition"
+desc = "CDO(G) at complementary levels kappa and 2crit-kappa, as a unital factorization algebra and the duality unit for spherical KL. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.sphericalKL", "GLCinLean.SpectralProof.criticalLevel", "GLCinLean.SpectralProof.factorizationAlgebra"]
+source = "[GLC2] §2.2.3; §13.6.1"
+
+[[node]]
+id = "GLCinLean.SpectralProof.localizationCDO_is_diagonal"
+kind = "theorem"
+desc = "Localization of CDO(G) is the twisted diagonal dualizing kernel on Bun_G×Bun_G; use the unital comparison with QCoh localization and its regular-representation kernel. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.kacMoodyLocalization", "GLCinLean.SpectralProof.chiralDifferentialOperators", "GLCinLean.SpectralProof.factorizationGlobalization", "GLCinLean.Sheaves.qcoh", "GLCinLean.DModules.extraordinaryPullback"]
+source = "[GLC2] §§13.4.8–13.4.11, 13.6.1–13.6.13; [GenVan] Lemma 2.16"
+
+[[node]]
+id = "GLCinLean.SpectralProof.kacMoodyLocalizationOnOpen_rightAdjoint_fullyFaithful"
+kind = "theorem"
+desc = "For each quasi-compact open U in Bun_G and any level, j^* Loc is a localization. This is local generation only; it does not assert that KL generates Dmod(Bun_G) globally. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.kacMoodyLocalization", "GLCinLean.SpectralProof.localization_iff_unitKernel", "GLCinLean.SpectralProof.localizationCDO_is_diagonal", "GLCinLean.DModules.starPullback"]
+source = "[GLC2] Theorem 13.4.2, second proof §13.6; [GaitsgoryOutline] Corollary 10.1.7"

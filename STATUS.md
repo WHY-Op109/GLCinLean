@@ -2,77 +2,78 @@
 
 Updated 2026-11-09.
 
-## Candidate awaiting owner approval
+## Candidate and second-review repairs
 
-The paper-led blueprint is in `plans/`, with 204 declarations. It covers the statement and its construction chain:
-input geometry and duality, enhanced categories, derived stacks and local systems, QCoh and
-IndCoh with singular support, half-twisted D-modules, Ran/Hecke/Satake, the spectral action,
-Whittaker/Poincaré normalization, coarsening and the coarse functor. Existing upstream APIs
-are named directly at the dependency boundaries. Each declaration records its paper locator,
-provider, checked Tau Ceti revision and prerequisites. See `plans/README.md` for tracker caveats.
+The second review, `notes/reviews/2026-11-09-second.md` at `5914e73`, approved the logical
+shape of the statement at `f6d537a` and requested changes to the 204-declaration blueprint at
+`f1e69ec`. Its Satake and spectral-vanishing gaps were real. The former claim that the whole
+construction chain was covered was too strong.
 
-The statement candidate is locally committed as `f6d537a`. It has not been pushed. The current
-files are `GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`; the former
-`Abstract.lean` and `Foundations.lean` were removed and every import was updated. Changes:
+The current repair session tests G1, G2 and P1–P7. All nine findings are confirmed, with
+qualifications and exact references in `notes/blueprint-gap-resolution.md`. The new plans add
+Satake geometry, reconstruction, enhancement and normalization; critical localization and
+parabolic inputs for spectral vanishing; and the actual compactness/rigidity proof chains.
+They extend IndCoh to prestacks, remove the duplicate characterization, and choose an explicit
+future duality signature using two pinnings. There are now 443 declarations in 214 module-plan
+files (213 contain declarations), including 66 direct upstream suppliers. The fresh reviewer
+has checked the proof routes and the fixes made during review; its final report will identify
+the immutable candidate commit in `notes/reviews/2026-11-09-repair.md`.
 
-- State existence of a characterized functor and equivalence of every characterized functor.
-  Remove the three other admitted theorems and the functor chosen from an admitted existence
-  theorem; no definition now depends on `sorryAx`.
-- Use provider declarations directly, including reductive groups in their coordinate Hopf
-  algebra presentation; remove the thin adapter aliases.
-- Keep the coefficient field, universe sizes, monoidal category, module actions and specified
-  t-structure explicit in the enhanced placeholders.
-- Correct the half-twist to the square-root gerbe of the normalized determinant on Bun_G;
-  the theta characteristic trivializes it. Cite Proposition 1.7.2 for compatible linearity.
-- Mark the opaque carriers and definitions built over them as placeholders. Add the two
-  predicate characterization lemmas. Add the public entry point's missing documentation.
-
-The fresh review is `notes/reviews/2026-11-09.md`, including a separate blind reading of stripped
-Lean text. It found no definite mismatch in the implemented formulas, lists 29 unresolved
-meanings, and tests all 31 placeholders for trivial interpretations. The owner must approve the statement changes with that report before any candidate
-commit is pushed. The goal remains active until that approval and the push.
+No Lean declaration or dependency pin changes in these repairs. The statement remains in
+`GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`. It asserts
+existence of a characterized functor and equivalence of every such functor, with explicit
+field, universe, monoidal action and t-structure parameters. The second review's non-blocking
+Lean suggestions L1–L3 remain separate future work; this session targets the named blueprint
+findings. No candidate commit is pushed. The owner's latest instruction is to complete and
+review these repairs locally, without pushing.
 
 ## What is not implemented
 
-This is a blueprint and a corrected statement skeleton, not a completed formalization of GLC.
-Enhanced operations, the derived geometric categories and functors, and general root-datum
-duality still have placeholders. In particular the opaque duality relation does not yet prove
-that Setting has an inhabitant, and singleton/zero interpretations of opaque categorical data
-can trivialize the intended content. These facts are not hidden by the successful build or by
-the tracker's `proved` count. Replacement requires actual constructions and nontrivial examples.
+The blueprint is a plan for future proofs, not a completed formalization. All 31 statement
+placeholders remain. The first and second reviews found no definite formula mismatch but
+recorded 29 unresolved meanings and possible trivial interpretations. In particular, the
+opaque duality relation does not establish that Setting is inhabited. Singleton/zero
+interpretations of categorical placeholders can trivialize the intended mathematics.
 
-The plan includes dual-group existence, theta-characteristic existence and a concrete geometric
-setting, plus point, singular-derived-affine, zero-support and torus checks. None is made an
-extra assumption or an opaque proof of the desired conclusion.
+Replacement requires actual constructions, characterizing APIs and nontrivial examples.
+The planned tests include a nonempty geometric setting, point categories, a singular derived
+affine, zero singular support and torus normalization. None is added as an assumption of the
+main theorem. The geometric Satake heart, its factorization enhancement, and the derived
+spherical equivalence needed in the spectral proof are distinct constructions.
 
 ## Verification
 
-- Both required caches were fetched with the pinned configuration, including the full Tau Ceti
-  cache command. No Mathlib or Tau Ceti Lean module was rebuilt.
-- `lake build` passes; the sole Lean warning is the main theorem's admitted proof.
-- `lake exe tracker lint` exits 0. Its remaining notices are superseded provenance fields kept
-  because this blueprint explicitly requires `desc` and `deps` even for existing declarations.
-- `#print axioms` was run for all 34 explicit statement declarations. Every definition and both
-  predicate lemmas use only `propext`, `Classical.choice` and `Quot.sound` (or a subset).
-  Only `exists_isLanglandsFunctor_and_isEquivalence` also uses `sorryAx`.
-- The repeatable audit is `lake env lean tools/check-statement-axioms.lean`.
-- Plan checks verify that IDs are unique, dependencies resolve, sources use bibliography keys,
-  and every declaration records the checked Tau Ceti main revision.
-- `prompts/build.md` was checked and updated for provider ownership, placeholder readiness,
-  actual upstream availability, example obligations and the axiom audit.
+The required caches were fetched with the pinned configuration, including the full Tau Ceti
+cache command. The repair-session build passes (8173 jobs), with only the main theorem's
+`sorry` warning and no Mathlib or Tau Ceti Lean source rebuild. The axiom audit still checks
+all 34 explicit statement declarations: only the main theorem uses `sorryAx`; all others use
+subsets of `propext`, `Classical.choice`, `Quot.sound`.
+
+`lake exe tracker lint` exits 0. The static audit finds no duplicate IDs, unresolved
+dependencies or cycles; every node has a source, provider, checked revision and dependency
+list, and every source key is in the bibliography. All 241 added declarations are reachable
+from the main theorem through the suggested graph; two duplicate characterization nodes were
+removed from the 204-node baseline. Superseded provenance notices are expected: the owner
+requires source/provider/dependency records even where compiled declarations supersede them.
+`prompts/build.md` was checked; it already requires provider inspection, nontrivial examples,
+axiom checks and fresh owner-approved statement review, so no further edit is needed.
+`prompts/plan.md` now names the actual statement paths.
 
 ## Provider snapshot
 
 No dependency pin moved. Mathlib is `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`; Tau Ceti is
-`e0610cce4004d628cbd9d2aafdbbb5459fe72938`. Tau Ceti main was searched at
-`7ca783d4c8d324c9c74efaacd641c8a40f69f284`, and TauCetiRoadmap main at
-`f7dd719a392f7b65ad30ef45b26c344d08ba5f91`. Exact providers and proposal heads are recorded in
-`docs/blueprint-providers.md`. The source inventory is `notes/blueprint-paper-evidence.md`.
+`e0610cce4004d628cbd9d2aafdbbb5459fe72938`. The original audit used Tau Ceti main
+`7ca783d4c8d324c9c74efaacd641c8a40f69f284` and roadmap main
+`f7dd719a392f7b65ad30ef45b26c344d08ba5f91`. Repaired/new nodes use the separately searched
+snapshots `1e668f5e55bc20f2eb87f4ba49b48833470290d1` and
+`000abc149867f86a79d9708294c89af6b42c37a6`. Unchanged nodes retain their historical checks.
+Exact proposal heads and provider limitations are in `docs/blueprint-providers.md`.
+PR #1056 was rechecked open at `d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a`; its scope changes since the earlier `ccaed5e` check are recorded in the provider audit.
 
-Existing DG nerves, right mapping spaces and K-injective comparisons must be reused. The
-accepted EnhancedDerivedSheaves roadmap and ReductiveGroupsPartII roadmap are already merged
-(#908 and #785 respectively); they are not open proposals. No Tau Ceti implementation pull
-request was opened in this session.
+Existing DG nerves, mapping spaces, K-injective comparisons and Tannakian reconstruction
+interfaces must be reused within their actual scope. A reconstruction theorem for a supplied
+Hopf algebra is not a construction of the Satake Hopf algebra. Accepted roadmaps #908 and #785
+are merged; open proposals are not implementations. No Tau Ceti contribution was opened.
 
 ## Proposed answers for the owner
 
@@ -116,9 +117,9 @@ work. The three answers above are proposals for the owner, not newly adopted per
 
 ## Next
 
-1. Obtain owner approval of the reviewed statement candidate, then push the local commits to
-   `WHY-Op109/GLCinLean` main.
-2. Select a genuine open prerequisite using both tracker suggestions and the provider record.
-   Route accepted roadmap work through Tau Ceti Worker; implement uncovered GLC mathematics here.
-3. Repeat build, example checks and fresh review at each placeholder replacement. Only after
-   the statement is fully defined should work proceed to the proof of equivalence.
+1. Record the final independent review against the local repair commit. Do not push; the
+   owner decides what to approve.
+2. After approval, choose a genuine prerequisite using the plan and provider records. Accepted
+   roadmap work goes through Tau Ceti Worker; uncovered GLC constructions stay here.
+3. Require examples, build/axiom checks and fresh review at every placeholder replacement.
+   The full proof of the main theorem follows the fully defined statement.

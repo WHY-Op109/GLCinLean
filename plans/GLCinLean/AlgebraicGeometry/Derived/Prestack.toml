@@ -6,3 +6,10 @@ kind = "definition"
 desc = "Space-valued functors on derived affine schemes, with mapping prestacks, fiber products and Yoneda evaluation API. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
 deps = ["GLCinLean.Derived.affineScheme", "GLCinLean.Infinity.mappingSpaces", "GLCinLean.Infinity.limits"]
 source = "[AGKRRV] §0.9.6; [IndCoh] §0.6.6"
+
+[[node]]
+id = "GLCinLean.Derived.locallyAlmostFiniteType"
+kind = "definition"
+desc = "Locally almost finite type prestacks: convergence on Postnikov towers and preservation of filtered colimits at each coconnective cutoff; include the test-affine presentation. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Derived.prestack", "GLCinLean.Infinity.limits"]
+source = "[Crystals] §1.3.1; [IndCoh] §10.1.1"

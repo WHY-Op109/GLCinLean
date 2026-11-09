@@ -1,0 +1,8 @@
+desc = "Existing sheaf cohomology interface."
+
+[[node]]
+id = "CategoryTheory.Sheaf.H"
+kind = "definition"
+desc = "Cohomology of an abelian sheaf on a site as Ext from the constant integer sheaf; retain HasSheafify and HasExt requirements. Provider: Mathlib at pinned 1b1ccf4b088b32fa3f23f2de1127433254a81e1e, CategoryTheory/Sites/SheafCohomology/Basic.lean:57. Do not wrap this interface. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = []
+source = "[StacksProject] §59.68; [DrinfeldCompactificationSchieder] proof of Proposition 7.3.2"

@@ -162,7 +162,7 @@ The ordinary Mathlib category, functor, natural isomorphism, adjunction, monoida
 | vacuumPoincare_compact | [GLC1] §1.4.2 | compactness criterion and the particular Whittaker construction |
 | VacuumWhittakerCoefficient | [GLC1] §1.3.8 | enhanced Hom from VacuumPoincare to object, value in DerivedVect k |
 
-The full extended Whittaker category, parabolic gluing, Kac–Moody localization and the five-paper proof are not needed merely to define the statement's coarse normalization. They become proof dependencies if implementing auxiliary existence theorems by the papers' proofs.
+Correction after the second review: constructing the spectral action includes proving its factorization theorem. Its proof reaches Kac–Moody localization and parabolic Eisenstein compatibility, independently of a separate proof of Corollary 1.6.5. The original inventory omitted that proof chain and the geometric Satake inputs; see the findings-resolution report for the repaired nodes and remaining source limits.
 
 ### AlgebraicGeometry / Ran, Hecke and spectral action
 
@@ -176,7 +176,7 @@ The full extended Whittaker category, parabolic gluing, Kac–Moody localization
 | RepRan.convolution | [GaitsgoryOutline] §4.2.3 | restriction to discs, Ran union, pull-push; natural non-unital symmetric monoidal structure |
 | SpectralEvaluation | [GaitsgoryOutline] §4.3.1 | restriction LocalSystemStack×Ran→spread B dualG |
 | SpectralLocalization | [GaitsgoryOutline] §§4.3.1–4.3.3; [GLC1] §1.2.2 | (id×p)_! ev*, monoidal structure; required adjoints |
-| spectralLocalization_rightAdjoint_fullyFaithful | [GaitsgoryOutline] Prop. 4.3.4 | co-localization ev_*(id×p)*, homological contractibility of Ran |
+| spectralLocalization_rightAdjoint_fullyFaithful | [GaitsgoryOutline] Prop. 4.3.4; [GLC4] Prop. C.1.7, Cor. C.1.8 and proof §C.4 | passability, QCoh kernel/base-change calculus, relative affine factorization homology on unital-image objects, Ran homology |
 | HeckeStackRan | [GaitsgoryOutline] §4.4.1 | two G-bundles with isomorphism away from a finite set, left/right maps to Bun |
 | HeckeConvolution / HeckeAction | [GaitsgoryOutline] §4.4.2 | DMod pull-push on correspondence, composition of modifications |
 | NaiveSatakeRan | [GaitsgoryOutline] Prop. 4.4.4; [GLC1] §1.2.1 | geometric Satake, RepRan, HeckeStackRan; half-twisted version must respect determinant gerbe |
@@ -210,4 +210,4 @@ If the owner requests a separately proved Corollary 1.6.5 before the main theore
 
 Added [Crystals] 1111.2087v4, [GaitsgoryOutline] 1302.2506v3, [CompactGeneration] 1112.2402v8 to docs/references.bib and docs/papers.md, downloaded pinned TeX to references/papers/<version>/src. These were verified against arXiv metadata and source. Source links: https://arxiv.org/abs/1111.2087v4, https://arxiv.org/abs/1302.2506v3, https://arxiv.org/abs/1112.2402v8. This inventory informed the library plans and the revised statement.
 
-The notes [GL:Stacks], [GL:QCoh] and Beilinson–Drinfeld are background cited by these papers. The report avoids inventing precise new locators in sources not fetched: existing [IndCoh], [ArinkinGaitsgory], [Crystals] and [GLC1] already state the constructions at the cited locators. If implementing the Pfaffian trivialization proof, fetch the original BD §4; if implementing geometric Satake, fetch the precise primary Satake source and plan its additional primitives then.
+The repair expands this original inventory with fetched primary proof sources, all pinned in `docs/references.bib` and cataloged in `docs/papers.md`. It includes MV/GLys and de Rham Satake enhancement; DG2 and DGIndschemes for finiteness; GLC2/GLC3 and derived Satake/critical-center inputs for spectral vanishing; and GLC4 Appendix C, GRQCoh, BDChiral chapter 4, Ran contractibility and OneAffineness for spectral localization. `notes/blueprint-gap-resolution.md` records the exact proof chains and their scope. This inventory is a navigation aid; the module plans contain the current declaration dependencies. In particular, a theorem citation alone is no longer treated as evidence that its proof inputs have been covered.

@@ -1,0 +1,8 @@
+desc = "Satake construction prerequisite. Missing mathematics is planned explicitly; no placeholders belong in library code. The DG enhancement and determinant normalization are separate from the heart equivalence."
+
+[[node]]
+id = "GLCinLean.Satake.sphericalHeart"
+kind = "definition"
+desc = "Finite-Schubert-support L+G-equivariant perverse regular-holonomic D-modules on Gr_G, with its actual morphisms, abelian structure and IC generators. This is the Satake heart, not the whole equivariant DG category. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Hecke.schubertStratification", "GLCinLean.DModules.equivariantIndscheme", "GLCinLean.DModules.perverseHeart", "GLCinLean.DModules.intermediateExtension"]
+source = "[MV] §2 and Propositions 2.1–2.2; [GLys] §§9.1.1, 9.2.1"

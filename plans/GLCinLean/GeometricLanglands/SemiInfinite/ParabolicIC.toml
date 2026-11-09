@@ -1,0 +1,22 @@
+desc = "Hecke and Drinfeld–Plucker construction of the parabolic semi-infinite IC kernel. The cited FH construction starts with simply connected derived group; the separate central-extension descent supplies general groups."
+
+[[node]]
+id = "GLCinLean.SemiInfinite.parabolicHeckeStructures"
+kind = "definition"
+desc = "For a Rep(dualM×dualG) Ran module category, construct the Hecke, Drinfeld–Plucker and enhanced Drinfeld–Plucker categories from functions on dualG, the affinization of N_dualP\\dualG, and the open quotient itself. Supply extension/restriction of scalars and their adjunctions. Prove the equivalence of enhanced structures with the unipotent Chevalley-module description; for dualizable Rep(dualM)-modules prove the comodule/module Koszul comparison by the bar resolution, dualizable base change and comonadicity. Retain coherent factorization and unit structures. Provider: Missing; implement here over the Tau Ceti enhanced module/category roadmap interfaces. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SpectralProof.parabolicLevi", "GLCinLean.Hecke.ranRepresentations", "GLCinLean.SpectralProof.parabolicChevalleyAlgebra", "GLCinLean.Infinity.moduleCategory", "GLCinLean.Infinity.dualizableCategory", "GLCinLean.Infinity.barrBeckLurie"]
+source = "[ParabolicEisensteinFH] §§4.1–4.2, especially Corollary 4.2.3.1 and Lemma 4.2.7.1"
+
+[[node]]
+id = "GLCinLean.SemiInfinite.parabolicIC"
+kind = "definition"
+desc = "For simply-connected G_der construct the normalized parabolic semi-infinite kernel by inducing the delta sheaf's actual Drinfeld–Plucker structure to a Hecke structure. Construct that delta structure from extremal-weight maps and prove its Plucker identities. Prove the colimit description, N_P-loop invariance, support on the zero-orbit closure and the shift by the Levi component paired with 2(rho_G-rho_M). Keep the O(N_dualP) coaction. These are constructions on the geometric Grassmannian independent of derived semi-infinite Satake or the global Langlands functor. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SemiInfinite.parabolicHeckeStructures", "GLCinLean.Hecke.affineGrassmannian", "GLCinLean.Hecke.satake", "GLCinLean.DModules.equivariantIndscheme", "GLCinLean.Infinity.indCompletion"]
+source = "[ParabolicEisensteinFH] §§4.3–4.4, Lemma 4.4.8.1 and Appendices A–B; §2.3.1 (group hypothesis)"
+
+[[node]]
+id = "GLCinLean.SemiInfinite.parabolicIC_koszulBoundary"
+kind = "theorem"
+desc = "Prove that O(N_dualP)-invariants of the parabolic IC kernel equal the shriek extension of the dualizing sheaf from the zero semi-infinite stratum, with its Chevalley-algebra module and enhanced Drinfeld–Plucker structure. Compute all parabolic stratum restrictions via the bar presentation and the spherical constant-term calculation; the zero stratum gives the unit and the nonzero restrictions vanish. Use hyperbolic localization to make restriction commute with diagonal !-base change, then retain the full factorization comparison. This is a theorem about the specific shriek kernel, not existence of arbitrary ind-unipotent averaging. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.SemiInfinite.parabolicIC", "GLCinLean.SemiInfinite.parabolicInduction_factorization", "GLCinLean.DModules.hyperbolicRestriction_isIso", "GLCinLean.DModules.holonomicShriek", "GLCinLean.Infinity.limits"]
+source = "[ParabolicEisensteinFH] Proposition 4.5.4.1 and its proof §§4.5.4–4.5.7; Proposition 4.4.9.1"

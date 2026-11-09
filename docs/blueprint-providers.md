@@ -4,14 +4,16 @@
 
 - Mathlib pinned: `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 - Tau Ceti pinned: `e0610cce4004d628cbd9d2aafdbbb5459fe72938`.
-- Tau Ceti main checked via GitHub API: `7ca783d4c8d324c9c74efaacd641c8a40f69f284`.
-- TauCetiRoadmap main checked: `f7dd719a392f7b65ad30ef45b26c344d08ba5f91`.
+- Original Tau Ceti code audit: `7ca783d4c8d324c9c74efaacd641c8a40f69f284`.
+- Revision-session main snapshot: `1e668f5e55bc20f2eb87f4ba49b48833470290d1`. New and repaired nodes record that search; unchanged nodes retain their original audit commit.
+- Original roadmap audit: `f7dd719a392f7b65ad30ef45b26c344d08ba5f91`; revision-session snapshot: `000abc149867f86a79d9708294c89af6b42c37a6`.
+  The README files for ReductiveGroups, ReductiveGroupsPartII, EnhancedDerivedSheaves, BordismFormalGroups, SchemeAndStackFoundations, DGAInfinity and JacobianChallenge are byte-identical between those snapshots.
 - Full source snapshots at these revisions were searched, not merely tree filenames. The open-roadmap query returned 476 pull requests. No pins changed and no external writes.
 - Read Tau Ceti `AGENTS.md` and `COORDINATION.md`. New mathematics must advance an existing roadmap target or its genuine prerequisite; no new roadmap PR/issue may be opened by the agent. Improvements to existing code are allowed. Main contributions through Worker, from the user's fork, under those rules.
 
 ## Existing leaves written
 
-`plans/Mathlib/**` and `plans/TauCeti/**` now contain 49 declarations across their actual module paths (including two identified only on main), with paper locators, provider information, both checked revisions, and `deps=[]` at the supplied interface boundary.
+`plans/Mathlib/**` and `plans/TauCeti/**` contained 49 declarations at the original blueprint commit. The revision adds 17 direct supplier declarations (listed in `notes/blueprint-provider-recheck.md`), bringing the current supplied boundary to 66 declarations across their actual module paths (including three identified only on main), with paper locators, provider information, both checked revisions, and explicit supplier dependencies where needed.
 
 These plans name upstream declarations, never wrappers. Their `desc` explicitly distinguishes the ordinary and strict APIs from the paper's enhancements. Tracker attachment depends on imports; a leaf not imported by GLCinLean may display as open despite existing in upstream source. The written `kind`/`desc`/`deps` remain deliberately available even when superseded, to meet the owner's provenance requirement.
 
@@ -35,7 +37,7 @@ All below are on roadmap main unless explicitly marked open PR. Existence of a r
 | Ingredient | Provider / target | Remaining gap |
 |---|---|---|
 | General reductive root datum, Borel, pinning, Chevalley existence | `ReductiveGroups` Layers 7, 8, 9B | General extraction and classification still needed; concrete family implementations insufficient |
-| Dual based root datum and actual dual group | `ReductiveGroupsPartII` RG2.5.1, targets `dual-based-root-datum`, `dual-group`; consumes ReductiveGroups Layers 7–9 | Construct integral dual, base-change to k, prove root-datum identification and examples |
+| Dual based root datum and actual dual group | `ReductiveGroupsPartII` RG2.5.1, targets `dual-based-root-datum`, `langlands-dual-group`; consumes ReductiveGroups Layers 7–9 | Construct integral dual, base-change to k, prove root-datum identification and examples |
 | Curve differentials and canonical bundle | `AlgebraicCurves` Layer 9 (Kahler differentials, residues, comparison), plus JacobianChallenge and existing Modules/Differentials/Canonical.lean | Theta characteristic as data is possible now; geometric square roots and determinant constructions are further work |
 | Sheaf torsors and contracted products | `SchemeAndStackFoundations` §§1.15–1.16 | Upgrade actual sheaf torsor API to moduli and twisting needed by Bun |
 | Ordinary algebraic stacks, atlases, quotients | `SchemeAndStackFoundations` §§1.18–1.22 | Stackification/2-fiber products, algebraic stack conditions, QCoh on stacks; ordinary precursors do not give derived stacks |
@@ -59,13 +61,22 @@ All below are on roadmap main unless explicitly marked open PR. Existence of a r
 - #908 EnhancedDerivedSheaves is **merged**, closed. Existing Foundations prose calling it a roadmap number should identify the merged roadmap, not imply open proposal.
 - #785 ReductiveGroupsPartII is **merged**, closed. Its dual-group scope applies even though other layers concern local fields.
 - #1901 HigherToposTheory is open, head `2176cc4c9149c8695dbfdfd5bffac5e090bebb42`: HTT and HA Chapter 1. It proposes ownership consolidation with EnhancedDerivedSheaves/BordismFormalGroups; it does not yet amend those owners. Treat it as an ownership candidate, not competing code to implement in parallel.
-- #1630 EnhancedDerivedSheaves amendment is open, head `9158199623fb90bf2d947b397ea8040839fc4352`: DG nerve is primary, module spectra comparison is later; QCoh on prestacks explicitly excluded.
+- #1630 EnhancedDerivedSheaves amendment is open, head `ae7b6e6ab35c7f479b869e3d120765d452b7b77e`: DG nerve is primary, module spectra comparison is later; QCoh on prestacks explicitly excluded.
 - #1330 EnhancedDerivedSheaves regularity supplier amendment is open, head `856fe7ab4dd4005dbc2344f29ebd172779ba80ee`; not a prerequisite for the characteristic-zero statement's generic enhancement merely by being related.
 - #868 DerivedDeRhamCohomology is open, head `2f774a945602f234b84b93257736209b3c1d63df`: explicit models for cotangent/derived de Rham, compatible ordinary derived-category contracts; useful future supplier, not present enhanced de Rham stacks.
-- #1056 FormalConnectionsOpers is open, head `19335eca722c768fd2e2df83f631c05e920d2f33`: formal/local connection and oper geometry. Do not count it as the global LS_G construction.
+- #1056 FormalConnectionsOpers is open, head `d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a`: formal/local connection and oper geometry. Do not count it as the global LS_G construction.
 - #1202 LanglandsParameterStacks open, head `1e9f8e83ff3b2bae5e764e108c29309e597e905c`: local ℓ-adic parameter stacks. #1235 GeometricSatakeAndFusion open, head `140b5a7ef0911741962fc87bc1f5b32c7e372e0d`: integral p-adic Satake. Generic reusable pieces need scope and comparison checks, not title matching.
 
-Permanent source links use https://github.com/TauCetiProject/TauCeti/blob/7ca783d4c8d324c9c74efaacd641c8a40f69f284/... and https://github.com/TauCetiProject/TauCetiRoadmap/blob/f7dd719a392f7b65ad30ef45b26c344d08ba5f91/TauCetiRoadmap/... . PR links are https://github.com/TauCetiProject/TauCetiRoadmap/pull/<number> .
+The final review observed #1056 advance from `ccaed5e19b5e7e0d5e967ce24b2d1f8ca5f20201`
+to `d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a` on 2026-11-09 and inspected the
+[intervening diff](https://github.com/TauCetiProject/TauCetiRoadmap/compare/ccaed5e19b5e7e0d5e967ce24b2d1f8ca5f20201...d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a).
+It remains a local/formal proposal. Its intrinsic oper groupoids retain central automorphisms;
+Drinfeld–Sokolov coefficient functors are distinct, even for a torus. The current normalized
+local-oper plan does not identify these two notions. The amendment also limits its Kac–Moody
+comparison to complex points and distinguishes coefficient-etale from coefficient-fpqc
+triviality. None of this supplies global local-system stacks or changes an accepted provider.
+
+The original audit's immutable source links use https://github.com/TauCetiProject/TauCeti/blob/7ca783d4c8d324c9c74efaacd641c8a40f69f284/... and https://github.com/TauCetiProject/TauCetiRoadmap/blob/f7dd719a392f7b65ad30ef45b26c344d08ba5f91/TauCetiRoadmap/... . PR links are https://github.com/TauCetiProject/TauCetiRoadmap/pull/<number> .
 
 ## Proposed owner decisions, with reasons
 
@@ -91,4 +102,17 @@ Added missing dependency nodes for enhanced affine modules, affine cotangent com
 
 Added four provider leaves, of which two are newly identified on main only: TauCeti.adjointInvariantPolynomials and TauCeti.nilpotentConeIdeal, both in Algebra/AlgebraicGroup/Tangent/Lie/Adjoint/NilpotentCone.lean. They retain scheme-theoretic invariant zero fibres including central invariants. They do not justify equating nilpotence with ad-nilpotence for all reductive groups. Both leaf records state that the project pin lacks them and a later pin move requires a published cache. No pin moved.
 
-Validated all 200 planned IDs for duplicates, all dependency references, all dependency cycles, and all external planned module paths against pinned or explicitly checked main source. Original external declaration names and namespaces were inspected from their source; the four new names were also checked in their defining files. This is a static validation, not a replacement for tracker lint or Lean build.
+The intermediate audit validated 200 IDs; the committed first blueprint contained 204. The current count and validation are in STATUS.md. The first audit checked duplicate IDs, dependency references and cycles, and upstream module paths against its recorded pinned or main source. Original external declaration names and namespaces were inspected from their source; the four names added during that original audit were also checked in their defining files. The repair-session additions have a separate audit in `notes/blueprint-provider-recheck.md`. This is a static validation, not a replacement for tracker lint or Lean build.
+
+## Second-review repairs
+
+The second review approved the statement shape but rejected the blueprint coverage (G1/G2).
+The revision adds the actual geometric Satake inputs, the prestack IndCoh construction, and
+explicit finiteness proof chains. It also removes the duplicate characterization predicate and
+specifies a future pinning-indexed duality signature. See `notes/blueprint-gap-resolution.md` and
+STATUS.md for the spectral-action proof route and the final review verdict; the presence of a
+planned theorem is not evidence that its proof source is complete.
+
+New searches use the revision snapshots above. The existing Tannakian reconstruction API starts
+from a supplied Hopf algebra; constructing the Hopf algebra from the spherical category remains
+a separate Satake obligation. A local or p-adic Satake roadmap is not a de Rham provider.

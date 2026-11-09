@@ -1,0 +1,15 @@
+desc = "The Com–Lie Koszul calculation needed for arbitrary-degree complexes in commutative chiral homology. Associative quadratic-algebra Koszul duality is not substituted for operadic duality."
+
+[[node]]
+id = "GLCinLean.Homology.commutativeLieKoszulComplex"
+kind = "definition"
+desc = "Construct the finite-arity Com/Lie Koszul complexes with symmetric-group actions, tree/partition differential, suspension signs and augmentation in arity one. Identify evaluation on a complex V with the cofree conilpotent Lie-coalgebra complex on Sym^{>0}(V)[1] whose differential is induced by commutative multiplication. Use direct sums of arities, not completed products. Provider: Missing specific Com/Lie complex; implement here. The generic symmetric-operadic framework belongs to Tau Ceti roadmap BordismFormalGroups F6.5 and EnhancedDerivedSheaves E5:abstract. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Infinity.derivedVect", "GLCinLean.Infinity.monoidalCategory", "GLCinLean.Infinity.limits"]
+source = "[OperadicKoszul] §§4.1.8–4.1.12 and 4.2.1–4.2.6; [BDChiral] §4.6.2(iv)"
+
+[[node]]
+id = "GLCinLean.Homology.commutativeLieKoszul_contracts"
+kind = "theorem"
+desc = "In characteristic zero, the Com/Lie Koszul complex has augmentation cohomology only in arity one. Use Com/Lie Koszulness and finite-arity exactness, choose a contraction of each finite acyclic arity and average it to be symmetric-group-equivariant. Tensor these contractions with arbitrary-degree V tensor powers with the graded signs, take exact finite-group coinvariants, then take the direct sum over arities. This gives the free-commutative Lie-coalgebra contraction without a global boundedness or convergence assumption; locally flat D-module versions follow from the same finite-arity formulas. Provider: Missing specific theorem; implement here. Tau Ceti DGAInfinity Layer11 owns associative quadratic-algebra duality, which does not supply this operadic result. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Homology.commutativeLieKoszulComplex", "GLCinLean.Infinity.derivedVect"]
+source = "[OperadicKoszul] Theorem 4.1.13, Theorem 4.2.5 and Corollary 4.2.7; [BDChiral] §4.6.2(iv), footnote 70"

@@ -1,0 +1,8 @@
+desc = "Upstream formal-current algebra supplier for critical localization."
+
+[[node]]
+id = "TauCeti.currentAlgebra"
+kind = "definition"
+desc = "Formal Laurent currents R((t)) tensor L. Provider: Tau Ceti Algebra/Lie/Current/Basic.lean; available both in the existing pin and on the checked main snapshot; no pin move is needed. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = []
+source = "[GLC2] §2.1.1; [GLC2] §B.1 (formal discs and currents)"

@@ -1,0 +1,15 @@
+desc = "Placid and ind-placid presentations for infinite-type sheaf theory. These hypotheses are proved for the oper spaces; they are not inferred from local finite type."
+
+[[node]]
+id = "GLCinLean.Derived.indPlacid"
+kind = "definition"
+desc = "Eventually coconnective placid affine schemes are cofiltered limits of finite-type affines with flat transition maps. An ind-affine DG indscheme is ind-placid when each coconnective truncation has a filtered closed-embedding presentation by placid affines with finite-presentation transitions. Include the presentation, cofinal refinement and truncation APIs. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Derived.indscheme", "GLCinLean.Derived.locallyAlmostFiniteType", "GLCinLean.Infinity.limits"]
+source = "[GLC2] §§A.9.1–A.9.8"
+
+[[node]]
+id = "GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation"
+kind = "theorem"
+desc = "Placidity is inherited by an almost-finite-presentation map of affines, and ind-placidity by locally almost-finite-presentation maps of ind-affine indschemes. Descend the finite-presentation algebra to a finite-type stage, pull back all later stages, then prove the refined indexing category filtered and cofinal. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Derived.indPlacid", "GLCinLean.Derived.locallyAlmostFiniteType"]
+source = "[GLC2] Lemma A.9.7 and Corollary A.9.10, with proofs"

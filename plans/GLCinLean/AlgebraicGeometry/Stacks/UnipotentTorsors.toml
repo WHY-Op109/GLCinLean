@@ -1,0 +1,8 @@
+desc = "Finiteness prerequisites for the statement construction. No placeholders; use upstream APIs directly where available."
+
+[[node]]
+id = "GLCinLean.Stacks.unipotentTorsorFiltration"
+kind = "theorem"
+desc = "For the torus-twisted unipotent radical on X, build a finite filtration by additive vector-bundle quotients. For every quotient vector bundle, the existing general curve-cohomology theorems give finite-dimensional H0 and H1 and vanishing H2. Flat base change identifies these groups over every affine k-test scheme, so the argument is about families of torsors, not only k-points. Compare the ordinary cohomology with the enhanced global-section complex and present each additive torsor stack as its degree-0/1 vector-space quotient. This proves finite type, rather than assuming it from the word unipotent. Provider: Tau Ceti roadmap ReductiveGroups Layer 5 and Layer 7 root-height filtration for the group input; missing global curve torsor-stack argument belongs here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Stacks.groupTorsor", "GLCinLean.Groups.pinnedData", "GLCinLean.Sheaves.qcohGlobalSections", "AlgebraicGeometry.Scheme.Modules.finiteDimensional_cohomology_of_smooth", "AlgebraicGeometry.Scheme.Modules.subsingleton_cohomology_of_two_le_of_smooth", "TauCeti.AlgebraicGeometry.cohomologyBaseChangeLinearEquiv"]
+source = "[GLC2] §12.5.7; [GLC1] §1.3.1; [StacksProject] Tags 02O6, 02UZ and 02KH"

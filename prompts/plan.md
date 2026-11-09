@@ -12,6 +12,6 @@
 - `STATUS.md` is updated, `prompts/build.md` has been checked and updated if needed, and the work is committed and pushed.
 
 **Context**
-- The current statement is in `GLCinLean/` (`Abstract.lean`, `Foundations.lean`); its placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`. It is a first draft, so the blueprint follows the papers, not the draft.
+- The current statement is in `GLCinLean/` (`Statement/Conjecture.lean`, `Statement/Enhanced.lean`); its placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`. It is a first draft, so the blueprint follows the papers, not the draft.
 - The papers are listed in `docs/papers.md`, and their TeX is in `references/papers/`. Add any other paper you need to `docs/references.bib`.
 - The tracker's format is in `tools/tracker/README.md`; its `examples/` folder has a plan that uses every field.

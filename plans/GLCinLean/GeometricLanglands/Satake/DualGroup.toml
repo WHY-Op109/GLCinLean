@@ -1,0 +1,15 @@
+desc = "Satake construction prerequisite. Missing mathematics is planned explicitly; no placeholders belong in library code. The DG enhancement and determinant normalization are separate from the heart equivalence."
+
+[[node]]
+id = "GLCinLean.Satake.tannakaRootDatum_equiv_dual"
+kind = "theorem"
+desc = "Prove the reconstructed group reductive with dual maximal torus and based root datum dual to that of G; use the coweight/weight functors and highest-weight pattern, retaining central torus data. The characteristic-zero proof uses the construction of §§9–11 and the simplified identification of §12 (Remark 7.2), not an assumed duality. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Satake.tannakaGroup", "GLCinLean.Satake.weightFunctors_exact_faithful", "GLCinLean.Groups.basedRootDatum", "GLCinLean.Groups.langlandsDual"]
+source = "[MV] Remark 7.2, Theorem 7.3 and Theorem 12.1 (with Appendix B corrections)"
+
+[[node]]
+id = "GLCinLean.Satake.dualIdentification_compatible"
+kind = "theorem"
+desc = "Transport the Tannakian equivalence to the chosen pinned dual group through Groups.dualityData; prove it induces exactly the specified based-root-datum equivalence and is compatible with changing pinnings. This is the required bridge to the future replacement of Setting.dualIdentification, not an unrelated chosen dual group. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Satake.tannakaRootDatum_equiv_dual", "GLCinLean.Groups.dualityData"]
+source = "[MV] Theorem 7.3; [GLC1] §0.1.1"

@@ -1,8 +1,9 @@
+
 [[node]]
 id = "GLCinLean.Statement.RootDatumDuality"
 kind = "definition"
-desc = "PLACEHOLDER. Identification of the root datum of `Gd` with the dual root datum of `G` ([GLC1] §0.1.1). Both groups are represented by their coordinate Hopf algebras. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-root-datum and dual-group; current statement relation is missing. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
-deps = ["TauCeti.ReductiveCommHopfAlgCat", "GLCinLean.Groups.langlandsDual"]
+desc = "PLACEHOLDER. Identification of the root datum of `Gd` with the dual root datum of `G` ([GLC1] §0.1.1). Both groups are represented by their coordinate Hopf algebras. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-based-root-datum and langlands-dual-group; current statement relation is missing. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Replacement contract: change its signature to take the input and dual pinnings and use Groups.dualityData. Setting will carry dualRank and dualPinning, and dualIdentification will use both pinnings. The planned changePinning theorem and explicit examples must justify that these added choices do not restrict the mathematical statement. This is a future reviewed signature change, not a claim about the present opaque relation."
+deps = ["TauCeti.ReductiveCommHopfAlgCat", "GLCinLean.Groups.langlandsDual", "GLCinLean.Groups.dualityData", "GLCinLean.Groups.dualityData_changePinning"]
 source = "[GLC1] §0.1.1"
 
 [[node]]
@@ -50,7 +51,7 @@ source = "[GLC1] §§1.4.1–1.4.5"
 [[node]]
 id = "GLCinLean.Statement.IsLanglandsFunctor"
 kind = "definition"
-desc = "PLACEHOLDER. The two characterizing properties of [GLC1] Cor. 1.6.5, for the continuous linear functors of Prop. 1.7.2: compact objects have bounded-below images and coarsening is naturally equivalent to the coarse Langlands functor. The bound may depend on the object. Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
+desc = "PLACEHOLDER. The two characterizing properties of [GLC1] Cor. 1.6.5, for the continuous linear functors of Prop. 1.7.2: compact objects have bounded-below images and coarsening is naturally equivalent to the coarse Langlands functor. The bound may depend on the object. Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. This is the sole characterization predicate; the duplicate planned Langlands.characterization has been removed. Keep this formula as its category/functor placeholders are replaced."
 deps = ["GLCinLean.Statement.DmodHalf", "GLCinLean.Statement.IndCohNilp", "GLCinLean.Statement.Psi", "GLCinLean.Statement.LCoarse", "GLCinLean.Statement.LinFun.obj", "GLCinLean.Statement.LinFun.comp", "GLCinLean.Statement.LinIso", "GLCinLean.Statement.DGCat.IsCompact", "GLCinLean.Statement.TStructuredDGModule.IsEventuallyCoconnective"]
 source = "[GLC1] Corollary 1.6.5 and Proposition 1.7.2"
 
