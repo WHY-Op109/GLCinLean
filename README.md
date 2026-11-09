@@ -34,8 +34,10 @@ Agents do the work, one session per step, each started from a prompt in `prompts
 | `GLCinLean/` | the Lean code: the statement (`Abstract.lean`), what it is built from (`Foundations.lean`), and the `@[placeholder]` attribute |
 | `plans/` | the plan, in the format of the [tracker](https://github.com/bridgekat/tracker) (written in the next step) |
 | `tools/tracker` | the tracker, a git submodule |
+| `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |
 | `prompts/` | one prompt per step |
 | `docs/references.bib` | the papers cited, with their arXiv versions |
+| `docs/papers.md` | one line per paper on what it covers, and how to search its TeX |
 | `notes/reviews/` | review reports (from the first review on) |
 
 ## Build
