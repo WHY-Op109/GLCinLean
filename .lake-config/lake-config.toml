@@ -1,6 +1,6 @@
 # Lake configuration for GLCinLean: the Tau Ceti public build cache.
-# Source: TauCetiProject/TauCetiTools @ b49bb4f, scripts/lake-cache-get.sh (Apache-2.0),
-# tested 2026-11-04. Builds set LAKE_CONFIG=.lake-config/lake-config.toml and
+# Source: TauCetiProject/TauCetiTools @ b49bb4f, scripts/lake-cache-get.sh (Apache-2.0).
+# Builds set LAKE_CONFIG=.lake-config/lake-config.toml and
 # LAKE_CACHE_DIR=.lake/cache (see AGENTS.md).
 cache.defaultService = "tauceti-public"
 

@@ -6,7 +6,7 @@
 - `plans/` holds a module plan, in the tracker's format, for every module the statement needs: library modules in subject folders, and the statement's own modules. Every object the statement uses is a planned declaration whose `source` gives the exact locator in the papers and whose `desc` says its provider (Mathlib, Tau Ceti, a Tau Ceti roadmap item, an open Tau Ceti roadmap pull request, or missing, with the Tau Ceti commit checked) and, for a placeholder, that it is one; `deps` lists what it depends on;
 - `lake exe tracker lint` passes;
 - `STATUS.md` proposes answers, with reasons, to three questions for the owner: how to use the open Tau Ceti roadmap pull requests; how other Lean libraries may be used; and how to handle the ∞-categorical layer;
-- the Lean statement is redesigned as one change: stated through the characterisation of `𝕃_G`, with `sorry` only in the main theorem, no re-export layer, Mathlib-style files, and the placeholders refined so the statement exposes the objects the plan names. The owner has already allowed this one change; it is pushed, and the owner reads the diff;
+- the Lean statement is redesigned as one change: stated through the characterisation of `𝕃_G`, with `sorry` only in the main theorem, no re-export layer, Mathlib-style files, and the placeholders refined so the statement exposes the objects the plan names. The owner has already allowed this one change, so it is pushed without waiting for approval;
 - the done check in `AGENTS.md` passes;
 - a fresh agent has reviewed the redesigned statement with `prompts/review.md`;
 - `STATUS.md` is updated, `prompts/build.md` has been checked and updated if needed, and the work is committed and pushed.
