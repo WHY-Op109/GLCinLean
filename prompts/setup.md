@@ -1,14 +1,12 @@
 # Setup on a new computer
 
-**Goal.** Make a fresh clone of GLCinLean ready for the other prompts.
+**Goal.** Set up GLCinLean on this computer, ready for the other prompts.
 
 **Done when**
 - the tools below are present, or each missing one is reported with how to install it;
 - the tracker submodule is checked out at the commit the repository records;
 - the caches are fetched and `lake build` passes without compiling any Mathlib or Tau Ceti module, as `AGENTS.md` describes; `lake exe tracker status` runs;
 - every paper in `docs/references.bib` has its TeX in `references/papers/<id>v<version>/src/`, with its original file names;
-- docstrings in `GLCinLean/` that cite a TeX file and line, or a key without brackets, are checked against `AGENTS.md`, and if they break it, a simple way to fix them is proposed;
-- a light way for agents to find and search the papers cheaply is proposed (for example a one-line tag per paper saying what it covers), and is added only if the owner agrees;
 - if anything in the repository had to change to get here, it is committed and pushed.
 
 **Context**
