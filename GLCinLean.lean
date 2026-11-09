@@ -1,5 +1,5 @@
 module
 
 public import GLCinLean.Placeholder
-public import GLCinLean.Foundations
-public import GLCinLean.Abstract
+public import GLCinLean.Statement.Enhanced
+public import GLCinLean.Statement.Conjecture
