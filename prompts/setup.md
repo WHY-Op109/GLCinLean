@@ -7,7 +7,6 @@
 - the tracker submodule is checked out at the commit the repository records;
 - the caches are fetched and `lake build` passes without compiling any Mathlib or Tau Ceti module, as `AGENTS.md` describes; `lake exe tracker status` runs;
 - every paper in `docs/references.bib` is unpacked into `references/papers/<id>v<version>/src/`, with its original file names;
-- each paper has `references/papers/<id>v<version>/index.tsv`, made by a script from the TeX: one row per section, numbered environment (theorem, proposition, lemma, corollary, definition, conjecture, remark, …) and labelled equation, giving the number the paper prints (`Cor. 1.6.5`, from its `\newtheorem` counters and checked against a few entries of the arXiv PDF), the `\label`, the title, and `file:line`, so that a locator such as [GLC1] Cor. 1.6.5 is found with one `grep` and then read as a line range;
 - if anything in the repository had to change to get here, it is committed and pushed.
 
 **Context**
