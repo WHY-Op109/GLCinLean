@@ -21,4 +21,4 @@ or build session starts. It only reads the Lean files, and writes a report.
 
 **Context**
 - The plan in `plans/` gives each object's locator in the papers (its `source` field), and `lake exe tracker show` lists what a definition depends on; the TeX is in the git-ignored
-  `references/papers/<id>v<version>/src/`, with versions in `docs/references.bib`.
+  `references/papers/<id>v<version>/src/`, with versions in `docs/references.bib`. A missing paper is fetched from arXiv as `https://arxiv.org/e-print/<id>v<version>` and unpacked into `src/`.
