@@ -4,10 +4,10 @@ Updated 2026-11-09.
 
 ## Now
 
-- `GLCinLean/Abstract.lean` and `GLCinLean/Foundations.lean` still have the old design: four
-  `sorry`s (the dual group's existence, Cor. 1.6.5's existence and uniqueness, the main
-  theorem) and style warnings (no `module` line, the module docstring before the imports). Step 2
-  redesigns them.
+- `GLCinLean/Abstract.lean` and `GLCinLean/Foundations.lean` still have the old design, with
+  four `sorry`s (the dual group's existence, Cor. 1.6.5's existence and uniqueness, the main
+  theorem). Step 2 redesigns them. They build with no other warnings.
+- The papers' TeX is fetched (`prompts/setup.md`); `docs/papers.md` says what each covers.
 - `plans/` is empty; step 2 writes it.
 - Tau Ceti pull requests in flight: none.
 
