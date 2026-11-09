@@ -1,0 +1,15 @@
+desc = "Monodromic enhanced D-modules and the parameterized indscheme form of Braden adjunction."
+
+[[node]]
+id = "GLCinLean.DModules.monodromic"
+kind = "definition"
+desc = "For a finite-type scheme with G_m action, define the full stable subcategory generated under colimits by equivariant D-modules. For an indscheme with a G_m-stable finite-type closed presentation, prove its equivalent colimit and !-limit descriptions and independence of presentation. Prove that its inclusion has a continuous right adjoint by compact generation and smooth equivariant forgetting. In particular, tensoring this inclusion by any enhanced category remains fully faithful. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.DModules.equivariantIndscheme", "GLCinLean.DModules.indscheme_compactlyGenerated", "GLCinLean.Infinity.indCompletion", "GLCinLean.Infinity.rightAdjoint"]
+source = "[BradenDG] §3.1.4; [ChenNearbyCycles] Definition 2.2.8, Remark 2.2.9 and Lemma-Definition D.1.1"
+
+[[node]]
+id = "GLCinLean.DModules.parameterizedHyperbolicAdjunction"
+kind = "theorem"
+desc = "For an ind-finite-type indscheme with G_m action, extend the finite-type Braden adjunction (q_plus)_* (p_plus)^! left adjoint to (p_minus)_* (q_minus)^! from the monodromic category to the fixed-locus category. Pass through stable finite-type closed charts and tensor with an arbitrary enhanced category using the fully faithful monodromic tensor inclusion. Preserve the contraction formula q_! = i^! on monodromic objects. The adjunction has monodromic source; it does not assert an unrelated ambient p_! exists. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.DModules.monodromic", "GLCinLean.DModules.hyperbolicRestriction_isIso", "GLCinLean.DModules.deRhamPushforward", "GLCinLean.Infinity.adjointableDiagram_limitAdjunction", "GLCinLean.Infinity.moduleCategory"]
+source = "[BradenDG] Proposition 3.2.2 and Theorem 3.3.4; [ChenNearbyCycles] Theorem 2.2.17, Remarks 2.2.18–2.2.19 and Theorem D.1.3"

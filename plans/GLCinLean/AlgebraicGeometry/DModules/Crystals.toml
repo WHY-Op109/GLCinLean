@@ -3,6 +3,6 @@ desc = "Planned library module. AlgebraicGeometry / DModules / Crystals. No plac
 [[node]]
 id = "GLCinLean.DModules.rightCrystals"
 kind = "definition"
-desc = "Right crystals on a prestack via IndCoh on its de Rham prestack; descent and smooth-scheme D-module comparison. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Derived.deRhamPrestack", "GLCinLean.Sheaves.indcoh"]
-source = "[Crystals] §2.3.2 and §5.5"
+desc = "Right crystals on a locally almost finite type prestack via IndCoh on its de Rham prestack; descent and smooth-scheme D-module comparison. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Derived.deRhamPrestack", "GLCinLean.Sheaves.indcoh", "GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType"]
+source = "[Crystals] §§2.3.1–2.3.2, 5.5; [IndCoh] §10.1.2"

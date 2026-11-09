@@ -1,0 +1,8 @@
+desc = "Satake construction prerequisite. Missing mathematics is planned explicitly; no placeholders belong in library code. The DG enhancement and determinant normalization are separate from the heart equivalence."
+
+[[node]]
+id = "GLCinLean.Satake.fusion"
+kind = "definition"
+desc = "Beilinson–Drinfeld Grassmannians over X^I, disjoint factorization, diagonal collision and the fusion commutativity constraint on the heart, including the parity correction from pairing coweights with the sum of positive roots (the character 2ρ). Do not impose symmetric monoidality on the full spherical DG category over Ran. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Hecke.correspondence", "GLCinLean.Hecke.ranSpace", "GLCinLean.Satake.convolution_preserves_perversity", "GLCinLean.DModules.intermediateExtension", "GLCinLean.Groups.coweightParity"]
+source = "[MV] §5; [GLys] §§5.2, 9.1.1"

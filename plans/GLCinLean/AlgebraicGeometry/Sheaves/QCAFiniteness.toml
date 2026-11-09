@@ -1,0 +1,22 @@
+desc = "Finiteness prerequisites for the statement construction. No placeholders; use upstream APIs directly where available."
+
+[[node]]
+id = "GLCinLean.Sheaves.qcaGlobalSections_continuous"
+kind = "theorem"
+desc = "For a QCA stack, derived global sections commute with colimits. Prove finite cohomological dimension by quotient strata, finite étale descent and open-closed induction, then pass from bounded-below to unbounded complexes. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Stacks.qcaStratification", "GLCinLean.Sheaves.qcohGlobalSections", "GLCinLean.Infinity.tStructure"]
+source = "[DG2] Theorem 1.4.2 and §§2.1–2.4"
+
+[[node]]
+id = "GLCinLean.Sheaves.qcaCompact_iff_perfect"
+kind = "theorem"
+desc = "On a QCA stack a QCoh object is compact iff perfect, equivalently tensor-dualizable. Use continuity of Γ and tensor-Hom for the forward construction of compactness; use continuous affine pushforward for restriction of a compact object. This theorem does not assert compact generation. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Sheaves.qcaGlobalSections_continuous", "GLCinLean.Sheaves.perfectComplex", "GLCinLean.Infinity.compactObject"]
+source = "[DG2] Corollary 1.4.3"
+
+[[node]]
+id = "GLCinLean.Sheaves.qcaIndCoh_compactlyGenerated"
+kind = "theorem"
+desc = "For a QCA stack locally almost of finite type, coherent sheaves are exactly the compact objects of IndCoh and generate it. Plan the coherent-generation descent and finite-stratification argument, not just the conclusion. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Stacks.qcaStratification", "GLCinLean.Sheaves.qcaGlobalSections_continuous", "GLCinLean.Sheaves.coherent", "GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.compactGeneration"]
+source = "[DG2] Theorem 3.3.5, §§3.4–3.5, Proposition 3.5.1"

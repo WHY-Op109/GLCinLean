@@ -3,13 +3,34 @@ desc = "Planned library module. AlgebraicGeometry / Group / Duality. No placehol
 [[node]]
 id = "GLCinLean.Groups.rootDatum"
 kind = "definition"
-desc = "Extract the integral root datum of a split reductive group and maximal torus, with roots/coroots and perfect character pairing. Provider: Tau Ceti roadmap ReductiveGroups Layers 7–9, extraction from an actual maximal torus; ReductiveGroupsPartII RG2.5.1 AbsoluteRootData. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Groups.pinnedData", "RootDatum", "RootPairing.Base", "TauCeti.SplitMaximalTorus"]
-source = "[GLC1] §0.1.1; [ArinkinGaitsgory] §11.1.1"
+desc = "Extract the integral UNBASED root datum of a reductive group with a specified split maximal torus; roots and coroots come from its actual adjoint action. No choice of Borel or pinning is erased. Provider: Tau Ceti roadmap ReductiveGroups Layers 7–9 and ReductiveGroupsPartII RG2.5.1 AbsoluteRootData. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["RootDatum", "TauCeti.SplitMaximalTorus", "TauCeti.ReductiveCommHopfAlgCat"]
+source = "[ConradRGS] §5.1; [GLC1] §0.1.1"
 
 [[node]]
 id = "GLCinLean.Groups.langlandsDual"
 kind = "definition"
-desc = "Construct a reductive group realizing the dual root datum, with an identification; prove existence rather than postulate it. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-based-root-datum and dual-group; consume ReductiveGroups 9B Chevalley-Demazure construction. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Groups.rootDatum", "RootPairing.flip", "RootPairing.Base.flip", "RootPairing.Equiv"]
-source = "[GLC1] §0.1.1"
+desc = "Given a pinned reductive group over k, construct the pinned split reductive integral group for the FLIPPED based root datum, base-change to k, and exhibit Groups.dualityData for the input and output pinnings. This includes the central torus, not just the semisimple root system. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-based-root-datum and langlands-dual-group; ReductiveGroups Layer 9B. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Groups.basedRootDatum", "GLCinLean.Groups.dualityData", "RootPairing.flip", "RootPairing.Base.flip", "RootPairing.Equiv"]
+source = "[ConradRGS] Theorems 6.1.16(2), 6.1.17; [GLC1] §0.1.1"
+
+[[node]]
+id = "GLCinLean.Groups.basedRootDatum"
+kind = "definition"
+desc = "The integral root datum of the torus in a specified pinning, with its base of simple roots; expose the exact character and cocharacter lattices and base support. Provider: Tau Ceti roadmap ReductiveGroups Layers 7–9 and ReductiveGroupsPartII RG2.5.1 AbsoluteRootData. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Groups.rootDatum", "GLCinLean.Groups.pinnedData", "RootPairing.Base"]
+source = "[ConradRGS] §6.1; [GLC1] §1.3.6"
+
+[[node]]
+id = "GLCinLean.Groups.dualityData"
+kind = "definition"
+desc = "Data for TWO SPECIFIED PINNINGS p of G and pd of Gd: an equivalence from basedRootDatum(p).flip to basedRootDatum(pd), preserving the flipped base. It uses RootPairing.Equiv and the base condition, not an equality or a free identification. This is the replacement content for Statement.RootDatumDuality after its future signature is made pinning-indexed. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-based-root-datum and langlands-dual-group. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Groups.basedRootDatum", "RootPairing.flip", "RootPairing.Base.flip", "RootPairing.Equiv"]
+source = "[ConradRGS] Theorem 6.1.17; [GLC1] §0.1.1"
+
+[[node]]
+id = "GLCinLean.Groups.dualityData_changePinning"
+kind = "theorem"
+desc = "Transport the duality identification under changes of pinning using pinned-group classification; the induced based-root-datum equivalences preserve the original duality map. Show that adding a dual pinning and rank is only a choice of presentation of the Langlands dual group, and provide a nontrivial example before changing the statement signature. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 independence of choices. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Groups.dualityData", "GLCinLean.Groups.pinning_exists"]
+source = "[ConradRGS] Theorem 6.1.17 and Proposition 7.1.6"

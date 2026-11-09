@@ -1,0 +1,8 @@
+desc = "QCoh support localization and scalar extension to formal completions."
+
+[[node]]
+id = "GLCinLean.Sheaves.formalCompletion_moduleSupport"
+kind = "theorem"
+desc = "For an almost finite type scheme S and closed T with quasi-compact open complement U, prove QCoh of the formal completion identifies with the supported QCoh category. For every QCoh(S)-module category D, identify the kernel of restriction D→D_U with extension of scalars to the completion. Construct the localization using the fiber of Id→j_*j^*; prove the continuous fully faithful adjoint and tensor-localization identities. This is a categorical support theorem, not an assertion about geometric fibers alone. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Derived.formalCompletion", "GLCinLean.Sheaves.qcoh", "GLCinLean.Sheaves.isOneAffine", "GLCinLean.Infinity.moduleCategory", "GLCinLean.Infinity.rightAdjoint", "GLCinLean.Infinity.limits"]
+source = "[OneAffineness] Propositions 4.1.3, 4.1.5 and Lemma 4.1.6; [RaskinCPSI] Lemma 6.17.2"

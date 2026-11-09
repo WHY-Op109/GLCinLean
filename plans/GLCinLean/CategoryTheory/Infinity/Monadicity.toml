@@ -1,0 +1,15 @@
+desc = "Monadic comparison and its complete t-structure application to products of vector-space categories."
+
+[[node]]
+id = "GLCinLean.Infinity.barrBeckLurie"
+kind = "theorem"
+desc = "Construct the monad and comparison of an enhanced adjunction and prove the comparison an equivalence exactly when the right adjoint is conservative and preserves geometric realizations of its split simplicial objects, which must exist. Use the split augmented bar resolution. Do not replace this by preservation of arbitrary colimits. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:abstract.5 barrBeckLurie; route through its Worker, not a local duplicate. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Infinity.rightAdjoint", "GLCinLean.Infinity.moduleCategory", "GLCinLean.Infinity.limits"]
+source = "[OneAffineness] §7.2.9 (the Barr–Beck–Lurie input cited there)"
+
+[[node]]
+id = "GLCinLean.Infinity.finiteMultiplicityProduct_isMonadic"
+kind = "theorem"
+desc = "For a family of nonzero finite-dimensional vector spaces E_a, prove the right adjoint from the product of derived vector-space categories to derived vector spaces, (W_a)↦product_a Hom(E_a,W_a), is monadic. Its left adjoint is V↦(E_a tensor V)_a. Verify conservativity, t-exactness and preservation of split realizations on uniformly bounded-above subcategories; prove both vector-space t-structures complete and recover the adjunction as a limit of the truncation adjunctions. Prove monadicity passes through that compatible limit. Retain the actual finite-dimensional irreducible multiplicities when applying this to coinduction for a reductive group. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:abstract.5 and E3 supplies this monadicity/limit application; route through its Worker. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Infinity.barrBeckLurie", "GLCinLean.Infinity.derivedVect", "GLCinLean.Infinity.tStructure", "GLCinLean.Infinity.limits"]
+source = "[OneAffineness] §§7.2.4–7.2.9 and Lemmas 7.2.8, 7.2.10 (with the finite irreducible multiplicities retained)"

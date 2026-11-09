@@ -1,0 +1,8 @@
+desc = "Horizontal arcs and loops on the Ran curve, including the quasi-affine base-space geometry needed for spectral parabolic categories."
+
+[[node]]
+id = "GLCinLean.LocalSystems.horizontalLoops"
+kind = "definition"
+desc = "Construct horizontal arcs and meromorphic horizontal loops into a quasi-affine finite-type scheme Y over every X^I, with restriction, factorization on disjoint configurations and the arc-to-loop map. Prove that the latter is an isomorphism on classical prestacks and that horizontal loops have connective deformation theory, hence form a relative formal indscheme. Prove compatibility with open embeddings and finite Zariski covers. For Y=dualG/N_dualP identify its loop space with the local-systems fiber product with the G and M torsors trivialized. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
+deps = ["GLCinLean.Derived.indscheme_connectiveDeformationTheory", "GLCinLean.Derived.deRhamPrestack", "GLCinLean.Hecke.ranSpace", "GLCinLean.SpectralProof.parabolicLevi", "GLCinLean.SpectralProof.localOpers"]
+source = "[GLC3] §§A.1.1–A.1.8; [GLC2] §B.4.6 and Lemma E.2.2"

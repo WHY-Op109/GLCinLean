@@ -4,8 +4,12 @@ This plan follows [GLC1] Corollary 1.6.5, Conjecture 1.6.7 and Proposition 1.7.2
 not the former Abstract/Foundations draft. The target is any algebraically closed field of
 characteristic zero, a smooth proper connected curve, a pinned reductive group, and a chosen
 theta characteristic. It includes the constructions that identify the categories, actions,
-coarsening and coarse functor. It does not include the five-paper proof of equivalence, the
-Betti variants or a separate proof of the existence half of the main theorem.
+coarsening and coarse functor, including the proofs needed to construct their actions and
+adjoints. Thus geometric Satake and spectral decomposition are inside the statement blueprint,
+even when their proofs use localization, vanishing or Eisenstein series. The plan also records
+selected supporting results, such as automorphic compact generation and normalization examples.
+It does not plan the full proof of the main theorem (including its existence conjunct), nor
+the Betti variants. Those supporting results are not a claim to cover all of Corollary 1.6.5's proof.
 
 ## Reading the plan
 
@@ -15,8 +19,9 @@ Library modules use subject folders under `GLCinLean`; the statement has its own
 folder. No planned library definition may be implemented as a placeholder.
 
 `plans/Mathlib` and `plans/TauCeti` name existing declarations in their actual defining modules.
-These are dependency boundaries: their empty `deps` means the upstream interface is already
-provided, not that its implementation has no dependencies. Do not create local wrappers for
+These are dependency boundaries. An empty `deps` means the upstream interface is already
+provided, not that its implementation has no dependencies; some suppliers explicitly list
+other supplier interfaces needed by their consumers. Do not create local wrappers for
 these names. Some leaves are not imported by the current small statement and therefore appear
 as `open` in the tracker despite existing at the checked pin. The provider description, exact
 module and revision record that distinction.
@@ -47,7 +52,11 @@ cannot discover the missing mathematics hidden behind it.
 5. The automorphic category is Dmod(Bun_G) twisted by the square-root gerbe of the normalized
    determinant line. The theta characteristic trivializes that gerbe and fixes the Whittaker
    normalization. The integral cocharacter 2ρ is applied to its frame torsor.
-6. Ran representations, Satake and Hecke correspondences produce the spectral QCoh action.
+6. The spherical perverse category, convolution, fusion and Tannakian reconstruction supply
+   the geometric Satake heart equivalence. Its de Rham factorization extension, compatible
+   with the chosen duality and half-twist, supplies the Hecke functor. Spectral decomposition
+   additionally requires its vanishing and localization proof inputs; it is not a formal
+   consequence of the spectral localization being a localization.
    The vacuum Poincaré object is p_! χ^*(exp), with definedness and compactness proved.
 7. Acting on that object defines the left functor. Its right adjoint is the coarse functor;
    continuity and linearity are theorems, not assumptions. Coarsening is Ψ_Nilp,{0}.
