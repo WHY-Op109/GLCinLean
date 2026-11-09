@@ -20,6 +20,7 @@ Agents do the work, one session per step, each started from a prompt in `prompts
 
 | Prompt | Step |
 |---|---|
+| [`setup.md`](prompts/setup.md) | on a new computer: check the tools, build from the caches, fetch the papers' LaTeX |
 | [`plan.md`](prompts/plan.md) | write the plan in `plans/` and redesign the statement |
 | [`build.md`](prompts/build.md) | replace placeholders by real definitions, working up the plan |
 | [`review.md`](prompts/review.md) | check that definitions mean what the papers say (run by an agent that did not write them) |
