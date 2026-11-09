@@ -9,15 +9,17 @@ shape of the statement at `f6d537a` and requested changes to the 204-declaration
 `f1e69ec`. Its Satake and spectral-vanishing gaps were real. The former claim that the whole
 construction chain was covered was too strong.
 
-The current repair session tests G1, G2 and P1–P7. All nine findings are confirmed, with
+The local repair candidate is `76abe97114b8d757165492cb625fcee945a24dfd`. It tests
+G1, G2 and P1–P7. All nine findings are confirmed, with
 qualifications and exact references in `notes/blueprint-gap-resolution.md`. The new plans add
 Satake geometry, reconstruction, enhancement and normalization; critical localization and
 parabolic inputs for spectral vanishing; and the actual compactness/rigidity proof chains.
 They extend IndCoh to prestacks, remove the duplicate characterization, and choose an explicit
 future duality signature using two pinnings. There are now 443 declarations in 214 module-plan
-files (213 contain declarations), including 66 direct upstream suppliers. The fresh reviewer
-has checked the proof routes and the fixes made during review; its final report will identify
-the immutable candidate commit in `notes/reviews/2026-11-09-repair.md`.
+files (213 contain declarations), including 66 direct upstream suppliers. The fresh independent
+review in `notes/reviews/2026-11-09-repair.md` approves all nine repairs at that exact commit,
+with no new blocking mismatch. It accepts the blueprint's construction and proof routes;
+it does not certify the missing Lean implementations or resolve the statement placeholders.
 
 No Lean declaration or dependency pin changes in these repairs. The statement remains in
 `GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`. It asserts
@@ -49,7 +51,8 @@ cache command. The repair-session build passes (8173 jobs), with only the main t
 all 34 explicit statement declarations: only the main theorem uses `sorryAx`; all others use
 subsets of `propext`, `Classical.choice`, `Quot.sound`.
 
-`lake exe tracker lint` exits 0. The static audit finds no duplicate IDs, unresolved
+`lake exe tracker lint` exits 0 on the 443-declaration candidate, with 145 superseded-metadata
+notices and no other warnings or errors. The static audit finds no duplicate IDs, unresolved
 dependencies or cycles; every node has a source, provider, checked revision and dependency
 list, and every source key is in the bibliography. All 241 added declarations are reachable
 from the main theorem through the suggested graph; two duplicate characterization nodes were
@@ -117,8 +120,8 @@ work. The three answers above are proposals for the owner, not newly adopted per
 
 ## Next
 
-1. Record the final independent review against the local repair commit. Do not push; the
-   owner decides what to approve.
+1. The repaired candidate and its independent review are ready for the owner's decision.
+   Do not push; the owner decides what to approve.
 2. After approval, choose a genuine prerequisite using the plan and provider records. Accepted
    roadmap work goes through Tau Ceti Worker; uncovered GLC constructions stay here.
 3. Require examples, build/axiom checks and fresh review at every placeholder replacement.
