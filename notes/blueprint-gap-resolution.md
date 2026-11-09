@@ -234,8 +234,9 @@ base change. The proof uses the finite collision diagram and localization gluing
 not infer passability from separate-point fibers or rigidity of QCoh(LS). The one-affineness
 inputs are [OneAffineness] Thms. 2.1.1, 2.5.4(b) and 2.6.3, restricted to schemes and their
 de Rham prestacks; the finite-dimensional formal additive group is a separate proof input.
-These are explicit future proof obligations. The final independent review and its precise
-scope are recorded in `notes/reviews/2026-11-09-repair.md` after the candidate is committed.
+These are explicit future proof obligations. The final independent review in
+`notes/reviews/2026-11-09-repair.md` approves the repairs at
+`76abe97114b8d757165492cb625fcee945a24dfd` and records its precise scope.
 
 ## P1: proof chains and hypotheses
 
