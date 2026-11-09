@@ -1,0 +1,15 @@
+desc = "Planned library module. AlgebraicGeometry / Group / Duality. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Groups.rootDatum"
+kind = "definition"
+desc = "Extract the integral root datum of a split reductive group and maximal torus, with roots/coroots and perfect character pairing. Provider: Tau Ceti roadmap ReductiveGroups Layers 7–9, extraction from an actual maximal torus; ReductiveGroupsPartII RG2.5.1 AbsoluteRootData. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Groups.pinnedData", "RootDatum", "RootPairing.Base", "TauCeti.SplitMaximalTorus"]
+source = "[GLC1] §0.1.1; [ArinkinGaitsgory] §11.1.1"
+
+[[node]]
+id = "GLCinLean.Groups.langlandsDual"
+kind = "definition"
+desc = "Construct a reductive group realizing the dual root datum, with an identification; prove existence rather than postulate it. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-based-root-datum and dual-group; consume ReductiveGroups 9B Chevalley-Demazure construction. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Groups.rootDatum", "RootPairing.flip", "RootPairing.Base.flip", "RootPairing.Equiv"]
+source = "[GLC1] §0.1.1"

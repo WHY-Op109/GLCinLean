@@ -1,0 +1,22 @@
+desc = "Planned library module. AlgebraicGeometry / LocalSystems / Nilpotent. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.LocalSystems.nilpotentCone"
+kind = "definition"
+desc = "Global nilpotent cone: the conical closed locus of horizontal nilpotent coadjoint sections; use invariant quotient, not an arbitrary support predicate. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.LocalSystems.singularities", "GLCinLean.Groups.rootDatum", "GLCinLean.Groups.nilpotentCoadjointCone"]
+source = "[ArinkinGaitsgory] §§11.1.1–11.1.2"
+
+[[node]]
+id = "GLCinLean.LocalSystems.nilpotentCone_contains_zero"
+kind = "theorem"
+desc = "Every zero horizontal section is nilpotent; this supplies the zero-support hypothesis for the spectral t-structure. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.LocalSystems.nilpotentCone"]
+source = "[ArinkinGaitsgory] §§11.1.1, 11.1.5"
+
+[[node]]
+id = "GLCinLean.LocalSystems.nilpotentCone_closed_conical"
+kind = "theorem"
+desc = "Nilpotence can be checked at one point of the connected curve, and defines a conical closed subset of Sing(LS). Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.LocalSystems.nilpotentCone"]
+source = "[ArinkinGaitsgory] Lemma 11.1.4"

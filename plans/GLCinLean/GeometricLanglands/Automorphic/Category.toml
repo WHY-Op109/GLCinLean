@@ -1,0 +1,15 @@
+desc = "Planned library module. GeometricLanglands / Automorphic / Category. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Automorphic.halfTwistedDModules"
+kind = "definition"
+desc = "Dmod on Bun_G twisted by the square-root gerbe of its normalized determinant; correct half-twist, with its field. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Stacks.determinantBundle", "GLCinLean.DModules.twistedCrystals"]
+source = "[GLC1] §1.1.4"
+
+[[node]]
+id = "GLCinLean.Automorphic.halfTwisted_equiv_untwisted"
+kind = "theorem"
+desc = "Theta characteristic trivializes the twisting; compatibility with the chosen root, without changing the Hecke normalization. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Automorphic.halfTwistedDModules", "GLCinLean.Stacks.determinantSquareRoot"]
+source = "[GLC1] §1.1.5"

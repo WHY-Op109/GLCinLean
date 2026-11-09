@@ -1,0 +1,15 @@
+desc = "Planned library module. AlgebraicGeometry / LocalSystems / IndCoh. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.LocalSystems.indcohNilpotent"
+kind = "definition"
+desc = "IndCoh_Nilp(LS_H) with its QCoh action and standard t-structure. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.LocalSystems.nilpotentCone", "GLCinLean.Sheaves.indcohWithSupport", "GLCinLean.Sheaves.supportTStructure", "GLCinLean.LocalSystems.nilpotentCone_contains_zero", "GLCinLean.LocalSystems.nilpotentCone_closed_conical"]
+source = "[ArinkinGaitsgory] §11.1.5; [GLC1] §1.6.3"
+
+[[node]]
+id = "GLCinLean.LocalSystems.psiNilpotent"
+kind = "definition"
+desc = "Psi_Nilp,{0} as QCoh-linear right adjoint of zero-support inclusion, with t-exactness and bounded-below equivalence. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.LocalSystems.indcohNilpotent", "GLCinLean.Sheaves.psi_eventuallyCoconnective_equiv"]
+source = "[ArinkinGaitsgory] Proposition 4.4.5; [GLC1] §1.6.3"

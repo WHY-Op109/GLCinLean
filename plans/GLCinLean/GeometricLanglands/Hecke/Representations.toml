@@ -1,0 +1,22 @@
+desc = "Planned library module. GeometricLanglands / Hecke / Representations. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Hecke.representationCategory"
+kind = "definition"
+desc = "Enhanced category Rep(H) of algebraic representations, with tensor product, duals and compact generators. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Groups.langlandsDual", "GLCinLean.Infinity.linearCategory", "GLCinLean.Infinity.rigidMonoidalCategory"]
+source = "[GLC1] §1.2.1"
+
+[[node]]
+id = "GLCinLean.Hecke.ranRepresentations"
+kind = "definition"
+desc = "The de Rham factorization version Rep(H)_Ran and its monoidal structure. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Hecke.representationCategory", "GLCinLean.Hecke.ranSpace", "GLCinLean.DModules.rightCrystals", "GLCinLean.Hecke.spreadClassifyingStack", "GLCinLean.Sheaves.qcoh"]
+source = "[GLC1] §1.2.1; [GaitsgoryOutline] §4.2"
+
+[[node]]
+id = "GLCinLean.Hecke.ranConvolution"
+kind = "definition"
+desc = "The non-unital symmetric monoidal product by restriction to formal discs and !-pushforward along union; prove the required adjoint exists. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Hecke.ranRepresentations", "GLCinLean.Hecke.ranUnion", "GLCinLean.Infinity.rightAdjoint"]
+source = "[GaitsgoryOutline] §4.2.3"

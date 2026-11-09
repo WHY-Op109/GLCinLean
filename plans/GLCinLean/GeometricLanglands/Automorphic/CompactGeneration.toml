@@ -1,0 +1,8 @@
+desc = "Planned library module. GeometricLanglands / Automorphic / CompactGeneration. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Automorphic.compactlyGenerated"
+kind = "theorem"
+desc = "Prove compact generation of Dmod_1/2(Bun_G), including quasi-compact open exhaustion and safe extension generators. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Automorphic.halfTwisted_equiv_untwisted", "GLCinLean.Infinity.compactGeneration"]
+source = "[CompactGeneration] Theorem 0.1.2; [GLC1] §1.6.4"

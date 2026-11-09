@@ -1,0 +1,8 @@
+desc = "Planned library module. Use existing provider interfaces directly; route roadmap-owned work through Tau Ceti Worker."
+
+[[node]]
+id = "GLCinLean.Derived.affineModules"
+kind = "definition"
+desc = "Enhanced modules over a connective commutative derived k-algebra, with scalar extension and relative tensor product Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:abstract.2 moduleObjects and extensionScalars; E5:animation.4 animated modules. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Derived.commutativeAlgebra", "GLCinLean.Infinity.moduleCategory", "GLCinLean.Infinity.derivedVect"]
+source = "[AGKRRV] §§0.9.3, 0.9.6; [IndCoh] §0.6.7"

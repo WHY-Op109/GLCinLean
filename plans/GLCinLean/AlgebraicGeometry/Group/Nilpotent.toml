@@ -1,0 +1,15 @@
+desc = "Planned library module for AlgebraicGeometry / Group / Nilpotent. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+
+[[node]]
+id = "GLCinLean.Groups.chevalleyMap"
+kind = "definition"
+desc = "Invariant-polynomial quotient of the coadjoint representation and its zero fiber; no reliance on a nondegenerate Killing form on a reductive center. Provider: Tau Ceti existing main adjointInvariantPolynomials, with roadmap ReductiveGroups 11C invariant quotient; arbitrary-k coadjoint comparison requires the characteristic-zero descent contract, not a nondegenerate Killing form on the full reductive algebra. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["Derivation.adjointComodule", "TauCeti.Comodule.dual", "TauCeti.adjointInvariantPolynomials", "GLCinLean.Derived.affineScheme"]
+source = "[ArinkinGaitsgory] §11.1.2"
+
+[[node]]
+id = "GLCinLean.Groups.nilpotentCoadjointCone"
+kind = "definition"
+desc = "Nilpotent coadjoint cone as the Chevalley zero fiber; prove agreement with invariant identifications g≅g* and conical closedness. Provider: Tau Ceti existing main nilpotentConeIdeal for adjoint zero fibre; roadmap NilpotentOrbits N1 and ReductiveGroups 11C cover the comparison prerequisites; retain arbitrary-k coadjoint construction here if not covered by accepted descent scope. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Groups.chevalleyMap", "TauCeti.nilpotentConeIdeal", "TauCeti.Comodule.dual"]
+source = "[ArinkinGaitsgory] §§11.1.1–11.1.2"

@@ -1,0 +1,8 @@
+desc = "Planned library module. Use existing provider interfaces directly; route roadmap-owned work through Tau Ceti Worker."
+
+[[node]]
+id = "GLCinLean.Stacks.algebraicStack"
+kind = "definition"
+desc = "Ordinary stacks in groupoids with representable diagonal and smooth atlas, their presentations and base change Provider: Tau Ceti roadmap SchemeAndStackFoundations §§1.18–1.20 stackification, algebraic stacks and presentations. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["AlgebraicGeometry.Scheme", "CategoryTheory.Pseudofunctor.IsStack", "TauCeti.AlgebraicGeometry.SchPseudofunctor"]
+source = "[GLC1] §1.1.1; [AGKRRV] §0.9.1"
