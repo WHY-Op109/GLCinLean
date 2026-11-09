@@ -21,6 +21,29 @@ review in `notes/reviews/2026-11-09-repair.md` approves all nine repairs at that
 with no new blocking mismatch. It accepts the blueprint's construction and proof routes;
 it does not certify the missing Lean implementations or resolve the statement placeholders.
 
+A later recheck, `notes/reviews/2026-11-09-repair-recheck.md`, requested changes to
+`76abe97`: no planned proof that the Tannakian group is reductive (B1), the factorizable
+Satake functor planned into the untwisted spherical category (B2), and three gaps in the
+spectral-decomposition proof (M1–M3). The follow-up repair commit answers them in the plans:
+
+- B1: `Satake.sphericalHeart_semisimple`, by comparison through Q̄ and C
+  (`DModules.holonomicHom_fieldBaseChange`, `DModules.schubertRiemannHilbert`), feeding the
+  Tau Ceti criterion `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`.
+- B2: the factorization spherical category is half-twisted by `Satake.criticalDeterminantGerbe`;
+  the twisted and untwisted hearts are compared only at a point
+  (`Satake.halfTwistedHeart_equiv_untwistedHeart`).
+- M1: `Hecke.sphericalAction`, `Satake.naiveFactorizationFunctor_renormalized`,
+  `Hecke.action_viaRenormalized` and `Satake.naiveRenormalized_eq_derivedSatakeInverse`.
+- M2: `SemiInfinite.parabolicIC_colimitDescription` replaces the semisimple simply connected
+  hypothesis of [ParabolicEisensteinFH] Appendix A.
+- M3: `Infinity.moduleOverMonoidalLocalization`, `Hecke.ranRepresentations_rigid` and
+  `Spectral.actionOfVanishing`, with the rank induction stated explicitly.
+- Small fixes: [GaitsgoryOutline] Prop. 11.1.3 (not 11.1.4); `Sheaves.indcohTStructure`
+  depends on `Derived.artinStack`.
+
+There are now 456 declarations in 216 module-plan files, including 67 direct upstream
+suppliers. The result of the fresh review of these fixes is recorded in `notes/reviews/`.
+
 No Lean declaration or dependency pin changes in these repairs. The statement remains in
 `GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`. It asserts
 existence of a characterized functor and equivalence of every such functor, with explicit

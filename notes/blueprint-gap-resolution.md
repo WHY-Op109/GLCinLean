@@ -74,7 +74,7 @@ semisimple rank. Declaration IDs below omit the prefix `GLCinLean.`; paper paths
 - **The older notes do not close the arbitrary-parabolic step.** [GenVan] §2.6
   (`GenVan-2010-10-18/GenVan.txt:255–259`) says that the cited Eisenstein theory is
   developed for a Borel and expects its extension to general P. [GaitsgoryOutline]
-  Prop. 11.1.4 (`1302.2506v3/src/outline.tex:6941`) likewise needs the intermediate
+  Prop. 11.1.3 (`1302.2506v3/src/outline.tex:6939`) likewise needs the intermediate
   parabolic functor. The new route uses [GLC3] rather than reporting that expectation
   as a proved supplier.
 
