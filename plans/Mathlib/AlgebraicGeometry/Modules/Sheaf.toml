@@ -1,0 +1,8 @@
+desc = '''Existing provider boundary. These nodes refer to upstream declarations, not local wrappers. Recursion stops at this already supplied interface.'''
+
+[[node]]
+id = 'AlgebraicGeometry.Scheme.Modules'
+kind = 'definition'
+source = '[GLC1] §1.1.1; [IndCoh] §1.1'
+desc = '''Ordinary module sheaves on a scheme, not the enhanced QCoh category. Provider: Mathlib, pinned commit 1b1ccf4b088b32fa3f23f2de1127433254a81e1e; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
+deps = []

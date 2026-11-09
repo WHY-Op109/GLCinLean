@@ -1,0 +1,15 @@
+desc = "Planned library module. AlgebraicGeometry / Derived / Affine. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.Derived.commutativeAlgebra"
+kind = "definition"
+desc = "Connective commutative derived k-algebras with actual homotopy-coherent maps; in characteristic zero compare nonpositive commutative DG algebras. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:animation.1 animated rings and E5:animation.4 animated rings as commutative algebras; E5:abstract.2 commutativeAlgebras. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Infinity.monoidalCategory", "GLCinLean.Infinity.linearCategory", "GLCinLean.Infinity.derivedVect", "GLCinLean.Infinity.moduleCategory"]
+source = "[AGKRRV] §§0.9.3, 0.9.6"
+
+[[node]]
+id = "GLCinLean.Derived.affineScheme"
+kind = "definition"
+desc = "Opposite of connective commutative derived k-algebras, with classical truncation and the affine embedding. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:animation. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Derived.commutativeAlgebra"]
+source = "[AGKRRV] §0.9.6"

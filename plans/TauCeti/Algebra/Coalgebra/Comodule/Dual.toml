@@ -1,0 +1,8 @@
+desc = "Existing upstream provider boundary; use canonical declarations directly."
+
+[[node]]
+id = "TauCeti.Comodule.dual"
+kind = "definition"
+source = "[ArinkinGaitsgory] §§10.4, 11.1.2"
+desc = "Contragredient comodule on the dual of a finite projective module; use directly for the coadjoint action. Existing at the pin. Provider: Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938. Not a placeholder."
+deps = []

@@ -1,0 +1,22 @@
+desc = "Planned library module. AlgebraicGeometry / DModules / Operations. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+
+[[node]]
+id = "GLCinLean.DModules.extraordinaryPullback"
+kind = "definition"
+desc = "!-pullback, compatible with a specified trivialization of a pulled-back twist. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.DModules.twistedCrystals"]
+source = "[GLC1] §1.3.5; [Crystals] §2.3"
+
+[[node]]
+id = "GLCinLean.DModules.holonomicShriek"
+kind = "definition"
+desc = "Partially defined !-pushforward adjoint to !-pullback; existence on the holonomic object used for Poincare. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.DModules.extraordinaryPullback", "GLCinLean.Infinity.rightAdjoint", "GLCinLean.DModules.holonomic"]
+source = "[GLC1] §§1.3.5, 1.3.7"
+
+[[node]]
+id = "GLCinLean.DModules.starPullback"
+kind = "definition"
+desc = "Star pullback of D-modules, with its shift conventions and compatibility with exponential character objects. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.DModules.rightCrystals"]
+source = "[GLC1] §§1.3.6–1.3.8; [Crystals] §5.5"

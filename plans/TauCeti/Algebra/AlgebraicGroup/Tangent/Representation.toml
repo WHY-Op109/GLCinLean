@@ -1,0 +1,8 @@
+desc = "Existing upstream provider boundary; use canonical declarations directly."
+
+[[node]]
+id = "Derivation.adjointComodule"
+kind = "definition"
+source = "[GLC1] §1.1.1; [ArinkinGaitsgory] §10.4"
+desc = "Adjoint comodule on the dual augmentation cotangent space. Existing at the pin; use directly. Provider: Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938. Not a placeholder."
+deps = []

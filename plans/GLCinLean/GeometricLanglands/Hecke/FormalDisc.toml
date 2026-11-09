@@ -1,0 +1,8 @@
+desc = "Planned library module for GeometricLanglands / Hecke / FormalDisc. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+
+[[node]]
+id = "GLCinLean.Hecke.formalDisc"
+kind = "definition"
+desc = "Formal completion of S×X along the finite union of graphs of a Ran point, with restriction and de Rham maps. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
+deps = ["GLCinLean.Hecke.ranSpace", "GLCinLean.Derived.deRhamPrestack"]
+source = "[GaitsgoryOutline] §4.1.3"
