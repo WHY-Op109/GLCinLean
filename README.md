@@ -13,7 +13,7 @@ Conjecture 1.6.7); the proof comes after the statement. See [`STATUS.md`](STATUS
 | `blueprint.md` | every object the statement uses, where it comes from, and its state |
 | `prompts/` | one prompt per step of the work (plan, build, review) |
 | `docs/references.bib` | the papers cited, with their arXiv versions |
-| `notes/` | research notes and review reports |
+| `notes/reviews/` | review reports (from the first review on) |
 
 Build:
 

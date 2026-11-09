@@ -4,9 +4,9 @@ Updated 2026-11-09.
 
 ## Done
 
-- **Research** (2026-11-08): notes in `notes/research/`. The notes the next steps cite are kept;
-  the full set, the owner's ideas (`notes/ideas.md`) and the decisions of 2026-11-08
-  (`notes/workflow.md`) are in commit `728da79`.
+- **Research** (2026-11-08): its findings for the next steps are in `prompts/plan.md` and
+  `prompts/build.md`; the full notes, the owner's ideas (`notes/ideas.md`) and the decisions of
+  2026-11-08 (`notes/workflow.md`) are in commit `728da79`.
 - **Rebuild** (2026-11-09): a plain Lean project driven by prompts. The review harness, the
   tracker, the paper manifest and the old plan are gone; `AGENTS.md`, this file,
   `docs/references.bib` and the prompts for steps 2–4 are new.
