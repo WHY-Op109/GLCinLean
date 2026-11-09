@@ -1,7 +1,7 @@
 # Step 3: build
 
 **Goal.** Replace placeholders of the GLC statement by real definitions, working through
-`blueprint.md` from the bottom up: take the objects whose dependencies are done, write them as
+the plan in `plans/` from the bottom up: take the objects `lake exe tracker ready` lists, write them as
 library code, and then use them in the statement. Parts a Tau Ceti roadmap covers go to Tau Ceti
 through Tau Ceti's Worker; the rest is written here.
 
@@ -14,15 +14,15 @@ through Tau Ceti's Worker; the rest is written here.
 - a fresh agent has reviewed every new or changed definition with `prompts/review.md`;
 - a change to the statement, or to a definition it reaches, is not pushed until the owner has
   approved it: it is put to the owner together with the review, and the session waits;
-- `blueprint.md` and `STATUS.md` are updated, the prompt for the next step has been checked and
+- `plans/` and `STATUS.md` are updated (`lake exe tracker lint` passes), the prompt for the next step has been checked and
   updated if needed, and the work is committed and pushed.
 
 **Context**
-- `blueprint.md` and `STATUS.md`: what is done, what is next, and what is in flight.
+- `plans/` (read with `lake exe tracker status`, `ready` and `show`) and `STATUS.md`: what is done, what is next, and what is in flight. Remaining placeholders: `grep -rn '@\[placeholder\]' GLCinLean`.
 - Tau Ceti's Worker (https://github.com/TauCetiProject/TauCetiWorker; installed with
   `uv tool install`) runs outside this repository, under the owner's `gh` account, and opens pull
-  requests from the owner's fork. Tau Ceti's README and the Worker's README are the authority; as
-  read on 2026-11-08 [R]:
+  requests from the fork `WHY-Op109/TauCeti`. Tau Ceti's README and the Worker's README are the authority; as
+  read on 2026-11-08:
   - `--agent claude` must be set (the default prefers Codex); `--roadmap-only <area>` pins one
     roadmap area;
   - run a bare `tauceti work` round before ever using `--loop`; Tau Ceti discourages

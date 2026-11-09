@@ -7,14 +7,19 @@ after the statement.
 
 ## Writing
 
-- Use plain, understandable, structured words in all text: Lean documentation, prompts, notes.
-- Claims about sources in Markdown text (notes, reviews, `STATUS.md`, commit messages) carry a tag with the date checked: [R] read directly, [S] a source's claim about itself, [E] estimate, [J] judgement.
+- Use plain, understandable, structured words in all text.
 
 ## Sources of code
 
-- Use Mathlib first, then Tau Ceti (search its `main`, not only the pinned version). Other Lean libraries are references, not dependencies.
+- Use Mathlib first, then Tau Ceti (search its `main`, not only the pinned version).
 - Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`: pull requests from the fork `WHY-Op109/TauCeti`, no stacked pull requests, never writing to TauCetiRoadmap. Nothing goes to Mathlib directly.
 - Everything else is written here.
+
+## Plan
+
+- The plan is in `plans/`, in the format of the tracker (`tools/tracker`, a git submodule; read `tools/tracker/README.md` before touching the plan). `lake exe tracker ready` lists what can be worked on now; `lake exe tracker lint` checks the plan against the code.
+- Once a declaration exists, the Lean code and its docstring are the truth; the plan entry shrinks to its id.
+- The tracker counts a placeholder as proved, since it has no `sorry`. Remaining placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`.
 
 ## Lean code
 
@@ -42,7 +47,7 @@ after the statement.
 ## Builds
 
 - Set `LAKE_CONFIG=.lake-config/lake-config.toml` and `LAKE_CACHE_DIR=.lake/cache`. Fetch the caches before building: `lake exe cache get`, then `lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti` (no `--mappings-only`; retry on failure).
-- A `Built Mathlib.…` or `Built TauCeti.…` line (not `:c.o`, not a replayed `trace:`) means a wrong pin or a missing cache, and hours of compiling: stop and report it.
+- A `Built Mathlib.…` or `Built TauCeti.…` line (not `:c.o`, not a replayed `trace:`) means a wrong pin or a missing cache: stop and report it.
 - Done means: `lake build` passes, and `#print axioms` shows no `sorryAx` for any definition the statement uses, and only `propext`, `Classical.choice`, `Quot.sound` and the main theorem's `sorryAx` for the main theorem.
 - Versions stay pinned. Move the Tau Ceti pin only when merged Tau Ceti contributions are needed, to a commit with a published cache.
 

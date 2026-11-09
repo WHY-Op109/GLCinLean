@@ -15,5 +15,10 @@ name = "TauCeti"
 git = "https://github.com/TauCetiProject/TauCeti"
 rev = "v4.36.0-rc2"
 
+# bridgekat/tracker @ c223b67, a git submodule: reads the plan in plans/ and the compiled code.
+[[require]]
+name = "tracker"
+path = "tools/tracker"
+
 [[lean_lib]]
 name = "GLCinLean"
