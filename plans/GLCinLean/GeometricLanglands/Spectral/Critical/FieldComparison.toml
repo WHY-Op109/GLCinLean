@@ -18,7 +18,7 @@ source = "[GeometricFeiginFrenkel] Theorem 2.1, Proposition 2.3, Theorems 2.4 an
 id = "GLCinLean.SpectralProof.criticalSatakeGlobalSections_finiteProjective"
 kind = "theorem"
 desc = "Prove that reduction of finite-support critical Satake global sections is perfect, using almost compactness of the vacuum on bounded-below truncations, the Ind-generation lemma and adjoints of bounded cohomological amplitude. Then prove vanishing of higher global sections and finite projectivity of invariants by finite-height localization and the commutative-algebra argument, rather than invoking the center/oper compatibility being constructed. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.criticalVacuum_invariantsAndReduction", "GLCinLean.Hecke.satake", "GLCinLean.SpectralProof.criticalGlobalSections_flatBaseChange", "GLCinLean.Infinity.compactGeneration"]
+deps = ["GLCinLean.SpectralProof.criticalVacuum_invariantsAndReduction", "GLCinLean.SpectralProof.criticalGlobalSections_flatBaseChange", "GLCinLean.Infinity.compactGeneration", "GLCinLean.Satake.naiveFactorizationFunctor"]
 source = "[GeometricFeiginFrenkel] Finiteness Theorem 3.5, proof §6; Theorem 4.1, proof §4"
 
 [[node]]
@@ -39,7 +39,7 @@ source = "[GeometricFeiginFrenkel] §§2.2–2.3, 2.10–2.13 and 5.13–5.14; [
 id = "GLCinLean.SpectralProof.reductiveCriticalCenter_comparison"
 kind = "theorem"
 desc = "Decompose the reductive Lie algebra into its center and simple ideals; tensor their critical vacua and centers. The central-torus level is zero and its center/oper map is the explicit symmetric-algebra/jet pairing. For a central isogeny, compare the normalized oper definition with fixed Cartan bundle and simple-root coefficients equal to one, and separately the representation-lattice components in Satake compatibility; do not replace raw G-oper stacks or full loop groups by isomorphic ones. Combine finite central-kernel descent in characteristic zero with factorization to recover the actual pinned reductive group. Provider: Tau Ceti roadmap ReductiveGroups Layers 6–7 supplies group/isogeny data; the center/oper and Satake comparison is Missing and implemented here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.criticalCenter_fieldBaseChange", "GLCinLean.SpectralProof.criticalLevel", "GLCinLean.SpectralProof.localOpers", "GLCinLean.Hecke.satake", "GLCinLean.Groups.langlandsDual"]
+deps = ["GLCinLean.SpectralProof.criticalCenter_fieldBaseChange", "GLCinLean.SpectralProof.criticalLevel", "GLCinLean.SpectralProof.localOpers", "GLCinLean.Groups.langlandsDual", "GLCinLean.Satake.naiveFactorizationFunctor"]
 source = "[GLC2] §§3.1.1–3.1.3, 5.1.3–5.1.5 and Theorem 5.2.5; [GeometricFeiginFrenkel] Theorem 1.4 (semisimple simply connected input)"
 
 [[node]]
