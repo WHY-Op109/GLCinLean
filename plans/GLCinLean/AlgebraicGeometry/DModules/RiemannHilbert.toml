@@ -1,0 +1,8 @@
+desc = "Riemann–Hilbert comparison over C for Schubert-constructible regular holonomic D-modules. Its only uses are the field comparisons in Satake.sphericalHeart_semisimple and Satake.regularSheafExt_complexComparison; no embedding of the original field into C is assumed."
+
+[[node]]
+id = "GLCinLean.DModules.schubertRiemannHilbert"
+kind = "theorem"
+desc = "Over k = C, for a finite union Y of Schubert varieties in Gr_G with its Schubert stratification: the de Rham functor is a t-exact equivalence from bounded regular holonomic complexes on Y whose cohomology is lisse along the strata to bounded complexes of sheaves of C-vector spaces on Y(C) constructible along the strata, from holonomic modules to perverse sheaves. It sends intermediate extensions to intermediate extensions, commutes with proper pushforward, *- and !-pullback along the strata and external products (so with the convolution diagrams of finite Schubert unions), and preserves Hom in every degree. Only regular holonomic objects are compared; lisse irregular connections on strata are excluded. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.DModules.holonomic", "GLCinLean.DModules.intermediateExtension", "GLCinLean.DModules.perverseHeart", "GLCinLean.Hecke.schubertStratification", "GLCinLean.DModules.deRhamPushforward"]
+source = "[HottaTakeuchiTanisaki] Chapter 7 (Riemann–Hilbert correspondence) and Chapter 8 (perverse sheaves); [MV] §2 (Schubert-constructible sheaves over C)"

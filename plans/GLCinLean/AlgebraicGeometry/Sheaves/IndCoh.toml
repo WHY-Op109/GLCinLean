@@ -25,7 +25,7 @@ source = "[IndCoh] §§10.1.2–10.1.4, 10.5, 11.2"
 id = "GLCinLean.Sheaves.indcohTStructure"
 kind = "definition"
 desc = "Standard t-structure on IndCoh of the schemes and Artin stacks in scope, compatible with filtered colimits and smooth descent. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.tStructure"]
+deps = ["GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.tStructure", "GLCinLean.Derived.artinStack"]
 source = "[IndCoh] §1.2; §11.7.4"
 
 [[node]]
