@@ -6,8 +6,7 @@
 - Tau Ceti pinned: `e0610cce4004d628cbd9d2aafdbbb5459fe72938`.
 - Original Tau Ceti code audit: `7ca783d4c8d324c9c74efaacd641c8a40f69f284`.
 - Revision-session main snapshot: `1e668f5e55bc20f2eb87f4ba49b48833470290d1`. New and repaired nodes record that search; unchanged nodes retain their original audit commit.
-- Original roadmap audit: `f7dd719a392f7b65ad30ef45b26c344d08ba5f91`; revision-session snapshot: `000abc149867f86a79d9708294c89af6b42c37a6`.
-  The README files for ReductiveGroups, ReductiveGroupsPartII, EnhancedDerivedSheaves, BordismFormalGroups, SchemeAndStackFoundations, DGAInfinity and JacobianChallenge are byte-identical between those snapshots.
+- Original roadmap audit: `f7dd719a392f7b65ad30ef45b26c344d08ba5f91`; revision-session snapshot: `000abc149867f86a79d9708294c89af6b42c37a6`. The README files for ReductiveGroups, ReductiveGroupsPartII, EnhancedDerivedSheaves, BordismFormalGroups, SchemeAndStackFoundations, DGAInfinity and JacobianChallenge are byte-identical between those snapshots.
 - Full source snapshots at these revisions were searched, not merely tree filenames. The open-roadmap query returned 476 pull requests. No pins changed and no external writes.
 - Read Tau Ceti `AGENTS.md` and `COORDINATION.md`. New mathematics must advance an existing roadmap target or its genuine prerequisite; no new roadmap PR/issue may be opened by the agent. Improvements to existing code are allowed. Main contributions through Worker, from the user's fork, under those rules.
 
@@ -68,14 +67,7 @@ All below are on roadmap main unless explicitly marked open PR. Existence of a r
 - #1056 FormalConnectionsOpers is open, head `d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a`: formal/local connection and oper geometry. Do not count it as the global LS_G construction.
 - #1202 LanglandsParameterStacks open, head `1e9f8e83ff3b2bae5e764e108c29309e597e905c`: local ℓ-adic parameter stacks. #1235 GeometricSatakeAndFusion open, head `140b5a7ef0911741962fc87bc1f5b32c7e372e0d`: integral p-adic Satake. Generic reusable pieces need scope and comparison checks, not title matching.
 
-The final review observed #1056 advance from `ccaed5e19b5e7e0d5e967ce24b2d1f8ca5f20201`
-to `d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a` on 2026-11-09 and inspected the
-[intervening diff](https://github.com/TauCetiProject/TauCetiRoadmap/compare/ccaed5e19b5e7e0d5e967ce24b2d1f8ca5f20201...d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a).
-It remains a local/formal proposal. Its intrinsic oper groupoids retain central automorphisms;
-Drinfeld–Sokolov coefficient functors are distinct, even for a torus. The current normalized
-local-oper plan does not identify these two notions. The amendment also limits its Kac–Moody
-comparison to complex points and distinguishes coefficient-etale from coefficient-fpqc
-triviality. None of this supplies global local-system stacks or changes an accepted provider.
+The final review observed #1056 advance from `ccaed5e19b5e7e0d5e967ce24b2d1f8ca5f20201` to `d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a` on 2026-11-09 and inspected the [intervening diff](https://github.com/TauCetiProject/TauCetiRoadmap/compare/ccaed5e19b5e7e0d5e967ce24b2d1f8ca5f20201...d4bae7ce50e8fa1e08d9e1b91abacc4beacb721a). It remains a local/formal proposal. Its intrinsic oper groupoids retain central automorphisms; Drinfeld–Sokolov coefficient functors are distinct, even for a torus. The current normalized local-oper plan does not identify these two notions. The amendment also limits its Kac–Moody comparison to complex points and distinguishes coefficient-etale from coefficient-fpqc triviality. None of this supplies global local-system stacks or changes an accepted provider.
 
 The original audit's immutable source links use https://github.com/TauCetiProject/TauCeti/blob/7ca783d4c8d324c9c74efaacd641c8a40f69f284/... and https://github.com/TauCetiProject/TauCetiRoadmap/blob/f7dd719a392f7b65ad30ef45b26c344d08ba5f91/TauCetiRoadmap/... . PR links are https://github.com/TauCetiProject/TauCetiRoadmap/pull/<number> .
 

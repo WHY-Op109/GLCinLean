@@ -2,8 +2,7 @@
 
 Author: Codex (GPT-6.1).
 
-This preserves the independent opinion given to the owner in chat. The recommendations
-are proposals, not owner decisions. Project file links have been made relative.
+This preserves the independent opinion given to the owner in chat. The recommendations are proposals, not owner decisions. Project file links have been made relative.
 
 I would adopt the Hecke reformulation and split Session 4. I would revise several workflow proposals, especially the approval boundary and the replacement of the axiom audit.
 
@@ -17,29 +16,9 @@ For decisions **1–10 in the goal review**, my choices are:
 
 The proposed equivalence is mathematically correct. Here is the argument, including its dependencies.
 
-Write
-\[
-\mathcal R=\operatorname{Rep}(\check G)_{\mathrm{Ran}},\quad
-Q=\operatorname{QCoh}(\operatorname{LS}_{\check G}),\quad
-D=\operatorname{Dmod}_{1/2}(\operatorname{Bun}_G).
-\]
-Let \(R:\mathcal R\to Q\) be spectral localization, \(P\) the vacuum Poincaré object, \(H(V)=V\star P\), and \(T=\Psi\circ F\). State property 2′ as the existence of an equivalence
-\[
-\operatorname{Map}_D(H(V),M)
- \simeq
-\operatorname{Map}_Q(R(V),T(M))
-\]
-**natural jointly in \(V\) and \(M\)**. This must be an equivalence of mapping-space bifunctors, with coherent naturality—not separately chosen equivalences of sets of morphisms.
+Write \[ \mathcal R=\operatorname{Rep}(\check G)_{\mathrm{Ran}},\quad Q=\operatorname{QCoh}(\operatorname{LS}_{\check G}),\quad D=\operatorname{Dmod}_{1/2}(\operatorname{Bun}_G). \] Let \(R:\mathcal R\to Q\) be spectral localization, \(P\) the vacuum Poincaré object, \(H(V)=V\star P\), and \(T=\Psi\circ F\). State property 2′ as the existence of an equivalence \[ \operatorname{Map}_D(H(V),M) \simeq \operatorname{Map}_Q(R(V),T(M)) \] **natural jointly in \(V\) and \(M\)**. This must be an equivalence of mapping-space bifunctors, with coherent naturality—not separately chosen equivalences of sets of morphisms.
 
-For comparison with the paper, assume Thm. 1.2.4. The spectral action supplies \(B:Q\to D\), \(B(E)=E\star P\), with \(H\simeq B\circ R\), and \(L_{\mathrm{coarse}}=B^R\). Put \(U=R^R\). Then
-\[
-H^R\simeq U\circ L_{\mathrm{coarse}}.
-\]
-Thus property 2′ is equivalent to
-\[
-U\circ T\simeq U\circ L_{\mathrm{coarse}}.
-\]
-Since \(U\) is fully faithful, this is equivalent to \(T\simeq L_{\mathrm{coarse}}\), exactly the second property of Cor. 1.6.5. Equivalently, apply \(R\) and use the invertible counit \(RU\simeq\mathrm{Id}_Q\). These are the inputs recorded in [GLC1 §§1.2, 1.4 and 1.6](https://arxiv.org/html/2405.03599v3).
+For comparison with the paper, assume Thm. 1.2.4. The spectral action supplies \(B:Q\to D\), \(B(E)=E\star P\), with \(H\simeq B\circ R\), and \(L_{\mathrm{coarse}}=B^R\). Put \(U=R^R\). Then \[ H^R\simeq U\circ L_{\mathrm{coarse}}. \] Thus property 2′ is equivalent to \[ U\circ T\simeq U\circ L_{\mathrm{coarse}}. \] Since \(U\) is fully faithful, this is equivalent to \(T\simeq L_{\mathrm{coarse}}\), exactly the second property of Cor. 1.6.5. Equivalently, apply \(R\) and use the invertible counit \(RU\simeq\mathrm{Id}_Q\). These are the inputs recorded in [GLC1 §§1.2, 1.4 and 1.6](https://arxiv.org/html/2405.03599v3).
 
 **Defining property 2′ does not require Thm. 1.2.4.** The mapping-space formulation uses \(R,H,P,\Psi\), but neither the spectral action nor \(U\). The construction of \(R\) from evaluation of local systems is given independently in [Gaitsgory’s Outline §4.3](https://arxiv.org/abs/1302.2506v3).
 

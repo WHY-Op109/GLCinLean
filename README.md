@@ -2,19 +2,11 @@
 
 > **Status:** unreviewed, agent-generated, in progress. Nothing here is checked by an expert yet.
 
-A Lean 4 library for geometric representation theory, built on Mathlib and
-[Tau Ceti](https://github.com/TauCetiProject/TauCeti), and on it a faithful statement of the
-global unramified de Rham geometric Langlands conjecture: GLC I (Gaitsgory–Raskin,
-[arXiv 2405.03599v3](https://arxiv.org/abs/2405.03599v3)), Conjecture 1.6.7. The proof comes after
-the statement.
+A Lean 4 library for geometric representation theory, built on Mathlib and [Tau Ceti](https://github.com/TauCetiProject/TauCeti), and on it a faithful statement of the global unramified de Rham geometric Langlands conjecture: GLC I (Gaitsgory–Raskin, [arXiv 2405.03599v3](https://arxiv.org/abs/2405.03599v3)), Conjecture 1.6.7. The proof comes after the statement.
 
 ## Where it stands
 
-The statement is in `GLCinLean/Statement/`. Its main theorem says that a functor with the two
-properties of [GLC1] Cor. 1.6.5 exists, and that every such functor is an equivalence. The objects
-no library has yet (DG categories, D-modules on `Bun_G`, `IndCoh_Nilp(LS_Ǧ)`, …) are placeholders.
-The plan in `plans/` lists every object the statement uses, down to Mathlib and Tau Ceti.
-[`STATUS.md`](STATUS.md) has the details.
+The statement is in `GLCinLean/Statement/`. Its main theorem says that a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and that every such functor is an equivalence. The objects no library has yet (DG categories, D-modules on `Bun_G`, `IndCoh_Nilp(LS_Ǧ)`, …) are placeholders. The plan in `plans/` lists every object the statement uses, down to Mathlib and Tau Ceti. [`STATUS.md`](STATUS.md) has the details.
 
 ## How the work runs
 
