@@ -1,4 +1,4 @@
-# Step 3: build
+# Build
 
 **Goal.** Replace placeholders of the GLC statement by real definitions, working through the plan in `plans/` from the bottom up. Read `plans/README.md` before choosing a task. Use `lake exe tracker ready` to find candidates, then inspect their provider, paper locator and suggested dependencies: placeholders count as proved, and existing upstream declarations that are not imported can appear open. Write missing library code, then use it in the statement. Parts a Tau Ceti roadmap covers go to Tau Ceti through Tau Ceti's Worker; the rest is written here.
 
@@ -22,6 +22,5 @@
   - run a bare `tauceti work` round before ever using `--loop`; Tau Ceti discourages `--only roadmap`, which leaves existing pull requests untended;
   - a pull request labelled `awaiting-author` with no activity for 7 days is closed automatically, so open pull requests are tended at least weekly;
   - without the `--bubble` sandbox (which needs an Incus runtime) the agent runs with the owner's full credentials.
-- No reviews of other people's Tau Ceti pull requests for now.
 - When a paper is wrong, mark the planned declaration `wrong` and amend the plan.
 - The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`. A missing paper is fetched from arXiv as `https://arxiv.org/e-print/<id>v<version>` (the versions are in `docs/references.bib`) and unpacked into `src/`.

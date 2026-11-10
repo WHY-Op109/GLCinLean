@@ -2,7 +2,6 @@ desc = '''Existing provider boundary. These nodes refer to upstream declarations
 
 [[node]]
 id = 'ConnectedSpace'
-kind = 'definition'
 source = '[AGKRRV] §14.1.1; [GLC2] §0.4.1'
 desc = '''Connected, nonempty underlying space of the curve. Provider: Mathlib, pinned commit 1b1ccf4b088b32fa3f23f2de1127433254a81e1e; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
 deps = []

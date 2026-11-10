@@ -10,19 +10,21 @@ the statement.
 
 ## Where it stands
 
-A first draft of the statement exists, built on placeholders for the objects no library has yet
-(DG categories, D-modules on `Bun_G`, `IndCoh_Nilp(LS_Ǧ)`, …). The next step writes the plan of
-every object the statement uses and changes the statement where the plan needs it. [`STATUS.md`](STATUS.md) has the details.
+The statement is in `GLCinLean/Statement/`. Its main theorem says that a functor with the two
+properties of [GLC1] Cor. 1.6.5 exists, and that every such functor is an equivalence. The objects
+no library has yet (DG categories, D-modules on `Bun_G`, `IndCoh_Nilp(LS_Ǧ)`, …) are placeholders.
+The plan in `plans/` lists every object the statement uses, down to Mathlib and Tau Ceti.
+[`STATUS.md`](STATUS.md) has the details.
 
 ## How the work runs
 
-Agents do the work, one session per step, each started from a prompt in `prompts/`:
+Agents do the work, each session started from a prompt in `prompts/`:
 
-| Prompt | Step |
+| Prompt | What it does |
 |---|---|
-| [`plan.md`](prompts/plan.md) | write the plan in `plans/` and change the existing code where the plan needs it |
 | [`build.md`](prompts/build.md) | replace placeholders by real definitions, working up the plan |
 | [`review.md`](prompts/review.md) | check that definitions mean what the papers say (run by an agent that did not write them) |
+| [`next-steps.md`](prompts/next-steps.md) | one-off sessions to run before the build continues |
 
 [`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
 
@@ -30,14 +32,16 @@ Agents do the work, one session per step, each started from a prompt in `prompts
 
 | Path | What it is |
 |---|---|
-| `GLCinLean/` | the Lean code: the statement (`Abstract.lean`), what it is built from (`Foundations.lean`), and the `@[placeholder]` attribute |
-| `plans/` | the plan, in the format of the [tracker](https://github.com/bridgekat/tracker) (written in the next step) |
+| `GLCinLean/` | the Lean code: the statement (`Statement/Conjecture.lean`), its enhanced categorical placeholders (`Statement/Enhanced.lean`), and the `@[placeholder]` attribute |
+| `plans/` | the plan, in the format of the [tracker](https://github.com/bridgekat/tracker) |
 | `tools/tracker` | the tracker, a git submodule |
+| `tools/check-statement-axioms.lean` | prints the axioms of the statement's declarations (the done check) |
 | `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |
-| `prompts/` | one prompt per step |
+| `prompts/` | the prompts the sessions start from |
 | `docs/references.bib` | the papers cited, with their arXiv versions |
 | `docs/papers.md` | one line per paper on what it covers, and how to search its TeX |
-| `notes/reviews/` | review reports (from the first review on) |
+| `docs/blueprint-providers.md` | the Mathlib, Tau Ceti and roadmap snapshots the plan was checked against |
+| `notes/reviews/` | review reports, while their findings are open |
 
 ## Build
 

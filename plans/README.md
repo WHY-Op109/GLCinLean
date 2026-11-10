@@ -1,7 +1,7 @@
 # Blueprint of the de Rham statement
 
-This plan follows [GLC1] Corollary 1.6.5, Conjecture 1.6.7 and Proposition 1.7.2,
-not the former Abstract/Foundations draft. The target is any algebraically closed field of
+This plan follows [GLC1] Corollary 1.6.5, Conjecture 1.6.7 and Proposition 1.7.2.
+The target is any algebraically closed field of
 characteristic zero, a smooth proper connected curve, a pinned reductive group, and a chosen
 theta characteristic. It includes the constructions that identify the categories, actions,
 coarsening and coarse functor, including the proofs needed to construct their actions and
@@ -31,11 +31,13 @@ blueprint. Its implementation goes through Tau Ceti Worker under the upstream ru
 Once its upstream name is established, move its plan to the upstream module, rename every
 reference in the same commit, and remove the tentative local name. Do not implement both APIs.
 
-The required provenance descriptions and suggested mathematical dependencies are deliberately
-retained on implemented declarations. Tracker lint reports them as superseded metadata and
-exits successfully. Lean and its docstrings remain authoritative for the compiled object.
-The suggested edges describe the replacement work; the tracker's real graph for a placeholder
-cannot discover the missing mathematics hidden behind it.
+On declarations that already exist (the statement's placeholders and the upstream leaves),
+`desc` and `deps` are kept although `lake exe tracker lint` reports them as superseded; `kind`
+is not kept, because Lean gives it. The reason: a placeholder has no real dependencies in Lean,
+so its suggested `deps` are the only link from the statement to the rest of the plan, and its
+`desc` records its provider and how it is to be replaced. The `desc` of an upstream leaf says
+where it falls short of the paper (for example, ordinary sheaves, not the enhanced category).
+Lean and its docstrings remain authoritative for the compiled object.
 
 ## Construction chain
 
@@ -77,6 +79,5 @@ a nontrivial split torus or GL₂ on P¹ with actual duality and theta data; and
 normalization. In particular, never prove a vacuous statement by putting the needed existence
 or equivalence in Setting, nor choose a zero category to stand for a geometric category.
 
-The provider snapshot and open-roadmap decisions are in `docs/blueprint-providers.md`;
-`notes/blueprint-paper-evidence.md` records the source-to-object inventory. `STATUS.md` records
-verification and the owner approval boundary.
+The provider snapshots and open roadmap pull requests are in `docs/blueprint-providers.md`.
+`STATUS.md` records the current state and the open decisions.
