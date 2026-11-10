@@ -13,48 +13,66 @@ source = '[GLC1] §§1.1–1.3; [AGKRRV] §§0.9.1, 14.1.1; [GLC2] §0.4.1'
 
 [[node]]
 id = 'GLCinLean.Statement.QCohLS'
-desc = 'PLACEHOLDER. The monoidal DG category `QCoh(LS_Ǧ)` of the derived stack of de Rham local systems ([GLC1] §§0.1.1, 1.2.2). Provider: here.'
-deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.LocalSystems.deRham']
+desc = 'PLACEHOLDER. The DG category `QCoh(LS_Ǧ)` of quasi-coherent sheaves on the derived stack of de Rham local systems ([GLC1] §§0.1.1, 1.2.2). Provider: here.'
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.LocalSystems.deRham']
 source = '[GLC1] §§0.1.1, 1.2.2'
 
 [[node]]
 id = 'GLCinLean.Statement.DmodHalf'
-desc = 'PLACEHOLDER. Half-twisted D-modules on `Bun_G`, with its spectral `QCoh(LS_Ǧ)`-action ([GLC1] §§1.1.1–1.1.4, Thm. 1.2.4). The twist is the gerbe of square roots of `det_BunG`; the chosen theta characteristic trivializes it. Provider: here.'
-deps = ['GLCinLean.Statement.QCohLS', 'GLCinLean.Statement.DGModule', 'GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.Spectral.action']
-source = '[GLC1] §§1.1.1–1.1.4, Thm. 1.2.4'
+desc = 'PLACEHOLDER. The DG category `Dmod_½(Bun_G)` of half-twisted D-modules on `Bun_G` ([GLC1] §§1.1.1–1.1.4). The twist is the gerbe of square roots of `det_BunG`; the chosen theta characteristic trivializes it. Provider: here.'
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Automorphic.halfTwistedDModules']
+source = '[GLC1] §§1.1.1–1.1.4'
 
 [[node]]
 id = 'GLCinLean.Statement.IndCohNilp'
-desc = 'PLACEHOLDER. Ind-coherent sheaves with nilpotent singular support on the derived local-system stack, with their `QCoh(LS_Ǧ)`-action and standard t-structure ([GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5). Provider: here.'
-deps = ['GLCinLean.Statement.QCohLS', 'GLCinLean.Statement.TStructuredDGModule', 'GLCinLean.LocalSystems.indcohNilpotent']
+desc = 'PLACEHOLDER. Ind-coherent sheaves with nilpotent singular support on the derived local-system stack, with their standard t-structure ([GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5). Provider: here.'
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.TStructuredDGCat', 'GLCinLean.LocalSystems.indcohNilpotent']
 source = '[GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5'
 
 [[node]]
 id = 'GLCinLean.Statement.Psi'
-desc = 'PLACEHOLDER. The continuous linear coarsening functor `Ψ_Nilp,{0}` ([GLC1] §1.6.3; [ArinkinGaitsgory] Prop. 4.4.5). Provider: here.'
-deps = ['GLCinLean.Statement.IndCohNilp', 'GLCinLean.Statement.QCohLS', 'GLCinLean.Statement.MonoidalDGCat.regularModule', 'GLCinLean.Statement.LinFun', 'GLCinLean.LocalSystems.psiNilpotent']
+desc = 'PLACEHOLDER. The continuous coarsening functor `Ψ_Nilp,{0} : IndCoh_Nilp(LS_Ǧ) → QCoh(LS_Ǧ)` ([GLC1] §1.6.3; [ArinkinGaitsgory] Prop. 4.4.5). Provider: here.'
+deps = ['GLCinLean.Statement.IndCohNilp', 'GLCinLean.Statement.QCohLS', 'GLCinLean.Statement.TStructuredDGCat.toDGCat', 'GLCinLean.Statement.DGFun', 'GLCinLean.LocalSystems.psiNilpotent']
 source = '[GLC1] §1.6.3; [ArinkinGaitsgory] Prop. 4.4.5'
 
 [[node]]
-id = 'GLCinLean.Statement.LCoarse'
-desc = 'PLACEHOLDER. The coarse Langlands functor, right adjoint to the spectral action on the vacuum Poincaré object ([GLC1] §§1.4.1–1.4.5). Provider: here.'
-deps = ['GLCinLean.Statement.DmodHalf', 'GLCinLean.Statement.QCohLS', 'GLCinLean.Statement.MonoidalDGCat.regularModule', 'GLCinLean.Statement.LinFun', 'GLCinLean.Langlands.coarse']
-source = '[GLC1] §§1.4.1–1.4.5'
+id = 'GLCinLean.Statement.RepRan'
+desc = 'PLACEHOLDER. The DG category `Rep(Ǧ)_Ran`: the de Rham version of the category `Rep(Ǧ)` spread over the Ran space of the curve ([GLC1] §1.2.1; [GaitsgoryOutline] §4.2). Provider: here.'
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Hecke.ranRepresentations']
+source = '[GLC1] §1.2.1; [GaitsgoryOutline] §4.2'
+
+[[node]]
+id = 'GLCinLean.Statement.Loc'
+desc = 'PLACEHOLDER. The spectral localization functor `Loc_Ǧ^spec : Rep(Ǧ)_Ran → QCoh(LS_Ǧ)` ([GLC1] §1.2.2; [GaitsgoryOutline] §4.3). Provider: here. Replacement contract: the continuous functor underlying Spectral.localization, with the Ran source although the display in [GLC1] §1.2.2 writes `Rep(Ǧ)`.'
+deps = ['GLCinLean.Statement.RepRan', 'GLCinLean.Statement.QCohLS', 'GLCinLean.Statement.DGFun', 'GLCinLean.Spectral.localization']
+source = '[GLC1] §1.2.2; [GaitsgoryOutline] §4.3'
+
+[[node]]
+id = 'GLCinLean.Statement.heckeActionRight'
+desc = 'PLACEHOLDER. The Hecke action of `Rep(Ǧ)_Ran` on `Dmod_½(Bun_G)`, defined by the naive geometric Satake functor and the Hecke functors ([GLC1] §1.2.1), on a fixed object `M`: the continuous functor `V ↦ V ⋆ M`. Provider: here. Replacement contract: the action functor of Hecke.action with its second variable fixed at `M`; it uses no action of `QCoh(LS_Ǧ)`.'
+deps = ['GLCinLean.Statement.RepRan', 'GLCinLean.Statement.DmodHalf', 'GLCinLean.Statement.DGCat.Obj', 'GLCinLean.Statement.DGFun', 'GLCinLean.Hecke.action']
+source = '[GLC1] §1.2.1'
+
+[[node]]
+id = 'GLCinLean.Statement.vacuumPoincare'
+desc = 'PLACEHOLDER. The vacuum Poincaré object `Poinc^{Vac,glob}_{G,!} = 𝔭_! χ^*(exp)` of `Dmod_½(Bun_G)` ([GLC1] §1.3.7). Provider: here.'
+deps = ['GLCinLean.Statement.DmodHalf', 'GLCinLean.Statement.DGCat.Obj', 'GLCinLean.Whittaker.vacuumPoincare']
+source = '[GLC1] §1.3.7'
 
 [[node]]
 id = 'GLCinLean.Statement.IsLanglandsFunctor'
-desc = 'PLACEHOLDER. The two characterizing properties of [GLC1] Cor. 1.6.5, for the continuous linear functors of Prop. 1.7.2: compact objects have bounded-below images and coarsening is naturally equivalent to the coarse Langlands functor. The bound may depend on the object. Provider: here. Keep this formula as its category and functor placeholders are replaced.'
-deps = ['GLCinLean.Statement.DmodHalf', 'GLCinLean.Statement.IndCohNilp', 'GLCinLean.Statement.Psi', 'GLCinLean.Statement.LCoarse', 'GLCinLean.Statement.LinFun.obj', 'GLCinLean.Statement.LinFun.comp', 'GLCinLean.Statement.LinIso', 'GLCinLean.Statement.DGCat.IsCompact', 'GLCinLean.Statement.TStructuredDGModule.IsEventuallyCoconnective']
-source = '[GLC1] Corollary 1.6.5 and Proposition 1.7.2'
+desc = 'PLACEHOLDER. The two characterizing properties of [GLC1] Cor. 1.6.5, for a continuous functor `F` from `Dmod_½(Bun_G)` to `IndCoh_Nilp(LS_Ǧ)`: `F` sends compact objects to bounded-below objects, with a bound that may depend on the object; and there is an equivalence `Maps(V ⋆ Poinc, M) ≃ Maps(Loc V, Ψ (F M))` of mapping spaces, natural in `V` and `M` together. The second property is the `Ψ ∘ F ≃ 𝕃_{G,coarse}` of the paper, as an equivalence of functors of ∞-categories, in an equal form; the two forms agree by [GLC1] Thm. 1.2.4 (Langlands.isLanglandsFunctor_iff_comp_psi_iso_coarse). Provider: here. Keep this formula as its category and functor placeholders are replaced.'
+deps = ['GLCinLean.Statement.DmodHalf', 'GLCinLean.Statement.IndCohNilp', 'GLCinLean.Statement.Psi', 'GLCinLean.Statement.Loc', 'GLCinLean.Statement.heckeActionRight', 'GLCinLean.Statement.vacuumPoincare', 'GLCinLean.Statement.DGFun.obj', 'GLCinLean.Statement.DGFun.comp', 'GLCinLean.Statement.DGFun.MapsEquiv', 'GLCinLean.Statement.DGCat.IsCompact', 'GLCinLean.Statement.TStructuredDGCat.IsEventuallyCoconnective']
+source = '[GLC1] Corollary 1.6.5, Theorem 1.2.4 and §§1.2.1–1.2.2'
 
 [[node]]
 id = 'GLCinLean.Statement.isLanglandsFunctor_iff'
-desc = 'Implemented logical unfolding lemma. Introduction and elimination of the two characterizing properties ([GLC1] Cor. 1.6.5 and Prop. 1.7.2). Provider: here.'
+desc = 'Implemented logical unfolding lemma. Introduction and elimination of the two characterizing properties ([GLC1] Cor. 1.6.5). Provider: here.'
 deps = ['GLCinLean.Statement.IsLanglandsFunctor']
-source = '[GLC1] Corollary 1.6.5 and Proposition 1.7.2'
+source = '[GLC1] Corollary 1.6.5'
 
 [[node]]
 id = 'GLCinLean.Statement.exists_isLanglandsFunctor_and_forall_isLanglandsFunctor_imp_isEquivalence'
-desc = 'Main theorem: sole admitted proof. The de Rham geometric Langlands conjecture, in its characterized-functor form: a continuous linear functor with the properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: here.'
-deps = ['GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Statement.LinFun.IsEquivalence']
-source = '[GLC1] Corollary 1.6.5, Conjecture 1.6.7 and Proposition 1.7.2'
+desc = 'Main theorem: sole admitted proof. The de Rham geometric Langlands conjecture, in its characterized-functor form: a continuous functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence ([GLC1] Conj. 1.6.7). The second property is in its equal form with the Hecke action. Provider: here.'
+deps = ['GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Statement.DGFun.IsEquivalence']
+source = '[GLC1] Corollary 1.6.5 and Conjecture 1.6.7'

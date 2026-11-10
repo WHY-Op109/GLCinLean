@@ -20,3 +20,10 @@ kind = 'theorem'
 desc = 'The cohomology of the coarse functor agrees naturally with the vacuum Whittaker coefficient. Provider: here.'
 deps = ['GLCinLean.Langlands.coarse', 'GLCinLean.Whittaker.vacuumCoefficient', 'GLCinLean.Sheaves.qcohGlobalSections']
 source = '[GLC1] §1.4.6'
+
+[[node]]
+id = 'GLCinLean.Langlands.isLanglandsFunctor_iff_comp_psi_iso_coarse'
+kind = 'theorem'
+desc = 'Comparison of the Hecke form of the second property with the form of [GLC1] Cor. 1.6.5: a continuous functor F satisfies Statement.IsLanglandsFunctor if and only if it sends compact objects to bounded-below objects and Ψ ∘ F is naturally equivalent to Langlands.coarse as a functor of ∞-categories. Proof: by Spectral.action the Hecke action factors through spectral localization, so V ⋆ Poinc ≃ Loc V ⋆ Poinc naturally in V; Langlands.coarse is right adjoint to Langlands.coarseLeftAdjoint; and the right adjoint of spectral localization is fully faithful, so the Yoneda lemma removes it. The mapping-space equivalence gives an equivalence of functors of ∞-categories; that it can be chosen k-linear is not claimed. A theorem of the proof, not used by the statement. Provider: here.'
+deps = ['GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Langlands.coarse', 'GLCinLean.Langlands.coarseLeftAdjoint', 'GLCinLean.Spectral.action', 'GLCinLean.Spectral.localization_rightAdjoint_fullyFaithful', 'GLCinLean.Infinity.rightAdjoint']
+source = '[GLC1] Theorem 1.2.4, §§1.2.2, 1.2.5, 1.4.2–1.4.5 and Corollary 1.6.5'
