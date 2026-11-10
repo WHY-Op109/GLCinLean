@@ -10,6 +10,6 @@ source = '[GLC1] §1.1.1; [IndCoh] §1.4'
 [[node]]
 id = 'GLCinLean.Sheaves.determinant'
 kind = 'definition'
-desc = 'Determinant of a perfect complex, tensor and dual rules and base-change compatibility. Provider: here.'
+desc = 'Determinant of a perfect complex, tensor and dual rules and base-change compatibility. Provider: here; on rings it is `detLine` of roadmap PadicMeasuresIwasawaAlgebras (“Determinant lines of perfect complexes”), and on vector bundles it is from roadmap AlgebraicVectorBundles (“symmetric and exterior powers, determinant”).'
 deps = ['GLCinLean.Sheaves.perfectComplex']
 source = '[GLC1] §§1.1.1, 1.3.3'
