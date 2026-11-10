@@ -1,0 +1,7 @@
+desc = 'Mapping spaces and homotopy-coherent functors between quasicategories. Owner: the Tau Ceti roadmap BordismFormalGroups.'
+
+[[node]]
+id = 'GLCinLean.Infinity.mappingSpaces'
+kind = 'definition'
+desc = 'Mapping spaces and homotopy-coherent functors between quasicategories, with composition and equivalences. Provider: Tau Ceti existing SSet.rightMappingSpace and Mathlib SSet.QCat; remaining coherent composition/functor comparisons are BordismFormalGroups F6.5, categorical model and functor spaces. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `SSet.Quasicategory` (`Mathlib.AlgebraicTopology.Quasicategory.Basic`), `SSet.rightMappingSpace` (`TauCeti.AlgebraicTopology.Quasicategory.RightMappingSpace`), `SSet.QCat` (`Mathlib.AlgebraicTopology.Quasicategory.StrictBicategory`).'
+source = '[IndCoh] §0.6.2'

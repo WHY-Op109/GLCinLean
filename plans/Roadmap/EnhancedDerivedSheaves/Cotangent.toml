@@ -1,0 +1,8 @@
+desc = 'The cotangent complex of an animated commutative algebra. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Derived.affineCotangentComplex'
+kind = 'definition'
+desc = 'The cotangent complex of an animated algebra, representing derived derivations with transitivity and base-change API Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:cotangent-export.1 cotangentComplex; ordinary input DerivedModuleAlgebra §§0.4, 0.6, 0.8–0.11. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+deps = ['GLCinLean.Derived.commutativeAlgebra', 'GLCinLean.Derived.affineModules']
+source = '[ArinkinGaitsgory] §2.1 and Appendix B.2'

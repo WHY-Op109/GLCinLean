@@ -1,25 +1,6 @@
 desc = 'Planned library module. AlgebraicGeometry / Group / Pinning. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented.'
 
 [[node]]
-id = 'GLCinLean.Groups.pinnedData'
-kind = 'definition'
-desc = 'A reductive group with pinning yields its Borel B, torus T, unipotent radical N, simple roots and normalized simple root characters. Provider: Tau Ceti existing Pinning, SplitMaximalTorus and IsSimpleRoot; remaining unipotent-radical/root-character comparison is ReductiveGroups Layers 5, 7 and 9B. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`), `TauCeti.SplitMaximalTorus.IsSimpleRoot` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`).'
-source = '[GLC1] §§1.3.1–1.3.6'
-
-[[node]]
-id = 'GLCinLean.Groups.twoRho'
-kind = 'definition'
-desc = 'Realize the positive-coroot sum as an actual cocharacter of the specified group torus, using TauCeti.twoWeylVector on the flipped extracted datum; prove the root-character comparison needed by the Whittaker twist. Do not redefine the abstract root sum. Provider: Tau Ceti roadmap ReductiveGroups Layers 7 and 9B root/cocharacter dictionary; sum positive coroots using Mathlib root data. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `RootPairing.Base` (`Mathlib.LinearAlgebra.RootSystem.Base`), `TauCeti.twoWeylVector` (`TauCeti.LinearAlgebra.RootSystem.Weyl.Vector`).'
-deps = ['GLCinLean.Groups.pinnedData', 'GLCinLean.Groups.rootDatum']
-source = '[GLC1] §§1.3.4–1.3.6'
-
-[[node]]
-id = 'GLCinLean.Groups.pinning_exists'
-kind = 'theorem'
-desc = 'Every reductive group over an algebraically closed field of characteristic zero admits a pinning for some torus rank; construct actual witnesses, including a positive-rank example. Provider: Tau Ceti roadmap ReductiveGroups Layer 9B. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Upstream declarations used: `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`), `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`).'
-source = '[GLC2] §0.4.1; [GLC1] §1.3.6'
-
-[[node]]
 id = 'GLCinLean.Groups.chevalleyInvolution'
 kind = 'definition'
 desc = 'The Chevalley involution of a pinned split reductive group: the automorphism inducing −w0 on the character lattice and preserving the pinning, obtained from the isomorphism theorem applied to the automorphism −w0 of the based root datum. Prove that pullback along it sends the irreducible representation of highest weight μ to that of highest weight −w0 μ. Tau Ceti has serreChevalleyInvolution, the Lie-algebra involution on a Serre presentation, which is a different object and not a duplicate. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 (isomorphism theorem) for the input; the involution is Missing and implemented here unless that roadmap claims it. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node.'

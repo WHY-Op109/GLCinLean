@@ -1,7 +1,0 @@
-desc = 'Planned library module. Use existing provider interfaces directly; route roadmap-owned work through Tau Ceti Worker.'
-
-[[node]]
-id = 'GLCinLean.Curves.serreTrace'
-kind = 'definition'
-desc = 'Trace H1(X, omega_X) to k for a smooth proper connected curve, with Serre duality normalization and base-change compatibility Provider: Tau Ceti roadmap JacobianChallenge Layer B Serre duality and Layer C relative cohomology. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `AlgebraicGeometry.Scheme.relativeDifferentials` (`TauCeti.AlgebraicGeometry.Modules.Differentials.Basic`), `AlgebraicGeometry.SmoothOfRelativeDimension` (`Mathlib.AlgebraicGeometry.Morphisms.Smooth`), `AlgebraicGeometry.IsProper` (`Mathlib.AlgebraicGeometry.Morphisms.Proper`), `ConnectedSpace` (`Mathlib.Topology.Connected.Basic`).'
-source = '[GLC1] §§1.3.4–1.3.6'
