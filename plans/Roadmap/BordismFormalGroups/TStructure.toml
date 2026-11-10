@@ -1,0 +1,8 @@
+desc = 't-structures on stable enhanced categories. Owner: the Tau Ceti roadmap BordismFormalGroups.'
+
+[[node]]
+id = 'GLCinLean.Infinity.tStructure'
+kind = 'definition'
+desc = 'Nonpositive and nonnegative subcategories, orthogonality, shifts and truncation triangles on a stable enhanced category. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 stable enhancements and EnhancedDerivedSheaves E1.3 standard t-structure comparison; open HigherToposTheory PR #1901 proposes future ownership. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `CategoryTheory.Triangulated.TStructure` (`Mathlib.CategoryTheory.Triangulated.TStructure.Basic`).'
+deps = ['GLCinLean.Infinity.stableCategory']
+source = '[IndCoh] §0.6.5'

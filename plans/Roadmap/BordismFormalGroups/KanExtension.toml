@@ -1,0 +1,8 @@
+desc = 'Coherent right Kan extensions of enhanced categories. Owner: the Tau Ceti roadmap BordismFormalGroups.'
+
+[[node]]
+id = 'GLCinLean.Infinity.rightKanExtension'
+kind = 'definition'
+desc = 'Right Kan extension of coherent diagrams, computed objectwise by limits over the appropriate slice infinity-categories, with restriction and uniqueness equivalences. Ordinary Kan extension is not a substitute for this enhanced universal property. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 and EnhancedDerivedSheaves E3.1 coherent Kan extensions. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.presentableCategory']
+source = '[IndCoh] §10.1.2'

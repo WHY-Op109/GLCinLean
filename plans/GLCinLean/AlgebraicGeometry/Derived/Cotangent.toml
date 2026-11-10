@@ -1,15 +1,8 @@
-desc = "Planned library module. AlgebraicGeometry / Derived / Cotangent. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'Planned library module. AlgebraicGeometry / Derived / Cotangent. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented.'
 
 [[node]]
-id = "GLCinLean.Derived.cotangentComplex"
-kind = "definition"
-desc = "Cotangent complexes representing derivations, transitivity and smooth descent. Provider: Missing global derived-stack descent construction; consume Tau Ceti roadmap EnhancedDerivedSheaves E5:cotangent-export.1 affine cotangent complex without duplicating it. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Derived.affineCotangentComplex", "GLCinLean.Derived.artinStack"]
-source = "[ArinkinGaitsgory] §2.1 and Appendix B.2"
-
-[[node]]
-id = "GLCinLean.Derived.affineCotangentComplex"
-kind = "definition"
-desc = "The cotangent complex of an animated algebra, representing derived derivations with transitivity and base-change API Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:cotangent-export.1 cotangentComplex; ordinary input DerivedModuleAlgebra §§0.4, 0.6, 0.8–0.11. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Derived.commutativeAlgebra", "GLCinLean.Derived.affineModules"]
-source = "[ArinkinGaitsgory] §2.1 and Appendix B.2"
+id = 'GLCinLean.Derived.cotangentComplex'
+kind = 'definition'
+desc = 'Cotangent complexes representing derivations, transitivity and smooth descent. Provider: Missing global derived-stack descent construction; consume Tau Ceti roadmap EnhancedDerivedSheaves E5:cotangent-export.1 affine cotangent complex without duplicating it. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+deps = ['GLCinLean.Derived.affineCotangentComplex', 'GLCinLean.Derived.artinStack']
+source = '[ArinkinGaitsgory] §2.1 and Appendix B.2'

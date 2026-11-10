@@ -1,0 +1,8 @@
+desc = 'Compact generation of presentable categories. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Infinity.compactGeneration'
+kind = 'definition'
+desc = 'Generation under colimits by a small full subcategory of compact objects. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:presentability.1 and E3.3 compact-generation criterion. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+deps = ['GLCinLean.Infinity.compactObject', 'GLCinLean.Infinity.indCompletion']
+source = '[CompactGeneration] §1.2.2; [GLC1] §1.6.4'

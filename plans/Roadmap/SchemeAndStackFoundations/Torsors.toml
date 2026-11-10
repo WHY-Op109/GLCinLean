@@ -1,0 +1,7 @@
+desc = 'Torsors under group schemes in the fppf topology. Owner: the Tau Ceti roadmap SchemeAndStackFoundations.'
+
+[[node]]
+id = 'GLCinLean.Stacks.groupTorsor'
+kind = 'definition'
+desc = 'Torsors under group schemes in the fppf topology, with local trivializations, descent and associated bundles. Provider: Tau Ceti existing CategoryTheory.Sheaf.Torsor; remaining fppf representability, contracted products and twisting are SchemeAndStackFoundations §§1.15–1.16. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`), `CategoryTheory.Sheaf.Torsor` (`TauCeti.CategoryTheory.Sites.NonabelianCohomology.Torsor`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`).'
+source = '[GLC1] §§1.1.1, 1.3.1'

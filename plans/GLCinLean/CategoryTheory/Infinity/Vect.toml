@@ -1,8 +1,0 @@
-desc = 'Planned library module for CategoryTheory / Infinity / Vect. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker.'
-
-[[node]]
-id = 'GLCinLean.Infinity.derivedVect'
-kind = 'definition'
-desc = 'Enhanced localization of complexes of k-vector spaces at quasi-isomorphisms, with derived tensor product and standard t-structure. Provider: Tau Ceti existing DG nerve and K-injective homotopy comparison; remaining enhancement, tensor and t-structure are EnhancedDerivedSheaves E1.3 enhancedDerived, E1.4 derivedTensor and E5:abstract.4 derivedTensor_symmetricMonoidal. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `CochainComplex` (`Mathlib.Algebra.Homology.HomologicalComplex`), `TauCeti.DGCategory` (`TauCeti.CategoryTheory.DG.Basic`), `TauCeti.dgNerve` (`TauCeti.AlgebraicTopology.DGNerve.Basic`), `TauCeti.KInjectiveDGCategory` (`TauCeti.CategoryTheory.DG.CochainComplex.KInjective`), `TauCeti.KInjectiveDGCategory.dgNerveHomotopyCategoryEquiv` (`TauCeti.CategoryTheory.DG.CochainComplex.KInjective`), `DerivedCategory.TStructure.t` (`Mathlib.Algebra.Homology.DerivedCategory.TStructure`).'
-deps = ['GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.monoidalCategory']
-source = '[AGKRRV] §0.9.3; [IndCoh] §0.6.4'

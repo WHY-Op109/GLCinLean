@@ -1,0 +1,8 @@
+desc = 'Presentable stable k-linear categories. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Infinity.linearCategory'
+kind = 'definition'
+desc = 'Presentable stable categories with an action of complexes of k-vector spaces; retain the actual field k. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:abstract.2 module objects and E5:presentability.2 presentable tensor product. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+deps = ['GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.presentableCategory', 'GLCinLean.Infinity.derivedVect', 'GLCinLean.Infinity.moduleCategory']
+source = '[AGKRRV] §0.9.4; [IndCoh] §0.6.4'

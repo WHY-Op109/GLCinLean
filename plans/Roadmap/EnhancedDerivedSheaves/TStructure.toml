@@ -1,0 +1,8 @@
+desc = 'Eventually coconnective objects of a t-structured category. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Infinity.eventuallyCoconnective'
+kind = 'definition'
+desc = 'Union over integer n of C^{≥n}; bounded below, with shift and membership API. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E1.3 standard t-structure and bounded-below subcategories. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+deps = ['GLCinLean.Infinity.tStructure']
+source = '[GLC1] §1.6.3; [IndCoh] §0.6.5'

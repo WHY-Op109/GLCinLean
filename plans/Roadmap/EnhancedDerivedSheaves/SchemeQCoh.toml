@@ -1,0 +1,8 @@
+desc = 'The enhanced quasi-coherent derived category of a classical scheme. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Sheaves.schemeQCoh'
+kind = 'definition'
+desc = 'Enhanced quasicoherent derived sheaves on qcqs classical schemes, affine comparison and ordinary homotopy-category comparison Provider: Tau Ceti roadmap EnhancedDerivedSheaves E1.8 QuasicoherentDerived and quasicoherentDerived_affine; SchemeAndStackFoundations §2.18 DQCoh. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `AlgebraicGeometry.Scheme.Modules` (`Mathlib.AlgebraicGeometry.Modules.Sheaf`), `SheafOfModules.IsQuasicoherent` (`Mathlib.Algebra.Category.ModuleCat.Sheaf.Quasicoherent`), `DerivedCategory` (`Mathlib.Algebra.Homology.DerivedCategory.Basic`).'
+deps = ['GLCinLean.Infinity.derivedVect', 'GLCinLean.Derived.affineModules']
+source = '[IndCoh] §0.6.7'
