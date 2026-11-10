@@ -1,29 +1,29 @@
-desc = "Satake construction prerequisite. Missing mathematics is planned explicitly; no placeholders belong in library code. The DG enhancement and determinant normalization are separate from the heart equivalence."
+desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
 
 [[node]]
-id = "GLCinLean.Satake.semiInfiniteOrbits"
-kind = "definition"
-desc = "N((t))-orbits and opposite-N((t))-orbits indexed by coweights, as attractor/repeller loci for a regular dominant cocharacter; define finite-type intersections with Schubert closures. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.schubertStratification", "GLCinLean.Hecke.loopArcGroups", "GLCinLean.Groups.pinnedData"]
-source = "[MV] §3 and Proposition 3.1"
+id = 'GLCinLean.Satake.semiInfiniteOrbits'
+kind = 'definition'
+desc = 'N((t))-orbits and opposite-N((t))-orbits indexed by coweights, as attractor/repeller loci for a regular dominant cocharacter; define finite-type intersections with Schubert closures. Provider: here.'
+deps = ['GLCinLean.Hecke.schubertStratification', 'GLCinLean.Hecke.loopArcGroups', 'GLCinLean.Groups.pinnedData']
+source = '[MV] §3 and Proposition 3.1'
 
 [[node]]
-id = "GLCinLean.Satake.semiInfiniteIntersection_dimension"
-kind = "theorem"
-desc = "Prove the nonemptiness and pure-dimension formulas for semi-infinite intersections with Schubert strata/closures, with dominant and antidominant hypotheses kept distinct. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Satake.semiInfiniteOrbits", "GLCinLean.Groups.basedRootDatum"]
-source = "[MV] Theorem 3.2"
+id = 'GLCinLean.Satake.semiInfiniteIntersection_dimension'
+kind = 'theorem'
+desc = 'Prove the nonemptiness and pure-dimension formulas for semi-infinite intersections with Schubert strata/closures, with dominant and antidominant hypotheses kept distinct. Provider: here.'
+deps = ['GLCinLean.Satake.semiInfiniteOrbits', 'GLCinLean.Groups.basedRootDatum']
+source = '[MV] Theorem 3.2'
 
 [[node]]
-id = "GLCinLean.Satake.weightFunctors"
-kind = "definition"
-desc = "Compactly supported cohomology on the semi-infinite orbit in degree 2ρ(ν), where 2ρ is the sum of positive roots, a character paired with the coweight ν, with its coweight grading and comparison to the repeller-support functor. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Satake.sphericalHeart", "GLCinLean.Satake.semiInfiniteOrbits", "GLCinLean.DModules.hyperbolicRestriction", "GLCinLean.DModules.hyperbolicRestriction_isIso"]
-source = "[MV] Theorem 3.5"
+id = 'GLCinLean.Satake.weightFunctors'
+kind = 'definition'
+desc = 'Compactly supported cohomology on the semi-infinite orbit in degree 2ρ(ν), where 2ρ is the sum of positive roots, a character paired with the coweight ν, with its coweight grading and comparison to the repeller-support functor. Provider: here.'
+deps = ['GLCinLean.Satake.sphericalHeart', 'GLCinLean.Satake.semiInfiniteOrbits', 'GLCinLean.DModules.hyperbolicRestriction', 'GLCinLean.DModules.hyperbolicRestriction_isIso']
+source = '[MV] Theorem 3.5'
 
 [[node]]
-id = "GLCinLean.Satake.weightFunctors_exact_faithful"
-kind = "theorem"
-desc = "Prove concentration in the specified degree, exactness, and faithfulness of the sum of weight functors; identify the sum with total cohomology and prove independence under compatible changes of Borel and torus. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Satake.weightFunctors", "GLCinLean.Satake.semiInfiniteIntersection_dimension"]
-source = "[MV] Theorems 3.5–3.6 and Corollary 3.7"
+id = 'GLCinLean.Satake.weightFunctors_exact_faithful'
+kind = 'theorem'
+desc = 'Prove concentration in the specified degree, exactness, and faithfulness of the sum of weight functors; identify the sum with total cohomology and prove independence under compatible changes of Borel and torus. Provider: here.'
+deps = ['GLCinLean.Satake.weightFunctors', 'GLCinLean.Satake.semiInfiniteIntersection_dimension']
+source = '[MV] Theorems 3.5–3.6 and Corollary 3.7'

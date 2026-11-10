@@ -1,15 +1,15 @@
-desc = "Planned library module for AlgebraicGeometry / DModules / Holonomic. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+desc = 'Holonomic and regular holonomic D-modules.'
 
 [[node]]
-id = "GLCinLean.DModules.holonomic"
-kind = "definition"
-desc = "Holonomic D-modules and stability of the particular exponential pullback under the operations used for the vacuum object; provide a nonzero example. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.DModules.rightCrystals"]
-source = "[GLC1] §1.3.7; [CompactGeneration] §3.3"
+id = 'GLCinLean.DModules.holonomic'
+kind = 'definition'
+desc = 'Holonomic D-modules and stability of the particular exponential pullback under the operations used for the vacuum object; provide a nonzero example. Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals']
+source = '[GLC1] §1.3.7; [CompactGeneration] §3.3'
 
 [[node]]
-id = "GLCinLean.DModules.regularHolonomic"
-kind = "definition"
-desc = "Regular holonomic D-modules and complexes on finite-type schemes over a field of characteristic zero: the full subcategory of holonomic modules whose restriction to every curve has regular singularities, closed under subquotients and extensions, stable under the six operations for finite-type maps and under scalar extension of the base field. Equivariant holonomic modules on a homogeneous space with connected stabilizers are regular. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
-deps = ["GLCinLean.DModules.holonomic", "GLCinLean.DModules.deRhamPushforward", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.DModules.starPullback"]
-source = "[HottaTakeuchiTanisaki] Chapter 6 (regular holonomic modules) and §7.1"
+id = 'GLCinLean.DModules.regularHolonomic'
+kind = 'definition'
+desc = 'Regular holonomic D-modules and complexes on finite-type schemes over a field of characteristic zero: the full subcategory of holonomic modules whose restriction to every curve has regular singularities, closed under subquotients and extensions, stable under the six operations for finite-type maps and under scalar extension of the base field. Equivariant holonomic modules on a homogeneous space with connected stabilizers are regular. Provider: here.'
+deps = ['GLCinLean.DModules.holonomic', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.starPullback']
+source = '[HottaTakeuchiTanisaki] Chapter 6 (regular holonomic modules) and §7.1'

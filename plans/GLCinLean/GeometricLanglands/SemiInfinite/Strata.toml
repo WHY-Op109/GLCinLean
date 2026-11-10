@@ -1,29 +1,29 @@
-desc = "Full parabolic stratification and invariant-category adjunctions, before spherical renormalization."
+desc = 'Full parabolic stratification and invariant-category adjunctions, before spherical renormalization.'
 
 [[node]]
-id = "GLCinLean.SemiInfinite.parabolicStratification"
-kind = "definition"
-desc = "For each finite nonempty configuration I, construct Gr_P→Gr_G and Gr_P→Gr_M, the strata indexed by Levi component degree, the closed degree-bounded unions and open complementary bounds. Prove that reduced strata are locally closed, bounded intervals have finitely many strata, the closed unions exhaust up to nil-isomorphism and the open unions exhaust Gr_G. Identify Gr_P, Gr_Pminus and Gr_M with attractor, repeller and fixed locus of a central Levi cocharacter positive on N_P. Prove that LU-invariants on each stratum are equivalent to D-modules on the corresponding Gr_M component by ind-prounipotent transitivity. First use simply connected G_der as in Chen; apply the separate z-extension descent for general G. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.parabolicLevi", "GLCinLean.Hecke.affineGrassmannian", "GLCinLean.DModules.equivariantIndscheme", "GLCinLean.Actions.hyperbolicInterpolation", "GLCinLean.SpectralProof.parabolicZExtension_descent"]
-source = "[ChenNearbyCycles] Example 1.2.14, Lemma 2.3.2, Proposition C.2.1 and Proposition C.3.2; §0.6.7 (group hypothesis); [DhillonLysenkoRan] Lemma 2.7.6"
+id = 'GLCinLean.SemiInfinite.parabolicStratification'
+kind = 'definition'
+desc = 'For each finite nonempty configuration I, construct Gr_P→Gr_G and Gr_P→Gr_M, the strata indexed by Levi component degree, the closed degree-bounded unions and open complementary bounds. Prove that reduced strata are locally closed, bounded intervals have finitely many strata, the closed unions exhaust up to nil-isomorphism and the open unions exhaust Gr_G. Identify Gr_P, Gr_Pminus and Gr_M with attractor, repeller and fixed locus of a central Levi cocharacter positive on N_P. Prove that LU-invariants on each stratum are equivalent to D-modules on the corresponding Gr_M component by ind-prounipotent transitivity. First use simply connected G_der as in Chen; apply the separate z-extension descent for general G. Provider: here.'
+deps = ['GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.Hecke.affineGrassmannian', 'GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.Actions.hyperbolicInterpolation', 'GLCinLean.SpectralProof.parabolicZExtension_descent']
+source = '[ChenNearbyCycles] Example 1.2.14, Lemma 2.3.2, Proposition C.2.1 and Proposition C.3.2; §0.6.7 (group hypothesis); [DhillonLysenkoRan] Lemma 2.7.6'
 
 [[node]]
-id = "GLCinLean.SemiInfinite.parabolicInvariants_monodromic"
-kind = "theorem"
-desc = "Prove that all LU-invariant D-modules on Gr_G over X^I are monodromic for the chosen central Levi cocharacter. Reduce by !-limits of closed degree bounds and filtered open bounds to finite intervals, then by excision to one stratum where the Gr_M equivalence gives equivariance. Retain arbitrary enhanced tensor parameters. Do not assert monodromicity for every ambient D-module. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SemiInfinite.parabolicStratification", "GLCinLean.DModules.monodromic", "GLCinLean.Infinity.adjointableDiagram_limitAdjunction"]
-source = "[ChenNearbyCycles] Lemma 2.3.4(1), Lemma D.2.1(1), Lemma D.2.3 and proof §D.2.4"
+id = 'GLCinLean.SemiInfinite.parabolicInvariants_monodromic'
+kind = 'theorem'
+desc = 'Prove that all LU-invariant D-modules on Gr_G over X^I are monodromic for the chosen central Levi cocharacter. Reduce by !-limits of closed degree bounds and filtered open bounds to finite intervals, then by excision to one stratum where the Gr_M equivalence gives equivariance. Retain arbitrary enhanced tensor parameters. Do not assert monodromicity for every ambient D-module. Provider: here.'
+deps = ['GLCinLean.SemiInfinite.parabolicStratification', 'GLCinLean.DModules.monodromic', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction']
+source = '[ChenNearbyCycles] Lemma 2.3.4(1), Lemma D.2.1(1), Lemma D.2.3 and proof §D.2.4'
 
 [[node]]
-id = "GLCinLean.SemiInfinite.parabolicStratumAdjunctions"
-kind = "definition"
-desc = "Construct left adjoints to stratum *-pushforward and !-restriction within LU-invariant categories over every X^I. Obtain the first from the parameterized Braden formula; obtain the second on finite intervals by excision, then on the full Grassmannian by left-adjointable limits. Identify induction of a Gr_M object with the partially defined averaging Av_! applied to its closed pushforward s_*; prove this particular average exists and is strictly Dmod(X^I)-linear. Supply units/counits and coherent diagonal/disjoint comparisons. This constructs invariant-category adjoints; ambient shriek for the dualizing zero-orbit vacuum is a separate theorem. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SemiInfinite.parabolicInvariants_monodromic", "GLCinLean.DModules.parameterizedHyperbolicAdjunction", "GLCinLean.Infinity.adjointableDiagram_limitAdjunction"]
-source = "[ChenNearbyCycles] Lemma 2.3.4(2)–(4), Lemma D.2.1 and §§D.2.5–D.2.6; §3.4.1; [DhillonLysenkoRan] Corollary 2.7.9 and §2.7.10; [GaRanII] Remark 1.5.4"
+id = 'GLCinLean.SemiInfinite.parabolicStratumAdjunctions'
+kind = 'definition'
+desc = 'Construct left adjoints to stratum *-pushforward and !-restriction within LU-invariant categories over every X^I. Obtain the first from the parameterized Braden formula; obtain the second on finite intervals by excision, then on the full Grassmannian by left-adjointable limits. Identify induction of a Gr_M object with the partially defined averaging Av_! applied to its closed pushforward s_*; prove this particular average exists and is strictly Dmod(X^I)-linear. Supply units/counits and coherent diagonal/disjoint comparisons. This constructs invariant-category adjoints; ambient shriek for the dualizing zero-orbit vacuum is a separate theorem. Provider: here.'
+deps = ['GLCinLean.SemiInfinite.parabolicInvariants_monodromic', 'GLCinLean.DModules.parameterizedHyperbolicAdjunction', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction']
+source = '[ChenNearbyCycles] Lemma 2.3.4(2)–(4), Lemma D.2.1 and §§D.2.5–D.2.6; §3.4.1; [DhillonLysenkoRan] Corollary 2.7.9 and §2.7.10; [GaRanII] Remark 1.5.4'
 
 [[node]]
-id = "GLCinLean.SemiInfinite.parabolicInvariants_compactlyGenerated"
-kind = "theorem"
-desc = "Prove compact generation of LU-invariant D-modules on the whole Gr_G over each X^I. The stratum-restriction right adjoint is continuous and conservative by the full parabolic stratification, so its left adjoint sends compact generators from Dmod(Gr_M) to compact generators. Equivalently use the explicit Av_! s_* generators in Chen. Include tensor-parameter compatibility and the geometric diagonal/disjoint comparisons needed before L+M-renormalization, without inferring compact generation merely from an arbitrary limit of compactly generated categories. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SemiInfinite.parabolicStratumAdjunctions", "GLCinLean.DModules.indscheme_compactlyGenerated", "GLCinLean.Infinity.compactGeneration"]
-source = "[ChenNearbyCycles] Lemma 2.3.4(2), Lemma D.2.1(2), §D.3 and §3.4.1; [GLC3] §1.3.1"
+id = 'GLCinLean.SemiInfinite.parabolicInvariants_compactlyGenerated'
+kind = 'theorem'
+desc = 'Prove compact generation of LU-invariant D-modules on the whole Gr_G over each X^I. The stratum-restriction right adjoint is continuous and conservative by the full parabolic stratification, so its left adjoint sends compact generators from Dmod(Gr_M) to compact generators. Equivalently use the explicit Av_! s_* generators in Chen. Include tensor-parameter compatibility and the geometric diagonal/disjoint comparisons needed before L+M-renormalization, without inferring compact generation merely from an arbitrary limit of compactly generated categories. Provider: here.'
+deps = ['GLCinLean.SemiInfinite.parabolicStratumAdjunctions', 'GLCinLean.DModules.indscheme_compactlyGenerated', 'GLCinLean.Infinity.compactGeneration']
+source = '[ChenNearbyCycles] Lemma 2.3.4(2), Lemma D.2.1(2), §D.3 and §3.4.1; [GLC3] §1.3.1'

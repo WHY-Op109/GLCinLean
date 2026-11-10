@@ -1,8 +1,8 @@
-desc = "Planned library module for AlgebraicGeometry / Sheaves / GradedSupport. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+desc = 'Support for a graded central action.'
 
 [[node]]
-id = "GLCinLean.Sheaves.gradedSupport"
-kind = "definition"
-desc = "Support for a graded central action via localization at homogeneous elements; provide the closed-support subcategory and membership criterion. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Infinity.stableCategory", "GLCinLean.Infinity.limits"]
-source = "[ArinkinGaitsgory] §§3.1–3.3, 3.5"
+id = 'GLCinLean.Sheaves.gradedSupport'
+kind = 'definition'
+desc = 'Support for a graded central action via localization at homogeneous elements; provide the closed-support subcategory and membership criterion. Provider: here.'
+deps = ['GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.limits']
+source = '[ArinkinGaitsgory] §§3.1–3.3, 3.5'

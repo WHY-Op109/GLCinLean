@@ -1,8 +1,8 @@
-desc = "Planned library module for AlgebraicGeometry / Sheaves / Hochschild. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+desc = 'Hochschild cochains of an enhanced category.'
 
 [[node]]
-id = "GLCinLean.Sheaves.hochschildCochains"
-kind = "definition"
-desc = "E₂-algebra of enhanced endomorphisms of the identity; its even cohomology acts centrally on the homotopy category. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Infinity.monoidalCategory", "GLCinLean.Infinity.internalHom", "GLCinLean.Sheaves.indcoh"]
-source = "[ArinkinGaitsgory] Appendices E.1–E.3, F.1"
+id = 'GLCinLean.Sheaves.hochschildCochains'
+kind = 'definition'
+desc = 'E₂-algebra of enhanced endomorphisms of the identity; its even cohomology acts centrally on the homotopy category. Provider: here.'
+deps = ['GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Sheaves.indcoh']
+source = '[ArinkinGaitsgory] Appendices E.1–E.3, F.1'

@@ -1,36 +1,36 @@
-desc = "Planned library module. Local and global oper data used to prove the Hecke property. No placeholders belong here. The base field remains any algebraically closed field of characteristic zero."
+desc = 'Local and global oper data used to prove the Hecke property.'
 
 [[node]]
-id = "GLCinLean.SpectralProof.localOpers"
-kind = "definition"
-desc = "Normalized regular and meromorphic dual-group opers on formal discs: retain the specified Cartan-bundle identification and negative-simple-root coefficient equal to the unit section, not just a Borel reduction with nonzero transversality. Define the monodromy-free fiber product Op^mf = LS^reg ×_{LS^mer} Op^mer, with connections, Borel reduction and oper transversality. Include the torus case and all central isogenies. Provider: Open Tau Ceti roadmap pull request #1056, FormalConnectionsOpers F3–F8, supplies a proposed local simple-complex contract only; arbitrary-k reductive families and derived prestacks are missing. No open PR is treated as available Lean code. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.formalDisc", "GLCinLean.Groups.langlandsDual", "GLCinLean.LocalSystems.classifyingStack", "GLCinLean.Derived.mappingPrestack"]
-source = "[GLC2] §3.1; §§B.7–B.8"
+id = 'GLCinLean.SpectralProof.localOpers'
+kind = 'definition'
+desc = 'Normalized regular and meromorphic dual-group opers on formal discs: retain the specified Cartan-bundle identification and negative-simple-root coefficient equal to the unit section, not just a Borel reduction with nonzero transversality. Define the monodromy-free fiber product Op^mf = LS^reg ×_{LS^mer} Op^mer, with connections, Borel reduction and oper transversality. Include the torus case and all central isogenies. Provider: here. The open roadmap pull request #1056 (FormalConnectionsOpers) proposes local opers for simple complex groups only.'
+deps = ['GLCinLean.Hecke.formalDisc', 'GLCinLean.Groups.langlandsDual', 'GLCinLean.LocalSystems.classifyingStack', 'GLCinLean.Derived.mappingPrestack']
+source = '[GLC2] §3.1; §§B.7–B.8'
 
 [[node]]
-id = "GLCinLean.SpectralProof.globalMonodromyFreeOpers"
-kind = "definition"
-desc = "Global meromorphic opers with poles at a Ran configuration whose underlying local system extends over X; define the Cartesian local-to-global evaluation square. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.localOpers", "GLCinLean.LocalSystems.deRham", "GLCinLean.Hecke.ranSpace", "GLCinLean.Derived.mappingPrestack"]
-source = "[GLC2] §§15.1.1–15.1.4"
+id = 'GLCinLean.SpectralProof.globalMonodromyFreeOpers'
+kind = 'definition'
+desc = 'Global meromorphic opers with poles at a Ran configuration whose underlying local system extends over X; define the Cartesian local-to-global evaluation square. Provider: here.'
+deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.LocalSystems.deRham', 'GLCinLean.Hecke.ranSpace', 'GLCinLean.Derived.mappingPrestack']
+source = '[GLC2] §§15.1.1–15.1.4'
 
 [[node]]
-id = "GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions"
-kind = "theorem"
-desc = "Feigin–Frenkel isomorphism between the critical vacuum center and regular-oper functions, compatible with factorization, coordinate changes, Chevalley normalization and Satake. Preserve arbitrary alg closed characteristic-zero k and the reductive central torus. Provider: Tau Ceti roadmap AffineLieAlgebras A7–A8 supplies the complex simple center theorem; the reductive arbitrary-k factorization form uses the separately planned rational-model, finite-weight scalar-extension, central-torus and central-isogeny comparisons. Their adaptation proofs remain explicit obligations, not a specialization to C. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.reductiveCriticalCenter_comparison", "GLCinLean.SpectralProof.vacuumCenter", "GLCinLean.SpectralProof.localOpers", "GLCinLean.Satake.naiveFactorizationFunctor"]
-source = "[GLC2] Theorem 5.1.2; Theorem 5.2.5"
+id = 'GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions'
+kind = 'theorem'
+desc = 'Feigin–Frenkel isomorphism between the critical vacuum center and regular-oper functions, compatible with factorization, coordinate changes, Chevalley normalization and Satake. Preserve arbitrary alg closed characteristic-zero k and the reductive central torus. Provider: here; the complex simple centre theorem is from roadmap AffineLieAlgebras. The reductive form over any k uses the planned comparisons, which are adaptation proofs, not a specialization to C.'
+deps = ['GLCinLean.SpectralProof.reductiveCriticalCenter_comparison', 'GLCinLean.SpectralProof.vacuumCenter', 'GLCinLean.SpectralProof.localOpers', 'GLCinLean.Satake.naiveFactorizationFunctor']
+source = '[GLC2] Theorem 5.1.2; Theorem 5.2.5'
 
 [[node]]
-id = "GLCinLean.SpectralProof.operActionOnKL"
-kind = "definition"
-desc = "QCoh(Op^mf)-action on spherical critical KL obtained from the enhanced central IndCoh! action through Upsilon; retain coherent scalar extension. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions", "GLCinLean.SpectralProof.sphericalKL", "GLCinLean.SpectralProof.localOpers", "GLCinLean.Sheaves.infiniteTypeUpsilon", "GLCinLean.SpectralProof.operIndCoh_ranDescent"]
-source = "[GLC2] §5.3; §15.1.4"
+id = 'GLCinLean.SpectralProof.operActionOnKL'
+kind = 'definition'
+desc = 'QCoh(Op^mf)-action on spherical critical KL obtained from the enhanced central IndCoh! action through Upsilon; retain coherent scalar extension. Provider: here.'
+deps = ['GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions', 'GLCinLean.SpectralProof.sphericalKL', 'GLCinLean.SpectralProof.localOpers', 'GLCinLean.Sheaves.infiniteTypeUpsilon', 'GLCinLean.SpectralProof.operIndCoh_ranDescent']
+source = '[GLC2] §5.3; §15.1.4'
 
 [[node]]
-id = "GLCinLean.SpectralProof.globalOperBaseChange"
-kind = "definition"
-desc = "Spherical critical KL tensor over QCoh(Op^mf) with QCoh(Op^mf,glob), over every test prestack on Ran; the Rep(H) action is pulled back from spectral localization. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.operActionOnKL", "GLCinLean.SpectralProof.globalMonodromyFreeOpers", "GLCinLean.SpectralProof.factorizationGlobalization", "GLCinLean.Spectral.localization"]
-source = "[GLC2] §§15.1.4–15.1.6"
+id = 'GLCinLean.SpectralProof.globalOperBaseChange'
+kind = 'definition'
+desc = 'Spherical critical KL tensor over QCoh(Op^mf) with QCoh(Op^mf,glob), over every test prestack on Ran; the Rep(H) action is pulled back from spectral localization. Provider: here.'
+deps = ['GLCinLean.SpectralProof.operActionOnKL', 'GLCinLean.SpectralProof.globalMonodromyFreeOpers', 'GLCinLean.SpectralProof.factorizationGlobalization', 'GLCinLean.Spectral.localization']
+source = '[GLC2] §§15.1.4–15.1.6'

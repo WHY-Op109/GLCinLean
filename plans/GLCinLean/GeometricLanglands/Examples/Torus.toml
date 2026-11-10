@@ -1,15 +1,15 @@
-desc = "Planned library module. GeometricLanglands / Examples / Torus. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'The case of a torus: the nilpotent cone and the coarse functor.'
 
 [[node]]
-id = "GLCinLean.Examples.torusNilpotent_is_zero"
-kind = "theorem"
-desc = "For a torus the spectral nilpotent cone is the zero section; supported IndCoh is QCoh. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.LocalSystems.nilpotentCone", "GLCinLean.Sheaves.zeroSupport_equiv_qcoh"]
-source = "[GLC1] §1.5.4"
+id = 'GLCinLean.Examples.torusNilpotent_is_zero'
+kind = 'theorem'
+desc = 'For a torus the spectral nilpotent cone is the zero section; supported IndCoh is QCoh. Provider: here.'
+deps = ['GLCinLean.LocalSystems.nilpotentCone', 'GLCinLean.Sheaves.zeroSupport_equiv_qcoh']
+source = '[GLC1] §1.5.4'
 
 [[node]]
-id = "GLCinLean.Examples.torusCoarse_equiv"
-kind = "theorem"
-desc = "Compare the coarse torus functor with enhanced Fourier-Mukai followed by Cartan inversion; test normalization. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Langlands.coarse", "GLCinLean.Examples.torusNilpotent_is_zero"]
-source = "[GLC1] §§1.5.1–1.5.4"
+id = 'GLCinLean.Examples.torusCoarse_equiv'
+kind = 'theorem'
+desc = 'Compare the coarse torus functor with enhanced Fourier-Mukai followed by Cartan inversion; test normalization. Provider: here.'
+deps = ['GLCinLean.Langlands.coarse', 'GLCinLean.Examples.torusNilpotent_is_zero']
+source = '[GLC1] §§1.5.1–1.5.4'

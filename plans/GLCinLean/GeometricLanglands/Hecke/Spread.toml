@@ -1,8 +1,8 @@
-desc = "Planned library module for GeometricLanglands / Hecke / Spread. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+desc = 'The prestack of maps from a relative formal disc to BH.'
 
 [[node]]
-id = "GLCinLean.Hecke.spreadClassifyingStack"
-kind = "definition"
-desc = "The prestack of maps from the relative de Rham formal disc to BH; its QCoh category is Rep(H)_Ran. Provider: Missing in Mathlib and Tau Ceti; implement here unless an upstream roadmap claims this scope before work starts. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Hecke.formalDisc", "GLCinLean.LocalSystems.classifyingStack", "GLCinLean.Derived.mappingPrestack"]
-source = "[GaitsgoryOutline] §§4.2.1–4.2.4"
+id = 'GLCinLean.Hecke.spreadClassifyingStack'
+kind = 'definition'
+desc = 'The prestack of maps from the relative de Rham formal disc to BH; its QCoh category is Rep(H)_Ran. Provider: here.'
+deps = ['GLCinLean.Hecke.formalDisc', 'GLCinLean.LocalSystems.classifyingStack', 'GLCinLean.Derived.mappingPrestack']
+source = '[GaitsgoryOutline] §§4.2.1–4.2.4'
