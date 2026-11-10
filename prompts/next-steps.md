@@ -51,12 +51,13 @@ The owner's goal: a faithful Lean statement of [GLC1] Conj. 1.6.7 (de Rham, char
   - does the plan in `plans/` reach a fully defined statement? Is any part missing, wrong, or more than the statement needs?
   - is there a simpler or more direct faithful formulation or route, and what would it save?
   - is the tracker the right way to hold the plan?
+  - which suggestions in §7 of the newest `notes/upstream-*.md` should change the plan (providers, owners, locators), and is code from AxiomMath Stacks or Weil worth porting into Tau Ceti as prior art?
 - nothing else in the repository changes, apart from the next session's prompt;
 - the next session's prompt in `prompts/next-steps.md` is checked against this session's result and changed where it no longer fits;
 - the work is committed and pushed.
 
 **Context**
-- The papers are listed in `docs/papers.md`, and their TeX is in `references/papers/`. The upstream state is in the newest `notes/upstream-*.md`.
+- The papers are listed in `docs/papers.md`, and their TeX is in `references/papers/`. The upstream state is in the newest `notes/upstream-*.md`; it supplements the provider record in `docs/blueprint-providers.md`. Open roadmap pull requests change quickly: before a finding rests on one, check its state and head commit again.
 - `lake exe tracker status`, `show` and `graph` read the plan; see `tools/tracker/README.md`.
 
 ## Session 3b: review of the workflow
