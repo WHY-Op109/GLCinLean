@@ -1,6 +1,6 @@
 # Next steps
 
-One-off sessions, run in this order, each started fresh with its own prompt: 1, 2, 3a, 3b, 4a, 4b, 4c, 5. Sessions 1 to 4a are done. Each session checks the prompt of the session after it and changes it where its result calls for that. Session 5 deletes this file.
+One-off sessions, run in this order, each started fresh with its own prompt: 1, 2, 3a, 3b, 4a, 4b, 4c, 5. Sessions 1 to 4b are done. Each session checks the prompt of the session after it and changes it where its result calls for that. Session 5 deletes this file.
 
 ## Session 1: clean-up
 
@@ -166,15 +166,21 @@ Model: Opus 5.5, effort `high`.
 **Goal.** Bring the plan to the statement that the owner decided on, and close the three reports.
 
 **Done when**
-- if the owner approved the branch `proposal/hecke-form`: it is merged into `main`; the cut of decision 3 is made, also under `plans/Roadmap/` (a roadmap node that only the proof needs moves to `plans-proof/Roadmap/<area>/`); `plans/README.md` is rewritten where the spectral decomposition is no longer inside the statement's plan; `prompts/build.md` drops "module actions"; and the blocking targets, the Worker command lines and the "Held" list in `STATUS.md` are computed again from the cut plan;
-- if the owner declined it: the branch is deleted, and the spectral-action nodes whose written proof is incomplete go on the "Held" list, each with the proof that is missing;
+- if the owner approved the branch `proposal/hecke-form`: it is merged into `main`, with any change the owner asked for made first and reviewed again with `prompts/review.md`; the cut of decision 3 is made, also under `plans/Roadmap/` (a roadmap node that only the proof needs moves to `plans-proof/Roadmap/<area>/`); `plans/README.md` is rewritten where the spectral decomposition is no longer inside the statement's plan; `prompts/build.md` drops "module actions"; and the current state (the count of placeholders, the plan counts, the last reviewed commit), the blocking targets, the Worker command lines and the "Held" list in `STATUS.md` are computed again from the cut plan;
+- if the owner declined it: the branch is deleted, here and on the remote, and the spectral-action nodes whose written proof is incomplete go on the "Held" list, each with the proof that is missing;
 - `lake build`, the done check in `AGENTS.md` and `lake exe tracker lint` pass;
 - the three reports in `notes/` are deleted, and `STATUS.md` records what was decided. `notes/upstream-2026-11-10.md` is deleted too if the owner agrees, since `docs/blueprint-providers.md` now holds its findings;
 - the next session's prompt in `prompts/next-steps.md` is checked against this session's result and changed where it no longer fits;
 - the work is committed and pushed.
 
 **Context**
-- The owner's answer on the statement: <fill in before starting>.
+- The owner's answer on the statement, and on the points that `STATUS.md` lists with it under "Waiting for the owner": <fill in before starting>.
+- What the branch holds (Session 4b). The statement's placeholders are now `RepRan`, `Loc`, `heckeActionRight`, `vacuumPoincare` and `DGFun.MapsEquiv` in place of `LCoarse` and the linear layer; their plan nodes depend on `Hecke.ranRepresentations`, `Spectral.localization`, `Hecke.action`, `Whittaker.vacuumPoincare`, `Infinity.mappingSpaces` and `Infinity.rightAdjoint`. The reviewed commit is `a09a016`, and its report is `notes/reviews/a09a016.md` on the branch; the head `b4740c9` adds the report and docstring corrections only. The branch does not change `STATUS.md` or this file, so the merge does not conflict with them.
+- The cut starts from these dependencies. Three points to check in it:
+  - `Spectral.localization` lists `LocalSystems.qcohRigid` and `Hecke.ranConvolution` in its `deps`. Keep each only if the construction of the functor needs it; a property of the functor (monoidal, a localization) belongs to the proof.
+  - The comparison theorem `Langlands.isLanglandsFunctor_iff_comp_psi_iso_coarse` (in `plans/GLCinLean/GeometricLanglands/Functor/Coarse.toml`) is a theorem of the proof. It moves to `plans-proof/` with `Langlands.coarse` and `Spectral.action`, and `STATUS.md` records it as an obligation of the proof.
+  - `Satake.dualIdentificationChangePinningIso` and `Satake.isLanglandsFunctor_iff_of_changePinning` stay in the statement's plan. The first still names the `QCoh(LS_Ǧ)`-action and depends on `Spectral.action`: split that part off into the plan of the proof.
+- In `plans/README.md` the branch changed only step 8 of the construction chain. The first paragraph and steps 6 and 7 still describe the plan before the cut.
 
 ## Session 5: dependency-graph page
 

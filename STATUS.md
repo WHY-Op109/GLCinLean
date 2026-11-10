@@ -1,6 +1,6 @@
 # Status
 
-Updated 2026-11-10, after Session 4a.
+Updated 2026-11-10, after Session 4b.
 
 ## Current state
 
@@ -8,7 +8,7 @@ Updated 2026-11-10, after Session 4a.
 - **Placeholders.** 30 declarations are `@[placeholder]` (`grep -rn '@\[placeholder\]' GLCinLean`). None is replaced yet. All are `opaque`, so the main theorem says nothing yet: with one-point categories and always-true predicates it would be trivially true.
 - **Plan.** 413 planned declarations in 172 module plans. 364 are under `plans/GLCinLean/` and are written here; 33 of them are the statement. 49 are under `plans/Roadmap/<area>/` and belong to seven Tau Ceti roadmaps. Existing Mathlib and Tau Ceti declarations are no longer nodes; the nodes that use them name them in their `desc`, and `docs/blueprint-providers.md` lists them.
 - **Ready.** `lake exe tracker ready` lists six roadmap modules (`Roadmap.BordismFormalGroups.Mapping`, `Roadmap.SchemeAndStackFoundations.AlgebraicStacks`, `Roadmap.SchemeAndStackFoundations.Torsors`, `Roadmap.ReductiveGroups.PinnedRootData`, `Roadmap.JacobianChallenge.SerreDuality`, `Roadmap.AffineLieAlgebras.Levels`) and one module here, `GLCinLean.AlgebraicGeometry.Curves.Theta`. It also lists `GLCinLean.Statement.Conjecture`, because the main theorem is stated with `sorry`; that is not work for a build session.
-- **Reviews.** The last reviewed commit is `b64c7fc`; the statement has not changed since. The three reports `notes/review-goal.md`, `notes/review-workflow.md` and `notes/review-independent-2026-11-10.md` stay until Session 4c closes them.
+- **Reviews.** The last reviewed commit on `main` is `b64c7fc`; the statement on `main` has not changed since. The proposed statement on the branch `proposal/hecke-form` is reviewed at `a09a016` (see "Waiting for the owner"). The three reports `notes/review-goal.md`, `notes/review-workflow.md` and `notes/review-independent-2026-11-10.md` stay until Session 4c closes them.
 - **Checks.** `lake build` passes with only the main theorem's `sorry` warning. `lake lint` passes. `lake env lean tools/check-statement-axioms.lean` shows `sorryAx` only for the main theorem. `lake exe tracker lint` has no errors; its warnings are the superseded `desc` and `deps` of the statement's placeholders, which `plans/README.md` explains.
 - **Pins.** Mathlib `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`, Tau Ceti `e0610cce4004d628cbd9d2aafdbbb5459fe72938`.
 - **Tau Ceti pull requests.** None opened.
@@ -57,7 +57,11 @@ A node on this list is not started, here or through the Worker.
 
 ## Waiting for the owner
 
-- **The statement (decisions 1, 2 and 10).** Session 4b writes them on a branch `proposal/hecke-form` and names the reviewed commit here.
+- **The statement (decisions 1, 2 and 10).** It is on the branch `proposal/hecke-form`. The reviewed commit is `a09a016`; the review report is `notes/reviews/a09a016.md` on the branch. The head of the branch, `b4740c9`, adds the report and the docstring corrections that the report proposes; it changes no Lean code after the review. On the branch, `lake build`, `lake lint`, the axiom check and `lake exe tracker lint` pass. The owner approves or declines the branch; `main` is unchanged until then.
+  - **What changes.** The second property of `IsLanglandsFunctor` is one equivalence `Maps(V ⋆ Poinc, M) ≃ Maps(Loc V, Ψ (F M))` of mapping spaces, natural in `V` in `Rep(Ǧ)_Ran` and `M` together. Its new placeholders are `RepRan`, `Loc`, `heckeActionRight` (the functor `V ↦ V ⋆ M` for a fixed object `M`), `vacuumPoincare` and `DGFun.MapsEquiv` (the type of such equivalences for three functors). `LCoarse` goes. Functors are continuous `k`-linear functors (`DGFun`, `DGNatIso`), and the nine monoidal and module placeholders go. The t-structure stays (`TStructuredDGCat`). The statement has 28 placeholders in place of 30. The comparison with the paper's form is the planned theorem `Langlands.isLanglandsFunctor_iff_comp_psi_iso_coarse`.
+  - **The review's verdicts.** No *mismatch*. Two *unsure*, both on what the docstrings claim, not on the Lean code:
+    - **U1, the ground field.** [GLC1] §0.1.1 says only "a field of characteristic 0", but [GLC1] §0.5.7 follows the conventions of [AGKRRV], whose ground field is algebraically closed (§0.9.1). So the papers do not settle whether algebraic closedness is a hypothesis of [GLC1]. Decision 10 asked the docstring to say that it is not one. The docstring on the branch now says what each paper states and that algebraic closedness is the project's scope. The owner confirms this wording or asks for the wording of decision 10.
+    - **U2, "equal form".** Mapping spaces do not record `k`-linearity. The paper's `Ψ ∘ F ≃ 𝕃_{G,coarse}`, read as an equivalence of `k`-linear functors, gives the second property on the branch; the second property gives back the equivalence only as one of functors of ∞-categories. The main theorem is not affected: each functor with the two properties is naturally equivalent to the paper's `𝕃_G`, because the paper's uniqueness argument uses no `k`-linearity, so the theorem is still "the existence part of Cor. 1.6.5, and Conj. 1.6.7". The docstring on the branch says this. The other choice is to state the equivalence with the mapping complexes `ℋom` in `Vect` ([AGKRRV] §0.9.4) and `k`-linear naturality. Then the property is exactly the paper's, but the library must supply `k`-linear functors of two variables. Proposal: keep mapping spaces, as decision 1 says. Only the docstring and the plan text of the placeholder `DGFun.MapsEquiv` would differ.
 - **The plan cut (decision 3).** Session 4c makes it after the owner decides on the branch.
 - **The tracker request (decision 6).** The draft is below; the owner sends it.
 
@@ -99,4 +103,4 @@ A node on this list is not started, here or through the Worker.
 
 ## Next
 
-Session 4b of `prompts/next-steps.md`: the statement on a branch `proposal/hecke-form`.
+The owner decides on the branch `proposal/hecke-form` and on U1 and U2 above. Then Session 4c of `prompts/next-steps.md`: the plan cut, with the owner's answer filled in under its "Context".
