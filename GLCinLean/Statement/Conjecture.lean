@@ -22,10 +22,12 @@ The second property is stated with the Hecke action of `Rep(Ǧ)_Ran` ([GLC1] §1
 form that agrees with the paper's by [GLC1] Thm. 1.2.4; see `IsLanglandsFunctor`.
 The mathematical objects of the statement include explicit placeholders.
 
-[GLC1] §0.1.1 asks for a ground field of characteristic zero. Algebraic closedness is not a
-hypothesis of [GLC1]: it is the scope of this project, and the standing assumption of
-[GLC2] §0.4.1. The curve is connected. Reductive groups use Tau Ceti's coordinate Hopf
-algebra presentation. A pinning and a theta characteristic are chosen data.
+[GLC1] §0.1.1 asks only for a ground field of characteristic zero; its conventions follow
+[AGKRRV] ([GLC1] §0.5.7), whose ground field is algebraically closed ([AGKRRV] §0.9.1).
+Algebraic closedness here is the scope of this project, as in [GLC2] §0.4.1, and not a
+hypothesis that [GLC1] §0.1.1 states. The curve is connected, as in [AGKRRV] §14.1.1.
+Reductive groups use Tau Ceti's coordinate Hopf algebra presentation. A pinning and a theta
+characteristic are chosen data.
 -/
 
 @[expose] public noncomputable section
@@ -75,7 +77,7 @@ local systems ([GLC1] §§0.1.1, 1.2.2). -/
 @[placeholder] opaque QCohLS (S : Setting k) : DGCat k
 
 /-- The DG category `Dmod_½(Bun_G)` of half-twisted D-modules on `Bun_G`
-([GLC1] §§1.1.1–1.1.4). The twist is the gerbe of square roots of `det_BunG`; the chosen
+([GLC1] §§1.1.1–1.1.5). The twist is the gerbe of square roots of `det_BunG`; the chosen
 theta characteristic trivializes it. -/
 @[placeholder] opaque DmodHalf (S : Setting k) : DGCat k
 
@@ -116,9 +118,15 @@ from `Dmod_½(Bun_G)` to `IndCoh_Nilp(LS_Ǧ)`.
 The second property is the paper's `Ψ ∘ F ≃ 𝕃_{G,coarse}`, as an equivalence of functors of
 ∞-categories, in an equal form. The two forms agree by [GLC1] Thm. 1.2.4: the Hecke action
 factors through `Loc`, so that `V ⋆ Poinc ≃ Loc V ⋆ Poinc` for the action of `QCoh(LS_Ǧ)`
-([GLC1] §1.2.5); `𝕃_{G,coarse}` is right adjoint to `E ↦ E ⋆ Poinc` ([GLC1] §§1.4.2–1.4.5);
+([GLC1] §1.2.5); `𝕃_{G,coarse}` is right adjoint to `E ↦ E ⋆ Poinc` ([GLC1] §§1.4.1–1.4.5);
 and the right adjoint of `Loc` is fully faithful ([GLC1] §1.2.2). This form uses neither the
-action of `QCoh(LS_Ǧ)` nor `𝕃_{G,coarse}`. -/
+action of `QCoh(LS_Ǧ)` nor `𝕃_{G,coarse}`.
+
+Mapping spaces do not record `k`-linearity. An equivalence `Ψ ∘ F ≃ 𝕃_{G,coarse}` of
+`k`-linear functors gives the second property, and the second property gives it back as an
+equivalence of functors of ∞-categories. Each functor with the two properties is naturally
+equivalent, as a functor of ∞-categories, to the functor `𝕃_G` of [GLC1] Cor. 1.6.5, so it is
+an equivalence exactly when `𝕃_G` is. -/
 @[placeholder] def IsLanglandsFunctor (S : Setting k)
     (F : DGFun (DmodHalf S) (IndCohNilp S).toDGCat) : Prop :=
   (∀ c : (DmodHalf S).Obj,
