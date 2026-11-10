@@ -1,15 +1,15 @@
-desc = "Planned library module. AlgebraicGeometry / Stacks / Determinant. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'The normalized determinant line on Bun_G and its square root.'
 
 [[node]]
-id = "GLCinLean.Stacks.determinantBundle"
-kind = "definition"
-desc = "Normalized determinant RΓ(X,ad(P)) ⊗ det RΓ(X,ad(P⁰))⁻¹ on Bun_G, using proper perfect pushforward. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Stacks.associatedAdjointBundle", "GLCinLean.Sheaves.determinant", "GLCinLean.Sheaves.qcohGlobalSections"]
-source = "[GLC1] §1.1.1"
+id = 'GLCinLean.Stacks.determinantBundle'
+kind = 'definition'
+desc = 'Normalized determinant RΓ(X,ad(P)) ⊗ det RΓ(X,ad(P⁰))⁻¹ on Bun_G, using proper perfect pushforward. Provider: here.'
+deps = ['GLCinLean.Stacks.associatedAdjointBundle', 'GLCinLean.Sheaves.determinant', 'GLCinLean.Sheaves.qcohGlobalSections']
+source = '[GLC1] §1.1.1'
 
 [[node]]
-id = "GLCinLean.Stacks.determinantSquareRoot"
-kind = "definition"
-desc = "Theta characteristic induces a square root of the normalized determinant; include compatibility on the N-reduction stack. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Stacks.determinantBundle", "GLCinLean.Curves.thetaCharacteristic"]
-source = "[GLC1] §§1.1.2, 1.3.3–1.3.4"
+id = 'GLCinLean.Stacks.determinantSquareRoot'
+kind = 'definition'
+desc = 'Theta characteristic induces a square root of the normalized determinant; include compatibility on the N-reduction stack. Provider: here.'
+deps = ['GLCinLean.Stacks.determinantBundle', 'GLCinLean.Curves.thetaCharacteristic']
+source = '[GLC1] §§1.1.2, 1.3.3–1.3.4'

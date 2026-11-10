@@ -1,43 +1,43 @@
-desc = "Planned library module. Relative commutative factorization homology and the intermediate Eisenstein construction. No placeholders belong here. The base field remains any algebraically closed field of characteristic zero."
+desc = 'Relative commutative factorization homology and the intermediate Eisenstein construction.'
 
 [[node]]
-id = "GLCinLean.SpectralProof.independentCategory_tensorBaseChange"
-kind = "theorem"
-desc = "Independent-category localization is characterized by strictly unital local-to-global functors. Prove its compatibility with extension of coefficients by the relative tensor universal property (a colimit/localization statement); do not assume arbitrary tensor functors preserve limits. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.factorizationGlobalization", "GLCinLean.Infinity.moduleCategory", "GLCinLean.Infinity.internalHom"]
-source = "[GLC2] Lemma H.1.13; §§H.4.13, H.5.3; Remark 15.6.15(b)"
+id = 'GLCinLean.SpectralProof.independentCategory_tensorBaseChange'
+kind = 'theorem'
+desc = 'Independent-category localization is characterized by strictly unital local-to-global functors. Prove its compatibility with extension of coefficients by the relative tensor universal property (a colimit/localization statement); do not assume arbitrary tensor functors preserve limits. Provider: here.'
+deps = ['GLCinLean.SpectralProof.factorizationGlobalization', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.internalHom']
+source = '[GLC2] Lemma H.1.13; §§H.4.13, H.5.3; Remark 15.6.15(b)'
 
 [[node]]
-id = "GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv"
-kind = "theorem"
-desc = "For a commutative unital factorization algebra A, its independent module category is equivalent to modules over C_fact(X,A), universally for strictly unital local-to-global functors. Construct the factorization-homology action and prove the universal property, also with coefficients in QCoh(S). Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.factorizationAlgebra", "GLCinLean.SpectralProof.independentCategory_tensorBaseChange", "GLCinLean.Sheaves.qcoh"]
-source = "[GLC2] Remark 15.6.15 and equation (15.32), proof from §§15.6.6–15.6.15"
+id = 'GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv'
+kind = 'theorem'
+desc = 'For a commutative unital factorization algebra A, its independent module category is equivalent to modules over C_fact(X,A), universally for strictly unital local-to-global functors. Construct the factorization-homology action and prove the universal property, also with coefficients in QCoh(S). Provider: here.'
+deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.independentCategory_tensorBaseChange', 'GLCinLean.Sheaves.qcoh']
+source = '[GLC2] Remark 15.6.15 and equation (15.32), proof from §§15.6.6–15.6.15'
 
 [[node]]
-id = "GLCinLean.SpectralProof.twistedUnipotentLocalSystems_functions"
-kind = "theorem"
-desc = "For an arbitrary family sigma of dual-M local systems, identify functions on local systems for the twisted unipotent group N_{P,sigma} with factorization homology of its Chevalley cochains. Prove good-as-connective finiteness using the central filtration, then perform the construction over every affine base S→LS_M and descend; checking only the trivial M-local system is not sufficient. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.parabolicChevalleyAlgebra", "GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv", "GLCinLean.Factorization.commutativeChiralHomology_equiv_derivedConstantQuotient", "GLCinLean.Stacks.unipotentTorsorFiltration", "GLCinLean.LocalSystems.deRham", "GLCinLean.Sheaves.qcoh"]
-source = "[GLC3] §§12.3.2–12.3.5 (twisted-unipotent calculation), proof of Proposition 12.7.3; [GLC2] §§12.7.4–12.7.6, Remark 15.6.15"
+id = 'GLCinLean.SpectralProof.twistedUnipotentLocalSystems_functions'
+kind = 'theorem'
+desc = 'For an arbitrary family sigma of dual-M local systems, identify functions on local systems for the twisted unipotent group N_{P,sigma} with factorization homology of its Chevalley cochains. Prove good-as-connective finiteness using the central filtration, then perform the construction over every affine base S→LS_M and descend; checking only the trivial M-local system is not sufficient. Provider: here.'
+deps = ['GLCinLean.SpectralProof.parabolicChevalleyAlgebra', 'GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv', 'GLCinLean.Factorization.commutativeChiralHomology_equiv_derivedConstantQuotient', 'GLCinLean.Stacks.unipotentTorsorFiltration', 'GLCinLean.LocalSystems.deRham', 'GLCinLean.Sheaves.qcoh']
+source = '[GLC3] §§12.3.2–12.3.5 (twisted-unipotent calculation), proof of Proposition 12.7.3; [GLC2] §§12.7.4–12.7.6, Remark 15.6.15'
 
 [[node]]
-id = "GLCinLean.SpectralProof.parabolicPartialEnhancement"
-kind = "definition"
-desc = "For any QCoh(LS_M)-module C, form the Ran crystal (C tensor Dmod(Z)) tensor over Rep(M)_Z with Rep(P)_Z, using the Levi spectral action. Include the Rep(G)_Z action by restriction to P and the unital structure. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.parabolicChevalleyAlgebra", "GLCinLean.SpectralProof.factorizationCategory", "GLCinLean.Spectral.localization", "GLCinLean.Infinity.moduleCategory"]
-source = "[GLC3] §§12.6.1–12.6.3 and proof of Proposition 12.7.3"
+id = 'GLCinLean.SpectralProof.parabolicPartialEnhancement'
+kind = 'definition'
+desc = 'For any QCoh(LS_M)-module C, form the Ran crystal (C tensor Dmod(Z)) tensor over Rep(M)_Z with Rep(P)_Z, using the Levi spectral action. Include the Rep(G)_Z action by restriction to P and the unital structure. Provider: here.'
+deps = ['GLCinLean.SpectralProof.parabolicChevalleyAlgebra', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Spectral.localization', 'GLCinLean.Infinity.moduleCategory']
+source = '[GLC3] §§12.6.1–12.6.3 and proof of Proposition 12.7.3'
 
 [[node]]
-id = "GLCinLean.SpectralProof.parabolicPartialEnhancement_independent_equiv"
-kind = "theorem"
-desc = "Identify the independent partial enhancement of C with C tensor over QCoh(LS_M) with QCoh(LS_P). First prove the QCoh coefficient case with the familywise twisted-unipotent calculation; extend to C by the universal property of independent localization. Record compatibility with the free-module functor and the Rep(G)_Ran action induced by LS_P→LS_G. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.parabolicPartialEnhancement", "GLCinLean.SpectralProof.twistedUnipotentLocalSystems_functions", "GLCinLean.SpectralProof.independentCategory_tensorBaseChange", "GLCinLean.Spectral.evaluation"]
-source = "[GLC3] Proposition 12.7.3 and its QCoh proof; [GLC2] Remark 15.6.15; universal-property extension to a QCoh(LS_M)-module C"
+id = 'GLCinLean.SpectralProof.parabolicPartialEnhancement_independent_equiv'
+kind = 'theorem'
+desc = 'Identify the independent partial enhancement of C with C tensor over QCoh(LS_M) with QCoh(LS_P). First prove the QCoh coefficient case with the familywise twisted-unipotent calculation; extend to C by the universal property of independent localization. Record compatibility with the free-module functor and the Rep(G)_Ran action induced by LS_P→LS_G. Provider: here.'
+deps = ['GLCinLean.SpectralProof.parabolicPartialEnhancement', 'GLCinLean.SpectralProof.twistedUnipotentLocalSystems_functions', 'GLCinLean.SpectralProof.independentCategory_tensorBaseChange', 'GLCinLean.Spectral.evaluation']
+source = '[GLC3] Proposition 12.7.3 and its QCoh proof; [GLC2] Remark 15.6.15; universal-property extension to a QCoh(LS_M)-module C'
 
 [[node]]
-id = "GLCinLean.SpectralProof.partialEnhancement_to_semiInfinite"
-kind = "definition"
-desc = "Use iota_*: Rep(P)→I_spec from the closed regular-local-system locus, then inverse semi-infinite Satake, to map the partial enhancement into the geometric enhanced category. Prove compatibility with Rep(G), Rep(M), unitality and the free unit; account for rho_P(omega_X) and the Chevalley involution. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.parabolicPartialEnhancement", "GLCinLean.SpectralProof.semiInfiniteSatake_equiv", "GLCinLean.SpectralProof.enhancedEisenstein"]
-source = "[GLC3] §§2.1.5–2.1.9, 2.4.1–2.4.3, 12.6.8; §§8.5.5–8.5.7"
+id = 'GLCinLean.SpectralProof.partialEnhancement_to_semiInfinite'
+kind = 'definition'
+desc = 'Use iota_*: Rep(P)→I_spec from the closed regular-local-system locus, then inverse semi-infinite Satake, to map the partial enhancement into the geometric enhanced category. Prove compatibility with Rep(G), Rep(M), unitality and the free unit; account for rho_P(omega_X) and the Chevalley involution. Provider: here.'
+deps = ['GLCinLean.SpectralProof.parabolicPartialEnhancement', 'GLCinLean.SpectralProof.semiInfiniteSatake_equiv', 'GLCinLean.SpectralProof.enhancedEisenstein']
+source = '[GLC3] §§2.1.5–2.1.9, 2.4.1–2.4.3, 12.6.8; §§8.5.5–8.5.7'

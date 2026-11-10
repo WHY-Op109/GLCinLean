@@ -1,8 +1,8 @@
-desc = "Satake construction prerequisite. Missing mathematics is planned explicitly; no placeholders belong in library code. The DG enhancement and determinant normalization are separate from the heart equivalence."
+desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
 
 [[node]]
-id = "GLCinLean.Hecke.affineGrassmannian"
-kind = "definition"
-desc = "The fpqc quotient LG/L+G as the affine Grassmannian, with ind-projectivity proved for reductive G, equivalently G-bundles on the disc trivialized on the punctured disc; prove quotient descent and the Beauville–Laszlo gluing comparison with modifications on X. Keep its full scheme structure distinct from its reduction, and use nil-invariance when passing to D-modules. The checked BD presentation is over C; reproduce the algebraic proof over the stated characteristic-zero field. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.loopArcGroups", "GLCinLean.Stacks.groupTorsor", "GLCinLean.Hecke.correspondence", "GLCinLean.Derived.indscheme"]
-source = "[BDHitchin] Theorem 4.5.1 and §4.5.2; [MV] §2; [GLys] §2.1"
+id = 'GLCinLean.Hecke.affineGrassmannian'
+kind = 'definition'
+desc = 'The fpqc quotient LG/L+G as the affine Grassmannian, with ind-projectivity proved for reductive G, equivalently G-bundles on the disc trivialized on the punctured disc; prove quotient descent and the Beauville–Laszlo gluing comparison with modifications on X. Keep its full scheme structure distinct from its reduction, and use nil-invariance when passing to D-modules. The checked BD presentation is over C; reproduce the algebraic proof over the stated characteristic-zero field. Provider: here.'
+deps = ['GLCinLean.Hecke.loopArcGroups', 'GLCinLean.Stacks.groupTorsor', 'GLCinLean.Hecke.correspondence', 'GLCinLean.Derived.indscheme']
+source = '[BDHitchin] Theorem 4.5.1 and §4.5.2; [MV] §2; [GLys] §2.1'

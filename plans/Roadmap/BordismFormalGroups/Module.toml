@@ -3,6 +3,6 @@ desc = 'Coherent module categories over a monoidal enhanced category. Owner: the
 [[node]]
 id = 'GLCinLean.Infinity.moduleCategory'
 kind = 'definition'
-desc = 'A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 LM operad and module fibres; EnhancedDerivedSheaves E5:abstract.2 leftModuleObjects and moduleObjects. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+desc = 'A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data. Provider: roadmap BordismFormalGroups, the monoidal and fibration sub-lane (LM operad and module fibres), with roadmap EnhancedDerivedSheaves “Algebras, modules and the monoidal envelope”.'
 deps = ['GLCinLean.Infinity.monoidalCategory']
 source = '[AGKRRV] §0.9.4; [ArinkinGaitsgory] §1.5.2(viii)'

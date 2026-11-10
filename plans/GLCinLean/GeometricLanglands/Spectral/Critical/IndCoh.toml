@@ -1,22 +1,22 @@
-desc = "Infinite-type and Ran inputs used by oper localization. No LAFT category is silently applied to infinite-dimensional oper spaces."
+desc = 'Infinite-type and Ran inputs used by oper localization. No LAFT category is silently applied to infinite-dimensional oper spaces.'
 
 [[node]]
-id = "GLCinLean.SpectralProof.opers_indPlacid"
-kind = "theorem"
-desc = "Regular opers are inverse limits of smooth finite-type quotients of the relevant Tate vector space; meromorphic opers are a pro-smooth torsor over the Laurent/arc quotient and hence ind-placid. Prove LSreg→LSmer is ind-closed locally almost of finite presentation and transfer ind-placidity to monodromy-free opers by its Cartesian square. Retain the relative versions on smooth finite-power charts of Ran. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.localOpers", "GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation", "GLCinLean.Hecke.loopArcGroups"]
-source = "[GLC2] §§3.2.2–3.2.6 and B.7.12–B.7.13; Corollary A.9.10"
+id = 'GLCinLean.SpectralProof.opers_indPlacid'
+kind = 'theorem'
+desc = 'Regular opers are inverse limits of smooth finite-type quotients of the relevant Tate vector space; meromorphic opers are a pro-smooth torsor over the Laurent/arc quotient and hence ind-placid. Prove LSreg→LSmer is ind-closed locally almost of finite presentation and transfer ind-placidity to monodromy-free opers by its Cartesian square. Retain the relative versions on smooth finite-power charts of Ran. Provider: here.'
+deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation', 'GLCinLean.Hecke.loopArcGroups']
+source = '[GLC2] §§3.2.2–3.2.6 and B.7.12–B.7.13; Corollary A.9.10'
 
 [[node]]
-id = "GLCinLean.SpectralProof.operIndCoh_ranDescent"
-kind = "theorem"
-desc = "Construct the IndCoh! and IndCoh* sheaves of categories on Ran from smooth charts X^I. Establish transition equivalences by formal completion of diagonals and smooth retractions, compare maps agreeing on reductions with homotopy-coherent compatibility, then use compact duality for the star construction and external products for factorization. Do not replace this descent by checking closed-point fibers. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.opers_indPlacid", "GLCinLean.Sheaves.indcohBang_formalCompletion", "GLCinLean.Sheaves.indPlacidIndCoh_baseChange", "GLCinLean.Sheaves.indPlacidIndCoh_compactDuality", "GLCinLean.SpectralProof.factorizationCategory", "GLCinLean.Hecke.ranSpace"]
-source = "[GLC2] §§B.13.9–B.13.22, especially Lemmas B.13.11, B.13.14, B.13.18 and B.13.20"
+id = 'GLCinLean.SpectralProof.operIndCoh_ranDescent'
+kind = 'theorem'
+desc = 'Construct the IndCoh! and IndCoh* sheaves of categories on Ran from smooth charts X^I. Establish transition equivalences by formal completion of diagonals and smooth retractions, compare maps agreeing on reductions with homotopy-coherent compatibility, then use compact duality for the star construction and external products for factorization. Do not replace this descent by checking closed-point fibers. Provider: here.'
+deps = ['GLCinLean.SpectralProof.opers_indPlacid', 'GLCinLean.Sheaves.indcohBang_formalCompletion', 'GLCinLean.Sheaves.indPlacidIndCoh_baseChange', 'GLCinLean.Sheaves.indPlacidIndCoh_compactDuality', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Hecke.ranSpace']
+source = '[GLC2] §§B.13.9–B.13.22, especially Lemmas B.13.11, B.13.14, B.13.18 and B.13.20'
 
 [[node]]
-id = "GLCinLean.SpectralProof.regularOperUpsilon_equiv"
-kind = "theorem"
-desc = "For regular opers, pro-smooth finite-stage presentations identify IndCoh* with QCoh and identify Upsilon:QCoh→IndCoh! as an equivalence. Supply the factorization-compatible regular-oper comparison used by vacuum insertion. This does not assume the monodromy-free factorization Upsilon question has a positive answer. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.opers_indPlacid", "GLCinLean.SpectralProof.operIndCoh_ranDescent", "GLCinLean.Sheaves.infiniteTypeUpsilon"]
-source = "[GLC2] §3.2.3; §16.5; compare Question 3.8.9"
+id = 'GLCinLean.SpectralProof.regularOperUpsilon_equiv'
+kind = 'theorem'
+desc = 'For regular opers, pro-smooth finite-stage presentations identify IndCoh* with QCoh and identify Upsilon:QCoh→IndCoh! as an equivalence. Supply the factorization-compatible regular-oper comparison used by vacuum insertion. This does not assume the monodromy-free factorization Upsilon question has a positive answer. Provider: here.'
+deps = ['GLCinLean.SpectralProof.opers_indPlacid', 'GLCinLean.SpectralProof.operIndCoh_ranDescent', 'GLCinLean.Sheaves.infiniteTypeUpsilon']
+source = '[GLC2] §3.2.3; §16.5; compare Question 3.8.9'

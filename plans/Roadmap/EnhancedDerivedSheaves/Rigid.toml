@@ -3,13 +3,13 @@ desc = 'Rigid monoidal categories and the linearity of right adjoints over them.
 [[node]]
 id = 'GLCinLean.Infinity.rigidMonoidalCategory'
 kind = 'definition'
-desc = 'Rigidity of a presentable monoidal category A relative to a symmetric monoidal base V: A is dualizable as a V-module, multiplication A tensor_V A to A has a continuous bilinear right adjoint, and the unit V to A has a continuous V-linear right adjoint. Supply the resulting evaluation/coevaluation and adjoint-mate APIs. As a sufficient criterion over derivedVect, prove that compact generation by tensor-dualizable compact objects with compact unit implies rigidity. The V=derivedVect case is ordinary category rigidity; it is distinct from claiming every compact object is tensor-dualizable, and over geometric bases all conditions remain relative. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:presentability.4 owns relative RigidData/IsRigid and rigid adjoint linearity; implement through Tau Ceti Worker. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+desc = 'Rigidity of a presentable monoidal category A relative to a symmetric monoidal base V: A is dualizable as a V-module, multiplication A tensor_V A to A has a continuous bilinear right adjoint, and the unit V to A has a continuous V-linear right adjoint. Supply the resulting evaluation/coevaluation and adjoint-mate APIs. As a sufficient criterion over derivedVect, prove that compact generation by tensor-dualizable compact objects with compact unit implies rigidity. The V=derivedVect case is ordinary category rigidity; it is distinct from claiming every compact object is tensor-dualizable, and over geometric bases all conditions remain relative. Provider: roadmap EnhancedDerivedSheaves, `RigidData` and `IsRigid` (“Dualizable, compactly assembled and rigid categories”).'
 deps = ['GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.dualizableCategory', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.compactGeneration']
 source = '[GLC1] §§1.2.2, 1.4.2, 1.4.5; [GLC3] §1.4 and §9.6.11–Lemma 9.6.12'
 
 [[node]]
 id = 'GLCinLean.Infinity.rightAdjoint_linear'
 kind = 'theorem'
-desc = 'Right adjoints of module functors over rigid monoidal categories inherit compatible module structures. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:presentability.4 rigid module-category adjunctions. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+desc = 'Right adjoints of module functors over rigid monoidal categories inherit compatible module structures. Provider: roadmap EnhancedDerivedSheaves, the rigid module-category adjunctions of “Dualizable, compactly assembled and rigid categories”.'
 deps = ['GLCinLean.Infinity.rigidMonoidalCategory', 'GLCinLean.Infinity.rightAdjoint']
 source = '[GLC1] §1.4.5'

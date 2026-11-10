@@ -1,15 +1,15 @@
-desc = "Derived indscheme inputs to the finiteness argument. No placeholders; consume the affine cotangent and enhanced category providers already planned."
+desc = 'Derived indscheme inputs to the finiteness argument.'
 
 [[node]]
-id = "GLCinLean.Derived.proCotangentComplex"
-kind = "definition"
-desc = "The accessible pro-object representing the functor of lifts across split square-zero extensions, with relative and base-change APIs. Pro-objects use the dual Ind construction; the ordinary affine cotangent complex is the representable special case. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Derived.prestack", "GLCinLean.Derived.affineCotangentComplex", "GLCinLean.Infinity.indCompletion", "GLCinLean.Infinity.tStructure"]
-source = "[DGIndschemes] §§4.1–4.3"
+id = 'GLCinLean.Derived.proCotangentComplex'
+kind = 'definition'
+desc = 'The accessible pro-object representing the functor of lifts across split square-zero extensions, with relative and base-change APIs. Pro-objects use the dual Ind construction; the ordinary affine cotangent complex is the representable special case. Provider: here.'
+deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Derived.affineCotangentComplex', 'GLCinLean.Infinity.indCompletion', 'GLCinLean.Infinity.tStructure']
+source = '[DGIndschemes] §§4.1–4.3'
 
 [[node]]
-id = "GLCinLean.Derived.connectiveDeformationTheory"
-kind = "definition"
-desc = "Convergence together with Conditions (A), (B), (C): existence of connective pro-cotangent spaces, compatibility with base change, and compatibility with nonsplit square-zero extensions. Its nontrivial theorem is indscheme_connectiveDeformationTheory. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Derived.proCotangentComplex", "GLCinLean.Derived.classicalReduction"]
-source = "[DGIndschemes] Definition 4.7.1 and §§4.1–4.6"
+id = 'GLCinLean.Derived.connectiveDeformationTheory'
+kind = 'definition'
+desc = 'Convergence together with Conditions (A), (B), (C): existence of connective pro-cotangent spaces, compatibility with base change, and compatibility with nonsplit square-zero extensions. Its nontrivial theorem is indscheme_connectiveDeformationTheory. Provider: here.'
+deps = ['GLCinLean.Derived.proCotangentComplex', 'GLCinLean.Derived.classicalReduction']
+source = '[DGIndschemes] Definition 4.7.1 and §§4.1–4.6'

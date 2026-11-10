@@ -1,22 +1,22 @@
-desc = "Proof of spectral localization full faithfulness; the generic geometric argument is independent of the Langlands functor."
+desc = 'Proof of spectral localization full faithfulness; the generic geometric argument is independent of the Langlands functor.'
 
 [[node]]
-id = "GLCinLean.SpectralProof.localizationPassability"
-kind = "theorem"
-desc = "Verify the affine-diagonal and passability hypotheses for the constant D-stack BH on X: every finite-configuration fiber Y_Ran×_Ran S and the section stack LS_H. For LS use its global complete-intersection finiteness and compact unit. For Ran fibers use the proved collision-descent and passability theorem, including arbitrary affine coefficient base change; do not infer these fiber assertions just from rigidity of QCoh(LS). Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Sheaves.passable", "GLCinLean.LocalSystems.qcohRigid", "GLCinLean.Sheaves.qcaCompact_iff_perfect", "GLCinLean.LocalSystems.globalCompleteIntersection", "GLCinLean.Hecke.ranRepresentations", "GLCinLean.Hecke.spreadClassifyingStack_passable", "GLCinLean.Infinity.dualizableCategory"]
-source = "[GLC4] §§C.1.1–C.1.2, C.1.9; [GRQCoh] §§3.5, 3.7"
+id = 'GLCinLean.SpectralProof.localizationPassability'
+kind = 'theorem'
+desc = 'Verify the affine-diagonal and passability hypotheses for the constant D-stack BH on X: every finite-configuration fiber Y_Ran×_Ran S and the section stack LS_H. For LS use its global complete-intersection finiteness and compact unit. For Ran fibers use the proved collision-descent and passability theorem, including arbitrary affine coefficient base change; do not infer these fiber assertions just from rigidity of QCoh(LS). Provider: here.'
+deps = ['GLCinLean.Sheaves.passable', 'GLCinLean.LocalSystems.qcohRigid', 'GLCinLean.Sheaves.qcaCompact_iff_perfect', 'GLCinLean.LocalSystems.globalCompleteIntersection', 'GLCinLean.Hecke.ranRepresentations', 'GLCinLean.Hecke.spreadClassifyingStack_passable', 'GLCinLean.Infinity.dualizableCategory']
+source = '[GLC4] §§C.1.1–C.1.2, C.1.9; [GRQCoh] §§3.5, 3.7'
 
 [[node]]
-id = "GLCinLean.SpectralProof.affineDPrestack_factorizationHomology"
-kind = "theorem"
-desc = "For an affine morphism of D-prestacks, construct the relative factorization-homology natural transformation of GLC4 C.4.3 and prove it is an isomorphism on objects in the image of forgetting unitality. Derive the dualizing-unit case C.4.5. Use the central-coefficient BD comparison on affine parameter tests, with derived scalar extension and descent; retain unit-insertion and adjunction compatibility. No assertion is made for every object of a nonunital Ran category. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.factorizationAlgebra", "GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv", "GLCinLean.Factorization.centralChiralHomology_equiv_derivedConstantQuotient", "GLCinLean.Hecke.ranHomology_is_unit", "GLCinLean.Hecke.ranSupersetPullback_fullyFaithful", "GLCinLean.Sheaves.qcoh", "GLCinLean.Sheaves.passable_tensorBaseChange"]
-source = "[BDChiral] Proposition 4.6.5; [GLC4] Proposition B.3.8(a), Proposition C.4.4 and Corollary C.4.5"
+id = 'GLCinLean.SpectralProof.affineDPrestack_factorizationHomology'
+kind = 'theorem'
+desc = 'For an affine morphism of D-prestacks, construct the relative factorization-homology natural transformation of GLC4 C.4.3 and prove it is an isomorphism on objects in the image of forgetting unitality. Derive the dualizing-unit case C.4.5. Use the central-coefficient BD comparison on affine parameter tests, with derived scalar extension and descent; retain unit-insertion and adjunction compatibility. No assertion is made for every object of a nonunital Ran category. Provider: here.'
+deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv', 'GLCinLean.Factorization.centralChiralHomology_equiv_derivedConstantQuotient', 'GLCinLean.Hecke.ranHomology_is_unit', 'GLCinLean.Hecke.ranSupersetPullback_fullyFaithful', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.passable_tensorBaseChange']
+source = '[BDChiral] Proposition 4.6.5; [GLC4] Proposition B.3.8(a), Proposition C.4.4 and Corollary C.4.5'
 
 [[node]]
-id = "GLCinLean.SpectralProof.spectralLocalization_counit_isIso"
-kind = "theorem"
-desc = "Use passable QCoh kernel calculus to test the localization counit on the diagonal kernel. Apply the relative affine factorization-homology theorem to the diagonal of the D-prestack; obtain the identity kernel and hence the counit isomorphism. Specialize to BH only after verifying every hypothesis. This proof uses no automorphic spectral action or Langlands equivalence. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.localizationPassability", "GLCinLean.Sheaves.passable_qcohKernelEquivalence", "GLCinLean.Sheaves.passable_tensorBaseChange", "GLCinLean.SpectralProof.affineDPrestack_factorizationHomology", "GLCinLean.Hecke.ranHomology_is_unit", "GLCinLean.Spectral.localization"]
-source = "[GLC4] Proposition C.1.7, Corollary C.1.8, §C.1.9 and proof §C.4"
+id = 'GLCinLean.SpectralProof.spectralLocalization_counit_isIso'
+kind = 'theorem'
+desc = 'Use passable QCoh kernel calculus to test the localization counit on the diagonal kernel. Apply the relative affine factorization-homology theorem to the diagonal of the D-prestack; obtain the identity kernel and hence the counit isomorphism. Specialize to BH only after verifying every hypothesis. This proof uses no automorphic spectral action or Langlands equivalence. Provider: here.'
+deps = ['GLCinLean.SpectralProof.localizationPassability', 'GLCinLean.Sheaves.passable_qcohKernelEquivalence', 'GLCinLean.Sheaves.passable_tensorBaseChange', 'GLCinLean.SpectralProof.affineDPrestack_factorizationHomology', 'GLCinLean.Hecke.ranHomology_is_unit', 'GLCinLean.Spectral.localization']
+source = '[GLC4] Proposition C.1.7, Corollary C.1.8, §C.1.9 and proof §C.4'

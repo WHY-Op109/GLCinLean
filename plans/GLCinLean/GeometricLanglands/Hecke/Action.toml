@@ -1,43 +1,43 @@
-desc = "Planned library module. GeometricLanglands / Hecke / Action. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'The Hecke action of Rep(Ǧ)_Ran on Dmod_½(Bun_G).'
 
 [[node]]
-id = "GLCinLean.Hecke.action"
-kind = "definition"
-desc = "Action of Rep(H)_Ran on Dmod_1/2(Bun_G) by Hecke correspondences and Satake kernels. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Hecke.satake", "GLCinLean.Automorphic.halfTwistedDModules", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.DModules.holonomicShriek"]
-source = "[GLC1] §1.2.1"
+id = 'GLCinLean.Hecke.action'
+kind = 'definition'
+desc = 'Action of Rep(H)_Ran on Dmod_1/2(Bun_G) by Hecke correspondences and Satake kernels. Provider: here.'
+deps = ['GLCinLean.Hecke.satake', 'GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.holonomicShriek']
+source = '[GLC1] §1.2.1'
 
 [[node]]
-id = "GLCinLean.Hecke.sphericalAction"
-kind = "definition"
-desc = "The right action of the half-twisted Sph^non-ren_{G,Ran} on Dmod_1/2(Bun_G) through the Ran Hecke correspondence, as an action of a factorization monoidal category integrated over Ran, using the gerbe comparison Satake.criticalTwist_matchesBunDeterminant. For a Levi quotient M the same construction gives the Sph^non-ren_M action on Dmod_1/2(Bun_M). Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.correspondence", "GLCinLean.Satake.factorizationSphericalCategory", "GLCinLean.Satake.criticalTwist_matchesBunDeterminant", "GLCinLean.Automorphic.halfTwistedDModules", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.DModules.holonomicShriek", "GLCinLean.Infinity.moduleCategory"]
-source = "[GLC1] §1.2.1; [GLC2] §1.5.1 and §H.6.8; [GLC3] §8.2.1"
+id = 'GLCinLean.Hecke.sphericalAction'
+kind = 'definition'
+desc = 'The right action of the half-twisted Sph^non-ren_{G,Ran} on Dmod_1/2(Bun_G) through the Ran Hecke correspondence, as an action of a factorization monoidal category integrated over Ran, using the gerbe comparison Satake.criticalTwist_matchesBunDeterminant. For a Levi quotient M the same construction gives the Sph^non-ren_M action on Dmod_1/2(Bun_M). Provider: here.'
+deps = ['GLCinLean.Hecke.correspondence', 'GLCinLean.Satake.factorizationSphericalCategory', 'GLCinLean.Satake.criticalTwist_matchesBunDeterminant', 'GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.holonomicShriek', 'GLCinLean.Infinity.moduleCategory']
+source = '[GLC1] §1.2.1; [GLC2] §1.5.1 and §H.6.8; [GLC3] §8.2.1'
 
 [[node]]
-id = "GLCinLean.Hecke.action_viaRenormalized"
-kind = "theorem"
-desc = "The monoidal action of Rep(Ǧ)_Ran on Dmod_1/2(Bun_G) given by Hecke.action is isomorphic, as a monoidal action, to the action through Satake.naiveFactorizationFunctor_renormalized followed by Hecke.renormalizedSphericalAction. Same for every Levi quotient M. This is the comparison through which Sph_G-linear constructions (enhanced Eisenstein series) become Rep(Ǧ)_Ran-linear for the Hecke action. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.action", "GLCinLean.Satake.naiveFactorizationFunctor_renormalized", "GLCinLean.Hecke.renormalizedSphericalAction"]
-source = "[GLC2] §§1.5.3 and 1.7.6; [GLC3] §8.2.1"
+id = 'GLCinLean.Hecke.action_viaRenormalized'
+kind = 'theorem'
+desc = 'The monoidal action of Rep(Ǧ)_Ran on Dmod_1/2(Bun_G) given by Hecke.action is isomorphic, as a monoidal action, to the action through Satake.naiveFactorizationFunctor_renormalized followed by Hecke.renormalizedSphericalAction. Same for every Levi quotient M. This is the comparison through which Sph_G-linear constructions (enhanced Eisenstein series) become Rep(Ǧ)_Ran-linear for the Hecke action. Provider: here.'
+deps = ['GLCinLean.Hecke.action', 'GLCinLean.Satake.naiveFactorizationFunctor_renormalized', 'GLCinLean.Hecke.renormalizedSphericalAction']
+source = '[GLC2] §§1.5.3 and 1.7.6; [GLC3] §8.2.1'
 
 [[node]]
-id = "GLCinLean.Hecke.renormalizedSphericalAction"
-kind = "definition"
-desc = "The action of the renormalized Sph_{G,Ran} on Dmod_1/2(Bun_G) obtained from Hecke.sphericalAction by restriction along the monoidal functor non-ren, and likewise for each Levi quotient M. This is the action for which enhanced Eisenstein series are Sph_G-linear. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.sphericalAction", "GLCinLean.Satake.renormalizedSphericalCategory"]
-source = "[GLC2] §1.5.3; [GLC3] §8.2.1"
+id = 'GLCinLean.Hecke.renormalizedSphericalAction'
+kind = 'definition'
+desc = 'The action of the renormalized Sph_{G,Ran} on Dmod_1/2(Bun_G) obtained from Hecke.sphericalAction by restriction along the monoidal functor non-ren, and likewise for each Levi quotient M. This is the action for which enhanced Eisenstein series are Sph_G-linear. Provider: here.'
+deps = ['GLCinLean.Hecke.sphericalAction', 'GLCinLean.Satake.renormalizedSphericalCategory']
+source = '[GLC2] §1.5.3; [GLC3] §8.2.1'
 
 [[node]]
-id = "GLCinLean.Hecke.action_factorsThroughIndependent"
-kind = "theorem"
-desc = "By Hecke.action_localUnital the Hecke action of Rep(H) on Dmod_1/2(Bun_G) is a local Ran-unital action, so by [GLC2] Corollary H.6.11 the action of (Rep(H)_Ran)^⋆ of Hecke.action factors through the quotient q to an action of Hecke.unitalIndependentRepresentations, uniquely, and the two module structures correspond. Same for each Levi quotient. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.action", "GLCinLean.Hecke.unitalIndependentRepresentations", "GLCinLean.SpectralProof.localUnitalAction", "GLCinLean.Hecke.action_localUnital"]
-source = "[GLC2] §15.5.1 and Corollary H.6.11"
+id = 'GLCinLean.Hecke.action_factorsThroughIndependent'
+kind = 'theorem'
+desc = 'By Hecke.action_localUnital the Hecke action of Rep(H) on Dmod_1/2(Bun_G) is a local Ran-unital action, so by [GLC2] Corollary H.6.11 the action of (Rep(H)_Ran)^⋆ of Hecke.action factors through the quotient q to an action of Hecke.unitalIndependentRepresentations, uniquely, and the two module structures correspond. Same for each Levi quotient. Provider: here.'
+deps = ['GLCinLean.Hecke.action', 'GLCinLean.Hecke.unitalIndependentRepresentations', 'GLCinLean.SpectralProof.localUnitalAction', 'GLCinLean.Hecke.action_localUnital']
+source = '[GLC2] §15.5.1 and Corollary H.6.11'
 
 [[node]]
-id = "GLCinLean.Hecke.action_localUnital"
-kind = "theorem"
-desc = "The Hecke action is a local Ran-unital action of Rep(H) on Dmod_1/2(Bun_G) in the sense of SpectralProof.localUnitalAction. Prove the three unitality inputs: Rep(H) as a sheaf of monoidal categories on the unital Ran space ([GLC2] §H.4); Satake.naiveFactorizationFunctor as a unital factorization functor (the unit goes to the delta object at the unit of the Grassmannian, compatibly with the inclusions of finite sets); and Hecke.sphericalAction as a unital action, the delta object acting by the identity compatibly with factorization. [GLC2] §15.5.1 only says that the Hecke action is considered in this way; no source with a proof was found, so this is an explicit obligation. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Hecke.action", "GLCinLean.SpectralProof.localUnitalAction", "GLCinLean.Satake.naiveFactorizationFunctor", "GLCinLean.Hecke.sphericalAction", "GLCinLean.Hecke.ranRepresentations"]
-source = "[GLC2] §15.5.1 and §§H.6.1–H.6.8; explicit obligation"
+id = 'GLCinLean.Hecke.action_localUnital'
+kind = 'theorem'
+desc = 'The Hecke action is a local Ran-unital action of Rep(H) on Dmod_1/2(Bun_G) in the sense of SpectralProof.localUnitalAction. Prove the three unitality inputs: Rep(H) as a sheaf of monoidal categories on the unital Ran space ([GLC2] §H.4); Satake.naiveFactorizationFunctor as a unital factorization functor (the unit goes to the delta object at the unit of the Grassmannian, compatibly with the inclusions of finite sets); and Hecke.sphericalAction as a unital action, the delta object acting by the identity compatibly with factorization. [GLC2] §15.5.1 only says that the Hecke action is considered in this way; no source with a proof was found, so this is an explicit obligation. Provider: here.'
+deps = ['GLCinLean.Hecke.action', 'GLCinLean.SpectralProof.localUnitalAction', 'GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Hecke.sphericalAction', 'GLCinLean.Hecke.ranRepresentations']
+source = '[GLC2] §15.5.1 and §§H.6.1–H.6.8; explicit obligation'

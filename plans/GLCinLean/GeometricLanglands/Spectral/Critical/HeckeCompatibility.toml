@@ -1,50 +1,50 @@
-desc = "Planned library module. The completed proof of the Hecke property of critical localization. No placeholders belong here. The base field remains any algebraically closed field of characteristic zero."
+desc = 'The completed proof of the Hecke property of critical localization.'
 
 [[node]]
-id = "GLCinLean.SpectralProof.globalOperLocalization"
-kind = "theorem"
-desc = "Construct Loc^Op on global-oper base change, factor Loc_crit through it, and intertwine the test-prestack Rep(H) action via global oper evaluation and Satake. Use the finite-presentation approximation and factorization-algebra construction in §15.6, not the unproved sketch in the 2010 notes. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.globalOperBaseChange", "GLCinLean.SpectralProof.kacMoodyLocalization", "GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions", "GLCinLean.SpectralProof.operFinitePresentationApproximation", "GLCinLean.SpectralProof.operFactorizationHomology_functions", "GLCinLean.SpectralProof.vacuumInsertion_regularizesOpers", "GLCinLean.SpectralProof.operBaseChange_withPrescribedPoles", "GLCinLean.Hecke.satake"]
-source = "[GLC2] Theorem 15.1.7, proof §§15.6–15.10 and Appendix F; Lemma 15.6.4; [GenVan] Theorem 2.4"
+id = 'GLCinLean.SpectralProof.globalOperLocalization'
+kind = 'theorem'
+desc = 'Construct Loc^Op on global-oper base change, factor Loc_crit through it, and intertwine the test-prestack Rep(H) action via global oper evaluation and Satake. Use the finite-presentation approximation and factorization-algebra construction in §15.6, not the unproved sketch in the 2010 notes. Provider: here.'
+deps = ['GLCinLean.SpectralProof.globalOperBaseChange', 'GLCinLean.SpectralProof.kacMoodyLocalization', 'GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions', 'GLCinLean.SpectralProof.operFinitePresentationApproximation', 'GLCinLean.SpectralProof.operFactorizationHomology_functions', 'GLCinLean.SpectralProof.vacuumInsertion_regularizesOpers', 'GLCinLean.SpectralProof.operBaseChange_withPrescribedPoles', 'GLCinLean.Hecke.satake']
+source = '[GLC2] Theorem 15.1.7, proof §§15.6–15.10 and Appendix F; Lemma 15.6.4; [GenVan] Theorem 2.4'
 
 [[node]]
-id = "GLCinLean.SpectralProof.globalOperLocalization_ranLinear"
-kind = "theorem"
-desc = "Promote the test-prestack compatibility to the entire convolution Rep(H)_Ran action by unitality and independent-category integration. Same-point Hecke linearity alone is insufficient. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.globalOperLocalization", "GLCinLean.SpectralProof.factorizationGlobalization", "GLCinLean.Hecke.ranConvolution"]
-source = "[GLC2] Corollaries 15.5.4, 15.5.6, 15.5.9"
+id = 'GLCinLean.SpectralProof.globalOperLocalization_ranLinear'
+kind = 'theorem'
+desc = 'Promote the test-prestack compatibility to the entire convolution Rep(H)_Ran action by unitality and independent-category integration. Same-point Hecke linearity alone is insufficient. Provider: here.'
+deps = ['GLCinLean.SpectralProof.globalOperLocalization', 'GLCinLean.SpectralProof.factorizationGlobalization', 'GLCinLean.Hecke.ranConvolution']
+source = '[GLC2] Corollaries 15.5.4, 15.5.6, 15.5.9'
 
 [[node]]
-id = "GLCinLean.SpectralProof.localizationKernel_annihilatesKL"
-kind = "theorem"
-desc = "Every F with Loc_spec(F)=0 acts by zero on each object in the image of critical Kac–Moody localization; use pullback of zero to global opers and full Ran-linear compatibility. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.globalOperLocalization_ranLinear", "GLCinLean.Spectral.localization", "GLCinLean.Hecke.action"]
-source = "[GaitsgoryOutline] proof of Theorem 4.5.2 in §11.1; [GenVan] Main Lemma 2.2"
+id = 'GLCinLean.SpectralProof.localizationKernel_annihilatesKL'
+kind = 'theorem'
+desc = 'Every F with Loc_spec(F)=0 acts by zero on each object in the image of critical Kac–Moody localization; use pullback of zero to global opers and full Ran-linear compatibility. Provider: here.'
+deps = ['GLCinLean.SpectralProof.globalOperLocalization_ranLinear', 'GLCinLean.Spectral.localization', 'GLCinLean.Hecke.action']
+source = '[GaitsgoryOutline] proof of Theorem 4.5.2 in §11.1; [GenVan] Main Lemma 2.2'
 
 [[node]]
-id = "GLCinLean.SpectralProof.operFinitePresentationApproximation"
-kind = "theorem"
-desc = "For any ind-placid indscheme Z and IndCoh!(Z)-module category C, recover C as the colimit of Funct_IndCoh!(Z)(IndCoh!(Y),C) over closed affine almost-finite-presentation pieces Y. Their transition functors have right adjoints given by precomposition with compact-preserving pushforward; turn the colimit into that right-adjoint limit and use colim IndCoh!(Y)=IndCoh!(Z). Apply to monodromy-free opers. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.operActionOnKL", "GLCinLean.SpectralProof.localOpers", "GLCinLean.Sheaves.indPlacidIndCoh_baseChange", "GLCinLean.Sheaves.indPlacidIndCoh_compactDuality", "GLCinLean.SpectralProof.opers_indPlacid", "GLCinLean.Infinity.internalHom", "GLCinLean.Infinity.presentableCategory"]
-source = "[GLC2] Lemma 15.6.4, proof §15.10"
+id = 'GLCinLean.SpectralProof.operFinitePresentationApproximation'
+kind = 'theorem'
+desc = 'For any ind-placid indscheme Z and IndCoh!(Z)-module category C, recover C as the colimit of Funct_IndCoh!(Z)(IndCoh!(Y),C) over closed affine almost-finite-presentation pieces Y. Their transition functors have right adjoints given by precomposition with compact-preserving pushforward; turn the colimit into that right-adjoint limit and use colim IndCoh!(Y)=IndCoh!(Z). Apply to monodromy-free opers. Provider: here.'
+deps = ['GLCinLean.SpectralProof.operActionOnKL', 'GLCinLean.SpectralProof.localOpers', 'GLCinLean.Sheaves.indPlacidIndCoh_baseChange', 'GLCinLean.Sheaves.indPlacidIndCoh_compactDuality', 'GLCinLean.SpectralProof.opers_indPlacid', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Infinity.presentableCategory']
+source = '[GLC2] Lemma 15.6.4, proof §15.10'
 
 [[node]]
-id = "GLCinLean.SpectralProof.operFactorizationHomology_functions"
-kind = "theorem"
-desc = "Identify the commutative factorization homology with coefficients and prescribed poles with functions on global opers. Include compatibility with evaluation and the local central algebra. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.globalMonodromyFreeOpers", "GLCinLean.SpectralProof.factorizationAlgebra", "GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions", "GLCinLean.Factorization.centralChiralHomology_equiv_derivedConstantQuotient", "GLCinLean.Sheaves.qcoh"]
-source = "[GLC2] Lemmas F.2.8 and F.3.5, applied in §15.6.14"
+id = 'GLCinLean.SpectralProof.operFactorizationHomology_functions'
+kind = 'theorem'
+desc = 'Identify the commutative factorization homology with coefficients and prescribed poles with functions on global opers. Include compatibility with evaluation and the local central algebra. Provider: here.'
+deps = ['GLCinLean.SpectralProof.globalMonodromyFreeOpers', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions', 'GLCinLean.Factorization.centralChiralHomology_equiv_derivedConstantQuotient', 'GLCinLean.Sheaves.qcoh']
+source = '[GLC2] Lemmas F.2.8 and F.3.5, applied in §15.6.14'
 
 [[node]]
-id = "GLCinLean.SpectralProof.vacuumInsertion_regularizesOpers"
-kind = "theorem"
-desc = "Insertion of critical vacuum modules away from the marked configuration factors through opers regular away from that configuration, compatibly with factorization. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.sphericalKL", "GLCinLean.SpectralProof.operActionOnKL", "GLCinLean.SpectralProof.regularOperUpsilon_equiv", "GLCinLean.SpectralProof.factorizationGlobalization"]
-source = "[GLC2] Theorem 15.2.8, proved in §16"
+id = 'GLCinLean.SpectralProof.vacuumInsertion_regularizesOpers'
+kind = 'theorem'
+desc = 'Insertion of critical vacuum modules away from the marked configuration factors through opers regular away from that configuration, compatibly with factorization. Provider: here.'
+deps = ['GLCinLean.SpectralProof.sphericalKL', 'GLCinLean.SpectralProof.operActionOnKL', 'GLCinLean.SpectralProof.regularOperUpsilon_equiv', 'GLCinLean.SpectralProof.factorizationGlobalization']
+source = '[GLC2] Theorem 15.2.8, proved in §16'
 
 [[node]]
-id = "GLCinLean.SpectralProof.operBaseChange_withPrescribedPoles"
-kind = "theorem"
-desc = "The QCoh tensor product for a finite-presentation affine Y in Op^mf agrees with QCoh of the fiber product of Y and the prestack of opers with the prescribed pole set. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.localOpers", "GLCinLean.SpectralProof.globalMonodromyFreeOpers", "GLCinLean.Sheaves.qcoh"]
-source = "[GLC2] Lemma 15.7.3, proof §15.9"
+id = 'GLCinLean.SpectralProof.operBaseChange_withPrescribedPoles'
+kind = 'theorem'
+desc = 'The QCoh tensor product for a finite-presentation affine Y in Op^mf agrees with QCoh of the fiber product of Y and the prestack of opers with the prescribed pole set. Provider: here.'
+deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.SpectralProof.globalMonodromyFreeOpers', 'GLCinLean.Sheaves.qcoh']
+source = '[GLC2] Lemma 15.7.3, proof §15.9'

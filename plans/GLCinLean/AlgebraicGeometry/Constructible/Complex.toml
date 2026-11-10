@@ -3,26 +3,26 @@ desc = 'Constructible sheaves on the complex points of finite-type C-schemes: th
 [[node]]
 id = 'GLCinLean.Constructible.complexPoints'
 kind = 'definition'
-desc = 'For a finite-type scheme Y over C, the set Y(C) with the classical (analytic) topology, functorial in Y, locally compact Hausdorff, with closed and open embeddings and proper maps sent to the corresponding maps of spaces. Provider: Missing at the pin; a Tau Ceti roadmap on analytification may claim it, so check before implementing. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`).'
+desc = 'For a finite-type scheme Y over C, the set Y(C) with the classical (analytic) topology, functorial in Y, locally compact Hausdorff, with closed and open embeddings and proper maps sent to the corresponding maps of spaces. Provider: here. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`).'
 source = '[HottaTakeuchiTanisaki] Chapter 4 (analytic spaces attached to schemes)'
 
 [[node]]
 id = 'GLCinLean.Constructible.derivedCategory'
 kind = 'definition'
-desc = 'For a finite-type C-scheme Y with an algebraic stratification, the bounded derived category of sheaves of C-vector spaces on Y(C) whose cohomology sheaves are locally constant of finite rank on each stratum. Include *- and !-pullback and pushforward along locally closed embeddings, proper pushforward, external products and Verdier duality, with base change and the projection formula, and Hom computed by derived global sections. Build it from Mathlib: TopCat.Sheaf for sheaves of C-vector spaces on Y(C) and DerivedCategory for its derived category; the constructibility condition, the operations and duality are Missing and implemented here. Provider: Mathlib suppliers named; the rest Missing. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node. Upstream declarations used: `TopCat.Sheaf` (`Mathlib.Topology.Sheaves.Sheaf`), `DerivedCategory` (`Mathlib.Algebra.Homology.DerivedCategory.Basic`).'
+desc = 'For a finite-type C-scheme Y with an algebraic stratification, the bounded derived category of sheaves of C-vector spaces on Y(C) whose cohomology sheaves are locally constant of finite rank on each stratum. Include *- and !-pullback and pushforward along locally closed embeddings, proper pushforward, external products and Verdier duality, with base change and the projection formula, and Hom computed by derived global sections. Build it from Mathlib: TopCat.Sheaf for sheaves of C-vector spaces on Y(C) and DerivedCategory for its derived category; the constructibility condition, the operations and duality are Missing and implemented here. Provider: here. Upstream declarations used: `TopCat.Sheaf` (`Mathlib.Topology.Sheaves.Sheaf`), `DerivedCategory` (`Mathlib.Algebra.Homology.DerivedCategory.Basic`).'
 deps = ['GLCinLean.Constructible.complexPoints', 'GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.tStructure']
 source = '[HottaTakeuchiTanisaki] Chapter 4 and Appendix on derived categories of sheaves'
 
 [[node]]
 id = 'GLCinLean.Constructible.perverseSheaves'
 kind = 'definition'
-desc = 'The middle-perversity t-structure on Constructible.derivedCategory for a stratification by smooth connected strata, its heart of perverse sheaves (finite length), and intermediate extension along locally closed strata, with IC sheaves of irreducible local systems as the simple objects. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node.'
+desc = 'The middle-perversity t-structure on Constructible.derivedCategory for a stratification by smooth connected strata, its heart of perverse sheaves (finite length), and intermediate extension along locally closed strata, with IC sheaves of irreducible local systems as the simple objects. Provider: here.'
 deps = ['GLCinLean.Constructible.derivedCategory']
 source = '[HottaTakeuchiTanisaki] Chapter 8 (perverse sheaves); [MV] §2'
 
 [[node]]
 id = 'GLCinLean.DModules.analyticDeRham'
 kind = 'definition'
-desc = 'For a finite-type C-scheme Y, analytification of algebraic D-modules on Y to analytic D-modules on Y(C), and the analytic de Rham functor DR from bounded holonomic complexes to Constructible.derivedCategory (for a stratification along which the cohomology is lisse), compatible with the perverse t-structures and with Verdier duality. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node.'
+desc = 'For a finite-type C-scheme Y, analytification of algebraic D-modules on Y to analytic D-modules on Y(C), and the analytic de Rham functor DR from bounded holonomic complexes to Constructible.derivedCategory (for a stratification along which the cohomology is lisse), compatible with the perverse t-structures and with Verdier duality. Provider: here.'
 deps = ['GLCinLean.Constructible.complexPoints', 'GLCinLean.Constructible.derivedCategory', 'GLCinLean.Constructible.perverseSheaves', 'GLCinLean.DModules.holonomic', 'GLCinLean.DModules.verdierDuality']
 source = '[HottaTakeuchiTanisaki] Chapter 4 (analytic D-modules and the de Rham functor)'

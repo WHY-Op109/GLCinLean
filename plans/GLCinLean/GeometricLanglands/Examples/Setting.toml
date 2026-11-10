@@ -1,8 +1,8 @@
-desc = "Planned library module. GeometricLanglands / Examples / Setting. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'A nonempty example of the geometric setting.'
 
 [[node]]
-id = "GLCinLean.Examples.nonemptySetting"
-kind = "theorem"
-desc = "Construct actual examples with a nontrivial split torus or GL₂ and P¹, pinning, theta characteristic and dual identification; detects vacuous standing hypotheses. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Groups.langlandsDual", "GLCinLean.Curves.thetaCharacteristic_exists"]
-source = "[GLC1] §§1.3.2, 1.5"
+id = 'GLCinLean.Examples.nonemptySetting'
+kind = 'theorem'
+desc = 'Construct actual examples with a nontrivial split torus or GL₂ and P¹, pinning, theta characteristic and dual identification; detects vacuous standing hypotheses. Provider: here.'
+deps = ['GLCinLean.Groups.langlandsDual', 'GLCinLean.Curves.thetaCharacteristic_exists']
+source = '[GLC1] §§1.3.2, 1.5'

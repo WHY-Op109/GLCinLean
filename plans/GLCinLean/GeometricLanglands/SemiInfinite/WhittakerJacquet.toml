@@ -1,22 +1,22 @@
-desc = "Parabolic Jacquet kernels and the independent proof of their Casselman–Shalika comparison."
+desc = 'Parabolic Jacquet kernels and the independent proof of their Casselman–Shalika comparison.'
 
 [[node]]
-id = "GLCinLean.SemiInfinite.whittakerJacquet"
-kind = "definition"
-desc = "Construct Jacquet functors on spherical Whittaker factorization categories from the parabolic IC kernel and its zero-stratum shriek kernel. Identify the relative kernel space with Gr_G times Gr_M over Ran, use the diagonal P-loop action and restrict the Whittaker character to N_M. The IC Hecke structure gives Rep(dualG)-linearity for restriction to dualM; the enhanced Drinfeld–Plucker structure gives the Chevalley-module linearity for the shriek functor. Preserve units and every diagonal/disjoint base-change comparison. Initially use the simply-connected-derived FH construction. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SemiInfinite.parabolicIC_koszulBoundary", "GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations", "GLCinLean.DModules.deRhamPushforward", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.Infinity.dualizableCategory"]
-source = "[ParabolicEisensteinFH] §§6.1–6.2"
+id = 'GLCinLean.SemiInfinite.whittakerJacquet'
+kind = 'definition'
+desc = 'Construct Jacquet functors on spherical Whittaker factorization categories from the parabolic IC kernel and its zero-stratum shriek kernel. Identify the relative kernel space with Gr_G times Gr_M over Ran, use the diagonal P-loop action and restrict the Whittaker character to N_M. The IC Hecke structure gives Rep(dualG)-linearity for restriction to dualM; the enhanced Drinfeld–Plucker structure gives the Chevalley-module linearity for the shriek functor. Preserve units and every diagonal/disjoint base-change comparison. Initially use the simply-connected-derived FH construction. Provider: here.'
+deps = ['GLCinLean.SemiInfinite.parabolicIC_koszulBoundary', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.dualizableCategory']
+source = '[ParabolicEisensteinFH] §§6.1–6.2'
 
 [[node]]
-id = "GLCinLean.SemiInfinite.whittakerJacquet_compose"
-kind = "theorem"
-desc = "Prove that the IC Jacquet functor from G to M followed by that from M to its maximal torus equals the Borel IC Jacquet functor from G. Express composition by convolution of the two kernels, compose their Plucker data, and compare induced Hecke kernels by scalar extension and the Cartesian quotient square. Identify the actual Plucker structure, not just the underlying kernels; carry the finite-configuration relative-perverse comparison through every X^I. This is independent of the Jacquet/Casselman–Shalika compatibility subsequently deduced from it. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SemiInfinite.whittakerJacquet", "GLCinLean.SemiInfinite.parabolicHeckeStructures", "GLCinLean.DModules.perverseHeart", "GLCinLean.Infinity.moduleCategory"]
-source = "[ParabolicEisensteinFH] Theorem 6.3.1.1 with its four-step proof"
+id = 'GLCinLean.SemiInfinite.whittakerJacquet_compose'
+kind = 'theorem'
+desc = 'Prove that the IC Jacquet functor from G to M followed by that from M to its maximal torus equals the Borel IC Jacquet functor from G. Express composition by convolution of the two kernels, compose their Plucker data, and compare induced Hecke kernels by scalar extension and the Cartesian quotient square. Identify the actual Plucker structure, not just the underlying kernels; carry the finite-configuration relative-perverse comparison through every X^I. This is independent of the Jacquet/Casselman–Shalika compatibility subsequently deduced from it. Provider: here.'
+deps = ['GLCinLean.SemiInfinite.whittakerJacquet', 'GLCinLean.SemiInfinite.parabolicHeckeStructures', 'GLCinLean.DModules.perverseHeart', 'GLCinLean.Infinity.moduleCategory']
+source = '[ParabolicEisensteinFH] Theorem 6.3.1.1 with its four-step proof'
 
 [[node]]
-id = "GLCinLean.SemiInfinite.whittakerJacquet_matches_unipotentInvariants"
-kind = "theorem"
-desc = "Prove IC Jacquet corresponds to restriction of representations under the full factorization Casselman–Shalika equivalence, and shriek Jacquet corresponds to derived N_dualP/Lie(N_dualP) invariants. For simply-connected G_der, the Hecke-linear functor is determined by its vacuum: prove the vacuum counit by the explicit triple-fiber-product computation and reduce through composition with the conservative Levi-to-torus functor. Use the rigorous Borel proof: the finite Zastava IC/shift comparison and nonzero-defect vanishing. Pass from the IC kernel to the shriek kernel by its proved Koszul boundary theorem, preserving the O(N_dualP) coaction. Then apply central-extension descent for general reductive G and match the opposite-parabolic, half-twist, Chevalley and rho_P normalizations of GLC3 on compact generators before ind-extension. This supplies GLC3's formerly deferred Omega/Jacquet identification without the global Langlands functor. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SemiInfinite.whittakerJacquet_compose", "GLCinLean.SemiInfinite.parabolicIC_koszulBoundary", "GLCinLean.Whittaker.borelSemiInfiniteIC_zastavaComparison", "GLCinLean.Whittaker.nonzeroZastava_whittakerCohomology_vanishes", "GLCinLean.SpectralProof.parabolicZExtension_descent", "GLCinLean.SpectralProof.semiInfiniteCategory"]
-source = "[ParabolicEisensteinFH] Theorem 6.4.1.1, Corollary 6.4.1.2, Lemma 6.4.3.1 and Theorem 6.4.4.1 with the first proof in §6.4.6; [GLC3] §B.4 and §E.5"
+id = 'GLCinLean.SemiInfinite.whittakerJacquet_matches_unipotentInvariants'
+kind = 'theorem'
+desc = '''Prove IC Jacquet corresponds to restriction of representations under the full factorization Casselman–Shalika equivalence, and shriek Jacquet corresponds to derived N_dualP/Lie(N_dualP) invariants. For simply-connected G_der, the Hecke-linear functor is determined by its vacuum: prove the vacuum counit by the explicit triple-fiber-product computation and reduce through composition with the conservative Levi-to-torus functor. Use the rigorous Borel proof: the finite Zastava IC/shift comparison and nonzero-defect vanishing. Pass from the IC kernel to the shriek kernel by its proved Koszul boundary theorem, preserving the O(N_dualP) coaction. Then apply central-extension descent for general reductive G and match the opposite-parabolic, half-twist, Chevalley and rho_P normalizations of GLC3 on compact generators before ind-extension. This supplies GLC3's formerly deferred Omega/Jacquet identification without the global Langlands functor. Provider: here.'''
+deps = ['GLCinLean.SemiInfinite.whittakerJacquet_compose', 'GLCinLean.SemiInfinite.parabolicIC_koszulBoundary', 'GLCinLean.Whittaker.borelSemiInfiniteIC_zastavaComparison', 'GLCinLean.Whittaker.nonzeroZastava_whittakerCohomology_vanishes', 'GLCinLean.SpectralProof.parabolicZExtension_descent', 'GLCinLean.SpectralProof.semiInfiniteCategory']
+source = '[ParabolicEisensteinFH] Theorem 6.4.1.1, Corollary 6.4.1.2, Lemma 6.4.3.1 and Theorem 6.4.4.1 with the first proof in §6.4.6; [GLC3] §B.4 and §E.5'

@@ -1,8 +1,8 @@
-desc = "Planned library module. The Iwahori subgroup, the Iwahori–Weyl group and the I-orbit stratification of the affine Grassmannian."
+desc = 'The Iwahori subgroup, the Iwahori–Weyl group and the I-orbit stratification of the affine Grassmannian.'
 
 [[node]]
-id = "GLCinLean.Hecke.iwahoriWeylGroup"
-kind = "definition"
-desc = "The Iwahori subgroup I = ev_0^{-1}(B) of L+G, the Iwahori–Weyl group W̃ = N_T(K)/T(O) as the semidirect product of the affine Weyl group with the length-zero subgroup Ω ≅ π1(G), its length function and Bruhat order, and the indexing of I-orbits on Gr_G and on LG/I by W̃ and W̃/W. Elements of Ω normalize I, so left translation by them carries I-Schubert varieties in one component of Gr_G onto those in another, isomorphically. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-10; Tau Ceti main and roadmap not rechecked for this node."
-deps = ["GLCinLean.Hecke.loopArcGroups", "GLCinLean.Hecke.affineGrassmannian", "GLCinLean.Groups.pinnedData", "GLCinLean.Groups.basedRootDatum"]
-source = "[PappasRapoport] §8 (Iwahori–Weyl group and Schubert varieties); [MV] §2 (I-orbits are affine spaces)"
+id = 'GLCinLean.Hecke.iwahoriWeylGroup'
+kind = 'definition'
+desc = 'The Iwahori subgroup I = ev_0^{-1}(B) of L+G, the Iwahori–Weyl group W̃ = N_T(K)/T(O) as the semidirect product of the affine Weyl group with the length-zero subgroup Ω ≅ π1(G), its length function and Bruhat order, and the indexing of I-orbits on Gr_G and on LG/I by W̃ and W̃/W. Elements of Ω normalize I, so left translation by them carries I-Schubert varieties in one component of Gr_G onto those in another, isomorphically. Provider: here.'
+deps = ['GLCinLean.Hecke.loopArcGroups', 'GLCinLean.Hecke.affineGrassmannian', 'GLCinLean.Groups.pinnedData', 'GLCinLean.Groups.basedRootDatum']
+source = '[PappasRapoport] §8 (Iwahori–Weyl group and Schubert varieties); [MV] §2 (I-orbits are affine spaces)'

@@ -1,8 +1,8 @@
-desc = "Coherent D-module prerequisites for the compactness proof. No placeholders belong here."
+desc = 'Coherent D-module prerequisites for the compactness proof.'
 
 [[node]]
-id = "GLCinLean.DModules.coherent"
-kind = "definition"
-desc = "Bounded complexes of coherent D-modules on schemes and smooth-local descent to algebraic stacks. Include the atlas criterion; holonomic objects lie in this subcategory, but compactness on a stack requires a separate theorem. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.DModules.rightCrystals", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.Infinity.tStructure"]
-source = "[DG2] §§5.1.17, 7.3.1–7.3.2"
+id = 'GLCinLean.DModules.coherent'
+kind = 'definition'
+desc = 'Bounded complexes of coherent D-modules on schemes and smooth-local descent to algebraic stacks. Include the atlas criterion; holonomic objects lie in this subcategory, but compactness on a stack requires a separate theorem. Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.tStructure']
+source = '[DG2] §§5.1.17, 7.3.1–7.3.2'

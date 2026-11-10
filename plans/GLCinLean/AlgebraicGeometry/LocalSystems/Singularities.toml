@@ -1,8 +1,8 @@
-desc = "Planned library module. AlgebraicGeometry / LocalSystems / Singularities. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'The stack of singularities Sing(LS_H).'
 
 [[node]]
-id = "GLCinLean.LocalSystems.singularities"
-kind = "definition"
-desc = "Identify points of Sing(LS_H) with (σ,A), a local system and horizontal coadjoint section. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.LocalSystems.quasiSmooth", "GLCinLean.Sheaves.singularities"]
-source = "[ArinkinGaitsgory] Corollary 10.4.7"
+id = 'GLCinLean.LocalSystems.singularities'
+kind = 'definition'
+desc = 'Identify points of Sing(LS_H) with (σ,A), a local system and horizontal coadjoint section. Provider: here.'
+deps = ['GLCinLean.LocalSystems.quasiSmooth', 'GLCinLean.Sheaves.singularities']
+source = '[ArinkinGaitsgory] Corollary 10.4.7'

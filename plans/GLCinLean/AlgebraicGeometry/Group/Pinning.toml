@@ -1,15 +1,15 @@
-desc = 'Planned library module. AlgebraicGeometry / Group / Pinning. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented.'
+desc = 'The Chevalley involution of a pinned group, and the torsor of pinnings.'
 
 [[node]]
 id = 'GLCinLean.Groups.chevalleyInvolution'
 kind = 'definition'
-desc = 'The Chevalley involution of a pinned split reductive group: the automorphism inducing −w0 on the character lattice and preserving the pinning, obtained from the isomorphism theorem applied to the automorphism −w0 of the based root datum. Prove that pullback along it sends the irreducible representation of highest weight μ to that of highest weight −w0 μ. Tau Ceti has serreChevalleyInvolution, the Lie-algebra involution on a Serre presentation, which is a different object and not a duplicate. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 (isomorphism theorem) for the input; the involution is Missing and implemented here unless that roadmap claims it. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node.'
+desc = 'The Chevalley involution of a pinned split reductive group: the automorphism inducing −w0 on the character lattice and preserving the pinning, obtained from the isomorphism theorem applied to the automorphism −w0 of the based root datum. Prove that pullback along it sends the irreducible representation of highest weight μ to that of highest weight −w0 μ. Tau Ceti has serreChevalleyInvolution, the Lie-algebra involution on a Serre presentation, which is a different object and not a duplicate. Provider: here, from the isomorphism theorem of roadmap ReductiveGroupsPartII.'
 deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.pinnedData']
 source = '[ConradRGS] Theorem 6.1.17 (isomorphism theorem); [GLC2] §1.8'
 
 [[node]]
 id = 'GLCinLean.Groups.pinnings_torsor'
 kind = 'theorem'
-desc = 'For a split connected reductive group with a split maximal torus T and a Borel subgroup B containing it, over an algebraically closed field, the pinnings with this T and B form a torsor under the adjoint torus T_ad(k), acting on the simple root vectors through the simple roots; every element of T_ad(k) lifts to T(k). Provider: Missing at the pin; the ReductiveGroupsPartII roadmap may own it, so check before implementing. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-10; Tau Ceti main and roadmap not rechecked for this node. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`).'
+desc = 'For a split connected reductive group with a split maximal torus T and a Borel subgroup B containing it, over an algebraically closed field, the pinnings with this T and B form a torsor under the adjoint torus T_ad(k), acting on the simple root vectors through the simple roots; every element of T_ad(k) lifts to T(k). Provider: here. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`).'
 deps = ['GLCinLean.Groups.pinnedData', 'GLCinLean.Groups.basedRootDatum']
 source = '[ConradRGS] §6.1 (pinnings); explicit obligation'

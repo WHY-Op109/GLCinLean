@@ -3,20 +3,20 @@ desc = 'Algebraic compactly supported D-module homology on pseudo-proper prestac
 [[node]]
 id = 'GLCinLean.DModules.compactSupportedHomology'
 kind = 'definition'
-desc = 'For a pseudo-proper prestack Y over k define H(Y)=p_!(omega_Y), with omega_Y=p^!(k). Construct its trace to k and functorial maps under morphisms between pseudo-proper prestacks using proper presentations. Prove H(Y) is the colimit of homologies of the presenting schemes. All schemes and D-modules are algebraic over an algebraically closed characteristic-zero field. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+desc = 'For a pseudo-proper prestack Y over k define H(Y)=p_!(omega_Y), with omega_Y=p^!(k). Construct its trace to k and functorial maps under morphisms between pseudo-proper prestacks using proper presentations. Prove H(Y) is the colimit of homologies of the presenting schemes. All schemes and D-modules are algebraic over an algebraically closed characteristic-zero field. Provider: here.'
 deps = ['GLCinLean.DModules.pseudoProperShriek', 'GLCinLean.Infinity.derivedVect']
 source = '[GaitsgoryContractibility] §§1.6.1–1.6.3; [GaitsgoryAtiyahBott] Proposition 1.5.2'
 
 [[node]]
 id = 'GLCinLean.DModules.compactSupportedHomology_kunneth'
 kind = 'theorem'
-desc = 'Prove H(Y×Z)≃H(Y) tensor H(Z) naturally for pseudo-proper Y and Z, compatibly with projections, traces, diagonal and permutations. Derive the geometric Kunneth map from proper scheme base change and projection formula, then commute tensor with colimits. Use the supplied algebraic Kunneth theorem for homology groups of complexes; that supplier alone does not establish the geometric product comparison. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6. Upstream declarations used: `HomologicalComplex.isIso_homologyKunneth_of_isSplitMono_of_isSplitEpi` (`TauCeti.Algebra.Homology.Monoidal.Homology.Kunneth.Basic`).'
+desc = 'Prove H(Y×Z)≃H(Y) tensor H(Z) naturally for pseudo-proper Y and Z, compatibly with projections, traces, diagonal and permutations. Derive the geometric Kunneth map from proper scheme base change and projection formula, then commute tensor with colimits. Use the supplied algebraic Kunneth theorem for homology groups of complexes; that supplier alone does not establish the geometric product comparison. Provider: here. Upstream declarations used: `HomologicalComplex.isIso_homologyKunneth_of_isSplitMono_of_isSplitEpi` (`TauCeti.Algebra.Homology.Monoidal.Homology.Kunneth.Basic`).'
 deps = ['GLCinLean.DModules.compactSupportedHomology', 'GLCinLean.DModules.pseudoProperShriek', 'GLCinLean.Infinity.derivedVect']
 source = '[GaitsgoryContractibility] §6 and §1.4.2; [GaitsgoryAtiyahBott] §1.1.5 and proof of Lemma 2.5.7'
 
 [[node]]
 id = 'GLCinLean.DModules.homologyTrace_isIso_iff_universallyFullyFaithful'
 kind = 'theorem'
-desc = 'For pseudo-proper Y, the trace H(Y)→k is an isomorphism if and only if, for every scheme S, the pullback Dmod(S)→Dmod(S×Y) along the projection is fully faithful. Prove the equivalence from the D-module Kunneth/projection formula and the adjunction unit, preserving its Dmod(S)-linear structure. It concerns full mapping spaces, not only degree-zero Hom. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+desc = 'For pseudo-proper Y, the trace H(Y)→k is an isomorphism if and only if, for every scheme S, the pullback Dmod(S)→Dmod(S×Y) along the projection is fully faithful. Prove the equivalence from the D-module Kunneth/projection formula and the adjunction unit, preserving its Dmod(S)-linear structure. It concerns full mapping spaces, not only degree-zero Hom. Provider: here.'
 deps = ['GLCinLean.DModules.compactSupportedHomology_kunneth', 'GLCinLean.DModules.pseudoProperShriek', 'GLCinLean.Infinity.internalHom']
 source = '[GaitsgoryAtiyahBott] Lemma 2.5.7 and proof; §§2.5.1–2.5.5'

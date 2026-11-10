@@ -3,31 +3,31 @@ desc = 'Pinned data of a reductive group, the existence of pinnings, its root da
 [[node]]
 id = 'GLCinLean.Groups.pinnedData'
 kind = 'definition'
-desc = 'A reductive group with pinning yields its Borel B, torus T, unipotent radical N, simple roots and normalized simple root characters. Provider: Tau Ceti existing Pinning, SplitMaximalTorus and IsSimpleRoot; remaining unipotent-radical/root-character comparison is ReductiveGroups Layers 5, 7 and 9B. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`), `TauCeti.SplitMaximalTorus.IsSimpleRoot` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`).'
+desc = 'A reductive group with pinning yields its Borel B, torus T, unipotent radical N, simple roots and normalized simple root characters. Provider: roadmap ReductiveGroups, “Pinnings”, with the unipotent radical and root characters of “solvable and unipotent groups; the unipotent radical” and “structure theory”. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`), `TauCeti.SplitMaximalTorus.IsSimpleRoot` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`).'
 source = '[GLC1] §§1.3.1–1.3.6'
 
 [[node]]
 id = 'GLCinLean.Groups.twoRho'
 kind = 'definition'
-desc = 'Realize the positive-coroot sum as an actual cocharacter of the specified group torus, using TauCeti.twoWeylVector on the flipped extracted datum; prove the root-character comparison needed by the Whittaker twist. Do not redefine the abstract root sum. Provider: Tau Ceti roadmap ReductiveGroups Layers 7 and 9B root/cocharacter dictionary; sum positive coroots using Mathlib root data. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `RootPairing.Base` (`Mathlib.LinearAlgebra.RootSystem.Base`), `TauCeti.twoWeylVector` (`TauCeti.LinearAlgebra.RootSystem.Weyl.Vector`).'
+desc = 'Realize the positive-coroot sum as an actual cocharacter of the specified group torus, using TauCeti.twoWeylVector on the flipped extracted datum; prove the root-character comparison needed by the Whittaker twist. Do not redefine the abstract root sum. Provider: roadmap ReductiveGroups, the root and cocharacter dictionary of “structure theory”. Upstream declarations used: `RootPairing.Base` (`Mathlib.LinearAlgebra.RootSystem.Base`), `TauCeti.twoWeylVector` (`TauCeti.LinearAlgebra.RootSystem.Weyl.Vector`).'
 deps = ['GLCinLean.Groups.pinnedData', 'GLCinLean.Groups.rootDatum']
 source = '[GLC1] §§1.3.4–1.3.6'
 
 [[node]]
 id = 'GLCinLean.Groups.pinning_exists'
 kind = 'theorem'
-desc = 'Every reductive group over an algebraically closed field of characteristic zero admits a pinning for some torus rank; construct actual witnesses, including a positive-rank example. Provider: Tau Ceti roadmap ReductiveGroups Layer 9B. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Upstream declarations used: `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`), `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`).'
+desc = 'Every reductive group over an algebraically closed field of characteristic zero admits a pinning for some torus rank; construct actual witnesses, including a positive-rank example. Provider: roadmap ReductiveGroups, “classification, relative groups and forms”. Upstream declarations used: `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`), `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`).'
 source = '[GLC2] §0.4.1; [GLC1] §1.3.6'
 
 [[node]]
 id = 'GLCinLean.Groups.rootDatum'
 kind = 'definition'
-desc = 'Extract the integral UNBASED root datum of a reductive group with a specified split maximal torus; roots and coroots come from its actual adjoint action. No choice of Borel or pinning is erased. Provider: Tau Ceti roadmap ReductiveGroups Layers 7–9 and ReductiveGroupsPartII RG2.5.1 AbsoluteRootData. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6. Upstream declarations used: `RootDatum` (`Mathlib.LinearAlgebra.RootSystem.Defs`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`).'
+desc = 'Extract the integral UNBASED root datum of a reductive group with a specified split maximal torus; roots and coroots come from its actual adjoint action. No choice of Borel or pinning is erased. Provider: roadmap ReductiveGroups, “structure theory” and “split groups and pinnings”, with `AbsoluteRootData` of roadmap ReductiveGroupsPartII. Upstream declarations used: `RootDatum` (`Mathlib.LinearAlgebra.RootSystem.Defs`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`).'
 source = '[ConradRGS] §5.1; [GLC1] §0.1.1'
 
 [[node]]
 id = 'GLCinLean.Groups.basedRootDatum'
 kind = 'definition'
-desc = 'The integral root datum of the torus in a specified pinning, with its base of simple roots; expose the exact character and cocharacter lattices and base support. Provider: Tau Ceti roadmap ReductiveGroups Layers 7–9 and ReductiveGroupsPartII RG2.5.1 AbsoluteRootData. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6. Upstream declarations used: `RootPairing.Base` (`Mathlib.LinearAlgebra.RootSystem.Base`).'
+desc = 'The integral root datum of the torus in a specified pinning, with its base of simple roots; expose the exact character and cocharacter lattices and base support. Provider: roadmap ReductiveGroups, “structure theory” and “split groups and pinnings”, with `AbsoluteRootData` of roadmap ReductiveGroupsPartII. Upstream declarations used: `RootPairing.Base` (`Mathlib.LinearAlgebra.RootSystem.Base`).'
 deps = ['GLCinLean.Groups.rootDatum', 'GLCinLean.Groups.pinnedData']
 source = '[ConradRGS] §6.1; [GLC1] §1.3.6'

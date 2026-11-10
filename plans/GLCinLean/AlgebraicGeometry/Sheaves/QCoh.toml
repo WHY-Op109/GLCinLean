@@ -1,15 +1,15 @@
-desc = "Planned library module. AlgebraicGeometry / Sheaves / QCoh. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'Quasi-coherent sheaves on derived prestacks, and their global sections.'
 
 [[node]]
-id = "GLCinLean.Sheaves.qcoh"
-kind = "definition"
-desc = "Enhanced quasicoherent sheaves: derived modules on affines, extended by descent; symmetric monoidal structure and pullbacks. Provider: Missing Kan-extension/descent construction on derived prestacks; consume EnhancedDerivedSheaves E5:animation.4 affine modules and E1.8 classical-scheme QCoh. Open amendment PR #1630 explicitly excludes general prestack QCoh from that roadmap. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Derived.prestack", "GLCinLean.Infinity.linearCategory", "GLCinLean.Derived.affineModules", "GLCinLean.Sheaves.schemeQCoh"]
-source = "[IndCoh] §0.6.7"
+id = 'GLCinLean.Sheaves.qcoh'
+kind = 'definition'
+desc = 'Enhanced quasicoherent sheaves: derived modules on affines, extended by descent; symmetric monoidal structure and pullbacks. Provider: here, by right Kan extension from `Derived.affineModules`. Roadmap EnhancedDerivedSheaves does not own QCoh on prestacks.'
+deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Infinity.linearCategory', 'GLCinLean.Derived.affineModules', 'GLCinLean.Sheaves.schemeQCoh']
+source = '[IndCoh] §0.6.7'
 
 [[node]]
-id = "GLCinLean.Sheaves.qcohGlobalSections"
-kind = "definition"
-desc = "Derived global sections as the mapping object from the tensor unit, with projection formula. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Sheaves.qcoh", "GLCinLean.Infinity.rightAdjoint"]
-source = "[GLC1] §1.4.6; [IndCoh] §0.6.7"
+id = 'GLCinLean.Sheaves.qcohGlobalSections'
+kind = 'definition'
+desc = 'Derived global sections as the mapping object from the tensor unit, with projection formula. Provider: here.'
+deps = ['GLCinLean.Sheaves.qcoh', 'GLCinLean.Infinity.rightAdjoint']
+source = '[GLC1] §1.4.6; [IndCoh] §0.6.7'

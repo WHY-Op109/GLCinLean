@@ -1,8 +1,8 @@
-desc = 'Planned library module. The simply connected cover of the derived group, used to reduce parity of IC stalks on the affine Grassmannian to the simply connected case.'
+desc = 'The simply connected cover of the derived group, used to reduce parity of IC stalks on the affine Grassmannian to the simply connected case.'
 
 [[node]]
 id = 'GLCinLean.Groups.simplyConnectedCover'
 kind = 'definition'
-desc = 'The simply connected central cover of the derived group of a split connected reductive group: the split semisimple group whose root datum has the coroot lattice as cocharacter lattice, with its central isogeny onto the derived group, satisfying TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty. Construct it by the existence and isomorphism theorems for split reductive groups. Provider: Missing at the pin (Tau Ceti has the property, not the construction); the ReductiveGroupsPartII roadmap may own it, so check before implementing. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-10; Tau Ceti main and roadmap not rechecked for this node. Upstream declarations used: `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`), `TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty` (`TauCeti.Algebra.AlgebraicGroup.SimplyConnected.Basic`).'
+desc = 'The simply connected central cover of the derived group of a split connected reductive group: the split semisimple group whose root datum has the coroot lattice as cocharacter lattice, with its central isogeny onto the derived group, satisfying TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty. Construct it by the existence and isomorphism theorems for split reductive groups. Provider: here. Upstream declarations used: `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`), `TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty` (`TauCeti.Algebra.AlgebraicGroup.SimplyConnected.Basic`).'
 deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.langlandsDual']
 source = '[ConradRGS] Theorems 6.1.16–6.1.17 (existence and isomorphism theorems, applied to the coroot-lattice root datum)'

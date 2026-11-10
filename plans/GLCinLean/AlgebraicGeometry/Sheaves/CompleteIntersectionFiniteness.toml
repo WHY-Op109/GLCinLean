@@ -1,15 +1,15 @@
-desc = "Finiteness prerequisites for the statement construction. No placeholders; use upstream APIs directly where available."
+desc = 'Finiteness prerequisites for the statement construction.'
 
 [[node]]
-id = "GLCinLean.Sheaves.relativeKoszulDuality"
-kind = "theorem"
-desc = "For quasi-compact stacks with affine diagonal, smooth X and smooth schematic V→X with section, identify IndCoh(X×_V X) with modules for the relative E₂ Hochschild algebra. The algebra is enhanced; identify its E₁ module category with modules over Sym(V_rel[-2]), where V_rel is the pullback of the relative tangent bundle along the section. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Sheaves.hochschildCochains", "GLCinLean.Sheaves.indcoh", "GLCinLean.Derived.cotangentComplex", "GLCinLean.Infinity.moduleCategory"]
-source = "[ArinkinGaitsgory] §§9.1.1–9.1.4"
+id = 'GLCinLean.Sheaves.relativeKoszulDuality'
+kind = 'theorem'
+desc = 'For quasi-compact stacks with affine diagonal, smooth X and smooth schematic V→X with section, identify IndCoh(X×_V X) with modules for the relative E₂ Hochschild algebra. The algebra is enhanced; identify its E₁ module category with modules over Sym(V_rel[-2]), where V_rel is the pullback of the relative tangent bundle along the section. Provider: here.'
+deps = ['GLCinLean.Sheaves.hochschildCochains', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Derived.cotangentComplex', 'GLCinLean.Infinity.moduleCategory']
+source = '[ArinkinGaitsgory] §§9.1.1–9.1.4'
 
 [[node]]
-id = "GLCinLean.Sheaves.completeIntersectionSupport_compactlyGenerated"
-kind = "theorem"
-desc = "For quasi-compact Artin stacks with affine diagonal and global complete-intersection presentation Z=U×_V X with U,X smooth and V→X smooth schematic with section, IndCoh_Y(Z) is compactly generated for every conical closed Y. Follow the relative Koszul module comparison, Gm grading shift and generation of supported QCoh on the resulting smooth stack; do not assert this for arbitrary quasi-smooth stacks. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Sheaves.relativeKoszulDuality", "GLCinLean.Sheaves.qcaIndCoh_compactlyGenerated", "GLCinLean.Sheaves.gradedSupport", "GLCinLean.Sheaves.indcohWithSupport", "GLCinLean.Infinity.rigidMonoidalCategory"]
-source = "[ArinkinGaitsgory] §9.2, especially Corollary 9.2.7 and its proof"
+id = 'GLCinLean.Sheaves.completeIntersectionSupport_compactlyGenerated'
+kind = 'theorem'
+desc = 'For quasi-compact Artin stacks with affine diagonal and global complete-intersection presentation Z=U×_V X with U,X smooth and V→X smooth schematic with section, IndCoh_Y(Z) is compactly generated for every conical closed Y. Follow the relative Koszul module comparison, Gm grading shift and generation of supported QCoh on the resulting smooth stack; do not assert this for arbitrary quasi-smooth stacks. Provider: here.'
+deps = ['GLCinLean.Sheaves.relativeKoszulDuality', 'GLCinLean.Sheaves.qcaIndCoh_compactlyGenerated', 'GLCinLean.Sheaves.gradedSupport', 'GLCinLean.Sheaves.indcohWithSupport', 'GLCinLean.Infinity.rigidMonoidalCategory']
+source = '[ArinkinGaitsgory] §9.2, especially Corollary 9.2.7 and its proof'
