@@ -4,13 +4,17 @@ This plan follows [GLC1] Corollary 1.6.5, Conjecture 1.6.7 and Proposition 1.7.2
 
 ## Reading the plan
 
-Every TOML file is a tracker module plan. Every node records a paper locator (`source`), a provider and the checked Tau Ceti main commit (`desc`), and immediate prerequisites (`deps`). Library modules use subject folders under `GLCinLean`; the statement has its own `Statement` folder. No planned library definition may be implemented as a placeholder.
+Every TOML file is a tracker module plan. Every node records a paper locator (`source`), what the object is and who provides it (`desc`), and its immediate prerequisites (`deps`).
 
-`plans/Mathlib` and `plans/TauCeti` name existing declarations in their actual defining modules. These are dependency boundaries. An empty `deps` means the upstream interface is already provided, not that its implementation has no dependencies; some suppliers explicitly list other supplier interfaces needed by their consumers. Do not create local wrappers for these names. Some leaves are not imported by the current small statement and therefore appear as `open` in the tracker despite existing at the checked pin. The provider description, exact module and revision record that distinction.
+- `plans/GLCinLean/` holds the nodes written here, in subject folders as in Mathlib; the statement has its own `Statement` folder. Their `desc` says "Provider: here", and names the roadmap targets that the construction uses.
+- `plans/Roadmap/<area>/` holds the nodes that a Tau Ceti roadmap owns, with their ids unchanged. `<area>` is the roadmap's folder, which is also the Worker's `--roadmap-only` value. Their `desc` says "Provider: roadmap ⟨area⟩, ⟨target⟩", where the target is a section title or a Lean name of the roadmap. A node here may depend on a roadmap node, never the other way round.
+- An existing Mathlib or Tau Ceti declaration is not a node. The node that uses one names it and its import module in its `desc`, under "Upstream declarations used".
 
-A future declaration assigned to a Tau Ceti roadmap is temporarily located by subject in this blueprint. Its implementation goes through Tau Ceti Worker under the upstream rules, not here. Once its upstream name is established, move its plan to the upstream module, rename every reference in the same commit, and remove the tentative local name. Do not implement both APIs.
+When a roadmap node lands upstream, it is deleted only when its declaration is at this project's pin, its interface is checked, and a fresh agent has reviewed its meaning with `prompts/review.md`. The nodes that use it are updated in the same commit.
 
-On declarations that already exist (the statement's placeholders and the upstream leaves), `desc` and `deps` are kept although `lake exe tracker lint` reports them as superseded; `kind` is not kept, because Lean gives it. The reason: a placeholder has no real dependencies in Lean, so its suggested `deps` are the only link from the statement to the rest of the plan, and its `desc` records its provider and how it is to be replaced. The `desc` of an upstream leaf says where it falls short of the paper (for example, ordinary sheaves, not the enhanced category). Lean and its docstrings remain authoritative for the compiled object.
+On declarations that already exist (the statement's placeholders), `desc` and `deps` are kept although `lake exe tracker lint` reports them as superseded; `kind` is not kept, because Lean gives it. The reason: a placeholder has no real dependencies in Lean, so its suggested `deps` are the only link from the statement to the rest of the plan, and its `desc` records how it is to be replaced. Lean and its docstrings remain authoritative for the compiled object.
+
+The one upstream snapshot is in `docs/blueprint-providers.md`. `STATUS.md` holds the current state, the decisions and the nodes that are held back.
 
 ## Construction chain
 
@@ -22,11 +26,3 @@ On declarations that already exist (the statement's placeholders and the upstrea
 6. The spherical perverse category, convolution, fusion and Tannakian reconstruction supply the geometric Satake heart equivalence. Its de Rham factorization extension, compatible with the chosen duality and half-twist, supplies the Hecke functor. Spectral decomposition additionally requires its vanishing and localization proof inputs; it is not a formal consequence of the spectral localization being a localization. The vacuum Poincaré object is p_! χ^*(exp), with definedness and compactness proved.
 7. Acting on that object defines the left functor. Its right adjoint is the coarse functor; continuity and linearity are theorems, not assumptions. Coarsening is Ψ_Nilp,{0}.
 8. The main theorem asserts existence of a continuous linear lift with the two properties, and equivalence of every such lift. A separately chosen functor depending on an admitted existence theorem is not part of the statement.
-
-## Readiness and examples
-
-Run `lake exe tracker ready`, but inspect each node's provider and suggested dependencies first. A placeholder counts as proved in the tracker, so readiness is not evidence of a completed mathematical definition. Enumerate the statement placeholders with `rg -n '@\[placeholder\]' GLCinLean` as well.
-
-Before replacing placeholders, prove characterizing APIs and examples: derived vector spaces at a point; a genuinely singular derived affine for IndCoh; the zero-support QCoh comparison; a nontrivial split torus or GL₂ on P¹ with actual duality and theta data; and torus Fourier–Mukai normalization. In particular, never prove a vacuous statement by putting the needed existence or equivalence in Setting, nor choose a zero category to stand for a geometric category.
-
-The provider snapshots and open roadmap pull requests are in `docs/blueprint-providers.md`. `STATUS.md` records the current state and the open decisions.

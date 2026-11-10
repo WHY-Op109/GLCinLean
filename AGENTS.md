@@ -13,7 +13,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Subagents
 
-- The main agent gives each subagent the goal (with its prompt file), the sources it needs, the expected scope and the expected time. Each subagent works in its own git worktree, and its work is squash-merged as one commit.
+- The main agent gives each subagent its goal, its brief (`lake exe tracker show <module>` for a module, `prompts/review.md` for a review), the sources it needs, the expected scope and the expected time. A subagent that writes code works in its own git worktree, and its work is squash-merged as one commit.
 - A subagent may finish without completing its task if the task is ill-specified, impossible, or far larger than expected, and may raise suspicions about its task or nearby code.
 
 ## Plan
@@ -41,15 +41,20 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 - The only `sorry` is the proof of the main theorem. Everything the statement uses (definitions, instances, lemmas, well-definedness) is fully proved. The conjecture is stated through the characterisation of `𝕃_G`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence.
 - An object not defined yet is a placeholder: an `opaque`, or a definition built over one, marked `@[placeholder]` (`GLCinLean/Placeholder.lean`), with a docstring naming the object it stands for. Placeholders live only in the statement, never in the library or in code meant for Tau Ceti: library code must be real mathematics, or a gap would hide below the statement. One is replaced only together with examples that show the new definition behaves as expected.
-- A change to the statement, or to a definition it reaches, is checked by a fresh agent with `prompts/review.md`, then waits for the owner's approval.
+- Review and approval:
+  - a fresh agent reviews every new or changed definition, planned or helper, with `prompts/review.md`;
+  - a *mismatch* or *unsure* verdict goes to the owner;
+  - a change to `GLCinLean/Statement/` needs the owner's approval;
+  - a change to a definition that the main theorem already depends on in Lean also needs it, unless the review finds its meaning unchanged;
+  - a change that waits for approval is on a branch `proposal/<topic>`, and `STATUS.md` on `main` names the branch.
 
 ## Builds
 
 - Set `LAKE_CONFIG=.lake-config/lake-config.toml` and `LAKE_CACHE_DIR=.lake/cache`. Fetch the caches before building: `lake exe cache get`, then `lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti` (no `--mappings-only`; retry on failure).
 - A `Built Mathlib.…` or `Built TauCeti.…` line (not `:c.o`, not a replayed `trace:`) means a wrong pin or a missing cache: stop and report it.
-- Done means: `lake build` passes, and `lake env lean tools/check-statement-axioms.lean`, which lists every declaration of the statement, shows `sorryAx` only for the main theorem, and for it only `propext`, `Classical.choice`, `Quot.sound` and `sorryAx`.
-- Versions stay pinned until the owner upgrades Lean, Mathlib and Tau Ceti to newer releases. A session moves the Tau Ceti pin only when it needs merged Tau Ceti contributions, and then to a commit with a published cache.
+- Done means: `lake build` and `lake lint` pass, and `lake env lean tools/check-statement-axioms.lean`, which lists every declaration of the statement, shows `sorryAx` only for the main theorem, and for it only `propext`, `Classical.choice`, `Quot.sound` and `sorryAx`.
+- Versions stay pinned until the owner upgrades Lean, Mathlib and Tau Ceti to newer releases. A session moves the Tau Ceti pin only when it needs merged Tau Ceti contributions, and then to a commit with a published cache. Mathlib moves with it. If the new commit needs another Lean toolchain, the session stops and asks the owner, because the tracker must build on the project's toolchain.
 
 ## Git
 
-- Commit at each important step and push to `main` of `WHY-Op109/GLCinLean`. A change to the statement, or to a definition it reaches, is pushed only after the owner approves it.
+- Commit at each important step and push to `main` of `WHY-Op109/GLCinLean`. A change that waits for the owner's approval is pushed to its branch `proposal/<topic>`, not to `main`.
