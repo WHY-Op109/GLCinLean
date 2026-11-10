@@ -38,8 +38,10 @@ The latest commit answers the third recheck. It has not been reviewed yet. The p
   `DModules.analyticDeRham`, `DModules.schubertRiemannHilbert`, the constructible nodes and
   `DModules.regularHolonomic`. Reductivity then uses
   `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`.
-- **Open blocker:** `Satake.icStalkParity_complex` has no proof route. Its node says it is not
-  ready. The owner chooses the route.
+- **Known deep input (not a blocker):** `Satake.icStalkParity_complex` has a source
+  ([LusztigQAnalog] §11) but no breakdown of its proof, which needs ℓ-adic purity or the
+  decomposition theorem. It does not affect the Lean statement. Its route is decided when
+  work reaches the Satake layer; until then its node is marked not ready.
 - A half-twisted factorization spherical category, compared with the untwisted heart only at a
   point.
 - One spherical action on Dmod_1/2(Bun_G) (`Hecke.sphericalAction`,
