@@ -1,9 +1,6 @@
 # The papers
 
-ArXiv TeX sources in `docs/references.bib` are in the git-ignored
-`references/papers/<id>v<version>/src/`; a missing one is fetched from
-`https://arxiv.org/e-print/<id>v<version>` and unpacked there. PDF-only author notes use the explicit paths below; their download hashes are in the bibliography.
-One line per paper, to choose which one to search:
+ArXiv TeX sources in `docs/references.bib` are in the git-ignored `references/papers/<id>v<version>/src/`; a missing one is fetched from `https://arxiv.org/e-print/<id>v<version>` and unpacked there. PDF-only author notes use the explicit paths below; their download hashes are in the bibliography. One line per paper, to choose which one to search:
 
 | Key | Main file | Lines | What it covers |
 |---|---|---|---|
@@ -61,11 +58,8 @@ One line per paper, to choose which one to search:
 
 ## Searching
 
-- Search one file with `grep -n`: by label (`\label{c:GLC dR}`), by the name of a theorem, or by a
-  symbol's TeX macro (`\BL_G`, `\LS`). Labels are named `s:`, `ss:`, `sss:` (sections),
-  `t:`, `p:`, `c:`, `l:` (results). Cross-references read `\thmref{t:...}`, `\propref{p:...}`.
-- The TeX does not contain the numbers of the compiled paper. To cite a line as AGENTS.md asks,
-  for example [GLC1] Conj. 1.6.7, get its number with
+- Search one file with `grep -n`: by label (`\label{c:GLC dR}`), by the name of a theorem, or by a symbol's TeX macro (`\BL_G`, `\LS`). Labels are named `s:`, `ss:`, `sss:` (sections), `t:`, `p:`, `c:`, `l:` (results). Cross-references read `\thmref{t:...}`, `\propref{p:...}`.
+- The TeX does not contain the numbers of the compiled paper. To cite a line as AGENTS.md asks, for example [GLC1] Conj. 1.6.7, get its number with
 
       awk -v line=1861 -f tools/tex-locator.awk references/papers/2405.03599v3/src/functor.tex
 
