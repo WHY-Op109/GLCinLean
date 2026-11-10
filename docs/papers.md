@@ -1,8 +1,8 @@
 # The papers
 
 ArXiv TeX sources in `docs/references.bib` are in the git-ignored
-`references/papers/<id>v<version>/src/` (`prompts/setup.md` fetches them). PDF-only author
-notes use the explicit paths below; their download hashes are in the bibliography.
+`references/papers/<id>v<version>/src/`; a missing one is fetched from
+`https://arxiv.org/e-print/<id>v<version>` and unpacked there. PDF-only author notes use the explicit paths below; their download hashes are in the bibliography.
 One line per paper, to choose which one to search:
 
 | Key | Main file | Lines | What it covers |
