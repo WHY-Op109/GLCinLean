@@ -1,4 +1,4 @@
-desc = 'Central torus extensions used to descend parabolic constructions.'
+desc = 'z-extensions of a reductive group and their existence. Owner: the Tau Ceti roadmap ReductiveGroupsPartII.'
 
 [[node]]
 id = 'GLCinLean.Groups.zExtension'
