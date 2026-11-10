@@ -3,6 +3,6 @@ desc = 'Stable enhanced categories. Owner: the Tau Ceti roadmap BordismFormalGro
 [[node]]
 id = 'GLCinLean.Infinity.stableCategory'
 kind = 'definition'
-desc = 'Pointed enhanced categories with finite limits and colimits and coincident pullback and pushout squares. Provider: Tau Ceti roadmap BordismFormalGroups F6.5, stable enhancements, consumed by EnhancedDerivedSheaves E0.4 and E0.6 dgNerve_shift_cone_comparison. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `TauCeti.dgNerve` (`TauCeti.AlgebraicTopology.DGNerve.Basic`).'
+desc = 'Pointed enhanced categories with finite limits and colimits and coincident pullback and pushout squares. Provider: roadmap BordismFormalGroups, “Coherent model diagrams and stable enhancements”. Upstream declarations used: `TauCeti.dgNerve` (`TauCeti.AlgebraicTopology.DGNerve.Basic`).'
 deps = ['GLCinLean.Infinity.limits']
 source = '[IndCoh] §0.6.4'

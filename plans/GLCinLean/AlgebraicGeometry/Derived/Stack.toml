@@ -1,8 +1,8 @@
-desc = "Planned library module. AlgebraicGeometry / Derived / Stack. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'Derived Artin stacks.'
 
 [[node]]
-id = "GLCinLean.Derived.artinStack"
-kind = "definition"
-desc = "Derived Artin stacks with smooth atlases and descent; include almost finite type hypotheses needed for IndCoh. Provider: Missing derived Artin-stack enhancement; ordinary stacks supplied by Tau Ceti roadmap SchemeAndStackFoundations §§1.18–1.20. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Derived.prestack", "GLCinLean.Stacks.algebraicStack"]
-source = "[IndCoh] §11.1; [ArinkinGaitsgory] §1.5.3"
+id = 'GLCinLean.Derived.artinStack'
+kind = 'definition'
+desc = 'Derived Artin stacks with smooth atlases and descent; include almost finite type hypotheses needed for IndCoh. Provider: here.'
+deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Stacks.algebraicStack']
+source = '[IndCoh] §11.1; [ArinkinGaitsgory] §1.5.3'

@@ -1,22 +1,22 @@
-desc = "Compact generation for algebraic D-modules on QCA stacks and ind-finite-type indschemes."
+desc = 'Compact generation for algebraic D-modules on QCA stacks and ind-finite-type indschemes.'
 
 [[node]]
-id = "GLCinLean.DModules.crystalInduction"
-kind = "definition"
-desc = "Construct induction from IndCoh to right crystals on a locally almost finite type algebraic stack as left adjoint to the continuous conservative forgetful functor. Use relative de Rham prestacks and smooth descent; supply the adjunction and base-change comparisons. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.DModules.rightCrystals", "GLCinLean.Sheaves.indcoh", "GLCinLean.Infinity.adjointableDiagram_limitAdjunction"]
-source = "[DG2] §6.3, especially Lemma 6.3.16; [Crystals] §3.3"
+id = 'GLCinLean.DModules.crystalInduction'
+kind = 'definition'
+desc = 'Construct induction from IndCoh to right crystals on a locally almost finite type algebraic stack as left adjoint to the continuous conservative forgetful functor. Use relative de Rham prestacks and smooth descent; supply the adjunction and base-change comparisons. Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction']
+source = '[DG2] §6.3, especially Lemma 6.3.16; [Crystals] §3.3'
 
 [[node]]
-id = "GLCinLean.DModules.qcaDMod_compactlyGenerated"
-kind = "theorem"
-desc = "On a QCA stack, prove that crystal inductions of coherent sheaves are compact and generate all D-modules. Use compact generation of IndCoh, continuity of crystal forgetting for compactness, and its conservativity for generation. This includes the finite-type G_m-quotients used for monodromic categories; coherent D-modules need not all be compact on such a quotient. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.DModules.crystalInduction", "GLCinLean.Sheaves.qcaIndCoh_compactlyGenerated", "GLCinLean.Infinity.compactGeneration"]
-source = "[DG2] Theorem 8.1.1"
+id = 'GLCinLean.DModules.qcaDMod_compactlyGenerated'
+kind = 'theorem'
+desc = 'On a QCA stack, prove that crystal inductions of coherent sheaves are compact and generate all D-modules. Use compact generation of IndCoh, continuity of crystal forgetting for compactness, and its conservativity for generation. This includes the finite-type G_m-quotients used for monodromic categories; coherent D-modules need not all be compact on such a quotient. Provider: here.'
+deps = ['GLCinLean.DModules.crystalInduction', 'GLCinLean.Sheaves.qcaIndCoh_compactlyGenerated', 'GLCinLean.Infinity.compactGeneration']
+source = '[DG2] Theorem 8.1.1'
 
 [[node]]
-id = "GLCinLean.DModules.indscheme_compactlyGenerated"
-kind = "theorem"
-desc = "For an indscheme presented by closed embeddings of finite-type schemes, identify D-modules with the colimit of the finite-stage categories under proper direct image and with the dual !-pullback limit. Prove compact generation by finite-stage compact objects because the transition functors have continuous ! right adjoints. Include the same argument for compatible finite-type G_m-quotients. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Derived.indscheme", "GLCinLean.DModules.qcaDMod_compactlyGenerated", "GLCinLean.DModules.deRhamPushforward", "GLCinLean.DModules.extraordinaryPullback", "GLCinLean.Infinity.compactGeneration"]
-source = "[ChenNearbyCycles] §A.4, Lemma A.1.5 and Lemma D.1.1; [CompactGeneration] Corollary 1.9.4 and Lemma 1.9.5"
+id = 'GLCinLean.DModules.indscheme_compactlyGenerated'
+kind = 'theorem'
+desc = 'For an indscheme presented by closed embeddings of finite-type schemes, identify D-modules with the colimit of the finite-stage categories under proper direct image and with the dual !-pullback limit. Prove compact generation by finite-stage compact objects because the transition functors have continuous ! right adjoints. Include the same argument for compatible finite-type G_m-quotients. Provider: here.'
+deps = ['GLCinLean.Derived.indscheme', 'GLCinLean.DModules.qcaDMod_compactlyGenerated', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.compactGeneration']
+source = '[ChenNearbyCycles] §A.4, Lemma A.1.5 and Lemma D.1.1; [CompactGeneration] Corollary 1.9.4 and Lemma 1.9.5'

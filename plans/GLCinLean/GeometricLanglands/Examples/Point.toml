@@ -1,15 +1,15 @@
-desc = "Nontrivial checks of the indicated constructions, or their input existence theorem; no placeholders."
+desc = 'Nontrivial checks of the indicated constructions, or their input existence theorem.'
 
 [[node]]
-id = "GLCinLean.Examples.pointQCohIndCoh"
-kind = "theorem"
-desc = "QCoh and IndCoh on Spec k identify with enhanced complexes of k-vector spaces; compare the tensor unit, coarsening and t-structures. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
-deps = ["GLCinLean.Sheaves.qcoh", "GLCinLean.Sheaves.indcoh", "GLCinLean.Sheaves.psi", "GLCinLean.Infinity.derivedVect"]
-source = "[IndCoh] Lemma 1.1.6 and §0.6.4"
+id = 'GLCinLean.Examples.pointQCohIndCoh'
+kind = 'theorem'
+desc = 'QCoh and IndCoh on Spec k identify with enhanced complexes of k-vector spaces; compare the tensor unit, coarsening and t-structures. Provider: here.'
+deps = ['GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Sheaves.psi', 'GLCinLean.Infinity.derivedVect']
+source = '[IndCoh] Lemma 1.1.6 and §0.6.4'
 
 [[node]]
-id = "GLCinLean.Examples.trivialGroupFunctor_equiv"
-kind = "theorem"
-desc = "For the trivial group, Bun and LS are the point and the normalized coarse functor identifies with the identity of derived Vect; test the exponential and twisting normalizations. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
-deps = ["GLCinLean.Examples.pointQCohIndCoh", "GLCinLean.Langlands.coarse"]
-source = "[GLC1] §§1.3, 1.5"
+id = 'GLCinLean.Examples.trivialGroupFunctor_equiv'
+kind = 'theorem'
+desc = 'For the trivial group, Bun and LS are the point and the normalized coarse functor identifies with the identity of derived Vect; test the exponential and twisting normalizations. Provider: here.'
+deps = ['GLCinLean.Examples.pointQCohIndCoh', 'GLCinLean.Langlands.coarse']
+source = '[GLC1] §§1.3, 1.5'

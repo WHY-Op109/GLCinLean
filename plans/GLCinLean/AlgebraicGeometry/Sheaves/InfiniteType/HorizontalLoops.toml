@@ -1,15 +1,15 @@
-desc = "IndCoh* on the particular horizontal-loop spaces used by the spectral semi-infinite category."
+desc = 'IndCoh* on the particular horizontal-loop spaces used by the spectral semi-infinite category.'
 
 [[node]]
-id = "GLCinLean.Sheaves.horizontalLoopIndCoh"
-kind = "definition"
-desc = "Extend ind-affine IndCoh* to indschemes with a finite cover by ind-affine open subspaces using Cech descent: restriction gives the limit presentation and pushforward gives the colimit presentation. For horizontal loops construct a unital factorization category only for algebraic groups, open subsets of affine space, and schemes covered by such opens. Verify diagonal and disjoint-configuration base change first for groups, then inherit it under open localization and glue. For smooth horizontal arcs prove IndCoh* equals QCoh. No general smooth-quasi-affine horizontal-loop factorization assertion is made: the source explicitly leaves it unknown. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.LocalSystems.horizontalLoops", "GLCinLean.Sheaves.indcohStar", "GLCinLean.Sheaves.indPlacidIndCoh_baseChange", "GLCinLean.Sheaves.qcoh", "GLCinLean.SpectralProof.factorizationCategory", "GLCinLean.Infinity.limits"]
-source = "[GLC3] §§A.2.1–A.2.10; [GLC2] §A.7.6, Lemmas B.13.18 and B.13.20, §E.2 and Proposition E.12.1"
+id = 'GLCinLean.Sheaves.horizontalLoopIndCoh'
+kind = 'definition'
+desc = 'Extend ind-affine IndCoh* to indschemes with a finite cover by ind-affine open subspaces using Cech descent: restriction gives the limit presentation and pushforward gives the colimit presentation. For horizontal loops construct a unital factorization category only for algebraic groups, open subsets of affine space, and schemes covered by such opens. Verify diagonal and disjoint-configuration base change first for groups, then inherit it under open localization and glue. For smooth horizontal arcs prove IndCoh* equals QCoh. No general smooth-quasi-affine horizontal-loop factorization assertion is made: the source explicitly leaves it unknown. Provider: here.'
+deps = ['GLCinLean.LocalSystems.horizontalLoops', 'GLCinLean.Sheaves.indcohStar', 'GLCinLean.Sheaves.indPlacidIndCoh_baseChange', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Infinity.limits']
+source = '[GLC3] §§A.2.1–A.2.10; [GLC2] §A.7.6, Lemmas B.13.18 and B.13.20, §E.2 and Proposition E.12.1'
 
 [[node]]
-id = "GLCinLean.Sheaves.parabolicHorizontalLoopIndCoh_compactDuality"
-kind = "theorem"
-desc = "Use a finite cover of dualG/N_dualP by translates of the big cell, each an open subset of affine space, to construct its horizontal-loop IndCoh*. Prove equivalence with IndCoh*(L_nabla dualG) tensor over IndCoh*(L_nabla N_dualP) with Vect: trivialize the unipotent torsor on each Cech chart, use the product comparison and descend. Construct the conservative continuous right adjoint of arc-to-loop pushforward by the affine-space case and compatibility with open localization; compact arc generators then generate loops. Prove the dual is the corresponding IndCoh! category, retaining unital factorization and both group actions. This is the special quasi-affine operand needed here, separate from the ind-placid oper construction. Provider: Tau Ceti roadmap ReductiveGroups Layers 5–7 supplies the big-cell and unipotent-torsor geometry; the horizontal-loop sheaf theorem is Missing and implemented here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Sheaves.horizontalLoopIndCoh", "GLCinLean.Sheaves.indcohBang", "GLCinLean.SpectralProof.parabolicLevi", "GLCinLean.Infinity.dualizableCategory", "GLCinLean.Infinity.compactGeneration", "GLCinLean.Infinity.rightAdjoint"]
-source = "[GLC3] §§A.3–A.4, especially the comparison of the two constructions in §A.3 and arc-to-loop adjunction in §A.4; [GLC2] §E.2"
+id = 'GLCinLean.Sheaves.parabolicHorizontalLoopIndCoh_compactDuality'
+kind = 'theorem'
+desc = 'Use a finite cover of dualG/N_dualP by translates of the big cell, each an open subset of affine space, to construct its horizontal-loop IndCoh*. Prove equivalence with IndCoh*(L_nabla dualG) tensor over IndCoh*(L_nabla N_dualP) with Vect: trivialize the unipotent torsor on each Cech chart, use the product comparison and descend. Construct the conservative continuous right adjoint of arc-to-loop pushforward by the affine-space case and compatibility with open localization; compact arc generators then generate loops. Prove the dual is the corresponding IndCoh! category, retaining unital factorization and both group actions. This is the special quasi-affine operand needed here, separate from the ind-placid oper construction. Provider: here; the big-cell and unipotent-torsor geometry is from roadmap ReductiveGroups.'
+deps = ['GLCinLean.Sheaves.horizontalLoopIndCoh', 'GLCinLean.Sheaves.indcohBang', 'GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.Infinity.dualizableCategory', 'GLCinLean.Infinity.compactGeneration', 'GLCinLean.Infinity.rightAdjoint']
+source = '[GLC3] §§A.3–A.4, especially the comparison of the two constructions in §A.3 and arc-to-loop adjunction in §A.4; [GLC2] §E.2'

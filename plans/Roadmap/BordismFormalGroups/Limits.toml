@@ -3,6 +3,6 @@ desc = 'Coherent diagrams and their limits in enhanced categories. Owner: the Ta
 [[node]]
 id = 'GLCinLean.Infinity.limits'
 kind = 'definition'
-desc = 'Small limits and colimits characterized by mapping-space universal properties. Provider: Tau Ceti roadmap BordismFormalGroups F6.5, coherent diagrams and limits, consumed by EnhancedDerivedSheaves E0.4. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+desc = 'Small limits and colimits characterized by mapping-space universal properties. Provider: roadmap BordismFormalGroups, “Coherent model diagrams and stable enhancements”.'
 deps = ['GLCinLean.Infinity.mappingSpaces']
 source = '[IndCoh] §§0.6.2–0.6.4'

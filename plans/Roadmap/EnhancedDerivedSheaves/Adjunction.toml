@@ -3,13 +3,13 @@ desc = 'Right adjoints of continuous functors and their continuity. Owner: the T
 [[node]]
 id = 'GLCinLean.Infinity.rightAdjoint'
 kind = 'definition'
-desc = 'Right adjoint to a continuous functor of presentable categories, with mapping-space adjunction equivalence. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E3 adjointFunctorTheorem. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+desc = 'Right adjoint to a continuous functor of presentable categories, with mapping-space adjunction equivalence. Provider: roadmap EnhancedDerivedSheaves, `adjointFunctorTheorem` (“Representability, adjoints and localizations”).'
 deps = ['GLCinLean.Infinity.continuousLinearFunctor']
 source = '[GLC1] §1.4.5'
 
 [[node]]
 id = 'GLCinLean.Infinity.rightAdjoint_continuous'
 kind = 'theorem'
-desc = 'A right adjoint is continuous when the left adjoint preserves compact generators; prove rather than assume it. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E3 rightAdjoint_preservesCoproducts_iff. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+desc = 'A right adjoint is continuous when the left adjoint preserves compact generators; prove rather than assume it. Provider: roadmap EnhancedDerivedSheaves, `rightAdjoint_preservesCoproducts_iff` (“Stable colimits and compact generation”).'
 deps = ['GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.compactGeneration']
 source = '[GLC1] §§1.4.2, 1.4.5; [CompactGeneration] §1.2'

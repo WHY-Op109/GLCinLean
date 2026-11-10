@@ -3,6 +3,6 @@ desc = 'Dualizability of a pullback along a localization. Owner: the Tau Ceti ro
 [[node]]
 id = 'GLCinLean.Infinity.localizationPullback_dualizable'
 kind = 'theorem'
-desc = 'For a cospan of dualizable presentable linear categories whose arrows have continuous right adjoints, with one right adjoint fully faithful, prove the pullback is dualizable and commutes with tensoring by every presentable category. Construct the lax glued category and its localization, as in the proof; no claim that arbitrary finite limits preserve compact generation. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:presentability.3–.4 supplies the ambient duality/tensor theory; this gluing prerequisite routes through that Worker. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+desc = 'For a cospan of dualizable presentable linear categories whose arrows have continuous right adjoints, with one right adjoint fully faithful, prove the pullback is dualizable and commutes with tensoring by every presentable category. Construct the lax glued category and its localization, as in the proof; no claim that arbitrary finite limits preserve compact generation. Provider: roadmap EnhancedDerivedSheaves, “Dualizable, compactly assembled and rigid categories”.'
 deps = ['GLCinLean.Infinity.dualizableCategory', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.moduleCategory']
 source = '[RaskinCPSI] Lemma A.2.1 and proof §§A.4–A.7'

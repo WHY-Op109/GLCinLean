@@ -1,138 +1,138 @@
 
 [[node]]
 id = 'GLCinLean.Statement.DGCatCarrier'
-desc = 'PLACEHOLDER. The carrier of presentable stable `k`-linear enhanced categories ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Upstream declarations used: `Field` (`Mathlib.Algebra.Field.Defs`).'
+desc = 'PLACEHOLDER. The carrier of presentable stable `k`-linear enhanced categories ([AGKRRV] §0.9.4). Provider: here. Upstream declarations used: `Field` (`Mathlib.Algebra.Field.Defs`).'
 deps = ['GLCinLean.Infinity.linearCategory']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.DGCat'
-desc = 'PLACEHOLDER. Presentable stable `k`-linear enhanced categories ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Presentable stable `k`-linear enhanced categories ([AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.DGCatCarrier']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.DGCat.objCarrier'
-desc = 'PLACEHOLDER. The carrier of objects in an enhanced category ([AGKRRV] §0.9.2). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. The carrier of objects in an enhanced category ([AGKRRV] §0.9.2). Provider: here.'
 deps = ['GLCinLean.Statement.DGCat']
 source = '[AGKRRV] §0.9.2'
 
 [[node]]
 id = 'GLCinLean.Statement.DGCat.Obj'
-desc = 'PLACEHOLDER. Objects of an enhanced category ([AGKRRV] §0.9.2). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Objects of an enhanced category ([AGKRRV] §0.9.2). Provider: here.'
 deps = ['GLCinLean.Statement.DGCat.objCarrier']
 source = '[AGKRRV] §0.9.2'
 
 [[node]]
 id = 'GLCinLean.Statement.DGCat.IsCompact'
-desc = 'PLACEHOLDER. Compactness: mapping out preserves filtered colimits ([AGKRRV] §0.9.2). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Compactness: mapping out preserves filtered colimits ([AGKRRV] §0.9.2). Provider: here.'
 deps = ['GLCinLean.Statement.DGCat.Obj', 'GLCinLean.Infinity.compactObject']
 source = '[AGKRRV] §0.9.2'
 
 [[node]]
 id = 'GLCinLean.Statement.MonoidalDGCatCarrier'
-desc = 'PLACEHOLDER. The carrier of monoidal DG categories ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Upstream declarations used: `Field` (`Mathlib.Algebra.Field.Defs`).'
+desc = 'PLACEHOLDER. The carrier of monoidal DG categories ([AGKRRV] §0.9.4). Provider: here. Upstream declarations used: `Field` (`Mathlib.Algebra.Field.Defs`).'
 deps = ['GLCinLean.Infinity.monoidalCategory']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.MonoidalDGCat'
-desc = 'PLACEHOLDER. Monoidal DG categories with their coherent monoidal structure ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Monoidal DG categories with their coherent monoidal structure ([AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.MonoidalDGCatCarrier']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.DGModuleCarrier'
-desc = 'PLACEHOLDER. The carrier of DG categories with a specified action of `A` ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. The carrier of DG categories with a specified action of `A` ([AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Infinity.monoidalCategory']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.DGModule'
-desc = 'PLACEHOLDER. An enhanced category with a specified coherent `A`-action ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. An enhanced category with a specified coherent `A`-action ([AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.DGModuleCarrier']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.DGModule.toDGCat'
-desc = 'PLACEHOLDER. The enhanced category underlying an `A`-module category ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. The enhanced category underlying an `A`-module category ([AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.DGModule', 'GLCinLean.Statement.DGCat']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.MonoidalDGCat.regularModule'
-desc = 'PLACEHOLDER. A monoidal category acting on itself by tensor product: [AGKRRV] §0.9.4 defines monoidal DG categories as associative algebras in DGCat, and every algebra is a module over itself; [GLC1] §1.4.1 uses QCoh(LS_Ǧ) acting on itself in this way. Its underlying enhanced category stands for the category underlying A, so no separate MonoidalDGCat.toDGCat is planned. Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. A monoidal category acting on itself by tensor product: [AGKRRV] §0.9.4 defines monoidal DG categories as associative algebras in DGCat, and every algebra is a module over itself; [GLC1] §1.4.1 uses QCoh(LS_Ǧ) acting on itself in this way. Its underlying enhanced category stands for the category underlying A, so no separate MonoidalDGCat.toDGCat is planned. Provider: here.'
 deps = ['GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Statement.DGModule']
 source = '[AGKRRV] §0.9.4; [GLC1] §1.4.1'
 
 [[node]]
 id = 'GLCinLean.Statement.TStructuredDGModuleCarrier'
-desc = 'PLACEHOLDER. The carrier of `A`-module categories with a chosen t-structure ([GLC1] §1.6.3; [AGKRRV] §§0.9.4–0.9.5). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. The carrier of `A`-module categories with a chosen t-structure ([GLC1] §1.6.3; [AGKRRV] §§0.9.4–0.9.5). Provider: here.'
 deps = ['GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Infinity.tStructure']
 source = '[GLC1] §1.6.3; [AGKRRV] §§0.9.4–0.9.5'
 
 [[node]]
 id = 'GLCinLean.Statement.TStructuredDGModule'
-desc = 'PLACEHOLDER. An `A`-module category with a chosen t-structure ([GLC1] §1.6.3). The choice is part of the object; no t-structure on an arbitrary DG category is asserted. Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. An `A`-module category with a chosen t-structure ([GLC1] §1.6.3). The choice is part of the object; no t-structure on an arbitrary DG category is asserted. Provider: here.'
 deps = ['GLCinLean.Statement.TStructuredDGModuleCarrier']
 source = '[GLC1] §1.6.3'
 
 [[node]]
 id = 'GLCinLean.Statement.TStructuredDGModule.toModule'
-desc = 'PLACEHOLDER. Forgetting the chosen t-structure ([GLC1] §1.6.3). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Forgetting the chosen t-structure ([GLC1] §1.6.3). Provider: here.'
 deps = ['GLCinLean.Statement.TStructuredDGModule', 'GLCinLean.Statement.DGModule']
 source = '[GLC1] §1.6.3'
 
 [[node]]
 id = 'GLCinLean.Statement.TStructuredDGModule.IsEventuallyCoconnective'
-desc = 'PLACEHOLDER. Boundedness below for the specified t-structure, with a bound depending on the object ([GLC1] §1.6.3 and Cor. 1.6.5). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Boundedness below for the specified t-structure, with a bound depending on the object ([GLC1] §1.6.3 and Cor. 1.6.5). Provider: here.'
 deps = ['GLCinLean.Statement.TStructuredDGModule.toModule', 'GLCinLean.Statement.DGModule.toDGCat', 'GLCinLean.Statement.DGCat.Obj', 'GLCinLean.Infinity.eventuallyCoconnective']
 source = '[GLC1] §1.6.3 and Cor. 1.6.5'
 
 [[node]]
 id = 'GLCinLean.Statement.LinFunCarrier'
-desc = 'PLACEHOLDER. The carrier of continuous `A`-linear enhanced functors ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. The carrier of continuous `A`-linear enhanced functors ([AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.DGModule', 'GLCinLean.Infinity.continuousLinearFunctor']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.LinFun'
-desc = 'PLACEHOLDER. Colimit-preserving functors linear for the specified actions, including their coherent linearity data ([GLC1] Cor. 1.6.5 and Prop. 1.7.2; [AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Colimit-preserving functors linear for the specified actions, including their coherent linearity data ([GLC1] Cor. 1.6.5 and Prop. 1.7.2; [AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.LinFunCarrier']
 source = '[GLC1] Cor. 1.6.5 and Prop. 1.7.2; [AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.LinFun.obj'
-desc = 'PLACEHOLDER. Evaluation of an enhanced linear functor ([GLC1] Cor. 1.6.5). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Evaluation of an enhanced linear functor ([GLC1] Cor. 1.6.5). Provider: here.'
 deps = ['GLCinLean.Statement.LinFun', 'GLCinLean.Statement.DGModule.toDGCat', 'GLCinLean.Statement.DGCat.Obj']
 source = '[GLC1] Cor. 1.6.5'
 
 [[node]]
 id = 'GLCinLean.Statement.LinFun.comp'
-desc = 'PLACEHOLDER. Composition, with `F.comp G` denoting `G ∘ F` ([GLC1] Cor. 1.6.5). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Composition, with `F.comp G` denoting `G ∘ F` ([GLC1] Cor. 1.6.5). Provider: here.'
 deps = ['GLCinLean.Statement.LinFun']
 source = '[GLC1] Cor. 1.6.5'
 
 [[node]]
 id = 'GLCinLean.Statement.LinFun.id'
-desc = 'PLACEHOLDER. The identity enhanced linear functor ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. The identity enhanced linear functor ([AGKRRV] §0.9.4). Provider: here.'
 deps = ['GLCinLean.Statement.LinFun']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
 id = 'GLCinLean.Statement.LinIso'
-desc = 'PLACEHOLDER. Enhanced `A`-linear natural equivalences between functors ([GLC1] Cor. 1.6.5 and Prop. 1.7.2). No existence of such an equivalence is asserted. Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Enhanced `A`-linear natural equivalences between functors ([GLC1] Cor. 1.6.5 and Prop. 1.7.2). No existence of such an equivalence is asserted. Provider: here.'
 deps = ['GLCinLean.Statement.LinFun', 'GLCinLean.Infinity.mappingSpaces']
 source = '[GLC1] Cor. 1.6.5 and Prop. 1.7.2'
 
 [[node]]
 id = 'GLCinLean.Statement.LinFun.IsEquivalence'
-desc = 'PLACEHOLDER. Existence of an inverse up to enhanced linear natural equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'PLACEHOLDER. Existence of an inverse up to enhanced linear natural equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: here.'
 deps = ['GLCinLean.Statement.LinFun.comp', 'GLCinLean.Statement.LinFun.id', 'GLCinLean.Statement.LinIso', 'GLCinLean.Infinity.linearEquivalence']
 source = '[GLC1] Conj. 1.6.7 and Prop. 1.7.2'
 
 [[node]]
 id = 'GLCinLean.Statement.LinFun.isEquivalence_iff'
-desc = 'Implemented logical unfolding lemma. The inverse characterization of enhanced linear equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284.'
+desc = 'Implemented logical unfolding lemma. The inverse characterization of enhanced linear equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: here.'
 deps = ['GLCinLean.Statement.LinFun.IsEquivalence']
 source = '[GLC1] Conj. 1.6.7 and Prop. 1.7.2'
