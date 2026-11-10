@@ -13,9 +13,10 @@
 
 ## Existing leaves written
 
-`plans/Mathlib/**` and `plans/TauCeti/**` contained 49 declarations at the original blueprint commit. The revision adds 17 direct supplier declarations (listed in `notes/blueprint-provider-recheck.md`), bringing the current supplied boundary to 66 declarations across their actual module paths (including three identified only on main), with paper locators, provider information, both checked revisions, and explicit supplier dependencies where needed. The 2026-11-09 and 2026-11-10 repairs add three Tau Ceti suppliers found at the pin `e0610cce4004d628cbd9d2aafdbbb5459fe72938`: `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`, `TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty` and `TauCeti.Pinning.comapOfIso`, bringing the boundary to 69. Tau Ceti main was not rechecked for these three. The Mathlib supplier `TopCat.Sheaf` (pin `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`) brings it to 70.
+`plans/Mathlib/**` and `plans/TauCeti/**` name 70 existing upstream declarations in their actual defining modules, never wrappers, each with its paper locator and checked revisions. Their `desc` says where each falls short of the paper's enhanced object. A leaf that GLCinLean does not import shows as open in the tracker although it exists upstream.
 
-These plans name upstream declarations, never wrappers. Their `desc` explicitly distinguishes the ordinary and strict APIs from the paper's enhancements. Tracker attachment depends on imports; a leaf not imported by GLCinLean may display as open despite existing in upstream source. The written `kind`/`desc`/`deps` remain deliberately available even when superseded, to meet the owner's provenance requirement.
+- Three leaves exist on Tau Ceti main but not at the pin: `TauCeti.adjointInvariantPolynomials` and `TauCeti.nilpotentConeIdeal` (`Algebra/AlgebraicGroup/Tangent/Lie/Adjoint/NilpotentCone.lean`), and `TauCeti.CurrentAlgebra.smoothModulesEquivalence` (`Algebra/Lie/Current/CompletedModules.lean`). Using them needs a pin move to a commit with a published cache. The first two keep scheme-theoretic invariant zero fibres, including central invariants; they do not show that nilpotence equals ad-nilpotence for every reductive group.
+- Three Tau Ceti leaves were checked at the pin `e0610cce4004d628cbd9d2aafdbbb5459fe72938` only, not on main: `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`, `TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty` and `TauCeti.Pinning.comapOfIso`.
 
 Important existing interfaces:
 
@@ -58,7 +59,7 @@ All below are on roadmap main unless explicitly marked open PR. Existence of a r
 
 ## Open roadmap proposals checked
 
-- #908 EnhancedDerivedSheaves is **merged**, closed. Existing Foundations prose calling it a roadmap number should identify the merged roadmap, not imply open proposal.
+- #908 EnhancedDerivedSheaves is **merged**, closed.
 - #785 ReductiveGroupsPartII is **merged**, closed. Its dual-group scope applies even though other layers concern local fields.
 - #1901 HigherToposTheory is open, head `2176cc4c9149c8695dbfdfd5bffac5e090bebb42`: HTT and HA Chapter 1. It proposes ownership consolidation with EnhancedDerivedSheaves/BordismFormalGroups; it does not yet amend those owners. Treat it as an ownership candidate, not competing code to implement in parallel.
 - #1630 EnhancedDerivedSheaves amendment is open, head `ae7b6e6ab35c7f479b869e3d120765d452b7b77e`: DG nerve is primary, module spectra comparison is later; QCoh on prestacks explicitly excluded.
@@ -78,41 +79,8 @@ triviality. None of this supplies global local-system stacks or changes an accep
 
 The original audit's immutable source links use https://github.com/TauCetiProject/TauCeti/blob/7ca783d4c8d324c9c74efaacd641c8a40f69f284/... and https://github.com/TauCetiProject/TauCetiRoadmap/blob/f7dd719a392f7b65ad30ef45b26c344d08ba5f91/TauCetiRoadmap/... . PR links are https://github.com/TauCetiProject/TauCetiRoadmap/pull/<number> .
 
-## Proposed owner decisions, with reasons
+## Limits of existing providers
 
-1. **Open roadmap PRs:** record exact PR/head and use their descriptions as design evidence. Keep the current accepted roadmap as implementation authority until the proposal merges or its scope is explicitly approved by the roadmap owner. Implement existing accepted targets and prerequisites through Tau Ceti Worker. Never import Suggested.lean or treat its sorry-containing declarations as proved. Never bump dependency pins to proposal branches. Recheck state before starting implementation; merge ownership changes first to avoid duplicate APIs.
-2. **Other Lean libraries:** permit read-only discovery and reuse of ideas/proofs under compatible licenses; before adding a dependency require a concrete inventory of declarations, license, Lean/Mathlib pin compatibility, trust/axiom audit, maintenance and interoperability. Prefer porting accepted reusable mathematics through Tau Ceti where its roadmap owns it; keep other GLC material here. No new dependency is needed merely for this blueprint, and no library should become an alternate parallel Scheme/Category universe without proven comparison.
-3. **Infinity layer:** retain quasicategorical semantics and construct the required presentable stable k-linear/module categories on existing Mathlib SSet and Tau Ceti DG nerve/K-injective models. Keep only explicitly marked statement placeholders while those providers are missing. Prove all mapping-space and coherent monoidal/module comparisons before removing them. Ordinary DerivedCategory and strict DG enrichment are valuable models but do not prove enhanced equivalence or uniqueness. Track #1901's ownership consolidation and #1630's concrete construction order; do not start an independent foundations project that duplicates their accepted targets.
-
-## Findings in the former Abstract/Foundations draft (corrected in the candidate)
-
-- Foundations re-export abbreviations violate the project's ban on thin wrappers. Use canonical provider names directly and a genuine coordinate-ring-to-pinning bridge only if absent upstream.
-- `DGCat` must depend on the coefficient field; the current Type0 carrier loses k and universe information.
-- A monoidal category and actions on both categories must be explicit data; `LinFun A C D` cannot encode these from a bare category A.
-- A t-structure is additional data, not available for every DG category by magic. Eventual coconnectivity must use IndCoh's actual standard t-structure.
-- Root datum duality of arbitrary reductive groups is missing. Adding a theorem `exists_dualGroup := sorry` introduces an extra sorry and cannot serve as nonvacuity evidence. Keep honest placeholder scope and plan the real existence theorem; any replacement requires actual examples.
-- As instructed by owner, statement should assert existence of a characterized functor and equivalence for EVERY characterized functor. Choosing LG from an unproved existence theorem makes the definition depend on sorryAx.
-
-## Follow-up library-plan audit
-
-
-Edited 39 declaration records in 29 library plan files (no statement, Lean or documentation edits). Corrected roadmap ownership and exact targets for enhancement, presentability, module categories, derived vector spaces, internal Hom, animated algebras, general reductive root data, dual groups, pinning, torsors and root gerbes. Kept global derived-stack extensions explicitly separate from providers that only cover affines or classical schemes.
-
-Added missing dependency nodes for enhanced affine modules, affine cotangent complexes, ordinary algebraic stacks, classical-scheme enhanced QCoh and the curve Serre trace. Connected concrete DG nerve/K-injective providers, t-structures, root data, pinnings, torsors and invertible sheaves to their consumers. Two planned local wrapper nodes were removed entirely: dualRootDatum now consumes RootPairing.flip/Base.flip; adjointRepresentation now consumes Derivation.adjointComodule and TauCeti.Comodule.dual directly.
-
-Added four provider leaves, of which two are newly identified on main only: TauCeti.adjointInvariantPolynomials and TauCeti.nilpotentConeIdeal, both in Algebra/AlgebraicGroup/Tangent/Lie/Adjoint/NilpotentCone.lean. They retain scheme-theoretic invariant zero fibres including central invariants. They do not justify equating nilpotence with ad-nilpotence for all reductive groups. Both leaf records state that the project pin lacks them and a later pin move requires a published cache. No pin moved.
-
-The intermediate audit validated 200 IDs; the committed first blueprint contained 204. The current count and validation are in STATUS.md. The first audit checked duplicate IDs, dependency references and cycles, and upstream module paths against its recorded pinned or main source. Original external declaration names and namespaces were inspected from their source; the four names added during that original audit were also checked in their defining files. The repair-session additions have a separate audit in `notes/blueprint-provider-recheck.md`. This is a static validation, not a replacement for tracker lint or Lean build.
-
-## Second-review repairs
-
-The second review approved the statement shape but rejected the blueprint coverage (G1/G2).
-The revision adds the actual geometric Satake inputs, the prestack IndCoh construction, and
-explicit finiteness proof chains. It also removes the duplicate characterization predicate and
-specifies a future pinning-indexed duality signature. See `notes/blueprint-gap-resolution.md` and
-STATUS.md for the spectral-action proof route and the final review verdict; the presence of a
-planned theorem is not evidence that its proof source is complete.
-
-New searches use the revision snapshots above. The existing Tannakian reconstruction API starts
-from a supplied Hopf algebra; constructing the Hopf algebra from the spherical category remains
-a separate Satake obligation. A local or p-adic Satake roadmap is not a de Rham provider.
+- The existing Tannakian reconstruction API starts from a supplied Hopf algebra. Constructing the Hopf algebra from the spherical category is a separate Satake obligation.
+- A local or p-adic Satake roadmap is not a de Rham provider.
+- A planned theorem is not evidence that its proof source is complete.

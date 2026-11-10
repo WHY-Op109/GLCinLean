@@ -17,7 +17,7 @@ Model: Opus 5.5, effort `high`.
 - the work is committed and pushed.
 
 **Context**
-- Nothing is deleted before the owner approves the list. `.lake/` (the build cache) and `references/papers/` stay; material that is still unresolved stays, however old.
+- Nothing is deleted before the owner approves the list. `.lake/` (the build cache); material that is still unresolved stays, however old.
 
 ## Session 2: upstream check
 
