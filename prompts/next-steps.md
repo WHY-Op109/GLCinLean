@@ -1,6 +1,6 @@
 # Next steps
 
-Six sessions, run in this order, each started fresh with its own prompt: 1, 2, 3a, 3b, 4, 5. Each session checks the prompt of the session after it and changes it where its result calls for that. Session 5 deletes this file.
+One-off sessions, run in this order, each started fresh with its own prompt: 1, 2, 3a, 3b, 4a, 4b, 4c, 5. Sessions 1 to 3b are done. Each session checks the prompt of the session after it and changes it where its result calls for that. Session 5 deletes this file.
 
 ## Session 1: clean-up
 
@@ -82,27 +82,98 @@ The owner's goal: a faithful Lean statement of [GLC1] Conj. 1.6.7 (de Rham, char
 - The goal review is in `notes/review-goal.md`. Its decisions 1 to 3 propose another form of the statement's second property, which would move about half of the plan from the statement to the proof. The owner has not decided them: judge `prompts/build.md` and the rules for both outcomes.
 - Its Finding 2 and its answer to question 4 already propose changes to `prompts/build.md` and to how the plan uses the tracker (the first work is Tau Ceti Worker rounds on the ∞-category roadmaps; upstream leaves as plan nodes; placeholders counted as proved; provider text in each `desc`). Take them as input, and do not repeat them.
 
-## Session 4: changes
+## The owner's decisions, 2026-11-10
 
-Model: Opus 5.5 or Fable 5.2, effort `high`.
+Three reports led to these decisions: `notes/review-goal.md` (decisions 1 to 10), `notes/review-workflow.md` (W1 to W12) and the independent opinion `notes/review-independent-2026-11-10.md`. The owner accepted every finding, with the amendments below. Where the reports differ, the text below rules.
 
-**Goal.** Apply the findings of `notes/review-goal.md` and `notes/review-workflow.md` that the owner approved.
+**Statement** (Session 4b)
+- **1.** Restate the second property with the Hecke action of `Rep(Ǧ)_Ran`: one equivalence `Maps_D(V ⋆ P, M) ≃ Maps_Q(Loc V, Ψ(F M))` of mapping-space functors, natural in `V` and `M` together. The docstring says that this form equals the paper's form by [GLC1] Thm. 1.2.4. That comparison becomes a planned theorem of the proof.
+- **2.** The functors are continuous, `k`-linear and enhanced, but not `QCoh(LS_Ǧ)`-linear, and the t-structure stays. The linear placeholders go. The monoidal and module constructions that the library still needs stay in the plan.
+- **10.** The module docstring says that `IsAlgClosed` is the owner's scope, not a hypothesis of [GLC1].
+
+**Plan**
+- **3.** Only after the owner approves the statement: compute the cut from the approved statement, and keep what the examples and comparison results need. Move the nodes that only the spectral action needs to `plans-proof/`, a folder that the tracker does not read. The figure of 174 remaining nodes is an estimate.
+- **4.** `STATUS.md` names the concrete upstream targets that block the plan, including BordismFormalGroups F6.5, to which EnhancedDerivedSheaves delegates.
+- **5.** Delete `plans/Mathlib` and `plans/TauCeti`, and update every dependency on them. The node that uses an upstream declaration names that declaration and its import module in its `desc`. A `desc` keeps only "Provider: here" or "Provider: roadmap ⟨area⟩ ⟨target⟩", with no layer numbers and no commits. The one snapshot is in `docs/blueprint-providers.md`. This also settles the ReductiveGroups locators that roadmap #1676 (merged 2026-11-10) changed.
+- **6.** Ask the tracker's author for a separate placeholder state, not `stated`. It is not a prerequisite. The session drafts the request in `STATUS.md`, and the owner sends it.
+- **7.** `QCohLS` depends on `Sheaves.qcoh` on `LocalSystems.deRham` with its monoidal structure, not on rigidity. Correct the providers of `Sheaves.determinant` (PadicMeasuresIwasawaAlgebras §5.1, AlgebraicVectorBundles L0C) and of `Hecke.schubertStratum_deRhamCohomology_even` (SchubertGeometry, and FlagVarieties for the cells). Do not narrow the scope of `Sheaves.determinant` yet. It has two users, `Stacks.determinantBundle` and `Satake.criticalDeterminantGerbe`, and it is narrowed only after both are checked.
+- **8.** Record #1734, #1687 and #848 in `docs/blueprint-providers.md` as owner candidates, with the limits that `notes/review-goal.md` gives. Their nodes go on the "Held" list.
+- **9.** AxiomMath Stacks and Weil are prior art for Worker ports, case by case. No port now.
+
+**Workflow**
+- **W1.** The owner runs the Tau Ceti Worker. A session here does not start it; it folds in the Worker's results. `STATUS.md` holds the command lines.
+- **W2.** Replace `prompts/build.md` by the text in §1.5 of `notes/review-workflow.md`, with three changes. The unit of work is one ready module, or a bounded part of a large one. The Worker's brief comes from a specific module or node, because `tracker show` prints a module's own nodes and not those of the modules under it. The approval line follows W4.
+- **W3.** Move the roadmap-owned nodes to `plans/Roadmap/<area>/`, with their ids unchanged, after a trial on one area. A node that lands upstream is deleted only when its declaration is at this project's pin, its interface is checked, and a fresh agent has reviewed its meaning with `prompts/review.md`. The nodes that use it are updated in the same commit.
+- **W4.** Replace `AGENTS.md:47` and the second sentence of `AGENTS.md:58` with this rule:
+  - a fresh agent reviews every new or changed definition, planned or helper, with `prompts/review.md`;
+  - a *mismatch* or *unsure* verdict goes to the owner;
+  - a change to `GLCinLean/Statement/` needs the owner's approval;
+  - a change to a definition that the main theorem already depends on in Lean also needs it, unless the review finds its meaning unchanged;
+  - a change that waits for approval is on a branch `proposal/<topic>`, and `STATUS.md` on `main` names the branch.
+- **W5.** Keep `prompts/review.md` for meaning only, with the five changes of §2.3 of `notes/review-workflow.md`. Its scope is the definitions (planned and helpers), the statement of the main theorem, and the statements of theorems that serve as evidence for a definition (examples, characterisations, independence of a choice). A dependency that was reviewed and has not changed since is read through its signature and docstring.
+- **W6.** `prompts/build.md` asks a fresh agent to check the diff against "Sources of code" and "Lean code" in `AGENTS.md`, before the meaning review. `lake lint` joins the done check in `AGENTS.md`.
+- **W7.** Add `prompts/audit.md` with the text of §3.3 of `notes/review-workflow.md`. It may write `docs/blueprint-providers.md`, its report and `STATUS.md`. List it in `README.md`.
+- **W8.** Change `AGENTS.md:19` as §2.4 says and `AGENTS.md:54` as §2.5 says. Keep `AGENTS.md:14` as it is: proofs are also searched on Tau Ceti `main`, against one snapshot per session.
+- **W9.** Keep each caution in one home, as §2.8 says. `STATUS.md` gets a "Held" list, with a reason and a release condition for each entry. Fixed rule text leaves the `desc` of the module plans. Mathematical cautions that define an object stay.
+- **W10.** Keep `tools/check-statement-axioms.lean` and `#print axioms`. The tracker is only a second check, because it calls a declaration `stated` even when the declaration also uses a forbidden axiom. A later task replaces the hand-kept list by a script that lists every declaration itself and fails on a bad axiom. `STATUS.md` records this task.
+- **W11.** The three open decisions in `STATUS.md` are accepted as written, and they move to "Decisions taken".
+- **W12.** Start narrow roadmap scoping now. Check #1687 first, then scope the first general layer that no roadmap covers, for the owner to propose. This is its own session, not part of Session 4. `STATUS.md` records it as a next task.
+
+## Session 4a: workflow and plan changes
+
+Model: Opus 5.5, effort `high`.
+
+**Goal.** Apply the owner's decisions that hold whatever the owner decides on the statement: 4 to 9 and W1 to W11.
 
 **Done when**
-- each approved finding is applied, and the other findings are left as they are;
-- a change to the statement, or to a definition it reaches, is reviewed by a fresh agent with `prompts/review.md`, then put to the owner with the review, and is not pushed until the owner approves it;
-- `lake build`, the done check in `AGENTS.md` and `lake exe tracker lint` pass;
-- once every finding is applied or declined, the two reports are deleted, and `STATUS.md` records what was decided;
+- each of these decisions is applied as the section above says;
+- the changes to `plans/` are made in this order: the deletion of `plans/Mathlib` and `plans/TauCeti` (5); the move of the roadmap-owned nodes (W3), first for one area and then for the rest; the shorter `desc` texts (5 and W9); the corrections of 7. `lake exe tracker lint` has no errors after each step;
+- nothing in `GLCinLean/` changes;
+- `STATUS.md` records the decisions, the upstream targets that block the plan, the "Held" list, the Worker command lines, the tracker request of 6, the later tasks of W10 and W12, and that Session 4b comes next;
+- the done check in `AGENTS.md` passes;
 - the next session's prompt in `prompts/next-steps.md` is checked against this session's result and changed where it no longer fits;
 - the work is committed and pushed.
 
 **Context**
-- The owner's decision on each finding: <fill in before starting>. `notes/review-goal.md` ends with a table of ten decisions (1 to 10), and `notes/review-workflow.md` with a table of twelve (W1 to W12).
-- If the owner approves decision 1 of `notes/review-goal.md` (the second property stated with the Hecke action), the new statement is written first and reviewed with `prompts/review.md`; the plan is cut only after the owner approves the statement.
-- The decisions W1 to W12 do not wait for that approval: they hold for both outcomes of decisions 1 to 3. The few lines that differ are in the section "Both outcomes" of `notes/review-workflow.md`.
-- Changes to `plans/` are made in this order, each only if approved: the cut of the plan (decision 3); the deletion of `plans/Mathlib` and `plans/TauCeti` (decision 5); the move of the roadmap-owned nodes to `plans/Roadmap/<area>/` (W3); the shorter `desc` texts (decision 5 and W9). `lake exe tracker lint` has no errors after each step.
-- `notes/review-workflow.md` gives the proposed text of `prompts/build.md` (its section 1.5) and of a new `prompts/audit.md` (its section 3.3). Each text names the decisions it assumes: where the owner declined one of them, change the lines that rest on it.
-- If W4 is approved, the rule on review and approval changes in this session. The changes of this session still follow the present rule in `AGENTS.md`.
+- The new `prompts/build.md` of §1.5 assumes decision 1, so it drops "module actions". Keep the line "module actions stay explicit" until Session 4c, because the owner has not yet approved the new statement.
+- After the moves, `lake exe tracker ready` should list `Roadmap.…` modules and the few `GLCinLean.…` modules that can start. If it does not, `STATUS.md` says why.
+- If the trial of W3 shows a problem, stop the move and report it to the owner.
+
+## Session 4b: the statement
+
+Model: Fable 5.2, effort `high`.
+
+**Goal.** Write the statement of decisions 1, 2 and 10, and put it to the owner.
+
+**Done when**
+- the new statement is on a branch `proposal/hecke-form`: decisions 1, 2 and 10 are applied in `GLCinLean/Statement/` and in its plan in `plans/GLCinLean/Statement/`, `tools/check-statement-axioms.lean` lists the new declarations, and `AGENTS.md:45` says that the second property is in its equal form with the Hecke action;
+- each new placeholder names the object it stands for, and its plan node has suggested `deps` to the existing plan nodes (for example `Hecke.ranRepresentations`, `Hecke.action`, `Spectral.localization`, `Whittaker.vacuumPoincare`);
+- on the branch, `lake build`, the done check in `AGENTS.md` and `lake exe tracker lint` pass;
+- a fresh agent has reviewed the new statement with `prompts/review.md`, and its report is on the branch;
+- `STATUS.md` on `main` names the branch and the reviewed commit under "Waiting for the owner";
+- the next session's prompt in `prompts/next-steps.md` is checked against this session's result and changed where it no longer fits;
+- `main` and the branch are pushed.
+
+**Context**
+- The form of the equivalence and the argument for it are in Finding 1 of `notes/review-goal.md` and in decision 1 of `notes/review-independent-2026-11-10.md`. `Loc^R` is continuous only by a theorem, so the property is stated with mapping spaces, not with `Loc^R`.
+- The plan is not cut in this session.
+
+## Session 4c: the plan cut
+
+Model: Opus 5.5, effort `high`.
+
+**Goal.** Bring the plan to the statement that the owner decided on, and close the three reports.
+
+**Done when**
+- if the owner approved the branch `proposal/hecke-form`: it is merged into `main`; the cut of decision 3 is made; `plans/README.md` is rewritten where the spectral decomposition is no longer inside the statement's plan; and `prompts/build.md` drops "module actions";
+- if the owner declined it: the branch is deleted, and the spectral-action nodes whose written proof is incomplete go on the "Held" list, each with the proof that is missing;
+- `lake build`, the done check in `AGENTS.md` and `lake exe tracker lint` pass;
+- the three reports in `notes/` are deleted, and `STATUS.md` records what was decided;
+- the next session's prompt in `prompts/next-steps.md` is checked against this session's result and changed where it no longer fits;
+- the work is committed and pushed.
+
+**Context**
+- The owner's answer on the statement: <fill in before starting>.
 
 ## Session 5: dependency-graph page
 
@@ -115,5 +186,5 @@ Model: Opus 5.5, effort `medium`.
 - on the page the owner can search for a declaration and see what it depends on and what depends on it, filter by module and by state, see the placeholders, and read each node's description and source;
 - no file is added to the repository;
 - `prompts/build.md` is checked: if the build step should refresh the page after it changes `plans/`, it says so in one line;
-- `prompts/next-steps.md` is deleted, because the six sessions are done;
+- `prompts/next-steps.md` is deleted, because the one-off sessions are done;
 - the work is committed and pushed.
