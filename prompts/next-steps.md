@@ -97,8 +97,12 @@ Model: Opus 5.5 or Fable 5.2, effort `high`.
 - the work is committed and pushed.
 
 **Context**
-- The owner's decision on each finding: <fill in before starting>. `notes/review-goal.md` ends with a table of ten decisions.
+- The owner's decision on each finding: <fill in before starting>. `notes/review-goal.md` ends with a table of ten decisions (1 to 10), and `notes/review-workflow.md` with a table of twelve (W1 to W12).
 - If the owner approves decision 1 of `notes/review-goal.md` (the second property stated with the Hecke action), the new statement is written first and reviewed with `prompts/review.md`; the plan is cut only after the owner approves the statement.
+- The decisions W1 to W12 do not wait for that approval: they hold for both outcomes of decisions 1 to 3. The few lines that differ are in the section "Both outcomes" of `notes/review-workflow.md`.
+- Changes to `plans/` are made in this order, each only if approved: the cut of the plan (decision 3); the deletion of `plans/Mathlib` and `plans/TauCeti` (decision 5); the move of the roadmap-owned nodes to `plans/Roadmap/<area>/` (W3); the shorter `desc` texts (decision 5 and W9). `lake exe tracker lint` has no errors after each step.
+- `notes/review-workflow.md` gives the proposed text of `prompts/build.md` (its section 1.5) and of a new `prompts/audit.md` (its section 3.3). Each text names the decisions it assumes: where the owner declined one of them, change the lines that rest on it.
+- If W4 is approved, the rule on review and approval changes in this session. The changes of this session still follow the present rule in `AGENTS.md`.
 
 ## Session 5: dependency-graph page
 
