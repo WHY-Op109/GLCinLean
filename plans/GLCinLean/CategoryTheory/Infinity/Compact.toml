@@ -1,15 +1,15 @@
-desc = "Planned library module. CategoryTheory / Infinity / Compact. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'Planned library module. CategoryTheory / Infinity / Compact. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented.'
 
 [[node]]
-id = "GLCinLean.Infinity.compactObject"
-kind = "definition"
-desc = "Objects whose mapping-space functors preserve filtered colimits; provide membership iff and nonzero examples. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 compact objects and EnhancedDerivedSheaves E5:presentability.1 compact generation. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Infinity.mappingSpaces", "GLCinLean.Infinity.limits", "SSet.rightMappingSpace"]
-source = "[AGKRRV] §0.9.2; [CompactGeneration] §1.2.1"
+id = 'GLCinLean.Infinity.compactObject'
+kind = 'definition'
+desc = 'Objects whose mapping-space functors preserve filtered colimits; provide membership iff and nonzero examples. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 compact objects and EnhancedDerivedSheaves E5:presentability.1 compact generation. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `SSet.rightMappingSpace` (`TauCeti.AlgebraicTopology.Quasicategory.RightMappingSpace`).'
+deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits']
+source = '[AGKRRV] §0.9.2; [CompactGeneration] §1.2.1'
 
 [[node]]
-id = "GLCinLean.Infinity.compactGeneration"
-kind = "definition"
-desc = "Generation under colimits by a small full subcategory of compact objects. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:presentability.1 and E3.3 compact-generation criterion. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Infinity.compactObject", "GLCinLean.Infinity.indCompletion"]
-source = "[CompactGeneration] §1.2.2; [GLC1] §1.6.4"
+id = 'GLCinLean.Infinity.compactGeneration'
+kind = 'definition'
+desc = 'Generation under colimits by a small full subcategory of compact objects. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E5:presentability.1 and E3.3 compact-generation criterion. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+deps = ['GLCinLean.Infinity.compactObject', 'GLCinLean.Infinity.indCompletion']
+source = '[CompactGeneration] §1.2.2; [GLC1] §1.6.4'

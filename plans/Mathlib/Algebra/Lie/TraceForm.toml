@@ -1,8 +1,0 @@
-desc = "Reuse the Killing form, including its degenerate reductive case."
-
-[[node]]
-id = "killingForm"
-kind = "definition"
-desc = "Trace form of the adjoint representation. It need not be nondegenerate for a reductive Lie algebra with center. Provider: Mathlib Algebra/Lie/TraceForm.lean. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = []
-source = "[GLC2] §2.1.5 (critical level -1/2 Killing)"
