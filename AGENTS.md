@@ -12,7 +12,7 @@ after the statement.
 ## Sources of code
 
 - Use Mathlib first, then Tau Ceti (search its `main`, not only the pinned version).
-- Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`, from the fork `WHY-Op109/TauCeti`. Nothing goes to Mathlib directly.
+- Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`, from the fork `WHY-Op109/TauCeti`.
 - Everything else is written here.
 
 ## Subagents

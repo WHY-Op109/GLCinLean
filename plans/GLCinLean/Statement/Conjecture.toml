@@ -1,70 +1,60 @@
 
 [[node]]
 id = "GLCinLean.Statement.RootDatumDuality"
-kind = "definition"
 desc = "PLACEHOLDER. Identification of the root datum of `Gd` with the dual root datum of `G` ([GLC1] §0.1.1). Both groups are represented by their coordinate Hopf algebras. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-based-root-datum and langlands-dual-group; current statement relation is missing. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Replacement contract: change its signature to take the input and dual pinnings and use Groups.dualityData. Setting will carry dualRank and dualPinning, and dualIdentification will use both pinnings. The planned changePinning theorem and explicit examples must justify that these added choices do not restrict the mathematical statement. This is a future reviewed signature change, not a claim about the present opaque relation."
 deps = ["TauCeti.ReductiveCommHopfAlgCat", "GLCinLean.Groups.langlandsDual", "GLCinLean.Groups.dualityData", "GLCinLean.Groups.dualityData_changePinning"]
 source = "[GLC1] §0.1.1"
 
 [[node]]
 id = "GLCinLean.Statement.Setting"
-kind = "definition"
 desc = "PLACEHOLDER. Standing geometric data for [GLC1] §§1.1–1.3: a smooth proper connected curve, a pinned reductive group, a theta characteristic and an identified Langlands dual group. The theta characteristic is a line bundle together with its squaring isomorphism. Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["Field", "CharZero", "IsAlgClosed", "AlgebraicGeometry.Scheme", "AlgebraicGeometry.Spec", "AlgebraicGeometry.SmoothOfRelativeDimension", "AlgebraicGeometry.IsProper", "ConnectedSpace", "TauCeti.ReductiveCommHopfAlgCat", "TauCeti.Pinning", "TauCeti.AlgebraicGeometry.InvertibleSheaf", "TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct", "AlgebraicGeometry.Scheme.relativeDifferentials", "GLCinLean.Statement.RootDatumDuality", "GLCinLean.Curves.thetaCharacteristic"]
 source = "[GLC1] §§1.1–1.3; [AGKRRV] §§0.9.1, 14.1.1; [GLC2] §0.4.1"
 
 [[node]]
 id = "GLCinLean.Statement.QCohLS"
-kind = "definition"
 desc = "PLACEHOLDER. The monoidal DG category `QCoh(LS_Ǧ)` of the derived stack of de Rham local systems ([GLC1] §§0.1.1, 1.2.2). Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.Setting", "GLCinLean.Statement.MonoidalDGCat", "GLCinLean.LocalSystems.qcohRigid"]
 source = "[GLC1] §§0.1.1, 1.2.2"
 
 [[node]]
 id = "GLCinLean.Statement.DmodHalf"
-kind = "definition"
 desc = "PLACEHOLDER. Half-twisted D-modules on `Bun_G`, with its spectral `QCoh(LS_Ǧ)`-action ([GLC1] §§1.1.1–1.1.4, Thm. 1.2.4). The twist is the gerbe of square roots of `det_BunG`; the chosen theta characteristic trivializes it. Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.QCohLS", "GLCinLean.Statement.DGModule", "GLCinLean.Automorphic.halfTwistedDModules", "GLCinLean.Spectral.action"]
 source = "[GLC1] §§1.1.1–1.1.4, Thm. 1.2.4"
 
 [[node]]
 id = "GLCinLean.Statement.IndCohNilp"
-kind = "definition"
 desc = "PLACEHOLDER. Ind-coherent sheaves with nilpotent singular support on the derived local-system stack, with their `QCoh(LS_Ǧ)`-action and standard t-structure ([GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5). Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.QCohLS", "GLCinLean.Statement.TStructuredDGModule", "GLCinLean.LocalSystems.indcohNilpotent"]
 source = "[GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5"
 
 [[node]]
 id = "GLCinLean.Statement.Psi"
-kind = "definition"
 desc = "PLACEHOLDER. The continuous linear coarsening functor `Ψ_Nilp,{0}` ([GLC1] §1.6.3; [ArinkinGaitsgory] Prop. 4.4.5). Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.IndCohNilp", "GLCinLean.Statement.QCohLS", "GLCinLean.Statement.MonoidalDGCat.regularModule", "GLCinLean.Statement.LinFun", "GLCinLean.LocalSystems.psiNilpotent"]
 source = "[GLC1] §1.6.3; [ArinkinGaitsgory] Prop. 4.4.5"
 
 [[node]]
 id = "GLCinLean.Statement.LCoarse"
-kind = "definition"
 desc = "PLACEHOLDER. The coarse Langlands functor, right adjoint to the spectral action on the vacuum Poincaré object ([GLC1] §§1.4.1–1.4.5). Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.DmodHalf", "GLCinLean.Statement.QCohLS", "GLCinLean.Statement.MonoidalDGCat.regularModule", "GLCinLean.Statement.LinFun", "GLCinLean.Langlands.coarse"]
 source = "[GLC1] §§1.4.1–1.4.5"
 
 [[node]]
 id = "GLCinLean.Statement.IsLanglandsFunctor"
-kind = "definition"
 desc = "PLACEHOLDER. The two characterizing properties of [GLC1] Cor. 1.6.5, for the continuous linear functors of Prop. 1.7.2: compact objects have bounded-below images and coarsening is naturally equivalent to the coarse Langlands functor. The bound may depend on the object. Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284. This is the sole characterization predicate; the duplicate planned Langlands.characterization has been removed. Keep this formula as its category/functor placeholders are replaced."
 deps = ["GLCinLean.Statement.DmodHalf", "GLCinLean.Statement.IndCohNilp", "GLCinLean.Statement.Psi", "GLCinLean.Statement.LCoarse", "GLCinLean.Statement.LinFun.obj", "GLCinLean.Statement.LinFun.comp", "GLCinLean.Statement.LinIso", "GLCinLean.Statement.DGCat.IsCompact", "GLCinLean.Statement.TStructuredDGModule.IsEventuallyCoconnective"]
 source = "[GLC1] Corollary 1.6.5 and Proposition 1.7.2"
 
 [[node]]
 id = "GLCinLean.Statement.isLanglandsFunctor_iff"
-kind = "theorem"
 desc = "Implemented logical unfolding lemma. Introduction and elimination of the two characterizing properties ([GLC1] Cor. 1.6.5 and Prop. 1.7.2). Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.IsLanglandsFunctor"]
 source = "[GLC1] Corollary 1.6.5 and Proposition 1.7.2"
 
 [[node]]
 id = "GLCinLean.Statement.exists_isLanglandsFunctor_and_forall_isLanglandsFunctor_imp_isEquivalence"
-kind = "theorem"
 desc = "Main theorem: sole admitted proof. The de Rham geometric Langlands conjecture, in its characterized-functor form: a continuous linear functor with the properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.IsLanglandsFunctor", "GLCinLean.Statement.LinFun.IsEquivalence"]
 source = "[GLC1] Corollary 1.6.5, Conjecture 1.6.7 and Proposition 1.7.2"

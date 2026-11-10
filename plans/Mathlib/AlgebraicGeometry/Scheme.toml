@@ -2,14 +2,12 @@ desc = '''Existing provider boundary. These nodes refer to upstream declarations
 
 [[node]]
 id = 'AlgebraicGeometry.Scheme'
-kind = 'definition'
 source = '[GLC1] §0.1.1; [AGKRRV] §0.9.1'
 desc = '''Classical schemes; a boundary for classical geometry, not derived schemes. Provider: Mathlib, pinned commit 1b1ccf4b088b32fa3f23f2de1127433254a81e1e; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
 deps = []
 
 [[node]]
 id = 'AlgebraicGeometry.Spec'
-kind = 'definition'
 source = '[AGKRRV] §0.9.1'
 desc = '''Affine spectrum of a commutative ring. Provider: Mathlib, pinned commit 1b1ccf4b088b32fa3f23f2de1127433254a81e1e; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
 deps = []
