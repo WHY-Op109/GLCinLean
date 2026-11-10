@@ -1,26 +1,21 @@
 # Build
 
-**Goal.** Replace placeholders of the GLC statement by real definitions, working through the plan in `plans/` from the bottom up. Read `plans/README.md` before choosing a task. Use `lake exe tracker ready` to find candidates, then inspect their provider, paper locator and suggested dependencies: placeholders count as proved, and existing upstream declarations that are not imported can appear open. Write missing library code, then use it in the statement. Parts a Tau Ceti roadmap covers go to Tau Ceti through Tau Ceti's Worker; the rest is written here.
+**Goal.** Move the plan in `plans/` forward by one module, from the bottom up, until each placeholder of the GLC statement can be replaced by a real definition.
 
 **Done when**
-- the objects taken on in this session are defined, each with examples or test lemmas showing it behaves as expected, and the placeholders they replace are gone;
-- Tau Ceti pull requests opened or tended in this session are listed in `STATUS.md`, and merged ones are used here (moving the Tau Ceti pin as `AGENTS.md` says);
-- the done check in `AGENTS.md` passes, including `lake env lean tools/check-statement-axioms.lean` after updating that audit for any renamed or added statement declarations; no definition may depend on `sorryAx`, and only the main theorem may use it;
-- a fresh agent has reviewed every new or changed definition with `prompts/review.md`;
-- a change to the statement, or to a definition it reaches, is not pushed until the owner has approved it: it is put to the owner together with the review, and the session waits;
-- `plans/` and `STATUS.md` are updated (`lake exe tracker lint` passes), the prompt for the next step has been checked and updated if needed, and the work is committed and pushed.
+- upstream is folded in first: each Tau Ceti pull request listed in `STATUS.md` is checked. For a merged one, the Tau Ceti pin is moved as `AGENTS.md` says. Its nodes are deleted from `plans/Roadmap/` only when the declaration is at this project's pin, its interface is checked, and a fresh agent has reviewed its meaning with `prompts/review.md`; in the same commit, the nodes that used them name the upstream declaration and its import module in their `desc`;
+- one ready module under `GLCinLean` (or a few small ones, or a bounded part of a large one) is written: `lake exe tracker ready` names it, and `lake exe tracker show <module>` is its brief. If no module under `GLCinLean` is ready, the session writes in `STATUS.md` which roadmap targets block the plan, and ends;
+- each new definition has examples or test lemmas that show it behaves as expected. A placeholder is replaced only when every node below it is proved, and with the example nodes of `plans/` that rule out a trivial reading;
+- the done check in `AGENTS.md` passes, and `lake exe tracker lint` has no errors;
+- a fresh agent has checked the diff against each rule of "Sources of code" and "Lean code" in `AGENTS.md`, and its findings are fixed;
+- after that, a fresh agent has reviewed every new or changed definition with `prompts/review.md`;
+- a change that needs the owner's approval under "The statement" in `AGENTS.md` is committed with its review report on a branch `proposal/<topic>`, and `STATUS.md` on `main` names the branch under "Waiting for the owner". `main` gets the change only after the owner approves it;
+- `STATUS.md` is updated and says what the next session takes on (a build, or an audit when a trigger of `prompts/audit.md` holds), and the work is committed and pushed.
 
 **Context**
-- The current statement is `GLCinLean/Statement/Conjecture.lean`; its enhanced placeholders are in `GLCinLean/Statement/Enhanced.lean`. The main theorem states existence and equivalence of every characterized functor; preserve that shape.
-- `docs/blueprint-providers.md` records exact provider revisions, accepted roadmap targets and open proposal heads. Recheck upstream main and proposal state before implementation. The three policy answers in `STATUS.md` are proposals until the owner decides.
-- Existing Mathlib quasicategories and Tau Ceti DG nerves, mapping spaces and K-injective comparisons must be reused. Ordinary derived categories are not replacements for enhanced categories. Field, universes, module actions and t-structures must remain explicit.
-- `Constructible.decompositionTheorem` is a deferred deep input: do not start it, or anything whose only open input it is, before the owner chooses its proof route.
-- Every placeholder replacement needs a nontrivial example. In particular test a nonempty geometric setting, a singular derived affine, zero singular support and torus normalization as appropriate; a zero-category interpretation is not an implementation of GLC.
-- `plans/` (read with `lake exe tracker status`, `ready` and `show`) and `STATUS.md`: what is done, what is next, and what is in flight.
-- Tau Ceti's Worker (https://github.com/TauCetiProject/TauCetiWorker; installed with `uv tool install`) runs outside this repository, under the owner's `gh` account, and opens pull requests from the fork `WHY-Op109/TauCeti`. Tau Ceti's README and the Worker's README are the authority; as read on 2026-11-08:
-  - `--agent claude` must be set (the default prefers Codex); `--roadmap-only <area>` pins one roadmap area;
-  - run a bare `tauceti work` round before ever using `--loop`; Tau Ceti discourages `--only roadmap`, which leaves existing pull requests untended;
-  - a pull request labelled `awaiting-author` with no activity for 7 days is closed automatically, so open pull requests are tended at least weekly;
-  - without the `--bubble` sandbox (which needs an Incus runtime) the agent runs with the owner's full credentials.
+- The statement is in `GLCinLean/Statement/`. The main theorem says that a characterized functor exists and that every such functor is an equivalence; preserve that shape.
+- Nodes under `plans/Roadmap/<area>/` belong to that Tau Ceti roadmap. The owner runs Tau Ceti's Worker for them, with the command lines in `STATUS.md`: `tauceti work --agent claude --roadmap-only <area> --extra-roadmap-prompt "<targets>"`. The targets come from one module or node: `lake exe tracker show Roadmap.<area>.<Module>` or `lake exe tracker show <node id>`, because `show Roadmap.<area>` lists only the modules under it, not their nodes. A session here does not start the Worker.
+- A node listed under "Held" in `STATUS.md` is not started.
+- Ordinary derived categories are not replacements for enhanced categories. Field, universes, module actions and t-structures stay explicit.
 - When a paper is wrong, mark the planned declaration `wrong` and amend the plan.
-- The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`. A missing paper is fetched from arXiv as `https://arxiv.org/e-print/<id>v<version>` (the versions are in `docs/references.bib`) and unpacked into `src/`.
+- `docs/papers.md` says where the papers' TeX is and how to fetch a missing paper.
