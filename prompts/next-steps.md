@@ -80,7 +80,8 @@ The owner's goal: a faithful Lean statement of [GLC1] Conj. 1.6.7 (de Rham, char
 
 **Context**
 - The prompts run on Claude Fable 5.2. Its prompting guide is https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2.
-- The goal review is in `notes/review-goal.md`.
+- The goal review is in `notes/review-goal.md`. Its decisions 1 to 3 propose another form of the statement's second property, which would move about half of the plan from the statement to the proof. The owner has not decided them: judge `prompts/build.md` and the rules for both outcomes.
+- Its Finding 2 and its answer to question 4 already propose changes to `prompts/build.md` and to how the plan uses the tracker (the first work is Tau Ceti Worker rounds on the ∞-category roadmaps; upstream leaves as plan nodes; placeholders counted as proved; provider text in each `desc`). Take them as input, and do not repeat them.
 
 ## Session 4: changes
 
@@ -97,7 +98,8 @@ Model: Opus 5.5 or Fable 5.2, effort `high`.
 - the work is committed and pushed.
 
 **Context**
-- The owner's decision on each finding: <fill in before starting>.
+- The owner's decision on each finding: <fill in before starting>. `notes/review-goal.md` ends with a table of ten decisions.
+- If the owner approves decision 1 of `notes/review-goal.md` (the second property stated with the Hecke action), the new statement is written first and reviewed with `prompts/review.md`; the plan is cut only after the owner approves the statement.
 
 ## Session 5: dependency-graph page
 
