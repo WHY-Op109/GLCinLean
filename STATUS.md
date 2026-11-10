@@ -44,7 +44,9 @@ The latest commit answers the third recheck. It has not been reviewed yet. The p
   decomposition theorem. [LusztigQAnalog] §11 is kept only as a cross-check of the statement.
 - **Known deep input (not a blocker):** `Constructible.decompositionTheorem` ([BBD]) is the only
   use of a theory of weights. Its proof route (ℓ-adic purity or Hodge theory) is decided when
-  work reaches it; until then its node is marked not ready. It does not affect the Lean statement.
+  work reaches it. The tracker has no "not ready" state: the node will appear in
+  `lake exe tracker ready` once its three `Constructible.*` dependencies are proved, so its
+  description and `prompts/build.md` are what hold it back. It does not affect the Lean statement.
 - A half-twisted factorization spherical category, compared with the untwisted heart only at a
   point.
 - One spherical action on Dmod_1/2(Bun_G) (`Hecke.sphericalAction`,
@@ -65,20 +67,33 @@ The latest commit answers the third recheck. It has not been reviewed yet. The p
   `Hecke.action_factorsThroughIndependent`, `Hecke.unitalIndependentRepresentations_rigid`).
   The rank induction is explicit.
 
-There are now 480 declarations in 224 module-plan files, including 69 direct upstream
+There are now 483 declarations in 225 module-plan files, including 70 direct upstream
 suppliers. The owner decided both open questions on 2026-11-10, as recorded above.
 
 The same commit makes the three Lean changes of the second review, so the statement changed:
 
 - L1: the unused placeholder `MonoidalDGCat.toDGCat` is removed; `A.regularModule.toDGCat`
   stands for the category underlying `A`.
-- L2: the main theorem is renamed `exists_isLanglandsFunctor_and_isEquivalence_of_isLanglandsFunctor`,
-  so that its name spells both conjuncts.
+- L2: the main theorem is renamed (final name under U1 below) so that its name spells both
+  conjuncts.
 - L3: the docstring of `MonoidalDGCat.regularModule` cites [AGKRRV] §0.9.4 and [GLC1] §1.4.1.
 
 The statement remains in `GLCinLean/Statement/Conjecture.lean` and
-`GLCinLean/Statement/Enhanced.lean`. A fresh review with `prompts/review.md` checks these
-changes; the result is in `notes/reviews/`. Nothing is pushed until the owner approves.
+`GLCinLean/Statement/Enhanced.lean`. The fresh review `notes/reviews/2026-11-10.md` (on
+`ef1ab1f`) approved L1–L3 and requested plan changes (M1–M3, S1–S11) and a clearer theorem name
+(U1). The follow-up commit makes them:
+
+- M1: Bott–Samelson parity is stated for Iwahori orbits; the step to L+G-orbits uses the
+  L+G-equivariance of IC_λ.
+- M2: the route cites [JuteauMautnerWilliamson] Prop. 4.11 and no longer uses Thm. 4.8.
+- M3: `Hecke.action_localUnital` plans the unitality of the Hecke action.
+- U1: the main theorem is renamed
+  `exists_isLanglandsFunctor_and_forall_isLanglandsFunctor_imp_isEquivalence`, because
+  `A_and_B_of_C` would read as "C implies A and B".
+- S1–S11: records, sources, one split node (`Satake.isLanglandsFunctor_iff_of_changePinning`),
+  Mathlib suppliers for the constructible derived category, and the regularModule citations.
+
+Nothing is pushed until the owner approves.
 
 ## What is not implemented
 
@@ -102,12 +117,13 @@ cache command. The build on 2026-11-10 passes (8173 jobs), with only the main th
 explicit statement declarations: only the main theorem uses `sorryAx`; all others use subsets
 of `propext`, `Classical.choice`, `Quot.sound`.
 
-`lake exe tracker lint` exits 0 on the 480-declaration plan, with 142 superseded-metadata
+`lake exe tracker lint` exits 0 on the 483-declaration plan, with 144 superseded-metadata
 notices and no other warnings or errors. The static audit finds no duplicate IDs, unresolved
 dependencies or cycles; every node has a source, provider, checked revision and dependency
-list, and every source key is in the bibliography. 462 of the 480 declarations are reachable
-from the main theorem through the suggested graph; the other 18 are examples, API results and
-the choice-independence result `Satake.dualIdentificationChangePinningIso`. Superseded provenance notices are expected: the owner
+list, and every source key is in the bibliography. 464 of the 483 declarations are reachable
+from the main theorem through the suggested graph; the other 19 are examples, API results and
+the two choice-independence nodes `Satake.dualIdentificationChangePinningIso` and
+`Satake.isLanglandsFunctor_iff_of_changePinning`. Superseded provenance notices are expected: the owner
 requires source/provider/dependency records even where compiled declarations supersede them.
 `prompts/build.md` was checked; it already requires provider inspection, nontrivial examples,
 axiom checks and fresh owner-approved statement review, so no further edit is needed.
