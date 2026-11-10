@@ -1,0 +1,8 @@
+desc = 'The Vect_k-valued internal Hom of a k-linear category. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Infinity.internalHom'
+kind = 'definition'
+desc = 'The Vect_k-valued mapping object characterized by tensor-Hom adjunction. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E3.2 adjointFunctorTheorem applied to the tensor action; E1.4 derivedInternalHom and E1.F3.H1 supply the coefficient-model comparison. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `TauCeti.dgHomComplex` (`TauCeti.CategoryTheory.DG.Basic`).'
+deps = ['GLCinLean.Infinity.linearCategory', 'GLCinLean.Infinity.derivedVect', 'GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.rightAdjoint']
+source = '[AGKRRV] §0.9.4'
