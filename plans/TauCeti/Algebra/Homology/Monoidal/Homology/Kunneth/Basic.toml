@@ -1,8 +1,0 @@
-desc = 'Existing algebraic Kunneth provider; no local wrapper is planned.'
-
-[[node]]
-id = 'HomologicalComplex.isIso_homologyKunneth_of_isSplitMono_of_isSplitEpi'
-kind = 'theorem'
-desc = 'The Kunneth map is an isomorphism for module complexes whose cycles and homology split off, in particular complexes over a field. Provider: Tau Ceti existing declaration in TauCeti.Algebra.Homology.Monoidal.Homology.Kunneth.Basic, line 272 at pinned commit e0610cce4004d628cbd9d2aafdbbb5459fe72938 and main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1. Existing code, not a placeholder. Geometric D-module Kunneth remains a separate planned theorem.'
-deps = []
-source = '[GaitsgoryContractibility] §6, algebraic Kunneth step'
