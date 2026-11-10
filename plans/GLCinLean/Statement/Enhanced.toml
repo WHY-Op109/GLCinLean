@@ -48,13 +48,6 @@ deps = ["GLCinLean.Statement.MonoidalDGCatCarrier"]
 source = "[AGKRRV] §0.9.4"
 
 [[node]]
-id = "GLCinLean.Statement.MonoidalDGCat.toDGCat"
-kind = "definition"
-desc = "PLACEHOLDER. The underlying enhanced category of a monoidal DG category ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
-deps = ["GLCinLean.Statement.MonoidalDGCat", "GLCinLean.Statement.DGCat"]
-source = "[AGKRRV] §0.9.4"
-
-[[node]]
 id = "GLCinLean.Statement.DGModuleCarrier"
 kind = "definition"
 desc = "PLACEHOLDER. The carrier of DG categories with a specified action of `A` ([AGKRRV] §0.9.4). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
@@ -78,9 +71,9 @@ source = "[AGKRRV] §0.9.4"
 [[node]]
 id = "GLCinLean.Statement.MonoidalDGCat.regularModule"
 kind = "definition"
-desc = "PLACEHOLDER. A monoidal category acting on itself by tensor product ([GLC1] §1.2.3). Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
+desc = "PLACEHOLDER. A monoidal category acting on itself by tensor product ([AGKRRV] §0.9.4; [GLC1] §1.4.1). Its underlying enhanced category stands for the category underlying A, so no separate MonoidalDGCat.toDGCat is planned. Provider: Missing enhanced implementation; Tau Ceti roadmap EnhancedDerivedSheaves E0, E3, E5:presentability and BordismFormalGroups F6.5. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.MonoidalDGCat", "GLCinLean.Statement.DGModule"]
-source = "[GLC1] §1.2.3"
+source = "[AGKRRV] §0.9.4; [GLC1] §1.4.1"
 
 [[node]]
 id = "GLCinLean.Statement.TStructuredDGModuleCarrier"

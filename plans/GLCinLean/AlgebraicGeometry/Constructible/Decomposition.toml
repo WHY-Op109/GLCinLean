@@ -1,0 +1,8 @@
+desc = "Planned library module. The decomposition theorem for proper maps of complex varieties, the deferred deep input behind parity of IC stalks."
+
+[[node]]
+id = "GLCinLean.Constructible.decompositionTheorem"
+kind = "theorem"
+desc = "Over C, for a proper map f from a smooth variety Y, f_* C_Y[dim Y] is isomorphic to a finite direct sum of shifted intersection complexes of semisimple local systems on strata. Known deep input: its proof route (ℓ-adic purity from Weil II with a comparison to complex coefficients, as in [BBD], or Hodge theory) is decided when work reaches this node; it is not ready until then. It is the only use of a theory of weights in the plan. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-10; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.Constructible.perverseSheaves", "GLCinLean.Constructible.derivedCategory", "GLCinLean.Constructible.complexPoints"]
+source = "[BBD] Théorème 6.2.5 (not pinned; check the number before implementation)"

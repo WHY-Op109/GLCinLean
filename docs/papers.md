@@ -54,6 +54,9 @@ One line per paper, to choose which one to search:
 | [LusztigQAnalog] | not pinned | paper | parity vanishing of IC stalks on the affine Grassmannian (§11), cited through [MV] Lemma 7.1 |
 | [DeligneMilne] | not pinned | paper | Tannakian criteria for finite type, connectedness and reductivity (Props. 2.20 and 2.23, Cor. 2.22), cited through [MV] §7 |
 | [LurieHA] | not pinned | book | idempotent algebras and their modules (§4.8.2) |
+| [JuteauMautnerWilliamson] | `0906.2994v3/src/paritysheaves_a.tex` | 4.1k | parity sheaves; even maps (Prop. 2.36); Kac–Moody flag varieties, Bott–Samelson varieties and convolution (§4.1, Thms. 4.6, 4.8); characteristic-0 parity sheaves are IC sheaves (Rem. 2.17). Numbered per section |
+| [PappasRapoport] | `math-0607130v2/src/TwistedLoops08fi.tex` | 4.5k | connected components of affine flag varieties (Thm. 5.1); the simply connected cover and the neutral component (§6.1.1, stated in characteristic p); Iwahori–Weyl group (§8) |
+| [BBD] | not pinned | book | the decomposition theorem (Thm. 6.2.5) |
 
 ## Searching
 

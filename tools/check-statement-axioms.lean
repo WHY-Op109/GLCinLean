@@ -20,7 +20,6 @@ theorem may report `sorryAx`; all closures must stay within the axioms in `AGENT
 #print axioms GLCinLean.Statement.DGCat.IsCompact
 #print axioms GLCinLean.Statement.MonoidalDGCatCarrier
 #print axioms GLCinLean.Statement.MonoidalDGCat
-#print axioms GLCinLean.Statement.MonoidalDGCat.toDGCat
 #print axioms GLCinLean.Statement.DGModuleCarrier
 #print axioms GLCinLean.Statement.DGModule
 #print axioms GLCinLean.Statement.DGModule.toDGCat
@@ -46,4 +45,4 @@ theorem may report `sorryAx`; all closures must stay within the axioms in `AGENT
 #print axioms GLCinLean.Statement.LCoarse
 #print axioms GLCinLean.Statement.IsLanglandsFunctor
 #print axioms GLCinLean.Statement.isLanglandsFunctor_iff
-#print axioms GLCinLean.Statement.exists_isLanglandsFunctor_and_isEquivalence
+#print axioms GLCinLean.Statement.exists_isLanglandsFunctor_and_isEquivalence_of_isLanglandsFunctor
