@@ -48,4 +48,5 @@ through Tau Ceti's Worker; the rest is written here.
   - without the `--bubble` sandbox (which needs an Incus runtime) the agent runs with the owner's
     full credentials.
 - No reviews of other people's Tau Ceti pull requests for now.
+- When a paper is wrong, mark the planned declaration `wrong` and amend the plan.
 - The papers' TeX is in the git-ignored `references/papers/<id>v<version>/src/`. A missing paper is fetched from arXiv as `https://arxiv.org/e-print/<id>v<version>` (the versions are in `docs/references.bib`) and unpacked into `src/`.
