@@ -1,6 +1,6 @@
 # Next steps
 
-One-off sessions, run in this order, each started fresh with its own prompt: 1, 2, 3a, 3b, 4a, 4b, 4c, 5. Sessions 1 to 3b are done. Each session checks the prompt of the session after it and changes it where its result calls for that. Session 5 deletes this file.
+One-off sessions, run in this order, each started fresh with its own prompt: 1, 2, 3a, 3b, 4a, 4b, 4c, 5. Sessions 1 to 4a are done. Each session checks the prompt of the session after it and changes it where its result calls for that. Session 5 deletes this file.
 
 ## Session 1: clean-up
 
@@ -146,8 +146,8 @@ Model: Fable 5.2, effort `high`.
 **Goal.** Write the statement of decisions 1, 2 and 10, and put it to the owner.
 
 **Done when**
-- the new statement is on a branch `proposal/hecke-form`: decisions 1, 2 and 10 are applied in `GLCinLean/Statement/` and in its plan in `plans/GLCinLean/Statement/`, `tools/check-statement-axioms.lean` lists the new declarations, and `AGENTS.md:45` says that the second property is in its equal form with the Hecke action;
-- each new placeholder names the object it stands for, and its plan node has suggested `deps` to the existing plan nodes (for example `Hecke.ranRepresentations`, `Hecke.action`, `Spectral.localization`, `Whittaker.vacuumPoincare`);
+- the new statement is on a branch `proposal/hecke-form`: decisions 1, 2 and 10 are applied in `GLCinLean/Statement/` and in its plan in `plans/GLCinLean/Statement/`, `tools/check-statement-axioms.lean` lists the new declarations, and the first rule of "The statement" in `AGENTS.md` says that the second property is in its equal form with the Hecke action;
+- each new placeholder names the object it stands for, and its plan node has suggested `deps` to the existing plan nodes (for example `Hecke.ranRepresentations`, `Hecke.action`, `Spectral.localization`, `Whittaker.vacuumPoincare`) and a `desc` in the form that `plans/README.md` gives ("Provider: here");
 - on the branch, `lake build`, the done check in `AGENTS.md` and `lake exe tracker lint` pass;
 - a fresh agent has reviewed the new statement with `prompts/review.md`, and its report is on the branch;
 - `STATUS.md` on `main` names the branch and the reviewed commit under "Waiting for the owner";
@@ -157,6 +157,7 @@ Model: Fable 5.2, effort `high`.
 **Context**
 - The form of the equivalence and the argument for it are in Finding 1 of `notes/review-goal.md` and in decision 1 of `notes/review-independent-2026-11-10.md`. `Loc^R` is continuous only by a theorem, so the property is stated with mapping spaces, not with `Loc^R`.
 - The plan is not cut in this session.
+- The review report is named `notes/reviews/<short commit>.md`, as `prompts/review.md` says.
 
 ## Session 4c: the plan cut
 
@@ -165,10 +166,10 @@ Model: Opus 5.5, effort `high`.
 **Goal.** Bring the plan to the statement that the owner decided on, and close the three reports.
 
 **Done when**
-- if the owner approved the branch `proposal/hecke-form`: it is merged into `main`; the cut of decision 3 is made; `plans/README.md` is rewritten where the spectral decomposition is no longer inside the statement's plan; and `prompts/build.md` drops "module actions";
+- if the owner approved the branch `proposal/hecke-form`: it is merged into `main`; the cut of decision 3 is made, also under `plans/Roadmap/` (a roadmap node that only the proof needs moves to `plans-proof/Roadmap/<area>/`); `plans/README.md` is rewritten where the spectral decomposition is no longer inside the statement's plan; `prompts/build.md` drops "module actions"; and the blocking targets, the Worker command lines and the "Held" list in `STATUS.md` are computed again from the cut plan;
 - if the owner declined it: the branch is deleted, and the spectral-action nodes whose written proof is incomplete go on the "Held" list, each with the proof that is missing;
 - `lake build`, the done check in `AGENTS.md` and `lake exe tracker lint` pass;
-- the three reports in `notes/` are deleted, and `STATUS.md` records what was decided;
+- the three reports in `notes/` are deleted, and `STATUS.md` records what was decided. `notes/upstream-2026-11-10.md` is deleted too if the owner agrees, since `docs/blueprint-providers.md` now holds its findings;
 - the next session's prompt in `prompts/next-steps.md` is checked against this session's result and changed where it no longer fits;
 - the work is committed and pushed.
 
