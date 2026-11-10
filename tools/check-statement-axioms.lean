@@ -45,4 +45,4 @@ theorem may report `sorryAx`; all closures must stay within the axioms in `AGENT
 #print axioms GLCinLean.Statement.LCoarse
 #print axioms GLCinLean.Statement.IsLanglandsFunctor
 #print axioms GLCinLean.Statement.isLanglandsFunctor_iff
-#print axioms GLCinLean.Statement.exists_isLanglandsFunctor_and_isEquivalence_of_isLanglandsFunctor
+#print axioms GLCinLean.Statement.exists_isLanglandsFunctor_and_forall_isLanglandsFunctor_imp_isEquivalence

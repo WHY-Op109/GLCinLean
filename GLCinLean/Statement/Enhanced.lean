@@ -67,9 +67,10 @@ instance (A : MonoidalDGCat k) : Nonempty (DGModule A) := (DGModuleCarrier A).pr
 /-- The enhanced category underlying an `A`-module category ([AGKRRV] §0.9.4). -/
 @[placeholder] opaque DGModule.toDGCat {A : MonoidalDGCat k} (C : DGModule A) : DGCat k
 
-/-- A monoidal category acting on itself by tensor product ([AGKRRV] §0.9.4; [GLC1] §1.4.1).
-Its underlying enhanced category `A.regularModule.toDGCat` stands for the category underlying
-`A`. -/
+/-- A monoidal category acting on itself by tensor product. A monoidal DG category is an
+associative algebra in DG categories ([AGKRRV] §0.9.4), and every algebra is a module over
+itself; [GLC1] §1.4.1 uses `QCoh(LS_Ǧ)` acting on itself in this way. Its underlying enhanced
+category `A.regularModule.toDGCat` stands for the category underlying `A`. -/
 @[placeholder] opaque MonoidalDGCat.regularModule (A : MonoidalDGCat k) : DGModule A
 
 /-- The carrier of `A`-module categories with a chosen t-structure

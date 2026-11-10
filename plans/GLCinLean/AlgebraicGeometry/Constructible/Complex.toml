@@ -10,8 +10,8 @@ source = "[HottaTakeuchiTanisaki] Chapter 4 (analytic spaces attached to schemes
 [[node]]
 id = "GLCinLean.Constructible.derivedCategory"
 kind = "definition"
-desc = "For a finite-type C-scheme Y with an algebraic stratification, the bounded derived category of sheaves of C-vector spaces on Y(C) whose cohomology sheaves are locally constant of finite rank on each stratum. Include *- and !-pullback and pushforward along locally closed embeddings, proper pushforward, external products and Verdier duality, with base change and the projection formula, and Hom computed by derived global sections. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
-deps = ["GLCinLean.Constructible.complexPoints", "GLCinLean.Infinity.stableCategory", "GLCinLean.Infinity.tStructure"]
+desc = "For a finite-type C-scheme Y with an algebraic stratification, the bounded derived category of sheaves of C-vector spaces on Y(C) whose cohomology sheaves are locally constant of finite rank on each stratum. Include *- and !-pullback and pushforward along locally closed embeddings, proper pushforward, external products and Verdier duality, with base change and the projection formula, and Hom computed by derived global sections. Build it from Mathlib: TopCat.Sheaf for sheaves of C-vector spaces on Y(C) and DerivedCategory for its derived category; the constructibility condition, the operations and duality are Missing and implemented here. Provider: Mathlib suppliers named; the rest Missing. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.Constructible.complexPoints", "GLCinLean.Infinity.stableCategory", "GLCinLean.Infinity.tStructure", "TopCat.Sheaf", "DerivedCategory"]
 source = "[HottaTakeuchiTanisaki] Chapter 4 and Appendix on derived categories of sheaves"
 
 [[node]]
