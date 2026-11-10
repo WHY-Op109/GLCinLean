@@ -33,15 +33,18 @@ The latest commit answers the third recheck. It has not been reviewed yet. The p
 - Semisimplicity of the spherical heart (`Satake.sphericalHeart_semisimple`), proved in
   D-modules over k from parity of IC stalks (`Satake.icStalkParity`, even D-module degrees),
   constancy of equivariant restrictions, and even de Rham cohomology of the strata
-  (`Hecke.schubertStratum_deRhamCohomology_even`). Parity comes from the complex statement
-  `Satake.icStalkParity_complex` ([LusztigQAnalog] §11) by comparison through Q̄ and C, using
-  `DModules.analyticDeRham`, `DModules.schubertRiemannHilbert`, the constructible nodes and
-  `DModules.regularHolonomic`. Reductivity then uses
-  `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`.
-- **Known deep input (not a blocker):** `Satake.icStalkParity_complex` has a source
-  ([LusztigQAnalog] §11) but no breakdown of its proof, which needs ℓ-adic purity or the
-  decomposition theorem. It does not affect the Lean statement. Its route is decided when
-  work reaches the Satake layer; until then its node is marked not ready.
+  (`Hecke.schubertStratum_deRhamCohomology_even`). Parity over k comes from the complex statement
+  `Satake.icStalkParity_complex` by comparison through Q̄ and C, using `DModules.analyticDeRham`,
+  `DModules.schubertRiemannHilbert`, the constructible nodes and `DModules.regularHolonomic`.
+  Reductivity then uses `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`.
+- Complex parity (owner decision Q1, 2026-11-10): reduce to the simply connected group
+  (`Hecke.affineGrassmannian_reducedComponents`, `Hecke.iwahoriWeylGroup`,
+  `Groups.simplyConnectedCover`), push forward along Bott–Samelson resolutions, which gives parity
+  complexes (`Hecke.bottSamelsonPushforward_parity`, [JuteauMautnerWilliamson] §4.1), and apply the
+  decomposition theorem. [LusztigQAnalog] §11 is kept only as a cross-check of the statement.
+- **Known deep input (not a blocker):** `Constructible.decompositionTheorem` ([BBD]) is the only
+  use of a theory of weights. Its proof route (ℓ-adic purity or Hodge theory) is decided when
+  work reaches it; until then its node is marked not ready. It does not affect the Lean statement.
 - A half-twisted factorization spherical category, compared with the untwisted heart only at a
   point.
 - One spherical action on Dmod_1/2(Bun_G) (`Hecke.sphericalAction`,
@@ -52,31 +55,36 @@ The latest commit answers the third recheck. It has not been reviewed yet. The p
 - [ParabolicEisensteinFH] Appendix A without its semisimple simply connected hypothesis
   (`SemiInfinite.parabolicIC_colimitDescription`). The FH results are re-proved in the
   half-twisted setting of [GLC3] §§1.1 and 1.3.
+- The dual identification (owner decision Q2, 2026-11-10): one chosen pinning of the Tannakian
+  group (`Satake.tannakaPinning`, made for the Aut(O)-equivariant heart), the pinned isomorphism
+  `Satake.dualIdentification` used everywhere, and `Satake.dualIdentificationChangePinningIso`,
+  which shows that another choice changes every action only by a monoidal isomorphism.
 - The module structure built from the vanishing (`Spectral.actionOfVanishing`), through the
   unital independent category (`Hecke.unitalIndependentRepresentations`,
   `SpectralProof.localUnitalAction`, `Spectral.localization_factorsThroughIndependent`,
   `Hecke.action_factorsThroughIndependent`, `Hecke.unitalIndependentRepresentations_rigid`).
   The rank induction is explicit.
 
-There are now 470 declarations in 217 module-plan files, including 67 direct upstream
-suppliers. The owner has not decided:
+There are now 480 declarations in 224 module-plan files, including 69 direct upstream
+suppliers. The owner decided both open questions on 2026-11-10, as recorded above.
 
-- whether the comparison through Q̄ and C is the accepted route for parity;
-- how the dual identification chooses its pinning.
+The same commit makes the three Lean changes of the second review, so the statement changed:
 
-No Lean declaration or dependency pin changes in these repairs. The statement remains in
-`GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`. It asserts
-existence of a characterized functor and equivalence of every such functor, with explicit
-field, universe, monoidal action and t-structure parameters. The second review's non-blocking
-Lean suggestions L1–L3 remain separate future work; this session targets the named blueprint
-findings. No candidate commit is pushed. The owner's latest instruction is to complete and
-review these repairs locally, without pushing.
+- L1: the unused placeholder `MonoidalDGCat.toDGCat` is removed; `A.regularModule.toDGCat`
+  stands for the category underlying `A`.
+- L2: the main theorem is renamed `exists_isLanglandsFunctor_and_isEquivalence_of_isLanglandsFunctor`,
+  so that its name spells both conjuncts.
+- L3: the docstring of `MonoidalDGCat.regularModule` cites [AGKRRV] §0.9.4 and [GLC1] §1.4.1.
+
+The statement remains in `GLCinLean/Statement/Conjecture.lean` and
+`GLCinLean/Statement/Enhanced.lean`. A fresh review with `prompts/review.md` checks these
+changes; the result is in `notes/reviews/`. Nothing is pushed until the owner approves.
 
 ## What is not implemented
 
-The blueprint is a plan for future proofs, not a completed formalization. All 31 statement
+The blueprint is a plan for future proofs, not a completed formalization. All 30 statement
 placeholders remain. The first and second reviews found no definite formula mismatch but
-recorded 29 unresolved meanings and possible trivial interpretations. In particular, the
+recorded 29 unresolved meanings (28 after L1 removed `MonoidalDGCat.toDGCat`) and possible trivial interpretations. In particular, the
 opaque duality relation does not establish that Setting is inhabited. Singleton/zero
 interpretations of categorical placeholders can trivialize the intended mathematics.
 
@@ -89,17 +97,17 @@ spherical equivalence needed in the spectral proof are distinct constructions.
 ## Verification
 
 The required caches were fetched with the pinned configuration, including the full Tau Ceti
-cache command. The repair-session build passes (8173 jobs), with only the main theorem's
-`sorry` warning and no Mathlib or Tau Ceti Lean source rebuild. The axiom audit still checks
-all 34 explicit statement declarations: only the main theorem uses `sorryAx`; all others use
-subsets of `propext`, `Classical.choice`, `Quot.sound`.
+cache command. The build on 2026-11-10 passes (8173 jobs), with only the main theorem's
+`sorry` warning and no Mathlib or Tau Ceti Lean source rebuild. The axiom audit checks all 33
+explicit statement declarations: only the main theorem uses `sorryAx`; all others use subsets
+of `propext`, `Classical.choice`, `Quot.sound`.
 
-`lake exe tracker lint` exits 0 on the 443-declaration candidate, with 145 superseded-metadata
+`lake exe tracker lint` exits 0 on the 480-declaration plan, with 142 superseded-metadata
 notices and no other warnings or errors. The static audit finds no duplicate IDs, unresolved
 dependencies or cycles; every node has a source, provider, checked revision and dependency
-list, and every source key is in the bibliography. All 241 added declarations are reachable
-from the main theorem through the suggested graph; two duplicate characterization nodes were
-removed from the 204-node baseline. Superseded provenance notices are expected: the owner
+list, and every source key is in the bibliography. 462 of the 480 declarations are reachable
+from the main theorem through the suggested graph; the other 18 are examples, API results and
+the choice-independence result `Satake.dualIdentificationChangePinningIso`. Superseded provenance notices are expected: the owner
 requires source/provider/dependency records even where compiled declarations supersede them.
 `prompts/build.md` was checked; it already requires provider inspection, nontrivial examples,
 axiom checks and fresh owner-approved statement review, so no further edit is needed.
@@ -163,8 +171,8 @@ work. The three answers above are proposals for the owner, not newly adopted per
 
 ## Next
 
-1. The repaired candidate and its independent review are ready for the owner's decision.
-   Do not push; the owner decides what to approve.
+1. The blueprint, the Lean changes L1–L3 and their fresh review are ready for the owner's
+   decision. Do not push; the owner decides what to approve.
 2. After approval, choose a genuine prerequisite using the plan and provider records. Accepted
    roadmap work goes through Tau Ceti Worker; uncovered GLC constructions stay here.
 3. Require examples, build/axiom checks and fresh review at every placeholder replacement.

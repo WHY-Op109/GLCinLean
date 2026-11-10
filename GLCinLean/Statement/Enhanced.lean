@@ -56,9 +56,6 @@ instance (C : DGCat k) : Nonempty C.Obj := C.objCarrier.property
 instance (k : Type u) [Field k] : Nonempty (MonoidalDGCat k) :=
   (MonoidalDGCatCarrier k).property
 
-/-- The underlying enhanced category of a monoidal DG category ([AGKRRV] §0.9.4). -/
-@[placeholder] opaque MonoidalDGCat.toDGCat (A : MonoidalDGCat k) : DGCat k
-
 /-- The carrier of DG categories with a specified action of `A` ([AGKRRV] §0.9.4). -/
 @[placeholder] opaque DGModuleCarrier (A : MonoidalDGCat k) : NonemptyType.{u + 2}
 
@@ -70,7 +67,9 @@ instance (A : MonoidalDGCat k) : Nonempty (DGModule A) := (DGModuleCarrier A).pr
 /-- The enhanced category underlying an `A`-module category ([AGKRRV] §0.9.4). -/
 @[placeholder] opaque DGModule.toDGCat {A : MonoidalDGCat k} (C : DGModule A) : DGCat k
 
-/-- A monoidal category acting on itself by tensor product ([GLC1] §1.2.3). -/
+/-- A monoidal category acting on itself by tensor product ([AGKRRV] §0.9.4; [GLC1] §1.4.1).
+Its underlying enhanced category `A.regularModule.toDGCat` stands for the category underlying
+`A`. -/
 @[placeholder] opaque MonoidalDGCat.regularModule (A : MonoidalDGCat k) : DGModule A
 
 /-- The carrier of `A`-module categories with a chosen t-structure

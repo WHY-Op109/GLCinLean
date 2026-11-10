@@ -1,0 +1,8 @@
+desc = "Existing provider boundary; do not duplicate the simple-connectivity property."
+
+[[node]]
+id = "TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty"
+kind = "definition"
+desc = "Provider: Tau Ceti, available at the project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 (TauCeti/Algebra/AlgebraicGroup/SimplyConnected/Basic.lean). Simple connectivity of a semisimple affine group in Hopf coordinates: every central isogeny onto it from a semisimple group is an isomorphism. It is a property; it does not construct the simply connected cover."
+deps = []
+source = "[ConradRGS] §6.1"

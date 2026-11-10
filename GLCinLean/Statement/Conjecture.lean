@@ -112,7 +112,7 @@ theorem isLanglandsFunctor_iff (S : Setting k)
 /-- The de Rham geometric Langlands conjecture, in its characterized-functor form:
 a continuous linear functor with the properties of [GLC1] Cor. 1.6.5 exists, and every
 such functor is an equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). -/
-theorem exists_isLanglandsFunctor_and_isEquivalence (S : Setting k) :
+theorem exists_isLanglandsFunctor_and_isEquivalence_of_isLanglandsFunctor (S : Setting k) :
     (∃ F : LinFun (DmodHalf S) (IndCohNilp S).toModule, IsLanglandsFunctor S F) ∧
       ∀ F : LinFun (DmodHalf S) (IndCohNilp S).toModule,
         IsLanglandsFunctor S F → F.IsEquivalence := sorry

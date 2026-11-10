@@ -31,6 +31,8 @@ through Tau Ceti's Worker; the rest is written here.
 - Existing Mathlib quasicategories and Tau Ceti DG nerves, mapping spaces and K-injective
   comparisons must be reused. Ordinary derived categories are not replacements for enhanced
   categories. Field, universes, module actions and t-structures must remain explicit.
+- `Constructible.decompositionTheorem` is a deferred deep input: do not start it, or anything
+  whose only open input it is, before the owner chooses its proof route.
 - Every placeholder replacement needs a nontrivial example. In particular test a nonempty
   geometric setting, a singular derived affine, zero singular support and torus normalization
   as appropriate; a zero-category interpretation is not an implementation of GLC.
