@@ -12,6 +12,18 @@ deps = ['GLCinLean.Statement.DGCatCarrier']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
+id = 'GLCinLean.Statement.TStructuredDGCatCarrier'
+desc = 'PLACEHOLDER. The carrier of DG categories with a chosen t-structure ([GLC1] §1.6.3; [AGKRRV] §§0.9.4–0.9.5). Provider: here. Upstream declarations used: `Field` (`Mathlib.Algebra.Field.Defs`).'
+deps = ['GLCinLean.Infinity.linearCategory', 'GLCinLean.Infinity.tStructure']
+source = '[GLC1] §1.6.3; [AGKRRV] §§0.9.4–0.9.5'
+
+[[node]]
+id = 'GLCinLean.Statement.TStructuredDGCat'
+desc = 'PLACEHOLDER. A DG category with a chosen t-structure ([GLC1] §1.6.3; [AGKRRV] §0.9.5). The choice is part of the object; no t-structure on an arbitrary DG category is asserted. Provider: here.'
+deps = ['GLCinLean.Statement.TStructuredDGCatCarrier']
+source = '[GLC1] §1.6.3; [AGKRRV] §0.9.5'
+
+[[node]]
 id = 'GLCinLean.Statement.DGCat.objCarrier'
 desc = 'PLACEHOLDER. The carrier of objects in an enhanced category ([AGKRRV] §0.9.2). Provider: here.'
 deps = ['GLCinLean.Statement.DGCat']
@@ -30,109 +42,67 @@ deps = ['GLCinLean.Statement.DGCat.Obj', 'GLCinLean.Infinity.compactObject']
 source = '[AGKRRV] §0.9.2'
 
 [[node]]
-id = 'GLCinLean.Statement.MonoidalDGCatCarrier'
-desc = 'PLACEHOLDER. The carrier of monoidal DG categories ([AGKRRV] §0.9.4). Provider: here. Upstream declarations used: `Field` (`Mathlib.Algebra.Field.Defs`).'
-deps = ['GLCinLean.Infinity.monoidalCategory']
-source = '[AGKRRV] §0.9.4'
-
-[[node]]
-id = 'GLCinLean.Statement.MonoidalDGCat'
-desc = 'PLACEHOLDER. Monoidal DG categories with their coherent monoidal structure ([AGKRRV] §0.9.4). Provider: here.'
-deps = ['GLCinLean.Statement.MonoidalDGCatCarrier']
-source = '[AGKRRV] §0.9.4'
-
-[[node]]
-id = 'GLCinLean.Statement.DGModuleCarrier'
-desc = 'PLACEHOLDER. The carrier of DG categories with a specified action of `A` ([AGKRRV] §0.9.4). Provider: here.'
-deps = ['GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Infinity.monoidalCategory']
-source = '[AGKRRV] §0.9.4'
-
-[[node]]
-id = 'GLCinLean.Statement.DGModule'
-desc = 'PLACEHOLDER. An enhanced category with a specified coherent `A`-action ([AGKRRV] §0.9.4). Provider: here.'
-deps = ['GLCinLean.Statement.DGModuleCarrier']
-source = '[AGKRRV] §0.9.4'
-
-[[node]]
-id = 'GLCinLean.Statement.DGModule.toDGCat'
-desc = 'PLACEHOLDER. The enhanced category underlying an `A`-module category ([AGKRRV] §0.9.4). Provider: here.'
-deps = ['GLCinLean.Statement.DGModule', 'GLCinLean.Statement.DGCat']
-source = '[AGKRRV] §0.9.4'
-
-[[node]]
-id = 'GLCinLean.Statement.MonoidalDGCat.regularModule'
-desc = 'PLACEHOLDER. A monoidal category acting on itself by tensor product: [AGKRRV] §0.9.4 defines monoidal DG categories as associative algebras in DGCat, and every algebra is a module over itself; [GLC1] §1.4.1 uses QCoh(LS_Ǧ) acting on itself in this way. Its underlying enhanced category stands for the category underlying A, so no separate MonoidalDGCat.toDGCat is planned. Provider: here.'
-deps = ['GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Statement.DGModule']
-source = '[AGKRRV] §0.9.4; [GLC1] §1.4.1'
-
-[[node]]
-id = 'GLCinLean.Statement.TStructuredDGModuleCarrier'
-desc = 'PLACEHOLDER. The carrier of `A`-module categories with a chosen t-structure ([GLC1] §1.6.3; [AGKRRV] §§0.9.4–0.9.5). Provider: here.'
-deps = ['GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Infinity.tStructure']
-source = '[GLC1] §1.6.3; [AGKRRV] §§0.9.4–0.9.5'
-
-[[node]]
-id = 'GLCinLean.Statement.TStructuredDGModule'
-desc = 'PLACEHOLDER. An `A`-module category with a chosen t-structure ([GLC1] §1.6.3). The choice is part of the object; no t-structure on an arbitrary DG category is asserted. Provider: here.'
-deps = ['GLCinLean.Statement.TStructuredDGModuleCarrier']
-source = '[GLC1] §1.6.3'
-
-[[node]]
-id = 'GLCinLean.Statement.TStructuredDGModule.toModule'
+id = 'GLCinLean.Statement.TStructuredDGCat.toDGCat'
 desc = 'PLACEHOLDER. Forgetting the chosen t-structure ([GLC1] §1.6.3). Provider: here.'
-deps = ['GLCinLean.Statement.TStructuredDGModule', 'GLCinLean.Statement.DGModule']
+deps = ['GLCinLean.Statement.TStructuredDGCat', 'GLCinLean.Statement.DGCat']
 source = '[GLC1] §1.6.3'
 
 [[node]]
-id = 'GLCinLean.Statement.TStructuredDGModule.IsEventuallyCoconnective'
-desc = 'PLACEHOLDER. Boundedness below for the specified t-structure, with a bound depending on the object ([GLC1] §1.6.3 and Cor. 1.6.5). Provider: here.'
-deps = ['GLCinLean.Statement.TStructuredDGModule.toModule', 'GLCinLean.Statement.DGModule.toDGCat', 'GLCinLean.Statement.DGCat.Obj', 'GLCinLean.Infinity.eventuallyCoconnective']
-source = '[GLC1] §1.6.3 and Cor. 1.6.5'
+id = 'GLCinLean.Statement.TStructuredDGCat.IsEventuallyCoconnective'
+desc = 'PLACEHOLDER. Boundedness below for the chosen t-structure, with a bound depending on the object: membership in `C^{>-∞}` ([GLC1] §1.6.3 and Cor. 1.6.5; [AGKRRV] §0.9.5). Provider: here.'
+deps = ['GLCinLean.Statement.TStructuredDGCat.toDGCat', 'GLCinLean.Statement.DGCat.Obj', 'GLCinLean.Infinity.eventuallyCoconnective']
+source = '[GLC1] §1.6.3 and Cor. 1.6.5; [AGKRRV] §0.9.5'
 
 [[node]]
-id = 'GLCinLean.Statement.LinFunCarrier'
-desc = 'PLACEHOLDER. The carrier of continuous `A`-linear enhanced functors ([AGKRRV] §0.9.4). Provider: here.'
-deps = ['GLCinLean.Statement.DGModule', 'GLCinLean.Infinity.continuousLinearFunctor']
+id = 'GLCinLean.Statement.DGFunCarrier'
+desc = 'PLACEHOLDER. The carrier of continuous functors between DG categories ([AGKRRV] §0.9.4). Provider: here. Replacement contract: Infinity.continuousLinearFunctor for the action of complexes of `k`-vector spaces, with no further module structure.'
+deps = ['GLCinLean.Statement.DGCat', 'GLCinLean.Infinity.continuousLinearFunctor']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
-id = 'GLCinLean.Statement.LinFun'
-desc = 'PLACEHOLDER. Colimit-preserving functors linear for the specified actions, including their coherent linearity data ([GLC1] Cor. 1.6.5 and Prop. 1.7.2; [AGKRRV] §0.9.4). Provider: here.'
-deps = ['GLCinLean.Statement.LinFunCarrier']
-source = '[GLC1] Cor. 1.6.5 and Prop. 1.7.2; [AGKRRV] §0.9.4'
+id = 'GLCinLean.Statement.DGFun'
+desc = 'PLACEHOLDER. Continuous functors between DG categories: the 1-morphisms of `DGCat`, which preserve colimits and are `k`-linear ([AGKRRV] §0.9.4; [GLC1] Cor. 1.6.5). No linearity over a monoidal DG category is part of the data. Provider: here.'
+deps = ['GLCinLean.Statement.DGFunCarrier']
+source = '[AGKRRV] §0.9.4; [GLC1] Cor. 1.6.5'
 
 [[node]]
-id = 'GLCinLean.Statement.LinFun.obj'
-desc = 'PLACEHOLDER. Evaluation of an enhanced linear functor ([GLC1] Cor. 1.6.5). Provider: here.'
-deps = ['GLCinLean.Statement.LinFun', 'GLCinLean.Statement.DGModule.toDGCat', 'GLCinLean.Statement.DGCat.Obj']
+id = 'GLCinLean.Statement.DGFun.obj'
+desc = 'PLACEHOLDER. Evaluation of a continuous functor on an object ([GLC1] Cor. 1.6.5). Provider: here.'
+deps = ['GLCinLean.Statement.DGFun', 'GLCinLean.Statement.DGCat.Obj']
 source = '[GLC1] Cor. 1.6.5'
 
 [[node]]
-id = 'GLCinLean.Statement.LinFun.comp'
+id = 'GLCinLean.Statement.DGFun.comp'
 desc = 'PLACEHOLDER. Composition, with `F.comp G` denoting `G ∘ F` ([GLC1] Cor. 1.6.5). Provider: here.'
-deps = ['GLCinLean.Statement.LinFun']
+deps = ['GLCinLean.Statement.DGFun']
 source = '[GLC1] Cor. 1.6.5'
 
 [[node]]
-id = 'GLCinLean.Statement.LinFun.id'
-desc = 'PLACEHOLDER. The identity enhanced linear functor ([AGKRRV] §0.9.4). Provider: here.'
-deps = ['GLCinLean.Statement.LinFun']
+id = 'GLCinLean.Statement.DGFun.id'
+desc = 'PLACEHOLDER. The identity functor of a DG category ([AGKRRV] §0.9.4). Provider: here.'
+deps = ['GLCinLean.Statement.DGFun']
 source = '[AGKRRV] §0.9.4'
 
 [[node]]
-id = 'GLCinLean.Statement.LinIso'
-desc = 'PLACEHOLDER. Enhanced `A`-linear natural equivalences between functors ([GLC1] Cor. 1.6.5 and Prop. 1.7.2). No existence of such an equivalence is asserted. Provider: here.'
-deps = ['GLCinLean.Statement.LinFun', 'GLCinLean.Infinity.mappingSpaces']
-source = '[GLC1] Cor. 1.6.5 and Prop. 1.7.2'
+id = 'GLCinLean.Statement.DGNatIso'
+desc = 'PLACEHOLDER. Natural equivalences between continuous functors: the equivalences in the category of 1-morphisms of `DGCat` ([AGKRRV] §0.9.4; [GLC1] Conj. 1.6.7). No existence of such an equivalence is asserted. Provider: here.'
+deps = ['GLCinLean.Statement.DGFun', 'GLCinLean.Infinity.continuousLinearFunctor', 'GLCinLean.Infinity.mappingSpaces']
+source = '[AGKRRV] §0.9.4; [GLC1] Conj. 1.6.7'
 
 [[node]]
-id = 'GLCinLean.Statement.LinFun.IsEquivalence'
-desc = 'PLACEHOLDER. Existence of an inverse up to enhanced linear natural equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: here.'
-deps = ['GLCinLean.Statement.LinFun.comp', 'GLCinLean.Statement.LinFun.id', 'GLCinLean.Statement.LinIso', 'GLCinLean.Infinity.linearEquivalence']
-source = '[GLC1] Conj. 1.6.7 and Prop. 1.7.2'
+id = 'GLCinLean.Statement.DGFun.MapsEquiv'
+desc = 'PLACEHOLDER. Equivalences `Maps_C(H b, c) ≃ Maps_D(J b, T c)` of mapping spaces ([AGKRRV] §0.9.2), natural in `b` and `c` together: the natural equivalences between the two functors `Bᵒᵖ × C → Spc` that the two sides define. When `J` is the identity functor, these are the adjunctions with left adjoint `H` and right adjoint `T`. No existence of such an equivalence is asserted. Provider: here. Replacement contract: one equivalence of mapping-space bifunctors with coherent naturality in both variables, not a family of equivalences chosen object by object; with an example that for `J` the identity it is the mapping-space adjunction equivalence of Infinity.rightAdjoint.'
+deps = ['GLCinLean.Statement.DGFun', 'GLCinLean.Statement.DGFun.obj', 'GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.rightAdjoint']
+source = '[AGKRRV] §0.9.2; [GLC1] §§1.2.2, 1.4.5'
 
 [[node]]
-id = 'GLCinLean.Statement.LinFun.isEquivalence_iff'
-desc = 'Implemented logical unfolding lemma. The inverse characterization of enhanced linear equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: here.'
-deps = ['GLCinLean.Statement.LinFun.IsEquivalence']
-source = '[GLC1] Conj. 1.6.7 and Prop. 1.7.2'
+id = 'GLCinLean.Statement.DGFun.IsEquivalence'
+desc = 'PLACEHOLDER. Existence of an inverse up to natural equivalence ([GLC1] Conj. 1.6.7). Provider: here.'
+deps = ['GLCinLean.Statement.DGFun.comp', 'GLCinLean.Statement.DGFun.id', 'GLCinLean.Statement.DGNatIso', 'GLCinLean.Infinity.linearEquivalence']
+source = '[GLC1] Conj. 1.6.7'
+
+[[node]]
+id = 'GLCinLean.Statement.DGFun.isEquivalence_iff'
+desc = 'Implemented logical unfolding lemma. The inverse characterization of equivalence of DG categories ([GLC1] Conj. 1.6.7). Provider: here.'
+deps = ['GLCinLean.Statement.DGFun.IsEquivalence']
+source = '[GLC1] Conj. 1.6.7'

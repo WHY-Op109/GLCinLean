@@ -31,6 +31,6 @@ source = '[GLC2] Theorem 1.4.2, §1.4.4 and Theorem 1.7.2; [GLC1] §§1.2.1–1.
 [[node]]
 id = 'GLCinLean.Satake.isLanglandsFunctor_iff_of_changePinning'
 kind = 'theorem'
-desc = 'Transport along the isomorphisms of Satake.dualIdentificationChangePinningIso preserves the two characterizing properties of [GLC1] Cor. 1.6.5: a continuous linear functor is a Langlands functor for one choice of Satake.tannakaPinning if and only if its transport is one for the other choice, and transport preserves equivalences. Hence the conclusion of the main theorem does not depend on the choice. Provider: here.'
-deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Statement.LCoarse', 'GLCinLean.Statement.Psi', 'GLCinLean.Statement.LinFun.IsEquivalence']
-source = '[GLC1] Corollary 1.6.5 and Proposition 1.7.2'
+desc = 'Transport along the isomorphisms of Satake.dualIdentificationChangePinningIso preserves the two characterizing properties of [GLC1] Cor. 1.6.5: a continuous functor is a Langlands functor for one choice of Satake.tannakaPinning if and only if its transport is one for the other choice, and transport preserves equivalences. Hence the conclusion of the main theorem does not depend on the choice. Provider: here.'
+deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Statement.RepRan', 'GLCinLean.Statement.Loc', 'GLCinLean.Statement.heckeActionRight', 'GLCinLean.Statement.Psi', 'GLCinLean.Statement.DGFun.IsEquivalence']
+source = '[GLC1] Corollary 1.6.5 and §§1.2.1–1.2.2'
