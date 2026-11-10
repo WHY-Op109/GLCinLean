@@ -1,8 +1,0 @@
-desc = 'The root-character parity used by fusion and the determinant gerbe.'
-
-[[node]]
-id = 'GLCinLean.Groups.coweightParity'
-kind = 'definition'
-desc = '''Pair a coweight with the positive-ROOT sum character supplied by TauCeti.twoWeylVector on the extracted integral based root datum, and reduce modulo 2. Prove it kills the coroot lattice and descends to the algebraic fundamental group; under duality identify the resulting central element of order dividing two. This is distinct from the Whittaker positive-COROOT cocharacter. Provider: Tau Ceti roadmap ReductiveGroupsPartII RG2.5.1 dual-based-root-datum and its root/center lattice comparisons; the positive-root sum and even-pairing theorem already exist. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6. Upstream declarations used: `TauCeti.twoWeylVector` (`TauCeti.LinearAlgebra.RootSystem.Weyl.Vector`), `TauCeti.coroot'_twoWeylVector_eq_two_mul_height_flip` (`TauCeti.LinearAlgebra.RootSystem.Weyl.Vector`).'''
-deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.dualityData']
-source = '[GLys] §§5.2.2–5.2.3, 6.3.5'
