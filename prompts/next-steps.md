@@ -79,7 +79,6 @@ The owner's goal: a faithful Lean statement of [GLC1] Conj. 1.6.7 (de Rham, char
 - the work is committed and pushed.
 
 **Context**
-- The prompts run on Claude Fable 5.2. Its prompting guide is https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2.
 - The goal review is in `notes/review-goal.md`. Its decisions 1 to 3 propose another form of the statement's second property, which would move about half of the plan from the statement to the proof. The owner has not decided them: judge `prompts/build.md` and the rules for both outcomes.
 - Its Finding 2 and its answer to question 4 already propose changes to `prompts/build.md` and to how the plan uses the tracker (the first work is Tau Ceti Worker rounds on the ∞-category roadmaps; upstream leaves as plan nodes; placeholders counted as proved; provider text in each `desc`). Take them as input, and do not repeat them.
 
