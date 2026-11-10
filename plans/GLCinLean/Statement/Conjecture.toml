@@ -14,7 +14,7 @@ source = '[GLC1] §§1.1–1.3; [AGKRRV] §§0.9.1, 14.1.1; [GLC2] §0.4.1'
 [[node]]
 id = 'GLCinLean.Statement.QCohLS'
 desc = 'PLACEHOLDER. The monoidal DG category `QCoh(LS_Ǧ)` of the derived stack of de Rham local systems ([GLC1] §§0.1.1, 1.2.2). Provider: here.'
-deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.LocalSystems.qcohRigid']
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.MonoidalDGCat', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.LocalSystems.deRham']
 source = '[GLC1] §§0.1.1, 1.2.2'
 
 [[node]]
