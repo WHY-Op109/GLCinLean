@@ -1,9 +1,6 @@
 # GLCinLean
 
-A Lean library for geometric representation theory, on which a faithful
-statement of the geometric Langlands conjecture is built: GLC I ([GLC1], arXiv 2405.03599v3)
-Conj. 1.6.7, de Rham, characteristic 0, over any algebraically closed field `k`. Its proof comes
-after the statement.
+A Lean library for geometric representation theory, on which a faithful statement of the geometric Langlands conjecture is built: GLC I ([GLC1], arXiv 2405.03599v3) Conj. 1.6.7, de Rham, characteristic 0, over any algebraically closed field `k`. Its proof comes after the statement.
 
 ## Writing
 
