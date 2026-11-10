@@ -63,7 +63,7 @@ deps = ["GLCinLean.Statement.IsLanglandsFunctor"]
 source = "[GLC1] Corollary 1.6.5 and Proposition 1.7.2"
 
 [[node]]
-id = "GLCinLean.Statement.exists_isLanglandsFunctor_and_isEquivalence"
+id = "GLCinLean.Statement.exists_isLanglandsFunctor_and_isEquivalence_of_isLanglandsFunctor"
 kind = "theorem"
 desc = "Main theorem: sole admitted proof. The de Rham geometric Langlands conjecture, in its characterized-functor form: a continuous linear functor with the properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence ([GLC1] Conj. 1.6.7 and Prop. 1.7.2). Provider: Missing; local geometric Langlands construction, with dependencies listed below. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284."
 deps = ["GLCinLean.Statement.IsLanglandsFunctor", "GLCinLean.Statement.LinFun.IsEquivalence"]

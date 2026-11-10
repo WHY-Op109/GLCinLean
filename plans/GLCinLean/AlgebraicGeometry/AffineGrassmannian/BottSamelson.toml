@@ -1,0 +1,15 @@
+desc = "Planned library module. Bott–Samelson resolutions of affine Schubert varieties and the parity of their pushforwards."
+
+[[node]]
+id = "GLCinLean.Hecke.bottSamelsonResolution"
+kind = "definition"
+desc = "For G simply connected, the affine flag variety LG/I and Gr_G as Kac–Moody (partial) flag varieties of the untwisted affine Kac–Moody group, and the generalized Bott–Samelson varieties attached to sequences of finite-type parahoric subgroups. For each I-Schubert variety in Gr_G choose such a sequence whose Bott–Samelson variety maps properly onto its closure and isomorphically over the open orbit. Construct these over Q̄ and by base change over any k. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-10; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.Hecke.iwahoriWeylGroup", "GLCinLean.Hecke.affineGrassmannian", "GLCinLean.Hecke.schubertStratification", "GLCinLean.Groups.simplyConnectedCover"]
+source = "[JuteauMautnerWilliamson] §4.1, proof of Theorem 4.6 (generalized Bott–Samelson varieties); [MV] §2"
+
+[[node]]
+id = "GLCinLean.Hecke.bottSamelsonPushforward_parity"
+kind = "theorem"
+desc = "Over C, for the L+G-orbit stratification of Gr_G of a simply connected G, the pushforward of the constant sheaf along each map of Hecke.bottSamelsonResolution is a parity complex: its *- and !-restrictions to every stratum are constant with cohomology in degrees of one parity. Prove it as in [JuteauMautnerWilliamson]: strata have even cohomology and only constant local systems (Proposition 4.3), convolution preserves parity (Theorem 4.8), pushforward along quotients of flag varieties preserves parity (Proposition 4.10), and proper even maps preserve parity (Proposition 2.36). Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-10; Tau Ceti main and roadmap not rechecked for this node."
+deps = ["GLCinLean.Hecke.bottSamelsonResolution", "GLCinLean.Constructible.derivedCategory", "GLCinLean.Constructible.perverseSheaves", "GLCinLean.Hecke.schubertStratification"]
+source = "[JuteauMautnerWilliamson] Propositions 2.36, 4.3, 4.10, Theorem 4.8 and the proof of Theorem 4.6"

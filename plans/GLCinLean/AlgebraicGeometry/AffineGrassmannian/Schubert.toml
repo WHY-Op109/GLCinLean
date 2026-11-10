@@ -10,6 +10,6 @@ source = "[BDHitchin] §§4.5.8–4.5.12; [MV] §2, equations (2.1)–(2.3)"
 [[node]]
 id = "GLCinLean.Hecke.schubertStratum_deRhamCohomology_even"
 kind = "theorem"
-desc = "Each Schubert stratum Gr^μ is an affine bundle over the partial flag variety G/P_μ, which is paved by affine spaces (Bruhat cells). Hence its algebraic de Rham cohomology over k is concentrated in even degrees, by homotopy invariance for affine bundles and the cell decomposition. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
+desc = "Each Schubert stratum Gr^μ is an affine bundle over the partial flag variety G/P_μ, which is paved by affine spaces (Bruhat cells). Hence its algebraic de Rham cohomology over k is concentrated in even degrees, by homotopy invariance for affine bundles and the cell decomposition. [MV] §2 gives the cell decomposition by I-orbits; the de Rham consequence over k is the obligation here. Provider: Missing; implement here. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
 deps = ["GLCinLean.Hecke.schubertStratification", "GLCinLean.Hecke.loopArcGroups", "GLCinLean.Groups.pinnedData", "GLCinLean.DModules.deRhamPushforward"]
-source = "[MV] §2 (orbits and their geometry); explicit obligation: the de Rham statement is not written in the sources"
+source = "[MV] §2 (I-orbits are affine spaces; Gr^λ is a vector bundle over G/P_λ); [JuteauMautnerWilliamson] Proposition 4.3 (the constructible analogue)"
