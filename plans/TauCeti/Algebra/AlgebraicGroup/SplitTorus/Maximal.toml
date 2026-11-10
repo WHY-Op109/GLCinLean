@@ -1,7 +1,0 @@
-desc = '''Existing provider boundary. These nodes refer to upstream declarations, not local wrappers. Recursion stops at this already supplied interface.'''
-
-[[node]]
-id = 'TauCeti.SplitMaximalTorus'
-source = '[GLC1] §1.3.2'
-desc = '''Split maximal torus in the Hopf-algebra model. Provider: Tau Ceti, pinned commit e0610cce4004d628cbd9d2aafdbbb5459fe72938; Tau Ceti main checked at 7ca783d4c8d324c9c74efaacd641c8a40f69f284. Existing code, not a placeholder.'''
-deps = []

@@ -1,22 +1,22 @@
-desc = "Planned library module for CategoryTheory / Infinity / Module. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker."
+desc = 'Planned library module for CategoryTheory / Infinity / Module. No placeholders belong here; use provider declarations directly and route roadmap-owned work through Tau Ceti Worker.'
 
 [[node]]
-id = "GLCinLean.Infinity.moduleCategory"
-kind = "definition"
-desc = "A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 LM operad and module fibres; EnhancedDerivedSheaves E5:abstract.2 leftModuleObjects and moduleObjects. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Infinity.monoidalCategory"]
-source = "[AGKRRV] §0.9.4; [ArinkinGaitsgory] §1.5.2(viii)"
+id = 'GLCinLean.Infinity.moduleCategory'
+kind = 'definition'
+desc = 'A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data. Provider: Tau Ceti roadmap BordismFormalGroups F6.5 LM operad and module fibres; EnhancedDerivedSheaves E5:abstract.2 leftModuleObjects and moduleObjects. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91.'
+deps = ['GLCinLean.Infinity.monoidalCategory']
+source = '[AGKRRV] §0.9.4; [ArinkinGaitsgory] §1.5.2(viii)'
 
 [[node]]
-id = "GLCinLean.Infinity.internalHom"
-kind = "definition"
-desc = "The Vect_k-valued mapping object characterized by tensor-Hom adjunction. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E3.2 adjointFunctorTheorem applied to the tensor action; E1.4 derivedInternalHom and E1.F3.H1 supply the coefficient-model comparison. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Infinity.linearCategory", "GLCinLean.Infinity.derivedVect", "GLCinLean.Infinity.mappingSpaces", "GLCinLean.Infinity.rightAdjoint", "TauCeti.dgHomComplex"]
-source = "[AGKRRV] §0.9.4"
+id = 'GLCinLean.Infinity.internalHom'
+kind = 'definition'
+desc = 'The Vect_k-valued mapping object characterized by tensor-Hom adjunction. Provider: Tau Ceti roadmap EnhancedDerivedSheaves E3.2 adjointFunctorTheorem applied to the tensor action; E1.4 derivedInternalHom and E1.F3.H1 supply the coefficient-model comparison. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `TauCeti.dgHomComplex` (`TauCeti.CategoryTheory.DG.Basic`).'
+deps = ['GLCinLean.Infinity.linearCategory', 'GLCinLean.Infinity.derivedVect', 'GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.rightAdjoint']
+source = '[AGKRRV] §0.9.4'
 
 [[node]]
-id = "GLCinLean.Infinity.moduleOverMonoidalLocalization"
-kind = "theorem"
-desc = "Let F: A → B be a symmetric monoidal functor of unital presentable stable symmetric monoidal categories whose continuous right adjoint is fully faithful and A-linear (for example when A is rigid, by Infinity.rightAdjoint_linear). Then B is an idempotent commutative A-algebra (B ⊗_A B ≃ B), restriction along F is fully faithful from B-modules to A-modules, and its essential image consists of the A-modules on which the kernel of F acts by zero; the B-module structure on such a module is unique. The symmetric monoidal case is what [LurieHA] §4.8.2 covers, and it is the case used (A = Hecke.unitalIndependentRepresentations). Proof of the last step: the kernel K and B fit in a cofiber sequence of A-modules, ⊗_A preserves cofibers, so B ⊗_A M is the Verdier quotient of M by the image of K ⊗_A M, which is zero exactly when K acts by zero. Provider: Missing at the pin; EnhancedDerivedSheaves owns module and rigidity APIs (E5:abstract.2, E5:presentability.4), so route through Tau Ceti Worker if it claims this scope. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node."
-deps = ["GLCinLean.Infinity.moduleCategory", "GLCinLean.Infinity.monoidalCategory", "GLCinLean.Infinity.stableCategory", "GLCinLean.Infinity.rightAdjoint_linear"]
-source = "[LurieHA] §4.8.2 (idempotent algebras); [GaitsgoryOutline] Corollary 4.5.5"
+id = 'GLCinLean.Infinity.moduleOverMonoidalLocalization'
+kind = 'theorem'
+desc = 'Let F: A → B be a symmetric monoidal functor of unital presentable stable symmetric monoidal categories whose continuous right adjoint is fully faithful and A-linear (for example when A is rigid, by Infinity.rightAdjoint_linear). Then B is an idempotent commutative A-algebra (B ⊗_A B ≃ B), restriction along F is fully faithful from B-modules to A-modules, and its essential image consists of the A-modules on which the kernel of F acts by zero; the B-module structure on such a module is unique. The symmetric monoidal case is what [LurieHA] §4.8.2 covers, and it is the case used (A = Hecke.unitalIndependentRepresentations). Proof of the last step: the kernel K and B fit in a cofiber sequence of A-modules, ⊗_A preserves cofibers, so B ⊗_A M is the Verdier quotient of M by the image of K ⊗_A M, which is zero exactly when K acts by zero. Provider: Missing at the pin; EnhancedDerivedSheaves owns module and rigidity APIs (E5:abstract.2, E5:presentability.4), so route through Tau Ceti Worker if it claims this scope. Tau Ceti pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 searched 2026-11-09; Tau Ceti main and roadmap not rechecked for this node.'
+deps = ['GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.rightAdjoint_linear']
+source = '[LurieHA] §4.8.2 (idempotent algebras); [GaitsgoryOutline] Corollary 4.5.5'

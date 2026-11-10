@@ -1,8 +1,0 @@
-desc = "Existing provider boundary; do not duplicate transport of pinnings."
-
-[[node]]
-id = "TauCeti.Pinning.comapOfIso"
-kind = "definition"
-desc = "Provider: Tau Ceti, available at the project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 (TauCeti/Algebra/AlgebraicGroup/Pinning/Isomorphism.lean). Transport of a pinning along an isomorphism of coordinate Hopf algebras, with the same simple roots and root vectors given by the differential. It does not construct an isomorphism from an identification of based root data."
-deps = []
-source = "[ConradRGS] §5.1"

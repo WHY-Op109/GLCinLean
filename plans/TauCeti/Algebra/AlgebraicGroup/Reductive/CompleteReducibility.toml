@@ -1,8 +1,0 @@
-desc = "Existing provider boundary; do not duplicate the reductivity criterion."
-
-[[node]]
-id = "TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive"
-kind = "theorem"
-desc = "Provider: Tau Ceti, available at the project pin e0610cce4004d628cbd9d2aafdbbb5459fe72938 (TauCeti/Algebra/AlgebraicGroup/Reductive/CompleteReducibility.lean). For a geometrically connected finite-type affine group over a field of characteristic zero, reductivity is equivalent to complete reducibility of all finite-dimensional rational representations. It needs finite type and geometric connectedness as inputs; it does not construct the Tannakian group."
-deps = []
-source = "[DeligneMilne] Proposition 2.23; [MV] §7"

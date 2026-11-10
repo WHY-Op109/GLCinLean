@@ -1,15 +1,14 @@
-desc = "Planned library module. AlgebraicGeometry / Curves / Theta. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented."
+desc = 'Planned library module. AlgebraicGeometry / Curves / Theta. No placeholders belong in this module; roadmap-owned work goes through Tau Ceti Worker, and these planned names are renamed to upstream names when implemented.'
 
 [[node]]
-id = "GLCinLean.Curves.thetaCharacteristic"
-kind = "definition"
-desc = "A line bundle L on a smooth proper connected curve with a chosen L⊗L ≅ Ω¹; keep the isomorphism as data. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["AlgebraicGeometry.Scheme", "TauCeti.AlgebraicGeometry.InvertibleSheaf", "TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct", "AlgebraicGeometry.Scheme.relativeDifferentials", "AlgebraicGeometry.SmoothOfRelativeDimension", "AlgebraicGeometry.IsProper", "ConnectedSpace"]
-source = "[GLC1] §1.3.2; [GLC2] §0.4.1"
+id = 'GLCinLean.Curves.thetaCharacteristic'
+kind = 'definition'
+desc = 'A line bundle L on a smooth proper connected curve with a chosen L⊗L ≅ Ω¹; keep the isomorphism as data. Provider: Missing; implement here. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`), `TauCeti.AlgebraicGeometry.InvertibleSheaf` (`TauCeti.AlgebraicGeometry.LineBundle.Basic`), `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct` (`TauCeti.AlgebraicGeometry.LineBundle.TensorProduct`), `AlgebraicGeometry.Scheme.relativeDifferentials` (`TauCeti.AlgebraicGeometry.Modules.Differentials.Basic`), `AlgebraicGeometry.SmoothOfRelativeDimension` (`Mathlib.AlgebraicGeometry.Morphisms.Smooth`), `AlgebraicGeometry.IsProper` (`Mathlib.AlgebraicGeometry.Morphisms.Proper`), `ConnectedSpace` (`Mathlib.Topology.Connected.Basic`).'
+source = '[GLC1] §1.3.2; [GLC2] §0.4.1'
 
 [[node]]
-id = "GLCinLean.Curves.thetaCharacteristic_exists"
-kind = "theorem"
-desc = "Existence of theta characteristics over an algebraically closed characteristic-zero field; include a projective-line example. Provider: Missing theta-characteristic existence deduction; consume Tau Ceti roadmap JacobianChallenge Layers B, D and E for canonical degree, Picard variety and surjectivity of multiplication by two. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91."
-deps = ["GLCinLean.Curves.thetaCharacteristic", "IsAlgClosed", "CharZero"]
-source = "[GLC1] §1.3.2"
+id = 'GLCinLean.Curves.thetaCharacteristic_exists'
+kind = 'theorem'
+desc = 'Existence of theta characteristics over an algebraically closed characteristic-zero field; include a projective-line example. Provider: Missing theta-characteristic existence deduction; consume Tau Ceti roadmap JacobianChallenge Layers B, D and E for canonical degree, Picard variety and surjectivity of multiplication by two. Tau Ceti main checked 7ca783d4c8d324c9c74efaacd641c8a40f69f284; roadmap checked f7dd719a392f7b65ad30ef45b26c344d08ba5f91. Upstream declarations used: `IsAlgClosed` (`Mathlib.FieldTheory.IsAlgClosed.Basic`), `CharZero` (`Mathlib.Algebra.CharZero.Defs`).'
+deps = ['GLCinLean.Curves.thetaCharacteristic']
+source = '[GLC1] §1.3.2'

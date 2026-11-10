@@ -1,57 +1,57 @@
-desc = "Planned proof inputs for the derived Satake equivalence. The source theorem has arbitrary algebraically closed characteristic-zero base field; no complex-only provider silently replaces it."
+desc = 'Planned proof inputs for the derived Satake equivalence. The source theorem has arbitrary algebraically closed characteristic-zero base field; no complex-only provider silently replaces it.'
 
 [[node]]
-id = "GLCinLean.SpectralProof.equivariantRegularSheaf_cohomology"
-kind = "theorem"
-desc = "For the semisimple simply connected geometric group and its adjoint dual in ABG, compute equivariant cohomology of the Satake regular sheaf and its action by the universal centralizer over the adjoint quotient. Use the perverse fiber functor, Chevalley restriction and the regular-locus calculation. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.derivedSatakeTransform", "GLCinLean.Satake.cohomologyFiberFunctor", "GLCinLean.Groups.chevalleyMap"]
-source = "[LoopGrassmannianExt] Lemma 7.6.3 and §6; [FactorizableDerivedSatake] proof of Proposition 9.2.2"
+id = 'GLCinLean.SpectralProof.equivariantRegularSheaf_cohomology'
+kind = 'theorem'
+desc = 'For the semisimple simply connected geometric group and its adjoint dual in ABG, compute equivariant cohomology of the Satake regular sheaf and its action by the universal centralizer over the adjoint quotient. Use the perverse fiber functor, Chevalley restriction and the regular-locus calculation. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.Satake.cohomologyFiberFunctor', 'GLCinLean.Groups.chevalleyMap']
+source = '[LoopGrassmannianExt] Lemma 7.6.3 and §6; [FactorizableDerivedSatake] proof of Proposition 9.2.2'
 
 [[node]]
-id = "GLCinLean.SpectralProof.geometricSatakeMonad_cohomology"
-kind = "theorem"
-desc = "Identify the graded COHOMOLOGY algebra of the geometric monad on Rep(dualG) with Sym(dual Lie(G)[-2]). Retain the actual E1 monad comparison map from the constructed Satake functor; no DG formality theorem is assumed as an input. Compute internal End via the regular comodule, equivariant Ext, universal centralizers and extension of regular functions from the codimension-at-least-two regular locus. Use the explicit torus/product and central-isogeny component comparison as well as the finite-stage, multiplicative, equivariant field/theory comparisons, then faithful-flat detection of the defined comparison map, to transport the original complex constructible computation to arbitrary-k de Rham theory. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.equivariantRegularSheaf_cohomology", "GLCinLean.Satake.regularSheafExt_complexComparison", "GLCinLean.SpectralProof.derivedSatakeTransform", "GLCinLean.Infinity.internalHom", "GLCinLean.Groups.chevalleyMap"]
-source = "[FactorizableDerivedSatake] Lemma 9.2.1 and Proposition 9.2.2; [LoopGrassmannianExt] Theorem 7.6.1 and proof"
+id = 'GLCinLean.SpectralProof.geometricSatakeMonad_cohomology'
+kind = 'theorem'
+desc = 'Identify the graded COHOMOLOGY algebra of the geometric monad on Rep(dualG) with Sym(dual Lie(G)[-2]). Retain the actual E1 monad comparison map from the constructed Satake functor; no DG formality theorem is assumed as an input. Compute internal End via the regular comodule, equivariant Ext, universal centralizers and extension of regular functions from the codimension-at-least-two regular locus. Use the explicit torus/product and central-isogeny component comparison as well as the finite-stage, multiplicative, equivariant field/theory comparisons, then faithful-flat detection of the defined comparison map, to transport the original complex constructible computation to arbitrary-k de Rham theory. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.SpectralProof.equivariantRegularSheaf_cohomology', 'GLCinLean.Satake.regularSheafExt_complexComparison', 'GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Groups.chevalleyMap']
+source = '[FactorizableDerivedSatake] Lemma 9.2.1 and Proposition 9.2.2; [LoopGrassmannianExt] Theorem 7.6.1 and proof'
 
 [[node]]
-id = "GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint"
-kind = "theorem"
-desc = "Identify pointwise regular-comodule factorization modules with QCoh on the formal local-systems fiber product, using the fully faithful functor from local-system module categories, Lie coalgebras and chiral envelopes. Include functoriality required by the parabolic restriction square. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.factorizationAlgebra", "GLCinLean.SpectralProof.spectralSphericalCategory", "GLCinLean.LocalSystems.deRham", "GLCinLean.Hecke.formalDisc", "GLCinLean.Sheaves.qcoh", "GLCinLean.Sheaves.relativeKoszulDuality"]
-source = "[FactorizableDerivedSatake] §§8.1–8.10, especially Theorem 8.10.1"
+id = 'GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint'
+kind = 'theorem'
+desc = 'Identify pointwise regular-comodule factorization modules with QCoh on the formal local-systems fiber product, using the fully faithful functor from local-system module categories, Lie coalgebras and chiral envelopes. Include functoriality required by the parabolic restriction square. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.spectralSphericalCategory', 'GLCinLean.LocalSystems.deRham', 'GLCinLean.Hecke.formalDisc', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.relativeKoszulDuality']
+source = '[FactorizableDerivedSatake] §§8.1–8.10, especially Theorem 8.10.1'
 
 [[node]]
-id = "GLCinLean.SpectralProof.spectralSatakeMonad_is_symmetricAlgebra"
-kind = "theorem"
-desc = "Identify the spectral monad on Rep(dualG) with Sym(dual Lie(G)[-2]) by the derived self-intersection of zero and Koszul duality; preserve the associative multiplication. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint", "GLCinLean.Sheaves.relativeKoszulDuality"]
-source = "[FactorizableDerivedSatake] Corollary 8.10.1.1; Proposition 9.2.3"
+id = 'GLCinLean.SpectralProof.spectralSatakeMonad_is_symmetricAlgebra'
+kind = 'theorem'
+desc = 'Identify the spectral monad on Rep(dualG) with Sym(dual Lie(G)[-2]) by the derived self-intersection of zero and Koszul duality; preserve the associative multiplication. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint', 'GLCinLean.Sheaves.relativeKoszulDuality']
+source = '[FactorizableDerivedSatake] Corollary 8.10.1.1; Proposition 9.2.3'
 
 [[node]]
-id = "GLCinLean.SpectralProof.torusDerivedSatake_equiv"
-kind = "theorem"
-desc = "Prove derived Satake for a torus by the Contou–Carrere Fourier kernel, its two kernel-composition identities, and the equivalence of torus local-system module categories with factorization representation modules. This is a local class-field calculation, not the global Langlands conjecture. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.derivedSatakeTransform", "GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint", "GLCinLean.Hecke.loopArcGroups", "GLCinLean.DModules.exponential"]
-source = "[FactorizableDerivedSatake] Theorem 7.3.2 and proof §§7.4–7.5"
+id = 'GLCinLean.SpectralProof.torusDerivedSatake_equiv'
+kind = 'theorem'
+desc = 'Prove derived Satake for a torus by the Contou–Carrere Fourier kernel, its two kernel-composition identities, and the equivalence of torus local-system module categories with factorization representation modules. This is a local class-field calculation, not the global Langlands conjecture. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint', 'GLCinLean.Hecke.loopArcGroups', 'GLCinLean.DModules.exponential']
+source = '[FactorizableDerivedSatake] Theorem 7.3.2 and proof §§7.4–7.5'
 
 [[node]]
-id = "GLCinLean.SpectralProof.invariantQuadratics_detect_equiv"
-kind = "theorem"
-desc = "A dualG-equivariant linear endomorphism of its reductive Lie algebra is invertible if the induced symmetric-algebra map is invertible on invariants. Detect the center in degree one and every simple ideal by an invariant nondegenerate quadratic; do not use the false assertion that the degree-one invariant vectors generate a semisimple adjoint representation. This supplies the explicit invariant-theory step of the monad comparison. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Groups.chevalleyMap", "TauCeti.adjointInvariantPolynomials", "killingForm"]
-source = "[FactorizableDerivedSatake] §9.3 (required algebraic step, with center and simple-factor argument made explicit)"
+id = 'GLCinLean.SpectralProof.invariantQuadratics_detect_equiv'
+kind = 'theorem'
+desc = 'A dualG-equivariant linear endomorphism of its reductive Lie algebra is invertible if the induced symmetric-algebra map is invertible on invariants. Detect the center in degree one and every simple ideal by an invariant nondegenerate quadratic; do not use the false assertion that the degree-one invariant vectors generate a semisimple adjoint representation. This supplies the explicit invariant-theory step of the monad comparison. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6. Upstream declarations used: `TauCeti.adjointInvariantPolynomials` (`TauCeti.Algebra.AlgebraicGroup.Tangent.Lie.Adjoint.NilpotentCone`, on Tau Ceti main only, not at the pin), `killingForm` (`Mathlib.Algebra.Lie.TraceForm`).'
+deps = ['GLCinLean.Groups.chevalleyMap']
+source = '[FactorizableDerivedSatake] §9.3 (required algebraic step, with center and simple-factor argument made explicit)'
 
 [[node]]
-id = "GLCinLean.SpectralProof.derivedSphericalSatake_equiv"
-kind = "theorem"
-desc = "The full derived Satake transform is an equivalence of monoidal unital factorization categories. Compare the cohomology of the actual E1 monad map, prove it invertible on invariants via the torus and Borel restriction square, detect the whole Lie algebra by invariant quadratics, then use ULA pointwise detection and monadicity. This is stronger than naive Satake. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.SpectralProof.derivedSatakeTransform", "GLCinLean.SpectralProof.factorizationVacuum_almostULA", "GLCinLean.SpectralProof.geometricSatakeMonad_cohomology", "GLCinLean.SpectralProof.spectralSatakeMonad_is_symmetricAlgebra", "GLCinLean.SpectralProof.torusDerivedSatake_equiv", "GLCinLean.SpectralProof.invariantQuadratics_detect_equiv"]
-source = "[FactorizableDerivedSatake] Theorem 6.6.1, proof §§6.13, 9.1–9.4; [GLC2] Theorem 1.7.2"
+id = 'GLCinLean.SpectralProof.derivedSphericalSatake_equiv'
+kind = 'theorem'
+desc = 'The full derived Satake transform is an equivalence of monoidal unital factorization categories. Compare the cohomology of the actual E1 monad map, prove it invertible on invariants via the torus and Borel restriction square, detect the whole Lie algebra by invariant quadratics, then use ULA pointwise detection and monadicity. This is stronger than naive Satake. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.SpectralProof.factorizationVacuum_almostULA', 'GLCinLean.SpectralProof.geometricSatakeMonad_cohomology', 'GLCinLean.SpectralProof.spectralSatakeMonad_is_symmetricAlgebra', 'GLCinLean.SpectralProof.torusDerivedSatake_equiv', 'GLCinLean.SpectralProof.invariantQuadratics_detect_equiv']
+source = '[FactorizableDerivedSatake] Theorem 6.6.1, proof §§6.13, 9.1–9.4; [GLC2] Theorem 1.7.2'
 
 [[node]]
-id = "GLCinLean.SpectralProof.naiveSatakeIsoDerivedSatakeInverse"
-kind = "definition"
-desc = "Construct an isomorphism of monoidal factorization functors Rep(Ǧ)_Ran → Sph_{G,Ran}: Satake.naiveFactorizationFunctor_renormalized ≅ Sat_G^{-1} ∘ nv ∘ c^*, where Sat_G is the derived Satake equivalence, nv: Rep(Ǧ) → Sph^spec is as in [GLC2] §1.7.6, and c^* is restriction along the Chevalley involution of the pinned dual group (Groups.chevalleyInvolution), so that c^*(V^μ) ≅ V^{-w0 μ}. Check: Sat_G(IC_λ) = nv(V^{-w0 λ}) by [GLC2] Example 1.7.4, so both sides send V^λ to IC_λ. Both functors are determined by the image of the regular object with its algebra structure (Satake.factorizationFunctorFromRegularComodule); compare these images on hearts. Record its compatibility with the flip σ and the involution τ_G of Satake.sphericalChevalleyInvolution ([GLC2] Corollary 1.8.2) for the later passage between left and right modules. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6."
-deps = ["GLCinLean.Satake.naiveFactorizationFunctor_renormalized", "GLCinLean.SpectralProof.derivedSphericalSatake_equiv", "GLCinLean.Satake.factorizationFunctorFromRegularComodule", "GLCinLean.Groups.chevalleyInvolution", "GLCinLean.Satake.sphericalChevalleyInvolution", "GLCinLean.Satake.dualIdentification"]
-source = "[GLC2] Example 1.7.4, §1.7.6 and Corollary 1.8.2; [FactorizableDerivedSatake] Theorem 6.6.1"
+id = 'GLCinLean.SpectralProof.naiveSatakeIsoDerivedSatakeInverse'
+kind = 'definition'
+desc = 'Construct an isomorphism of monoidal factorization functors Rep(Ǧ)_Ran → Sph_{G,Ran}: Satake.naiveFactorizationFunctor_renormalized ≅ Sat_G^{-1} ∘ nv ∘ c^*, where Sat_G is the derived Satake equivalence, nv: Rep(Ǧ) → Sph^spec is as in [GLC2] §1.7.6, and c^* is restriction along the Chevalley involution of the pinned dual group (Groups.chevalleyInvolution), so that c^*(V^μ) ≅ V^{-w0 μ}. Check: Sat_G(IC_λ) = nv(V^{-w0 λ}) by [GLC2] Example 1.7.4, so both sides send V^λ to IC_λ. Both functors are determined by the image of the regular object with its algebra structure (Satake.factorizationFunctorFromRegularComodule); compare these images on hearts. Record its compatibility with the flip σ and the involution τ_G of Satake.sphericalChevalleyInvolution ([GLC2] Corollary 1.8.2) for the later passage between left and right modules. Provider: Missing; implement here. Tau Ceti main checked 1e668f5e55bc20f2eb87f4ba49b48833470290d1; roadmap checked 000abc149867f86a79d9708294c89af6b42c37a6.'
+deps = ['GLCinLean.Satake.naiveFactorizationFunctor_renormalized', 'GLCinLean.SpectralProof.derivedSphericalSatake_equiv', 'GLCinLean.Satake.factorizationFunctorFromRegularComodule', 'GLCinLean.Groups.chevalleyInvolution', 'GLCinLean.Satake.sphericalChevalleyInvolution', 'GLCinLean.Satake.dualIdentification']
+source = '[GLC2] Example 1.7.4, §1.7.6 and Corollary 1.8.2; [FactorizableDerivedSatake] Theorem 6.6.1'
