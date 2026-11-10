@@ -15,6 +15,11 @@ after the statement.
 - Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`, from the fork `WHY-Op109/TauCeti`. Nothing goes to Mathlib directly.
 - Everything else is written here.
 
+## Subagents
+
+- The main agent gives each subagent the goal (with its prompt file), the sources it needs, the expected scope and the expected time. Each subagent works in its own git worktree, and its work is squash-merged as one commit.
+- A subagent may finish without completing its task if the task is ill-specified, impossible, or far larger than expected, and may raise suspicions about its task or nearby code.
+
 ## Plan
 
 - The plan is in `plans/`, in the format of the tracker (`tools/tracker`, a git submodule; read `tools/tracker/README.md` before touching the plan). `lake exe tracker ready` lists what can be worked on now; `lake exe tracker lint` checks the plan against the code.
