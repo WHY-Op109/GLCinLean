@@ -6,10 +6,10 @@ Updated 2026-11-11, after Session 4c (the plan cut).
 
 - **Statement.** `GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`. The main theorem is `GLCinLean.Statement.exists_isLanglandsFunctor_and_forall_isLanglandsFunctor_imp_isEquivalence`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence. The second property is stated with the Hecke action of `Rep(Ǧ)_Ran` and the spectral localization `Loc`, in an equivalent form for the underlying functors of ∞-categories. Its proof is the only `sorry`.
 - **Placeholders.** 28 declarations are `@[placeholder]` (`grep -rn '@\[placeholder\]' GLCinLean/Statement`; the other matches of `GLCinLean` are the attribute's own file). None is replaced yet. All are `opaque`, so the main theorem says nothing yet: with one-point categories and always-true predicates it would be trivially true.
-- **Plan.** `plans/` is the statement's plan: 237 planned declarations in 119 module plans. 195 are under `plans/GLCinLean/` and are written here; 31 of them are the statement. 42 are under `plans/Roadmap/<area>/` and belong to six Tau Ceti roadmaps. Existing Mathlib and Tau Ceti declarations are not nodes; `docs/blueprint-providers.md` lists them.
+- **Plan.** `plans/` is the statement's plan: 238 planned declarations in 119 module plans. 196 are under `plans/GLCinLean/` and are written here; 31 of them are the statement. 42 are under `plans/Roadmap/<area>/` and belong to six Tau Ceti roadmaps. Existing Mathlib and Tau Ceti declarations are not nodes; `docs/blueprint-providers.md` lists them.
 - **Plan of the proof.** `plans-proof/` holds the 197 nodes that only the proof of the main theorem needs (186 to be written here, 11 owned by five roadmaps), in 72 module plans. The tracker does not read it; `plans-proof/README.md` says how it is used.
 - **Ready.** `lake exe tracker ready` lists six roadmap modules (`Roadmap.BordismFormalGroups.Mapping`, `Roadmap.SchemeAndStackFoundations.AlgebraicStacks`, `Roadmap.SchemeAndStackFoundations.Torsors`, `Roadmap.ReductiveGroups.PinnedRootData`, `Roadmap.JacobianChallenge.SerreDuality`, `Roadmap.JacobianChallenge.Jacobian`) and one module here, `GLCinLean.AlgebraicGeometry.Curves.Theta` (the definition of a theta characteristic; their existence, `Curves.ThetaExistence`, waits for JacobianChallenge). It also lists `GLCinLean.Statement.Conjecture`, because the main theorem is stated with `sorry`; that is not work for a build session.
-- **Reviews.** The last reviewed commit on `main` is `c4f67f1` for the Lean code, and `f79facd` for the planned definitions (`notes/reviews/f79facd.md`). The commit after it applies that review's fixes and is not reviewed again; its one open point is under "Waiting for the owner". The earlier review reports are in git history at `2be2b00`.
+- **Reviews.** The last reviewed commit on `main` is `c4f67f1` for the Lean code, and `92dc3d7` for the planned definitions (`notes/reviews/b274dc8.md`, which covers `b274dc8` and `92dc3d7`). The commit after it applies that review's fixes and is not reviewed again; its one open point is under "Waiting for the owner". `notes/reviews/f79facd.md` is the review before it. Earlier reports are in git history at `2be2b00`.
 - **Checks.** `lake build` passes with only the main theorem's `sorry` warning. `lake lint` passes. `lake env lean tools/check-statement-axioms.lean` shows `sorryAx` only for the main theorem, which uses only `propext`, `Classical.choice`, `Quot.sound` and `sorryAx`. `lake exe tracker lint` has no errors; its warnings are the superseded `desc` and `deps` of the statement's placeholders, which `plans/README.md` explains.
 - **Pins.** Mathlib `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`, Tau Ceti `e0610cce4004d628cbd9d2aafdbbb5459fe72938`.
 - **Tau Ceti pull requests.** None opened.
@@ -23,16 +23,16 @@ Two planned theorems in `plans-proof/GLCinLean/GeometricLanglands/Functor/Coarse
 
 ## Upstream targets that block the plan
 
-Of the 195 nodes written here, 193 have a roadmap node below them. So the first work is Worker rounds in Tau Ceti. The targets, with the number of nodes here that depend on them:
+Of the 196 nodes written here, 194 have a roadmap node below them. So the first work is Worker rounds in Tau Ceti. The targets, with the number of nodes here that depend on them:
 
 1. **BordismFormalGroups F6.5**, to which EnhancedDerivedSheaves delegates its generic quasicategory constructions:
-   - "Categorical model and functor spaces": `Infinity.mappingSpaces` (185 nodes; ready now);
-   - "Coherent model diagrams and stable enhancements": `Infinity.limits` (185), `Infinity.stableCategory` (185), `Infinity.tStructure` (109);
-   - the monoidal and fibration sub-lane: `Infinity.monoidalCategory` (181), `Infinity.moduleCategory` (181), `Infinity.continuousLinearFunctor` (114), `Infinity.linearEquivalence` (4);
-   - "Marked fibrations and Kan extensions": `Infinity.rightKanExtension` (98);
+   - "Categorical model and functor spaces": `Infinity.mappingSpaces` (186 nodes; ready now);
+   - "Coherent model diagrams and stable enhancements": `Infinity.limits` (186), `Infinity.stableCategory` (186), `Infinity.tStructure` (110);
+   - the monoidal and fibration sub-lane: `Infinity.monoidalCategory` (182), `Infinity.moduleCategory` (182), `Infinity.continuousLinearFunctor` (115), `Infinity.linearEquivalence` (4);
+   - "Marked fibrations and Kan extensions": `Infinity.rightKanExtension` (99);
    - the quotient and Ind sub-lane: `Infinity.compactObject` (51).
-2. **EnhancedDerivedSheaves**: E0.8 and E5:presentability.1–.4 (`Infinity.presentableCategory` 181, `Infinity.indCompletion` 101, `Infinity.compactGeneration` 36, dualizable categories 21, rigid categories 19); E1.3–E1.4 (`Infinity.derivedVect` 181) with its bounded-below parts (`Infinity.eventuallyCoconnective` 9); E5:abstract.2 (`Infinity.linearCategory` 181, `Infinity.internalHom` 34); E3.1–E3.4 (`Infinity.rightAdjoint` 106, adjointable diagrams 33); E5:animation.1 and .4 (`Derived.commutativeAlgebra` and `Derived.affineScheme` 162, `Derived.affineModules` 121); E1.8 (`Sheaves.schemeQCoh` 118); E5:cotangent-export (`Derived.affineCotangentComplex` 25).
-3. **SchemeAndStackFoundations**: §§1.18–1.20 (`Stacks.algebraicStack` 136; ready now), §§1.15–1.16 (`Stacks.groupTorsor` 78; ready now).
+2. **EnhancedDerivedSheaves**: E0.8 and E5:presentability.1–.4 (`Infinity.presentableCategory` 182, `Infinity.indCompletion` 102, `Infinity.compactGeneration` 36, dualizable categories 21, rigid categories 19); E1.3–E1.4 (`Infinity.derivedVect` 182) with its bounded-below parts (`Infinity.eventuallyCoconnective` 9); E5:abstract.2 (`Infinity.linearCategory` 182, `Infinity.internalHom` 34); E3.1–E3.4 (`Infinity.rightAdjoint` 107, adjointable diagrams 33); E5:animation.1 and .4 (`Derived.commutativeAlgebra` and `Derived.affineScheme` 163, `Derived.affineModules` 122); E1.8 (`Sheaves.schemeQCoh` 119); E5:cotangent-export (`Derived.affineCotangentComplex` 25).
+3. **SchemeAndStackFoundations**: §§1.18–1.20 (`Stacks.algebraicStack` 137; ready now), §§1.15–1.16 (`Stacks.groupTorsor` 78; ready now).
 4. **ReductiveGroups**: 8.2 and 9D, with Layers 5 and 7 (`Groups.rootDatum` 70, `Groups.pinnedData` 67, `Groups.basedRootDatum` 59, `Groups.pinning_exists` 24, `Groups.twoRho` 11; ready now). **ReductiveGroupsPartII**: RG2.5.1 (`Groups.dualityData` 46, `Groups.langlandsDual` 37, `Groups.coweightParity` 25, `Groups.dualityData_changePinning` 15).
 5. **JacobianChallenge** Layers B–C (`Curves.serreTrace` 8), Layer A (`Curves.picard_degree` 2), Layer B (`Curves.degree_canonical` 2), Layer D (`Curves.picardZero_isAbelianVariety` 2) and Layer E (`Curves.abelianVariety_multiplication_surjective` 2), the last four for `Curves.thetaCharacteristic_exists`; all ready now.
 
@@ -65,7 +65,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 ## Waiting for the owner
 
-Nothing.
+- **Étale gerbes in general, or root gerbes only** (the review of `b274dc8`, *unsure*). `DModules.twistedCrystals`, `DModules.extraordinaryPullback` and `DModules.twistedPseudoProperShriek` are stated for any étale `μ_n`-gerbe, and `Hecke.sphericalAction` uses tensor products and inverses of gerbes, but the only gerbe node, `DModules.rootGerbe`, gives root gerbes of line bundles. Either (a) add a node for étale `μ_n`-gerbes on prestacks (pullback, tensor product, inverse, trivializations and the torsor between two of them; [GLC1] §1.1.3, [GLys] §1.3), or (b) restrict the three nodes to root gerbes of line bundles, which is all the statement uses.
 
 ## Open items
 
