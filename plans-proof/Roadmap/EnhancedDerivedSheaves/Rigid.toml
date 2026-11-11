@@ -1,0 +1,8 @@
+desc = 'Rigid monoidal categories and the linearity of right adjoints over them. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Infinity.rightAdjoint_linear'
+kind = 'theorem'
+desc = 'Right adjoints of module functors over rigid monoidal categories inherit compatible module structures. Provider: roadmap EnhancedDerivedSheaves, the rigid module-category adjunctions of “Dualizable, compactly assembled and rigid categories”.'
+deps = ['GLCinLean.Infinity.rigidMonoidalCategory', 'GLCinLean.Infinity.rightAdjoint']
+source = '[GLC1] §1.4.5'

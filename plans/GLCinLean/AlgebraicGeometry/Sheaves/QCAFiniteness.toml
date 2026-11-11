@@ -8,13 +8,6 @@ deps = ['GLCinLean.Stacks.qcaStratification', 'GLCinLean.Sheaves.qcohGlobalSecti
 source = '[DG2] Theorem 1.4.2 and §§2.1–2.4'
 
 [[node]]
-id = 'GLCinLean.Sheaves.qcaCompact_iff_perfect'
-kind = 'theorem'
-desc = 'On a QCA stack a QCoh object is compact iff perfect, equivalently tensor-dualizable. Use continuity of Γ and tensor-Hom for the forward construction of compactness; use continuous affine pushforward for restriction of a compact object. This theorem does not assert compact generation. Provider: here.'
-deps = ['GLCinLean.Sheaves.qcaGlobalSections_continuous', 'GLCinLean.Sheaves.perfectComplex', 'GLCinLean.Infinity.compactObject']
-source = '[DG2] Corollary 1.4.3'
-
-[[node]]
 id = 'GLCinLean.Sheaves.qcaIndCoh_compactlyGenerated'
 kind = 'theorem'
 desc = 'For a QCA stack locally almost of finite type, coherent sheaves are exactly the compact objects of IndCoh and generate it. Plan the coherent-generation descent and finite-stratification argument, not just the conclusion. Provider: here.'

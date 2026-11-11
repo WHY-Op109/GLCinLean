@@ -27,6 +27,7 @@ Agents do the work, each session started from a prompt in `prompts/`:
 |---|---|
 | `GLCinLean/` | the Lean code: the statement (`Statement/Conjecture.lean`), its enhanced categorical placeholders (`Statement/Enhanced.lean`), and the `@[placeholder]` attribute |
 | `plans/` | the plan, in the format of the [tracker](https://github.com/bridgekat/tracker): `plans/GLCinLean/` is written here, `plans/Roadmap/<area>/` belongs to a Tau Ceti roadmap |
+| `plans-proof/` | the nodes that only the proof of the main theorem needs, in the same format; the tracker does not read it |
 | `tools/tracker` | the tracker, a git submodule |
 | `tools/check-statement-axioms.lean` | prints the axioms of the statement's declarations (the done check) |
 | `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |

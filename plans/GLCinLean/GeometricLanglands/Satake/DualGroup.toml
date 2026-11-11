@@ -24,9 +24,9 @@ source = '[MV] Proposition 2.2, Theorem 7.3 and §5'
 [[node]]
 id = 'GLCinLean.Satake.dualIdentificationChangePinningIso'
 kind = 'definition'
-desc = 'For another choice of Satake.tannakaPinning, the two dual identifications differ by conjugation by an element t of the dual torus (Groups.pinnings_torsor). Construct the monoidal factorization isomorphism between pullback along conjugation by t and the identity of Rep(Ǧ)_Ran (v ↦ t·v, constant over Ran), and from it the induced monoidal isomorphisms of naive Satake, of the Hecke action of Rep(Ǧ)_Ran on Dmod_1/2(Bun_G), of the Casselman–Shalika equivalence, and of the QCoh(LS_Ǧ)-action (t identifies each local system with its conjugate, compatibly with spectral localization). Provider: here.'
-deps = ['GLCinLean.Satake.dualIdentification', 'GLCinLean.Groups.pinnings_torsor', 'GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Hecke.action', 'GLCinLean.Spectral.action', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.LocalSystems.deRham']
-source = '[GLC2] Theorem 1.4.2, §1.4.4 and Theorem 1.7.2; [GLC1] §§1.2.1–1.2.5'
+desc = 'For another choice of Satake.tannakaPinning, the two dual identifications differ by conjugation by an element t of the dual torus (Groups.pinnings_torsor). Construct the monoidal factorization isomorphism between pullback along conjugation by t and the identity of Rep(Ǧ)_Ran (v ↦ t·v, constant over Ran), and from it the induced monoidal isomorphisms of naive Satake and of the Hecke action of Rep(Ǧ)_Ran on Dmod_1/2(Bun_G). The spectral localization, QCoh(LS_Ǧ), IndCoh_Nilp(LS_Ǧ) and Ψ do not depend on the pinning. The isomorphisms that it induces on the Casselman–Shalika equivalence and on the QCoh(LS_Ǧ)-action belong to the plan of the proof. Provider: here.'
+deps = ['GLCinLean.Satake.dualIdentification', 'GLCinLean.Groups.pinnings_torsor', 'GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Hecke.action']
+source = '[GLC2] Theorem 1.4.2 and §1.4.4; [GLC1] §1.2.1'
 
 [[node]]
 id = 'GLCinLean.Satake.isLanglandsFunctor_iff_of_changePinning'

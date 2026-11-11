@@ -1,0 +1,22 @@
+desc = 'The spectral localization functor Rep(H)_Ran → QCoh(LS_H).'
+
+[[node]]
+id = 'GLCinLean.Spectral.localization_rightAdjoint_fullyFaithful'
+kind = 'theorem'
+desc = 'Spectral localization preserves compacts and has continuous fully faithful right adjoint. Provider: here.'
+deps = ['GLCinLean.Spectral.localization', 'GLCinLean.Infinity.rightAdjoint_continuous', 'GLCinLean.SpectralProof.spectralLocalization_counit_isIso']
+source = '[GLC1] §1.2.2; [GaitsgoryOutline] Proposition 4.3.4; [GenVan] Theorem 1.2; proof: [GLC4] Proposition C.1.7, Corollary C.1.8 and §C.4'
+
+[[node]]
+id = 'GLCinLean.Spectral.localization_factorsThroughIndependent'
+kind = 'theorem'
+desc = 'Spectral.localization factors as L ∘ q, with q the quotient of Hecke.unitalIndependentRepresentations and L: Rep(H)_{Ran^untl,indep} → QCoh(LS_H) strictly unital symmetric monoidal. Since q and Spectral.localization both have fully faithful continuous right adjoints, so does L (L ∘ L^R ≅ L ∘ q ∘ q^R ∘ L^R ≅ id); and q carries the kernel of Spectral.localization onto the kernel of L, because q is essentially surjective. Provider: here.'
+deps = ['GLCinLean.Spectral.localization', 'GLCinLean.Spectral.localization_monoidal', 'GLCinLean.Spectral.localization_rightAdjoint_fullyFaithful', 'GLCinLean.Hecke.unitalIndependentRepresentations']
+source = '[GLC2] §15.5.1'
+
+[[node]]
+id = 'GLCinLean.Spectral.localization_monoidal'
+kind = 'definition'
+desc = 'The symmetric monoidal structure on Spectral.localization, for the convolution product of Hecke.ranConvolution on Rep(H)_Ran and the tensor product of QCoh(LS_H). Provider: here.'
+deps = ['GLCinLean.Spectral.localization', 'GLCinLean.Hecke.ranConvolution', 'GLCinLean.Infinity.monoidalCategory']
+source = '[GaitsgoryOutline] §4.3.1'
