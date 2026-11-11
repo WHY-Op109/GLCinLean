@@ -5,7 +5,7 @@
 **Done when**
 - upstream is folded in first: each Tau Ceti pull request listed in `STATUS.md` is checked. For a merged one, the Tau Ceti pin is moved as `AGENTS.md` says. Its nodes are deleted from `plans/Roadmap/` only when the declaration is at this project's pin, its interface is checked, and a fresh agent has reviewed its meaning with `prompts/review.md`; in the same commit, the nodes that used them name the upstream declaration and its import module in their `desc`;
 - one ready module under `GLCinLean` (or a few small ones, or a bounded part of a large one) is written: `lake exe tracker ready` names it, and `lake exe tracker show <module>` is its brief. If no module under `GLCinLean` is ready, the session writes in `STATUS.md` which roadmap targets block the plan, and ends;
-- each new definition has examples or test lemmas that show it behaves as expected. A placeholder is replaced only when every node below it is proved, and with the example nodes of `plans/` that rule out a trivial reading;
+- each new definition has examples or test lemmas that show it behaves as expected. A placeholder is replaced only when every node below it is proved (the tracker counts the placeholder itself as proved, so check the nodes its plan entry names in `deps` with `lake exe tracker show <id>`), and with the example nodes of `plans/` that rule out a trivial reading;
 - the done check in `AGENTS.md` passes, and `lake exe tracker lint` has no errors;
 - a fresh agent has checked the diff against each rule of "Sources of code" and "Lean code" in `AGENTS.md`, and its findings are fixed;
 - after that, a fresh agent has reviewed every new or changed definition with `prompts/review.md`;
