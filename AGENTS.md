@@ -39,7 +39,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## The statement
 
-- The only `sorry` is the proof of the main theorem. Everything the statement uses (definitions, instances, lemmas, well-definedness) is fully proved. The conjecture is stated through the characterisation of `𝕃_G`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence.
+- The only `sorry` is the proof of the main theorem. Everything the statement uses (definitions, instances, lemmas, well-definedness) is fully proved. The conjecture is stated through the characterisation of `𝕃_G`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence. The second property is stated with the Hecke action of `Rep(Ǧ)_Ran`, which needs no action of `QCoh(LS_Ǧ)`. By [GLC1] Thm. 1.2.4 it is the paper's property in an equivalent form for the underlying functors of ∞-categories.
 - An object not defined yet is a placeholder: an `opaque`, or a definition built over one, marked `@[placeholder]` (`GLCinLean/Placeholder.lean`), with a docstring naming the object it stands for. Placeholders live only in the statement, never in the library or in code meant for Tau Ceti: library code must be real mathematics, or a gap would hide below the statement. One is replaced only together with examples that show the new definition behaves as expected.
 - Review and approval:
   - a fresh agent reviews every new or changed definition, planned or helper, with `prompts/review.md`;
