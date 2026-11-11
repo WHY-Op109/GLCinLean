@@ -45,6 +45,6 @@ source = '[IndCoh] §1.1.5, Lemma 1.4.2 and §§11.7.1–11.7.2'
 [[node]]
 id = 'GLCinLean.Sheaves.upsilon_isEquivalence_of_smooth'
 kind = 'theorem'
-desc = 'For a smooth scheme S of finite type, Ψ_S : IndCoh(S) → QCoh(S) and Υ_S : QCoh(S) → IndCoh(S), F ↦ F ⊗ ω_S with ω_S the !-pullback of k, are equivalences, and Υ_S is the dual of Ψ_S under the self-dualities of QCoh(S) and IndCoh(S). Provider: here.'
-deps = ['GLCinLean.Sheaves.psi', 'GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Sheaves.indcohShriekOnSchemes', 'GLCinLean.Infinity.dualizableCategory']
-source = '[IndCoh] Lemma 1.1.6 and Proposition 9.3.3'
+desc = 'For a smooth scheme S of finite type, Ψ_S : IndCoh(S) → QCoh(S) and Υ_S : QCoh(S) → IndCoh(S), the value of DModules.leftToRightCrystals on S, are equivalences. Ψ_S is a QCoh-linear equivalence, and Ψ_S(ω_S) ≅ Ω^n_S[n] for S of dimension n, so Υ_S is Ψ_S^{-1}(− ⊗ Ω^n_S[n]). Provider: here.'
+deps = ['GLCinLean.Sheaves.psi', 'GLCinLean.DModules.leftToRightCrystals', 'GLCinLean.Sheaves.indcohShriekOnSchemes', 'GLCinLean.Sheaves.indcohQCohAction']
+source = '[IndCoh] Lemma 1.1.6 and §5.7.5'
