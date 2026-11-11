@@ -17,6 +17,6 @@ source = '[Crystals] Proposition 1.3.3 and Corollary 1.3.7'
 [[node]]
 id = 'GLCinLean.Derived.deRhamCechNerve_formalCompletion'
 kind = 'theorem'
-desc = 'For a scheme X of finite type, the n-th term of the Čech nerve of X → X_dR is the formal completion of X^{n+1} along the diagonal X (Derived.formalCompletion), and these terms are locally almost of finite type indschemes. Provider: here.'
+desc = 'For a closed subscheme X of a smooth scheme Z of finite type and Y the formal completion of Z along X (Derived.formalCompletion), the n-th term of the Čech nerve of Y → Y_dR is the formal completion of Z^{n+1} along the diagonal copy of X; these terms are locally almost of finite type indschemes. The case X = Z gives the Čech nerve of Z → Z_dR. Provider: here.'
 deps = ['GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Derived.formalCompletion', 'GLCinLean.Derived.indscheme', 'GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType']
 source = '[Crystals] §1.2.2 and the proof of Proposition 1.3.3; [DGIndschemes] Proposition 6.3.1 and Corollary 6.3.2'
