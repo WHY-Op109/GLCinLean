@@ -200,3 +200,6 @@ Model: Opus 5.5, effort `medium`.
 - `prompts/build.md` is checked: if the build step should refresh the page after it changes `plans/`, it says so in one line;
 - `prompts/next-steps.md` is deleted, because the one-off sessions are done;
 - the work is committed and pushed.
+
+**Context**
+- `lake exe tracker graph` covers `plans/`, the statement's plan (218 nodes after Session 4c). The tracker does not read `plans-proof/` (198 nodes), whose `deps` point into `plans/`. Show it on the page as a separate layer, read from its TOML files and marked as not tracked, so that the owner can see where the cut runs.

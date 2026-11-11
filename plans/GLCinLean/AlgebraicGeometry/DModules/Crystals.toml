@@ -11,5 +11,5 @@ source = '[Crystals] §§2.3.1–2.3.2, 5.5; [IndCoh] §10.1.2'
 id = 'GLCinLean.DModules.leftCrystalsEquivRightCrystals'
 kind = 'definition'
 desc = 'For a locally almost finite type prestack Y, the equivalence Υ_{Y_dR} : QCoh(Y_dR) ≃ IndCoh(Y_dR) from left crystals to right crystals (DModules.rightCrystals), F ↦ F ⊗ ω_{Y_dR} for the action of QCoh on IndCoh, with the proof that it is an equivalence and the compatibility of *-pullback of left crystals with !-pullback of right crystals. Prove the equivalence on affine almost finite type schemes, through a closed embedding into a smooth scheme and its formal completion, and extend by right Kan extension. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Derived.deRhamPrestack']
-source = '[Crystals] §2.4, Proposition 2.4.4'
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Derived.formalCompletion', 'GLCinLean.Sheaves.psi']
+source = '[Crystals] §2.4, Proposition 2.4.4; [IndCoh] §§5.7.5, 10.3.3, Lemma 1.1.6 and Proposition 9.3.3'
