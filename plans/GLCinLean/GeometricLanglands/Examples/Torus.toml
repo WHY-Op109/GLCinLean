@@ -6,10 +6,3 @@ kind = 'theorem'
 desc = 'For a torus the spectral nilpotent cone is the zero section; supported IndCoh is QCoh. Provider: here.'
 deps = ['GLCinLean.LocalSystems.nilpotentCone', 'GLCinLean.Sheaves.zeroSupport_equiv_qcoh']
 source = '[GLC1] §1.5.4'
-
-[[node]]
-id = 'GLCinLean.Examples.torusCoarse_equiv'
-kind = 'theorem'
-desc = 'Compare the coarse torus functor with enhanced Fourier-Mukai followed by Cartan inversion; test normalization. Provider: here.'
-deps = ['GLCinLean.Langlands.coarse', 'GLCinLean.Examples.torusNilpotent_is_zero']
-source = '[GLC1] §§1.5.1–1.5.4'

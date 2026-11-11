@@ -1,0 +1,8 @@
+desc = 'Derived indscheme inputs to the finiteness argument.'
+
+[[node]]
+id = 'GLCinLean.Derived.indscheme_connectiveDeformationTheory'
+kind = 'theorem'
+desc = 'Every DG indscheme admits connective deformation theory: prove compatibility with square-zero pushouts, not merely a tangent-space calculation. Provider: here.'
+deps = ['GLCinLean.Derived.indscheme', 'GLCinLean.Derived.connectiveDeformationTheory']
+source = '[DGIndschemes] Corollary 4.7.3, using §3.4'

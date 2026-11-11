@@ -6,10 +6,3 @@ kind = 'definition'
 desc = 'Involutive anti-equivalence of coherent D-modules, obtained by descending scheme Verdier duality. It exchanges smooth extraordinary and ordinary pullback, with the cohomological normalization. Provider: here.'
 deps = ['GLCinLean.DModules.coherent', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback']
 source = '[DG2] §5.3 and §7.3.4'
-
-[[node]]
-id = 'GLCinLean.DModules.verdierMappingFormula'
-kind = 'theorem'
-desc = 'For coherent F and arbitrary M, identify the enriched Hom from VerdierDual(F) to M with de Rham global sections of F⊗!M. Use smooth descent of the scheme pairing; this is the compactness proof input. Provider: here.'
-deps = ['GLCinLean.DModules.verdierDuality', 'GLCinLean.Infinity.internalHom', 'GLCinLean.DModules.rightCrystals']
-source = '[DG2] Lemma 7.3.5'

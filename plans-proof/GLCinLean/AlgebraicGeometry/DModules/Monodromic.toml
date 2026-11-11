@@ -1,0 +1,8 @@
+desc = 'Monodromic enhanced D-modules and the parameterized indscheme form of Braden adjunction.'
+
+[[node]]
+id = 'GLCinLean.DModules.parameterizedHyperbolicAdjunction'
+kind = 'theorem'
+desc = 'For an ind-finite-type indscheme with G_m action, extend the finite-type Braden adjunction (q_plus)_* (p_plus)^! left adjoint to (p_minus)_* (q_minus)^! from the monodromic category to the fixed-locus category. Pass through stable finite-type closed charts and tensor with an arbitrary enhanced category using the fully faithful monodromic tensor inclusion. Preserve the contraction formula q_! = i^! on monodromic objects. The adjunction has monodromic source; it does not assert an unrelated ambient p_! exists. Provider: here.'
+deps = ['GLCinLean.DModules.monodromic', 'GLCinLean.DModules.hyperbolicRestriction_isIso', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction', 'GLCinLean.Infinity.moduleCategory']
+source = '[BradenDG] Proposition 3.2.2 and Theorem 3.3.4; [ChenNearbyCycles] Theorem 2.2.17, Remarks 2.2.18–2.2.19 and Theorem D.1.3'

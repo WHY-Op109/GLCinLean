@@ -6,10 +6,3 @@ kind = 'definition'
 desc = 'Convergent derived prestack whose restrictions to n-coconnective test affines are filtered unions of quasi-compact quasi-separated n-coconnective schemes along closed embeddings. Include the presentation and mapping APIs; a formal filtered colimit alone need not be convergent. Provider: here.'
 deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Derived.classicalReduction', 'GLCinLean.Infinity.limits']
 source = '[DGIndschemes] §§1.1, 1.3–1.4'
-
-[[node]]
-id = 'GLCinLean.Derived.indscheme_connectiveDeformationTheory'
-kind = 'theorem'
-desc = 'Every DG indscheme admits connective deformation theory: prove compatibility with square-zero pushouts, not merely a tangent-space calculation. Provider: here.'
-deps = ['GLCinLean.Derived.indscheme', 'GLCinLean.Derived.connectiveDeformationTheory']
-source = '[DGIndschemes] Corollary 4.7.3, using §3.4'

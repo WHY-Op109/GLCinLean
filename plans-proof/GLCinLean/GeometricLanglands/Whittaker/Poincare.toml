@@ -1,0 +1,8 @@
+desc = 'The vacuum Poincaré object and its compactness.'
+
+[[node]]
+id = 'GLCinLean.Whittaker.vacuumPoincare_compact'
+kind = 'theorem'
+desc = 'Compactness of p_!χ*(exp): for each filtered colimit apply the partial adjunction Hom(p_!E,-)=Hom(E,p^!(-)), compactness of E on the safe source and continuity of p^!. Definedness of p_! on E is a separate proved input; holonomicity alone is not compactness. Provider: here.'
+deps = ['GLCinLean.Whittaker.vacuumPoincare', 'GLCinLean.Whittaker.exponentialPullback_compact', 'GLCinLean.Whittaker.reductionPullback_continuous', 'GLCinLean.Infinity.compactObject']
+source = '[GLC1] §§1.3.5, 1.3.7, 1.4.2; [DG2] Corollary 10.2.7; [CompactGeneration] §1.2'

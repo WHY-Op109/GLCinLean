@@ -93,17 +93,17 @@ These exist. The node that uses one names it and its module in its `desc`. The n
 
 ## Roadmaps that own plan nodes
 
-Each area has a folder `plans/Roadmap/<area>/`. Existence of a roadmap is not existence of code.
+Each area has a folder `plans/Roadmap/<area>/` for the nodes that the statement needs, and `plans-proof/Roadmap/<area>/` for those that only the proof needs. Existence of a roadmap is not existence of code.
 
-| Area | Nodes | What it owns in the plan |
-|---|---|---|
-| EnhancedDerivedSheaves | 21 | presentable, linear and rigid categories, Ind-completion, adjoints, monadicity, `Vect_k`; animated rings, derived affine schemes and their modules; the affine cotangent complex; QCoh of classical schemes |
-| BordismFormalGroups | 10 | F6.5: mapping spaces, coherent limits, Kan extensions, compact objects, stable and t-structured, monoidal and module categories, linear functors |
-| ReductiveGroups | 6 | pinned data, pinnings and their existence (Layer 9D after #1676), root data, 2ρ, parabolics and Levi quotients |
-| ReductiveGroupsPartII | 6 | RG2.5.1 dual based root datum and Langlands dual group, change of pinning, coweight parity; RG2.1.5 z-extensions |
-| SchemeAndStackFoundations | 4 | §§1.15–1.16 torsors, §§1.18–1.20 algebraic stacks, §§2.11, 2.15–2.16 étale units and Tsen |
-| JacobianChallenge | 1 | Layers B–C: the Serre duality trace |
-| AffineLieAlgebras | 1 | A2.2: the critical level |
+| Area | Nodes in `plans/` | What it owns in the statement's plan | Nodes in `plans-proof/` | What it owns in the plan of the proof |
+|---|---|---|---|---|
+| EnhancedDerivedSheaves | 16 | presentable, linear, dualizable and rigid categories, compact generation, Ind-completion, right adjoints, bounded-below parts, `Vect_k`; animated rings, derived affine schemes and their modules; the affine cotangent complex; QCoh of classical schemes | 5 | continuity and linearity of right adjoints, gluing of dualizable categories, monadicity |
+| BordismFormalGroups | 10 | F6.5: mapping spaces, coherent limits, Kan extensions, compact objects, stable and t-structured, monoidal and module categories, linear functors | 0 | |
+| ReductiveGroups | 5 | pinned data, pinnings and their existence (Layer 9D), root data, 2ρ | 1 | parabolics and Levi quotients |
+| ReductiveGroupsPartII | 4 | RG2.5.1 dual based root datum and Langlands dual group, change of pinning, coweight parity | 2 | RG2.1.5 z-extensions |
+| SchemeAndStackFoundations | 2 | §§1.15–1.16 torsors, §§1.18–1.20 algebraic stacks | 2 | §§2.11, 2.15–2.16 étale units and Tsen |
+| JacobianChallenge | 1 | Layers B–C: the Serre duality trace | 0 | |
+| AffineLieAlgebras | 0 | | 1 | A2.2: the critical level |
 
 EnhancedDerivedSheaves takes its generic quasicategory constructions from BordismFormalGroups F6.5 (its table "From other roadmaps"): the categorical model and functor spaces, marked fibrations and Kan extensions, coherent model diagrams and stable enhancements, and the monoidal, fibration, quotient and Ind sub-lanes.
 
@@ -140,8 +140,8 @@ Recorded with their heads on 2026-11-10. The accepted roadmap stays the authorit
 - #1630 EnhancedDerivedSheaves amendment, head `0514180906fd196b8c53163d24feb7fd07e8f7df`: the DG nerve is primary; QCoh on prestacks is excluded.
 - #1330 EnhancedDerivedSheaves E1.6 (draft), head `856fe7ab4dd4005dbc2344f29ebd172779ba80ee`: no effect.
 - #868 DerivedDeRhamCohomology, head `2f774a945602f234b84b93257736209b3c1d63df`: explicit models of the cotangent complex and derived de Rham cohomology; a future supplier, not enhanced de Rham stacks.
-- #1225 JacobianChallengePartII §1.3a, head `2354d712410964d9da8266bc3c75742623d97a16`: the determinant of curve cohomology in families, the scheme-level input of `Stacks.determinantBundle`.
-- #1056 FormalConnectionsOpers, head `4b3f57b0212124b73d2908b191cf03686f193550`: local and formal opers for simple complex groups; not the global `LS_G`.
+- #1225 JacobianChallengePartII §1.3a, head `2354d712410964d9da8266bc3c75742623d97a16`: the determinant of curve cohomology in families, the scheme-level input of `Stacks.determinantBundle` (`det RΓ(X, ad P)` in families). `Stacks.determinantSquareRoot` still needs its own construction.
+- #1056 FormalConnectionsOpers, head `4b3f57b0212124b73d2908b191cf03686f193550`: local and formal opers for simple complex groups; not the global `LS_G`. Its §3A.5 builds the loop Grassmannian over ℂ only, so it does not serve a general `k`.
 - #1202 LanglandsParameterStacks, head `1e9f8e83ff3b2bae5e764e108c29309e597e905c`, and #1235 GeometricSatakeAndFusion, head `140b5a7ef0911741962fc87bc1f5b32c7e372e0d`: local ℓ-adic and integral p-adic; not de Rham providers.
 
 PR links are `https://github.com/TauCetiProject/TauCetiRoadmap/pull/<number>`.
@@ -155,7 +155,23 @@ AxiomMath Stacks (`5ed82d14634e8d9576bb844c7bd4e3da66d450e7`) and Weil (`27cdb20
 | cotangent complex (`StacksFrontier/Cotangent/`, core closure about 9,600 lines) | DerivedModuleAlgebra §0.4, below `Derived.affineCotangentComplex` | when work reaches it |
 | two-term determinant `TwoTermDeterminant.det` (about 18,200 lines) | `Stacks.determinantBundle` | when work reaches it |
 | complex points `AlgebraicGeometry.Scheme.ComplexPoints` (Weil, about 40 lines) | `Constructible.complexPoints` | only if the owner keeps the complex-analytic route to parity |
-| Stacks 03RM (vanishing of `H^q(X_et, 𝐆_m)`, closure about 1.2 million lines) | `Etale.curve_splitTorus_h2_zero` | no port |
+| Stacks 03RM (vanishing of `H^q(X_et, 𝐆_m)`, closure about 1.2 million lines) | `Etale.curve_splitTorus_h2_zero` (plan of the proof) | no port; a proof route |
+| algebraic stacks `AlgebraicGeometry.Stack.IsAlgebraicStack` (Stacks 026O, 03YP; closure about 23,600 lines) | `Stacks.algebraicStack`, owned by SchemeAndStackFoundations §1.19 | through the Worker, if its carrier matches the roadmap's §1.18 stacks in groupoids |
+| algebraic de Rham cohomology (`StacksFrontier/AlgebraicGeometry/DeRham/`, about 300 files, with Künneth and the projective-bundle formula) | part of `Hecke.schubertStratum_deRhamCohomology_even` | when work reaches it |
+| gerbes `CategoryTheory.IsGerbe` (closure about 1,250 lines; no root gerbe) | part of `DModules.rootGerbe`, owned by SchemeAndStackFoundations §1.21 | when work reaches it |
+| formal algebraic spaces (`StacksFrontier/AlgebraicGeometry/FormalSpace/`; no loop Grassmannian) | classical precursor of `Derived.indscheme` and `Hecke.affineGrassmannian` | when work reaches it |
+
+Not found in Stacks or Weil: D-modules, ∞-categories, `Bun_G`, loop groups and the affine Grassmannian, theta characteristics, reductive groups and root data beyond group schemes.
+
+## Other upstream changes checked on 2026-11-10
+
+Against the earlier snapshots (Tau Ceti main `1e668f5e`, TauCetiRoadmap main `000abc14`). None supplies a plan node.
+
+- **Tau Ceti main.** No added file supplies a node; no module of a declaration the plan uses changed, apart from refactors. Precursors of providers that the plan already uses: Chevalley groups by Dynkin type (`TauCeti/Algebra/AlgebraicGroup/Chevalley/Root/Scheme.lean`, `.../Chevalley/Torus/Comparison.lean`), toward ReductiveGroups Layer 9 and `Groups.langlandsDual`; `(G/N)(k) = G(k)/N(k)` over an algebraically closed field (`.../Fppf/Quotient/Homogeneous/RationalPoints.lean`, `TauCeti/AlgebraicGeometry/Sites/FppfAlgClosed.lean`); fpqc descent of affine schemes (`TauCeti/AlgebraicGeometry/Descent/Fpqc.lean`), toward `Stacks.groupTorsor`; `D⁺` of an exact category and Verdier quotients by orthogonal classes (ordinary triangulated tools); the cobar construction of a DG coalgebra. #34746 deleted `TauCeti/LinearAlgebra/Dual/Contraction.lean`, which no node uses.
+- **TauCetiRoadmap main.** DerivedModuleAlgebra was rewritten into layers (#1701, `4452ffa3`); §§0.4, 0.6 and 0.8–0.11 keep their numbers and content under "Layer 2: cotangent calculus", so the locator of `Derived.affineCotangentComplex` stays valid. New accepted roadmaps: RootSystemsPartII (#1731) and EquivariantIntersectionTheory (#1685; `Pic [X/G]` for global quotients only, so not `Stacks.determinantBundle`, since `Bun_G` is not a global quotient), and six outside the plan's subjects.
+- **Restructuring pull requests that keep the cited layer numbers:** #1807, #1808 (drafts), #1854, #1276 (SchemeAndStackFoundations), #1892 (JacobianChallenge). BordismFormalGroups §F6.5 would become "Layer 6: F6".
+- **Roadmap pull requests checked, no effect** (over finite fields, p-adic or local, ℓ-adic, 1-categorical, K-theory, or naming no plan object): #999, #1490, #1845, #1547, #1836, #1241, #1832, #1252, #1844, #1040, #1743, #1926, #1229, #1741, #853, #1522, #1224, #2114, #1656, #1220.
+- **Open Tau Ceti pull requests toward plan targets.** Toward `Infinity.mappingSpaces`, straightening and `Infinity.stableCategory`: #28684, #28845, #35208, #35214. Toward SchemeAndStackFoundations: #35782 (torsor classes, for `Etale.unitsSheaf`), #33208, #35708. Toward the Chevalley construction and `Groups.langlandsDual`: #27696, #33575, #33957. Segal–Sugawara modes, central at the critical level (#32777, AffineLieAlgebras A6.2), for `SpectralProof.vacuumCenter` in the plan of the proof. Small precursors: #35469 (for `Hecke.iwahoriWeylGroup`), #31601 and #35156 (Kac–Moody algebras), #34264 (`𝒪(k)` on projective space, for the ℙ¹ examples). Four more touch modules of used declarations (#32911, #34462, #35336, #26591) but change no used declaration.
 
 ## Limits of existing providers
 

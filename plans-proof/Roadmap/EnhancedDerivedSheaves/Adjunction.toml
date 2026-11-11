@@ -1,0 +1,8 @@
+desc = 'Right adjoints of continuous functors and their continuity. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+
+[[node]]
+id = 'GLCinLean.Infinity.rightAdjoint_continuous'
+kind = 'theorem'
+desc = 'A right adjoint is continuous when the left adjoint preserves compact generators; prove rather than assume it. Provider: roadmap EnhancedDerivedSheaves, `rightAdjoint_preservesCoproducts_iff` (“Stable colimits and compact generation”).'
+deps = ['GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.compactGeneration']
+source = '[GLC1] §§1.4.2, 1.4.5; [CompactGeneration] §1.2'
