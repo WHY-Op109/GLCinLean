@@ -1,0 +1,8 @@
+desc = 'Existence of theta characteristics on a smooth proper connected curve over an algebraically closed field.'
+
+[[node]]
+id = 'GLCinLean.Curves.thetaCharacteristic_exists'
+kind = 'theorem'
+desc = 'Existence of theta characteristics over an algebraically closed characteristic-zero field; include a projective-line example. Proof: deg ω_X = 2g − 2 is even (Curves.degree_canonical); choose a line bundle M of degree g − 1, so that ω_X ⊗ M^{-2} has degree zero and is a k-point of Pic⁰ (Curves.picardZero_isAbelianVariety); multiplication by 2 on Pic⁰ is surjective on k-points (Curves.abelianVariety_multiplication_surjective), which gives N with N² ≅ ω_X ⊗ M^{-2}; take L = M ⊗ N. Provider: here. Upstream declarations used: `IsAlgClosed` (`Mathlib.FieldTheory.IsAlgClosed.Basic`), `CharZero` (`Mathlib.Algebra.CharZero.Defs`).'
+deps = ['GLCinLean.Curves.thetaCharacteristic', 'GLCinLean.Curves.degree_canonical', 'GLCinLean.Curves.picardZero_isAbelianVariety', 'GLCinLean.Curves.abelianVariety_multiplication_surjective']
+source = '[GLC1] §1.3.2'

@@ -4,5 +4,5 @@ desc = 'The exponential D-module on the additive group.'
 id = 'GLCinLean.DModules.exponential'
 kind = 'definition'
 desc = 'Exponential D-module on the additive group, normalized in heart[-1], with add-star multiplicativity. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Infinity.tStructure']
+deps = ['GLCinLean.DModules.rightCrystals_equiv_dModules', 'GLCinLean.DModules.rightCrystals', 'GLCinLean.Infinity.tStructure']
 source = '[GLC1] §1.3.7'

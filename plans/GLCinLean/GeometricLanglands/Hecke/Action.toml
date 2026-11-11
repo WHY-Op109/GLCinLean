@@ -4,12 +4,12 @@ desc = 'The Hecke action of Rep(Ǧ)_Ran on Dmod_½(Bun_G).'
 id = 'GLCinLean.Hecke.action'
 kind = 'definition'
 desc = 'Action of Rep(H)_Ran on Dmod_1/2(Bun_G) by Hecke correspondences and Satake kernels. Provider: here.'
-deps = ['GLCinLean.Hecke.satake', 'GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.holonomicShriek']
+deps = ['GLCinLean.Hecke.satake', 'GLCinLean.Automorphic.halfTwistedDModules']
 source = '[GLC1] §1.2.1'
 
 [[node]]
 id = 'GLCinLean.Hecke.sphericalAction'
 kind = 'definition'
-desc = 'The right action of the half-twisted Sph^non-ren_{G,Ran} on Dmod_1/2(Bun_G) through the Ran Hecke correspondence, as an action of a factorization monoidal category integrated over Ran, using the gerbe comparison Satake.criticalTwist_matchesBunDeterminant. For a Levi quotient M the same construction gives the Sph^non-ren_M action on Dmod_1/2(Bun_M). Provider: here.'
-deps = ['GLCinLean.Hecke.correspondence', 'GLCinLean.Satake.factorizationSphericalCategory', 'GLCinLean.Satake.criticalTwist_matchesBunDeterminant', 'GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.holonomicShriek', 'GLCinLean.Infinity.moduleCategory']
+desc = 'The right action of the half-twisted Sph^non-ren_{G,Ran} on Dmod_1/2(Bun_G) through the Ran Hecke correspondence, as an action of a factorization monoidal category integrated over Ran, using the gerbe comparison Satake.criticalTwist_matchesBunDeterminant. The kernels are pulled back by !-pullback and pushed forward along the projection to Bun_G by the pseudo-proper pushforward (DModules.pseudoProperShriek, Hecke.correspondence_pseudoProper), so the action is defined on all objects, not only on holonomic ones; for a twisted kernel use the twisted form of this pushforward through the trivialization of the pulled-back gerbe. For a Levi quotient M the same construction gives the Sph^non-ren_M action on Dmod_1/2(Bun_M). Provider: here.'
+deps = ['GLCinLean.Hecke.correspondence', 'GLCinLean.Satake.factorizationSphericalCategory', 'GLCinLean.Satake.criticalTwist_matchesBunDeterminant', 'GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.pseudoProperShriek', 'GLCinLean.Hecke.correspondence_pseudoProper', 'GLCinLean.Infinity.moduleCategory']
 source = '[GLC1] §1.2.1; [GLC2] §1.5.1 and §H.6.8; [GLC3] §8.2.1'
