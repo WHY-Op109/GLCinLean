@@ -4,7 +4,7 @@ desc = 'The pullback and pushforward functors of D-modules.'
 id = 'GLCinLean.DModules.extraordinaryPullback'
 kind = 'definition'
 desc = '!-pullback of right crystals and of twisted right crystals: for a map f : Y → Z and an étale μ_n-gerbe 𝒢 on Z, the functor f^! : Dmod_𝒢(Z) → Dmod_{f^*𝒢}(Y), functorial in f and natural in the gerbe. It needs no trivialization of 𝒢; when a trivialization is given, for example of a pulled-back twist, it is compatible with the untwisting equivalences of DModules.twistedCrystals. Provider: here.'
-deps = ['GLCinLean.DModules.twistedCrystals']
+deps = ['GLCinLean.DModules.twistedCrystals', 'GLCinLean.DModules.etaleGerbe']
 source = '[GLC1] §1.3.5; [Crystals] §2.3'
 
 [[node]]
