@@ -18,12 +18,13 @@ public import TauCeti.AlgebraicGeometry.Modules.Differentials.Basic
 
 The statement combines existence in [GLC1] Cor. 1.6.5 with Conj. 1.6.7: a continuous functor
 with the two characterizing properties exists, and every such functor is an equivalence.
-The second property is stated with the Hecke action of `Rep(Ǧ)_Ran` ([GLC1] §1.2.1), in a
-form that agrees with the paper's by [GLC1] Thm. 1.2.4; see `IsLanglandsFunctor`.
+The second property is stated with the Hecke action of `Rep(Ǧ)_Ran` ([GLC1] §1.2.1), in an
+equivalent form for the underlying functors of ∞-categories, by [GLC1] Thm. 1.2.4; see
+`IsLanglandsFunctor`.
 The mathematical objects of the statement include explicit placeholders.
 
-[GLC1] §0.1.1 asks only for a ground field of characteristic zero; its conventions follow
-[AGKRRV] ([GLC1] §0.5.7), whose ground field is algebraically closed ([AGKRRV] §0.9.1).
+[GLC1] §0.1.1 asks only for a ground field of characteristic zero; its conventions largely
+follow [AGKRRV] ([GLC1] §0.5.7), whose ground field is algebraically closed ([AGKRRV] §0.9.1).
 Algebraic closedness here is the scope of this project, as in [GLC2] §0.4.1, and not a
 hypothesis that [GLC1] §0.1.1 states. The curve is connected, as in [AGKRRV] §14.1.1.
 Reductive groups use Tau Ceti's coordinate Hopf algebra presentation. A pinning and a theta
@@ -115,8 +116,8 @@ from `Dmod_½(Bun_G)` to `IndCoh_Nilp(LS_Ǧ)`.
    natural in `V` in `Rep(Ǧ)_Ran` and `M` in `Dmod_½(Bun_G)` together, where `Poinc` is the
    vacuum Poincaré object.
 
-The second property is the paper's `Ψ ∘ F ≃ 𝕃_{G,coarse}`, as an equivalence of functors of
-∞-categories, in an equal form. The two forms agree by [GLC1] Thm. 1.2.4: the Hecke action
+The second property is the paper's `Ψ ∘ F ≃ 𝕃_{G,coarse}` in an equivalent form for the
+underlying functors of ∞-categories. The two forms agree by [GLC1] Thm. 1.2.4: the Hecke action
 factors through `Loc`, so that `V ⋆ Poinc ≃ Loc V ⋆ Poinc` for the action of `QCoh(LS_Ǧ)`
 ([GLC1] §1.2.5); `𝕃_{G,coarse}` is right adjoint to `E ↦ E ⋆ Poinc` ([GLC1] §§1.4.1–1.4.5);
 and the right adjoint of `Loc` is fully faithful ([GLC1] §1.2.2). This form uses neither the
@@ -146,8 +147,9 @@ theorem isLanglandsFunctor_iff (S : Setting k)
 
 /-- The de Rham geometric Langlands conjecture, in its characterized-functor form:
 a continuous functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such
-functor is an equivalence ([GLC1] Conj. 1.6.7). The second property is in its equal form
-with the Hecke action; see `IsLanglandsFunctor`. -/
+functor is an equivalence ([GLC1] Conj. 1.6.7). The second property is stated with the Hecke
+action, in an equivalent form for the underlying functors of ∞-categories; see
+`IsLanglandsFunctor`. -/
 theorem exists_isLanglandsFunctor_and_forall_isLanglandsFunctor_imp_isEquivalence
     (S : Setting k) :
     (∃ F : DGFun (DmodHalf S) (IndCohNilp S).toDGCat, IsLanglandsFunctor S F) ∧
