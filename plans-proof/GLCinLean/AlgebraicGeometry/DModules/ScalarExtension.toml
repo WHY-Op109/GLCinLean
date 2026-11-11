@@ -1,0 +1,8 @@
+desc = 'Field-extension comparisons needed to use the complex constructible calculation in the arbitrary-characteristic-zero de Rham theory. These are explicit adaptation proofs, not a claim that the cited complex theorem already states them.'
+
+[[node]]
+id = 'GLCinLean.DModules.boundedEquivariantExt_baseChange'
+kind = 'theorem'
+desc = 'For algebraic equivariant regular holonomic complexes supported on a finite union of Schubert varieties, construct scalar extension and prove flat base change of each bounded Ext degree, convolution maps, and equivariance. Descend the support, maps and complexes to a finitely generated characteristic-zero field; use a finite jet group quotient and de Rham-acyclic pro-unipotent transition kernels. Reduce each finite-stage Hom to DModules.holonomicHom_fieldBaseChange, computing each Ext degree using bounded truncations of the simplicial quotient and finite-stage de Rham resolutions. Prove the boundedness/stabilization needed before exchanging tensor with totalization; do not assume tensor preserves arbitrary limits. Provider: here. This comparison is a proof for the de Rham adaptation, not a theorem stated in [LoopGrassmannianExt].'
+deps = ['GLCinLean.Hecke.schubertStratification', 'GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.DModules.perverseHeart', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.holonomicHom_fieldBaseChange', 'GLCinLean.DModules.regularHolonomic']
+source = '[FactorizableDerivedSatake] §9.2 (required scalar-extension step in its use of [LoopGrassmannianExt] Theorem 7.6.1); [BDHitchin] §§5.3, 7.3'
