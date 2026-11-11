@@ -173,6 +173,43 @@ Against the earlier snapshots (Tau Ceti main `1e668f5e`, TauCetiRoadmap main `00
 - **Roadmap pull requests checked, no effect** (over finite fields, p-adic or local, ℓ-adic, 1-categorical, K-theory, or naming no plan object): #999, #1490, #1845, #1547, #1836, #1241, #1832, #1252, #1844, #1040, #1743, #1926, #1229, #1741, #853, #1522, #1224, #2114, #1656, #1220.
 - **Open Tau Ceti pull requests toward plan targets.** Toward `Infinity.mappingSpaces`, straightening and `Infinity.stableCategory`: #28684, #28845, #35208, #35214. Toward SchemeAndStackFoundations: #35782 (torsor classes, for `Etale.unitsSheaf`), #33208, #35708. Toward the Chevalley construction and `Groups.langlandsDual`: #27696, #33575, #33957. Segal–Sugawara modes, central at the critical level (#32777, AffineLieAlgebras A6.2), for `SpectralProof.vacuumCenter` in the plan of the proof. Small precursors: #35469 (for `Hecke.iwahoriWeylGroup`), #31601 and #35156 (Kac–Moody algebras), #34264 (`𝒪(k)` on projective space, for the ℙ¹ examples). Four more touch modules of used declarations (#32911, #34462, #35336, #26591) but change no used declaration.
 
+## Roadmap candidates (deferred)
+
+The owner deferred on 2026-11-11 the decision to write or submit Tau Ceti roadmaps for the parts of the plan that no roadmap owns. The candidates are recorded here so that a later decision can rest on the state of this project, of Tau Ceti and of the roadmaps at that time. Each audit (`prompts/audit.md`) checks the triggers below and updates the column "State"; the decision is the owner's.
+
+A candidate is put to the owner only when all four triggers hold:
+
+1. Tau Ceti main has merged code, not only roadmap text, for the roadmaps in its column "Rests on".
+2. No accepted roadmap or open roadmap proposal covers its scope.
+3. Its nodes are what blocks the next work here: no module under `GLCinLean` is ready apart from modules that it would own.
+4. A reviewer who knows the subject is known.
+
+How Tau Ceti roadmaps are shaped, as read on 2026-11-11 from the TauCetiRoadmap README and `CONTRIBUTING.md`:
+
+- A roadmap covers a whole subject with its full basic theory, not only what one project needs. So each candidate is larger than the plan nodes it would take.
+- It has one arXiv subject class (`metadata.toml`), a `README.md` that is the specification, and a `Suggested.lean` file that builds against the pinned Mathlib and Tau Ceti.
+- Its lowest step must rest on material that is already formalized.
+- A large subject is split into parts ("Part I", "Part II").
+- Merged roadmaps near this plan have 300 to 9,000 lines of README: small (FlagVarieties, NilpotentOrbits, JacobianChallenge), medium (AffineLieAlgebras, about 1,200), large (EnhancedDerivedSheaves, DerivedModuleAlgebra, BordismFormalGroups, about 3,000), very large (ReductiveGroups, SchemeAndStackFoundations).
+- A proposal may be written with AI help: the pull request names the models, and the person who submits it has read it. It merges when one member of the roadmap-reviewers team approves it and the build passes. A proposal that cites an unmerged proposal waits with the label `awaiting-dependencies`.
+- An agent never opens a roadmap pull request or issue (Tau Ceti `AGENTS.md`); the owner submits.
+
+The column "Nodes" counts nodes written here, in `plans/` and `plans-proof/`, by subject folder. The split between candidates 1 and 4 is approximate.
+
+| # | Candidate (arXiv class) | Size | Nodes: statement / proof | Rests on | Neighbors to cite | State on 2026-11-11 |
+|---|---|---|---|---|---|---|
+| 1 | Algebraic D-modules on smooth varieties: rings of differential operators, coherent and holonomic modules, direct and inverse images, duality, Kashiwara's theorem, regular holonomic modules and Riemann–Hilbert over ℂ (math.AG) | medium to large | about 20 / about 5, from `DModules/` and `Constructible/` | Mathlib (Kähler differentials, derivations, schemes), SchemeAndStackFoundations | #848, TopologicalSheafCohomology, #1040 (an ℓ-adic decomposition theorem) | no roadmap or proposal on D-modules found by title; its foundations exist in Mathlib |
+| 2 | Derived prestacks and formal geometry: prestacks, the de Rham prestack, formal completions, ind-schemes, pseudo-proper maps, mapping stacks (math.AG) | large | 15 / 10, from `Derived/`, `Prestacks/`, `Stacks/` | EnhancedDerivedSheaves (E5:animation), BordismFormalGroups F6.5, DerivedModuleAlgebra | #868 | its foundations are open roadmap nodes, with no code at the pin |
+| 3 | Quasi-coherent and ind-coherent sheaves on prestacks, with Ψ and singular support (math.AG) | large | 24 / 21, from `Sheaves/` | 2 | #1630 (EnhancedDerivedSheaves leaves out QCoh on prestacks), #1687 | #1687 open with no review since 2026-10-28 |
+| 4 | Crystals: D-modules on prestacks and stacks (math.AG; possibly Part II of 1) | medium | about 9 / about 9, from `DModules/` | 1, 2, 3 | | waits for 1 to 3 |
+| 5 | The Ran space and factorization: contractibility, factorization categories, chiral homology (math.AG) | medium | 2 / 12, from `Ran/`, `Factorization/`, `Algebra/Homology/` | 3, 4 | | waits for 3 and 4 |
+| 6 | Bundles and local systems on a curve: `Bun_G`, its determinant line and square root, `LS_G`, the global nilpotent cone (math.AG) | medium | 16 / 11, from `Stacks/`, `LocalSystems/`, `Automorphic/`, `Curves/` | 2, 3, ReductiveGroups, JacobianChallenge | #1225; #1241 and #1547 treat other bases | waits for 2 and 3 |
+| 7 | Geometric Satake over a curve, de Rham. Part I: loop groups and Beilinson–Drinfeld Grassmannians over `X^I`. Part II: the Satake equivalence, fusion and the Hecke action (math.RT) | large, in two parts | 52 / 15, from `AffineGrassmannian/`, `LoopGroups/`, `Group/`, `GroupActions/`, `Satake/`, `Hecke/` | 1, 4, 5, 6 | #1734 (the Grassmannian over `𝔸^J`), #1235 and #1836 (local and integral), #1040 | #1734 open with no review since 2026-10-29 |
+| 8 | Whittaker models, semi-infinite geometry and Eisenstein series (math.RT) | medium to large | 5 / 22, from `Whittaker/`, `SemiInfinite/` | 4, 6, 7 | | waits for 7 |
+| 9 | Proof of the de Rham geometric Langlands conjecture: Kac–Moody localization and opers at the critical level, the spectral decomposition, the equivalence (math.AG) | one to three roadmaps | 6 / 82, from `Spectral/`, `Functor/`, `Examples/` | all of the above | AffineLieAlgebras, #1056 | waits for all of the above |
+
+The statement alone needs candidates 1 to 7, of which 5 and 8 only in small parts (`Rep(Ǧ)_Ran` and the vacuum Poincaré object). The statement, `Spectral.localization` and the examples stay here in any case (about 10 nodes). The order of submission follows the column "Rests on": a candidate is submitted after the candidates it rests on have merged. Merging 2, 3 and 4 into one roadmap would match Tau Ceti's preference for broad roadmaps, but at the size of SchemeAndStackFoundations.
+
 ## Limits of existing providers
 
 - The Tannakian reconstruction API starts from a given Hopf algebra. Constructing the Hopf algebra from the spherical category is a separate Satake obligation.

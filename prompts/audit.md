@@ -11,6 +11,7 @@ The owner's goal: a faithful Lean statement of [GLC1] Conj. 1.6.7 (de Rham, char
   - does the plan still reach a fully defined statement? Which nodes are now wrong, missing, held, or more than the statement needs?
   - is there now a simpler faithful formulation or route, and what would it save?
   - which rule, prompt or tool got in the way since the last audit, and what simpler one would do?
+  - for each roadmap candidate in `docs/blueprint-providers.md`, "Roadmap candidates (deferred)", do all four triggers now hold? Update its column "State", and put each candidate whose triggers all hold to the owner;
 - the report ends with a table of decisions for the owner;
 - the session writes only `docs/blueprint-providers.md`, its report and `STATUS.md`;
 - the work is committed and pushed, and `STATUS.md` names the audit's commit.
