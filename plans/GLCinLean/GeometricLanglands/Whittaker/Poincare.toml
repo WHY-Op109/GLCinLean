@@ -1,4 +1,4 @@
-desc = 'The vacuum Poincaré object and its compactness.'
+desc = 'The vacuum Poincaré object.'
 
 [[node]]
 id = 'GLCinLean.Whittaker.vacuumPoincare'

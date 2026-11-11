@@ -17,6 +17,6 @@ source = '[GLC2] §15.5.1'
 [[node]]
 id = 'GLCinLean.Spectral.localization_monoidal'
 kind = 'definition'
-desc = 'The symmetric monoidal structure on Spectral.localization, for the convolution product of Hecke.ranConvolution on Rep(H)_Ran and the tensor product of QCoh(LS_H). Provider: here.'
+desc = 'The non-unital symmetric monoidal structure on Spectral.localization, for the convolution product of Hecke.ranConvolution on Rep(H)_Ran and the tensor product of QCoh(LS_H). Provider: here.'
 deps = ['GLCinLean.Spectral.localization', 'GLCinLean.Hecke.ranConvolution', 'GLCinLean.Infinity.monoidalCategory']
 source = '[GaitsgoryOutline] §4.3.1'

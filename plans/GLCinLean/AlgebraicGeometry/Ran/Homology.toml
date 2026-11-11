@@ -1,4 +1,4 @@
-desc = 'Algebraic Ran contractibility and its universal superset form; the proof precedes factorization globalization.'
+desc = 'Pseudo-properness of the Ran space.'
 
 [[node]]
 id = 'GLCinLean.Hecke.ranPseudoProper'
