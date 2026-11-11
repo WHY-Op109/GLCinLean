@@ -4,7 +4,7 @@ desc = 'The half-twisted automorphic category Dmod_½(Bun_G).'
 id = 'GLCinLean.Automorphic.halfTwistedDModules'
 kind = 'definition'
 desc = 'Dmod on Bun_G twisted by the square-root gerbe of its normalized determinant; correct half-twist, with its field. Provider: here.'
-deps = ['GLCinLean.Stacks.determinantBundle', 'GLCinLean.DModules.twistedCrystals', 'GLCinLean.DModules.rootGerbe']
+deps = ['GLCinLean.Stacks.determinantBundle', 'GLCinLean.DModules.twistedCrystals', 'GLCinLean.Stacks.rootGerbe']
 source = '[GLC1] §1.1.4'
 
 [[node]]

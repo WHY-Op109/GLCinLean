@@ -17,6 +17,6 @@ source = '[GLC1] §§1.3.1, 1.3.4'
 [[node]]
 id = 'GLCinLean.Whittaker.twistTrivialization'
 kind = 'definition'
-desc = 'Canonical square root of the determinant line restricted to the reduction stack, defining twisted p^!. Provider: here.'
-deps = ['GLCinLean.Whittaker.reductionStack', 'GLCinLean.Stacks.determinantSquareRoot']
+desc = 'The canonical square root of the determinant line bundle restricted to the reduction stack, as a trivialization of the pullback along p of the square-root gerbe of det_{Bun_G} (Stacks.rootGerbe: R_2(p^*det) ≃ p^*R_2(det), and a square root is a trivialization). With it define p^! : Dmod_½(Bun_G) → Dmod of the reduction stack as the twisted !-pullback (DModules.extraordinaryPullback) followed by the untwisting equivalence. Provider: here.'
+deps = ['GLCinLean.Whittaker.reductionStack', 'GLCinLean.Stacks.determinantSquareRoot', 'GLCinLean.Stacks.rootGerbe', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Automorphic.halfTwistedDModules']
 source = '[GLC1] Corollary 1.3.4 and §1.3.5'
