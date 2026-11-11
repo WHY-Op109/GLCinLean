@@ -6,3 +6,10 @@ kind = 'definition'
 desc = 'Right crystals on a locally almost finite type prestack via IndCoh on its de Rham prestack; descent and smooth-scheme D-module comparison. Provider: here.'
 deps = ['GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType']
 source = '[Crystals] §§2.3.1–2.3.2, 5.5; [IndCoh] §10.1.2'
+
+[[node]]
+id = 'GLCinLean.DModules.leftCrystalsEquivRightCrystals'
+kind = 'definition'
+desc = 'For a locally almost finite type prestack Y, the equivalence Υ_{Y_dR} : QCoh(Y_dR) ≃ IndCoh(Y_dR) from left crystals to right crystals (DModules.rightCrystals), F ↦ F ⊗ ω_{Y_dR} for the action of QCoh on IndCoh, with the proof that it is an equivalence and the compatibility of *-pullback of left crystals with !-pullback of right crystals. Prove the equivalence on affine almost finite type schemes, through a closed embedding into a smooth scheme and its formal completion, and extend by right Kan extension. Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Derived.deRhamPrestack']
+source = '[Crystals] §2.4, Proposition 2.4.4'

@@ -13,3 +13,10 @@ kind = 'theorem'
 desc = 'For pseudo-proper Y, the trace H(Y)→k is an isomorphism if and only if, for every scheme S, the pullback Dmod(S)→Dmod(S×Y) along the projection is fully faithful. Prove the equivalence from the D-module Kunneth/projection formula and the adjunction unit, preserving its Dmod(S)-linear structure. It concerns full mapping spaces, not only degree-zero Hom. Provider: here.'
 deps = ['GLCinLean.DModules.compactSupportedHomology_kunneth', 'GLCinLean.DModules.pseudoProperShriek', 'GLCinLean.Infinity.internalHom']
 source = '[GaitsgoryAtiyahBott] Lemma 2.5.7 and proof; §§2.5.1–2.5.5'
+
+[[node]]
+id = 'GLCinLean.DModules.compactSupportedHomology'
+kind = 'definition'
+desc = 'For a pseudo-proper prestack Y over k define H(Y)=p_!(omega_Y), with omega_Y=p^!(k). Construct its trace to k and functorial maps under morphisms between pseudo-proper prestacks using proper presentations. Prove H(Y) is the colimit of homologies of the presenting schemes. All schemes and D-modules are algebraic over an algebraically closed characteristic-zero field. Provider: here.'
+deps = ['GLCinLean.DModules.pseudoProperShriek', 'GLCinLean.Infinity.derivedVect']
+source = '[GaitsgoryContractibility] §§1.6.1–1.6.3; [GaitsgoryAtiyahBott] Proposition 1.5.2'
