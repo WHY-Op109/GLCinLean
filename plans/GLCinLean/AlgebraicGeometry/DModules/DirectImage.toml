@@ -4,5 +4,5 @@ desc = 'Enhanced de Rham direct image on finite-type schemes, as needed for fini
 id = 'GLCinLean.DModules.deRhamPushforward'
 kind = 'definition'
 desc = 'Construct de Rham direct image for quasi-compact maps of finite-type schemes from the transfer-bimodule construction; prove composition, proper and open adjunctions and coherent extraordinary base change. This is the scheme functor, with no unsupported continuity assertion for arbitrary stacks. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.continuousLinearFunctor', 'GLCinLean.Infinity.rightAdjoint']
+deps = ['GLCinLean.DModules.rightCrystals_equiv_dModules', 'GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.continuousLinearFunctor', 'GLCinLean.Infinity.rightAdjoint']
 source = '[DG2] §§5.2.1–5.2.6; [BDChiral] §2.1'
