@@ -66,7 +66,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 ## Waiting for the owner
 
-Nothing.
+- **The review of the plan against the principles** (`notes/reviews/d6d74e0-principles.md`): 24 problems with `AGENTS.md`, Mathlib and Tau Ceti, a fix plan, and four decisions for the owner (problems 15–16, 19, 20 and 22). An independent opinion from Codex is pending. Steps 1, 2, 5 and 6 of its fix plan need no decision.
 
 ## Open items
 
