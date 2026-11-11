@@ -10,6 +10,6 @@ source = '[Crystals] §§6.1–6.3; [GLC1] §1.1.3'
 [[node]]
 id = 'GLCinLean.DModules.twistedCrystals'
 kind = 'definition'
-desc = 'Twisted right crystals for a specified gerbe and character; comparison with a chosen trivialization. Provider: here.'
-deps = ['GLCinLean.DModules.rootGerbe', 'GLCinLean.DModules.rightCrystals']
-source = '[Crystals] §7.2; [GLC1] §1.1.3'
+desc = 'Twisted right crystals Dmod_𝒢(Y) for an étale μ_n-gerbe 𝒢 on a locally almost finite type prestack Y and a specified character. A trivialization of 𝒢 identifies them with untwisted right crystals (the untwisting equivalence); two trivializations differ by a μ_n-torsor, and the two untwistings differ by tensoring with the rank-one local system of that torsor and the character. Prove étale descent, so that Dmod_𝒢 is computed from étale-local trivializations over test schemes; give functoriality in the gerbe and the tensor product Dmod_𝒢₁(Y) ⊗ Dmod_𝒢₂(Y) → Dmod_{𝒢₁⊗𝒢₂}(Y). Provider: here.'
+deps = ['GLCinLean.DModules.rootGerbe', 'GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.rightCrystals_hDescent']
+source = '[Crystals] §§7.2–7.3 and Remark 7.3.1; [GLC1] §1.1.3'

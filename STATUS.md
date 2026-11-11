@@ -6,7 +6,7 @@ Updated 2026-11-11, after Session 4c (the plan cut).
 
 - **Statement.** `GLCinLean/Statement/Conjecture.lean` and `GLCinLean/Statement/Enhanced.lean`. The main theorem is `GLCinLean.Statement.exists_isLanglandsFunctor_and_forall_isLanglandsFunctor_imp_isEquivalence`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence. The second property is stated with the Hecke action of `Rep(Ǧ)_Ran` and the spectral localization `Loc`, in an equivalent form for the underlying functors of ∞-categories. Its proof is the only `sorry`.
 - **Placeholders.** 28 declarations are `@[placeholder]` (`grep -rn '@\[placeholder\]' GLCinLean/Statement`; the other matches of `GLCinLean` are the attribute's own file). None is replaced yet. All are `opaque`, so the main theorem says nothing yet: with one-point categories and always-true predicates it would be trivially true.
-- **Plan.** `plans/` is the statement's plan: 234 planned declarations in 119 module plans. 192 are under `plans/GLCinLean/` and are written here; 31 of them are the statement. 42 are under `plans/Roadmap/<area>/` and belong to six Tau Ceti roadmaps. Existing Mathlib and Tau Ceti declarations are not nodes; `docs/blueprint-providers.md` lists them.
+- **Plan.** `plans/` is the statement's plan: 236 planned declarations in 119 module plans. 194 are under `plans/GLCinLean/` and are written here; 31 of them are the statement. 42 are under `plans/Roadmap/<area>/` and belong to six Tau Ceti roadmaps. Existing Mathlib and Tau Ceti declarations are not nodes; `docs/blueprint-providers.md` lists them.
 - **Plan of the proof.** `plans-proof/` holds the 197 nodes that only the proof of the main theorem needs (186 to be written here, 11 owned by five roadmaps), in 72 module plans. The tracker does not read it; `plans-proof/README.md` says how it is used.
 - **Ready.** `lake exe tracker ready` lists six roadmap modules (`Roadmap.BordismFormalGroups.Mapping`, `Roadmap.SchemeAndStackFoundations.AlgebraicStacks`, `Roadmap.SchemeAndStackFoundations.Torsors`, `Roadmap.ReductiveGroups.PinnedRootData`, `Roadmap.JacobianChallenge.SerreDuality`, `Roadmap.JacobianChallenge.Jacobian`) and one module here, `GLCinLean.AlgebraicGeometry.Curves.Theta` (the definition of a theta characteristic; their existence, `Curves.ThetaExistence`, waits for JacobianChallenge). It also lists `GLCinLean.Statement.Conjecture`, because the main theorem is stated with `sorry`; that is not work for a build session.
 - **Reviews.** The last reviewed commit on `main` is `c4f67f1` for the Lean code, and `f79facd` for the planned definitions (`notes/reviews/f79facd.md`). The commit after it applies that review's fixes and is not reviewed again; its one open point is under "Waiting for the owner". The earlier review reports are in git history at `2be2b00`.
@@ -23,16 +23,16 @@ Two planned theorems in `plans-proof/GLCinLean/GeometricLanglands/Functor/Coarse
 
 ## Upstream targets that block the plan
 
-Of the 192 nodes written here, 190 have a roadmap node below them. So the first work is Worker rounds in Tau Ceti. The targets, with the number of nodes here that depend on them:
+Of the 194 nodes written here, 192 have a roadmap node below them. So the first work is Worker rounds in Tau Ceti. The targets, with the number of nodes here that depend on them:
 
 1. **BordismFormalGroups F6.5**, to which EnhancedDerivedSheaves delegates its generic quasicategory constructions:
-   - "Categorical model and functor spaces": `Infinity.mappingSpaces` (182 nodes; ready now);
-   - "Coherent model diagrams and stable enhancements": `Infinity.limits` (182), `Infinity.stableCategory` (182), `Infinity.tStructure` (106);
-   - the monoidal and fibration sub-lane: `Infinity.monoidalCategory` (178), `Infinity.moduleCategory` (178), `Infinity.continuousLinearFunctor` (111), `Infinity.linearEquivalence` (4);
-   - "Marked fibrations and Kan extensions": `Infinity.rightKanExtension` (95);
+   - "Categorical model and functor spaces": `Infinity.mappingSpaces` (184 nodes; ready now);
+   - "Coherent model diagrams and stable enhancements": `Infinity.limits` (184), `Infinity.stableCategory` (184), `Infinity.tStructure` (108);
+   - the monoidal and fibration sub-lane: `Infinity.monoidalCategory` (180), `Infinity.moduleCategory` (180), `Infinity.continuousLinearFunctor` (113), `Infinity.linearEquivalence` (4);
+   - "Marked fibrations and Kan extensions": `Infinity.rightKanExtension` (97);
    - the quotient and Ind sub-lane: `Infinity.compactObject` (51).
-2. **EnhancedDerivedSheaves**: E0.8 and E5:presentability.1–.4 (`Infinity.presentableCategory` 178, `Infinity.indCompletion` 98, `Infinity.compactGeneration` 36, dualizable categories 21, rigid categories 19); E1.3–E1.4 (`Infinity.derivedVect` 178) with its bounded-below parts (`Infinity.eventuallyCoconnective` 9); E5:abstract.2 (`Infinity.linearCategory` 178, `Infinity.internalHom` 34); E3.1–E3.4 (`Infinity.rightAdjoint` 103, adjointable diagrams 30); E5:animation.1 and .4 (`Derived.commutativeAlgebra` and `Derived.affineScheme` 159, `Derived.affineModules` 118); E1.8 (`Sheaves.schemeQCoh` 115); E5:cotangent-export (`Derived.affineCotangentComplex` 25).
-3. **SchemeAndStackFoundations**: §§1.18–1.20 (`Stacks.algebraicStack` 133; ready now), §§1.15–1.16 (`Stacks.groupTorsor` 78; ready now).
+2. **EnhancedDerivedSheaves**: E0.8 and E5:presentability.1–.4 (`Infinity.presentableCategory` 180, `Infinity.indCompletion` 100, `Infinity.compactGeneration` 36, dualizable categories 21, rigid categories 19); E1.3–E1.4 (`Infinity.derivedVect` 180) with its bounded-below parts (`Infinity.eventuallyCoconnective` 9); E5:abstract.2 (`Infinity.linearCategory` 180, `Infinity.internalHom` 34); E3.1–E3.4 (`Infinity.rightAdjoint` 105, adjointable diagrams 33); E5:animation.1 and .4 (`Derived.commutativeAlgebra` and `Derived.affineScheme` 161, `Derived.affineModules` 120); E1.8 (`Sheaves.schemeQCoh` 117); E5:cotangent-export (`Derived.affineCotangentComplex` 25).
+3. **SchemeAndStackFoundations**: §§1.18–1.20 (`Stacks.algebraicStack` 135; ready now), §§1.15–1.16 (`Stacks.groupTorsor` 78; ready now).
 4. **ReductiveGroups**: 8.2 and 9D, with Layers 5 and 7 (`Groups.rootDatum` 70, `Groups.pinnedData` 67, `Groups.basedRootDatum` 59, `Groups.pinning_exists` 24, `Groups.twoRho` 11; ready now). **ReductiveGroupsPartII**: RG2.5.1 (`Groups.dualityData` 46, `Groups.langlandsDual` 37, `Groups.coweightParity` 25, `Groups.dualityData_changePinning` 15).
 5. **JacobianChallenge** Layers B–C (`Curves.serreTrace` 8), Layer A (`Curves.picard_degree` 2), Layer B (`Curves.degree_canonical` 2), Layer D (`Curves.picardZero_isAbelianVariety` 2) and Layer E (`Curves.abelianVariety_multiplication_surjective` 2), the last four for `Curves.thetaCharacteristic_exists`; all ready now.
 
@@ -65,7 +65,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 ## Waiting for the owner
 
-- **Twisted pushforward in the Hecke action** (the review of `f79facd`, *unsure*). `Hecke.sphericalAction` pushes forward D-modules twisted by the pulled-back square-root gerbe along the pseudo-proper Hecke projection, but `DModules.pseudoProperShriek` is planned for untwisted D-modules only. Two ways: (a) untwist with the theta characteristic (`Automorphic.halfTwisted_equiv_untwisted`), push forward, and twist back; or (b) plan a twisted pseudo-proper pushforward, built test scheme by test scheme from étale-local trivializations of the gerbe (`DModules.twistedCrystals`). (a) conflicts with `Satake.criticalTwist_matchesBunDeterminant`, which says no theta untwisting is applied on the Hecke side.
+Nothing.
 
 ## Open items
 
@@ -120,6 +120,7 @@ A node on this list is not started, here or through the Worker. The list covers 
   - **Theta (A).** `Curves.thetaCharacteristic_exists` is in its own module plan, `Curves/ThetaExistence.toml`, and depends on three new JacobianChallenge nodes: `Curves.degree_canonical` (Layer B), `Curves.picardZero_isAbelianVariety` (Layer D) and `Curves.abelianVariety_multiplication_surjective` (Layer E).
   - **Hecke action (B).** `Hecke.sphericalAction` pushes forward along the Hecke correspondence with `DModules.pseudoProperShriek`, which comes back from `plans-proof/`, and the new theorem `Hecke.correspondence_pseudoProper`, so the action is defined on all objects.
   - **Tracker request (decision 6): dropped.** Each placeholder's plan node names in its `deps` the real node that will replace it (for example `Spectral.localization` for `Loc`); those nodes are open and the tracker tracks them correctly. What remains, the superseded-field warnings and the statement module shown as done, is explained in `plans/README.md`. `prompts/build.md` says how to tell that a placeholder can be replaced.
+- 2026-11-11, the twisted pushforward of the Hecke action (the review of `f79facd`; assessments of Claude and Codex, Codex's note at `61fa72b`): the owner chose the twisted pseudo-proper pushforward. `DModules.twistedPseudoProperShriek` is the left adjoint of the twisted `!`-pullback for a pseudo-proper map and an étale `μ_n`-gerbe on the target, built by étale descent from `DModules.pseudoProperShriek`; `DModules.twistedPseudoProperShriek_iso_of_trivialization` gives the formula "untwist, push forward, twist back" for a given trivialization. `DModules.twistedCrystals` gains étale descent and the rule for changing a trivialization; `DModules.extraordinaryPullback` needs no trivialization; `Hecke.sphericalAction` names the total twist and uses the new pushforward; `Satake.criticalTwist_matchesBunDeterminant` now says that the spherical category and its factorization structure are not untwisted.
 
 ## Next
 
