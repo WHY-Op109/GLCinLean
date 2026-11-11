@@ -65,11 +65,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 ## Waiting for the owner
 
-- **The tracker request (decision 6).** The draft is below; the owner sends it.
-
-## Draft: request to the tracker's author
-
-> **A separate state for placeholder declarations.** In GLCinLean the statement uses `opaque` declarations, marked with an attribute `@[placeholder]`, for objects that are not defined yet. The tracker counts them as `proved`, because they have no `sorry`. Two effects follow: `ready` treats a module above a placeholder as unblocked, and `lint` calls a placeholder's suggested `deps` superseded, although these are the only link from the statement to the rest of the plan. Could the tracker read an attribute named by an option (for example `--placeholder-attr placeholder`) and give such declarations their own state `placeholder`? It would count as not proved, keep the suggested dependencies in force as for an `open` declaration, and be counted on its own line in `status`. This would be a state of its own, not the `stated` state, because a placeholder does not use `sorryAx`. It is not urgent for us: until then we list placeholders with `grep` and keep their `desc` and `deps` by hand.
+Nothing.
 
 ## Open items
 
@@ -85,7 +81,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 - 2026-11-10, the owner's decisions on the reports `notes/review-goal.md` (1 to 10), `notes/review-workflow.md` (W1 to W12) and the independent opinion `notes/review-independent-2026-11-10.md`. The text is in `prompts/next-steps.md`, "The owner's decisions". The reports are deleted; they are in git history at `bcf6836`. Session 4a applied these:
   - 4: this file names the upstream targets that block the plan.
   - 5: `plans/Mathlib` and `plans/TauCeti` are deleted; a node names the upstream declarations it uses and their modules; a `desc` says only "Provider: here" or "Provider: roadmap ⟨area⟩, ⟨target⟩"; the one snapshot is `docs/blueprint-providers.md`. This settles the ReductiveGroups locators that #1676 changed.
-  - 6: the tracker request is drafted above.
+  - 6: the tracker request was drafted; the owner dropped it on 2026-11-11 (below).
   - 7: `QCohLS` depends on `Sheaves.qcoh` and `LocalSystems.deRham`; the providers of `Sheaves.determinant` and `Hecke.schubertStratum_deRhamCohomology_even` are corrected.
   - 8: #1734, #1687 and #848 are owner candidates in `docs/blueprint-providers.md`; their nodes are held.
   - 9: AxiomMath Stacks and Weil are prior art for Worker ports, case by case; no port now.
@@ -123,7 +119,7 @@ A node on this list is not started, here or through the Worker. The list covers 
   - **Crystals.** The functor `Υ` is the general definition `DModules.leftToRightCrystals`. Its equivalence, `DModules.leftCrystalsEquivRightCrystals`, is narrowed to smooth schemes of finite type, with pullback compatibility along every map between them, and rests on five inputs: `DModules.crystals_descent_of_classicallyFormallySmooth`, `Derived.deRhamCechNerve_formalCompletion`, `Sheaves.upsilon_isEquivalence_of_smooth`, `Sheaves.qcoh_formalCompletion_localization` and `Sheaves.indcoh_formalCompletion_localization`. The comparison with D_X-modules moves out of `DModules.rightCrystals` into `DModules.rightCrystals_equiv_dModules`, which rests on the equivalence, and the four nodes that use D_X-modules depend on it.
   - **Theta (A).** `Curves.thetaCharacteristic_exists` is in its own module plan, `Curves/ThetaExistence.toml`, and depends on three new JacobianChallenge nodes: `Curves.degree_canonical` (Layer B), `Curves.picardZero_isAbelianVariety` (Layer D) and `Curves.abelianVariety_multiplication_surjective` (Layer E).
   - **Hecke action (B).** `Hecke.sphericalAction` pushes forward along the Hecke correspondence with `DModules.pseudoProperShriek`, which comes back from `plans-proof/`, and the new theorem `Hecke.correspondence_pseudoProper`, so the action is defined on all objects.
-  - The tracker request is still waiting for the owner.
+  - **Tracker request (decision 6): dropped.** Each placeholder's plan node names in its `deps` the real node that will replace it (for example `Spectral.localization` for `Loc`); those nodes are open and the tracker tracks them correctly. What remains, the superseded-field warnings and the statement module shown as done, is explained in `plans/README.md`. `prompts/build.md` says how to tell that a placeholder can be replaced.
 
 ## Next
 
