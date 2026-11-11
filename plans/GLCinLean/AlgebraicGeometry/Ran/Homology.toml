@@ -3,6 +3,6 @@ desc = 'Pseudo-properness of the Ran space.'
 [[node]]
 id = 'GLCinLean.Hecke.ranPseudoProper'
 kind = 'theorem'
-desc = 'For proper X, prove Ran(X) is pseudo-proper from its colimit over nonempty finite sets and surjections of finite powers X^I. Likewise prove the small projection from the inclusion correspondence is pseudo-proper after every affine base change using the finite-set-pair presentation. Use classical test schemes and prove that de Rham restriction identifies this presentation with the Ran prestack used for right crystals; derived nilpotents do not change D-modules. In particular the corresponding left adjoints exist on all D-modules. Provider: here.'
+desc = 'For proper X, prove Ran(X) is pseudo-proper from its colimit over nonempty finite sets and surjections of finite powers X^I. Likewise prove the small projection from the inclusion correspondence is pseudo-proper after every affine base change using the finite-set-pair presentation. Use classical test schemes and prove that de Rham restriction identifies the colimit of the X^I with Hecke.ranSpace, the colimit of the (X^I)_dR, for which Ran(X) ≅ Ran(X)_dR; derived nilpotents do not change D-modules. In particular the corresponding left adjoints exist on all D-modules. Provider: here.'
 deps = ['GLCinLean.Hecke.ranInclusions', 'GLCinLean.Derived.pseudoProper', 'GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Infinity.limits']
 source = '[GaitsgoryAtiyahBott] Proposition 4.1.3 and Corollary 4.1.6; [GLC2] §C.5.6'

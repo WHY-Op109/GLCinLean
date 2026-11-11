@@ -13,7 +13,7 @@ The layout and the node format are those of `plans/`: `plans-proof/GLCinLean/` f
 
 - The spectral action of `QCoh(LS_Ǧ)` and the spectral decomposition, with their proof: `Spectral.action`, `Spectral.actionOfVanishing`, the monoidal structure and the right adjoint of `Spectral.localization`, and the `SpectralProof.*` nodes (vanishing, Kac–Moody localization at the critical level, opers, derived Satake, Eisenstein series and constant terms).
 - The coarse functor `Langlands.coarse`, its left adjoint and its examples, and the Whittaker coefficient.
-- The geometry that only these need: semi-infinite categories, Zastava spaces, renormalized Satake, factorization and chiral homology, infinite-type IndCoh, 1-affineness and passability.
+- The geometry that only these need: semi-infinite categories, Zastava spaces, renormalized Satake, factorization and chiral homology, infinite-type IndCoh, 1-affineness, and the QCoh kernel formalism of passable stacks.
 
 ## Obligations of the proof
 

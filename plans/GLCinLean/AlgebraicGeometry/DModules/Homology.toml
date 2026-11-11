@@ -1,8 +1,0 @@
-desc = 'Algebraic compactly supported D-module homology on pseudo-proper prestacks, including its tensor comparison and universal pullback criterion.'
-
-[[node]]
-id = 'GLCinLean.DModules.compactSupportedHomology'
-kind = 'definition'
-desc = 'For a pseudo-proper prestack Y over k define H(Y)=p_!(omega_Y), with omega_Y=p^!(k). Construct its trace to k and functorial maps under morphisms between pseudo-proper prestacks using proper presentations. Prove H(Y) is the colimit of homologies of the presenting schemes. All schemes and D-modules are algebraic over an algebraically closed characteristic-zero field. Provider: here.'
-deps = ['GLCinLean.DModules.pseudoProperShriek', 'GLCinLean.Infinity.derivedVect']
-source = '[GaitsgoryContractibility] §§1.6.1–1.6.3; [GaitsgoryAtiyahBott] Proposition 1.5.2'
