@@ -3,7 +3,7 @@ desc = 'The Ran space of the curve.'
 [[node]]
 id = 'GLCinLean.Hecke.ranSpace'
 kind = 'definition'
-desc = 'Finite nonempty subsets of X as a prestack, diagonals and disjointness/factorization diagrams. Provider: here.'
+desc = 'The Ran space as a prestack: its S-points are the nonempty finite subsets of Maps(S, X_dR) = Maps((S^cl)_red, X), so that Ran(X) → Ran(X)_dR is an isomorphism; with diagonals and disjointness/factorization diagrams. Provider: here.'
 deps = ['GLCinLean.Derived.prestack']
 source = '[GaitsgoryOutline] §§4.1.1–4.1.4'
 

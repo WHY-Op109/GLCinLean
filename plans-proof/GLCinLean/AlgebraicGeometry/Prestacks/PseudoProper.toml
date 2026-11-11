@@ -1,8 +1,0 @@
-desc = 'Pseudo-proper prestacks and the derived D-module direct image computed from proper scheme presentations.'
-
-[[node]]
-id = 'GLCinLean.DModules.pseudoProperShriek'
-kind = 'definition'
-desc = 'For a pseudo-proper map construct the left adjoint f_! to f^! on all D-modules by the colimit of proper scheme pushforwards. Prove the adjunction, presentation independence, proper base-change isomorphism and projection formula by scheme testing. This is the pseudo-proper operation, with no unrestricted f_! claimed for arbitrary maps. Provider: here.'
-deps = ['GLCinLean.Derived.pseudoProper', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.rightAdjoint']
-source = '[GaitsgoryAtiyahBott] Proposition 1.5.2 and Corollary 1.5.4; [GaitsgoryContractibility] §§1.4–1.6'
