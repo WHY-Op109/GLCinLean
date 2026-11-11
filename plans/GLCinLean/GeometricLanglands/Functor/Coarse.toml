@@ -20,3 +20,17 @@ kind = 'theorem'
 desc = 'The cohomology of the coarse functor agrees naturally with the vacuum Whittaker coefficient. Provider: here.'
 deps = ['GLCinLean.Langlands.coarse', 'GLCinLean.Whittaker.vacuumCoefficient', 'GLCinLean.Sheaves.qcohGlobalSections']
 source = '[GLC1] §1.4.6'
+
+[[node]]
+id = 'GLCinLean.Langlands.isLanglandsFunctor_iff_comp_psi_iso_coarse'
+kind = 'theorem'
+desc = 'Comparison of the Hecke form of the second property with the form of [GLC1] Cor. 1.6.5: a continuous functor F satisfies Statement.IsLanglandsFunctor if and only if it sends compact objects to bounded-below objects and Ψ ∘ F is naturally equivalent to Langlands.coarse as a functor of ∞-categories. Proof: by Spectral.action the Hecke action factors through spectral localization, so V ⋆ Poinc ≃ Loc V ⋆ Poinc naturally in V; Langlands.coarse is right adjoint to Langlands.coarseLeftAdjoint; and the right adjoint of spectral localization is fully faithful, so the Yoneda lemma removes it. The mapping-space equivalence gives an equivalence of functors of ∞-categories; that it can be chosen k-linear is not claimed. A theorem of the proof, not used by the statement. Provider: here.'
+deps = ['GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Langlands.coarse', 'GLCinLean.Langlands.coarseLeftAdjoint', 'GLCinLean.Spectral.action', 'GLCinLean.Spectral.localization_rightAdjoint_fullyFaithful', 'GLCinLean.Infinity.rightAdjoint']
+source = '[GLC1] Theorem 1.2.4, §§1.2.2, 1.2.5, 1.4.1–1.4.5 and Corollary 1.6.5'
+
+[[node]]
+id = 'GLCinLean.Langlands.isEquivalence_iff_of_isLanglandsFunctor'
+kind = 'theorem'
+desc = 'Uniqueness for the whole statement: if two continuous functors F and F′ both satisfy Statement.IsLanglandsFunctor, then they are naturally equivalent as functors of ∞-categories, and F is an equivalence if and only if F′ is. By Langlands.isLanglandsFunctor_iff_comp_psi_iso_coarse, the functor 𝕃_G of [GLC1] Cor. 1.6.5 is one such functor; its existence rests on [GLC1] Thm. 1.6.2 and belongs to the proof of the main theorem, so the plan has no node for 𝕃_G. Proof: the two mapping-space equivalences give Maps(Loc V, Ψ (F M)) ≃ Maps(Loc V, Ψ (F′ M)) naturally in V and M; since the right adjoint of Loc is fully faithful (Spectral.localization_rightAdjoint_fullyFaithful), the Yoneda lemma gives Ψ ∘ F ≃ Ψ ∘ F′. On compact objects of Dmod_½(Bun_G), F and F′ take bounded-below values, where Ψ is an equivalence (Sheaves.psi_eventuallyCoconnective_equiv), so F and F′ agree on compact objects; Dmod_½(Bun_G) is compactly generated (Automorphic.compactlyGenerated), and continuous functors are determined by their restriction to compact objects (Infinity.compactGeneration), so F ≃ F′. Finally, a k-linear functor whose underlying functor of ∞-categories is an equivalence is an equivalence of DG categories (Infinity.linearEquivalence). A theorem of the proof, not used by the statement. Provider: here.'
+deps = ['GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Statement.DGFun.IsEquivalence', 'GLCinLean.Spectral.localization_rightAdjoint_fullyFaithful', 'GLCinLean.Sheaves.psi_eventuallyCoconnective_equiv', 'GLCinLean.Automorphic.compactlyGenerated', 'GLCinLean.Infinity.compactGeneration', 'GLCinLean.Infinity.linearEquivalence']
+source = '[GLC1] Corollary 1.6.5, Theorem 1.2.4, §§1.2.2, 1.6.3'
