@@ -54,4 +54,4 @@ Model: Opus 5.5, effort `medium`.
 - the work is committed and pushed.
 
 **Context**
-- `lake exe tracker graph` covers `plans/`, the statement's plan (234 nodes). The tracker does not read `plans-proof/` (197 nodes), whose `deps` point into `plans/`. Show it on the page as a separate layer, read from its TOML files and marked as not tracked, so that the owner can see where the cut runs.
+- `lake exe tracker graph` covers `plans/`, the statement's plan (236 nodes). The tracker does not read `plans-proof/` (197 nodes), whose `deps` point into `plans/`. Show it on the page as a separate layer, read from its TOML files and marked as not tracked, so that the owner can see where the cut runs.

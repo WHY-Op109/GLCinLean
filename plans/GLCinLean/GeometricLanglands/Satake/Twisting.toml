@@ -10,7 +10,7 @@ source = '[GLC2] §1.1 and Remarks 1.1.4, 1.1.7; [GLys] §§5.2–5.3, 6.3, 7.3'
 [[node]]
 id = 'GLCinLean.Satake.criticalTwist_matchesBunDeterminant'
 kind = 'theorem'
-desc = 'Identify the two pullbacks of the gerbe det^{1/2}_{Bun_G} to the Ran Hecke stack with each other, up to the local gerbe det^{1/2}_{Gr_G} of Satake.criticalDeterminantGerbe, compatibly with factorization and composition of modifications. This lets half-twisted spherical kernels act on Dmod_1/2(Bun_G) (Hecke.sphericalAction). No untwisting by the theta characteristic is applied on the Hecke side. Provider: here.'
+desc = 'Identify the two pullbacks of the gerbe det^{1/2}_{Bun_G} to the Ran Hecke stack with each other, up to the local gerbe det^{1/2}_{Gr_G} of Satake.criticalDeterminantGerbe, compatibly with factorization and composition of modifications. This lets half-twisted spherical kernels act on Dmod_1/2(Bun_G) (Hecke.sphericalAction). The spherical category and its factorization structure are not untwisted by the theta characteristic: that trivialization is not compatible with factorization ([GLC2] Remarks 1.1.4 and 1.1.12). Provider: here.'
 deps = ['GLCinLean.Satake.criticalDeterminantGerbe', 'GLCinLean.Stacks.determinantBundle', 'GLCinLean.Stacks.determinantSquareRoot', 'GLCinLean.DModules.twistedCrystals', 'GLCinLean.Hecke.correspondence']
 source = '[GLys] §§6.3, 9.5.1–9.5.3; [GLC1] §§1.1.4–1.1.6 and Remark 1.1.6; [GLC2] §1.1'
 
