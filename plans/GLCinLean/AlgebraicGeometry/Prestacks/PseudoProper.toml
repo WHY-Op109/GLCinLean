@@ -6,3 +6,10 @@ kind = 'definition'
 desc = 'A morphism of classical prestacks is pseudo-proper when each base change by a finite-type scheme admits a small colimit presentation by schemes proper over that base. Give presentation independence and base-change stability; proper maps are examples, and the Ran theorem gives the nonrepresentable example. This geometric condition does not assert any conclusion about its sheaf functors. Provider: here. Upstream declarations used: `AlgebraicGeometry.IsProper` (`Mathlib.AlgebraicGeometry.Morphisms.Proper`).'
 deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Infinity.limits']
 source = '[GaitsgoryAtiyahBott] §§1.5.1, 1.5.3'
+
+[[node]]
+id = 'GLCinLean.DModules.pseudoProperShriek'
+kind = 'definition'
+desc = 'For a pseudo-proper map construct the left adjoint f_! to f^! on all D-modules by the colimit of proper scheme pushforwards. Prove the adjunction, presentation independence, proper base-change isomorphism and projection formula by scheme testing. This is the pseudo-proper operation, with no unrestricted f_! claimed for arbitrary maps. Provider: here.'
+deps = ['GLCinLean.Derived.pseudoProper', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.rightAdjoint']
+source = '[GaitsgoryAtiyahBott] Proposition 1.5.2 and Corollary 1.5.4; [GaitsgoryContractibility] §§1.4–1.6'

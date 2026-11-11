@@ -6,3 +6,10 @@ kind = 'definition'
 desc = 'Families of pairs of G-bundles with an isomorphism off marked points; Beilinson-Drinfeld Grassmannian and factorization. Provider: here.'
 deps = ['GLCinLean.Stacks.bundleStack', 'GLCinLean.Hecke.ranSpace']
 source = '[GaitsgoryOutline] §4.4.1; [GLC1] §1.2.1'
+
+[[node]]
+id = 'GLCinLean.Hecke.correspondence_pseudoProper'
+kind = 'theorem'
+desc = 'The projection from the Ran Hecke stack to Bun_G (each side) is pseudo-proper (Derived.pseudoProper): over X^I it is the ind-proper fibration by the Beilinson–Drinfeld Grassmannian over Bun_G × X^I, and X^I is proper, assembled over I with the presentation of Hecke.ranPseudoProper. Provider: here.'
+deps = ['GLCinLean.Hecke.correspondence', 'GLCinLean.Derived.pseudoProper', 'GLCinLean.Hecke.ranPseudoProper', 'GLCinLean.Hecke.affineGrassmannian']
+source = '[GLC1] §1.2.1; [GaitsgoryAtiyahBott] §1.5'

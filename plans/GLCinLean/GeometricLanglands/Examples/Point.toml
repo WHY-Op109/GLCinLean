@@ -6,3 +6,10 @@ kind = 'theorem'
 desc = 'QCoh and IndCoh on Spec k identify with enhanced complexes of k-vector spaces; compare the tensor unit, coarsening and t-structures. Provider: here.'
 deps = ['GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Sheaves.psi', 'GLCinLean.Infinity.derivedVect']
 source = '[IndCoh] Lemma 1.1.6 and §0.6.4'
+
+[[node]]
+id = 'GLCinLean.Examples.trivialGroup_isLanglandsFunctor_id'
+kind = 'theorem'
+desc = 'For the trivial group (rank zero, its unique pinning) and any curve and theta characteristic, identify the constructed objects: Bun_1 and LS_1 are points, Dmod_½(Bun_1) ≃ Vect ≃ IndCoh_Nilp(LS_1) with Ψ the identity, Rep(1)_Ran ≃ Dmod(Ran), Loc(V) ≃ p_!V for p : Ran → pt, V ⋆ M ≃ p_!V ⊗ M, and Poinc ≃ k. Each identification is computed from the construction of its own object (Spectral.localization, Hecke.action, Whittaker.vacuumPoincare); none of the objects is defined from another to make the comparison automatic. Show that the pushforward along Ran in Loc and in the Hecke action agree. Conclude that the identity functor satisfies Statement.IsLanglandsFunctor: compact objects are bounded below, and the mapping-space equivalence holds naturally in V and M together. Check that a sheaf supported at one point x of X ⊂ Ran is sent by Loc to k, so that Loc and the action are not both zero. This example does not test the half twist, the signs of Satake or ρ(ω_X), which are trivial for this group. Provider: here.'
+deps = ['GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Examples.pointQCohIndCoh', 'GLCinLean.Spectral.localization', 'GLCinLean.Hecke.action', 'GLCinLean.Whittaker.vacuumPoincare', 'GLCinLean.Hecke.ranRepresentations', 'GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.LocalSystems.indcohNilpotent', 'GLCinLean.LocalSystems.psiNilpotent', 'GLCinLean.DModules.pseudoProperShriek']
+source = '[GLC1] §§1.2–1.3, Corollary 1.6.5; [GaitsgoryOutline] §§4.2–4.4'

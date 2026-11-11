@@ -13,3 +13,10 @@ kind = 'theorem'
 desc = 'If Y is locally almost of finite type then Y_dR is locally almost of finite type and classical, with the Kan-extension comparison needed for crystals. Provider: here.'
 deps = ['GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Derived.locallyAlmostFiniteType', 'GLCinLean.Infinity.rightKanExtension']
 source = '[Crystals] Proposition 1.3.3 and Corollary 1.3.7'
+
+[[node]]
+id = 'GLCinLean.Derived.deRhamCechNerve_formalCompletion'
+kind = 'theorem'
+desc = 'For a scheme X of finite type, the n-th term of the Čech nerve of X → X_dR is the formal completion of X^{n+1} along the diagonal X (Derived.formalCompletion), and these terms are locally almost of finite type indschemes. Provider: here.'
+deps = ['GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Derived.formalCompletion', 'GLCinLean.Derived.indscheme', 'GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType']
+source = '[Crystals] §1.2.2 and the proof of Proposition 1.3.3'

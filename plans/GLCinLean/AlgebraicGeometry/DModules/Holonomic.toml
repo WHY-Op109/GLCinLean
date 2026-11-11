@@ -4,7 +4,7 @@ desc = 'Holonomic and regular holonomic D-modules.'
 id = 'GLCinLean.DModules.holonomic'
 kind = 'definition'
 desc = 'Holonomic D-modules and stability of the particular exponential pullback under the operations used for the vacuum object; provide a nonzero example. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals']
+deps = ['GLCinLean.DModules.rightCrystals_equiv_dModules', 'GLCinLean.DModules.rightCrystals']
 source = '[GLC1] §1.3.7; [CompactGeneration] §3.3'
 
 [[node]]
