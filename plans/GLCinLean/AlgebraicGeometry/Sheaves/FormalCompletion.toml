@@ -10,6 +10,6 @@ source = '[DGIndschemes] Proposition 7.1.3'
 [[node]]
 id = 'GLCinLean.Sheaves.indcoh_formalCompletion_localization'
 kind = 'theorem'
-desc = 'In the setting of Sheaves.qcoh_formalCompletion_localization, IndCoh(X^∧_Y) is identified with the kernel of restriction IndCoh(X) → IndCoh(U), compatibly with the QCoh statement under Υ (F ↦ F ⊗ ω) on X, U and X^∧_Y. Provider: here.'
-deps = ['GLCinLean.Sheaves.qcoh_formalCompletion_localization', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Derived.indscheme']
-source = '[DGIndschemes] Proposition 7.4.5 and §7.4'
+desc = 'In the setting of Sheaves.qcoh_formalCompletion_localization, IndCoh(X^∧_Y) is identified with the kernel of restriction IndCoh(X) → IndCoh(U), compatibly with the QCoh statement under Υ (DModules.leftToRightCrystals) on X, U and X^∧_Y. Provider: here.'
+deps = ['GLCinLean.Sheaves.qcoh_formalCompletion_localization', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.DModules.leftToRightCrystals', 'GLCinLean.Derived.indscheme']
+source = '[DGIndschemes] Proposition 7.4.5 and §§7.4–7.5'

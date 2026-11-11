@@ -4,7 +4,7 @@ desc = 'Compact generation for algebraic D-modules on QCA stacks and ind-finite-
 id = 'GLCinLean.DModules.crystalInduction'
 kind = 'definition'
 desc = 'Construct induction from IndCoh to right crystals on a locally almost finite type algebraic stack as left adjoint to the continuous conservative forgetful functor. Use relative de Rham prestacks and smooth descent; supply the adjunction and base-change comparisons. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction']
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction', 'GLCinLean.DModules.rightCrystals_hDescent']
 source = '[DG2] §6.3, especially Lemma 6.3.16; [Crystals] §3.3'
 
 [[node]]

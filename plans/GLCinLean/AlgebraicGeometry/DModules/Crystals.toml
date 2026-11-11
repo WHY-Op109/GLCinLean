@@ -10,9 +10,9 @@ source = '[Crystals] §§2.3.1–2.3.2; [IndCoh] §10.1.2'
 [[node]]
 id = 'GLCinLean.DModules.leftToRightCrystals'
 kind = 'definition'
-desc = 'For a locally almost finite type prestack Y, the continuous functor Υ_{Y_dR} : QCoh(Y_dR) → IndCoh(Y_dR) from left crystals to right crystals (DModules.rightCrystals), F ↦ F ⊗ ω_{Y_dR} for the action of QCoh on IndCoh, where ω_{Y_dR} is the !-pullback of k. Give its compatibility of *-pullback of left crystals with !-pullback of right crystals along every map of such prestacks, coherently in the map. This node claims no equivalence. Provider: here.'
+desc = 'For every locally almost finite type prestack Y, the continuous functor Υ_Y : QCoh(Y) → IndCoh(Y), F ↦ F ⊗ ω_Y for the action of QCoh on IndCoh, where ω_Y is the !-pullback of k, natural in Y as a transformation from QCoh with *-pullback to IndCoh with !-pullback, coherently in the maps. Its value on Y_dR is the functor from left crystals to right crystals (DModules.rightCrystals); its values on schemes and on formal completions are the Υ used by Sheaves.upsilon_isEquivalence_of_smooth and Sheaves.indcoh_formalCompletion_localization. This node claims no equivalence. Provider: here.'
 deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Derived.deRhamPrestack']
-source = '[Crystals] §2.4.1; [IndCoh] §§5.7.5, 10.3.3'
+source = '[Crystals] §§2.4.1–2.4.2; [IndCoh] §§5.7.5, 10.3.3'
 
 [[node]]
 id = 'GLCinLean.DModules.leftCrystalsEquivRightCrystals'
@@ -26,11 +26,25 @@ id = 'GLCinLean.DModules.crystals_descent_of_classicallyFormallySmooth'
 kind = 'theorem'
 desc = 'For a classically formally smooth prestack Y locally almost of finite type, with Čech nerve Y^• of Y → Y_dR, pullback gives equivalences QCoh(Y_dR) ≃ Tot QCoh(Y^•) and IndCoh(Y_dR) ≃ Tot IndCoh(Y^•) for left and right crystals, compatible with DModules.leftToRightCrystals. Smooth schemes are classically formally smooth. Provider: here.'
 deps = ['GLCinLean.DModules.leftToRightCrystals', 'GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Infinity.limits']
-source = '[Crystals] Lemmas 1.2.4, 2.1.7 and 2.3.11'
+source = '[Crystals] Lemmas 1.2.4, 2.1.7 and 2.3.11; [DGIndschemes] §8.4.2'
 
 [[node]]
 id = 'GLCinLean.DModules.rightCrystals_equiv_dModules'
 kind = 'definition'
-desc = 'For a smooth scheme X of finite type, the sheaf of rings D_X of differential operators and the equivalence of right crystals on X (DModules.rightCrystals) with the enhanced category of right D_X-modules, t-exact for the right t-structure and compatible with the forgetful functors to IndCoh(X) ≃ QCoh(X). Construct it through left crystals, as in [Crystals] §5.5, so that it rests on DModules.leftCrystalsEquivRightCrystals and not the other way round. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.leftCrystalsEquivRightCrystals', 'GLCinLean.Sheaves.upsilon_isEquivalence_of_smooth', 'GLCinLean.Infinity.tStructure']
+desc = 'For a smooth scheme X of finite type, the sheaf of rings D_X of differential operators and the equivalence of right crystals on X (DModules.rightCrystals) with the enhanced category of right D_X-modules, t-exact for the right t-structure and compatible with the forgetful functors to IndCoh(X) ≃ QCoh(X). Construct it through left crystals, as in [Crystals] §5.5, so that it rests on DModules.leftCrystalsEquivRightCrystals and not the other way round. For a scheme Y of finite type that may be singular, with a closed embedding into a smooth scheme X, identify right crystals on Y with right D_X-modules supported on Y (DModules.kashiwara); this is the D-module category that DModules.deRhamPushforward, DModules.coherent and DModules.holonomic use on singular schemes. Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.leftCrystalsEquivRightCrystals', 'GLCinLean.Sheaves.upsilon_isEquivalence_of_smooth', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.kashiwara']
 source = '[Crystals] §5.5'
+
+[[node]]
+id = 'GLCinLean.DModules.rightCrystals_hDescent'
+kind = 'theorem'
+desc = 'Right crystals on affine schemes almost of finite type satisfy h-descent, through étale descent and proper surjective descent; in particular they satisfy smooth descent, which defines and computes them on algebraic stacks. Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Infinity.limits']
+source = '[Crystals] Proposition 3.2.2'
+
+[[node]]
+id = 'GLCinLean.DModules.kashiwara'
+kind = 'theorem'
+desc = 'Kashiwara: for a closed embedding X → Z of locally almost finite type prestacks, !-pullback identifies the right crystals on Z supported on X with the right crystals on X. Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Derived.deRhamPrestack']
+source = '[Crystals] Proposition 2.5.6'

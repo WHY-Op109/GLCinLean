@@ -102,7 +102,7 @@ Each area has a folder `plans/Roadmap/<area>/` for the nodes that the statement 
 | ReductiveGroups | 5 | pinned data, pinnings and their existence (Layer 9D), root data, 2ρ | 1 | parabolics and Levi quotients |
 | ReductiveGroupsPartII | 4 | RG2.5.1 dual based root datum and Langlands dual group, change of pinning, coweight parity | 2 | RG2.1.5 z-extensions |
 | SchemeAndStackFoundations | 2 | §§1.15–1.16 torsors, §§1.18–1.20 algebraic stacks | 2 | §§2.11, 2.15–2.16 étale units and Tsen |
-| JacobianChallenge | 4 | Layers B–C: the Serre duality trace and the degree of the canonical bundle; Layer D: Pic⁰ of a curve as an abelian variety; Layer E: multiplication by n on abelian varieties | 0 | |
+| JacobianChallenge | 5 | Layer A: the degree on Pic X; Layers B–C: the Serre duality trace and the degree of the canonical bundle; Layer D: Pic⁰ of a curve as an abelian variety; Layer E: multiplication by n on abelian varieties | 0 | |
 | AffineLieAlgebras | 0 | | 1 | A2.2: the critical level |
 
 EnhancedDerivedSheaves takes its generic quasicategory constructions from BordismFormalGroups F6.5 (its table "From other roadmaps"): the categorical model and functor spaces, marked fibrations and Kan extensions, coherent model diagrams and stable enhancements, and the monoidal, fibration, quotient and Ind sub-lanes.

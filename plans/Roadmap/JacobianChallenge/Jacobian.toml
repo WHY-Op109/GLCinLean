@@ -1,13 +1,19 @@
 desc = 'The Picard variety of a curve and multiplication on abelian varieties. Owner: the Tau Ceti roadmap JacobianChallenge.'
 
 [[node]]
+id = 'GLCinLean.Curves.picard_degree'
+kind = 'definition'
+desc = 'The degree deg : Pic X → ℤ of a smooth proper geometrically connected curve over a field, a group homomorphism with deg 𝒪(x) = 1 for a rational point x, and Pic⁰ X = ker deg as an abstract group. Provider: roadmap JacobianChallenge, “Layer A, line bundles, divisors, Picard group, degree”.'
+source = '[GLC1] §1.3.2'
+
+[[node]]
 id = 'GLCinLean.Curves.picardZero_isAbelianVariety'
 kind = 'theorem'
-desc = 'For a smooth proper geometrically connected curve X over a field k, the degree-zero component Pic⁰_{X/k} of the Picard scheme exists and is an abelian variety of dimension g, and its k-points are the degree-zero line bundles on X up to isomorphism when X has a k-point. Provider: roadmap JacobianChallenge, “Layer D, the relative Picard functor and the Jacobian scheme”.'
+desc = 'For a smooth proper geometrically connected curve X over a field k with a k-point x₀, the degree-zero component Pic⁰_{X/k} of the Picard scheme exists and is an abelian variety of dimension g (the Jacobian), and its k-points form a group isomorphic, under tensor product, to the degree-zero line bundles on X up to isomorphism. Provider: roadmap JacobianChallenge, “Layer D, the relative Picard functor and the Jacobian scheme” and “Layer E, abelian varieties” (“Abelian varieties and projectivity”, `JacobianVariety`).'
 source = '[GLC1] §1.3.2'
 
 [[node]]
 id = 'GLCinLean.Curves.abelianVariety_multiplication_surjective'
 kind = 'theorem'
-desc = 'For an abelian variety A over a field and an integer n ≠ 0, multiplication by n on A is finite locally free and surjective (an isogeny); over an algebraically closed field it is surjective on k-points. Provider: roadmap JacobianChallenge, “Layer E, abelian varieties”, `multiplication_isogeny`.'
+desc = 'For an abelian variety A over a field and an integer n ≠ 0, multiplication by n on A is finite locally free and surjective, an isogeny. Provider: roadmap JacobianChallenge, “Layer E, abelian varieties”, `multiplication_isogeny`.'
 source = '[GLC1] §1.3.2'
