@@ -80,7 +80,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 - **Which monoidal structure of `Rep(Ǧ)_Ran`.** `Hecke.ranRepresentations` says "and its monoidal structure", but the convolution product `Hecke.ranConvolution` is now in `plans-proof/`. The node should say whether it means the pointwise structure; the same word appears in `Satake.dualIdentificationChangePinningIso`. The statement uses `Rep(Ǧ)_Ran` only as a category, so this does not change it (the review of `4f0fca2`).
 - **`Hecke.ranPseudoProper` could be split.** Its second part (the small projection from the inclusion correspondence) is used only by `Hecke.ranSupersetPullback_fullyFaithful` in `plans-proof/` (the review of `4f0fca2`).
 - **Later task: an automatic axiom check (W10).** Replace the hand-kept list in `tools/check-statement-axioms.lean` by a script that lists every declaration of `GLCinLean` itself, prints the axioms of each, and fails unless `sorryAx` appears only in the main theorem and all other axioms are `propext`, `Classical.choice` and `Quot.sound`. Until then the file and `#print axioms` stay the check. The tracker is only a second check: it calls a declaration `stated` even when it also uses a forbidden axiom, and its totals count planned declarations only.
-- **Later task: narrow roadmap scoping (W12).** A session of its own: check #1687 first, then scope the first general layer of the plan that no roadmap covers (for example derived prestacks), for the owner to propose as a roadmap.
+- **Roadmap proposals: deferred** (the owner, 2026-11-11; this replaces the later task W12). The candidates, their triggers and their state are in `docs/blueprint-providers.md`, "Roadmap candidates (deferred)". Each audit checks the triggers and puts a candidate to the owner when all of them hold.
 
 ## Decisions taken
 
@@ -119,6 +119,7 @@ A node on this list is not started, here or through the Worker. The list covers 
   - `Satake.dualIdentificationChangePinningIso` keeps the isomorphisms of naive Satake and of the Hecke action, which are what the transport of the statement needs: `Loc`, `QCoh(LS_Ǧ)`, `IndCoh_Nilp(LS_Ǧ)` and `Ψ` do not depend on the pinning. Its Casselman–Shalika and `QCoh(LS_Ǧ)`-action parts are the new node `Satake.dualIdentificationChangePinningSpectralIso` in `plans-proof/`. This also drops the Casselman–Shalika input, which the statement does not use (7 nodes).
   - The planned definitions that the cut changed or added are reviewed in `notes/reviews/4f0fca2.md`. Its *mismatch* (the pushforward along Ran) and its *unsure* point on the Ran space are fixed, reviewed in `notes/reviews/d70dfe0.md` and `notes/reviews/324ae6d.md`. Its *unsure* point on examples, and the minor *mismatch* of `324ae6d` on the proof inputs of `DModules.leftCrystalsEquivRightCrystals`, are under "Waiting for the owner".
   - `notes/upstream-2026-11-10.md` is deleted after its remaining findings moved to `docs/blueprint-providers.md`.
+- 2026-11-11, the owner deferred the decision to write or submit Tau Ceti roadmaps (W12). The decision is taken later, on the state of this project, of Tau Ceti and of its roadmaps at that time. The candidates are recorded in `docs/blueprint-providers.md`, and `prompts/audit.md` checks their triggers.
 
 ## Next
 
