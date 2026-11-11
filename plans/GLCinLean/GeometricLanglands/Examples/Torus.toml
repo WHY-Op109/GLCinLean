@@ -1,4 +1,4 @@
-desc = 'The case of a torus: the nilpotent cone and the coarse functor.'
+desc = 'The case of a torus: the nilpotent cone.'
 
 [[node]]
 id = 'GLCinLean.Examples.torusNilpotent_is_zero'
