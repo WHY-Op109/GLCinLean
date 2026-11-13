@@ -3,6 +3,6 @@ desc = 'The classifying stack BH of an affine algebraic group H.'
 [[node]]
 id = 'GLCinLean.Stacks.ClassifyingStack'
 kind = 'definition'
-desc = 'The classifying stack BH of an affine algebraic group H over k: the étale sheafification of the bar construction of H on derived affine schemes, a derived 1-Artin stack with its tautological H-torsor; its restriction to classical affine schemes is the stack of H-torsors of Stacks.groupTorsor. Maps from a prestack to BH are H-torsors on it. No reductivity is assumed. Provider: here.'
+desc = 'The classifying stack BH of an affine algebraic group H over k: the étale sheafification of the bar construction of H on derived affine schemes, a derived 1-Artin stack with its tautological H-torsor; its restriction to classical affine schemes is the stack of H-torsors of Stacks.groupTorsor (H is smooth in characteristic zero, so its fppf and étale torsors agree). Maps from a prestack to BH are H-torsors on it. No reductivity is assumed. Provider: here.'
 deps = ['GLCinLean.Stacks.groupTorsor', 'GLCinLean.Derived.IsArtinStack', 'GLCinLean.Derived.Prestack']
 source = '[ArinkinGaitsgory] §10.1.1 and Remark 10.1.4'

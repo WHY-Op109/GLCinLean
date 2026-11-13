@@ -3,9 +3,11 @@ desc = '''Hyperbolic restriction of D-modules for G_m-actions, and Braden's theo
 [[node]]
 id = 'GLCinLean.DModules.hyperbolicRestriction'
 kind = 'definition'
-desc = 'Hyperbolic restriction for a G_m-action on a scheme Z of finite type whose fixed-point, attractor and repeller functors are representable by schemes of finite type (Actions.hyperbolicInterpolation proves this for locally linear actions; [BradenDG] also allows algebraic spaces, which no node uses). The pull-pull functors (i^+)^•(p^+)^! and (i^-)^•(p^-)^*, at first pro-valued where a left adjoint is only partially defined, the pull-push functors (q^+)_•(p^+)^!, with values in D-modules, and their canonical comparison, which uses the open and closed embedding Z^0 → Z^+ ×_Z Z^-. Preserve the star/shriek directions; the separate theorem gives representability on all monodromic D-modules. Provider: here.'
+desc = 'Hyperbolic restriction for a G_m-action on a scheme Z of finite type whose fixed-point, attractor and repeller functors are representable by schemes of finite type (Actions.hyperbolicInterpolation proves this for locally linear actions; [BradenDG] also allows algebraic spaces, which no node uses). The pull-pull functors (i^+)^•(p^+)^! and (i^-)^!(p^-)^•, at first pro-valued where a left adjoint is only partially defined, the pull-push functors (q^+)_•(p^+)^!, with values in D-modules, and (q^-)_!(p^-)^•, pro-valued, and their canonical comparison, which uses the open and closed embedding Z^0 → Z^+ ×_Z Z^-. Preserve the star/shriek directions; the separate theorem gives representability on all monodromic D-modules. Provider: here.'
 deps = ['GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.Actions.hyperbolicInterpolation', 'GLCinLean.DModules.Monodromic']
 source = '[BradenDG] §§3.1.1–3.1.4 and Theorems 3.1.6, 3.3.4'
+
+
 
 [[node]]
 id = 'GLCinLean.DModules.hyperbolicRestriction_isIso'
