@@ -3,6 +3,6 @@ desc = 'Coherent module categories over a monoidal enhanced category. Owner: the
 [[node]]
 id = 'GLCinLean.Infinity.moduleCategory'
 kind = 'definition'
-desc = 'A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data, and for a non-unital monoidal category the module categories with action and associativity data only. Provider: roadmap BordismFormalGroups, the monoidal and fibration sub-lane (LM operad and module fibres), with roadmap EnhancedDerivedSheaves “Algebras, modules and the monoidal envelope”.'
+desc = 'A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data. Provider: roadmap BordismFormalGroups, the monoidal and fibration sub-lane (LM operad and module fibres), with roadmap EnhancedDerivedSheaves “Algebras, modules and the monoidal envelope”.'
 deps = ['GLCinLean.Infinity.monoidalCategory']
 source = '[AGKRRV] §0.9.4; [ArinkinGaitsgory] §1.5.2(viii)'
