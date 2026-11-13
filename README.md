@@ -30,6 +30,7 @@ Agents do the work, each session started from a prompt in `prompts/`:
 | `plans-proof/` | the nodes that only the proof of the main theorem needs, in the same format; the tracker does not read it |
 | `tools/tracker` | the tracker, a git submodule |
 | `tools/check-statement-axioms.lean` | prints the axioms of the statement's declarations (the done check) |
+| `tools/check-module-cycles.py` | checks that no module plan of `plans/` imports another in a cycle, which the tracker does not check |
 | `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |
 | `prompts/` | the prompts the sessions start from |
 | `docs/references.bib` | the papers cited, with their arXiv versions |
