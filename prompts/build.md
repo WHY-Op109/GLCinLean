@@ -16,6 +16,5 @@
 - The statement is in `GLCinLean/Statement/`. The main theorem says that a characterized functor exists and that every such functor is an equivalence; preserve that shape.
 - Nodes under `plans/Roadmap/<area>/` belong to that Tau Ceti roadmap. The owner runs Tau Ceti's Worker for them, with the command lines in `STATUS.md`: `tauceti work --agent claude --roadmap-only <area> --extra-roadmap-prompt "<targets>"`. The targets come from one module or node: `lake exe tracker show Roadmap.<area>.<Module>` or `lake exe tracker show <node id>`, because `show Roadmap.<area>` lists only the modules under it, not their nodes. A session here does not start the Worker.
 - A node listed under "Held" in `STATUS.md` is not started.
-- Ordinary derived categories are not replacements for enhanced categories. Field, universes and t-structures stay explicit.
 - When a paper is wrong, mark the planned declaration `wrong` and amend the plan.
 - `docs/papers.md` says where the papers' TeX is and how to fetch a missing paper.
