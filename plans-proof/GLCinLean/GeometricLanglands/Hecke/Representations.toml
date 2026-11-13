@@ -3,7 +3,7 @@ desc = 'The categories Rep(H) and Rep(H)_Ran and their monoidal structures.'
 [[node]]
 id = 'GLCinLean.Hecke.ranConvolution'
 kind = 'definition'
-desc = 'The non-unital symmetric monoidal product by restriction to formal discs and !-pushforward along union; prove the required adjoint exists. Provider: here.'
+desc = 'The non-unital symmetric monoidal product by restriction to formal discs and !-pushforward along union; prove the required adjoint exists. No roadmap provides non-unital monoidal enhanced categories (Infinity.monoidalCategory is unital), so the notion (a product with its associativity and commutativity coherences and no unit) is stated in this node. Provider: here.'
 deps = ['GLCinLean.Ran.Representations', 'GLCinLean.Ran.union', 'GLCinLean.Infinity.rightAdjoint']
 source = '[GaitsgoryOutline] §4.2.3'
 

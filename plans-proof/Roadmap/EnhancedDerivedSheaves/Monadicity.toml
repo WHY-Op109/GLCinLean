@@ -1,11 +1,4 @@
-desc = 'The Barr–Beck–Lurie theorem and one application to finite products. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
-
-[[node]]
-id = 'GLCinLean.Infinity.barrBeckLurie'
-kind = 'theorem'
-desc = 'Construct the monad and comparison of an enhanced adjunction and prove the comparison an equivalence exactly when the right adjoint is conservative and preserves geometric realizations of its split simplicial objects, which must exist. Use the split augmented bar resolution. Do not replace this by preservation of arbitrary colimits. Provider: roadmap EnhancedDerivedSheaves, `barrBeckLurie` (“Monadicity”).'
-deps = ['GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits']
-source = '[OneAffineness] §7.2.9 (the Barr–Beck–Lurie input cited there)'
+desc = 'One application of the Barr–Beck–Lurie theorem (Infinity.barrBeckLurie, in the statement’s plan) to finite products. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
 
 [[node]]
 id = 'GLCinLean.Infinity.finiteMultiplicityProduct_isMonadic'

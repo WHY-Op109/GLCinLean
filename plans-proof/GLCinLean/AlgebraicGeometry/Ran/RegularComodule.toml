@@ -1,0 +1,8 @@
+desc = 'Lax monoidal functors out of Rep(H)_{X^I} as algebras among the comodules over the regular object.'
+
+[[node]]
+id = 'GLCinLean.Ran.Representations.laxMonoidalFunctorEquivAlgebra'
+kind = 'definition'
+desc = 'For a monoidal Dmod(X^I)-module category D, lax monoidal structures on a Dmod(X^I)-linear continuous functor Rep(H)_{X^I} → D correspond to algebra structures on the comodule F(O_{H,X^I}) of Ran.Representations.linearFunctorEquivComodule, for the Dmod(X^I)-linear symmetric monoidal structure of Rep(H)_{X^I} (the tensor product of quasi-coherent sheaves, [RaskinCPSI] Remark 6.8.4). This structure is unital and is not the Ran convolution of Hecke.ranConvolution. Provider: here.'
+deps = ['GLCinLean.Ran.Representations.linearFunctorEquivComodule', 'GLCinLean.Infinity.monoidalCategory']
+source = '[RaskinCPSI] Remark 6.8.4 and Lemmas 6.31.2 and 6.32.1'
