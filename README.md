@@ -17,7 +17,6 @@ Agents do the work, each session started from a prompt in `prompts/`:
 | [`build.md`](prompts/build.md) | move the plan forward by one module, from the bottom up, towards real definitions in place of the placeholders |
 | [`review.md`](prompts/review.md) | check that definitions mean what the papers say (run by an agent that did not write them) |
 | [`audit.md`](prompts/audit.md) | judge, from time to time, whether the statement, the plan and the workflow still reach the goal in the simplest way |
-| [`next-steps.md`](prompts/next-steps.md) | one-off sessions to run before the build continues |
 
 [`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
 

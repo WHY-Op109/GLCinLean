@@ -1,6 +1,6 @@
 # Status
 
-Updated 2026-11-13, after the review of the plan at `b8587fb`, its fixes, and a first try of the pin move that did not build cleanly.
+Updated 2026-11-13, after the review of the plan at `b8587fb`, its fixes, a first try of the pin move that did not build cleanly, and the dependency-graph page.
 
 ## Current state
 
@@ -12,6 +12,7 @@ Updated 2026-11-13, after the review of the plan at `b8587fb`, its fixes, and a 
 - **Reviews.** The last reviewed commit on `main` is `c4f67f1` for the Lean code, and `b8587fb` for the planned definitions (`notes/reviews/b8587fb.md`: the 26 nodes changed since `2623ded`, the monoidal clauses of four nodes, and the deletion of two roadmap nodes; no *mismatch*, one *unsure*, which is under "Waiting for the owner"). The commit after `b8587fb` applies that review's definite fixes, which the next review of the plan covers. `notes/reviews/2623ded.md` and `notes/reviews/82c8619.md` are the reviews before it; earlier reports are in git history at `62033d0` and `2be2b00`.
 - **Audit.** The last audit is `notes/audit-2026-11-13.md`, of the plan at `1b60708`, in the commit after `edaeafd`. It brought `docs/blueprint-providers.md` up to date (Tau Ceti main `4d91513e`, TauCetiRoadmap main `7342e8fd`, 2026-11-13). The owner accepted its seven decisions as Claude re-evaluated them ("Decisions taken", 2026-11-13).
 - **Checks.** `lake build` passes with only the main theorem's `sorry` warning. `lake lint` passes. `lake env lean tools/check-statement-axioms.lean` shows `sorryAx` only for the main theorem, which uses only `propext`, `Classical.choice`, `Quot.sound` and `sorryAx`. `lake exe tracker lint` has no errors; its warnings are the superseded `desc` and `deps` of the statement's placeholders, which `plans/README.md` explains.
+- **Dependency-graph page.** The owner's private Claude Artifact https://claude.ai/artifact/XNm91TU3c6RNN6hGvYqrBc shows the plan at `a9a268b`: search, the dependencies and users of a node (direct and transitive), filters by plan, state, owner, kind and module, the placeholders, the held nodes, and `plans-proof/` as a separate layer that is marked as not tracked, with the 123 nodes of `plans/` that it uses directly. It is built from `lake exe tracker graph` and the TOML files of `plans-proof/`; no file for it is in the repository. A build session that changes the plan republishes it (`prompts/build.md`).
 - **Pins.** Mathlib `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`, Tau Ceti `e0610cce4004d628cbd9d2aafdbbb5459fe72938`. The move to Tau Ceti `4d91513e` was tried on 2026-11-13 and is not done ("Waiting for the owner").
 - **Tau Ceti pull requests.** None opened.
 
@@ -92,7 +93,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 ## Decisions taken
 
-- 2026-11-10, the owner's decisions 1–10 and W1–W12 on the reports of that day (their text is in git history at `62033d0`, `prompts/next-steps.md`), applied in `ad2f88c` (Session 4a) and Session 4c. Those that still guide the work: the owner runs the Worker, and a session here only folds in its results (W1); roadmap-owned nodes are under `plans/Roadmap/<area>/` (W3); the review and approval rule of `AGENTS.md`, "The statement" (W4); each caution has one home, and nodes not to start are under "Held" (W9); the axiom check stays, and its automation is a later task (W10); AxiomMath Stacks and Weil are prior art for Worker ports, case by case (9); #1734, #1687 and #848 are owner candidates (8).
+- 2026-11-10, the owner's decisions 1–10 and W1–W12 on the reports of that day (their text is in git history at `62033d0`, in `prompts/next-steps.md`, which is deleted now that its one-off sessions are done), applied in `ad2f88c` (Session 4a) and Session 4c. Those that still guide the work: the owner runs the Worker, and a session here only folds in its results (W1); roadmap-owned nodes are under `plans/Roadmap/<area>/` (W3); the review and approval rule of `AGENTS.md`, "The statement" (W4); each caution has one home, and nodes not to start are under "Held" (W9); the axiom check stays, and its automation is a later task (W10); AxiomMath Stacks and Weil are prior art for Worker ports, case by case (9); #1734, #1687 and #848 are owner candidates (8).
 - 2026-11-10, from the plan session, accepted by the owner (W11):
   1. **Open Tau Ceti roadmap pull requests.** Use them as design evidence, with their exact head recorded. The accepted roadmap stays the authority until a proposal merges. Never import a proposal's `Suggested.lean` or pin this project to an unmerged branch.
   2. **Other Lean libraries.** Read-only discovery and reuse of ideas under compatible licences. Adding a dependency first needs a list of the declarations used, compatible Lean and Mathlib versions, a licence check, an axiom audit and a comparison with the existing objects.
@@ -142,5 +143,4 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 1. **The owner's two decisions** under "Waiting for the owner": the *unsure* verdict on `Ran.Representations.linearFunctorEquivComodule`, and the pin move.
 2. **The pin move** of decision 3, as its own commit with the full done check, once the owner has chosen how (retry, or another commit). After it, the words "on Tau Ceti main only, not at the pin" leave `plans/GLCinLean/AlgebraicGeometry/Curves/ProjectiveLine.toml` and the rows of `docs/blueprint-providers.md` whose declarations are then at the pin.
-3. **Session 5** of `prompts/next-steps.md`: the dependency-graph page.
-4. **Build sessions** with `prompts/build.md`, after the pin move, one after another because each depends on the one before: `GLCinLean.AlgebraicGeometry.LineBundle.Root`, then `Curves.Theta`, then `Curves.ProjectiveLine`, while the owner runs the Worker on the targets above. Read the notes of the review of `b8587fb` under "Open items" first.
+3. **Build sessions** with `prompts/build.md`, after the pin move, one after another because each depends on the one before: `GLCinLean.AlgebraicGeometry.LineBundle.Root`, then `Curves.Theta`, then `Curves.ProjectiveLine`, while the owner runs the Worker on the targets above. Read the notes of the review of `b8587fb` under "Open items" first.
