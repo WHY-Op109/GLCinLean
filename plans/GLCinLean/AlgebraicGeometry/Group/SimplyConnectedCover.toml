@@ -1,8 +1,0 @@
-desc = 'The simply connected cover of the derived group, used to reduce parity of IC stalks on the affine Grassmannian to the simply connected case.'
-
-[[node]]
-id = 'GLCinLean.Groups.SimplyConnectedCover'
-kind = 'definition'
-desc = 'The simply connected central cover of the derived group of a split connected reductive group: the split semisimple group whose root datum has the coroot lattice as cocharacter lattice, with its central isogeny onto the derived group, satisfying TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty. Compute the root datum of the derived group G_der (`TauCeti.CommHopfAlgCat.derivedGroupScheme`): its roots and coroots are those of G, and its cocharacter lattice is X_*(T) ∩ ℚ-span of the coroots. Then the existence and isogeny theorems (Groups.splitReductiveGroup) give G_sc and the central isogeny G_sc → G_der from the inclusion of the coroot lattice. Provider: here. Upstream declarations used: `TauCeti.CommHopfAlgCat.derivedGroupScheme` (`TauCeti.Algebra.AlgebraicGroup.Derived.Basic`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`), `TauCeti.simplyConnectedSemisimpleCommHopfAlgProperty` (`TauCeti.Algebra.AlgebraicGroup.SimplyConnected.Basic`).'
-deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.splitReductiveGroup']
-source = '[ConradRGS] Theorems 6.1.16–6.1.17 (existence and isogeny theorems, applied to the coroot-lattice root datum)'
