@@ -1,11 +1,11 @@
-desc = 'The critical determinant gerbe on the Beilinson–Drinfeld Grassmannian, its comparison with the determinant gerbe on Bun_G, and the half-twisted heart at a point.'
+desc = 'The critical determinant gerbe on the Beilinson–Drinfeld Grassmannian, and its comparison with the determinant gerbe on Bun_G.'
 
 [[node]]
 id = 'GLCinLean.Satake.criticalDeterminantGerbe'
 kind = 'definition'
 desc = 'The μ2-gerbe det^{1/2}_{Gr_G} of square roots of the determinant factorization line bundle det_{Gr_G} on Gr_{G,Ran} (the relative determinant of the adjoint bundle, det_𝔤 in [GLys]), as a factorization gerbe with its L+G-equivariance: the multiplicative factorization gerbe on the loop group with multiplicative trivializations on L+G and on LN. Here det_{Gr_G} is the relative determinant of the two lattices of the adjoint bundle on the formal disc, the modified one against the trivial one, built from Sheaves.determinant of perfect complexes, with its gluing under factorization; its grading is trivial because G is unimodular, so the gluing has no Koszul signs ([GLys] §5.2.1, footnote). This relative form is part of this node. It is canonical and uses no square root of ω_X. Record the comparison of [GLC2] Remark 1.1.4: a square root of ω_X trivializes the gerbe only as a Z/2-graded factorization line bundle, with grading ⟨λ, 2ρ̌⟩ mod 2 on the component of λ, the parity of Groups.coweightParity; that trivialization is not compatible with factorization. Provider: here.'
 deps = ['GLCinLean.AffineGrassmannian', 'GLCinLean.Sheaves.determinant', 'GLCinLean.Stacks.rootGerbe', 'GLCinLean.Groups.coweightParity', 'GLCinLean.LoopGroups.LoopGroup']
-source = '[GLC2] §1.1 and Remarks 1.1.4, 1.1.7; [GLys] §§5.2, 6.3, 7.3'
+source = '[GLC2] §1.1 and Remarks 1.1.4, 1.1.7; [GLys] §§5.2, 6.3, 7.2–7.3'
 
 
 
@@ -16,13 +16,3 @@ kind = 'definition'
 desc = 'The canonical equivalence of gerbes that identifies the two pullbacks of the gerbe det^{1/2}_{Bun_G} to the Ran Hecke stack with each other, up to the local gerbe det^{1/2}_{Gr_G} of Satake.criticalDeterminantGerbe: h_out^* det ⊗ (h_in^* det)^{-1} is the pullback of det_{Gr_G}, and so h_out^* det^{1/2} ⊗ (h_in^* det^{1/2})^{-1} is the pullback of det^{1/2}_{Gr_G}, compatibly with factorization and composition of modifications. This lets half-twisted spherical kernels act on Dmod_1/2(Bun_G) (Hecke.sphericalAction). The spherical category and its factorization structure are not untwisted by the theta characteristic: that trivialization is not compatible with factorization ([GLC2] Remarks 1.1.4, 1.1.7 and 1.1.12). Provider: here.'
 deps = ['GLCinLean.Satake.criticalDeterminantGerbe', 'GLCinLean.Stacks.determinantBundle', 'GLCinLean.DModules.TwistedCrystals', 'GLCinLean.Hecke.Correspondence', 'GLCinLean.Stacks.rootGerbe']
 source = '[GLys] §§6.3, 9.5.1–9.5.3; [GLC1] §§1.1.4–1.1.6 and Remark 1.1.6; [GLC2] §1.1'
-
-
-
-
-[[node]]
-id = 'GLCinLean.Satake.halfTwistedHeart_equiv_untwistedHeart'
-kind = 'definition'
-desc = 'At a single point x of X, the square root of ω_X given by the theta characteristic trivializes det^{1/2} on Gr_{G,x} multiplicatively and L+G-equivariantly. This gives a monoidal equivalence between the heart of the half-twisted spherical category at x and Satake.sphericalHeart, compatible with convolution, IC objects and the cohomology fiber functor. Prove that it carries the fusion commutativity constraint of the half-twisted heart (computed from its factorization structure over X^2) to the parity-corrected constraint of Satake.fusion, using that the trivialization is only a Z/2-graded factorization line bundle with grading ⟨λ, 2ρ̌⟩ mod 2 ([GLC2] Remark 1.1.4). This sign computation is an explicit adaptation obligation: the sources state its consequence ([GLys] §9.2.2) but do not write it out. The result is pointwise. It claims nothing over Ran, where the identification induced by ω_X^{1/2} is incompatible with factorization ([GLC2] Remark 1.1.12). Provider: here.'
-deps = ['GLCinLean.Satake.criticalDeterminantGerbe', 'GLCinLean.Satake.sphericalHeart', 'GLCinLean.Satake.fusion', 'GLCinLean.Satake.cohomologyFiberFunctor', 'GLCinLean.Curves.ThetaCharacteristic', 'GLCinLean.Groups.coweightParity', 'GLCinLean.DModules.TwistedCrystals']
-source = '[GLC2] Remarks 1.1.4, 1.1.7 and 1.1.12; [GLys] §§8.2.4, 9.1.1, 9.2.2; [MV] §6 (modified commutativity constraint)'

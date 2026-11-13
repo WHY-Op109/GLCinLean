@@ -10,6 +10,6 @@ source = '[GLC2] §§C.5.1–C.5.2, C.5.6; [GaitsgoryAtiyahBott] §4.6.3'
 [[node]]
 id = 'GLCinLean.Ran.smallProjection_pseudoProper'
 kind = 'theorem'
-desc = 'For a proper scheme X, the small projection from the inclusion correspondence (Ran.Inclusions) to Ran is pseudo-proper (Derived.PseudoProper, applied to the restriction to classical test schemes), by the presentation by pairs of finite sets I_small ⊆ I_big. Provider: here.'
+desc = 'For a proper scheme X, the small projection from the inclusion correspondence (Ran.Inclusions) to Ran is pseudo-proper (Derived.PseudoProper, applied to the restrictions of both prestacks to classical test schemes), by the presentation by pairs of finite sets I_small ⊆ I_big. Provider: here.'
 deps = ['GLCinLean.Ran.Inclusions', 'GLCinLean.Ran.pseudoProper_of_isProper', 'GLCinLean.Derived.PseudoProper']
 source = '[GLC2] §C.5.6; [GaitsgoryAtiyahBott] proof of Lemma 4.3.2 and §4.6.3'

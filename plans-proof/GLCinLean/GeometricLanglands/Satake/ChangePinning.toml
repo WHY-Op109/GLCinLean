@@ -1,0 +1,8 @@
+desc = 'Independence of the chosen pinning of the Tannakian group: the monoidal structures.'
+
+[[node]]
+id = 'GLCinLean.Satake.dualIdentificationChangePinningIso_monoidal'
+kind = 'definition'
+desc = 'The monoidal structure of the isomorphisms of Satake.dualIdentificationChangePinningIso. The isomorphism between pullback along conjugation by t and the identity of Rep(Ǧ)_Ran is one of symmetric monoidal factorization functors: it comes from the 2-isomorphism between conjugation by t and the identity of BǦ. The induced isomorphism of naive Satake is one of monoidal factorization functors (Satake.naiveFactorizationFunctor_monoidal), and the induced isomorphism of the Hecke actions is one of module structures (Hecke.action_associativity). Provider: here.'
+deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Satake.naiveFactorizationFunctor_monoidal', 'GLCinLean.Hecke.action_associativity', 'GLCinLean.Hecke.ranConvolution']
+source = '[GLC2] Theorem 1.7.2 and §1.7.6; [GLC1] §1.2.1'
