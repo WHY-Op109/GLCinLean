@@ -1,0 +1,8 @@
+desc = '''Kashiwara's theorem for closed embeddings of prestacks.'''
+
+[[node]]
+id = 'GLCinLean.DModules.extraordinaryPullback_isEquivalence_of_isClosedImmersion'
+kind = 'theorem'
+desc = 'Kashiwara: for a closed embedding X → Z of locally almost finite type prestacks, !-pullback identifies the right crystals on Z supported on X with the right crystals on X. Provider: here.'
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Derived.DeRhamPrestack']
+source = '[Crystals] Proposition 2.5.6'

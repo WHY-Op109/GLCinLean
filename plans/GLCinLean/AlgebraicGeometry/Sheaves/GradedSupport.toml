@@ -1,8 +1,0 @@
-desc = 'Support for a graded central action.'
-
-[[node]]
-id = 'GLCinLean.Sheaves.gradedSupport'
-kind = 'definition'
-desc = 'Support for a graded central action via localization at homogeneous elements; provide the closed-support subcategory and membership criterion. Provider: here.'
-deps = ['GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.limits']
-source = '[ArinkinGaitsgory] §§3.1–3.3, 3.5'

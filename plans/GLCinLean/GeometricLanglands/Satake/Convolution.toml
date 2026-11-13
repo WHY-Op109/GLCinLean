@@ -1,10 +1,10 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'Convolution of spherical D-modules on the affine Grassmannian, and its exactness.'
 
 [[node]]
 id = 'GLCinLean.Satake.convolution'
 kind = 'definition'
 desc = 'The twisted-product convolution diagram Gr_G tilde-times Gr_G → Gr_G with its descended external tensor product and proper pushforward; retain associativity and unit constraints. Provider: here.'
-deps = ['GLCinLean.Hecke.affineGrassmannian', 'GLCinLean.Satake.sphericalHeart', 'GLCinLean.DModules.holonomicShriek']
+deps = ['GLCinLean.AffineGrassmannian', 'GLCinLean.Satake.sphericalHeart', 'GLCinLean.DModules.holonomicShriek']
 source = '[MV] §4'
 
 [[node]]

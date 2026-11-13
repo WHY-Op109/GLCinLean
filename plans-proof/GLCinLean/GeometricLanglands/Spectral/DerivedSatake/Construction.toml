@@ -18,14 +18,14 @@ source = '[FactorizableDerivedSatake] Theorem 4.6.1, proof §§4.7–4.10'
 id = 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations'
 kind = 'theorem'
 desc = 'The spherical Whittaker factorization category on Gr_G is equivalent to Rep(dualG), compatibly with the naive Satake action and normalized vacuum. Keep full factorization, not only the pointwise Casselman–Shalika formula. Provider: here.'
-deps = ['GLCinLean.Whittaker.pointwiseCasselmanShalika', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Hecke.affineGrassmannian', 'GLCinLean.DModules.exponential', 'GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Satake.dualIdentification']
+deps = ['GLCinLean.Whittaker.pointwiseCasselmanShalika', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.AffineGrassmannian', 'GLCinLean.DModules.exponential', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Satake.dualIdentification']
 source = '[FactorizableDerivedSatake] Theorem 6.5.1; [RaskinCPSI] Theorem 6.36.1'
 
 [[node]]
 id = 'GLCinLean.SpectralProof.spectralSphericalCategory'
 kind = 'definition'
 desc = 'Renormalized factorization modules for the diagonal regular comodule O(dualG) in Rep(dualG×dualG), with convolution. Identify with the spectral IndCoh Hecke category under the local-systems fiber-product model. Provider: here.'
-deps = ['GLCinLean.SpectralProof.factorizationRenormalization', 'GLCinLean.SpectralProof.factorizationVacuum_almostULA', 'GLCinLean.Hecke.representationCategory', 'GLCinLean.Sheaves.indcoh']
+deps = ['GLCinLean.SpectralProof.factorizationRenormalization', 'GLCinLean.SpectralProof.factorizationVacuum_almostULA', 'GLCinLean.Groups.RepresentationCategory', 'GLCinLean.Sheaves.IndCoh']
 source = '[FactorizableDerivedSatake] §§5.7–5.8; [GLC2] §1.6 and Appendix E'
 
 [[node]]

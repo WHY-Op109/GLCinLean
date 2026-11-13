@@ -1,8 +1,8 @@
 desc = 'Derived Artin stacks.'
 
 [[node]]
-id = 'GLCinLean.Derived.artinStack'
+id = 'GLCinLean.Derived.IsArtinStack'
 kind = 'definition'
-desc = 'Derived Artin stacks with smooth atlases and descent; include almost finite type hypotheses needed for IndCoh. Provider: here.'
-deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Stacks.algebraicStack']
+desc = 'Derived Artin stacks: derived prestacks with a smooth atlas by derived schemes and representable diagonal, defined inductively, with smooth descent. Finiteness conditions are not part of this notion; they are Derived.LocallyAlmostFiniteType. Provider: here.'
+deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Stacks.algebraicStack']
 source = '[IndCoh] §11.1; [ArinkinGaitsgory] §1.5.3'

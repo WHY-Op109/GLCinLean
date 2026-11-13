@@ -4,5 +4,5 @@ desc = 'The Whittaker character.'
 id = 'GLCinLean.Whittaker.character'
 kind = 'definition'
 desc = 'Sum of simple-root extension classes using pinning and the trace H¹(X,ω_X)→k; includes empty sum for a torus. Provider: here.'
-deps = ['GLCinLean.Whittaker.reductionStack', 'GLCinLean.Groups.pinnedData', 'GLCinLean.Curves.thetaCharacteristic', 'GLCinLean.Curves.serreTrace']
+deps = ['GLCinLean.Whittaker.ReductionStack', 'GLCinLean.Groups.pinnedData', 'GLCinLean.Curves.ThetaCharacteristic', 'GLCinLean.Curves.serreTrace']
 source = '[GLC1] §1.3.6'

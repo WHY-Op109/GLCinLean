@@ -1,0 +1,8 @@
+desc = 'The classifying stack BH of an affine algebraic group H.'
+
+[[node]]
+id = 'GLCinLean.Stacks.ClassifyingStack'
+kind = 'definition'
+desc = 'The classifying stack BH of an affine algebraic group H over k, with its tautological H-torsor; it is an algebraic stack, and maps from a prestack to BH are H-torsors on it. No reductivity is assumed. Provider: here.'
+deps = ['GLCinLean.Stacks.groupTorsor', 'GLCinLean.Derived.IsArtinStack']
+source = '[ArinkinGaitsgory] §10.1.1'

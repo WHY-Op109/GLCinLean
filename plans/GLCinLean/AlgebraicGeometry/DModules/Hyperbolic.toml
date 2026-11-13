@@ -1,15 +1,16 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = '''Hyperbolic restriction of D-modules for G_m-actions, and Braden's theorem.'''
 
 [[node]]
 id = 'GLCinLean.DModules.hyperbolicRestriction'
 kind = 'definition'
-desc = 'Attractor and repeller pull-push functors, initially in pro-categories where a left adjoint is only partially defined, and their canonical comparison for G_m-actions on finite-type algebraic spaces in characteristic zero. Preserve the star/shriek directions; the separate theorem gives representability on all monodromic D-modules. Provider: here.'
-deps = ['GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.Actions.hyperbolicInterpolation', 'GLCinLean.DModules.monodromic']
+desc = 'Attractor and repeller pull-push functors, initially in pro-categories where a left adjoint is only partially defined, and their canonical comparison for G_m-actions on schemes Z of finite type whose fixed-point, attractor, repeller and interpolation functors are representable by schemes of finite type; Actions.hyperbolicInterpolation proves this for locally linear actions. Preserve the star/shriek directions; the separate theorem gives representability on all monodromic D-modules. Provider: here.'
+deps = ['GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.Actions.hyperbolicInterpolation', 'GLCinLean.DModules.Monodromic']
 source = '[BradenDG] §§3.1.1–3.1.4'
+
 
 [[node]]
 id = 'GLCinLean.DModules.hyperbolicRestriction_isIso'
 kind = 'theorem'
-desc = 'Prove the two partially defined hyperbolic composites are represented and their canonical comparison is an isomorphism on all monodromic D-modules, using interpolation specialization and contraction. Prove the resulting Braden adjunction; holonomic objects give a special case. The domain is the monodromic category, not every ambient D-module. Provider: here.'
+desc = 'In the setting of DModules.hyperbolicRestriction, prove the two partially defined hyperbolic composites are represented and their canonical comparison is an isomorphism on all monodromic D-modules, using interpolation specialization and contraction. Prove the resulting Braden adjunction; holonomic objects give a special case. The domain is the monodromic category, not every ambient D-module. Provider: here.'
 deps = ['GLCinLean.DModules.hyperbolicRestriction', 'GLCinLean.Actions.hyperbolicInterpolation', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.Infinity.rightAdjoint']
 source = '[BradenDG] Theorems 3.1.6, 3.3.4, Proposition 3.2.2 and §§4–5; [MV] Theorem 3.5'

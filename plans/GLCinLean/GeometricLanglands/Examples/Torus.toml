@@ -1,7 +1,7 @@
 desc = 'The case of a torus: the nilpotent cone.'
 
 [[node]]
-id = 'GLCinLean.Examples.torusNilpotent_is_zero'
+id = 'GLCinLean.Examples.nilpotentCone_eq_zeroSection_of_torus'
 kind = 'theorem'
 desc = 'For a torus the spectral nilpotent cone is the zero section; supported IndCoh is QCoh. Provider: here.'
 deps = ['GLCinLean.LocalSystems.nilpotentCone', 'GLCinLean.Sheaves.zeroSupport_equiv_qcoh']

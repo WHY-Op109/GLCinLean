@@ -4,14 +4,14 @@ desc = 'Local and global oper data used to prove the Hecke property.'
 id = 'GLCinLean.SpectralProof.localOpers'
 kind = 'definition'
 desc = 'Normalized regular and meromorphic dual-group opers on formal discs: retain the specified Cartan-bundle identification and negative-simple-root coefficient equal to the unit section, not just a Borel reduction with nonzero transversality. Define the monodromy-free fiber product Op^mf = LS^reg ×_{LS^mer} Op^mer, with connections, Borel reduction and oper transversality. Include the torus case and all central isogenies. Provider: here. The open roadmap pull request #1056 (FormalConnectionsOpers) proposes local opers for simple complex groups only.'
-deps = ['GLCinLean.Hecke.formalDisc', 'GLCinLean.Groups.langlandsDual', 'GLCinLean.LocalSystems.classifyingStack', 'GLCinLean.Derived.mappingPrestack']
+deps = ['GLCinLean.Ran.FormalDisc', 'GLCinLean.Groups.langlandsDual', 'GLCinLean.Stacks.ClassifyingStack', 'GLCinLean.Derived.MappingPrestack']
 source = '[GLC2] §3.1; §§B.7–B.8'
 
 [[node]]
 id = 'GLCinLean.SpectralProof.globalMonodromyFreeOpers'
 kind = 'definition'
 desc = 'Global meromorphic opers with poles at a Ran configuration whose underlying local system extends over X; define the Cartesian local-to-global evaluation square. Provider: here.'
-deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.LocalSystems.deRham', 'GLCinLean.Hecke.ranSpace', 'GLCinLean.Derived.mappingPrestack']
+deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.LocalSystems.DeRham', 'GLCinLean.Ran', 'GLCinLean.Derived.MappingPrestack']
 source = '[GLC2] §§15.1.1–15.1.4'
 
 [[node]]

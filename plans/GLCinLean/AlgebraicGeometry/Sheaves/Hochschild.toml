@@ -1,8 +1,0 @@
-desc = 'Hochschild cochains of an enhanced category.'
-
-[[node]]
-id = 'GLCinLean.Sheaves.hochschildCochains'
-kind = 'definition'
-desc = 'E₂-algebra of enhanced endomorphisms of the identity; its even cohomology acts centrally on the homotopy category. Provider: here.'
-deps = ['GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Sheaves.indcoh']
-source = '[ArinkinGaitsgory] Appendices E.1–E.3, F.1'

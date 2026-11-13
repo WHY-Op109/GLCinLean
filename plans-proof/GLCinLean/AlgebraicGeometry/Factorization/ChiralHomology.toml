@@ -4,7 +4,7 @@ desc = 'Source-backed commutative chiral/factorization homology, with convenient
 id = 'GLCinLean.Factorization.chiralHomology'
 kind = 'definition'
 desc = 'Construct unital chiral homology from the Chevalley–Cousin diagram on finite configurations and de Rham integration, with independence of the auxiliary resolutions and comparison to unital Ran factorization chains. Include its commutative algebra structure for a commutative D_X-algebra and central-module version as the degree-one part of the square-zero construction. Provider: here.'
-deps = ['GLCinLean.DModules.commutativeDAlgebra', 'GLCinLean.SpectralProof.factorizationGlobalization', 'GLCinLean.Hecke.ranSpace', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.Infinity.limits']
+deps = ['GLCinLean.DModules.commutativeDAlgebra', 'GLCinLean.SpectralProof.factorizationGlobalization', 'GLCinLean.Ran', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.Infinity.limits']
 source = '[BDChiral] §§4.1.1, 4.2.1–4.2.19 and 4.3.1–4.3.5; [GLC2] §§F.1–F.2'
 
 [[node]]

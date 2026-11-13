@@ -1,8 +1,8 @@
-desc = 'Coherent D-module prerequisites for the compactness proof.'
+desc = 'Verdier duality of coherent D-modules.'
 
 [[node]]
 id = 'GLCinLean.DModules.verdierDuality'
 kind = 'definition'
 desc = 'Involutive anti-equivalence of coherent D-modules, obtained by descending scheme Verdier duality. It exchanges smooth extraordinary and ordinary pullback, with the cohomological normalization. Provider: here.'
-deps = ['GLCinLean.DModules.coherent', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback']
+deps = ['GLCinLean.DModules.Coherent', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback']
 source = '[DG2] §5.3 and §7.3.4'

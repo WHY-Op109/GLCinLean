@@ -4,21 +4,21 @@ desc = 'Distinct infinite-type IndCoh! and IndCoh* constructions. Ordinary local
 id = 'GLCinLean.Sheaves.indcohBang'
 kind = 'definition'
 desc = 'On n-coconnective affines, left Kan extend finite-type IndCoh with !-pullback; compare successive n, then right Kan extend from eventually coconnective affines to prestacks. Include !-pullback, dualizing object and agreement with LAFT IndCoh. This left-then-right extension is distinct from directly applying the LAFT diagram to infinite-type opers. Provider: here.'
-deps = ['GLCinLean.Sheaves.indcohShriekOnSchemes', 'GLCinLean.Derived.prestack', 'GLCinLean.Infinity.rightKanExtension', 'GLCinLean.Infinity.limits']
+deps = ['GLCinLean.Sheaves.indcohShriekOnSchemes', 'GLCinLean.Derived.Prestack', 'GLCinLean.Infinity.rightKanExtension', 'GLCinLean.Infinity.limits']
 source = '[GLC2] §§A.4.1–A.4.7'
 
 [[node]]
 id = 'GLCinLean.Sheaves.indcohStar'
 kind = 'definition'
 desc = 'On eventually coconnective affines, define IndCoh* as continuous-linear dual of IndCoh! (equivalently the inverse limit of finite-stage IndCoh by pushforward). Extend covariantly to ind-affine indschemes by left Kan extension, computed as the colimit over closed affine pieces. Include pushforward and the LAFT comparison; no extension to all prestacks is asserted. Provider: here.'
-deps = ['GLCinLean.Sheaves.indcohBang', 'GLCinLean.Derived.indscheme', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Infinity.limits']
+deps = ['GLCinLean.Sheaves.indcohBang', 'GLCinLean.Derived.IsIndscheme', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Infinity.limits']
 source = '[GLC2] §§A.5.1–A.5.9'
 
 [[node]]
 id = 'GLCinLean.Sheaves.infiniteTypeUpsilon'
 kind = 'definition'
 desc = 'Construct the symmetric monoidal !-tensor structure, Upsilon:QCoh(Y)→IndCoh!(Y), and the IndCoh! action on IndCoh* with projection formula. Upsilon is a functor, not an assumed equivalence for all Y; the pairing does not assert dualizability before placidity is proved. Provider: here.'
-deps = ['GLCinLean.Sheaves.indcohBang', 'GLCinLean.Sheaves.indcohStar', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Infinity.monoidalCategory']
+deps = ['GLCinLean.Sheaves.indcohBang', 'GLCinLean.Sheaves.indcohStar', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.monoidalCategory']
 source = '[GLC2] §§A.6.1–A.6.7'
 
 [[node]]

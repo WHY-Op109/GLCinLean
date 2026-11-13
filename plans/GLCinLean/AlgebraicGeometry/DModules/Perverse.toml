@@ -1,10 +1,10 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'The perverse t-structure on regular holonomic complexes lisse along a stratification, and intermediate extension.'
 
 [[node]]
 id = 'GLCinLean.DModules.perverseHeart'
 kind = 'definition'
-desc = 'The middle perverse t-structure on constructible regular-holonomic objects, specified by the stratumwise star/shriek bounds and glued on finite-dimensional Schubert unions; identify it with the standard algebraic D-module heart using the dimension shift convention. Provider: here.'
-deps = ['GLCinLean.DModules.holonomic', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.regularHolonomic']
+desc = 'For a scheme Y of finite type with a stratification S by smooth connected locally closed strata, the middle perverse t-structure on the bounded regular holonomic complexes on Y whose cohomology is lisse along S, specified by the bounds on the *- and !-restrictions to the strata; identify it with the restriction of the standard t-structure of holonomic D-modules, with the dimension-shift convention. For an indscheme presented by closed embeddings of such stratified schemes, glue along the closed embeddings; finite Schubert unions in Gr_G are the case the Satake heart uses. Provider: here.'
+deps = ['GLCinLean.DModules.IsHolonomic', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.IsRegularHolonomic']
 source = '[MV] §2; [GLys] §9.2.1'
 
 [[node]]

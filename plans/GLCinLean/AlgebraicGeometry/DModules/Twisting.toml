@@ -1,8 +1,15 @@
-desc = 'D-modules twisted by an étale μ_n-gerbe.'
+desc = 'D-modules twisted by an étale μ_n-gerbe, and their !-pullback.'
 
 [[node]]
-id = 'GLCinLean.DModules.twistedCrystals'
+id = 'GLCinLean.DModules.TwistedCrystals'
 kind = 'definition'
 desc = 'Twisted right crystals Dmod_𝒢(Y) for an étale μ_n-gerbe 𝒢 on a locally almost finite type prestack Y and a specified character, defined as in [GLys] §1.7: the category of right crystals twisted by the gerbe through the character, as a sheaf of categories over test schemes. Of the two sign conventions (the band acts by the character or by its inverse) take the one for which the comparison of [GLC2] §1.1.9 holds; for μ_2, the only case the statement uses, they agree. These are étale twistings, not the de Rham twistings of [Crystals] §§6–7, with which they are compared only for root gerbes. A trivialization of 𝒢 identifies them with untwisted right crystals (the untwisting equivalence); two trivializations differ by a μ_n-torsor, and the two untwistings differ by tensoring with the rank-one local system of that torsor and the character: the right crystal obtained from ω by étale descent along the torsor, with the descent datum twisted by the character (DModules.rightCrystals_hDescent). Prove étale descent, so that Dmod_𝒢 is computed from étale-local trivializations over test schemes; give functoriality in the gerbe and the !-tensor product Dmod_𝒢₁(Y) ⊗ Dmod_𝒢₂(Y) → Dmod_{𝒢₁⊗𝒢₂}(Y) (DModules.shriekTensor), compatible with the untwisting equivalences. Provider: here.'
-deps = ['GLCinLean.Stacks.etaleGerbe', 'GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.rightCrystals_hDescent', 'GLCinLean.DModules.shriekTensor']
+deps = ['GLCinLean.Stacks.EtaleGerbe', 'GLCinLean.DModules.RightCrystals', 'GLCinLean.DModules.rightCrystals_hDescent', 'GLCinLean.DModules.shriekTensor']
 source = '[GLys] §§1.7.2–1.7.4; [GLC1] §1.1.3; [GLC2] §1.1.9 and Remark 1.1.13'
+
+[[node]]
+id = 'GLCinLean.DModules.twistedExtraordinaryPullback'
+kind = 'definition'
+desc = 'The !-pullback of twisted right crystals: for a map f : Y → Z and an étale μ_n-gerbe 𝒢 on Z, the functor f^! : Dmod_𝒢(Z) → Dmod_{f^*𝒢}(Y), functorial in f and natural in the gerbe. It needs no trivialization of 𝒢. When a trivialization is given, for example of a pulled-back twist, it agrees with DModules.extraordinaryPullback through the untwisting equivalences of DModules.TwistedCrystals. Provider: here.'
+deps = ['GLCinLean.DModules.TwistedCrystals', 'GLCinLean.Stacks.EtaleGerbe', 'GLCinLean.DModules.extraordinaryPullback']
+source = '[GLC1] §1.3.5; [GLys] §1.7'

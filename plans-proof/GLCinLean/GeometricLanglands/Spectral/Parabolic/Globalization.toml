@@ -11,14 +11,14 @@ source = '[GLC2] Lemma H.1.13; §§H.4.13, H.5.3; Remark 15.6.15(b)'
 id = 'GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv'
 kind = 'theorem'
 desc = 'For a commutative unital factorization algebra A, its independent module category is equivalent to modules over C_fact(X,A), universally for strictly unital local-to-global functors. Construct the factorization-homology action and prove the universal property, also with coefficients in QCoh(S). Provider: here.'
-deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.independentCategory_tensorBaseChange', 'GLCinLean.Sheaves.qcoh']
+deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.independentCategory_tensorBaseChange', 'GLCinLean.Sheaves.QCoh']
 source = '[GLC2] Remark 15.6.15 and equation (15.32), proof from §§15.6.6–15.6.15'
 
 [[node]]
 id = 'GLCinLean.SpectralProof.twistedUnipotentLocalSystems_functions'
 kind = 'theorem'
 desc = 'For an arbitrary family sigma of dual-M local systems, identify functions on local systems for the twisted unipotent group N_{P,sigma} with factorization homology of its Chevalley cochains. Prove good-as-connective finiteness using the central filtration, then perform the construction over every affine base S→LS_M and descend; checking only the trivial M-local system is not sufficient. Provider: here.'
-deps = ['GLCinLean.SpectralProof.parabolicChevalleyAlgebra', 'GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv', 'GLCinLean.Factorization.commutativeChiralHomology_equiv_derivedConstantQuotient', 'GLCinLean.Stacks.unipotentTorsorFiltration', 'GLCinLean.LocalSystems.deRham', 'GLCinLean.Sheaves.qcoh']
+deps = ['GLCinLean.SpectralProof.parabolicChevalleyAlgebra', 'GLCinLean.SpectralProof.commutativeFactorizationModules_independent_equiv', 'GLCinLean.Factorization.commutativeChiralHomology_equiv_derivedConstantQuotient', 'GLCinLean.Stacks.unipotentTorsorFiltration', 'GLCinLean.LocalSystems.DeRham', 'GLCinLean.Sheaves.QCoh']
 source = '[GLC3] §§12.3.2–12.3.5 (twisted-unipotent calculation), proof of Proposition 12.7.3; [GLC2] §§12.7.4–12.7.6, Remark 15.6.15'
 
 [[node]]

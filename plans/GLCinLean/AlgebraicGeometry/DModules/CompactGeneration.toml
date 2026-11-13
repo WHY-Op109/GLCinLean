@@ -4,7 +4,7 @@ desc = 'Compact generation for algebraic D-modules on QCA stacks and ind-finite-
 id = 'GLCinLean.DModules.crystalInduction'
 kind = 'definition'
 desc = 'Construct induction from IndCoh to right crystals on a locally almost finite type algebraic stack as left adjoint to the continuous conservative forgetful functor. Use relative de Rham prestacks and smooth descent; supply the adjunction and base-change comparisons. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction', 'GLCinLean.DModules.rightCrystals_hDescent']
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction', 'GLCinLean.DModules.rightCrystals_hDescent']
 source = '[DG2] §6.3, especially Lemma 6.3.16; [Crystals] §3.3'
 
 [[node]]
@@ -18,5 +18,5 @@ source = '[DG2] Theorem 8.1.1'
 id = 'GLCinLean.DModules.indscheme_compactlyGenerated'
 kind = 'theorem'
 desc = 'For an indscheme presented by closed embeddings of finite-type schemes, identify D-modules with the colimit of the finite-stage categories under proper direct image and with the dual !-pullback limit. Prove compact generation by finite-stage compact objects because the transition functors have continuous ! right adjoints. Include the same argument for compatible finite-type G_m-quotients. Provider: here.'
-deps = ['GLCinLean.Derived.indscheme', 'GLCinLean.DModules.qcaDMod_compactlyGenerated', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.compactGeneration']
+deps = ['GLCinLean.Derived.IsIndscheme', 'GLCinLean.DModules.qcaDMod_compactlyGenerated', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.compactGeneration']
 source = '[ChenNearbyCycles] §A.4, Lemma A.1.5 and Lemma D.1.1; [CompactGeneration] Corollary 1.9.4 and Lemma 1.9.5'

@@ -1,8 +1,15 @@
-desc = 'The t-structure on IndCoh with conical support containing zero.'
+desc = 'The t-structure on IndCoh with conical support containing zero, and the equivalence of Ψ on its bounded-below part.'
 
 [[node]]
 id = 'GLCinLean.Sheaves.supportTStructure'
 kind = 'definition'
 desc = 'For a conical support Y containing zero, define the t-structure whose connective objects are detected by coarsening; prove t-exactness of coarsening. Provider: here.'
-deps = ['GLCinLean.Sheaves.indcohWithSupport', 'GLCinLean.Sheaves.psi', 'GLCinLean.Infinity.tStructure']
+deps = ['GLCinLean.Sheaves.IndCohWithSupport', 'GLCinLean.Sheaves.psi', 'GLCinLean.Infinity.tStructure']
 source = '[ArinkinGaitsgory] §4.4.1 and Corollary 4.4.3'
+
+[[node]]
+id = 'GLCinLean.Sheaves.psi_eventuallyCoconnective_equiv'
+kind = 'theorem'
+desc = 'For conical support containing zero, restricted Psi is t-exact and an equivalence on bounded-below parts. Provider: here.'
+deps = ['GLCinLean.Sheaves.zeroSupport_equiv_qcoh', 'GLCinLean.Infinity.eventuallyCoconnective', 'GLCinLean.Sheaves.supportTStructure']
+source = '[ArinkinGaitsgory] Proposition 4.4.5; [GLC1] §1.6.3'

@@ -3,13 +3,13 @@ desc = 'The normalized determinant line on Bun_G and its square root.'
 [[node]]
 id = 'GLCinLean.Stacks.determinantBundle'
 kind = 'definition'
-desc = 'Normalized determinant RΓ(X,ad(P)) ⊗ det RΓ(X,ad(P⁰))⁻¹ on Bun_G, using proper perfect pushforward. Provider: here.'
-deps = ['GLCinLean.Stacks.associatedAdjointBundle', 'GLCinLean.Sheaves.determinant', 'GLCinLean.Sheaves.qcohGlobalSections']
+desc = 'The normalized determinant line bundle det_{Bun_G} = det RΓ(X, ad(P)) ⊗ (det RΓ(X, ad(P⁰)))⁻¹ on Bun_G, where P is the universal G-bundle on X × Bun_G, ad(P) its adjoint bundle (Stacks.associatedAdjointBundle), RΓ(X, −) the direct image along the projection X × Bun_G → Bun_G (Sheaves.properPerfectPushforward), and P⁰ the trivial bundle, so that the second factor is a constant line. Provider: here.'
+deps = ['GLCinLean.Stacks.associatedAdjointBundle', 'GLCinLean.Sheaves.determinant', 'GLCinLean.Sheaves.properPerfectPushforward', 'GLCinLean.Stacks.BundleStack']
 source = '[GLC1] §1.1.1'
 
 [[node]]
 id = 'GLCinLean.Stacks.determinantSquareRoot'
 kind = 'definition'
 desc = 'Theta characteristic induces a square root of the normalized determinant; include compatibility on the N-reduction stack. Provider: here.'
-deps = ['GLCinLean.Stacks.determinantBundle', 'GLCinLean.Curves.thetaCharacteristic']
+deps = ['GLCinLean.Stacks.determinantBundle', 'GLCinLean.Curves.ThetaCharacteristic']
 source = '[GLC1] §§1.1.2, 1.3.3–1.3.4'

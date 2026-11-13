@@ -1,15 +1,15 @@
 desc = 'Quasi-coherent sheaves on derived prestacks, and their global sections.'
 
 [[node]]
-id = 'GLCinLean.Sheaves.qcoh'
+id = 'GLCinLean.Sheaves.QCoh'
 kind = 'definition'
 desc = 'Enhanced quasicoherent sheaves: derived modules on affines, extended by descent; symmetric monoidal structure and pullbacks. Provider: here, by right Kan extension from `Derived.affineModules`. Roadmap EnhancedDerivedSheaves does not own QCoh on prestacks.'
-deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Infinity.linearCategory', 'GLCinLean.Derived.affineModules', 'GLCinLean.Sheaves.schemeQCoh']
+deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Infinity.linearCategory', 'GLCinLean.Derived.affineModules', 'GLCinLean.Sheaves.schemeQCoh']
 source = '[IndCoh] §0.6.7'
 
 [[node]]
 id = 'GLCinLean.Sheaves.qcohGlobalSections'
 kind = 'definition'
 desc = 'Derived global sections as the mapping object from the tensor unit, with projection formula. Provider: here.'
-deps = ['GLCinLean.Sheaves.qcoh', 'GLCinLean.Infinity.rightAdjoint']
+deps = ['GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.rightAdjoint']
 source = '[GLC1] §1.4.6; [IndCoh] §0.6.7'

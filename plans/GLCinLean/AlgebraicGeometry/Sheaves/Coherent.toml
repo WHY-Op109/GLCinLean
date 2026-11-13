@@ -1,8 +1,8 @@
 desc = 'Coherent complexes on derived schemes.'
 
 [[node]]
-id = 'GLCinLean.Sheaves.coherent'
+id = 'GLCinLean.Sheaves.Coherent'
 kind = 'definition'
 desc = 'Bounded complexes with coherent cohomology on noetherian derived schemes, descended to stacks. Provider: here.'
-deps = ['GLCinLean.Sheaves.qcoh', 'GLCinLean.Infinity.tStructure', 'GLCinLean.Derived.artinStack']
+deps = ['GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.tStructure', 'GLCinLean.Derived.IsArtinStack']
 source = '[IndCoh] §§1.1.1–1.1.2, 11'

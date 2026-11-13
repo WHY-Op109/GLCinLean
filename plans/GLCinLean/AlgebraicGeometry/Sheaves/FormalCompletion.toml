@@ -3,13 +3,13 @@ desc = 'QCoh and IndCoh on the formal completion of a scheme along a closed subs
 [[node]]
 id = 'GLCinLean.Sheaves.qcoh_formalCompletion_localization'
 kind = 'theorem'
-desc = 'For a closed subscheme Y of a scheme X of finite type, with open complement U, pullback to the formal completion X^∧_Y (Derived.formalCompletion, an indscheme) identifies the full subcategory QCoh(X)_Y of objects supported on Y, the kernel of restriction to U, with QCoh(X^∧_Y). Provider: here.'
-deps = ['GLCinLean.Derived.formalCompletion', 'GLCinLean.Derived.indscheme', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Infinity.limits']
-source = '[DGIndschemes] Proposition 7.1.3'
+desc = 'For a derived scheme X and a quasi-compact closed subset Y of it that is locally the zero set of finitely many functions, with open complement U: pullback to the formal completion X^∧_Y (Derived.FormalCompletion, an indscheme under this hypothesis) identifies the full subcategory QCoh(X)_Y of objects supported on Y, the kernel of restriction to U, with QCoh(X^∧_Y). A closed subscheme of a scheme of finite type is an instance. Provider: here.'
+deps = ['GLCinLean.Derived.FormalCompletion', 'GLCinLean.Derived.IsIndscheme', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.limits']
+source = '[DGIndschemes] Proposition 7.1.3, under the assumption of §6.6.1'
 
 [[node]]
 id = 'GLCinLean.Sheaves.indcoh_formalCompletion_localization'
 kind = 'theorem'
-desc = 'In the setting of Sheaves.qcoh_formalCompletion_localization, IndCoh(X^∧_Y) is identified with the kernel of restriction IndCoh(X) → IndCoh(U), compatibly with the QCoh statement under Υ (DModules.leftToRightCrystals) on X, U and X^∧_Y. Provider: here.'
-deps = ['GLCinLean.Sheaves.qcoh_formalCompletion_localization', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.DModules.leftToRightCrystals', 'GLCinLean.Derived.indscheme']
+desc = 'In the setting of Sheaves.qcoh_formalCompletion_localization, with X almost of finite type, IndCoh(X^∧_Y) is identified with the kernel of restriction IndCoh(X) → IndCoh(U), compatibly with the QCoh statement under Υ (Sheaves.upsilon) on X, U and X^∧_Y. Provider: here.'
+deps = ['GLCinLean.Sheaves.qcoh_formalCompletion_localization', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Sheaves.upsilon', 'GLCinLean.Derived.IsIndscheme']
 source = '[DGIndschemes] Proposition 7.4.5 and §§7.4–7.5'

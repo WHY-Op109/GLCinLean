@@ -3,6 +3,6 @@ desc = 'Coherent right Kan extensions of enhanced categories. Owner: the Tau Cet
 [[node]]
 id = 'GLCinLean.Infinity.rightKanExtension'
 kind = 'definition'
-desc = 'Right Kan extension of coherent diagrams, computed objectwise by limits over the appropriate slice infinity-categories, with restriction and uniqueness equivalences. Ordinary Kan extension is not a substitute for this enhanced universal property. Provider: roadmap BordismFormalGroups, “Marked fibrations and Kan extensions”, with roadmap EnhancedDerivedSheaves “Kan extensions and finality”.'
-deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.presentableCategory']
+desc = 'Right Kan extension of coherent diagrams into a category with the needed limits, computed objectwise by limits over the appropriate slice infinity-categories, with restriction and uniqueness equivalences; presentable targets are an instance. Ordinary Kan extension is not a substitute for this enhanced universal property. Provider: roadmap BordismFormalGroups, “Marked fibrations and Kan extensions”, with roadmap EnhancedDerivedSheaves “Kan extensions and finality”.'
+deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits']
 source = '[IndCoh] §10.1.2'

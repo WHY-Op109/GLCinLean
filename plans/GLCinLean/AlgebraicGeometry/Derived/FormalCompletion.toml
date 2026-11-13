@@ -1,8 +1,15 @@
-desc = 'Formal completion as a derived prestack, with comparison to support conditions.'
+desc = 'Formal completion of a prestack along a map, and the Čech nerve of a formal completion over its de Rham prestack.'
 
 [[node]]
-id = 'GLCinLean.Derived.formalCompletion'
+id = 'GLCinLean.Derived.FormalCompletion'
 kind = 'definition'
-desc = '''For a closed subprestack Z of Y, form Y completed along Z as Y fiber product over Y_dR with Z_dR; prove its affine-test universal property and base-change compatibility. Use this fiber-product model for the derived prestack. Tau Ceti's ordinary Scheme.formalCompletion supplies adic thickening systems and is not redefined. Provider: here.'''
-deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Infinity.limits']
-source = '[DGIndschemes] Definition 6.1.2; [OneAffineness] §4.1.2'
+desc = '''For a map Y → X of prestacks, the formal completion X^∧_Y = X ×_{X_dR} Y_dR: its S-points are the S-points of X together with a lift to Y of their reduced classical truncation, so it depends only on the map of reduced classical truncations. Prove its affine-test universal property and base-change compatibility, and that X^∧_Y → X is a monomorphism when the map of reduced classical truncations is one, for example for a closed embedding. Tau Ceti's ordinary Scheme.formalCompletion supplies adic thickening systems of a scheme and is not redefined. Provider: here.'''
+deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Derived.DeRhamPrestack', 'GLCinLean.Infinity.limits']
+source = '[DGIndschemes] Definition 6.1.2 and §6.2; [OneAffineness] §4.1.2'
+
+[[node]]
+id = 'GLCinLean.Derived.deRhamCechNerve_formalCompletion'
+kind = 'theorem'
+desc = 'For a closed subscheme X of a separated scheme Z of finite type and Y the formal completion of Z along X (Derived.FormalCompletion), the n-th term of the Čech nerve of Y → Y_dR is the formal completion of Z^{n+1} along the diagonal copy of X, which is closed since Z is separated; these terms are locally almost of finite type indschemes. The case X = Z gives the Čech nerve of Z → Z_dR. Provider: here.'
+deps = ['GLCinLean.Derived.DeRhamPrestack', 'GLCinLean.Derived.FormalCompletion', 'GLCinLean.Derived.IsIndscheme', 'GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType']
+source = '[Crystals] §1.2.2 and the proof of Proposition 1.3.3; [DGIndschemes] Proposition 6.3.1 and Corollary 6.3.2'

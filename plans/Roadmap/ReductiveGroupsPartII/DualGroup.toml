@@ -4,8 +4,9 @@ desc = 'The dual based root datum, the Langlands dual group over k, its identifi
 id = 'GLCinLean.Groups.langlandsDual'
 kind = 'definition'
 desc = 'Given a pinned reductive group over k, construct the pinned split reductive integral group for the FLIPPED based root datum, base-change to k, and exhibit Groups.dualityData for the input and output pinnings. This includes the central torus, not just the semisimple root system. Provider: roadmap ReductiveGroupsPartII, `langlands-dual-group` and `dual-based-root-datum`. Upstream declarations used: `RootPairing.flip` (`Mathlib.LinearAlgebra.RootSystem.Defs`), `RootPairing.Base.flip` (`Mathlib.LinearAlgebra.RootSystem.Base`), `RootPairing.Equiv` (`Mathlib.LinearAlgebra.RootSystem.Hom`).'
-deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.dualityData']
+deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.dualityData', 'GLCinLean.Groups.splitReductiveGroup']
 source = '[ConradRGS] Theorems 6.1.16(2), 6.1.17; [GLC1] §0.1.1'
+
 
 [[node]]
 id = 'GLCinLean.Groups.dualityData'

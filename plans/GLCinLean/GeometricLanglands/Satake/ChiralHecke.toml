@@ -1,0 +1,8 @@
+desc = 'The chiral Hecke algebra in the half-twisted spherical category.'
+
+[[node]]
+id = 'GLCinLean.Satake.chiralHeckeAlgebra'
+kind = 'definition'
+desc = 'Transport the regular representation of the dual group, with its algebra and comodule structure, to the half-twisted heart at each point, through the heart equivalence followed by Satake.halfTwistedHeart_equiv_untwistedHeart. Construct the diagonal-stratified Cousin complex in Satake.factorizationSphericalCategory and use its cohomology to form the compatible chiral Hecke algebra over all X^I. Its commutativity uses the geometric fusion constraint of the half-twisted category, which matches the usual constraint of Rep(Ǧ); in the untwisted category it would fail by signs on odd components. Include the factorization and diagonal identifications with the degree shift of Raskin §6.33. Provider: here.'
+deps = ['GLCinLean.Satake.geometricSatakeHeartEquivalence', 'GLCinLean.Satake.fusion', 'GLCinLean.Satake.factorizationSphericalCategory', 'GLCinLean.Ran.Representations', 'GLCinLean.Satake.chiralCousinComplex_concentrated', 'GLCinLean.Satake.halfTwistedHeart_equiv_untwistedHeart']
+source = '[GaitsgoryDeJong] Appendix B (§7), §§7.1–7.5 and 7.7–7.9; [RaskinCPSI] §6.33'

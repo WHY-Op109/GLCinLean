@@ -1,4 +1,4 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'Total cohomology as the fibre functor of the spherical heart.'
 
 [[node]]
 id = 'GLCinLean.Satake.cohomologyFiberFunctor'

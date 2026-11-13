@@ -1,22 +1,16 @@
 desc = 'The derived stack LS_H of de Rham local systems on the curve.'
 
 [[node]]
-id = 'GLCinLean.LocalSystems.classifyingStack'
+id = 'GLCinLean.LocalSystems.DeRham'
 kind = 'definition'
-desc = 'Classifying stack BH of a reductive group, with tautological torsor. Provider: here.'
-deps = ['GLCinLean.Stacks.groupTorsor', 'GLCinLean.Derived.artinStack']
-source = '[ArinkinGaitsgory] §10.1.1'
-
-[[node]]
-id = 'GLCinLean.LocalSystems.deRham'
-kind = 'definition'
-desc = 'Derived mapping stack Maps(X_dR,BH); families are H-bundles with flat connection, retaining derived structure. Provider: here.'
-deps = ['GLCinLean.Derived.deRhamPrestack', 'GLCinLean.LocalSystems.classifyingStack', 'GLCinLean.Derived.mappingPrestack']
+desc = 'For an affine algebraic group H, the derived mapping stack LS_H = Maps(X_dR, BH); families are H-bundles with flat connection, retaining derived structure. Provider: here.'
+deps = ['GLCinLean.Derived.DeRhamPrestack', 'GLCinLean.Stacks.ClassifyingStack', 'GLCinLean.Derived.MappingPrestack']
 source = '[ArinkinGaitsgory] §§10.1.1–10.1.2'
 
+
 [[node]]
-id = 'GLCinLean.LocalSystems.quasiSmooth'
+id = 'GLCinLean.LocalSystems.quasiSmooth_deRham'
 kind = 'theorem'
 desc = 'Prove LS_H is a quasi-smooth derived Artin stack with the required finiteness. Provider: here.'
-deps = ['GLCinLean.LocalSystems.deRham', 'GLCinLean.Derived.quasiSmooth']
+deps = ['GLCinLean.LocalSystems.DeRham', 'GLCinLean.Derived.QuasiSmooth']
 source = '[ArinkinGaitsgory] Proposition 10.4.5'

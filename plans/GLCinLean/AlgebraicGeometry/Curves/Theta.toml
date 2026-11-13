@@ -1,7 +1,8 @@
-desc = 'Theta characteristics of a smooth proper connected curve. Their existence is GLCinLean.AlgebraicGeometry.Curves.ThetaExistence.'
+desc = 'Theta characteristics of a smooth curve. Their existence is GLCinLean.AlgebraicGeometry.Curves.ThetaExistence.'
 
 [[node]]
-id = 'GLCinLean.Curves.thetaCharacteristic'
+id = 'GLCinLean.Curves.ThetaCharacteristic'
 kind = 'definition'
-desc = 'A line bundle L on a smooth proper connected curve with a chosen L⊗L ≅ Ω¹; keep the isomorphism as data. Provider: here. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`), `TauCeti.AlgebraicGeometry.InvertibleSheaf` (`TauCeti.AlgebraicGeometry.LineBundle.Basic`), `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct` (`TauCeti.AlgebraicGeometry.LineBundle.TensorProduct`), `AlgebraicGeometry.Scheme.relativeDifferentials` (`TauCeti.AlgebraicGeometry.Modules.Differentials.Basic`), `AlgebraicGeometry.SmoothOfRelativeDimension` (`Mathlib.AlgebraicGeometry.Morphisms.Smooth`), `AlgebraicGeometry.IsProper` (`Mathlib.AlgebraicGeometry.Morphisms.Proper`), `ConnectedSpace` (`Mathlib.Topology.Connected.Basic`).'
+desc = 'A theta characteristic of a smooth curve X over a base scheme S (smooth of relative dimension one): a square root of the relative canonical bundle Ω¹_{X/S}, that is, LineBundle.Root with n = 2 and L = Ω¹_{X/S}, kept as data. Properness, connectedness and the base field enter only the existence theorem Curves.nonempty_thetaCharacteristic. Provider: here. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`), `AlgebraicGeometry.Scheme.relativeDifferentials` (`TauCeti.AlgebraicGeometry.Modules.Differentials.Basic`), `AlgebraicGeometry.SmoothOfRelativeDimension` (`Mathlib.AlgebraicGeometry.Morphisms.Smooth`).'
+deps = ['GLCinLean.LineBundle.Root']
 source = '[GLC1] §1.3.2; [GLC2] §0.4.1'

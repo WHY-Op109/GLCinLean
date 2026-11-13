@@ -1,8 +1,8 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'The fusion commutativity constraint of the spherical heart.'
 
 [[node]]
 id = 'GLCinLean.Satake.fusion'
 kind = 'definition'
 desc = 'Beilinson–Drinfeld Grassmannians over X^I, disjoint factorization, diagonal collision and the fusion commutativity constraint on the heart, including the parity correction from pairing coweights with the sum of positive roots (the character 2ρ). Do not impose symmetric monoidality on the full spherical DG category over Ran. Provider: here.'
-deps = ['GLCinLean.Hecke.correspondence', 'GLCinLean.Hecke.ranSpace', 'GLCinLean.Satake.convolution_preserves_perversity', 'GLCinLean.DModules.intermediateExtension', 'GLCinLean.Groups.coweightParity']
+deps = ['GLCinLean.Hecke.Correspondence', 'GLCinLean.Ran', 'GLCinLean.Satake.convolution_preserves_perversity', 'GLCinLean.DModules.intermediateExtension', 'GLCinLean.Groups.coweightParity']
 source = '[MV] §5; [GLys] §§5.2, 9.1.1'

@@ -4,5 +4,12 @@ desc = 'Satake construction prerequisite. The DG enhancement and determinant nor
 id = 'GLCinLean.Satake.dualIdentificationChangePinningSpectralIso'
 kind = 'definition'
 desc = 'The isomorphisms that Satake.dualIdentificationChangePinningIso induces on the side of the proof: of the Casselman–Shalika equivalence SpectralProof.sphericalWhittaker_equiv_representations, and of the QCoh(LS_Ǧ)-action Spectral.action (t identifies each local system with its conjugate, compatibly with spectral localization). Provider: here.'
-deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Spectral.action', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.Spectral.localization', 'GLCinLean.LocalSystems.deRham']
+deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Spectral.action', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.Spectral.localization', 'GLCinLean.LocalSystems.DeRham']
 source = '[GLC2] Theorem 1.4.2, §1.4.4 and Theorem 1.7.2; [GLC1] §§1.2.1–1.2.5'
+
+[[node]]
+id = 'GLCinLean.Satake.dualIdentification_chevalleyInvolution'
+kind = 'theorem'
+desc = 'Satake.dualIdentification intertwines the Chevalley involutions (Groups.chevalleyInvolution) of the Tannakian group with Satake.tannakaPinning and of the dual group with its dual pinning. Provider: here.'
+deps = ['GLCinLean.Satake.dualIdentification', 'GLCinLean.Groups.chevalleyInvolution']
+source = '[GLC2] §1.8; [ConradRGS] Theorem 6.1.17'

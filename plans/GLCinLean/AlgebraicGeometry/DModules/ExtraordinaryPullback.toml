@@ -1,0 +1,8 @@
+desc = 'The !-pullback of D-modules.'
+
+[[node]]
+id = 'GLCinLean.DModules.extraordinaryPullback'
+kind = 'definition'
+desc = 'The !-pullback of right crystals: for a map f : Y → Z of locally almost finite type prestacks, f^! : Dmod(Z) → Dmod(Y), the !-pullback of IndCoh along f_dR, functorial in f and coherent in compositions. The version for twisted crystals is DModules.twistedExtraordinaryPullback. Provider: here.'
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Derived.DeRhamPrestack']
+source = '[Crystals] §2.3; [GLC1] §1.3.5'

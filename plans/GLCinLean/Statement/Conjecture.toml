@@ -8,25 +8,25 @@ source = '[GLC1] §0.1.1'
 [[node]]
 id = 'GLCinLean.Statement.Setting'
 desc = 'PLACEHOLDER. Standing geometric data for [GLC1] §§1.1–1.3: a smooth proper connected curve, a pinned reductive group, a theta characteristic and an identified Langlands dual group. The theta characteristic is a line bundle together with its squaring isomorphism. Provider: here. Upstream declarations used: `Field` (`Mathlib.Algebra.Field.Defs`), `CharZero` (`Mathlib.Algebra.CharZero.Defs`), `IsAlgClosed` (`Mathlib.FieldTheory.IsAlgClosed.Basic`), `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`), `AlgebraicGeometry.Spec` (`Mathlib.AlgebraicGeometry.Scheme`), `AlgebraicGeometry.SmoothOfRelativeDimension` (`Mathlib.AlgebraicGeometry.Morphisms.Smooth`), `AlgebraicGeometry.IsProper` (`Mathlib.AlgebraicGeometry.Morphisms.Proper`), `ConnectedSpace` (`Mathlib.Topology.Connected.Basic`), `TauCeti.ReductiveCommHopfAlgCat` (`TauCeti.Algebra.AlgebraicGroup.Reductive.Basic`), `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.AlgebraicGeometry.InvertibleSheaf` (`TauCeti.AlgebraicGeometry.LineBundle.Basic`), `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct` (`TauCeti.AlgebraicGeometry.LineBundle.TensorProduct`), `AlgebraicGeometry.Scheme.relativeDifferentials` (`TauCeti.AlgebraicGeometry.Modules.Differentials.Basic`).'
-deps = ['GLCinLean.Statement.RootDatumDuality', 'GLCinLean.Curves.thetaCharacteristic']
+deps = ['GLCinLean.Statement.RootDatumDuality', 'GLCinLean.Curves.ThetaCharacteristic']
 source = '[GLC1] §§1.1–1.3; [AGKRRV] §§0.9.1, 14.1.1; [GLC2] §0.4.1'
 
 [[node]]
 id = 'GLCinLean.Statement.QCohLS'
 desc = 'PLACEHOLDER. The DG category `QCoh(LS_Ǧ)` of quasi-coherent sheaves on the derived stack of de Rham local systems ([GLC1] §§0.1.1, 1.2.2). Provider: here.'
-deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.LocalSystems.deRham']
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.LocalSystems.DeRham']
 source = '[GLC1] §§0.1.1, 1.2.2'
 
 [[node]]
 id = 'GLCinLean.Statement.DmodHalf'
 desc = 'PLACEHOLDER. The DG category `Dmod_½(Bun_G)` of half-twisted D-modules on `Bun_G` ([GLC1] §§1.1.1–1.1.5). The twist is the gerbe of square roots of `det_BunG`; the chosen theta characteristic trivializes it. Provider: here.'
-deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Automorphic.halfTwistedDModules']
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Automorphic.HalfTwistedDModules']
 source = '[GLC1] §§1.1.1–1.1.5'
 
 [[node]]
 id = 'GLCinLean.Statement.IndCohNilp'
 desc = 'PLACEHOLDER. Ind-coherent sheaves with nilpotent singular support on the derived local-system stack, with their standard t-structure ([GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5). Provider: here.'
-deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.TStructuredDGCat', 'GLCinLean.LocalSystems.indcohNilpotent']
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.TStructuredDGCat', 'GLCinLean.LocalSystems.IndCohNilpotent']
 source = '[GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5'
 
 [[node]]
@@ -38,7 +38,7 @@ source = '[GLC1] §1.6.3; [ArinkinGaitsgory] Prop. 4.4.5'
 [[node]]
 id = 'GLCinLean.Statement.RepRan'
 desc = 'PLACEHOLDER. The DG category `Rep(Ǧ)_Ran`: the de Rham version of the category `Rep(Ǧ)` spread over the Ran space of the curve ([GLC1] §1.2.1; [GaitsgoryOutline] §4.2). Provider: here.'
-deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Hecke.ranRepresentations']
+deps = ['GLCinLean.Statement.Setting', 'GLCinLean.Statement.DGCat', 'GLCinLean.Ran.Representations']
 source = '[GLC1] §1.2.1; [GaitsgoryOutline] §4.2'
 
 [[node]]

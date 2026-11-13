@@ -1,0 +1,8 @@
+desc = 'Pseudo-properness of the Ran space of a proper scheme.'
+
+[[node]]
+id = 'GLCinLean.Ran.pseudoProper_of_isProper'
+kind = 'theorem'
+desc = 'For a proper scheme X, the map from Ran(X) (GLCinLean.Ran, the colimit of the X^I over nonempty finite sets and surjections) to the point is pseudo-proper (Derived.PseudoProper), presented by the proper schemes X^I. Its de Rham prestack is Ran(X_dR), so Ran(X) and Ran(X_dR) have the same D-modules and the same pseudo-proper pushforward; derived nilpotents do not change D-modules. Provider: here.'
+deps = ['GLCinLean.Ran', 'GLCinLean.Derived.PseudoProper', 'GLCinLean.Derived.DeRhamPrestack', 'GLCinLean.Infinity.limits']
+source = '[GaitsgoryAtiyahBott] Proposition 4.1.3; [GLC2] §C.5.6'

@@ -1,7 +1,7 @@
-desc = 'Nontrivial checks of the indicated constructions, or their input existence theorem.'
+desc = 'Singular support on a derived self-intersection: an object outside the zero-support subcategory.'
 
 [[node]]
-id = 'GLCinLean.Examples.singularAffineSupport'
+id = 'GLCinLean.Examples.exists_singularSupport_ne_zero'
 kind = 'theorem'
 desc = 'On a derived self-intersection of zero in a vector space, exhibit nonzero singular support and an object outside the zero-support subcategory. This rules out silently replacing supported IndCoh by QCoh. Provider: here.'
 deps = ['GLCinLean.Sheaves.singularSupport', 'GLCinLean.Sheaves.zeroSupport_equiv_qcoh', 'GLCinLean.Derived.affineScheme']

@@ -4,7 +4,7 @@ desc = 'Finite Zastava geometry and the rigorous vanishing input to the paraboli
 id = 'GLCinLean.Whittaker.finiteZastava'
 kind = 'definition'
 desc = 'Construct finite-degree Zastava spaces and their central fibers from transverse Borel reductions, using the corrected Drinfeld compactification. Supply the divisor/configuration map, its affineness, disjoint-factorization decomposition, the exponential evaluation character and the identification of central fibers with the relevant finite-dimensional semi-infinite intersections. Retain the coweight, defect and cohomological normalizations; the subsequent source computations are first made for simply-connected derived group. Provider: here.'
-deps = ['GLCinLean.Stacks.correctedDrinfeldCompactification', 'GLCinLean.Hecke.affineGrassmannian', 'GLCinLean.DModules.exponential', 'GLCinLean.Satake.semiInfiniteOrbits']
+deps = ['GLCinLean.Stacks.correctedDrinfeldCompactification', 'GLCinLean.AffineGrassmannian', 'GLCinLean.DModules.exponential', 'GLCinLean.Satake.semiInfiniteOrbits']
 source = '[RaskinCPSI] §§2.7–2.17; [ParabolicEisensteinFH] §6.4.6, first proof'
 
 [[node]]

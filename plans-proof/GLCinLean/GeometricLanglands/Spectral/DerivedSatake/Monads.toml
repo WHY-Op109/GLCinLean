@@ -18,7 +18,7 @@ source = '[FactorizableDerivedSatake] Lemma 9.2.1 and Proposition 9.2.2; [LoopGr
 id = 'GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint'
 kind = 'theorem'
 desc = 'Identify pointwise regular-comodule factorization modules with QCoh on the formal local-systems fiber product, using the fully faithful functor from local-system module categories, Lie coalgebras and chiral envelopes. Include functoriality required by the parabolic restriction square. Provider: here.'
-deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.spectralSphericalCategory', 'GLCinLean.LocalSystems.deRham', 'GLCinLean.Hecke.formalDisc', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.Sheaves.relativeKoszulDuality']
+deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.spectralSphericalCategory', 'GLCinLean.LocalSystems.DeRham', 'GLCinLean.Ran.FormalDisc', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.Sheaves.relativeKoszulDuality']
 source = '[FactorizableDerivedSatake] §§8.1–8.10, especially Theorem 8.10.1'
 
 [[node]]
@@ -32,7 +32,7 @@ source = '[FactorizableDerivedSatake] Corollary 8.10.1.1; Proposition 9.2.3'
 id = 'GLCinLean.SpectralProof.torusDerivedSatake_equiv'
 kind = 'theorem'
 desc = 'Prove derived Satake for a torus by the Contou–Carrere Fourier kernel, its two kernel-composition identities, and the equivalence of torus local-system module categories with factorization representation modules. This is a local class-field calculation, not the global Langlands conjecture. Provider: here.'
-deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint', 'GLCinLean.Hecke.loopArcGroups', 'GLCinLean.DModules.exponential']
+deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.SpectralProof.spectralFactorizationModulesAtPoint', 'GLCinLean.LoopGroups.LoopGroup', 'GLCinLean.DModules.exponential']
 source = '[FactorizableDerivedSatake] Theorem 7.3.2 and proof §§7.4–7.5'
 
 [[node]]
@@ -52,6 +52,6 @@ source = '[FactorizableDerivedSatake] Theorem 6.6.1, proof §§6.13, 9.1–9.4; 
 [[node]]
 id = 'GLCinLean.SpectralProof.naiveSatakeIsoDerivedSatakeInverse'
 kind = 'definition'
-desc = 'Construct an isomorphism of monoidal factorization functors Rep(Ǧ)_Ran → Sph_{G,Ran}: Satake.naiveFactorizationFunctor_renormalized ≅ Sat_G^{-1} ∘ nv ∘ c^*, where Sat_G is the derived Satake equivalence, nv: Rep(Ǧ) → Sph^spec is as in [GLC2] §1.7.6, and c^* is restriction along the Chevalley involution of the pinned dual group (Groups.chevalleyInvolution), so that c^*(V^μ) ≅ V^{-w0 μ}. Check: Sat_G(IC_λ) = nv(V^{-w0 λ}) by [GLC2] Example 1.7.4, so both sides send V^λ to IC_λ. Both functors are determined by the image of the regular object with its algebra structure (Satake.factorizationFunctorFromRegularComodule); compare these images on hearts. Record its compatibility with the flip σ and the involution τ_G of Satake.sphericalChevalleyInvolution ([GLC2] Corollary 1.8.2) for the later passage between left and right modules. Provider: here.'
-deps = ['GLCinLean.Satake.naiveFactorizationFunctor_renormalized', 'GLCinLean.SpectralProof.derivedSphericalSatake_equiv', 'GLCinLean.Satake.factorizationFunctorFromRegularComodule', 'GLCinLean.Groups.chevalleyInvolution', 'GLCinLean.Satake.sphericalChevalleyInvolution', 'GLCinLean.Satake.dualIdentification']
+desc = 'Construct an isomorphism of monoidal factorization functors Rep(Ǧ)_Ran → Sph_{G,Ran}: Satake.naiveFactorizationFunctor_renormalized ≅ Sat_G^{-1} ∘ nv ∘ c^*, where Sat_G is the derived Satake equivalence, nv: Rep(Ǧ) → Sph^spec is as in [GLC2] §1.7.6, and c^* is restriction along the Chevalley involution of the pinned dual group (Groups.chevalleyInvolution), so that c^*(V^μ) ≅ V^{-w0 μ}. Check: Sat_G(IC_λ) = nv(V^{-w0 λ}) by [GLC2] Example 1.7.4, so both sides send V^λ to IC_λ. Both functors are determined by the image of the regular object with its algebra structure (Ran.Representations.linearFunctorEquivComodule); compare these images on hearts. Record its compatibility with the flip σ and the involution τ_G of Satake.sphericalChevalleyInvolution ([GLC2] Corollary 1.8.2) for the later passage between left and right modules. Provider: here.'
+deps = ['GLCinLean.Satake.naiveFactorizationFunctor_renormalized', 'GLCinLean.SpectralProof.derivedSphericalSatake_equiv', 'GLCinLean.Ran.Representations.linearFunctorEquivComodule', 'GLCinLean.Groups.chevalleyInvolution', 'GLCinLean.Satake.sphericalChevalleyInvolution', 'GLCinLean.Satake.dualIdentification', 'GLCinLean.Satake.dualIdentification_chevalleyInvolution']
 source = '[GLC2] Example 1.7.4, §1.7.6 and Corollary 1.8.2; [FactorizableDerivedSatake] Theorem 6.6.1'

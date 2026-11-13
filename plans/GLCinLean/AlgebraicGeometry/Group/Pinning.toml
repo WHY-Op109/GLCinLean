@@ -1,15 +1,15 @@
-desc = 'The Chevalley involution of a pinned group, and the torsor of pinnings.'
-
-[[node]]
-id = 'GLCinLean.Groups.chevalleyInvolution'
-kind = 'definition'
-desc = 'The Chevalley involution of a pinned split reductive group: the automorphism inducing −w0 on the character lattice and preserving the pinning, obtained from the isomorphism theorem applied to the automorphism −w0 of the based root datum. Prove that pullback along it sends the irreducible representation of highest weight μ to that of highest weight −w0 μ. Tau Ceti has serreChevalleyInvolution, the Lie-algebra involution on a Serre presentation, which is a different object and not a duplicate. Provider: here, from the isomorphism theorem of roadmap ReductiveGroupsPartII.'
-deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.pinnedData']
-source = '[ConradRGS] Theorem 6.1.17 (isomorphism theorem); [GLC2] §1.8'
+desc = 'The torsor of pinnings of a split reductive group, and lifting from the adjoint torus.'
 
 [[node]]
 id = 'GLCinLean.Groups.pinnings_torsor'
 kind = 'theorem'
-desc = 'For a split connected reductive group with a split maximal torus T and a Borel subgroup B containing it, over an algebraically closed field, the pinnings with this T and B form a torsor under the adjoint torus T_ad(k), acting on the simple root vectors through the simple roots; every element of T_ad(k) lifts to T(k). Provider: here. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`).'
+desc = 'For a split connected reductive group G over a field k with a split maximal torus T and a Borel subgroup B containing T, the pinnings with this T and B form a torsor under the adjoint torus T_ad(k), which acts on the simple root vectors through the simple roots. No condition on k is needed. Provider: here. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`), `TauCeti.SplitMaximalTorus` (`TauCeti.Algebra.AlgebraicGroup.SplitTorus.Maximal`).'
 deps = ['GLCinLean.Groups.pinnedData', 'GLCinLean.Groups.basedRootDatum']
 source = '[ConradRGS] §6.1 (pinnings); explicit obligation'
+
+[[node]]
+id = 'GLCinLean.Groups.torusToAdjointTorus_surjective'
+kind = 'theorem'
+desc = 'For a split connected reductive group G over an algebraically closed field k, with split maximal torus T and adjoint torus T_ad = T/Z(G), the map T(k) → T_ad(k) is surjective. Over a general field it can fail: for SL₂ it needs square roots. Provider: here.'
+deps = ['GLCinLean.Groups.pinnedData']
+source = '[ConradRGS] §6.1; explicit obligation'

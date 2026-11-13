@@ -1,0 +1,8 @@
+desc = 'Regular holonomic D-modules.'
+
+[[node]]
+id = 'GLCinLean.DModules.IsRegularHolonomic'
+kind = 'definition'
+desc = 'Regular holonomic D-modules and complexes on finite-type schemes over a field of characteristic zero: the full subcategory of holonomic modules whose restriction to every curve has regular singularities, closed under subquotients and extensions, stable under the six operations for finite-type maps and under scalar extension of the base field. Equivariant holonomic modules on a homogeneous space with connected stabilizers are regular. Provider: here.'
+deps = ['GLCinLean.DModules.IsHolonomic', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.starPullback']
+source = '[HottaTakeuchiTanisaki] Chapter 6 (regular holonomic modules) and §7.1'

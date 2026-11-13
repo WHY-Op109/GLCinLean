@@ -46,5 +46,5 @@ source = '[GLC2] §§3.1.1–3.1.3, 5.1.3–5.1.5 and Theorem 5.2.5; [GeometricF
 id = 'GLCinLean.SpectralProof.criticalGlobalSections_flatBaseChange'
 kind = 'theorem'
 desc = 'For a critical Satake D-module on a finite Schubert support, flat field extension commutes with ordinary derived global sections of the underlying quasi-coherent O-module and with the finite-weight invariant comparisons used to form its center-linear coefficients. Ordinary sections here are not de Rham direct image: compute them by a finite affine Cech cover of the projective support, use flatness for kernels/cohomology, and preserve the current action and convolution maps. Prove the conformal-weight finiteness needed for invariant kernels separately from cohomological boundedness. Provider: here. This adapts the cited construction by scalar extension.'
-deps = ['GLCinLean.Hecke.schubertStratification', 'GLCinLean.Sheaves.qcohGlobalSections', 'GLCinLean.SpectralProof.vacuumCenter', 'GLCinLean.DModules.boundedEquivariantExt_baseChange']
+deps = ['GLCinLean.AffineGrassmannian.schubertStratification', 'GLCinLean.Sheaves.qcohGlobalSections', 'GLCinLean.SpectralProof.vacuumCenter', 'GLCinLean.DModules.boundedEquivariantExt_baseChange']
 source = '[GeometricFeiginFrenkel] §1.10 and §§3.6–3.7; [BDHitchin] §§5.4–5.5'

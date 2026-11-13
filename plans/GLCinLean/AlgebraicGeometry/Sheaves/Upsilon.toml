@@ -1,0 +1,15 @@
+desc = 'The functor Υ : QCoh → IndCoh on prestacks locally almost of finite type, and its equivalence on smooth schemes.'
+
+[[node]]
+id = 'GLCinLean.Sheaves.upsilon'
+kind = 'definition'
+desc = 'For every locally almost finite type prestack Y, the continuous functor Υ_Y : QCoh(Y) → IndCoh(Y), F ↦ F ⊗ ω_Y for the action of QCoh on IndCoh (Sheaves.indcohQCohAction), where ω_Y is the !-pullback of k. It is natural in Y, as a transformation from QCoh with *-pullback to IndCoh with !-pullback, coherently in the maps. On a de Rham prestack Y_dR it is the functor from left crystals to right crystals; on schemes and on formal completions it is the Υ of Sheaves.upsilon_isEquivalence_of_smooth and Sheaves.indcoh_formalCompletion_localization. This node claims no equivalence. Provider: here.'
+deps = ['GLCinLean.Sheaves.QCoh', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Sheaves.indcohQCohAction']
+source = '[Crystals] §§2.4.1–2.4.2; [IndCoh] §§5.7.5, 10.3.3'
+
+[[node]]
+id = 'GLCinLean.Sheaves.upsilon_isEquivalence_of_smooth'
+kind = 'theorem'
+desc = 'For a smooth scheme S of finite type, Ψ_S : IndCoh(S) → QCoh(S) and Υ_S : QCoh(S) → IndCoh(S), the value of Sheaves.upsilon on S, are equivalences. Ψ_S is a QCoh-linear equivalence, and Ψ_S(ω_S) ≅ Ω^n_S[n] for S of dimension n, so Υ_S is Ψ_S^{-1}(− ⊗ Ω^n_S[n]). Provider: here.'
+deps = ['GLCinLean.Sheaves.psi', 'GLCinLean.Sheaves.upsilon', 'GLCinLean.Sheaves.indcohShriekOnSchemes', 'GLCinLean.Sheaves.indcohQCohAction']
+source = '[IndCoh] Lemma 1.1.6 and §5.7.5'

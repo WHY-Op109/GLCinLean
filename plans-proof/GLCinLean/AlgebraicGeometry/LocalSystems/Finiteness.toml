@@ -4,5 +4,5 @@ desc = 'Finiteness properties of LS_H.'
 id = 'GLCinLean.LocalSystems.qca'
 kind = 'theorem'
 desc = 'Local-system stack is quasi-compact with affine diagonal, locally almost of finite type; state the field and curve hypotheses. Provider: here.'
-deps = ['GLCinLean.LocalSystems.deRham', 'GLCinLean.Stacks.bundleStack']
+deps = ['GLCinLean.LocalSystems.DeRham', 'GLCinLean.Stacks.BundleStack']
 source = '[ArinkinGaitsgory] §10.4.3'

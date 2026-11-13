@@ -1,4 +1,4 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'Weight projectives and the Tannakian group of the spherical heart.'
 
 [[node]]
 id = 'GLCinLean.Satake.weightProjectives'

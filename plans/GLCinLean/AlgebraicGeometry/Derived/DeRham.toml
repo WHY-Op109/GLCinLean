@@ -1,22 +1,15 @@
 desc = 'The de Rham prestack of a prestack.'
 
 [[node]]
-id = 'GLCinLean.Derived.deRhamPrestack'
+id = 'GLCinLean.Derived.DeRhamPrestack'
 kind = 'definition'
 desc = 'Y_dR evaluated on a derived affine S as Y of its reduced classical truncation; natural projection and universal property. Provider: here.'
-deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Derived.classicalReduction']
+deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Derived.ClassicalReduction']
 source = '[Crystals] §1.1'
 
 [[node]]
 id = 'GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType'
 kind = 'theorem'
 desc = 'If Y is locally almost of finite type then Y_dR is locally almost of finite type and classical, with the Kan-extension comparison needed for crystals. Provider: here.'
-deps = ['GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Derived.locallyAlmostFiniteType', 'GLCinLean.Infinity.rightKanExtension']
+deps = ['GLCinLean.Derived.DeRhamPrestack', 'GLCinLean.Derived.LocallyAlmostFiniteType', 'GLCinLean.Infinity.rightKanExtension']
 source = '[Crystals] Proposition 1.3.3 and Corollary 1.3.7'
-
-[[node]]
-id = 'GLCinLean.Derived.deRhamCechNerve_formalCompletion'
-kind = 'theorem'
-desc = 'For a closed subscheme X of a separated scheme Z of finite type and Y the formal completion of Z along X (Derived.formalCompletion), the n-th term of the Čech nerve of Y → Y_dR is the formal completion of Z^{n+1} along the diagonal copy of X, which is closed since Z is separated; these terms are locally almost of finite type indschemes. The case X = Z gives the Čech nerve of Z → Z_dR. Provider: here.'
-deps = ['GLCinLean.Derived.deRhamPrestack', 'GLCinLean.Derived.formalCompletion', 'GLCinLean.Derived.indscheme', 'GLCinLean.Derived.deRhamPrestack_locallyAlmostFiniteType']
-source = '[Crystals] §1.2.2 and the proof of Proposition 1.3.3; [DGIndschemes] Proposition 6.3.1 and Corollary 6.3.2'

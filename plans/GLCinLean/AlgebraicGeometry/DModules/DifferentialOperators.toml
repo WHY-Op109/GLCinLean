@@ -1,0 +1,8 @@
+desc = 'Right crystals on smooth schemes as modules over differential operators, and on singular schemes through a closed embedding.'
+
+[[node]]
+id = 'GLCinLean.DModules.rightCrystals_equiv_dModules'
+kind = 'definition'
+desc = 'For a smooth scheme X of finite type, the sheaf of rings D_X of differential operators and the equivalence of right crystals on X (DModules.RightCrystals) with the enhanced category of right D_X-modules, t-exact for the right t-structure and compatible with the forgetful functors to IndCoh(X) ≃ QCoh(X). Construct it through left crystals, as in [Crystals] §5.5, so that it rests on DModules.leftCrystalsEquivRightCrystals and not the other way round. For a scheme Y of finite type that may be singular, with a closed embedding into a smooth scheme X, identify right crystals on Y with right D_X-modules supported on Y (DModules.extraordinaryPullback_isEquivalence_of_isClosedImmersion); this is the D-module category that DModules.deRhamPushforward, DModules.Coherent and DModules.IsHolonomic use on singular schemes. Provider: here.'
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.DModules.leftCrystalsEquivRightCrystals', 'GLCinLean.Sheaves.upsilon_isEquivalence_of_smooth', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.extraordinaryPullback_isEquivalence_of_isClosedImmersion']
+source = '[Crystals] §5.5'

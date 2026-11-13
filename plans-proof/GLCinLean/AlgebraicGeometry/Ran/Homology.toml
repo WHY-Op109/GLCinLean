@@ -4,19 +4,19 @@ desc = 'Algebraic Ran contractibility and its universal superset form; the proof
 id = 'GLCinLean.Hecke.ranHomology_connective'
 kind = 'theorem'
 desc = 'For a nonempty proper connected X, the homology of Ran(X) has no negative homological degrees and the trace H_0(Ran(X))→k is an isomorphism. Compute from the finite-power proper presentation: each X^I is connected, its dualizing homology is connective with H_0=k, and the index category of nonempty finite sets and surjections has contractible nerve. Do not assume the whole homology is k at this step. Provider: here. Upstream declarations used: `ConnectedSpace` (`Mathlib.Topology.Connected.Basic`).'
-deps = ['GLCinLean.Hecke.ranPseudoProper', 'GLCinLean.DModules.compactSupportedHomology', 'GLCinLean.Infinity.tStructure']
+deps = ['GLCinLean.Ran.pseudoProper_of_isProper', 'GLCinLean.DModules.compactSupportedHomology', 'GLCinLean.Infinity.tStructure']
 source = '[GaitsgoryContractibility] §1.6.3 and opening of §6'
 
 [[node]]
 id = 'GLCinLean.Hecke.ranHomology_is_unit'
 kind = 'theorem'
 desc = 'For a nonempty proper connected X, prove the trace H(Ran(X))→k is an equivalence. If n>0 is the least nonzero homological degree, geometric and algebraic Kunneth identify H_n(Ran^m) with m copies of H_n(Ran). Commutativity and associativity make union act by one idempotent endomorphism u in every summand; union after the diagonal is the identity, so 2u=id and 3u=id, forcing H_n=0. This algebraic argument works over the stated field without complex-topological comparison. Provider: here.'
-deps = ['GLCinLean.Hecke.ranHomology_connective', 'GLCinLean.Hecke.ranUnion', 'GLCinLean.DModules.compactSupportedHomology_kunneth']
+deps = ['GLCinLean.Hecke.ranHomology_connective', 'GLCinLean.Ran.union', 'GLCinLean.DModules.compactSupportedHomology_kunneth']
 source = '[GaitsgoryContractibility] Theorem 1.6.5 and proof in §6; [BDChiral] Proposition 4.3.3(i)'
 
 [[node]]
 id = 'GLCinLean.Hecke.ranSupersetPullback_fullyFaithful'
 kind = 'theorem'
 desc = 'For a nonempty proper connected X, an arbitrary affine base S and configuration I over S, prove pullback Dmod(S)→Dmod(Ran_supersets(I)) is fully faithful, universally under base change. Realize the superset prestack as a retract over S of S×Ran by J↦I∪J; universal homological contractibility survives retracts. Retain the Dmod(S)-linear adjunction and its isomorphic unit so tensoring with any presentable Dmod(S)-module category also gives a fully faithful pullback. This is the geometric input used in independent-category descent. Provider: here.'
-deps = ['GLCinLean.Hecke.ranHomology_is_unit', 'GLCinLean.Hecke.ranInclusions', 'GLCinLean.Hecke.ranPseudoProper', 'GLCinLean.DModules.homologyTrace_isIso_iff_universallyFullyFaithful', 'GLCinLean.Infinity.moduleCategory']
+deps = ['GLCinLean.Hecke.ranHomology_is_unit', 'GLCinLean.Ran.Inclusions', 'GLCinLean.Ran.pseudoProper_of_isProper', 'GLCinLean.DModules.homologyTrace_isIso_iff_universallyFullyFaithful', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Ran.smallProjection_pseudoProper']
 source = '[GaitsgoryAtiyahBott] Theorem 4.6.2 and proof §4.6.3; [GLC2] Proposition H.3.2'

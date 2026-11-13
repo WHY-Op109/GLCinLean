@@ -1,0 +1,15 @@
+desc = 'The inclusion correspondence of finite configurations, and the pseudo-properness of its small projection.'
+
+[[node]]
+id = 'GLCinLean.Ran.Inclusions'
+kind = 'definition'
+desc = 'The prestack of pairs of nonempty finite configurations I_small⊆I_big, with small and big projections, diagonal I↦(I⊆I) and union maps. Describe each fiber over a family I on S as configurations containing I, and give the proper-presentation description using pairs of finite sets. These are prestacks in groupoids; their fibers are not declared contractible merely because the unital category has an initial object. Provider: here.'
+deps = ['GLCinLean.Ran', 'GLCinLean.Ran.union', 'GLCinLean.Derived.Prestack']
+source = '[GLC2] §§C.5.1–C.5.2, C.5.6; [GaitsgoryAtiyahBott] §4.6.3'
+
+[[node]]
+id = 'GLCinLean.Ran.smallProjection_pseudoProper'
+kind = 'theorem'
+desc = 'For a proper scheme X, the small projection from the inclusion correspondence (Ran.Inclusions) to Ran is pseudo-proper after every affine base change, by the presentation by pairs of finite sets. Provider: here.'
+deps = ['GLCinLean.Ran.Inclusions', 'GLCinLean.Ran.pseudoProper_of_isProper', 'GLCinLean.Derived.PseudoProper']
+source = '[GaitsgoryAtiyahBott] Corollary 4.1.6 and §4.6.3; [GLC2] §C.5.6'

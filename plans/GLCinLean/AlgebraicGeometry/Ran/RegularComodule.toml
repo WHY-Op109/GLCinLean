@@ -1,0 +1,8 @@
+desc = 'Linear functors out of Rep(H)_Ran as comodules over the regular object.'
+
+[[node]]
+id = 'GLCinLean.Ran.Representations.linearFunctorEquivComodule'
+kind = 'definition'
+desc = 'For each finite set I, the equivalence between Rep(H)_{X^I}-linear continuous functors out of Rep(H)_{X^I} and comodules over its regular object, by self-duality and the comonadic description, with its lax-monoidal algebra variant, compatible with the diagonal and factorization maps over Ran. It supplies continuity and the coherent enhancement of the functors built from it, instead of applying a functor to a triangulated heart. Provider: here.'
+deps = ['GLCinLean.Ran.Representations', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.internalHom']
+source = '[RaskinCPSI] Lemmas 6.18.1, 6.23.2, 6.31.1–6.32.1'

@@ -4,7 +4,7 @@ desc = 'Derived indscheme inputs to the finiteness argument.'
 id = 'GLCinLean.Derived.formallySmooth'
 kind = 'definition'
 desc = '''Formal smoothness for a derived prestack: classical nilpotent lifting plus the required homotopy-group comparison along coconnective truncations. Preserve the paper's global lifting convention rather than silently sheafifying it. Provider: here.'''
-deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Derived.classicalReduction', 'GLCinLean.Infinity.mappingSpaces']
+deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Derived.ClassicalReduction', 'GLCinLean.Infinity.mappingSpaces']
 source = '[DGIndschemes] Definitions 8.1.1 and 8.1.3'
 
 [[node]]
@@ -18,5 +18,5 @@ source = '[DGIndschemes] Proposition 8.2.2'
 id = 'GLCinLean.Derived.formallySmooth_classicalComparison'
 kind = 'theorem'
 desc = 'If a formally smooth DG indscheme has a classical restriction whose sheafified derived left Kan extension is also a formally smooth DG indscheme, the comparison map from that extension is an equivalence. Keep both formal-smoothness hypotheses. Provider: here.'
-deps = ['GLCinLean.Derived.indscheme', 'GLCinLean.Derived.formallySmooth', 'GLCinLean.Derived.indscheme_connectiveDeformationTheory', 'GLCinLean.Derived.formallySmooth_iff_proCotangent']
+deps = ['GLCinLean.Derived.IsIndscheme', 'GLCinLean.Derived.formallySmooth', 'GLCinLean.Derived.indscheme_connectiveDeformationTheory', 'GLCinLean.Derived.formallySmooth_iff_proCotangent']
 source = '[DGIndschemes] Proposition 9.1.4'

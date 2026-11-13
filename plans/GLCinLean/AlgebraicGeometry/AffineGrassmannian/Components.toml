@@ -1,8 +1,8 @@
 desc = 'Connected components of the affine Grassmannian and the reduction of its reduced neutral component to the simply connected cover.'
 
 [[node]]
-id = 'GLCinLean.Hecke.affineGrassmannian_reducedComponents'
+id = 'GLCinLean.AffineGrassmannian.reducedNeutralComponent_iso_simplyConnectedCover'
 kind = 'theorem'
-desc = 'For a split connected reductive G over k: (a) the connected components of Gr_G are indexed by π1(G), the coweight lattice modulo the coroot lattice; (b) on reduced ind-schemes, Gr_G → Gr_{G/Z(G)^0} is a trivial covering with group X_*(Z(G)^0); (c) for semisimple G, the map from Gr of Groups.simplyConnectedCover identifies with the reduced neutral component of Gr_G. Part (c) is stated in [PappasRapoport] §6.1.1 in characteristic p prime to |π1(G)|; its argument (the central extension sequence and the Kummer computation) applies in characteristic zero, which is an explicit adaptation obligation. D-modules do not see the non-reduced structure, so this reduces Schubert-variety questions to the reduced neutral component of the simply connected group. Provider: here.'
-deps = ['GLCinLean.Hecke.affineGrassmannian', 'GLCinLean.Groups.simplyConnectedCover', 'GLCinLean.Groups.basedRootDatum', 'GLCinLean.Hecke.loopArcGroups']
+desc = 'For a split connected reductive G over k: (a) the connected components of Gr_G are indexed by π1(G), the coweight lattice modulo the coroot lattice; (b) on reduced ind-schemes, Gr_G → Gr_{G/Z(G)^0} is a trivial covering with group X_*(Z(G)^0); (c) for semisimple G, the map from Gr of Groups.SimplyConnectedCover identifies with the reduced neutral component of Gr_G. Part (c) is stated in [PappasRapoport] §6.1.1 in characteristic p prime to |π1(G)|; its argument (the central extension sequence and the Kummer computation) applies in characteristic zero, which is an explicit adaptation obligation. D-modules do not see the non-reduced structure, so this reduces Schubert-variety questions to the reduced neutral component of the simply connected group. Provider: here.'
+deps = ['GLCinLean.AffineGrassmannian', 'GLCinLean.Groups.SimplyConnectedCover', 'GLCinLean.Groups.basedRootDatum', 'GLCinLean.LoopGroups.LoopGroup']
 source = '[PappasRapoport] Theorem 5.1 and §§6.1–6.1.1; [MV] §2 (components and the covering by X_*(Z(G)^0))'

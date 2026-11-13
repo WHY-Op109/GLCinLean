@@ -1,28 +1,28 @@
 desc = 'Singular support of IndCoh, and IndCoh with prescribed support.'
 
 [[node]]
-id = 'GLCinLean.Sheaves.singularities'
+id = 'GLCinLean.Sheaves.Singularities'
 kind = 'definition'
 desc = 'Classical conical scheme of singularities from H^1 of the tangent complex; descend to quasi-smooth stacks. Provider: here.'
-deps = ['GLCinLean.Derived.quasiSmooth', 'GLCinLean.Sheaves.qcoh']
+deps = ['GLCinLean.Derived.QuasiSmooth', 'GLCinLean.Sheaves.QCoh']
 source = '[ArinkinGaitsgory] §2.3.3 and §8.1.4'
 
 [[node]]
 id = 'GLCinLean.Sheaves.hochschildAction'
 kind = 'definition'
 desc = 'Cohomological operators from Hochschild cochains acting on IndCoh; compatibility with the graded functions on singularities. Provider: here.'
-deps = ['GLCinLean.Sheaves.indcoh', 'GLCinLean.Sheaves.singularities', 'GLCinLean.Sheaves.hochschildCochains']
+deps = ['GLCinLean.Sheaves.IndCoh', 'GLCinLean.Sheaves.Singularities', 'GLCinLean.Infinity.hochschildCochains']
 source = '[ArinkinGaitsgory] §§4.1.1–4.1.2 and Appendices E–F'
 
 [[node]]
 id = 'GLCinLean.Sheaves.singularSupport'
 kind = 'definition'
 desc = 'Closed conical support using the cohomological-operator action; descent and membership criterion. Provider: here.'
-deps = ['GLCinLean.Sheaves.hochschildAction', 'GLCinLean.Sheaves.gradedSupport']
+deps = ['GLCinLean.Sheaves.hochschildAction', 'GLCinLean.Infinity.GradedSupport']
 source = '[ArinkinGaitsgory] Definition 4.1.4; §8.2.3'
 
 [[node]]
-id = 'GLCinLean.Sheaves.indcohWithSupport'
+id = 'GLCinLean.Sheaves.IndCohWithSupport'
 kind = 'definition'
 desc = 'Full enhanced category IndCoh_Y for a conical closed Y in Sing; inclusion and right adjoint, QCoh action. The standard support t-structure is separately planned for Y containing the zero section. Provider: here.'
 deps = ['GLCinLean.Sheaves.singularSupport', 'GLCinLean.Sheaves.indcohTStructure', 'GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Infinity.rightAdjoint']
@@ -32,12 +32,5 @@ source = '[ArinkinGaitsgory] §§4.1, 4.4, 8.2'
 id = 'GLCinLean.Sheaves.zeroSupport_equiv_qcoh'
 kind = 'theorem'
 desc = 'Identify zero-section singular support with QCoh via Xi; identify restricted Psi with the right adjoint of zero-support inclusion. Provider: here.'
-deps = ['GLCinLean.Sheaves.indcohWithSupport', 'GLCinLean.Sheaves.psi']
+deps = ['GLCinLean.Sheaves.IndCohWithSupport', 'GLCinLean.Sheaves.psi']
 source = '[ArinkinGaitsgory] Theorem 4.2.6, Proposition 4.4.5'
-
-[[node]]
-id = 'GLCinLean.Sheaves.psi_eventuallyCoconnective_equiv'
-kind = 'theorem'
-desc = 'For conical support containing zero, restricted Psi is t-exact and an equivalence on bounded-below parts. Provider: here.'
-deps = ['GLCinLean.Sheaves.zeroSupport_equiv_qcoh', 'GLCinLean.Infinity.eventuallyCoconnective', 'GLCinLean.Sheaves.supportTStructure']
-source = '[ArinkinGaitsgory] Proposition 4.4.5; [GLC1] §1.6.3'
