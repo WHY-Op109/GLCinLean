@@ -1,6 +1,6 @@
 # The papers
 
-ArXiv TeX sources in `docs/references.bib` are in the git-ignored `references/papers/<id>v<version>/src/`; a missing one is fetched from `https://arxiv.org/e-print/<id>v<version>` and unpacked there. PDF-only author notes use the explicit paths below; their download hashes are in the bibliography. One line per paper, to choose which one to search:
+ArXiv TeX sources in `docs/references.bib` are in the git-ignored `references/papers/<id>v<version>/src/`; a missing one is fetched from `https://arxiv.org/e-print/<id>v<version>` and unpacked there. PDF-only author notes use the explicit paths below; their download hashes are in the bibliography. Each such PDF has a sibling `.txt` text extraction for searching, with a page marker line (`PDF PAGE n`, `PAGE n` or `=== PAGE n ===`) before each physical page; the extractions are not checked against the PDF, so check formulas against the PDF before quoting them. One line per paper, to choose which one to search:
 
 | Key | Main file | Lines | What it covers |
 |---|---|---|---|
