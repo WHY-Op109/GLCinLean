@@ -10,6 +10,6 @@ source = '[GLys] §§1.7.2–1.7.4; [GLC1] §1.1.3; [GLC2] §1.1.9 and Remark 1.
 [[node]]
 id = 'GLCinLean.DModules.twistedExtraordinaryPullback'
 kind = 'definition'
-desc = 'The !-pullback of twisted right crystals: for a map f : Y → Z and an étale μ_n-gerbe 𝒢 on Z, the functor f^! : Dmod_𝒢(Z) → Dmod_{f^*𝒢}(Y), functorial in f and natural in the gerbe. It needs no trivialization of 𝒢. When a trivialization is given, for example of a pulled-back twist, it agrees with DModules.extraordinaryPullback through the untwisting equivalences of DModules.TwistedCrystals. Provider: here.'
+desc = 'The !-pullback of twisted right crystals: for a map f : Y → Z and an étale μ_n-gerbe 𝒢 on Z, the functor f^! : Dmod_𝒢(Z) → Dmod_{f^*𝒢}(Y), functorial in f and natural in the gerbe. It needs no trivialization of 𝒢. Two cases are distinct. For a trivialization of 𝒢 on Z, it agrees with DModules.extraordinaryPullback through the untwisting equivalences of DModules.TwistedCrystals on Z and on Y. For a trivialization of f^*𝒢 on Y only, as in [GLC1] §1.3.5, its composite with the untwisting on Y is a functor Dmod_𝒢(Z) → Dmod(Y), with no untwisted f^! to compare. Provider: here.'
 deps = ['GLCinLean.DModules.TwistedCrystals', 'GLCinLean.Stacks.EtaleGerbe', 'GLCinLean.DModules.extraordinaryPullback']
 source = '[GLC1] §1.3.5; [GLys] §1.7'

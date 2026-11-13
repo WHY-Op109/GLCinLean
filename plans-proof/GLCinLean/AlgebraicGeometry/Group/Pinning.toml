@@ -3,6 +3,6 @@ desc = 'The Chevalley involution of a pinned split reductive group.'
 [[node]]
 id = 'GLCinLean.Groups.chevalleyInvolution'
 kind = 'definition'
-desc = 'The Chevalley involution of a pinned split reductive group: the automorphism inducing −w0 on the character lattice and preserving the pinning, obtained from the isomorphism theorem applied to the automorphism −w0 of the based root datum. Prove that pullback along it sends the irreducible representation of highest weight μ to that of highest weight −w0 μ. Tau Ceti has serreChevalleyInvolution, the Lie-algebra involution on a Serre presentation, which is a different object and not a duplicate. Provider: here, from the isomorphism theorem of roadmap ReductiveGroupsPartII.'
+desc = 'The Chevalley involution of a pinned split reductive group: the automorphism inducing −w0 on the character lattice and preserving the pinning, obtained from the isomorphism theorem applied to the automorphism −w0 of the based root datum. Prove that pullback along it sends the irreducible representation of highest weight μ to that of highest weight −w0 μ. Tau Ceti has serreChevalleyInvolution, the Lie-algebra involution on a Serre presentation, which is a different object and not a duplicate. Provider: here, from the isomorphism theorem (Groups.splitReductiveGroup).'
 deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.pinnedData', 'GLCinLean.Groups.splitReductiveGroup']
 source = '[ConradRGS] Theorem 6.1.17 (isomorphism theorem); [GLC2] §1.8'

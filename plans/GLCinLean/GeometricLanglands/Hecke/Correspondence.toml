@@ -3,9 +3,10 @@ desc = 'Hecke correspondences on Bun_G.'
 [[node]]
 id = 'GLCinLean.Hecke.Correspondence'
 kind = 'definition'
-desc = 'The Hecke stack over Ran: families of pairs of G-bundles on X with an isomorphism away from the graphs of a Ran point, with its projections to Bun_G and to Ran, the Beilinson–Drinfeld Grassmannians over X^I and their factorization. Prove the Beauville–Laszlo comparison: over one point x of X the fibre is the affine Grassmannian (GLCinLean.AffineGrassmannian). Provider: here.'
+desc = 'The Hecke stack over Ran: families of pairs of G-bundles on X with an isomorphism away from the graphs of a Ran point, with its projections to Bun_G and to Ran, the Beilinson–Drinfeld Grassmannians over X^I and their factorization. Prove the Beauville–Laszlo comparison: after a choice of coordinate at a point x of X, the fibre over x of the Beilinson–Drinfeld Grassmannian (modifications of the trivial bundle, with a trivialization away from x) is the affine Grassmannian (GLCinLean.AffineGrassmannian). Provider: here.'
 deps = ['GLCinLean.Stacks.BundleStack', 'GLCinLean.Ran', 'GLCinLean.AffineGrassmannian']
 source = '[GaitsgoryOutline] §4.4.1; [GLC1] §1.2.1; [BDHitchin] §4.5.2'
+
 
 [[node]]
 id = 'GLCinLean.Hecke.correspondence_pseudoProper'

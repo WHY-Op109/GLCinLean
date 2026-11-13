@@ -10,9 +10,10 @@ source = '[MV] Lemma 7.1, Theorem 7.3 and its proof in §7; [DeligneMilne] Propo
 [[node]]
 id = 'GLCinLean.Satake.dualIdentification'
 kind = 'definition'
-desc = 'The pinned isomorphism from the Tannakian group with Satake.tannakaPinning to the specified dual group with its dual pinning: the unique isomorphism of pinned groups lifting the based-root-datum identification Groups.dualityData, by the isomorphism theorem, with pinnings transported by TauCeti.Pinning.comapOfIso. It is the only identification of the Tannakian group with the dual group in the plan: the heart equivalence, naive Satake, the Hecke functors, the Casselman–Shalika equivalence and the comparison with derived Satake all use it. Provider: here; the isomorphism theorem is from roadmap ReductiveGroupsPartII. Upstream declarations used: `TauCeti.Pinning.comapOfIso` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Isomorphism`).'
+desc = 'The pinned isomorphism from the Tannakian group with Satake.tannakaPinning to the specified dual group with its dual pinning: the unique isomorphism of pinned groups lifting the based-root-datum identification Groups.dualityData, by the isomorphism theorem, with pinnings transported by TauCeti.Pinning.comapOfIso. It is the only identification of the Tannakian group with the dual group in the plan: the heart equivalence, naive Satake, the Hecke functors, the Casselman–Shalika equivalence and the comparison with derived Satake all use it. Provider: here; the isomorphism theorem is Groups.splitReductiveGroup. Upstream declarations used: `TauCeti.Pinning.comapOfIso` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Isomorphism`).'
 deps = ['GLCinLean.Satake.tannakaRootDatum_equiv_dual', 'GLCinLean.Groups.dualityData', 'GLCinLean.Satake.tannakaPinning', 'GLCinLean.Groups.splitReductiveGroup']
 source = '[MV] Theorem 7.3; [ConradRGS] Theorem 6.1.17; [GLC1] §0.1.1; [GLC2] Remark 1.4.5'
+
 
 
 

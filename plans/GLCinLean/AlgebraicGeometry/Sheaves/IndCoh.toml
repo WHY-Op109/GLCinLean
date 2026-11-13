@@ -24,9 +24,10 @@ source = '[IndCoh] §§10.1.2–10.1.4, 10.5, 11.2'
 [[node]]
 id = 'GLCinLean.Sheaves.indcohTStructure'
 kind = 'definition'
-desc = 'The standard t-structure on IndCoh of derived schemes almost of finite type, extended by smooth descent to derived Artin stacks locally almost of finite type, compatible with filtered colimits and smooth pullback. Provider: here.'
+desc = 'The standard t-structure on IndCoh of derived schemes almost of finite type, extended by smooth descent to derived Artin stacks locally almost of finite type, compatible with filtered colimits, and t-exact for the IndCoh *-pullback along smooth (indeed flat) maps from schemes; the !-pullback along a smooth map of relative dimension d differs from it by the shift [2d]. Provider: here.'
 deps = ['GLCinLean.Sheaves.IndCoh', 'GLCinLean.Infinity.tStructure', 'GLCinLean.Derived.IsArtinStack', 'GLCinLean.Derived.LocallyAlmostFiniteType']
 source = '[IndCoh] §1.2; §11.7.4'
+
 
 [[node]]
 id = 'GLCinLean.Sheaves.indcohQCohAction'
@@ -38,6 +39,6 @@ source = '[IndCoh] §1.4 and §10.3'
 [[node]]
 id = 'GLCinLean.Sheaves.psi'
 kind = 'definition'
-desc = 'Continuous QCoh-linear coarsening IndCoh → QCoh on locally almost finite type Artin stacks, extending the coherent embedding on schemes and compatible with smooth pullback. Construct it through the Artin smooth-descent comparison; do not assert this coarsening on arbitrary prestacks, where §10.3 instead supplies Upsilon in the opposite direction. Provider: here.'
+desc = 'Continuous QCoh-linear coarsening IndCoh → QCoh on locally almost finite type Artin stacks, extending the coherent embedding on schemes and compatible with *-pullback along smooth maps. Construct it through the Artin smooth-descent comparison; do not assert this coarsening on arbitrary prestacks, where §10.3 instead supplies Upsilon in the opposite direction. Provider: here.'
 deps = ['GLCinLean.Sheaves.indcohQCohAction', 'GLCinLean.Derived.IsArtinStack', 'GLCinLean.Infinity.continuousLinearFunctor', 'GLCinLean.Infinity.rightKanExtension']
 source = '[IndCoh] §1.1.5, Lemma 1.4.2 and §§11.7.1–11.7.2'
