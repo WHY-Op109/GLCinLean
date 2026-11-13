@@ -3,6 +3,6 @@ desc = 'Ind-completion of a small enhanced category. Owner: the Tau Ceti roadmap
 [[node]]
 id = 'GLCinLean.Infinity.indCompletion'
 kind = 'definition'
-desc = 'Filtered-colimit completion with its fully faithful Yoneda embedding and universal property. Provider: roadmap EnhancedDerivedSheaves, “Compact generation and Ind-completion”.'
+desc = 'Filtered-colimit completion with its fully faithful Yoneda embedding and universal property; that the Ind-completion of a small category with finite colimits is presentable is a separate statement. Provider: roadmap EnhancedDerivedSheaves, “Compact generation and Ind-completion”.'
 deps = ['GLCinLean.Infinity.presentableCategory']
 source = '[CompactGeneration] §1.3; [IndCoh] Definition 1.1.3'

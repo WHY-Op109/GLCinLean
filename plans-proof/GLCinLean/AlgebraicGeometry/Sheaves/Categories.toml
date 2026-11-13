@@ -4,7 +4,7 @@ desc = 'Sheaves of enhanced categories and localization from QCoh modules.'
 id = 'GLCinLean.Sheaves.sheafOfCategories'
 kind = 'definition'
 desc = 'The limit of QCoh(S)-module categories over affine S mapping to Y, with coherent scalar-extension transition equivalences; construct localization from QCoh(Y)-modules, its enhanced global-section right adjoint and their descent compatibilities. Provider: here.'
-deps = ['GLCinLean.Sheaves.qcoh', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.rightKanExtension', 'GLCinLean.Infinity.rightAdjoint']
+deps = ['GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.rightKanExtension', 'GLCinLean.Infinity.rightAdjoint']
 source = '[OneAffineness] §§1.1–1.3'
 
 [[node]]

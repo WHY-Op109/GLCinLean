@@ -4,7 +4,7 @@ desc = 'IndCoh* on the particular horizontal-loop spaces used by the spectral se
 id = 'GLCinLean.Sheaves.horizontalLoopIndCoh'
 kind = 'definition'
 desc = 'Extend ind-affine IndCoh* to indschemes with a finite cover by ind-affine open subspaces using Cech descent: restriction gives the limit presentation and pushforward gives the colimit presentation. For horizontal loops construct a unital factorization category only for algebraic groups, open subsets of affine space, and schemes covered by such opens. Verify diagonal and disjoint-configuration base change first for groups, then inherit it under open localization and glue. For smooth horizontal arcs prove IndCoh* equals QCoh. No general smooth-quasi-affine horizontal-loop factorization assertion is made: the source explicitly leaves it unknown. Provider: here.'
-deps = ['GLCinLean.LocalSystems.horizontalLoops', 'GLCinLean.Sheaves.indcohStar', 'GLCinLean.Sheaves.indPlacidIndCoh_baseChange', 'GLCinLean.Sheaves.qcoh', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Infinity.limits']
+deps = ['GLCinLean.LocalSystems.horizontalLoops', 'GLCinLean.Sheaves.indcohStar', 'GLCinLean.Sheaves.indPlacidIndCoh_baseChange', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Infinity.limits']
 source = '[GLC3] §§A.2.1–A.2.10; [GLC2] §A.7.6, Lemmas B.13.18 and B.13.20, §E.2 and Proposition E.12.1'
 
 [[node]]

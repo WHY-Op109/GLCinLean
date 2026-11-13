@@ -1,0 +1,17 @@
+desc = 'Independence of the chosen pinning of the Tannakian group: the Hecke action and the Langlands property.'
+
+[[node]]
+id = 'GLCinLean.Satake.dualIdentificationChangePinningIso'
+kind = 'definition'
+desc = 'For another choice of Satake.tannakaPinning, the two dual identifications differ by conjugation by an element t of the dual torus (Groups.pinnings_torsor, with t lifted from the adjoint torus by Groups.torusToAdjointTorus_surjective). Construct the monoidal factorization isomorphism between pullback along conjugation by t and the identity of Rep(Ǧ)_Ran (v ↦ t·v, constant over Ran), and from it the induced monoidal isomorphisms of naive Satake and of the Hecke action of Rep(Ǧ)_Ran on Dmod_1/2(Bun_G). The spectral localization, QCoh(LS_Ǧ), IndCoh_Nilp(LS_Ǧ) and Ψ do not depend on the pinning. The isomorphisms that it induces on the Casselman–Shalika equivalence and on the QCoh(LS_Ǧ)-action belong to the plan of the proof. Provider: here.'
+deps = ['GLCinLean.Satake.dualIdentification', 'GLCinLean.Groups.pinnings_torsor', 'GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Hecke.action', 'GLCinLean.Groups.torusToAdjointTorus_surjective']
+source = '[GLC2] Theorem 1.7.2 and §1.7.6; [GLC1] §1.2.1'
+
+
+
+[[node]]
+id = 'GLCinLean.Satake.isLanglandsFunctor_iff_of_changePinning'
+kind = 'theorem'
+desc = 'Transport along the isomorphisms of Satake.dualIdentificationChangePinningIso preserves the two characterizing properties of [GLC1] Cor. 1.6.5: a continuous functor is a Langlands functor for one choice of Satake.tannakaPinning if and only if its transport is one for the other choice, and transport preserves equivalences. The transport of a functor F is F itself: the two Hecke actions are naturally isomorphic, and DGFun.MapsEquiv transports along a natural isomorphism of its first functor. Hence the conclusion of the main theorem does not depend on the choice. Provider: here.'
+deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Statement.IsLanglandsFunctor', 'GLCinLean.Statement.RepRan', 'GLCinLean.Statement.Loc', 'GLCinLean.Statement.heckeActionRight', 'GLCinLean.Statement.Psi', 'GLCinLean.Statement.DGFun.IsEquivalence', 'GLCinLean.Statement.DGNatIso', 'GLCinLean.Statement.DGFun.MapsEquiv']
+source = '[GLC1] Corollary 1.6.5 and §§1.2.1–1.2.2'

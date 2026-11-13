@@ -1,0 +1,8 @@
+desc = 'Existence and isomorphism theorems for split reductive groups. Owner: the Tau Ceti roadmap ReductiveGroups.'
+
+[[node]]
+id = 'GLCinLean.Groups.splitReductiveGroup'
+kind = 'definition'
+desc = 'For a reduced root datum, the pinned split connected reductive group over k with that root datum (existence), and the isomorphism theorem: pinned isomorphisms between two such groups correspond bijectively to isomorphisms of their based root data. Provider: roadmap ReductiveGroups, Layers 9A–9B (the Chevalley construction) and Layer 9D “classification, relative groups and forms”.'
+deps = ['GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.pinnedData']
+source = '[ConradRGS] Theorems 6.1.16–6.1.17'

@@ -4,7 +4,7 @@ desc = 'Representation categories on finite configurations, including collisions
 id = 'GLCinLean.Hecke.spreadClassifyingStack_collisionDescent'
 kind = 'theorem'
 desc = '''Identify QCoh of the spread constant D-stack BH over X^I with the QCoh version of the finite collision diagram indexed by I→J→K surjections: term QCoh(U(I→J)) tensor Rep(H)^K, with open restrictions and tensor-product transitions. Construct the equivalence from horizontal torsors and their representations, using formal Taylor descent in characteristic zero and descent for affine group torsors; distinguish this from a product of BH's only over distinct points. Prove compatibility under diagonal maps and under every affine S→X^I, using one-affineness and the localization-pullback tensor theorem rather than assuming base change commutes with arbitrary limits. Provider: here.'''
-deps = ['GLCinLean.Hecke.spreadClassifyingStack', 'GLCinLean.Hecke.representationCategory', 'GLCinLean.Sheaves.sheafOfCategories', 'GLCinLean.Sheaves.qcSeparatedScheme_oneAffine', 'GLCinLean.Sheaves.finiteTypeScheme_deRham_oneAffine', 'GLCinLean.Sheaves.formalCompletion_moduleSupport', 'GLCinLean.Infinity.localizationPullback_dualizable']
+deps = ['GLCinLean.Ran.SpreadClassifyingStack', 'GLCinLean.Groups.RepresentationCategory', 'GLCinLean.Sheaves.sheafOfCategories', 'GLCinLean.Sheaves.qcSeparatedScheme_oneAffine', 'GLCinLean.Sheaves.finiteTypeScheme_deRham_oneAffine', 'GLCinLean.Sheaves.formalCompletion_moduleSupport', 'GLCinLean.Infinity.localizationPullback_dualizable']
 source = '[GaitsgoryOutline] §§4.1.3, 4.2.1; [RaskinCPSI] §§6.6–6.10, Lemmas 6.16.2, 6.17.2, 6.18.1 and Appendix A.3'
 
 [[node]]

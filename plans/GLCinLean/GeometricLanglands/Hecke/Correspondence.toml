@@ -1,15 +1,15 @@
 desc = 'Hecke correspondences on Bun_G.'
 
 [[node]]
-id = 'GLCinLean.Hecke.correspondence'
+id = 'GLCinLean.Hecke.Correspondence'
 kind = 'definition'
-desc = 'Families of pairs of G-bundles with an isomorphism off marked points; Beilinson-Drinfeld Grassmannian and factorization. Provider: here.'
-deps = ['GLCinLean.Stacks.bundleStack', 'GLCinLean.Hecke.ranSpace']
-source = '[GaitsgoryOutline] §4.4.1; [GLC1] §1.2.1'
+desc = 'The Hecke stack over Ran: families of pairs of G-bundles on X with an isomorphism away from the graphs of a Ran point, with its projections to Bun_G and to Ran, the Beilinson–Drinfeld Grassmannians over X^I and their factorization. Prove the Beauville–Laszlo comparison: over one point x of X the fibre is the affine Grassmannian (GLCinLean.AffineGrassmannian). Provider: here.'
+deps = ['GLCinLean.Stacks.BundleStack', 'GLCinLean.Ran', 'GLCinLean.AffineGrassmannian']
+source = '[GaitsgoryOutline] §4.4.1; [GLC1] §1.2.1; [BDHitchin] §4.5.2'
 
 [[node]]
 id = 'GLCinLean.Hecke.correspondence_pseudoProper'
 kind = 'theorem'
-desc = 'Let Hecke_{X^I} be the Hecke stack over X^I, with its projection to Bun_G (each side). Prove that the map colim_I Hecke_{X^I} → Bun_G is pseudo-proper (Derived.pseudoProper): after base change by a test scheme S → Bun_G, each Hecke_{X^I} is the twisted Beilinson–Drinfeld Grassmannian, ind-proper over S × X^I, and X^I is proper; assemble over I with the presentation of Hecke.ranPseudoProper. This colimit has the same de Rham prestack as the Hecke stack over Hecke.ranSpace, so it has the same D-modules and computes the same pushforward, as Hecke.ranPseudoProper says for Ran. Provider: here.'
-deps = ['GLCinLean.Hecke.correspondence', 'GLCinLean.Derived.pseudoProper', 'GLCinLean.Hecke.ranPseudoProper', 'GLCinLean.Hecke.affineGrassmannian']
+desc = 'Let Hecke_{X^I} be the Hecke stack over X^I, with its projection to Bun_G (each side). Prove that the map colim_I Hecke_{X^I} → Bun_G is pseudo-proper (Derived.PseudoProper): after base change by a test scheme S → Bun_G, each Hecke_{X^I} is the twisted Beilinson–Drinfeld Grassmannian, ind-proper over S × X^I, and X^I is proper; assemble over I with the presentation of Ran.pseudoProper_of_isProper. This colimit has the same de Rham prestack as the Hecke stack over Ran(X_dR) (GLCinLean.Ran), so it has the same D-modules and computes the same pushforward, as Ran.pseudoProper_of_isProper says for Ran. Provider: here.'
+deps = ['GLCinLean.Hecke.Correspondence', 'GLCinLean.Derived.PseudoProper', 'GLCinLean.Ran.pseudoProper_of_isProper', 'GLCinLean.AffineGrassmannian']
 source = '[GLC1] §1.2.1; [GaitsgoryOutline] §§4.2.3, 4.4.2; [GaitsgoryAtiyahBott] §1.5'

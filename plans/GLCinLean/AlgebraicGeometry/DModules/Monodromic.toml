@@ -1,8 +1,8 @@
 desc = 'Monodromic enhanced D-modules and the parameterized indscheme form of Braden adjunction.'
 
 [[node]]
-id = 'GLCinLean.DModules.monodromic'
+id = 'GLCinLean.DModules.Monodromic'
 kind = 'definition'
 desc = 'For a finite-type scheme with G_m action, define the full stable subcategory generated under colimits by equivariant D-modules. For an indscheme with a G_m-stable finite-type closed presentation, prove its equivalent colimit and !-limit descriptions and independence of presentation. Prove that its inclusion has a continuous right adjoint by compact generation and smooth equivariant forgetting. In particular, tensoring this inclusion by any enhanced category remains fully faithful. Provider: here.'
-deps = ['GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.DModules.indscheme_compactlyGenerated', 'GLCinLean.Infinity.indCompletion', 'GLCinLean.Infinity.rightAdjoint']
+deps = ['GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.DModules.indscheme_compactlyGenerated', 'GLCinLean.Infinity.indCompletion', 'GLCinLean.Infinity.rightAdjoint']
 source = '[BradenDG] §3.1.4; [ChenNearbyCycles] Definition 2.2.8, Remark 2.2.9 and Lemma-Definition D.1.1'

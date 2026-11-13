@@ -1,0 +1,7 @@
+desc = 'n-th roots of an invertible sheaf on a scheme.'
+
+[[node]]
+id = 'GLCinLean.LineBundle.Root'
+kind = 'definition'
+desc = 'For a scheme X, an invertible sheaf L on X and n ≥ 1, the n-th roots of L: invertible sheaves M with an isomorphism M^{⊗n} ≅ L, kept as data. Give the isomorphisms of roots (isomorphisms M ≅ M′ compatible with the two isomorphisms), pullback along maps of schemes, the tensor product of a root of L and a root of L′ as a root of L ⊗ L′, and the twist of a root by an invertible sheaf N with N^{⊗n} ≅ 𝒪. No properness, connectedness or condition on n is assumed. Provider: here. Upstream declarations used: `TauCeti.AlgebraicGeometry.InvertibleSheaf` (`TauCeti.AlgebraicGeometry.LineBundle.Basic`), `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct` (`TauCeti.AlgebraicGeometry.LineBundle.TensorProduct`).'
+source = '[GLC1] §1.3.2; [GLys] §1.4.2'

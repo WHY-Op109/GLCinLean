@@ -1,15 +1,15 @@
 desc = 'IndCoh_Nilp(LS_H) and the coarsening functor Ψ_Nilp,{0}.'
 
 [[node]]
-id = 'GLCinLean.LocalSystems.indcohNilpotent'
+id = 'GLCinLean.LocalSystems.IndCohNilpotent'
 kind = 'definition'
 desc = 'IndCoh_Nilp(LS_H) with its QCoh action and standard t-structure. Provider: here.'
-deps = ['GLCinLean.LocalSystems.nilpotentCone', 'GLCinLean.Sheaves.indcohWithSupport', 'GLCinLean.Sheaves.supportTStructure', 'GLCinLean.LocalSystems.nilpotentCone_contains_zero', 'GLCinLean.LocalSystems.nilpotentCone_closed_conical']
+deps = ['GLCinLean.LocalSystems.nilpotentCone', 'GLCinLean.Sheaves.IndCohWithSupport', 'GLCinLean.Sheaves.supportTStructure', 'GLCinLean.LocalSystems.nilpotentCone_contains_zero', 'GLCinLean.LocalSystems.nilpotentCone_closed_conical']
 source = '[ArinkinGaitsgory] §11.1.5; [GLC1] §1.6.3'
 
 [[node]]
 id = 'GLCinLean.LocalSystems.psiNilpotent'
 kind = 'definition'
 desc = 'Psi_Nilp,{0} as QCoh-linear right adjoint of zero-support inclusion, with t-exactness and bounded-below equivalence. Provider: here.'
-deps = ['GLCinLean.LocalSystems.indcohNilpotent', 'GLCinLean.Sheaves.psi_eventuallyCoconnective_equiv']
+deps = ['GLCinLean.LocalSystems.IndCohNilpotent', 'GLCinLean.Sheaves.psi_eventuallyCoconnective_equiv']
 source = '[ArinkinGaitsgory] Proposition 4.4.5; [GLC1] §1.6.3'

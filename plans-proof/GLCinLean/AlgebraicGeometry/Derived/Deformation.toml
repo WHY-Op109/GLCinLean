@@ -4,12 +4,12 @@ desc = 'Derived indscheme inputs to the finiteness argument.'
 id = 'GLCinLean.Derived.proCotangentComplex'
 kind = 'definition'
 desc = 'The accessible pro-object representing the functor of lifts across split square-zero extensions, with relative and base-change APIs. Pro-objects use the dual Ind construction; the ordinary affine cotangent complex is the representable special case. Provider: here.'
-deps = ['GLCinLean.Derived.prestack', 'GLCinLean.Derived.affineCotangentComplex', 'GLCinLean.Infinity.indCompletion', 'GLCinLean.Infinity.tStructure']
+deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Derived.affineCotangentComplex', 'GLCinLean.Infinity.indCompletion', 'GLCinLean.Infinity.tStructure']
 source = '[DGIndschemes] §§4.1–4.3'
 
 [[node]]
 id = 'GLCinLean.Derived.connectiveDeformationTheory'
 kind = 'definition'
 desc = 'Convergence together with Conditions (A), (B), (C): existence of connective pro-cotangent spaces, compatibility with base change, and compatibility with nonsplit square-zero extensions. Its nontrivial theorem is indscheme_connectiveDeformationTheory. Provider: here.'
-deps = ['GLCinLean.Derived.proCotangentComplex', 'GLCinLean.Derived.classicalReduction']
+deps = ['GLCinLean.Derived.proCotangentComplex', 'GLCinLean.Derived.ClassicalReduction']
 source = '[DGIndschemes] Definition 4.7.1 and §§4.1–4.6'

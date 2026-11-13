@@ -4,19 +4,19 @@ desc = 'Finiteness prerequisites for the statement construction.'
 id = 'GLCinLean.DModules.safeStack'
 kind = 'definition'
 desc = 'A quasi-compact algebraic stack whose geometric automorphism groups have unipotent identity components; this is a geometric predicate, not a compactness certificate. Provider: here.'
-deps = ['GLCinLean.Stacks.qca']
+deps = ['GLCinLean.Stacks.IsQCA']
 source = '[DG2] Definition 10.2.2'
 
 [[node]]
 id = 'GLCinLean.DModules.safeDeRhamCohomology_continuous'
 kind = 'theorem'
 desc = 'For a safe stack, de Rham global sections are continuous. Use the unipotent-gerbe reduction and stratification in the complete proof; keep the safe hypothesis and do not infer continuity from QCA alone. Provider: here.'
-deps = ['GLCinLean.DModules.safeStack', 'GLCinLean.DModules.rightCrystals', 'GLCinLean.Stacks.qcaStratification', 'GLCinLean.Infinity.continuousLinearFunctor']
+deps = ['GLCinLean.DModules.safeStack', 'GLCinLean.DModules.RightCrystals', 'GLCinLean.Stacks.exists_quotientStratification_of_isQCA', 'GLCinLean.Infinity.continuousLinearFunctor']
 source = '[DG2] Theorem 10.2.4, Corollary 10.2.6 and §10.3'
 
 [[node]]
 id = 'GLCinLean.DModules.coherentOnSafeStack_compact'
 kind = 'theorem'
 desc = 'A coherent D-module on a safe stack is compact. Use the Verdier-duality formula Hom(F,-)=Γ_dR(D(F)⊗!-) and continuity, yielding the compact=coherent characterization. Holonomic objects are coherent but QCA alone is insufficient. Provider: here.'
-deps = ['GLCinLean.DModules.safeDeRhamCohomology_continuous', 'GLCinLean.DModules.coherent', 'GLCinLean.DModules.verdierMappingFormula', 'GLCinLean.Infinity.compactObject', 'GLCinLean.Infinity.internalHom']
+deps = ['GLCinLean.DModules.safeDeRhamCohomology_continuous', 'GLCinLean.DModules.Coherent', 'GLCinLean.DModules.verdierMappingFormula', 'GLCinLean.Infinity.compactObject', 'GLCinLean.Infinity.internalHom']
 source = '[DG2] Lemma 7.3.5 and Corollary 10.2.7'

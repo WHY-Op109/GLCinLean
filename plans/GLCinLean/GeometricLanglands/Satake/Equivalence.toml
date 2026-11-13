@@ -1,8 +1,8 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'The geometric Satake equivalence on hearts.'
 
 [[node]]
 id = 'GLCinLean.Satake.geometricSatakeHeartEquivalence'
 kind = 'definition'
-desc = 'Construct the tensor equivalence between finite-dimensional representations of the specified Langlands dual and the untwisted spherical perverse D-module heart at a point, with the parity-corrected commutativity constraint of Satake.fusion. Redo the weight, projective and fusion constructions in algebraic D-modules over every algebraically closed k of characteristic zero; MV works topologically over C, and its §14 gives only an étale variant. The only comparison with complex topology is the parity of IC stalks (Satake.icStalkParity), made through Q̄ without embedding k into C; semisimplicity (Satake.sphericalHeart_semisimple) is then proved in D-modules over k. The half-twisted heart used for factorization is reached through Satake.halfTwistedHeart_equiv_untwistedHeart. Provider: here.'
-deps = ['GLCinLean.Satake.tannakaGroup', 'GLCinLean.Satake.dualIdentification', 'GLCinLean.Hecke.representationCategory', 'GLCinLean.Satake.sphericalHeart_semisimple']
+desc = 'Construct the tensor equivalence between finite-dimensional representations of the specified Langlands dual and the untwisted spherical perverse D-module heart at a point, with the parity-corrected commutativity constraint of Satake.fusion. Redo the weight, projective and fusion constructions in algebraic D-modules over every algebraically closed k of characteristic zero; MV works topologically over C, and its §14 gives only an étale variant. The only comparison with complex topology is the parity of IC stalks (Satake.ic_starRestriction_isEven), made through Q̄ without embedding k into C; semisimplicity (Satake.sphericalHeart_semisimple) is then proved in D-modules over k. The half-twisted heart used for factorization is reached through Satake.halfTwistedHeart_equiv_untwistedHeart. Provider: here.'
+deps = ['GLCinLean.Satake.tannakaGroup', 'GLCinLean.Satake.dualIdentification', 'GLCinLean.Groups.RepresentationCategory', 'GLCinLean.Satake.sphericalHeart_semisimple']
 source = '[MV] Theorems 7.3, 12.1 and §14; [GLys] §§8, 9.2.1; [RaskinCPSI] §§6.28–6.33'

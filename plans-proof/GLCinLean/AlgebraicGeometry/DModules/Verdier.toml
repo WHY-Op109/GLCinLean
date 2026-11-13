@@ -4,5 +4,5 @@ desc = 'Coherent D-module prerequisites for the compactness proof.'
 id = 'GLCinLean.DModules.verdierMappingFormula'
 kind = 'theorem'
 desc = 'For coherent F and arbitrary M, identify the enriched Hom from VerdierDual(F) to M with de Rham global sections of F⊗!M. Use smooth descent of the scheme pairing; this is the compactness proof input. Provider: here.'
-deps = ['GLCinLean.DModules.verdierDuality', 'GLCinLean.Infinity.internalHom', 'GLCinLean.DModules.rightCrystals']
+deps = ['GLCinLean.DModules.verdierDuality', 'GLCinLean.Infinity.internalHom', 'GLCinLean.DModules.RightCrystals']
 source = '[DG2] Lemma 7.3.5'

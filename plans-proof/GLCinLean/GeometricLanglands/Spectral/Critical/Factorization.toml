@@ -4,14 +4,14 @@ desc = 'Unital factorization categories and their global sections needed for cri
 id = 'GLCinLean.SpectralProof.factorizationCategory'
 kind = 'definition'
 desc = 'Unital sheaf of presentable stable categories on the Ran space, with coherent factorization on disjoint configurations; include lax-unital functors and independent categories. Provider: here.'
-deps = ['GLCinLean.Hecke.ranSpace', 'GLCinLean.Infinity.presentableCategory', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits']
+deps = ['GLCinLean.Ran', 'GLCinLean.Infinity.presentableCategory', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits']
 source = '[GLC2] §§C.6–C.8, H.1'
 
 [[node]]
 id = 'GLCinLean.SpectralProof.factorizationAlgebra'
 kind = 'definition'
 desc = 'Unital factorization algebra and category of factorization modules, with restriction to formal discs and insertion of the vacuum. Provider: here.'
-deps = ['GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.DModules.rightCrystals']
+deps = ['GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.DModules.RightCrystals']
 source = '[GLC2] §§4.1–4.2, C.8'
 
 [[node]]
@@ -25,7 +25,7 @@ source = '[GLC2] §§11.1–11.2, H.1–H.3'
 id = 'GLCinLean.SpectralProof.sphericalKL'
 kind = 'definition'
 desc = 'Renormalized DG category of L^+G-equivariant smooth affine modules, as a unital factorization category; compact generators come from finite-dimensional arc-group representations. Ordinary pointwise module categories are insufficient. Provider: here. Upstream declarations used: `TauCeti.smoothModules` (`TauCeti.Algebra.Category.ModuleCat.Smooth.Basic`), `TauCeti.CurrentAlgebra.IsSmooth` (`TauCeti.Algebra.Lie.Current.SmoothAction`), `TauCeti.CurrentAlgebra.CompletedEnveloping` (`TauCeti.Algebra.Lie.Current.Completion`), `TauCeti.CurrentAlgebra.smoothModulesEquivalence` (`TauCeti.Algebra.Lie.Current.CompletedModules`, on Tau Ceti main only, not at the pin), `TauCeti.CurrentAlgebra.twoCocycleOfBilinear` (`TauCeti.Algebra.Lie.Current.ResidueCocycle`), `LieAlgebra.ofTwoCocycle` (`Mathlib.Algebra.Lie.Extension`).'
-deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Infinity.indCompletion', 'GLCinLean.Hecke.loopArcGroups']
+deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Infinity.indCompletion', 'GLCinLean.LoopGroups.LoopGroup']
 source = '[GLC2] §§2.1.1–2.1.5, 4.2'
 
 [[node]]

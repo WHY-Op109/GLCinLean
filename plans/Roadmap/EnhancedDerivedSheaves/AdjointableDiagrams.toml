@@ -2,7 +2,7 @@ desc = 'Limits of diagrams of presentable categories along adjointable functors.
 
 [[node]]
 id = 'GLCinLean.Infinity.adjointableDiagram_limitAdjunction'
-kind = 'theorem'
+kind = 'definition'
 desc = 'For a coherent diagram of adjunctions whose transition squares are left-adjointable, construct the adjunction on the limit and its colimit dual by the mapping-space formula. Retain the coherent units, counits and comparison mates. Provider: roadmap EnhancedDerivedSheaves, “Ringed diagrams, coefficient towers and mates” and “Presentable categories, their limits and spectra”.'
 deps = ['GLCinLean.Infinity.limits', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.presentableCategory']
 source = '[ChenNearbyCycles] Lemma A.1.3 and Remark A.1.4'

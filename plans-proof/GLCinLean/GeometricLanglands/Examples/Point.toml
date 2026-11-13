@@ -4,5 +4,5 @@ desc = 'Nontrivial checks of the indicated constructions, or their input existen
 id = 'GLCinLean.Examples.trivialGroupFunctor_equiv'
 kind = 'theorem'
 desc = 'For the trivial group, Bun and LS are the point and the normalized coarse functor identifies with the identity of derived Vect; test the exponential and twisting normalizations. Provider: here.'
-deps = ['GLCinLean.Examples.pointQCohIndCoh', 'GLCinLean.Langlands.coarse']
+deps = ['GLCinLean.Examples.pointQCohEquivVect', 'GLCinLean.Langlands.coarse']
 source = '[GLC1] §§1.3, 1.5'

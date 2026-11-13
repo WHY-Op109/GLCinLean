@@ -4,7 +4,7 @@ desc = 'Commutative differential-graded D-algebras and central coefficients on a
 id = 'GLCinLean.DModules.commutativeDAlgebra'
 kind = 'definition'
 desc = 'Commutative unital DG algebras in left D_X-modules, with their right-D-module chiral realization. A central chiral R-module is a DG module over R^l[D_X]; include its scalar extension and the graded square-zero D-algebra R{M} with degree-zero part R and degree-one part M[-1]. Provide the equivalence with the corresponding commutative factorization algebra/module and its unit data. Provider: here, over the operadic algebras of roadmap EnhancedDerivedSheaves.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Derived.commutativeAlgebra', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Infinity.moduleCategory']
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.Derived.commutativeAlgebra', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Infinity.moduleCategory']
 source = '[BDChiral] §§2.2, 3.3, 4.2.19 and 4.6.3; [GLC2] §§C.8–C.9'
 
 [[node]]
@@ -18,5 +18,5 @@ source = '[BDChiral] §§2.4.1–2.4.5; §4.6.5, equation (4.6.5.1)'
 id = 'GLCinLean.DModules.commutativeDAlgebra_semifreeResolution'
 kind = 'theorem'
 desc = 'Construct convenient semifree resolutions of commutative DG D_X-algebras and central modules in all cohomological degrees. Attach graded locally projective D_X-generators successively to hit cohomology and kill kernels; choose generators induced from sufficiently negative line bundles so Gamma(X,h(V_i))=0. Prove homotopical flatness, common refinement and independence of the derived functors from resolution choices. Module stages have associated graded R^l tensor N_i with differential landing in earlier stages. No affine model-category claim is silently imposed on the proper curve. Provider: here.'
-deps = ['GLCinLean.DModules.commutativeDAlgebra', 'GLCinLean.DModules.maximalConstantQuotient', 'GLCinLean.Sheaves.coherent', 'GLCinLean.Infinity.limits', 'GLCinLean.DModules.deRhamPushforward']
+deps = ['GLCinLean.DModules.commutativeDAlgebra', 'GLCinLean.DModules.maximalConstantQuotient', 'GLCinLean.Sheaves.Coherent', 'GLCinLean.Infinity.limits', 'GLCinLean.DModules.deRhamPushforward']
 source = '[BDChiral] Lemma 4.3.7(i)–(ii) and Remark (b); §4.6.1; §4.6.3'

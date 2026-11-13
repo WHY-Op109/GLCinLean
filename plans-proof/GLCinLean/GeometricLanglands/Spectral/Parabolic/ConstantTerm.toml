@@ -4,15 +4,16 @@ desc = 'Parabolic correspondences, Eisenstein functors and cuspidal support.'
 id = 'GLCinLean.SpectralProof.parabolicBundleCorrespondence'
 kind = 'definition'
 desc = 'Bun_M ← Bun_P → Bun_G with the shifts and determinant-twist comparison required for half-twisted D-modules. Provider: here.'
-deps = ['GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.Stacks.bundleStack', 'GLCinLean.Stacks.determinantBundle']
+deps = ['GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.Stacks.BundleStack', 'GLCinLean.Stacks.determinantBundle']
 source = '[GLC3] §§8.1.1–8.1.4; [GeometricConstantTerm] §0.1'
 
 [[node]]
 id = 'GLCinLean.SpectralProof.constantTerm'
 kind = 'definition'
 desc = 'Continuous constant-term functor CT_* along the parabolic correspondence, on each Levi component and their product, with the prescribed half-twist. Provider: here.'
-deps = ['GLCinLean.SpectralProof.parabolicBundleCorrespondence', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.safeDeRhamCohomology_continuous']
+deps = ['GLCinLean.SpectralProof.parabolicBundleCorrespondence', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.safeDeRhamCohomology_continuous', 'GLCinLean.DModules.twistedExtraordinaryPullback']
 source = '[GeometricConstantTerm] §§0.1.4–0.1.6; [GLC3] §8.1'
+
 
 [[node]]
 id = 'GLCinLean.SpectralProof.eisensteinLeftAdjoint'
@@ -32,5 +33,5 @@ source = '[GeometricConstantTerm] §§1.4.1–1.4.4'
 id = 'GLCinLean.SpectralProof.cuspidalSupport_bounded'
 kind = 'theorem'
 desc = 'There is an open U whose intersection with each Bun_G component is quasi-compact, and every cuspidal object is both its shriek and star extension from U; prove using Harder–Narasimhan reduction and the constant-term contraction argument. Provider: here.'
-deps = ['GLCinLean.SpectralProof.cuspidalCategory', 'GLCinLean.SpectralProof.parabolicBundleCorrespondence', 'GLCinLean.Stacks.qcaStratification']
+deps = ['GLCinLean.SpectralProof.cuspidalCategory', 'GLCinLean.SpectralProof.parabolicBundleCorrespondence', 'GLCinLean.Stacks.exists_quotientStratification_of_isQCA']
 source = '[GeometricConstantTerm] Proposition 1.4.6, proof Appendix B; [GenVan] Lemma 2.12'

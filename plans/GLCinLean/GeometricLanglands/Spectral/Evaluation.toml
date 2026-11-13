@@ -4,5 +4,5 @@ desc = 'Restriction of the universal local system to formal discs.'
 id = 'GLCinLean.Spectral.evaluation'
 kind = 'definition'
 desc = 'Restriction of the universal local system to the formal discs: LS_H×Ran→(BH)_Ran. Provider: here.'
-deps = ['GLCinLean.LocalSystems.deRham', 'GLCinLean.Hecke.spreadClassifyingStack']
+deps = ['GLCinLean.LocalSystems.DeRham', 'GLCinLean.Ran.SpreadClassifyingStack']
 source = '[GaitsgoryOutline] §4.3.1'

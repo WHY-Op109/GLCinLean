@@ -1,10 +1,10 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'Semi-infinite orbits and the weight functors of the spherical heart.'
 
 [[node]]
 id = 'GLCinLean.Satake.semiInfiniteOrbits'
 kind = 'definition'
 desc = 'N((t))-orbits and opposite-N((t))-orbits indexed by coweights, as attractor/repeller loci for a regular dominant cocharacter; define finite-type intersections with Schubert closures. Provider: here.'
-deps = ['GLCinLean.Hecke.schubertStratification', 'GLCinLean.Hecke.loopArcGroups', 'GLCinLean.Groups.pinnedData']
+deps = ['GLCinLean.AffineGrassmannian.schubertStratification', 'GLCinLean.LoopGroups.LoopGroup', 'GLCinLean.Groups.pinnedData']
 source = '[MV] §3 and Proposition 3.1'
 
 [[node]]

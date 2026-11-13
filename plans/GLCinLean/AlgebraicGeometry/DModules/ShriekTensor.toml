@@ -1,0 +1,8 @@
+desc = 'The !-tensor product of D-modules.'
+
+[[node]]
+id = 'GLCinLean.DModules.shriekTensor'
+kind = 'definition'
+desc = 'The !-tensor product of right crystals on a locally almost finite type prestack Y, M ⊗^! N = Δ^!(M ⊠ N): the value on Y_dR of the symmetric monoidal structure of IndCoh for which !-pullback is symmetric monoidal. Give the external product ⊠ and the symmetric monoidal structure of !-pullback, with unit ω; an object that is étale-locally isomorphic to ω is invertible, so tensoring with it is an equivalence. Proof obligation: the symmetric monoidal structure rests on [IndCoh] Theorem 5.6.3, which that paper states without proof; it is proved with this node. Provider: here.'
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Sheaves.indcohShriekOnSchemes', 'GLCinLean.Infinity.monoidalCategory']
+source = '[IndCoh] Proposition 4.6.2, Theorem 5.6.3, §5.6.7 and Corollary 5.6.8 (schemes), §10.3.2 (prestacks)'

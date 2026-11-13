@@ -1,15 +1,15 @@
-desc = 'Finiteness prerequisites for the statement construction.'
+desc = 'Continuity of global sections and compact generation of IndCoh on QCA stacks.'
 
 [[node]]
 id = 'GLCinLean.Sheaves.qcaGlobalSections_continuous'
 kind = 'theorem'
 desc = 'For a QCA stack, derived global sections commute with colimits. Prove finite cohomological dimension by quotient strata, finite étale descent and open-closed induction, then pass from bounded-below to unbounded complexes. Provider: here.'
-deps = ['GLCinLean.Stacks.qcaStratification', 'GLCinLean.Sheaves.qcohGlobalSections', 'GLCinLean.Infinity.tStructure']
+deps = ['GLCinLean.Stacks.exists_quotientStratification_of_isQCA', 'GLCinLean.Sheaves.qcohGlobalSections', 'GLCinLean.Infinity.tStructure']
 source = '[DG2] Theorem 1.4.2 and §§2.1–2.4'
 
 [[node]]
 id = 'GLCinLean.Sheaves.qcaIndCoh_compactlyGenerated'
 kind = 'theorem'
 desc = 'For a QCA stack locally almost of finite type, coherent sheaves are exactly the compact objects of IndCoh and generate it. Plan the coherent-generation descent and finite-stratification argument, not just the conclusion. Provider: here.'
-deps = ['GLCinLean.Stacks.qcaStratification', 'GLCinLean.Sheaves.qcaGlobalSections_continuous', 'GLCinLean.Sheaves.coherent', 'GLCinLean.Sheaves.indcoh', 'GLCinLean.Infinity.compactGeneration']
+deps = ['GLCinLean.Stacks.exists_quotientStratification_of_isQCA', 'GLCinLean.Sheaves.qcaGlobalSections_continuous', 'GLCinLean.Sheaves.Coherent', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Infinity.compactGeneration']
 source = '[DG2] Theorem 3.3.5, §§3.4–3.5, Proposition 3.5.1'

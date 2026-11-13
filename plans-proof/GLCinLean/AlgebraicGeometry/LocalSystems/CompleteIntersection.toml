@@ -4,7 +4,7 @@ desc = 'Finiteness prerequisites for the statement construction.'
 id = 'GLCinLean.LocalSystems.regularSingularConnections'
 kind = 'definition'
 desc = 'Derived stack of connections with at most a simple pole at a chosen point x, with residue map to g/H. Define through meromorphic connections and polar parts, with the affine-cover construction and comparison at the derived level. Provider: here.'
-deps = ['GLCinLean.LocalSystems.meromorphicConnections_classical', 'GLCinLean.Derived.cotangentComplex', 'GLCinLean.Stacks.bundleStack']
+deps = ['GLCinLean.LocalSystems.meromorphicConnections_classical', 'GLCinLean.Derived.cotangentComplex', 'GLCinLean.Stacks.BundleStack']
 source = '[ArinkinGaitsgory] §§10.5.1–10.5.11, 10.6.1–10.6.4'
 
 [[node]]
@@ -18,12 +18,12 @@ source = '[ArinkinGaitsgory] Proposition 10.6.6(a) and its proof'
 id = 'GLCinLean.LocalSystems.globalCompleteIntersection'
 kind = 'theorem'
 desc = 'Present LS as U×_{g/H}BH, where U is a quasi-compact smooth neighborhood of LS in the regular-singular stack. The map g/H→BH is smooth schematic with its zero section and all stacks have affine diagonal. This supplies the global complete-intersection hypotheses of §9.2 without requiring Bun_H to be quasi-compact. Provider: here.'
-deps = ['GLCinLean.LocalSystems.regularSingular_smoothNearLS', 'GLCinLean.LocalSystems.qca', 'GLCinLean.Derived.quasiSmooth']
+deps = ['GLCinLean.LocalSystems.regularSingular_smoothNearLS', 'GLCinLean.LocalSystems.qca', 'GLCinLean.Derived.QuasiSmooth']
 source = '[ArinkinGaitsgory] §10.6.2 and Proposition 10.6.6'
 
 [[node]]
 id = 'GLCinLean.LocalSystems.meromorphicConnections_classical'
 kind = 'theorem'
 desc = 'For a nonempty affine U in X, the relative meromorphic-connection prestack LS(X;U)=LS(U)×_{Bun(U)}Bun(X) is classical. After a smooth affine base change from Bun(X), its fibers are DG indschemes, their relative cotangent functor has no negative obstruction on affine U, and the classical model is locally S×A∞. Prove both formal-smoothness assertions and apply the derived/classical comparison; then construct polar-part maps. Provider: here.'
-deps = ['GLCinLean.LocalSystems.deRham', 'GLCinLean.Derived.mappingPrestack', 'GLCinLean.Stacks.bundleStack', 'GLCinLean.Derived.indscheme', 'GLCinLean.Derived.formallySmooth_iff_proCotangent', 'GLCinLean.Derived.formallySmooth_classicalComparison']
+deps = ['GLCinLean.LocalSystems.DeRham', 'GLCinLean.Derived.MappingPrestack', 'GLCinLean.Stacks.BundleStack', 'GLCinLean.Derived.IsIndscheme', 'GLCinLean.Derived.formallySmooth_iff_proCotangent', 'GLCinLean.Derived.formallySmooth_classicalComparison']
 source = '[ArinkinGaitsgory] Proposition 10.5.3 and §§10.5.1–10.5.11; [DGIndschemes] Propositions 8.2.2 and 9.1.4'

@@ -1,8 +1,8 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'The loop group and the arc group of an affine group scheme.'
 
 [[node]]
-id = 'GLCinLean.Hecke.loopArcGroups'
+id = 'GLCinLean.LoopGroups.LoopGroup'
 kind = 'definition'
-desc = 'Loop and arc group functors R ↦ G(R((t))) and G(R[[t]]), their ind/pro presentations and coordinate-change actions; use families of formal discs for coordinate independence. Provider: here.'
-deps = ['GLCinLean.Hecke.formalDisc', 'GLCinLean.Groups.pinnedData', 'GLCinLean.Derived.prestack']
+desc = 'For an affine group scheme H of finite type over k, the loop group and arc group functors R ↦ H(R((t))) and R ↦ H(R[[t]]), their ind-scheme and pro-scheme presentations, and the action of coordinate changes; families over Ran use the formal discs of Ran.FormalDisc for coordinate independence. No reductivity or pinning is assumed. Provider: here.'
+deps = ['GLCinLean.Ran.FormalDisc', 'GLCinLean.Derived.Prestack', 'GLCinLean.Derived.IsIndscheme']
 source = '[BDHitchin] §4.5; [MV] §2; [GLys] §§7.1–7.2'

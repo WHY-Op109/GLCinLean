@@ -4,5 +4,5 @@ desc = 'Compact generation of Dmod_½(Bun_G).'
 id = 'GLCinLean.Automorphic.compactlyGenerated'
 kind = 'theorem'
 desc = 'Prove compact generation of Dmod_1/2(Bun_G), including quasi-compact open exhaustion and safe extension generators. Provider: here.'
-deps = ['GLCinLean.Automorphic.halfTwisted_equiv_untwisted', 'GLCinLean.Infinity.compactGeneration']
+deps = ['GLCinLean.Automorphic.halfTwistedEquivUntwisted', 'GLCinLean.Infinity.compactGeneration']
 source = '[CompactGeneration] Theorem 0.1.2; [GLC1] §1.6.4'

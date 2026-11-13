@@ -4,5 +4,5 @@ desc = 'The case of a torus: the nilpotent cone and the coarse functor.'
 id = 'GLCinLean.Examples.torusCoarse_equiv'
 kind = 'theorem'
 desc = 'Compare the coarse torus functor with enhanced Fourier-Mukai followed by Cartan inversion; test normalization. Provider: here.'
-deps = ['GLCinLean.Langlands.coarse', 'GLCinLean.Examples.torusNilpotent_is_zero']
+deps = ['GLCinLean.Langlands.coarse', 'GLCinLean.Examples.nilpotentCone_eq_zeroSection_of_torus']
 source = '[GLC1] §§1.5.1–1.5.4'
