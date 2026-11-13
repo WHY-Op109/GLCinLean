@@ -27,3 +27,10 @@ kind = 'theorem'
 desc = 'The Hecke action is a local Ran-unital action of Rep(H) on Dmod_1/2(Bun_G) in the sense of SpectralProof.localUnitalAction. Prove the three unitality inputs: Rep(H) as a sheaf of monoidal categories on the unital Ran space ([GLC2] §H.4); Satake.naiveFactorizationFunctor as a unital factorization functor (the unit goes to the delta object at the unit of the Grassmannian, compatibly with the inclusions of finite sets); and Hecke.sphericalAction as a unital action, the delta object acting by the identity compatibly with factorization. [GLC2] §15.5.1 only says that the Hecke action is considered in this way; no source with a proof was found, so this is an explicit obligation. Provider: here.'
 deps = ['GLCinLean.Hecke.action', 'GLCinLean.SpectralProof.localUnitalAction', 'GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Hecke.sphericalAction', 'GLCinLean.Ran.Representations']
 source = '[GLC2] §15.5.1 and §§H.6.1–H.6.8; explicit obligation'
+
+[[node]]
+id = 'GLCinLean.Hecke.action_associativity'
+kind = 'definition'
+desc = 'The associativity constraints of Hecke.action, as a module structure for the non-unital symmetric monoidal category Rep(Ǧ)_Ran (Hecke.ranConvolution), from the monoidality of Satake.naiveFactorizationFunctor and the module structure of Hecke.sphericalAction. Provider: here.'
+deps = ['GLCinLean.Hecke.action', 'GLCinLean.Hecke.ranConvolution', 'GLCinLean.Infinity.moduleCategory']
+source = '[GLC1] §1.2.1; [GaitsgoryOutline] §4.4.2; [GLys] §9.5.1'

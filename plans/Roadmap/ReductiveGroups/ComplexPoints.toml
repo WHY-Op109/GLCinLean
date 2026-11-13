@@ -1,0 +1,7 @@
+desc = 'Classical complex points of a C-scheme locally of finite type. Owner: the Tau Ceti roadmap ReductiveGroups.'
+
+[[node]]
+id = 'GLCinLean.Constructible.ComplexPoints'
+kind = 'definition'
+desc = 'For a scheme Y locally of finite type over C, the set Y(C) with the classical (analytic) topology, functorial in Y and locally compact. It is Hausdorff when Y is separated; the line with a doubled origin is a scheme of finite type whose space is not. Closed and open embeddings go to closed and open embeddings, and proper maps of separated schemes to proper maps of spaces. Provider: roadmap ReductiveGroups, Layer 3A.5c “Classical complex points”, with the general comparisons of 3A.5b. Upstream declarations used: `TauCeti.SchemePointTopology.topology` (`TauCeti.Topology.Algebra.PointTopology.Scheme`), `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`).'
+source = '[HottaTakeuchiTanisaki] Chapter 4 (analytic spaces attached to schemes)'

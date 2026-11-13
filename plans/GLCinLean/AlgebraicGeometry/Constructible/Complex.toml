@@ -1,21 +1,11 @@
 desc = 'Constructible sheaves on the complex points of separated C-schemes of finite type, as an ordinary triangulated theory: the target of the Riemann–Hilbert comparison used for parity of IC stalks. No embedding of the original field into C is assumed anywhere.'
 
 [[node]]
-id = 'GLCinLean.Constructible.ComplexPoints'
-kind = 'definition'
-desc = 'For a scheme Y locally of finite type over C, the set Y(C) with the classical (analytic) topology, functorial in Y and locally compact. It is Hausdorff when Y is separated; the line with a doubled origin is a scheme of finite type whose space is not. Closed and open embeddings go to closed and open embeddings, and proper maps of separated schemes to proper maps of spaces. Provider: here. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`).'
-source = '[HottaTakeuchiTanisaki] Chapter 4 (analytic spaces attached to schemes)'
-
-[[node]]
 id = 'GLCinLean.Constructible.DerivedCategory'
 kind = 'definition'
 desc = 'For a separated scheme Y of finite type over C and a field E: the bounded derived category D^b_c(Y, E) of sheaves of E-vector spaces on Y(C) (Constructible.ComplexPoints) whose cohomology sheaves are constructible for some algebraic stratification, and, for a fixed algebraic stratification S, its full subcategory D^b_S(Y, E) of complexes whose cohomology sheaves are locally constant of finite rank on each stratum. It is an ordinary triangulated category, built from Mathlib (TopCat.Sheaf and DerivedCategory); it is not an enhanced category, and no node uses it as one. On D^b_c give *- and !-pullback along all maps, proper pushforward, base change and the projection formula, external products and Verdier duality. A stratification S is good when, for every stratum T and every local system L of finite rank on T(C), the *- and !-extensions of L by the embedding of T are in D^b_S. Whitney stratifications are good, and so are the orbit stratifications of a connected algebraic group acting with finitely many orbits, in particular the stratifications of finite Schubert unions by L+G-orbits and by I-orbits, since L+G and I act on a finite Schubert union through quotients of finite type. Without this condition the statements below fail: for the Whitney umbrella x² = y²z with strata the z-axis and its complement, the IC sheaf and the !-restriction of the constant sheaf to the axis are not in D^b_S. The !-half of the condition always holds, so it is a condition on the *-extensions. For good stratifications S give the operations along stratified maps, which preserve D^b_S: the preimage of each stratum is a union of strata, and over each stratum the map is locally trivial by trivializations that carry strata to strata (the product of a stratified fibre with the base, as in [JuteauMautnerWilliamson] §2.4). A trivial fibration that only preserves strata is not enough: for P¹ × A¹ → A¹, with strata the parabola x² = y and its complement, the pushforward of the constant sheaf on the parabola has stalk rank 2 away from 0 and rank 1 at 0. A fixed stratification is not preserved by every map: for the one-stratum stratification of C, the proper inclusion of the origin sends the constant sheaf to a skyscraper. Hom is computed by derived global sections. The constructibility conditions, the operations and duality are missing upstream and implemented here. Provider: here. Upstream declarations used: `TopCat.Sheaf` (`Mathlib.Topology.Sheaves.Sheaf`), `DerivedCategory` (`Mathlib.Algebra.Homology.DerivedCategory.Basic`).'
 deps = ['GLCinLean.Constructible.ComplexPoints']
 source = '[HottaTakeuchiTanisaki] Chapter 4 and Appendix on derived categories of sheaves'
-
-
-
-
 
 [[node]]
 id = 'GLCinLean.Constructible.PerverseSheaves'
@@ -23,7 +13,6 @@ kind = 'definition'
 desc = 'For a good stratification S (Constructible.DerivedCategory) by smooth connected strata and a field E, the middle-perversity t-structure on D^b_S(Y, E) of Constructible.DerivedCategory, as a Mathlib t-structure on that triangulated category; its heart of perverse sheaves (of finite length), and intermediate extension along locally closed strata, with the IC sheaves of irreducible local systems as the simple objects. Provider: here. Upstream declarations used: `CategoryTheory.Triangulated.TStructure` (`Mathlib.CategoryTheory.Triangulated.TStructure.Basic`).'
 deps = ['GLCinLean.Constructible.DerivedCategory']
 source = '[HottaTakeuchiTanisaki] Chapter 8 (perverse sheaves); [MV] §2'
-
 
 [[node]]
 id = 'GLCinLean.DModules.analyticDeRham'
