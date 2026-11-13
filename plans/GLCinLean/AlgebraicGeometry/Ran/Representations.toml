@@ -3,6 +3,6 @@ desc = 'The category Rep(H)_Ran.'
 [[node]]
 id = 'GLCinLean.Ran.Representations'
 kind = 'definition'
-desc = 'The de Rham factorization version Rep(H)_Ran and its monoidal structure. Provider: here.'
+desc = 'The de Rham factorization version Rep(H)_Ran and its non-unital symmetric monoidal structure. Provider: here.'
 deps = ['GLCinLean.Groups.RepresentationCategory', 'GLCinLean.Ran', 'GLCinLean.DModules.RightCrystals', 'GLCinLean.Ran.SpreadClassifyingStack', 'GLCinLean.Sheaves.QCoh']
 source = '[GLC1] §1.2.1; [GaitsgoryOutline] §4.2'

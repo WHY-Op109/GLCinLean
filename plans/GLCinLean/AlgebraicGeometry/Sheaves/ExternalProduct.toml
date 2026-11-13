@@ -3,6 +3,6 @@ desc = 'The external product of quasi-coherent sheaves on a product of prestacks
 [[node]]
 id = 'GLCinLean.Sheaves.externalProduct_isEquivalence_of_dualizable'
 kind = 'theorem'
-desc = 'For prestacks Y₁ and Y₂ such that QCoh(Y₁) is dualizable in DGCat_cont, the functor QCoh(Y₁) ⊗ QCoh(Y₂) → QCoh(Y₁ × Y₂) induced by the pullbacks along the two projections and the tensor product is an equivalence. There is no condition on Y₂. Prove it as in the source: write both sides as limits over affine test schemes, use that products of test schemes are cofinal among the test schemes of Y₁ × Y₂, and that tensoring with a dualizable category commutes with limits. Provider: here.'
+desc = 'For prestacks Y₁ and Y₂ such that QCoh(Y₁) is dualizable in DGCat_cont, the functor QCoh(Y₁) ⊗ QCoh(Y₂) → QCoh(Y₁ × Y₂) induced by the pullbacks along the two projections and the tensor product is an equivalence. There is no condition on Y₂. Prove it as in the source: it is an equivalence for affine Y₁ and Y₂ by construction, and QCoh of an affine scheme is dualizable; write both sides as limits over affine test schemes, use that products of test schemes are cofinal among the test schemes of Y₁ × Y₂, and that tensoring with a dualizable category commutes with limits. Provider: here.'
 deps = ['GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.dualizableCategory', 'GLCinLean.Infinity.limits']
 source = '[GRQCoh] §3.1, Proposition 3.1.7'

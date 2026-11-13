@@ -3,6 +3,6 @@ desc = 'Hochschild cochains of an enhanced category and their central action.'
 [[node]]
 id = 'GLCinLean.Infinity.hochschildCochains'
 kind = 'definition'
-desc = 'For a stable enhanced category C, the Hochschild cochains of C: the endomorphisms of its identity functor, as an E₂-algebra. Their cohomology acts centrally on the homotopy category of C, and the even part acts through a commutative graded ring. The positive-arity Hochschild cochains of an A∞-category in Tau Ceti (TauCeti.AInfinityCategory.PositiveHochschild) are related but do not replace this: they omit arity zero and carry no E₂-structure. Provider: here.'
+desc = 'For a cocomplete stable enhanced category C, the Hochschild cochains of C: the endomorphisms of its identity functor in the monoidal category of continuous endofunctors, as an E₂-algebra. Their cohomology acts centrally on the homotopy category of C, and the even part acts through a commutative graded ring. The positive-arity Hochschild cochains of an A∞-category in Tau Ceti (TauCeti.AInfinityCategory.PositiveHochschild) are related but do not replace this: they omit arity zero and carry no E₂-structure. Provider: here.'
 deps = ['GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Infinity.continuousLinearFunctor']
 source = '[ArinkinGaitsgory] Appendices E.1–E.3, F.1'

@@ -3,6 +3,6 @@ desc = 'Derived Artin stacks.'
 [[node]]
 id = 'GLCinLean.Derived.IsArtinStack'
 kind = 'definition'
-desc = 'Derived Artin stacks: derived prestacks with a smooth atlas by derived schemes and representable diagonal, defined inductively, with smooth descent. Finiteness conditions are not part of this notion; they are Derived.LocallyAlmostFiniteType. Provider: here.'
+desc = 'Derived Artin stacks, by induction on k: a k-Artin stack is an étale sheaf on derived affine schemes with (k−1)-representable diagonal and a smooth (k−1)-representable surjection from a derived scheme; such stacks satisfy smooth descent. Finiteness conditions are not part of this notion; they are Derived.LocallyAlmostFiniteType. Provider: here.'
 deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Stacks.algebraicStack']
 source = '[IndCoh] §11.1; [ArinkinGaitsgory] §1.5.3'

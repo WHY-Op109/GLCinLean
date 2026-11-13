@@ -3,6 +3,6 @@ desc = 'Linear functors out of Rep(H)_Ran as comodules over the regular object.'
 [[node]]
 id = 'GLCinLean.Ran.Representations.linearFunctorEquivComodule'
 kind = 'definition'
-desc = 'For each finite set I, the equivalence between Rep(H)_{X^I}-linear continuous functors out of Rep(H)_{X^I} and comodules over its regular object, by self-duality and the comonadic description, with its lax-monoidal algebra variant, compatible with the diagonal and factorization maps over Ran. It supplies continuity and the coherent enhancement of the functors built from it, instead of applying a functor to a triangulated heart. Provider: here.'
-deps = ['GLCinLean.Ran.Representations', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.internalHom']
-source = '[RaskinCPSI] Lemmas 6.18.1, 6.23.2, 6.31.1–6.32.1'
+desc = 'For each finite set I and each Dmod(X^I)-module category D, the equivalence between Dmod(X^I)-linear continuous functors Rep(H)_{X^I} → D and comodules in D over the regular object O_{H,X^I}, F ↦ F(O_{H,X^I}), with its lax-monoidal algebra variant, compatible with the diagonal and factorization maps over Ran. The proof uses the self-duality of Rep(H)_{X^I} as a Dmod(X^I)-module ([RaskinCPSI] Lemma 6.18.1, whose long proof is an obligation here) and the comonadic Barr–Beck theorem for enhanced categories, also an obligation here. It supplies continuity and the coherent enhancement of the functors built from it, instead of applying a functor to a triangulated heart. Provider: here.'
+deps = ['GLCinLean.Ran.Representations', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.internalHom', 'GLCinLean.Infinity.dualizableCategory']
+source = '[RaskinCPSI] Lemmas 6.18.1, 6.23.2, 6.31.1–6.32.1 and Corollary 6.18.2'

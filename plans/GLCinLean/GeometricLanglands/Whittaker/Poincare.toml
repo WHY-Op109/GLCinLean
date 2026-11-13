@@ -3,6 +3,6 @@ desc = 'The vacuum Poincaré object.'
 [[node]]
 id = 'GLCinLean.Whittaker.vacuumPoincare'
 kind = 'definition'
-desc = 'p_! χ^*(exp) with the paper normalization and proof that partial !-pushforward is defined. Provider: here.'
-deps = ['GLCinLean.Whittaker.character', 'GLCinLean.Whittaker.twistTrivialization', 'GLCinLean.DModules.exponential', 'GLCinLean.DModules.holonomicShriek', 'GLCinLean.DModules.starPullback']
+desc = 'The vacuum Poincaré object 𝔭_! χ^*(exp) of Dmod_½(Bun_G), with the normalization of the paper. Here 𝔭 : Bun_{N,ρ(ω_X)} → Bun_G is a map of algebraic stacks and Bun_G is not of finite type, so 𝔭_! is the partially defined left adjoint of the functor 𝔭^! of Whittaker.twistTrivialization (twisted !-pullback followed by untwisting): build it from DModules.holonomicShriek on the finite-type charts of quasi-compact opens of Bun_G, through the untwisting equivalences, and prove that it is defined on χ^*(exp). Provider: here.'
+deps = ['GLCinLean.Whittaker.character', 'GLCinLean.Whittaker.twistTrivialization', 'GLCinLean.DModules.exponential', 'GLCinLean.DModules.holonomicShriek', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.TwistedCrystals', 'GLCinLean.DModules.rightCrystals_hDescent']
 source = '[GLC1] §1.3.7'

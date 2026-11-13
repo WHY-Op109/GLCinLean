@@ -3,13 +3,14 @@ desc = 'QCA stacks and their stratification by quotient stacks.'
 [[node]]
 id = 'GLCinLean.Stacks.IsQCA'
 kind = 'definition'
-desc = 'Quasi-compact derived Artin stacks with affine geometric stabilizers and classical inertia of finite presentation over the classical truncation; retain all finite-type hypotheses separately. Provider: here.'
+desc = 'Quasi-compact derived Artin stacks whose diagonal is schematic, quasi-separated and quasi-compact (which [DG2] calls essential), with affine geometric stabilizers and classical inertia of finite presentation over the classical truncation; retain all finite-type hypotheses separately. Provider: here.'
 deps = ['GLCinLean.Derived.IsArtinStack']
 source = '[DG2] Definition 1.1.8'
+
 
 [[node]]
 id = 'GLCinLean.Stacks.exists_quotientStratification_of_isQCA'
 kind = 'theorem'
-desc = 'Over a field of characteristic zero, every QCA stack has a finite reduced locally closed stratification with finite surjective étale covers by quotient stacks Z/H, with Z quasi-projective over an affine scheme and H an affine k-group of finite type acting linearly. The theorem states existence; the proofs that use it choose such a stratification. Provider: here.'
+desc = 'Over a field of characteristic zero, every QCA stack has a finite stratification by reduced locally closed substacks, with quasi-compact embeddings of the strata (a QCA stack need not be noetherian, and the devissage needs the open embeddings quasi-compact so that their *-pushforward is continuous), and with finite surjective étale covers by quotient stacks Z/H, with Z quasi-projective over an affine scheme and H an affine k-group of finite type acting linearly. The theorem states existence; the proofs that use it choose such a stratification. Provider: here.'
 deps = ['GLCinLean.Stacks.IsQCA', 'GLCinLean.Stacks.algebraicStack']
 source = '[DG2] Proposition 2.3.4 and its proof in §2.4'
