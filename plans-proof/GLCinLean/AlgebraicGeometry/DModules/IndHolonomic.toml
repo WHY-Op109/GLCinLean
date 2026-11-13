@@ -4,7 +4,7 @@ desc = 'Ambient shriek on ind-holonomic inputs, proved before restriction to inv
 id = 'GLCinLean.DModules.indHolonomic'
 kind = 'definition'
 desc = 'Define ind-holonomic D-modules on finite-type schemes as the full stable colimit closure of holonomic objects and on ind-finite-type indschemes by compatible finite-stage !-pullback. Prove the equivalent colimit description under closed direct images and stability under !-pullback. Give the finite-support holonomic generators explicitly. Provider: here.'
-deps = ['GLCinLean.DModules.holonomic', 'GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.Infinity.indCompletion']
+deps = ['GLCinLean.DModules.IsHolonomic', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.Infinity.indCompletion']
 source = '[ChenNearbyCycles] §A.4.6; [GaRanII] §0.4.5'
 
 [[node]]

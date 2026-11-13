@@ -8,6 +8,7 @@ The layout and the node format are those of `plans/`: `plans-proof/GLCinLean/` f
 - Build sessions and Worker rounds work from `plans/` only.
 - When the proof starts, a node moves back into `plans/` together with the nodes here that it depends on, and `lake exe tracker lint` checks the move.
 - `Infinity.moduleOverMonoidalLocalization` may be owned by EnhancedDerivedSheaves (E5:abstract.2, E5:presentability.4). Check that roadmap before the node is written here.
+- `Groups.chevalleyInvolution` may be owned by ReductiveGroupsPartII. Check that roadmap before the node is written here.
 
 ## Contents
 

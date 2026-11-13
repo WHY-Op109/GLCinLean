@@ -4,8 +4,9 @@ desc = 'The global nilpotent cone in Sing(LS_H).'
 id = 'GLCinLean.LocalSystems.nilpotentCone'
 kind = 'definition'
 desc = 'Global nilpotent cone: the conical closed locus of horizontal nilpotent coadjoint sections; use invariant quotient, not an arbitrary support predicate. Provider: here.'
-deps = ['GLCinLean.LocalSystems.singularities', 'GLCinLean.Groups.rootDatum', 'GLCinLean.Groups.nilpotentCoadjointCone']
+deps = ['GLCinLean.LocalSystems.singularities', 'GLCinLean.Groups.nilpotentCoadjointCone']
 source = '[ArinkinGaitsgory] §§11.1.1–11.1.2'
+
 
 [[node]]
 id = 'GLCinLean.LocalSystems.nilpotentCone_contains_zero'

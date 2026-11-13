@@ -4,7 +4,7 @@ desc = 'The arbitrary-parabolic input in spectral vanishing, including its parti
 id = 'GLCinLean.SpectralProof.semiInfiniteCategory'
 kind = 'definition'
 desc = 'Renormalize L^+(M)-equivariance on the proved compactly generated category of L(N_P^-)-invariant half-twisted D-modules on Gr_G. Construct its unital factorization structure from spherical parabolic induction and its vacuum, with the commuting spherical G/M actions. Correct the M action on component lambda by the shift <lambda,2rho_P> so it respects factorization. Use the separately proved invariant-stratum adjunctions and spherical-input shriek construction; no claim that ambient shriek averaging exists on every arbitrary L(N_P^-)-invariant D-module is required. Provider: here.'
-deps = ['GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.SpectralProof.factorizationRenormalization', 'GLCinLean.Hecke.affineGrassmannian', 'GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.SemiInfinite.parabolicInvariants_compactlyGenerated', 'GLCinLean.SemiInfinite.parabolicStratumAdjunctions', 'GLCinLean.SemiInfinite.parabolicInduction_factorization', 'GLCinLean.Satake.renormalizedSphericalCategory']
+deps = ['GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.SpectralProof.factorizationRenormalization', 'GLCinLean.AffineGrassmannian', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.SemiInfinite.parabolicInvariants_compactlyGenerated', 'GLCinLean.SemiInfinite.parabolicStratumAdjunctions', 'GLCinLean.SemiInfinite.parabolicInduction_factorization', 'GLCinLean.Satake.renormalizedSphericalCategory']
 source = '[GLC3] §§1.2–1.3, especially §§1.3.1–1.3.8; compact generation and spherical-input induction use the separately planned Chen/Dhillon–Lysenko proof chain'
 
 [[node]]
@@ -32,7 +32,7 @@ source = '[GLC3] §§8.2–8.5, especially §§8.5.5–8.5.7'
 id = 'GLCinLean.SpectralProof.parabolicChevalleyAlgebra'
 kind = 'definition'
 desc = 'Commutative factorization Chevalley cochain algebra of the dual unipotent radical in Rep(dual M), its monadic identification of Rep(dual P), and the map Omega→Omega-tilde. Provider: here.'
-deps = ['GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.SpectralProof.spectralSemiInfiniteCategory', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Hecke.representationCategory']
+deps = ['GLCinLean.SpectralProof.parabolicLevi', 'GLCinLean.SpectralProof.spectralSemiInfiniteCategory', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Groups.RepresentationCategory']
 source = '[GLC3] §§2.2.3–2.2.5'
 
 [[node]]

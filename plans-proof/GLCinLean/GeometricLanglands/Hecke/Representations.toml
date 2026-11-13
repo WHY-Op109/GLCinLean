@@ -4,19 +4,19 @@ desc = 'The categories Rep(H) and Rep(H)_Ran and their monoidal structures.'
 id = 'GLCinLean.Hecke.ranConvolution'
 kind = 'definition'
 desc = 'The non-unital symmetric monoidal product by restriction to formal discs and !-pushforward along union; prove the required adjoint exists. Provider: here.'
-deps = ['GLCinLean.Hecke.ranRepresentations', 'GLCinLean.Hecke.ranUnion', 'GLCinLean.Infinity.rightAdjoint']
+deps = ['GLCinLean.Ran.Representations', 'GLCinLean.Ran.union', 'GLCinLean.Infinity.rightAdjoint']
 source = '[GaitsgoryOutline] §4.2.3'
 
 [[node]]
 id = 'GLCinLean.Hecke.unitalIndependentRepresentations_rigid'
 kind = 'theorem'
 desc = 'Hecke.unitalIndependentRepresentations is compactly generated and rigid, so the continuous right adjoint of the factored localization of Spectral.localization_factorsThroughIndependent is linear over it. Route: [AGKRRV] §11.3 proves that for a compactly generated rigid symmetric monoidal C and a proper curve X, C_Ran is compactly generated and rigid for its symmetric monoidal structure built from insertion along unions of finite sets, with compact generators ins_{I→J}(V ⊗ F) and duals ins_{I→J}(V^∨ ⊗ D(F)), D being Verdier duality (§§11.3.2–11.3.3). Apply it to C = Rep(H). Then prove that rigidity and compact generation pass to the independent category through the monoidal quotient, with compact unit; this last step is an explicit obligation. Provider: here.'
-deps = ['GLCinLean.Hecke.ranRepresentations', 'GLCinLean.Hecke.representationCategory', 'GLCinLean.Infinity.rigidMonoidalCategory', 'GLCinLean.Infinity.compactGeneration', 'GLCinLean.Hecke.unitalIndependentRepresentations', 'GLCinLean.DModules.verdierDuality']
+deps = ['GLCinLean.Ran.Representations', 'GLCinLean.Groups.RepresentationCategory', 'GLCinLean.Infinity.rigidMonoidalCategory', 'GLCinLean.Infinity.compactGeneration', 'GLCinLean.Hecke.unitalIndependentRepresentations', 'GLCinLean.DModules.verdierDuality']
 source = '[AGKRRV] §§11.3.2–11.3.3; [GLC1] §1.2.2; [GLC2] §15.5.1 and Appendix H'
 
 [[node]]
 id = 'GLCinLean.Hecke.unitalIndependentRepresentations'
 kind = 'definition'
 desc = 'The unital symmetric monoidal category Rep(H)_{Ran^untl,indep}: the independent category of Rep(H) viewed as a unital monoidal factorization category, with the monoidal quotient functor q: (Rep(H)_Ran)^⋆ → Rep(H)_{Ran^untl,indep} from the convolution structure of Hecke.ranConvolution. q is a localization (its continuous right adjoint is fully faithful), so it is essentially surjective. Provider: here.'
-deps = ['GLCinLean.Hecke.ranRepresentations', 'GLCinLean.Hecke.ranConvolution', 'GLCinLean.SpectralProof.localUnitalAction', 'GLCinLean.Infinity.monoidalCategory']
+deps = ['GLCinLean.Ran.Representations', 'GLCinLean.Hecke.ranConvolution', 'GLCinLean.SpectralProof.localUnitalAction', 'GLCinLean.Infinity.monoidalCategory']
 source = '[GLC2] §15.5.1 and §§H.6.8–H.6.11'

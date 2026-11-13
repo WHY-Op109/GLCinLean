@@ -4,7 +4,7 @@ desc = 'The completed proof of the Hecke property of critical localization.'
 id = 'GLCinLean.SpectralProof.globalOperLocalization'
 kind = 'theorem'
 desc = 'Construct Loc^Op on global-oper base change, factor Loc_crit through it, and intertwine the test-prestack Rep(H) action via global oper evaluation and Satake. Use the finite-presentation approximation and factorization-algebra construction in §15.6, not the unproved sketch in the 2010 notes. Provider: here.'
-deps = ['GLCinLean.SpectralProof.globalOperBaseChange', 'GLCinLean.SpectralProof.kacMoodyLocalization', 'GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions', 'GLCinLean.SpectralProof.operFinitePresentationApproximation', 'GLCinLean.SpectralProof.operFactorizationHomology_functions', 'GLCinLean.SpectralProof.vacuumInsertion_regularizesOpers', 'GLCinLean.SpectralProof.operBaseChange_withPrescribedPoles', 'GLCinLean.Hecke.satake']
+deps = ['GLCinLean.SpectralProof.globalOperBaseChange', 'GLCinLean.SpectralProof.kacMoodyLocalization', 'GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions', 'GLCinLean.SpectralProof.operFinitePresentationApproximation', 'GLCinLean.SpectralProof.operFactorizationHomology_functions', 'GLCinLean.SpectralProof.vacuumInsertion_regularizesOpers', 'GLCinLean.SpectralProof.operBaseChange_withPrescribedPoles', 'GLCinLean.Hecke.action']
 source = '[GLC2] Theorem 15.1.7, proof §§15.6–15.10 and Appendix F; Lemma 15.6.4; [GenVan] Theorem 2.4'
 
 [[node]]
@@ -32,7 +32,7 @@ source = '[GLC2] Lemma 15.6.4, proof §15.10'
 id = 'GLCinLean.SpectralProof.operFactorizationHomology_functions'
 kind = 'theorem'
 desc = 'Identify the commutative factorization homology with coefficients and prescribed poles with functions on global opers. Include compatibility with evaluation and the local central algebra. Provider: here.'
-deps = ['GLCinLean.SpectralProof.globalMonodromyFreeOpers', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions', 'GLCinLean.Factorization.centralChiralHomology_equiv_derivedConstantQuotient', 'GLCinLean.Sheaves.qcoh']
+deps = ['GLCinLean.SpectralProof.globalMonodromyFreeOpers', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.criticalCenter_equiv_operFunctions', 'GLCinLean.Factorization.centralChiralHomology_equiv_derivedConstantQuotient', 'GLCinLean.Sheaves.QCoh']
 source = '[GLC2] Lemmas F.2.8 and F.3.5, applied in §15.6.14'
 
 [[node]]
@@ -46,5 +46,5 @@ source = '[GLC2] Theorem 15.2.8, proved in §16'
 id = 'GLCinLean.SpectralProof.operBaseChange_withPrescribedPoles'
 kind = 'theorem'
 desc = 'The QCoh tensor product for a finite-presentation affine Y in Op^mf agrees with QCoh of the fiber product of Y and the prestack of opers with the prescribed pole set. Provider: here.'
-deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.SpectralProof.globalMonodromyFreeOpers', 'GLCinLean.Sheaves.qcoh']
+deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.SpectralProof.globalMonodromyFreeOpers', 'GLCinLean.Sheaves.QCoh']
 source = '[GLC2] Lemma 15.7.3, proof §15.9'

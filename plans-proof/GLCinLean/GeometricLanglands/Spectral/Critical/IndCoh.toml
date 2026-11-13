@@ -4,14 +4,14 @@ desc = 'Infinite-type and Ran inputs used by oper localization. No LAFT category
 id = 'GLCinLean.SpectralProof.opers_indPlacid'
 kind = 'theorem'
 desc = 'Regular opers are inverse limits of smooth finite-type quotients of the relevant Tate vector space; meromorphic opers are a pro-smooth torsor over the Laurent/arc quotient and hence ind-placid. Prove LSreg→LSmer is ind-closed locally almost of finite presentation and transfer ind-placidity to monodromy-free opers by its Cartesian square. Retain the relative versions on smooth finite-power charts of Ran. Provider: here.'
-deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation', 'GLCinLean.Hecke.loopArcGroups']
+deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation', 'GLCinLean.LoopGroups.LoopGroup']
 source = '[GLC2] §§3.2.2–3.2.6 and B.7.12–B.7.13; Corollary A.9.10'
 
 [[node]]
 id = 'GLCinLean.SpectralProof.operIndCoh_ranDescent'
 kind = 'theorem'
 desc = 'Construct the IndCoh! and IndCoh* sheaves of categories on Ran from smooth charts X^I. Establish transition equivalences by formal completion of diagonals and smooth retractions, compare maps agreeing on reductions with homotopy-coherent compatibility, then use compact duality for the star construction and external products for factorization. Do not replace this descent by checking closed-point fibers. Provider: here.'
-deps = ['GLCinLean.SpectralProof.opers_indPlacid', 'GLCinLean.Sheaves.indcohBang_formalCompletion', 'GLCinLean.Sheaves.indPlacidIndCoh_baseChange', 'GLCinLean.Sheaves.indPlacidIndCoh_compactDuality', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Hecke.ranSpace']
+deps = ['GLCinLean.SpectralProof.opers_indPlacid', 'GLCinLean.Sheaves.indcohBang_formalCompletion', 'GLCinLean.Sheaves.indPlacidIndCoh_baseChange', 'GLCinLean.Sheaves.indPlacidIndCoh_compactDuality', 'GLCinLean.SpectralProof.factorizationCategory', 'GLCinLean.Ran']
 source = '[GLC2] §§B.13.9–B.13.22, especially Lemmas B.13.11, B.13.14, B.13.18 and B.13.20'
 
 [[node]]

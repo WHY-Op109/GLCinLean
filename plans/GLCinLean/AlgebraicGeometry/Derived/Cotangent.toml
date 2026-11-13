@@ -4,5 +4,5 @@ desc = 'The cotangent complex of a derived prestack.'
 id = 'GLCinLean.Derived.cotangentComplex'
 kind = 'definition'
 desc = 'Cotangent complexes representing derivations, transitivity and smooth descent. Provider: here.'
-deps = ['GLCinLean.Derived.affineCotangentComplex', 'GLCinLean.Derived.artinStack']
+deps = ['GLCinLean.Derived.affineCotangentComplex', 'GLCinLean.Derived.IsArtinStack']
 source = '[ArinkinGaitsgory] §2.1 and Appendix B.2'

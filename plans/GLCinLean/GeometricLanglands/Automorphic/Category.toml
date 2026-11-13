@@ -1,15 +1,15 @@
 desc = 'The half-twisted automorphic category Dmod_½(Bun_G).'
 
 [[node]]
-id = 'GLCinLean.Automorphic.halfTwistedDModules'
+id = 'GLCinLean.Automorphic.HalfTwistedDModules'
 kind = 'definition'
 desc = 'Dmod on Bun_G twisted by the square-root gerbe of its normalized determinant; correct half-twist, with its field. Provider: here.'
-deps = ['GLCinLean.Stacks.determinantBundle', 'GLCinLean.DModules.twistedCrystals', 'GLCinLean.Stacks.rootGerbe']
+deps = ['GLCinLean.Stacks.determinantBundle', 'GLCinLean.DModules.TwistedCrystals', 'GLCinLean.Stacks.rootGerbe']
 source = '[GLC1] §1.1.4'
 
 [[node]]
-id = 'GLCinLean.Automorphic.halfTwisted_equiv_untwisted'
-kind = 'theorem'
-desc = 'Theta characteristic trivializes the twisting; compatibility with the chosen root, without changing the Hecke normalization. Provider: here.'
-deps = ['GLCinLean.Automorphic.halfTwistedDModules', 'GLCinLean.Stacks.determinantSquareRoot']
+id = 'GLCinLean.Automorphic.halfTwistedEquivUntwisted'
+kind = 'definition'
+desc = 'The equivalence Dmod_½(Bun_G) ≃ Dmod(Bun_G) given by the trivialization of the twisting by the theta characteristic (Stacks.determinantSquareRoot), compatible with the chosen root; it does not change the Hecke normalization. Provider: here.'
+deps = ['GLCinLean.Automorphic.HalfTwistedDModules', 'GLCinLean.Stacks.determinantSquareRoot']
 source = '[GLC1] §1.1.5'

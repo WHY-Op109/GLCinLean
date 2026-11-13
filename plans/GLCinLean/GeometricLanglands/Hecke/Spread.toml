@@ -1,8 +1,0 @@
-desc = 'The prestack of maps from a relative formal disc to BH.'
-
-[[node]]
-id = 'GLCinLean.Hecke.spreadClassifyingStack'
-kind = 'definition'
-desc = 'The prestack of maps from the relative de Rham formal disc to BH; its QCoh category is Rep(H)_Ran. Provider: here.'
-deps = ['GLCinLean.Hecke.formalDisc', 'GLCinLean.LocalSystems.classifyingStack', 'GLCinLean.Derived.mappingPrestack']
-source = '[GaitsgoryOutline] §§4.2.1–4.2.4'

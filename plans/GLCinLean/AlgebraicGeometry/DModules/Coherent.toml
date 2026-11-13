@@ -1,8 +1,8 @@
-desc = 'Coherent D-module prerequisites for the compactness proof.'
+desc = 'Coherent D-modules on schemes and algebraic stacks.'
 
 [[node]]
-id = 'GLCinLean.DModules.coherent'
+id = 'GLCinLean.DModules.Coherent'
 kind = 'definition'
 desc = 'Bounded complexes of coherent D-modules on schemes and smooth-local descent to algebraic stacks. Include the atlas criterion; holonomic objects lie in this subcategory, but compactness on a stack requires a separate theorem. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals_equiv_dModules', 'GLCinLean.DModules.rightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.rightCrystals_hDescent']
+deps = ['GLCinLean.DModules.rightCrystals_equiv_dModules', 'GLCinLean.DModules.RightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.rightCrystals_hDescent']
 source = '[DG2] §§5.1.17, 7.3.1–7.3.2'

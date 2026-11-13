@@ -1,8 +1,8 @@
 desc = 'A nonempty example of the geometric setting.'
 
 [[node]]
-id = 'GLCinLean.Examples.nonemptySetting'
+id = 'GLCinLean.Examples.exists_setting_rank_pos'
 kind = 'theorem'
-desc = 'Construct actual examples with a nontrivial split torus or GL₂ and P¹, pinning, theta characteristic and dual identification; detects vacuous standing hypotheses. Provider: here.'
-deps = ['GLCinLean.Groups.langlandsDual', 'GLCinLean.Curves.thetaCharacteristic_exists']
+desc = 'Over every algebraically closed field of characteristic zero there is a Statement.Setting whose pinning has positive rank: construct one with GL₂, or a split torus of positive rank, on P¹, with its pinning, a theta characteristic and a dual identification. This rules out vacuous standing hypotheses. Provider: here.'
+deps = ['GLCinLean.Groups.langlandsDual', 'GLCinLean.Curves.nonempty_thetaCharacteristic']
 source = '[GLC1] §§1.3.2, 1.5'

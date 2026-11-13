@@ -4,5 +4,5 @@ desc = 'The stack of singularities Sing(LS_H).'
 id = 'GLCinLean.LocalSystems.singularities'
 kind = 'definition'
 desc = 'Identify points of Sing(LS_H) with (σ,A), a local system and horizontal coadjoint section. Provider: here.'
-deps = ['GLCinLean.LocalSystems.quasiSmooth', 'GLCinLean.Sheaves.singularities']
+deps = ['GLCinLean.LocalSystems.quasiSmooth_deRham', 'GLCinLean.Sheaves.Singularities']
 source = '[ArinkinGaitsgory] Corollary 10.4.7'

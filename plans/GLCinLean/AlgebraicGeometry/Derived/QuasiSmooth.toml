@@ -1,7 +1,7 @@
 desc = 'Quasi-smooth derived stacks.'
 
 [[node]]
-id = 'GLCinLean.Derived.quasiSmooth'
+id = 'GLCinLean.Derived.QuasiSmooth'
 kind = 'definition'
 desc = 'Perfect cotangent complexes of the appropriate Tor amplitude, with stackwise smooth-local definition. Provider: here.'
 deps = ['GLCinLean.Derived.cotangentComplex']

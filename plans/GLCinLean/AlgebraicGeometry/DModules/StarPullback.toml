@@ -1,0 +1,8 @@
+desc = 'The *-pullback of D-modules, a partially defined functor.'
+
+[[node]]
+id = 'GLCinLean.DModules.starPullback'
+kind = 'definition'
+desc = '*-pullback of D-modules. For a map f : Y → Z of schemes of finite type, f^* is the partially defined left adjoint of de Rham pushforward (DModules.deRhamPushforward), with values in pro-objects in general. It is defined on holonomic objects, with holonomic values, and on all objects when f is smooth, where f^* = f^![−2 dim f]. On algebraic stacks of finite type it is extended to holonomic objects by smooth descent. Give the shift conventions and the compatibility with exponential character objects that Whittaker.vacuumPoincare uses. Provider: here.'
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.IsHolonomic', 'GLCinLean.DModules.rightCrystals_hDescent']
+source = '[GLC1] §§1.3.6–1.3.8; [Crystals] §5.5; [BradenDG] §3.1'

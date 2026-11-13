@@ -1,8 +1,8 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'The affine Grassmannian LG/L+G and its ind-projectivity.'
 
 [[node]]
-id = 'GLCinLean.Hecke.affineGrassmannian'
+id = 'GLCinLean.AffineGrassmannian'
 kind = 'definition'
-desc = 'The fpqc quotient LG/L+G as the affine Grassmannian, with ind-projectivity proved for reductive G, equivalently G-bundles on the disc trivialized on the punctured disc; prove quotient descent and the Beauville–Laszlo gluing comparison with modifications on X. Keep its full scheme structure distinct from its reduction, and use nil-invariance when passing to D-modules. The checked BD presentation is over C; reproduce the algebraic proof over the stated characteristic-zero field. Provider: here.'
-deps = ['GLCinLean.Hecke.loopArcGroups', 'GLCinLean.Stacks.groupTorsor', 'GLCinLean.Hecke.correspondence', 'GLCinLean.Derived.indscheme']
+desc = 'The affine Grassmannian Gr_G: for an affine group scheme G of finite type, the fpqc quotient LG/L+G of the loop group by the arc group (LoopGroups.LoopGroup), equivalently G-bundles on the formal disc with a trivialization on the punctured disc; prove quotient descent, and ind-projectivity for G reductive. Keep its full ind-scheme structure distinct from its reduction, and use nil-invariance when passing to D-modules. The comparison with modifications of G-bundles on X (Beauville–Laszlo) is part of Hecke.Correspondence. The checked presentation of [BDHitchin] is over C; reproduce the algebraic proof over the stated characteristic-zero field. Provider: here.'
+deps = ['GLCinLean.LoopGroups.LoopGroup', 'GLCinLean.Stacks.groupTorsor', 'GLCinLean.Derived.IsIndscheme']
 source = '[BDHitchin] Theorem 4.5.1 and §4.5.2; [MV] §2; [GLys] §2.1'

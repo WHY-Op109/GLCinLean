@@ -1,28 +1,28 @@
-desc = 'Constructible sheaves on the complex points of finite-type C-schemes: the target of the Riemann–Hilbert comparison used for parity of IC stalks. Used only through DModules.schubertRiemannHilbert. No embedding of the original field into C is assumed anywhere.'
+desc = 'Constructible sheaves on the complex points of separated C-schemes of finite type, as an ordinary triangulated theory: the target of the Riemann–Hilbert comparison used for parity of IC stalks. No embedding of the original field into C is assumed anywhere.'
 
 [[node]]
-id = 'GLCinLean.Constructible.complexPoints'
+id = 'GLCinLean.Constructible.ComplexPoints'
 kind = 'definition'
-desc = 'For a finite-type scheme Y over C, the set Y(C) with the classical (analytic) topology, functorial in Y, locally compact Hausdorff, with closed and open embeddings and proper maps sent to the corresponding maps of spaces. Provider: here. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`).'
+desc = 'For a scheme Y locally of finite type over C, the set Y(C) with the classical (analytic) topology, functorial in Y and locally compact. It is Hausdorff when Y is separated; the line with a doubled origin is a scheme of finite type whose space is not. Closed and open embeddings go to closed and open embeddings, and proper maps of separated schemes to proper maps of spaces. Provider: here. Upstream declarations used: `AlgebraicGeometry.Scheme` (`Mathlib.AlgebraicGeometry.Scheme`).'
 source = '[HottaTakeuchiTanisaki] Chapter 4 (analytic spaces attached to schemes)'
 
 [[node]]
-id = 'GLCinLean.Constructible.derivedCategory'
+id = 'GLCinLean.Constructible.DerivedCategory'
 kind = 'definition'
-desc = 'For a finite-type C-scheme Y with an algebraic stratification, the bounded derived category of sheaves of C-vector spaces on Y(C) whose cohomology sheaves are locally constant of finite rank on each stratum. Include *- and !-pullback and pushforward along locally closed embeddings, proper pushforward, external products and Verdier duality, with base change and the projection formula, and Hom computed by derived global sections. Build it from Mathlib: TopCat.Sheaf for sheaves of C-vector spaces on Y(C) and DerivedCategory for its derived category; the constructibility condition, the operations and duality are Missing and implemented here. Provider: here. Upstream declarations used: `TopCat.Sheaf` (`Mathlib.Topology.Sheaves.Sheaf`), `DerivedCategory` (`Mathlib.Algebra.Homology.DerivedCategory.Basic`).'
-deps = ['GLCinLean.Constructible.complexPoints', 'GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.tStructure']
+desc = 'For a separated scheme Y of finite type over C and a field E: the bounded derived category D^b_c(Y, E) of sheaves of E-vector spaces on Y(C) (Constructible.ComplexPoints) whose cohomology sheaves are constructible for some algebraic stratification, and, for a fixed algebraic stratification S, its full subcategory D^b_S(Y, E) of complexes whose cohomology sheaves are locally constant of finite rank on each stratum. It is an ordinary triangulated category, built from Mathlib (TopCat.Sheaf and DerivedCategory); it is not an enhanced category, and no node uses it as one. On D^b_c give *- and !-pullback along all maps, proper pushforward, base change and the projection formula, external products and Verdier duality. On D^b_S give the operations along maps that respect the stratifications (the preimage of each stratum is a union of strata, and over each stratum the map is a locally trivial fibration), which preserve D^b_S. A fixed stratification is not preserved by every map: for the one-stratum stratification of C, the proper inclusion of the origin sends the constant sheaf to a skyscraper. Hom is computed by derived global sections. The constructibility conditions, the operations and duality are missing upstream and implemented here. Provider: here. Upstream declarations used: `TopCat.Sheaf` (`Mathlib.Topology.Sheaves.Sheaf`), `DerivedCategory` (`Mathlib.Algebra.Homology.DerivedCategory.Basic`).'
+deps = ['GLCinLean.Constructible.ComplexPoints']
 source = '[HottaTakeuchiTanisaki] Chapter 4 and Appendix on derived categories of sheaves'
 
 [[node]]
-id = 'GLCinLean.Constructible.perverseSheaves'
+id = 'GLCinLean.Constructible.PerverseSheaves'
 kind = 'definition'
-desc = 'The middle-perversity t-structure on Constructible.derivedCategory for a stratification by smooth connected strata, its heart of perverse sheaves (finite length), and intermediate extension along locally closed strata, with IC sheaves of irreducible local systems as the simple objects. Provider: here.'
-deps = ['GLCinLean.Constructible.derivedCategory']
+desc = 'For a stratification S by smooth connected strata and a field E, the middle-perversity t-structure on D^b_S(Y, E) of Constructible.DerivedCategory, as a Mathlib t-structure on that triangulated category; its heart of perverse sheaves (of finite length), and intermediate extension along locally closed strata, with the IC sheaves of irreducible local systems as the simple objects. Provider: here. Upstream declarations used: `CategoryTheory.Triangulated.TStructure` (`Mathlib.CategoryTheory.Triangulated.TStructure.Basic`).'
+deps = ['GLCinLean.Constructible.DerivedCategory']
 source = '[HottaTakeuchiTanisaki] Chapter 8 (perverse sheaves); [MV] §2'
 
 [[node]]
 id = 'GLCinLean.DModules.analyticDeRham'
 kind = 'definition'
-desc = 'For a finite-type C-scheme Y, analytification of algebraic D-modules on Y to analytic D-modules on Y(C), and the analytic de Rham functor DR from bounded holonomic complexes to Constructible.derivedCategory (for a stratification along which the cohomology is lisse), compatible with the perverse t-structures and with Verdier duality. Provider: here.'
-deps = ['GLCinLean.Constructible.complexPoints', 'GLCinLean.Constructible.derivedCategory', 'GLCinLean.Constructible.perverseSheaves', 'GLCinLean.DModules.holonomic', 'GLCinLean.DModules.verdierDuality']
+desc = 'For a finite-type C-scheme Y, analytification of algebraic D-modules on Y to analytic D-modules on Y(C), and the analytic de Rham functor DR from bounded holonomic complexes to Constructible.DerivedCategory (for a stratification along which the cohomology is lisse), compatible with the perverse t-structures and with Verdier duality. Provider: here.'
+deps = ['GLCinLean.Constructible.ComplexPoints', 'GLCinLean.Constructible.DerivedCategory', 'GLCinLean.Constructible.PerverseSheaves', 'GLCinLean.DModules.IsHolonomic', 'GLCinLean.DModules.verdierDuality']
 source = '[HottaTakeuchiTanisaki] Chapter 4 (analytic D-modules and the de Rham functor)'

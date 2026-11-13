@@ -1,7 +1,7 @@
 desc = 'The classical truncation and the reduction of a derived prestack.'
 
 [[node]]
-id = 'GLCinLean.Derived.classicalReduction'
+id = 'GLCinLean.Derived.ClassicalReduction'
 kind = 'definition'
 desc = 'Classical truncation followed by reduction, with the induced maps and affine evaluation laws. Provider: here.'
 deps = ['GLCinLean.Derived.affineScheme']

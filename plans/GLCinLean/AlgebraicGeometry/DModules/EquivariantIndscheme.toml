@@ -1,8 +1,8 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'Equivariant D-modules on an indscheme with a group action.'
 
 [[node]]
-id = 'GLCinLean.DModules.equivariantIndscheme'
+id = 'GLCinLean.DModules.EquivariantIndscheme'
 kind = 'definition'
 desc = 'Equivariant enhanced D-modules on an indscheme as descent for its action groupoid and the compatible limit over finite-type charts; finite-support holonomic objects embed fully faithfully. This supplies LG/L+G equivariance rather than importing a topological category. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals', 'GLCinLean.Derived.prestack', 'GLCinLean.Infinity.limits', 'GLCinLean.Derived.indscheme']
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.Derived.Prestack', 'GLCinLean.Infinity.limits', 'GLCinLean.Derived.IsIndscheme']
 source = '[GLys] §§1.1, 9.1.1; [RaskinCPSI] §6.30'

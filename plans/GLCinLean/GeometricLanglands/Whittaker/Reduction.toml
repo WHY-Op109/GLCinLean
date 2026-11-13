@@ -4,19 +4,19 @@ desc = 'The reduction of Bun_G to ρ(ω_X) and the twist trivialization on it.'
 id = 'GLCinLean.Whittaker.rhoTorsor'
 kind = 'definition'
 desc = 'Push the theta characteristic frame torsor along 2ρ to form ρ(ω_X), without assuming ρ integral. Provider: here.'
-deps = ['GLCinLean.Groups.twoRho', 'GLCinLean.Curves.thetaCharacteristic', 'GLCinLean.Stacks.groupTorsor']
+deps = ['GLCinLean.Groups.twoRho', 'GLCinLean.Curves.ThetaCharacteristic', 'GLCinLean.Stacks.groupTorsor']
 source = '[GLC1] §§1.3.2–1.3.4'
 
 [[node]]
-id = 'GLCinLean.Whittaker.reductionStack'
+id = 'GLCinLean.Whittaker.ReductionStack'
 kind = 'definition'
 desc = 'Bun_B ×_{Bun_T} {ρ(ω_X)} and its projection p to Bun_G. Provider: here.'
-deps = ['GLCinLean.Whittaker.rhoTorsor', 'GLCinLean.Stacks.bundleStack', 'GLCinLean.Groups.pinnedData']
+deps = ['GLCinLean.Whittaker.rhoTorsor', 'GLCinLean.Stacks.BundleStack', 'GLCinLean.Groups.pinnedData']
 source = '[GLC1] §§1.3.1, 1.3.4'
 
 [[node]]
 id = 'GLCinLean.Whittaker.twistTrivialization'
 kind = 'definition'
-desc = 'The canonical square root of the determinant line bundle restricted to the reduction stack, as a trivialization of the pullback along p of the square-root gerbe of det_{Bun_G} (Stacks.rootGerbe: R_2(p^*det) ≃ p^*R_2(det), and a square root is a trivialization). With it define p^! : Dmod_½(Bun_G) → Dmod of the reduction stack as the twisted !-pullback (DModules.extraordinaryPullback) followed by the untwisting equivalence. Provider: here.'
-deps = ['GLCinLean.Whittaker.reductionStack', 'GLCinLean.Stacks.determinantSquareRoot', 'GLCinLean.Stacks.rootGerbe', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Automorphic.halfTwistedDModules']
+desc = 'The canonical square root of the determinant line bundle restricted to the reduction stack, as a trivialization of the pullback along p of the square-root gerbe of det_{Bun_G} (Stacks.rootGerbe: R_2(p^*det) ≃ p^*R_2(det), and a square root is a trivialization). With it define p^! : Dmod_½(Bun_G) → Dmod of the reduction stack as the twisted !-pullback (DModules.twistedExtraordinaryPullback) followed by the untwisting equivalence. Provider: here.'
+deps = ['GLCinLean.Whittaker.ReductionStack', 'GLCinLean.Stacks.determinantSquareRoot', 'GLCinLean.Stacks.rootGerbe', 'GLCinLean.DModules.twistedExtraordinaryPullback', 'GLCinLean.Automorphic.HalfTwistedDModules']
 source = '[GLC1] Corollary 1.3.4 and §1.3.5'

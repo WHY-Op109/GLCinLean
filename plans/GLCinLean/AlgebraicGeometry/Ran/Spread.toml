@@ -1,0 +1,8 @@
+desc = 'The prestack of maps from the relative formal disc to BH.'
+
+[[node]]
+id = 'GLCinLean.Ran.SpreadClassifyingStack'
+kind = 'definition'
+desc = 'The prestack of maps from the relative de Rham formal disc to BH; its QCoh category is Rep(H)_Ran. Provider: here.'
+deps = ['GLCinLean.Ran.FormalDisc', 'GLCinLean.Stacks.ClassifyingStack', 'GLCinLean.Derived.MappingPrestack']
+source = '[GaitsgoryOutline] §§4.2.1–4.2.4'

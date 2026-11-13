@@ -1,29 +1,8 @@
-desc = 'Satake construction prerequisite. The DG enhancement and determinant normalization are separate from the heart equivalence.'
+desc = 'The non-renormalized half-twisted spherical category over the Ran space.'
 
 [[node]]
 id = 'GLCinLean.Satake.factorizationSphericalCategory'
 kind = 'definition'
 desc = 'The non-renormalized half-twisted spherical category Sph^non-ren_{G,Ran}: L+G-equivariant D-modules on the Beilinson–Drinfeld Grassmannians over X^I, twisted by Satake.criticalDeterminantGerbe, with convolution, diagonal transition functors and disjoint factorization. It is a factorization monoidal category, not a symmetric monoidal DG category. The twist is required: for the untwisted category, the source of factorization Satake is the ε-twisted Fact(Rep(Ǧ))^ε_{G_Z} ([GLys] §9.2.2), not Rep(Ǧ)_Ran. Provider: here.'
-deps = ['GLCinLean.Hecke.correspondence', 'GLCinLean.Hecke.loopArcGroups', 'GLCinLean.DModules.equivariantIndscheme', 'GLCinLean.Satake.convolution', 'GLCinLean.Hecke.ranUnion', 'GLCinLean.Satake.criticalDeterminantGerbe', 'GLCinLean.DModules.twistedCrystals']
+deps = ['GLCinLean.Hecke.Correspondence', 'GLCinLean.LoopGroups.LoopGroup', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.Satake.convolution', 'GLCinLean.Ran.union', 'GLCinLean.Satake.criticalDeterminantGerbe', 'GLCinLean.DModules.TwistedCrystals']
 source = '[GLC2] §§1.1.6, 1.5.1 and Remark 1.7.5; [GLys] §§9.1.1, 9.2.2; [RaskinCPSI] §§6.29–6.30'
-
-[[node]]
-id = 'GLCinLean.Satake.chiralHeckeAlgebra'
-kind = 'definition'
-desc = 'Transport the regular representation of the dual group, with its algebra and comodule structure, to the half-twisted heart at each point, through the heart equivalence followed by Satake.halfTwistedHeart_equiv_untwistedHeart. Construct the diagonal-stratified Cousin complex in Satake.factorizationSphericalCategory and use its cohomology to form the compatible chiral Hecke algebra over all X^I. Its commutativity uses the geometric fusion constraint of the half-twisted category, which matches the usual constraint of Rep(Ǧ); in the untwisted category it would fail by signs on odd components. Include the factorization and diagonal identifications with the degree shift of Raskin §6.33. Provider: here.'
-deps = ['GLCinLean.Satake.geometricSatakeHeartEquivalence', 'GLCinLean.Satake.fusion', 'GLCinLean.Satake.factorizationSphericalCategory', 'GLCinLean.Hecke.ranRepresentations', 'GLCinLean.Satake.chiralCousinComplex_concentrated', 'GLCinLean.Satake.halfTwistedHeart_equiv_untwistedHeart']
-source = '[GaitsgoryDeJong] Appendix B (§7), §§7.1–7.5 and 7.7–7.9; [RaskinCPSI] §6.33'
-
-[[node]]
-id = 'GLCinLean.Satake.factorizationFunctorFromRegularComodule'
-kind = 'theorem'
-desc = 'Prove the self-duality/comonadic description of Rep(H)_X^I-linear functors by comodules of the regular object, including its lax-monoidal algebra variant. This supplies continuity and coherent enhancement rather than applying a functor to a triangulated heart by fiat. Provider: here.'
-deps = ['GLCinLean.Hecke.ranRepresentations', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.internalHom']
-source = '[RaskinCPSI] Lemmas 6.18.1, 6.23.2, 6.31.1–6.32.1'
-
-[[node]]
-id = 'GLCinLean.Satake.naiveFactorizationFunctor'
-kind = 'definition'
-desc = 'Construct the continuous monoidal DG functor Rep(Ǧ)_Ran → Sph^non-ren_{G,Ran} into the half-twisted category of Satake.factorizationSphericalCategory, from the regular-comodule algebra; prove monoidality by disjoint-stratum reduction and compatibility with all diagonals. The source is the plain Rep(Ǧ)_Ran because the target is half-twisted ([GLys] §9.1.1 with trivial metaplectic gerbe). It is an equivalence on hearts only, not on the full spherical DG categories. Provider: here.'
-deps = ['GLCinLean.Satake.chiralHeckeAlgebra', 'GLCinLean.Satake.factorizationFunctorFromRegularComodule', 'GLCinLean.Satake.dualIdentification', 'GLCinLean.Satake.factorizationSphericalCategory']
-source = '[RaskinCPSI] §§6.30–6.33 and Lemma 6.33.3; [GLys] §§9.1.1, 9.2.1–9.2.2; [GLC2] Remark 1.7.5'
