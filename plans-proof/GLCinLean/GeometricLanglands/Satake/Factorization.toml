@@ -1,0 +1,8 @@
+desc = 'The convolution of the half-twisted spherical category over the Ran space.'
+
+[[node]]
+id = 'GLCinLean.Satake.factorizationConvolution'
+kind = 'definition'
+desc = 'The convolution of Satake.factorizationSphericalCategory: for every finite set I, the monoidal structure of Sph^non-ren_{G,X^I} relative to Dmod(X^I), with unit the delta object at the unit section, compatible with the diagonal transition functors and with disjoint factorization. It uses the multiplicative structure of the gerbe of Satake.criticalDeterminantGerbe on the loop group. With it Sph^non-ren_G is a factorization monoidal category; it is not a symmetric monoidal DG category. Over Ran, with the union map, it gives the non-unital monoidal structure of [GLys] §9.5.1; no roadmap provides non-unital monoidal categories, so that form is an obligation here. Provider: here.'
+deps = ['GLCinLean.Satake.factorizationSphericalCategory', 'GLCinLean.Satake.convolution', 'GLCinLean.Satake.criticalDeterminantGerbe', 'GLCinLean.Ran.union', 'GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.moduleCategory']
+source = '[GLC2] §1.5.1; [GLys] §§9.1.1, 9.5.1; [RaskinCPSI] §6.30 and the proof of Lemma 6.34.2 (exterior convolution)'

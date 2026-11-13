@@ -13,6 +13,7 @@ The layout and the node format are those of `plans/`: `plans-proof/GLCinLean/` f
 ## Contents
 
 - The spectral action of `QCoh(LS_Ǧ)` and the spectral decomposition, with their proof: `Spectral.action`, `Spectral.actionOfVanishing`, the monoidal structure and the right adjoint of `Spectral.localization`, and the `SpectralProof.*` nodes (vanishing, Kac–Moody localization at the critical level, opers, derived Satake, Eisenstein series and constant terms).
+- The monoidal structures on the Hecke side: the convolution of the spherical category (`Satake.factorizationConvolution`), the monoidal structure of naive Satake (`Satake.naiveFactorizationFunctor_monoidal`, with `Ran.Representations.laxMonoidalFunctorEquivAlgebra`), the action structure of the spherical category (`Hecke.sphericalAction_associativity`), the convolution of `Rep(Ǧ)_Ran` (`Hecke.ranConvolution`), the associativity of the Hecke action (`Hecke.action_associativity`), and the monoidal form of the independence of the pinning (`Satake.dualIdentificationChangePinningIso_monoidal`).
 - The coarse functor `Langlands.coarse`, its left adjoint and its examples, and the Whittaker coefficient.
 - The geometry that only these need: semi-infinite categories, Zastava spaces, renormalized Satake, factorization and chiral homology, infinite-type IndCoh, 1-affineness, and the QCoh kernel formalism of passable stacks.
 

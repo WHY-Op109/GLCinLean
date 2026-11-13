@@ -5,7 +5,7 @@ id = 'GLCinLean.Derived.Prestack'
 kind = 'definition'
 desc = 'Space-valued functors on derived affine schemes, with mapping prestacks, fiber products and Yoneda evaluation API, and the restriction to classical affine test schemes (classical prestacks), which Derived.PseudoProper and Actions.hyperbolicInterpolation use. Provider: here.'
 deps = ['GLCinLean.Derived.affineScheme', 'GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits']
-source = '[AGKRRV] §0.9.6; [IndCoh] §0.6.6'
+source = '[AGKRRV] §0.9.6; [IndCoh] §0.6.6; [ArinkinGaitsgory] §1.5.3'
 
 
 [[node]]

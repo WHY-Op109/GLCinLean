@@ -3,9 +3,9 @@ desc = 'The moduli stack Bun_H of H-bundles on the curve.'
 [[node]]
 id = 'GLCinLean.Stacks.BundleStack'
 kind = 'definition'
-desc = 'The moduli stack Bun_H(X) = Maps(X, BH) of H-bundles on X (Stacks.ClassifyingStack, Derived.MappingPrestack), with the derived structure of the source retained, its functor of families, change of structure group and trivial bundle. For X a smooth proper curve and H affine of finite type, Bun_H(X) is a derived Artin stack locally of finite type. Provider: here.'
-deps = ['GLCinLean.Stacks.groupTorsor', 'GLCinLean.Derived.IsArtinStack', 'GLCinLean.Derived.MappingPrestack', 'GLCinLean.Stacks.ClassifyingStack']
-source = '[GLC1] §§1.1.1, 1.3.1; [ArinkinGaitsgory] §10.1.1'
+desc = 'The moduli stack Bun_H(X) = Maps(X, BH) of H-bundles on X (Stacks.ClassifyingStack, Derived.MappingPrestack), with the derived structure of the source retained, its functor of families, change of structure group and trivial bundle. For X a smooth proper curve and H an affine algebraic group, Bun_H(X) is a derived Artin stack locally almost of finite type (Derived.LocallyAlmostFiniteType); the finiteness is [ArinkinGaitsgory] Proposition 10.3.8 (b), and the algebraicity is proved as for the classical stack, or with level structures ([ArinkinGaitsgory] §10.4.1). Provider: here.'
+deps = ['GLCinLean.Stacks.groupTorsor', 'GLCinLean.Derived.IsArtinStack', 'GLCinLean.Derived.LocallyAlmostFiniteType', 'GLCinLean.Derived.MappingPrestack', 'GLCinLean.Stacks.ClassifyingStack']
+source = '[GLC1] §§1.1.1, 1.3.1; [ArinkinGaitsgory] §10.1.1, Proposition 10.3.8 (b) and §10.4.1'
 
 
 

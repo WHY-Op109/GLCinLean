@@ -4,7 +4,7 @@ desc = 'Satake construction prerequisite. The DG enhancement and determinant nor
 id = 'GLCinLean.Satake.dualIdentificationChangePinningSpectralIso'
 kind = 'definition'
 desc = 'The isomorphisms that Satake.dualIdentificationChangePinningIso induces on the side of the proof: of the Casselman–Shalika equivalence SpectralProof.sphericalWhittaker_equiv_representations, and of the QCoh(LS_Ǧ)-action Spectral.action (t identifies each local system with its conjugate, compatibly with spectral localization). Provider: here.'
-deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Spectral.action', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.Spectral.localization', 'GLCinLean.LocalSystems.DeRham']
+deps = ['GLCinLean.Satake.dualIdentificationChangePinningIso', 'GLCinLean.Satake.dualIdentificationChangePinningIso_monoidal', 'GLCinLean.Spectral.action', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.Spectral.localization', 'GLCinLean.LocalSystems.DeRham']
 source = '[GLC2] Theorem 1.4.2, §1.4.4 and Theorem 1.7.2; [GLC1] §§1.2.1–1.2.5'
 
 [[node]]

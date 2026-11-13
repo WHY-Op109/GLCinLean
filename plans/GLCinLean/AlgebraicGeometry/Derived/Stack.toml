@@ -3,6 +3,6 @@ desc = 'Derived Artin stacks.'
 [[node]]
 id = 'GLCinLean.Derived.IsArtinStack'
 kind = 'definition'
-desc = 'Derived Artin stacks, by induction on k, with the (−1)-Artin stacks the derived schemes: a k-Artin stack is an étale sheaf on derived affine schemes with (k−1)-representable diagonal and a smooth (k−1)-representable surjection from a derived scheme; such stacks satisfy smooth descent. Finiteness conditions are not part of this notion; they are Derived.LocallyAlmostFiniteType. Provider: here.'
+desc = 'Derived Artin stacks, by induction on k, with the (−1)-Artin stacks the derived schemes: a k-Artin stack is an étale sheaf on derived affine schemes with (k−1)-representable diagonal and a smooth (k−1)-representable surjection from a derived scheme; such stacks satisfy smooth descent. An Artin stack is a k-Artin stack for some k, and only this notion is used. The index k is the one of this induction; it is not the index of [Stacks] §4.9, to which [IndCoh] §11.1 refers, where the 0-Artin stacks are the algebraic spaces and the 1-Artin stacks are the algebraic stacks ([DG2] Remark 1.1.5; [ArinkinGaitsgory] §10.4.1). Here a stack with schematic diagonal and a smooth schematic atlas, such as BH, is already 0-Artin, so the index of a stack here can be one less than in [Stacks]. Finiteness conditions are not part of this notion; they are Derived.LocallyAlmostFiniteType. Provider: here.'
 deps = ['GLCinLean.Derived.Prestack']
-source = '[IndCoh] §11.1; [ArinkinGaitsgory] §1.5.3'
+source = '[IndCoh] §11.1; [ArinkinGaitsgory] §1.5.3; [DG2] Remark 1.1.5'

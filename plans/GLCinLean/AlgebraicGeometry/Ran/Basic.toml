@@ -13,6 +13,6 @@ source = '[GaitsgoryOutline] §§4.1.1–4.1.4; [GaitsgoryAtiyahBott] §4.1.1'
 [[node]]
 id = 'GLCinLean.Ran.union'
 kind = 'definition'
-desc = 'Union of finite nonempty subsets, defining the commutative semigroup law used by factorization convolution. Provider: here.'
+desc = 'Union of finite nonempty subsets: the commutative semigroup law of Ran. Disjoint factorization is stated over the disjoint locus of this map; the plan of the proof also uses it for convolution. Provider: here.'
 deps = ['GLCinLean.Ran']
 source = '[GaitsgoryOutline] §4.1.4'

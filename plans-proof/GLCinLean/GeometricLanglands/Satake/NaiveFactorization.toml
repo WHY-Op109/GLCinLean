@@ -1,0 +1,8 @@
+desc = 'The monoidal structure of the naive factorization Satake functor.'
+
+[[node]]
+id = 'GLCinLean.Satake.naiveFactorizationFunctor_monoidal'
+kind = 'definition'
+desc = 'The monoidal structure of Satake.naiveFactorizationFunctor: for every finite set I, for the tensor product of Rep(Ǧ)_{X^I} and the convolution of Sph^non-ren_{G,X^I} (Satake.factorizationConvolution), compatible with the diagonal transition functors and with factorization. Its lax monoidal structure corresponds, under Ran.Representations.laxMonoidalFunctorEquivAlgebra, to an algebra structure on the chiral Hecke algebra for convolution, in comodules over the regular object; construct that algebra structure. Prove that the lax structure is strict by restriction to the strata of X^I and, by factorization, reduction to one point, where it is the monoidality of the heart equivalence. Over Ran it gives the monoidal structure for the non-unital convolutions (Hecke.ranConvolution on the source). Provider: here.'
+deps = ['GLCinLean.Satake.naiveFactorizationFunctor', 'GLCinLean.Satake.factorizationConvolution', 'GLCinLean.Satake.chiralHeckeAlgebra', 'GLCinLean.Ran.Representations.laxMonoidalFunctorEquivAlgebra', 'GLCinLean.Hecke.ranConvolution', 'GLCinLean.Infinity.monoidalCategory']
+source = '[RaskinCPSI] Lemmas 6.31.2, 6.32.1 and 6.33.3; [GaitsgoryDeJong] Appendix B (§7), §7.4; [GLys] §9.5.2; [GaitsgoryOutline] Proposition 4.4.4'

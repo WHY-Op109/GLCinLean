@@ -1,0 +1,8 @@
+desc = 'The action structure of the half-twisted spherical category on Dmod_½(Bun_G).'
+
+[[node]]
+id = 'GLCinLean.Hecke.sphericalAction_associativity'
+kind = 'definition'
+desc = 'The structure of a right action on the functor of Hecke.sphericalAction. Locally: for every finite set I, a unital right action of the monoidal category Sph^non-ren_{G,X^I} (Satake.factorizationConvolution) on Dmod_1/2(Bun_G) ⊗ Dmod(X^I), linear over Dmod(X^I) and compatible with the diagonal transition functors, a local action in the sense of [GLC2] §H.6.1. Integrated over Ran: the associativity constraints of (S, M) ↦ S ⋆ M for the non-unital convolution over Ran, by pull-push along the composition of Hecke correspondences and the union map. It uses that the gerbe comparison Satake.criticalTwistBunDeterminantEquiv is compatible with the composition of modifications. Provider: here.'
+deps = ['GLCinLean.Hecke.sphericalAction', 'GLCinLean.Satake.factorizationConvolution', 'GLCinLean.Satake.criticalTwistBunDeterminantEquiv', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Ran.union']
+source = '[GaitsgoryOutline] §4.4.2; [GLys] §9.5.1; [GLC2] §1.5.1 and §§H.6.1, H.6.8; [GLC3] §8.2.1'
