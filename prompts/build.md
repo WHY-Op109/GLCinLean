@@ -10,6 +10,7 @@
 - a fresh agent has checked the diff against each rule of "Sources of code" and "Lean code" in `AGENTS.md`, and its findings are fixed;
 - after that, a fresh agent has reviewed every new or changed definition with `prompts/review.md`;
 - a change that needs the owner's approval under "The statement" in `AGENTS.md` is committed with its review report on a branch `proposal/<topic>`, and `STATUS.md` on `main` names the branch under "Waiting for the owner". `main` gets the change only after the owner approves it;
+- if the session changed `plans/` or `plans-proof/`, or proved planned declarations, the dependency-graph page (the owner's private Claude Artifact https://claude.ai/artifact/XNm91TU3c6RNN6hGvYqrBc) is rebuilt and republished to the same URL with the Artifact tool: read the page with the Artifact tool, keep its script, and replace its embedded `DATA` object by data built from the JSON of `lake exe tracker graph`, the TOML files of `plans-proof/` (python3 `tomllib`), the `@[placeholder]` declarations of `GLCinLean/Statement/` and the "Held" table of `STATUS.md`, in the same format; no file for it is added to the repository;
 - `STATUS.md` is updated and says what the next session takes on (a build, or an audit when a trigger of `prompts/audit.md` holds), and the work is committed and pushed.
 
 **Context**
