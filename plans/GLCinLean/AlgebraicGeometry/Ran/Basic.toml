@@ -3,9 +3,11 @@ desc = 'The Ran space of a prestack, and the union of finite subsets.'
 [[node]]
 id = 'GLCinLean.Ran'
 kind = 'definition'
-desc = 'For a prestack Y, its Ran space Ran(Y): the colimit, in prestacks, of the powers Y^I over the category of nonempty finite sets and surjections, with the diagonal maps; for Y = X or X_dR with X a separated scheme, also the disjointness and factorization diagrams. When Y takes values in sets, for example a scheme or the de Rham prestack of a scheme, prove that the S-points of Ran(Y) are the nonempty finite subsets of Y(S). The de Rham prestack commutes with this colimit, so Ran(X)_dR = Ran(X_dR). For a scheme X, the S-points of Ran(X_dR) are the nonempty finite subsets of Maps((S^cl)_red, X), and Ran(X_dR) → Ran(X_dR)_dR is an isomorphism. The statement uses Ran(X_dR); the pseudo-properness argument uses Ran(X). Provider: here.'
+desc = 'For a prestack Y, its Ran space Ran(Y): the colimit, in prestacks, of the powers Y^I over the category of nonempty finite sets and surjections, with the diagonal maps; for Y = X or X_dR with X a separated scheme, also the disjointness and factorization diagrams. When Y takes values in sets, for example the restriction of a scheme to classical test schemes, or the de Rham prestack of a scheme, prove that the S-points of Ran(Y) are the nonempty finite subsets of Y(S). The de Rham prestack commutes with this colimit, so Ran(X)_dR = Ran(X_dR). For a scheme X, the S-points of Ran(X_dR) are the nonempty finite subsets of Maps((S^cl)_red, X), and Ran(X_dR) → Ran(X_dR)_dR is an isomorphism. The statement uses Ran(X_dR); the pseudo-properness argument uses Ran(X). Provider: here.'
 deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Derived.DeRhamPrestack', 'GLCinLean.Infinity.limits']
-source = '[GaitsgoryOutline] §§4.1.1–4.1.4'
+source = '[GaitsgoryOutline] §§4.1.1–4.1.4; [GaitsgoryAtiyahBott] §4.1.1'
+
+
 
 
 [[node]]

@@ -3,6 +3,6 @@ desc = 'Coherent monoidal enhanced categories. Owner: the Tau Ceti roadmap Bordi
 [[node]]
 id = 'GLCinLean.Infinity.monoidalCategory'
 kind = 'definition'
-desc = 'Coherent monoidal enhanced categories (E₁), with a symmetric monoidal (E∞) structure as additional structure, including the unit and associativity coherences; module categories are a separate node. The spherical category acts through a monoidal structure that is not symmetric. Provider: roadmap BordismFormalGroups, the monoidal and fibration sub-lane, with roadmap EnhancedDerivedSheaves “Symmetric monoidal ∞-categories and ∞-operads”.'
+desc = 'Coherent monoidal enhanced categories (E₁), with a symmetric monoidal (E∞) structure as additional structure, including the unit and associativity coherences, and the non-unital variant, with no unit object, which Rep(Ǧ)_Ran needs; module categories are a separate node. The spherical category acts through a monoidal structure that is not symmetric. Provider: roadmap BordismFormalGroups, the monoidal and fibration sub-lane, with roadmap EnhancedDerivedSheaves “Symmetric monoidal ∞-categories and ∞-operads”.'
 deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.presentableCategory']
 source = '[AGKRRV] §0.9.4'

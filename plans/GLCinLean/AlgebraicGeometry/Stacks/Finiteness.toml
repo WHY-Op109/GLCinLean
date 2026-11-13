@@ -3,9 +3,10 @@ desc = 'QCA stacks and their stratification by quotient stacks.'
 [[node]]
 id = 'GLCinLean.Stacks.IsQCA'
 kind = 'definition'
-desc = 'Quasi-compact derived Artin stacks whose diagonal is schematic, quasi-separated and quasi-compact (which [DG2] calls essential), with affine geometric stabilizers and classical inertia of finite presentation over the classical truncation; retain all finite-type hypotheses separately. Provider: here.'
+desc = 'Quasi-compact derived Artin stacks whose diagonal is schematic, quasi-separated and quasi-compact (quasi-separatedness and quasi-compactness of the diagonal are essential for [DG2]; schematic could be weakened to representable), with affine geometric stabilizers and classical inertia of finite presentation over the classical truncation; retain all finite-type hypotheses separately. Provider: here.'
 deps = ['GLCinLean.Derived.IsArtinStack']
 source = '[DG2] Definition 1.1.8'
+
 
 
 [[node]]
