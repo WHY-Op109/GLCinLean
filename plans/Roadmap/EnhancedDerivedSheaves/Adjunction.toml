@@ -1,4 +1,4 @@
-desc = 'Right adjoints of continuous functors and their continuity. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+desc = 'Right adjoints of continuous functors. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
 
 [[node]]
 id = 'GLCinLean.Infinity.rightAdjoint'

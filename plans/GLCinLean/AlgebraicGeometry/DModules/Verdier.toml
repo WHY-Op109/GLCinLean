@@ -3,6 +3,6 @@ desc = 'Verdier duality of coherent D-modules.'
 [[node]]
 id = 'GLCinLean.DModules.verdierDuality'
 kind = 'definition'
-desc = 'Involutive anti-equivalence of coherent D-modules, obtained by descending scheme Verdier duality. It exchanges smooth extraordinary and ordinary pullback, with the cohomological normalization. Provider: here.'
-deps = ['GLCinLean.DModules.Coherent', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.extraordinaryPullback']
+desc = 'Involutive anti-equivalence of coherent D-modules, obtained by descending scheme Verdier duality. For smooth maps it exchanges the !-pullback with the !-pullback shifted by twice the relative dimension (the *-pullback of DModules.starPullback, which is built from this duality), with the cohomological normalization. Provider: here.'
+deps = ['GLCinLean.DModules.Coherent', 'GLCinLean.DModules.extraordinaryPullback']
 source = '[DG2] §5.3 and §7.3.4'

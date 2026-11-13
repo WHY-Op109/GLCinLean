@@ -10,6 +10,6 @@ source = '[GLC1] §1.1.4'
 [[node]]
 id = 'GLCinLean.Automorphic.halfTwistedEquivUntwisted'
 kind = 'definition'
-desc = 'The equivalence Dmod_½(Bun_G) ≃ Dmod(Bun_G) given by the trivialization of the twisting by the theta characteristic (Stacks.determinantSquareRoot), compatible with the chosen root; it does not change the Hecke normalization. Provider: here.'
+desc = 'The equivalence Dmod_½(Bun_G) ≃ Dmod(Bun_G) given by the trivialization of the twisting by the theta characteristic (Stacks.determinantSquareRoot), compatible with the chosen root. The Hecke action is defined on Dmod_½(Bun_G) and is not transported along this equivalence ([GLC1] §1.1.5 and the remark after it). Provider: here.'
 deps = ['GLCinLean.Automorphic.HalfTwistedDModules', 'GLCinLean.Stacks.determinantSquareRoot']
 source = '[GLC1] §1.1.5'

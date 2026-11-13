@@ -3,9 +3,10 @@ desc = 'QCoh and IndCoh on the formal completion of a scheme along a closed subs
 [[node]]
 id = 'GLCinLean.Sheaves.qcoh_formalCompletion_localization'
 kind = 'theorem'
-desc = 'For a derived scheme X and a quasi-compact closed subset Y of it that is locally the zero set of finitely many functions, with open complement U: pullback to the formal completion X^∧_Y (Derived.FormalCompletion, an indscheme under this hypothesis) identifies the full subcategory QCoh(X)_Y of objects supported on Y, the kernel of restriction to U, with QCoh(X^∧_Y). A closed subscheme of a scheme of finite type is an instance. Provider: here.'
+desc = 'For a derived scheme X and a quasi-compact and quasi-separated closed subset Y of it that is locally the zero set of finitely many functions, with open complement U: pullback to the formal completion X^∧_Y (Derived.FormalCompletion, an indscheme under this hypothesis) identifies the full subcategory QCoh(X)_Y of objects supported on Y, the kernel of restriction to U, with QCoh(X^∧_Y). A closed subscheme of a scheme of finite type is an instance. Provider: here.'
 deps = ['GLCinLean.Derived.FormalCompletion', 'GLCinLean.Derived.IsIndscheme', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.limits']
 source = '[DGIndschemes] Proposition 7.1.3, under the assumption of §6.6.1'
+
 
 [[node]]
 id = 'GLCinLean.Sheaves.indcoh_formalCompletion_localization'
