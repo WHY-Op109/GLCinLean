@@ -1,6 +1,6 @@
 # The papers
 
-ArXiv TeX sources in `docs/references.bib` are in the git-ignored `references/papers/<id>v<version>/src/`; a missing one is fetched from `https://arxiv.org/e-print/<id>v<version>` and unpacked there. PDF-only author notes use the explicit paths below; their download hashes are in the bibliography. Each such PDF has a sibling `.txt` text extraction for searching, with a page marker line (`PDF PAGE n`, `PAGE n` or `=== PAGE n ===`) before each physical page; the extractions are not checked against the PDF, so check formulas against the PDF before quoting them. One line per paper, to choose which one to search:
+ArXiv TeX sources in `docs/references.bib` are in the git-ignored `references/papers/<id>v<version>/src/`; a missing one is fetched from `https://arxiv.org/e-print/<id>v<version>` and unpacked there. Sources that exist only as PDFs use the explicit paths below; their download hashes are in the bibliography. Do not work from a plain PDF or from a text extraction of it. If a source has only a PDF, convert it first with the skill `converting-math-documents` into a TeX file with a closing `thebibliography`, in `<folder>/src/`, as [RaskinCPSI], [GRQCoh] and [GenVan] are: checked against the PDF page by page, with a line `% PDF PAGE n` at the start of each physical page, the printed section, theorem and equation numbers as literal text, the printed labels in `\bibitem[label]{key}`, and the keys of `docs/reference-keys.md`, which lists one key per work and the key each source uses for it. The PDF stays the authority: check a formula against it before quoting it, and read the `conversion-notes-*.md` beside the TeX, which list the errors of the PDF itself that the conversion keeps. [ConradRGS], [BDHitchin] and [BDChiral] are not converted yet; each still has a sibling `.txt` text extraction with a page marker line (`PDF PAGE n`, `PAGE n` or `=== PAGE n ===`) before each physical page, which is not checked against the PDF and is good only for finding a place. One line per paper, to choose which one to search:
 
 | Key | Main file | Lines | What it covers |
 |---|---|---|---|
@@ -19,18 +19,18 @@ ArXiv TeX sources in `docs/references.bib` are in the git-ignored `references/pa
 | [ConradRGS] | `ConradRGS/luminysga3.pdf` | 390 pages | pinned reductive groups, root data and classification (Theorems 6.1.16–6.1.17) |
 | [MV] | `math-0401222v5/src/Satake.tex` | TeX | spherical perverse category, convolution, fusion, weight functors and Tannakian Satake; topology over C is not itself a de Rham DG enhancement |
 | [GLys] | `1608.00284v7/src/text.tex` | TeX | gerbe normalization and metaplectic duality; de Rham factorization Satake in §§8–9 |
-| [RaskinCPSI] | `RaskinCPSI-2018-09-05/cpsi.pdf` | PDF | coherent factorization enhancement of geometric Satake, §6, especially §6.33 |
+| [RaskinCPSI] | `RaskinCPSI-2018-09-05/src/cpsi.tex` (converted from `cpsi.pdf`, 73 pages) | 3.5k | coherent factorization enhancement of geometric Satake, §6, especially §6.33 |
 | [DGIndschemes] | `1108.1738v8/src/IndSchemestext.tex` | TeX | formal smoothness and classical comparison for DG indschemes, used by meromorphic-connection geometry |
 | [BradenDG] | `1308.3786v4/src/braden.tex` | TeX | algebraic D-module hyperbolic localization and interpolation geometry |
 | [GaitsgoryDeJong] | `math-0402184v4/src/dejong.tex` | TeX | Appendix B (§7): regular Hecke object, chiral Cousin complex and factorization |
 | [BDChiral] | `BDChiral-2004/cha_ch2.pdf`, `BDChiral-2004/cha_ch3.pdf`, `BDChiral-2004/cha_ch4.pdf` | PDF chapters | commutative D_X-algebras; chiral Cousin complex (§§3.4.11–3.4.12); commutative chiral homology and coefficients (§4.6) |
 | [BDHitchin] | `BDHitchin/QuantizationHitchin.pdf` | 386 pages | §4.5: affine Grassmannian geometry and Schubert calculations |
-| [GenVan] | `GenVan-2010-10-18/GenVan.pdf` | PDF notes | spectral vanishing strategy; §2.6 leaves the arbitrary-parabolic extension as an expectation |
+| [GenVan] | `GenVan-2010-10-18/src/GenVan.tex` (converted from `GenVan.pdf`, 7 pages) | 0.4k | spectral vanishing strategy; §2.6 leaves the arbitrary-parabolic extension as an expectation |
 | [GeometricConstantTerm] | `1311.2071v4/src/CT.tex` | TeX | Eisenstein adjunction, constant terms and the bounded-support theorem for cuspidal objects |
 | [FactorizableDerivedSatake] | `2310.19734v2/src/satake.tex` | TeX | derived spherical Satake, factorization and monadic proof; needed by the parabolic spectral-action proof |
 | [LoopGrassmannianExt] | `math0304173v3/src/abg.tex` | TeX | equivariant Ext calculation used by the derived spherical Satake monad |
 | [StacksProject] | `https://stacks.math.columbia.edu/` | stable tags | tags 02O6, 02UZ and 02KH: coherent cohomology finiteness, dimension vanishing and flat base change; the corresponding Tau Ceti interfaces are already available |
-| [GRQCoh] | `GRQCoh-2016-01-08/QCohBook.pdf` | 23 pages | passable prestacks, tensor base change and QCoh kernel formalism, Chapter I.3 §§3.1–3.5 |
+| [GRQCoh] | `GRQCoh-2016-01-08/src/QCohBook.tex` (converted from `QCohBook.pdf`, 23 pages) | 1.4k | passable prestacks, tensor base change and QCoh kernel formalism, Chapter I.3 §§3.1–3.5 |
 | [GeometricFeiginFrenkel] | `1106.3112v1/src/ff.tex` | TeX | geometric center/oper construction and compatibility with Satake, Theorem 1.4 |
 | [OneAffineness] | `1306.4304v4/src/oneaffine.tex` | 7.3k | sheaves of categories, 1-affineness and localization for quasi-coherent module categories |
 | [GaitsgoryContractibility] | `1108.1741v3/src/Contractibility.tex` | 6.2k | D-module homology on pseudo-indschemes; algebraic Ran contractibility (Theorem 1.6.5 and §6) |
@@ -64,3 +64,4 @@ ArXiv TeX sources in `docs/references.bib` are in the git-ignored `references/pa
       awk -v line=1861 -f tools/tex-locator.awk references/papers/2405.03599v3/src/functor.tex
 
   which prints `1.6.7`. Cite numbers, never TeX file names or line numbers.
+- A file converted from a PDF has its numbers as literal text: find a result with `grep -n 'Lemma 6.18.1'`, and do not use `tools/tex-locator.awk` on it.
