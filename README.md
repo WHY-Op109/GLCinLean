@@ -44,7 +44,7 @@ Agents do the work, each session started from a prompt in `prompts/`:
     export LAKE_CONFIG=$PWD/.lake-config/lake-config.toml LAKE_CACHE_DIR=$PWD/.lake/cache
     lake exe cache get
     lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti
-    lake build
+    lake build                   # the first build compiles about 400 Tau Ceti modules (see STATUS.md, "Pins")
     lake exe tracker status      # progress against the plan
 
 ## Licence
