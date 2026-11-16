@@ -38,7 +38,7 @@ source = '[FactorizableDerivedSatake] Theorem 7.3.2 and proof §§7.4–7.5'
 [[node]]
 id = 'GLCinLean.SpectralProof.invariantQuadratics_detect_equiv'
 kind = 'theorem'
-desc = 'A dualG-equivariant linear endomorphism of its reductive Lie algebra is invertible if the induced symmetric-algebra map is invertible on invariants. Detect the center in degree one and every simple ideal by an invariant nondegenerate quadratic; do not use the false assertion that the degree-one invariant vectors generate a semisimple adjoint representation. This supplies the explicit invariant-theory step of the monad comparison. Provider: here. Upstream declarations used: `TauCeti.adjointInvariantPolynomials` (`TauCeti.Algebra.AlgebraicGroup.Tangent.Lie.Adjoint.NilpotentCone`, on Tau Ceti main only, not at the pin), `killingForm` (`Mathlib.Algebra.Lie.TraceForm`).'
+desc = 'A dualG-equivariant linear endomorphism of its reductive Lie algebra is invertible if the induced symmetric-algebra map is invertible on invariants. Detect the center in degree one and every simple ideal by an invariant nondegenerate quadratic; do not use the false assertion that the degree-one invariant vectors generate a semisimple adjoint representation. This supplies the explicit invariant-theory step of the monad comparison. Provider: here. Upstream declarations used: `TauCeti.adjointInvariantPolynomials` (`TauCeti.Algebra.AlgebraicGroup.Tangent.Lie.Adjoint.NilpotentCone`), `killingForm` (`Mathlib.Algebra.Lie.TraceForm`).'
 deps = ['GLCinLean.Groups.chevalleyMap']
 source = '[FactorizableDerivedSatake] §9.3 (required algebraic step, with center and simple-factor argument made explicit)'
 
