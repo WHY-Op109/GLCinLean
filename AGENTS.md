@@ -52,10 +52,12 @@ A Lean library for geometric representation theory, on which a faithful statemen
 ## Builds
 
 - Set `LAKE_CONFIG=.lake-config/lake-config.toml` and `LAKE_CACHE_DIR=.lake/cache`. Fetch the caches before building: `lake exe cache get`, then `lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti` (no `--mappings-only`; retry on failure).
-- A `Built Mathlib.…` or `Built TauCeti.…` line (not `:c.o`, not a replayed `trace:`) means a wrong pin or a missing cache: stop and report it.
+- The first build of a checkout may print `Built TauCeti.…` lines: when the pin has no published cache of its own, Tau Ceti's cache falls back to an older commit, and Lake rebuilds the difference. This is expected. A `Built Mathlib.…` line means the Mathlib cache was not fetched: run `lake exe cache get` again.
 - Done means: `lake build` and `lake lint` pass, and `lake env lean tools/check-statement-axioms.lean`, which lists every declaration of the statement, shows `sorryAx` only for the main theorem, and for it only `propext`, `Classical.choice`, `Quot.sound` and `sorryAx`.
-- At the start of each session, check Tau Ceti's tags (`git ls-remote --tags https://github.com/TauCetiProject/TauCeti`) and the `lean-toolchain` of its `main`. The owner asked on 2026-11-16 for Lean `v4.36.0`: when Tau Ceti has the tag `v4.36.0`, move the pin to that tag and the Mathlib it names, in a commit of its own, and run the done check. If the tracker or this project fails to build there, stop and report it.
-- Versions stay pinned until the owner upgrades Lean, Mathlib and Tau Ceti to newer releases. A session moves the Tau Ceti pin only when it needs merged Tau Ceti contributions, and then to a commit with a published cache. Mathlib moves with it. If the new commit needs another Lean toolchain, the session stops and asks the owner, because the tracker must build on the project's toolchain.
+- At the start of each session, check Tau Ceti's tags (`git ls-remote --tags https://github.com/TauCetiProject/TauCeti`) and the `lean-toolchain` of its `main`.
+- A session may move the Tau Ceti pin forward, to a newer `main` commit or tag on the same Lean toolchain, when the done check passes there. Prefer a tag. Mathlib moves to the commit that Tau Ceti names. The pin move is a commit of its own.
+- The Lean toolchain changes only to a Tau Ceti tag `vX` of a Lean release (not a release candidate), and then to the newest such tag. Tau Ceti's tag promises a full published cache.
+- If the tracker or this project fails to build at a new pin, keep the old pin and report the failure in `STATUS.md`.
 
 ## Git
 
