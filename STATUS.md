@@ -73,7 +73,7 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 ## Waiting for the owner
 
-- **`Setting` keeps two unused instances** ("Open items"). Codex recommends the narrow refactor now (`notes/reviews/small-confirmations-codex.md`, part 2): `Setting` takes only `[Field k]`, and the eight placeholders keep `[CharZero k] [IsAlgClosed k]` explicitly, so the main theorem does not change. It changes `GLCinLean/Statement/`, so it needs the owner's approval; with it, it goes to `main` after a fresh review.
+- **`Setting` keeps two unused instances** ("Open items"). Codex recommends the narrow refactor now (`notes/reviews/small-confirmations-codex.md`, part 2): `Setting` takes only `[Field k]`, and the eight placeholders keep `[CharZero k] [IsAlgClosed k]` explicitly, so the main theorem does not change. The owner approved a branch on 2026-11-17: the change is on `proposal/setting-instances`, where `lake build`, `lake lint` and the axiom check pass and the main theorem's signature is unchanged. After its fresh review and the owner's confirmation it is merged into `main`, and the branch is deleted.
 
 ## Open items
 
