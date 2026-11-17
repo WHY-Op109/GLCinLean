@@ -7,10 +7,16 @@ desc = 'For a derived scheme X and a quasi-compact and quasi-separated closed su
 deps = ['GLCinLean.Derived.FormalCompletion', 'GLCinLean.Derived.IsIndscheme', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.Infinity.limits']
 source = '[DGIndschemes] Proposition 7.1.3, under the assumption of §6.6.1'
 
-
 [[node]]
 id = 'GLCinLean.Sheaves.indcoh_formalCompletion_localization'
 kind = 'theorem'
 desc = 'In the setting of Sheaves.qcoh_formalCompletion_localization, with X almost of finite type, IndCoh(X^∧_Y) is identified with the kernel of restriction IndCoh(X) → IndCoh(U), compatibly with the QCoh statement under Υ (Sheaves.upsilon) on X, U and X^∧_Y. Provider: here.'
 deps = ['GLCinLean.Sheaves.qcoh_formalCompletion_localization', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Sheaves.upsilon', 'GLCinLean.Derived.IsIndscheme']
 source = '[DGIndschemes] Proposition 7.4.5 and §§7.4–7.5'
+
+[[node]]
+id = 'GLCinLean.Sheaves.formalCompletion_moduleSupport'
+kind = 'theorem'
+desc = 'For an almost finite type scheme S and closed T with quasi-compact open complement U: QCoh of the formal completion is the supported QCoh category by Sheaves.qcoh_formalCompletion_localization, which this node does not restate. For every QCoh(S)-module category D, identify the kernel of restriction D→D_U with extension of scalars to the completion. Construct the localization using the fiber of Id→j_*j^*; prove the continuous fully faithful adjoint and tensor-localization identities. This is a categorical support theorem, not an assertion about geometric fibers alone. Provider: here.'
+deps = ['GLCinLean.Sheaves.qcoh_formalCompletion_localization', 'GLCinLean.Derived.FormalCompletion', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.Sheaves.isOneAffine', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.limits']
+source = '[OneAffineness] Propositions 4.1.3, 4.1.5 and Lemma 4.1.6; [RaskinCPSI] Lemma 6.17.2'
