@@ -1,17 +1,18 @@
 # Check
 
-**Goal.** Check that a change of a work session means what the papers say and follows `AGENTS.md`.
+**Goal.** Judge independently whether one change means what the papers say and follows `AGENTS.md`. Return only the report.
 
-**Scope.** The Lean declarations that the calling session names, including upstream declarations that replace plan nodes. If it names none, the declarations that changed since the last checked commit, which `STATUS.md` names. Three kinds are checked: definitions (planned ones and helpers), the statement of the main theorem, and theorems that serve as evidence for a definition (examples, characterisations, independence of a choice).
+**Scope.** The commit or branch that the session names. In it: new or changed definitions (planned ones and helpers), the statement of the main theorem, theorems that serve as evidence for a definition (examples, characterisations, independence of a choice), upstream declarations that replace plan nodes, and changed plan nodes.
 
-**Done when**
-- the change is checked against each rule of "Sources of code" and "Lean code" in `AGENTS.md`, and each breach is listed with its line;
-- each item in scope has a verdict: *agree*, *same object, different presentation*, *mismatch* or *unsure*, with the exact lines of the Lean code and of the paper;
-- each verdict rests on a blind reading (below);
-- after the blind reading, each doc comment in scope is checked against "Writing" in `AGENTS.md`: it matches the Lean code exactly, and each difference from the paper is recorded;
-- each definition in scope that is not an `opaque` has the degenerate-case check: is there a degenerate case (the zero category, an empty type, a trivial group) that satisfies it and makes the main theorem empty or easy? Do its examples rule that case out?
-- the report lists every *mismatch* and *unsure* at the top. The checker writes only the report. The calling session records it before the push. When there is a *mismatch* or *unsure*, or the change needs the owner's decision ("Small and big changes" in `AGENTS.md`), it commits the report as `notes/checks/<short commit>.md`, named after the commit checked, and the report goes to the owner with the change. Otherwise it puts the summary of the report in the message of the commit that updates `STATUS.md`.
+**Done when** the report has, with the exact lines of the Lean code or the plan node and of the paper:
+- every *mismatch* and *unsure* at the top;
+- each breach of "Sources of code", "Lean code" and "Writing" in `AGENTS.md`;
+- a verdict for each item: *agree*, *same object, different presentation*, *mismatch* or *unsure*;
+- for each Lean item, a verdict that rests on a blind reading (below), and then a check that its doc comment matches the code;
+- for each definition that is not an `opaque`: whether a degenerate case (the zero category, an empty type, a trivial group) satisfies it and makes the main theorem empty or easy, and which example rules that case out.
 
-**Blind reading.** A separate fresh agent gets only the Lean text of the items in scope, without doc comments, inside its instructions. It opens no file of the repository or the papers, so it cannot see the doc comments or the plan. For a definition below them that is from Mathlib or Tau Ceti, or that was checked and has not changed since, it gets the signature and the doc comment, and also the body when these do not settle the meaning. It writes in plain mathematics what each object is, its hypotheses and quantifiers, and which parts are placeholders. The checker then compares this reading with the paper's TeX, not with the names. If the checker cannot start an agent, the calling session starts the blind reader and passes its reading to the checker.
+**Blind reading.** A blind reader gets only the Lean text of the items, without doc comments, inside its instructions, and opens no file. For a definition below them that is from Mathlib or Tau Ceti, or that was checked and has not changed, it gets the signature and the doc comment, and the body when these do not settle the meaning. It writes in plain mathematics what each object is, its hypotheses and quantifiers, and which parts are placeholders. Compare this reading with the paper's TeX. If you cannot start a blind reader, the session starts it and passes you its reading.
 
-The plan gives each object's place in the papers (its `source` field), `lake exe tracker show` lists what a definition depends on, and `docs/papers.md` says where the papers' TeX is.
+**Sources.** The `source` field of each plan node, `lake exe tracker show`, and `docs/papers.md`.
+
+**The report.** The session commits it as `notes/checks/<short commit>.md` when it has a *mismatch* or *unsure*, or when the change is big. Otherwise it puts the summary in its commit message.

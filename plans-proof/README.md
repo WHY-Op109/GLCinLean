@@ -5,7 +5,7 @@ This folder holds the planned declarations that only the proof of the main theor
 The layout and the node format are those of `plans/`: `plans-proof/GLCinLean/` for nodes to be written here, `plans-proof/Roadmap/<area>/` for nodes that a Tau Ceti roadmap owns. A module may have nodes in both folders, at the same relative path.
 
 - The tracker does not read this folder, so `lake exe tracker ready` and `lint` do not see these nodes. Their `deps` may name nodes of `plans/`; a node in `plans/` never depends on a node here.
-- Build sessions and Worker rounds work from `plans/` only.
+- Writers and the Tau Ceti workers work from `plans/` only.
 - When the proof starts, a node moves back into `plans/` together with the nodes here that it depends on, and `lake exe tracker lint` checks the move.
 - `Infinity.moduleOverMonoidalLocalization` may be owned by EnhancedDerivedSheaves (E5:abstract.2, E5:presentability.4). Check that roadmap before the node is written here.
 - `Groups.chevalleyInvolution` may be owned by ReductiveGroupsPartII. Check that roadmap before the node is written here.

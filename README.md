@@ -10,14 +10,19 @@ The statement is in `GLCinLean/Statement/`. Its main theorem says that a functor
 
 ## How the work runs
 
-Agents do the work, each session started from a prompt in `prompts/`:
+Agents do the work. The owner starts a session with one line:
+
+    Run the workflow of `AGENTS.md` until the first goal is reached.
+
+"Workflow" in [`AGENTS.md`](AGENTS.md) gives the first goal, the order of the steps, the roles with their models, and when the session stops. Each step has a prompt in `prompts/`:
 
 | Prompt | What it does |
 |---|---|
-| [`work.md`](prompts/work.md) | read the status, then write the next piece of the plan in Lean, from the bottom up, towards real definitions in place of the placeholders |
-| [`check.md`](prompts/check.md) | a fresh agent checks each change of a work session against the rules and the papers |
-| [`audit.md`](prompts/audit.md) | from time to time, judge whether the statement, the plan and the workflow still reach the goal in the simplest way |
-| [`clean.md`](prompts/clean.md) | keep the workspace and the repository clean for the next work: delete files that are not needed, after the owner's permission, and keep `STATUS.md` thin |
+| [`start.md`](prompts/start.md) | one pass: bring the Tau Ceti workers in line with the plan, fold in merged upstream work, and write each ready module |
+| [`check.md`](prompts/check.md) | a checker judges each commit against the papers and the rules before the push |
+| [`change.md`](prompts/change.md) | a big change of the plan: the planner proposes, Codex checks, and the change is applied when both agree |
+| [`audit.md`](prompts/audit.md) | when due, judge whether the statement, the plan and the workflow still reach the goal in the simplest way |
+| [`clean.md`](prompts/clean.md) | delete the files that are no longer needed, and keep `STATUS.md` thin |
 
 [`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
 
@@ -32,7 +37,8 @@ Agents do the work, each session started from a prompt in `prompts/`:
 | `tools/check-statement-axioms.lean` | prints the axioms of the statement's declarations (the done check) |
 | `tools/check-module-cycles.py` | checks that no module plan of `plans/` imports another in a cycle, which the tracker does not check |
 | `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |
-| `prompts/` | the prompts the sessions start from |
+| `prompts/` | the prompts of the steps of the workflow |
+| `.claude/agents/` | the subagent roles of the workflow, each with its model and effort |
 | `docs/references.bib` | the papers cited, with their arXiv versions |
 | `docs/papers.md` | one line per paper on what it covers, and how to search its TeX |
 | `docs/blueprint-providers.md` | the Mathlib, Tau Ceti and roadmap snapshot the plan was checked against |
