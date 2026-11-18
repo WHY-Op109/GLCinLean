@@ -51,7 +51,7 @@ Agents do the work. The owner starts a session with one line:
     export LAKE_CONFIG=$PWD/.lake-config/lake-config.toml LAKE_CACHE_DIR=$PWD/.lake/cache
     lake exe cache get
     lake cache get --service tauceti-public --repo TauCetiProject/TauCeti --package TauCeti
-    lake build                   # the first build compiles about 400 Tau Ceti modules (see STATUS.md, "Pins")
+    lake build                   # the first build compiles about 400 Tau Ceti modules (see AGENTS.md, "Builds")
     lake exe tracker status      # progress against the plan
 
 ## Licence
