@@ -11,9 +11,9 @@ Every TOML file is a tracker module plan. Every node records a paper locator (`s
 - `plans-proof/` holds the nodes that only the proof of the main theorem needs, in the same layout (`plans-proof/GLCinLean/`, `plans-proof/Roadmap/<area>/`); `plans-proof/README.md` says how it is used. The tracker does not read it. A node in `plans/` never depends on a node in `plans-proof/`; lint reports such a dependency as unknown.
 - An existing Mathlib or Tau Ceti declaration is not a node. The node that uses one names it and its import module in its `desc`, under "Upstream declarations used".
 
-When a roadmap node lands upstream, it is deleted only when its declaration is at this project's pin, its interface is checked, and a fresh agent has reviewed its meaning with `prompts/review.md`. The nodes that use it are updated in the same commit.
+When a roadmap node lands upstream, it is deleted as `prompts/work.md`, step 2, says.
 
-On declarations that already exist (the statement's placeholders), `desc` and `deps` are kept although `lake exe tracker lint` reports them as superseded; `kind` is not kept, because Lean gives it. The reason: a placeholder has no real dependencies in Lean, so its suggested `deps` are the only link from the statement to the rest of the plan, and its `desc` records how it is to be replaced. Lean and its docstrings remain authoritative for the compiled object.
+On declarations that already exist (the statement's placeholders), `desc` and `deps` are kept although `lake exe tracker lint` reports them as superseded; `kind` is not kept, because Lean gives it. The reason: a placeholder has no real dependencies in Lean, so its suggested `deps` are the only link from the statement to the rest of the plan, and its `desc` records how it is to be replaced. Lean and its doc comments remain authoritative for the compiled object.
 
 The one upstream snapshot is in `docs/blueprint-providers.md`. `STATUS.md` holds the current state, the decisions and the nodes that are held back.
 
