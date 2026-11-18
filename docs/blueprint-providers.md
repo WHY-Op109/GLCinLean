@@ -18,7 +18,7 @@ Tau Ceti's `AGENTS.md` and `COORDINATION.md` (at the pin) say that new mathemati
 
 ## Upstream declarations the plan uses
 
-These exist. The node that uses one names it and its module in its `desc`. The note says where it falls short of the paper's object. All are at the pin since the pin move of 2026-11-16. All 45 Tau Ceti rows of the audit were checked on 2026-11-13: each still exists on Tau Ceti main in the same module. The review of `b8587fb` added the rows of `derivedGroupScheme`, `standardPinning` and the projective line. The rows marked "(no node names it yet)" were found on 2026-11-13 and supply nodes that the plan still plans (`notes/audit-2026-11-13.md`).
+These exist. The node that uses one names it and its module in its `desc`. The note says where it falls short of the paper's object. All are at the pin since the pin move of 2026-11-16. All 45 Tau Ceti rows of the audit were checked on 2026-11-13: each still exists on Tau Ceti main in the same module. The review of `b8587fb` added the rows of `derivedGroupScheme`, `standardPinning` and the projective line. The rows marked "(no node names it yet)" were found on 2026-11-13 and supply nodes that the plan still plans.
 
 | Declaration | Module | Note |
 |---|---|---|
