@@ -49,14 +49,10 @@ One line per paper, to choose which one to search:
 | [GaitsgoryContractibility] | `1108.1741v3/src/Contractibility.tex` | 6.2k | D-module homology on pseudo-indschemes; algebraic Ran contractibility (Theorem 1.6.5 and §6) |
 | [GaitsgoryAtiyahBott] | `1505.02331v2/src/Tamagawa.tex` | 10.2k | pseudo-proper direct images, universal homological contractibility and unital Ran cofinality (§§1.5, 2.5, 4.6) |
 | [OperadicKoszul] | `0709.1228v1/src/operad.tex` | 4.9k | Com–Lie operadic Koszul duality and the free-algebra contraction used by BD §4.6.2 |
-
 | [ParabolicEisensteinFH] | `2507.13930v2/src/main.tex` | TeX | parabolic Hecke structures and Jacquet/Casselman–Shalika compatibility; supplies proofs deferred by GLC III, with a simply connected derived-group hypothesis; its Appendix A (§A.1.3) assumes G semisimple and simply connected, replaced in `SemiInfinite.parabolicIC_colimitDescription` |
-
 | [DrinfeldCompactificationSchieder] | `1212.6814v2/src/Schieder.tex` | TeX | corrected compactifications for arbitrary reductive groups, z-extensions and torsor descent (§7) |
 | [WhittakerPatternsFGV] | `math9907133v5/src/FGV.tex` | TeX | pointwise geometric Casselman–Shalika and Whittaker cleanness; introduction explicitly includes characteristic-zero D-modules |
-
 | [GaSemiInfiniteI] | `1703.04199v6/src/Semiinf.tex` | TeX | finite Zastava/global IC comparison with its dimension shift, Proposition 3.6.5(a) |
-
 | [ChenNearbyCycles] | `2008.09349v3/src/main.tex` | 6.1k | full parabolic stratification and compact generation of LU-invariant D-modules over finite configurations (Lemma 2.3.4, Appendices C.3 and D); source assumes simply connected derived group |
 | [DhillonLysenkoRan] | `2508.01527v2/src/SI_IC_parab_Ran_v4.tex` | 6.8k | arbitrary-parabolic stratum adjunctions with diagonal base change, §§2.4 and 2.7; printed numbering differs from stale TeX labels; simply connected derived group from §2.3 |
 | [GaRanII] | `1708.07205v5/src/semiinfinite.tex` | 5.9k | Borel semi-infinite Ran category, invariant-stratum adjunctions (§1.5), local–global IC comparison and finite Zastava restriction (Theorem 3.3.3, Proposition 3.8.3) |

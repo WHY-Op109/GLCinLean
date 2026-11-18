@@ -29,7 +29,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Subagents
 
-- The main agent gives each subagent its goal, its brief, the sources it needs, the expected scope and the expected time. A subagent that writes code works in its own git worktree, and its work is squash-merged as one commit.
+- The session gives each subagent its goal, its brief, the sources it needs, the expected scope and the expected time. A subagent that writes code works in its own git worktree, and its work is squash-merged as one commit.
 - A subagent may finish without completing its task if the task is ill-specified, impossible, or far larger than expected, and may raise suspicions about its task or nearby code.
 
 ## Plan
@@ -39,7 +39,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 - `plans-proof/` holds the nodes that only the proof of the main theorem needs (`plans-proof/README.md`). The tracker does not read it, and no node in `plans/` depends on it.
 - The tracker counts a placeholder as proved, since it has no `sorry`. Remaining placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`.
 
-## Changing the plan
+## Small and big changes
 
 - Correct the nodes needed for the current work: the nodes a session is about to write and the nodes these use. Leave the other nodes until the work reaches them.
 - A session makes small changes itself and names each one in its commit message. Small changes are: the wording, `deps` or `source` of a node; splitting, merging or moving modules; a new helper declaration or node; a lemma stated in a form that still proves what it is used for; a rename, with every use updated.
@@ -52,7 +52,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
   - the removal of a planned definition (a roadmap node whose declaration is now at the pin is removed as `prompts/work.md` says), and holding or releasing a node under "Held" in `STATUS.md`.
 - When unsure whether a change is big, treat it as big. A change that the owner has already decided, as `STATUS.md` records it, needs no new decision within that scope.
 - A node found false or unprovable as stated is marked `wrong`, with the reason (`tools/tracker/README.md`). Changing its claim is a big change.
-- For a big change, or a change with an open *mismatch* or *unsure* verdict, the session stops that line of work. It writes the question under "Waiting for the owner" in `STATUS.md`, in at most ten lines: what and why, the options, and its recommendation. The change, its check report and any code go on a branch `proposal/<topic>`, which the question names; `main` gets the change only after the owner approves it. The session then continues with other ready work.
+- For a big change, or a change with an open *mismatch* or *unsure* verdict, the session stops that line of work. It writes the question under "Waiting for the owner" in `STATUS.md`, in at most ten lines: what and why, the options, and its recommendation. The change, its check report and any code go on a branch `proposal/<topic>`, which the question names; `main` gets the change only after the owner's decision. The session then continues with other ready work.
 
 ## Lean code
 
@@ -72,7 +72,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 - The only `sorry` is the proof of the main theorem. Everything the statement uses (definitions, instances, lemmas, well-definedness) is fully proved. The conjecture is stated through the characterisation of `𝕃_G`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence. The second property is stated with the Hecke action of `Rep(Ǧ)_Ran`, which needs no action of `QCoh(LS_Ǧ)`. By [GLC1] Thm. 1.2.4 it is the paper's property in an equivalent form for the underlying functors of ∞-categories.
 - An object not defined yet is a placeholder: an `opaque`, or a definition built over one, marked `@[placeholder]` (`GLCinLean/Placeholder.lean`); its doc comment follows "Writing". Placeholders live only in the statement, never in the library or in code meant for Tau Ceti: library code must be real mathematics, or a gap would hide below the statement. One is replaced only together with examples that show the new definition behaves as expected.
-- A fresh agent checks every new or changed definition, planned or helper, with `prompts/check.md`. A *mismatch* or *unsure* verdict goes to the owner, as "Changing the plan" says, together with the changes that need the owner's approval.
+- A fresh agent checks every new or changed definition, planned or helper, with `prompts/check.md`. A *mismatch* or *unsure* verdict goes to the owner, as "Small and big changes" says.
 
 ## Builds
 
@@ -86,4 +86,4 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Git
 
-- Commit at each important step and push to `main` of `WHY-Op109/GLCinLean`. A change that waits for the owner's approval goes to its branch, as "Changing the plan" says.
+- Commit at each important step and push to `main` of `WHY-Op109/GLCinLean`. A change that waits for the owner's decision goes to its branch, as "Small and big changes" says.

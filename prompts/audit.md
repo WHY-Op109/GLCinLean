@@ -3,7 +3,7 @@
 **Goal.** Judge whether the statement, the plan and the workflow still reach the project's goal (the first paragraph of `AGENTS.md`) in the simplest way: every object the statement uses fully defined, built on Mathlib and Tau Ceti, with simple tools and a workflow that runs on prompts.
 
 **Done when**
-- upstream is compared from the commit up to which the last comparison is complete, which `docs/blueprint-providers.md` names. That file then records, in place, the current providers, each open pull request that supplies a plan node, competes with one, or changes who owns it, and the commit up to which this comparison is complete;
+- Tau Ceti and its roadmaps are compared with the plan, from the last compared commit to the pin. `docs/blueprint-providers.md` names the last compared commit. That file then records, in place, the current providers, each open pull request that supplies a plan node, competes with one, or changes who owns it, and the new last compared commit;
 - a report in `notes/audit-<date>.md` answers each question below, with reasons and exact references, ranks its findings by their effect on the goal, and ends with a table of decisions for the owner:
   1. Is the statement still faithful to the paper, also after the placeholders replaced since the last audit?
   2. Does the plan still reach a fully defined statement? Which nodes are wrong, missing, held, or more than the statement needs? Judge the plan as a whole and the nodes near the work.
