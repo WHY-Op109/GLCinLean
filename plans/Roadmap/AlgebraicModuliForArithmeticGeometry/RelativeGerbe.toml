@@ -1,0 +1,8 @@
+desc = 'Relative gerbes: morphisms of stacks in groupoids on a site that are gerbes over their target. Owner: the Tau Ceti roadmap AlgebraicModuliForArithmeticGeometry.'
+
+[[node]]
+id = 'GLCinLean.Stacks.relativeGerbe'
+kind = 'definition'
+desc = 'For a morphism F : X → Y of stacks in groupoids on a site, F is a relative gerbe when every object of Y lifts locally to X up to isomorphism and, for two objects x, x′ of X over U, every isomorphism F(x) → F(x′) lifts locally to an isomorphism x → x′. Equivalently, the projection to Y of the iso-comma stack of F is a gerbe on the site of Y (Stacks.abelianBandedGerbe gives the notion of a gerbe). Local essential surjectivity alone does not make F a relative gerbe. Provider: roadmap AlgebraicModuliForArithmeticGeometry, §4.1 “Gerbes and relative locality”, `relativeGerbe`. The roadmap lists `IsGerbe` and SchemeAndStackFoundations §§1.18 and 1.21 under its needs (Stacks.stackification, Stacks.quotientStack). This plan uses the target only as an input of other targets: `BandedMorphism.faithful` and `BandedMorphism.locallyIsomEquiv`, which `band_morphism_full_faithful` needs (Stacks.bandPreserving_isEquivalence), and `liftingGerbe` (Stacks.schemeRootGerbe). This plan does not use `relativePullback`, `relativeComposition` and `relativeDescent`. The target is not in Tau Ceti.'
+deps = ['GLCinLean.Stacks.abelianBandedGerbe', 'GLCinLean.Stacks.stackification', 'GLCinLean.Stacks.quotientStack']
+source = '[StacksProject] Lemma 8.11.3 and Definition 8.11.4 (Section 8.11, tag 06NY); [GLys] §1.3.6'

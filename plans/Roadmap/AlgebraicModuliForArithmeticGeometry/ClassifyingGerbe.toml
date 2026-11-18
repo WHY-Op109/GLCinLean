@@ -1,0 +1,8 @@
+desc = 'The classifying gerbe of a sheaf of abelian groups on a site. Owner: the Tau Ceti roadmap AlgebraicModuliForArithmeticGeometry.'
+
+[[node]]
+id = 'GLCinLean.Stacks.classifyingAbelianGerbe'
+kind = 'definition'
+desc = 'The classifying gerbe BA of a sheaf A of abelian groups on a site: the stack of A-torsors and their equivariant isomorphisms, with its canonical A-banding (Aut(P) is the restriction of A, through translations, independently of a local trivialization) and the trivial torsor as an object. It is an A-banded gerbe (Stacks.abelianBandedGerbe). Provider: roadmap AlgebraicModuliForArithmeticGeometry, §4.3 “Neutralizations and derived classification”, `classifyingAbelianGerbe`. The target takes BA from the generic quotient stack of SchemeAndStackFoundations §1.21 (Stacks.quotientStack). The torsors are those of a sheaf of groups on a site, which Tau Ceti has; the torsors under group schemes of SchemeAndStackFoundations §1.15 and their representability (Stacks.groupTorsor) are not used. The target is not in Tau Ceti. Upstream declarations used: `CategoryTheory.Sheaf.Torsor` (`TauCeti.CategoryTheory.Sites.NonabelianCohomology.Torsor`).'
+deps = ['GLCinLean.Stacks.abelianBandedGerbe', 'GLCinLean.Stacks.quotientStack']
+source = '[GLys] §§1.3.5–1.3.6'

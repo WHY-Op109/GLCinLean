@@ -1,0 +1,8 @@
+desc = 'The product, the contracted sum and the inverse of banded gerbes on one site. Owner: the Tau Ceti roadmap AlgebraicModuliForArithmeticGeometry.'
+
+[[node]]
+id = 'GLCinLean.Stacks.gerbeContractedSum'
+kind = 'definition'
+desc = 'On one site: the product of an A-banded gerbe and a B-banded gerbe (Stacks.abelianBandedGerbe), which is banded by A × B; the contracted sum of two A-banded gerbes, which is the change of band of their product along the addition A × A → A (Stacks.gerbeChangeOfBand); and the inverse of an A-banded gerbe, which is its change of band along the inversion of A. Each is functorial for band-preserving morphisms and modifications and commutes with the restriction to a slice site. By the universal property of the change of band, a band-preserving morphism from the contracted sum of F and G to an A-banded gerbe H is the same as a morphism F × G → H that is compatible with the addition A × A → A. Provider: roadmap AlgebraicModuliForArithmeticGeometry, as the prerequisite of a clause of §4.20 “Derived classification on arbitrary sites”: the bijection `gerbeClassification` of that section satisfies “class zero is precisely neutrality, contracted sum is addition, and band/site change commutes with class”. No target of the roadmap names the contracted sum. This plan uses the operations and does not use the clause on classes. Not part of this node, because no roadmap target needs them: the equivalences of associativity, commutativity, unit and inverse of the contracted sum and their coherence (Stacks.EtaleGerbe). Nothing of this is in Tau Ceti.'
+deps = ['GLCinLean.Stacks.abelianBandedGerbe', 'GLCinLean.Stacks.gerbeChangeOfBand']
+source = '[GLys] §1.3.2'
