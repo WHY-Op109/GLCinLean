@@ -34,7 +34,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
   | Writer | Opus 5.5, high | Writes one ready module. Modules that do not depend on each other have writers in parallel. A writer that fails twice on the same goal hands the problem to the planner. |
   | Checker | Fable 5.2, high | Checks one commit or branch with `prompts/check.md`. |
   | Blind reader | Opus 5.5, high | Gives the checker its blind reading. |
-  | Searcher | Opus 5.5, medium | Searches Mathlib and Tau Ceti, and does other tasks with a clear scope. |
+  | Searcher | Opus 5.5, xhigh | Searches Mathlib and Tau Ceti deeply, so that nothing they have is written again, and does other tasks with a clear scope. |
   | Codex | its most capable model, high | The second checker of a big change, read-only (`codex exec`). |
   | Author workers | Opus 5.5, high (`agent = "claude"`) | Persistent Tau Ceti workers for the `roadmap` phase only, each pinned to one roadmap area with a ready module and guided to the targets of `lake exe tracker show`. The session decides how many run at once, from the plan and the quota. |
   | Maintenance worker | `agent = "auto"` | One persistent Tau Ceti worker with every phase of the Worker except `roadmap`: it repairs and rebases our pull requests first, and then reviews pull requests of other contributors. |
