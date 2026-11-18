@@ -23,6 +23,19 @@ A Lean library for geometric representation theory, on which a faithful statemen
 - `plans-proof/` holds the nodes that only the proof of the main theorem needs (`plans-proof/README.md`). The tracker does not read it, and no node in `plans/` depends on it.
 - The tracker counts a placeholder as proved, since it has no `sorry`. Remaining placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`.
 
+## Changing the plan
+
+- The plan is a guide, not a contract. It is corrected where the work reaches it: a session fixes the nodes it is about to write and the nodes these use. Nodes that no ready work needs are not reviewed or polished.
+- A session makes small changes itself and names each one in its commit message. Small changes are: the wording, `deps` or `source` of a node; splitting, merging or moving modules; a new helper declaration or node; a lemma stated in a form that still proves what it is used for; a rename, with every use updated.
+- A big change needs the owner's decision. Big changes are:
+  - any change to `GLCinLean/Statement/`;
+  - a change to the meaning of a definition that the statement uses or will use (the object it is, its generality or its hypotheses), unless a review with `prompts/review.md` finds its meaning unchanged;
+  - a change of route: a different construction or source for an object, or a claim of the source that the plan drops or cannot prove;
+  - a change of provider: work moved between this project and Tau Ceti;
+  - the removal of a planned definition, and holding or releasing a node under "Held" in `STATUS.md`.
+- When unsure whether a change is big, treat it as big.
+- For a big change, the session stops that line of work. It writes the question under "Waiting for the owner" in `STATUS.md`, in at most ten lines: what and why, the options, and its recommendation. Details and any code go on a branch `proposal/<topic>`, which the question names. The session then continues with other ready work; it does not wait for the answer.
+
 ## Lean code
 
 - Follow Mathlib's [style guide](https://mathlib.org/contribute/style.html), [naming conventions](https://mathlib.org/contribute/naming.html) and [documentation style](https://mathlib.org/contribute/doc.html), with a docstring on every definition. The `Authors:` line names the contributors and the AI models, as Tau Ceti does.
@@ -42,12 +55,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 - The only `sorry` is the proof of the main theorem. Everything the statement uses (definitions, instances, lemmas, well-definedness) is fully proved. The conjecture is stated through the characterisation of `𝕃_G`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence. The second property is stated with the Hecke action of `Rep(Ǧ)_Ran`, which needs no action of `QCoh(LS_Ǧ)`. By [GLC1] Thm. 1.2.4 it is the paper's property in an equivalent form for the underlying functors of ∞-categories.
 - An object not defined yet is a placeholder: an `opaque`, or a definition built over one, marked `@[placeholder]` (`GLCinLean/Placeholder.lean`), with a docstring naming the object it stands for. Placeholders live only in the statement, never in the library or in code meant for Tau Ceti: library code must be real mathematics, or a gap would hide below the statement. One is replaced only together with examples that show the new definition behaves as expected.
-- Review and approval:
-  - a fresh agent reviews every new or changed definition, planned or helper, with `prompts/review.md`;
-  - a *mismatch* or *unsure* verdict goes to the owner;
-  - a change to `GLCinLean/Statement/` needs the owner's approval;
-  - a change to a definition that the main theorem already depends on in Lean also needs it, unless the review finds its meaning unchanged;
-  - a change that waits for approval is on a branch `proposal/<topic>`, and `STATUS.md` on `main` names the branch.
+- A fresh agent reviews every new or changed definition, planned or helper, with `prompts/review.md`, part "Check new work". A *mismatch* or *unsure* verdict goes to the owner. Which changes need the owner's approval is in "Changing the plan".
 
 ## Builds
 
