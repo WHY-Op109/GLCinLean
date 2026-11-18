@@ -10,7 +10,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
   - every definition has a doc comment;
   - a doc comment that uses a paper cites its bracketed key of `docs/references.bib` and the paper's own numbering;
   - a doc comment states the mathematics so that it matches the Lean code exactly: every hypothesis, including type classes with mathematical content, the same strength of conclusion, the same order of quantifiers, and the same degenerate cases;
-  - each difference from the paper is recorded in the declaration's doc comment, with its kind (correction, reading, restriction, reformulation or generalization) and the reason. The module doc comment of `GLCinLean.Statement.Conjecture` lists, one line each, every difference that affects the statement, including those in the library definitions that the statement uses;
+  - each difference from the paper is recorded in the declaration's doc comment, with its kind (correction, reading, restriction, reformulation or generalization) and the reason. The module doc comment of the root file `GLCinLean.lean` lists, one item each, every difference that affects the statement, including those in the library definitions that the statement uses;
   - the doc comment of a placeholder states the object it stands for;
   - doc comments and comments describe the code as it is: no status text, work history, or mention of agents, sessions, the plan or reviews.
 
@@ -55,7 +55,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 - `plans-proof/` holds the nodes that only the proof of the main theorem needs (`plans-proof/README.md`). The tracker does not read it, and no node in `plans/` depends on it.
 - The tracker counts a placeholder as proved, since it has no `sorry`. Remaining placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`.
 - A node of `plans/Roadmap/` is deleted only when its declaration is at the pin, its interface is checked, and a checker has checked its meaning. In the same commit, the nodes that used it name the upstream declaration and its module in their `desc`.
-- An error or a gap found in a paper, and a claim that is given up as too hard, is recorded in three places: the node (its `desc`, and `wrong` with the reason when its claim is false or unprovable as stated), the doc comment of the declaration once it exists, and one line in `docs/papers.md`, "Errors and gaps in the sources": the paper's key and number, what is wrong or missing, and the node id.
+- An error or a gap found in a paper, and a claim that is given up as too hard, is recorded in the module doc comment of the root file `GLCinLean.lean`: under "Differences from the sources" or "Not formalized", with the paper's key and number, what is wrong or missing, and the declaration it concerns once that exists. A node whose claim is false or unprovable as stated is also marked `wrong`.
 - Before a commit that changes the plan or adds a module, `lake exe tracker lint` has no errors and `python3 tools/check-module-cycles.py` finds no cycle.
 
 ## Small and big changes

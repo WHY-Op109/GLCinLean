@@ -74,15 +74,3 @@ One line per paper, to choose which one to search:
 
   which prints `1.6.7`. Cite numbers, never TeX file names or line numbers.
 - A file converted from a PDF has its section and theorem numbers as literal text: find a result with `grep -n 'Lemma 6.18.1'`, and an equation with `grep -n 'tag{3.2}'`. Do not use `tools/tex-locator.awk` on it.
-
-## Errors and gaps in the sources
-
-One line for each error or gap found in a source, and for each claim that is given up as too hard ("Plan" in `AGENTS.md`). The node says how the plan handles it.
-
-| Source | What is wrong or missing | Node |
-|---|---|---|
-| [RaskinCPSI] §6.10 | The proof that the factorization functors are equivalences over the disjoint locus is one sentence ("a cofinality argument"). It interchanges a tensor product of categories with two limits, which holds for a compactly generated rigid category (Lemma 6.18.1); for another category the source has no proof. | `Ran.CollisionCategory`, `Ran.collisionCategory_tensorLimitComparison_isEquivalence` |
-| [RaskinCPSI] Corollary 6.18.2 | The self-duality of the collision category is stated without proof. Dualizability follows from Lemma 6.18.1; the pairing and its perfectness do not. | `Ran.collisionCategory_tensorLimitComparison_isEquivalence` |
-| [RaskinCPSII] Lemma 9.8.1, Appendix A.5 | The reduction from a general curve to the affine line is left to the reader. | `Ran.Representations.equivCollisionLimit` |
-| [IndCoh] Theorem 5.6.3 | The theorem, on which the symmetric monoidal structure of the !-tensor product rests, is stated without proof. | `DModules.shriekTensor` |
-| [OneAffineness] Theorem 2.6.3 | The gluing step over a finite affine open cover is left to the reader. | `Sheaves.finiteTypeScheme_deRham_oneAffine` |
