@@ -15,7 +15,8 @@ Agents do the work, each session started from a prompt in `prompts/`:
 | Prompt | What it does |
 |---|---|
 | [`work.md`](prompts/work.md) | read the status, then write the next piece of the plan in Lean, from the bottom up, towards real definitions in place of the placeholders |
-| [`review.md`](prompts/review.md) | "Check new work": a fresh agent checks each change of a work session against the rules and the papers. "Audit": from time to time, judge whether the statement, the plan and the workflow still reach the goal in the simplest way |
+| [`check.md`](prompts/check.md) | a fresh agent checks each change of a work session against the rules and the papers |
+| [`audit.md`](prompts/audit.md) | from time to time, judge whether the statement, the plan and the workflow still reach the goal in the simplest way |
 | [`clean.md`](prompts/clean.md) | keep the workspace and the repository clean for the next work: delete files that are not needed, after the owner's permission, and keep `STATUS.md` thin |
 
 [`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
