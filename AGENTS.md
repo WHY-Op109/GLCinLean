@@ -5,6 +5,13 @@ A Lean library for geometric representation theory, on which a faithful statemen
 ## Writing
 
 - Use plain, understandable, structured words in all text.
+- In text that agents read (`AGENTS.md`, `prompts/`, `STATUS.md`, the plan, `docs/`, and the briefs given to subagents), state the current facts, the actions to take, and the reasons needed to act. Leave out who the text is for or not for, what it replaces, how it came about, and what changed since an earlier version. Keep what the next session needs: the questions waiting for the owner, the decisions still in force, and the last reviewed and audited commits.
+- Lean doc comments and comments are for a person who reads the code and has not seen the papers, the plan or any agent's work. Follow Mathlib's [documentation style](https://mathlib.org/contribute/doc.html), and:
+  - every definition has a doc comment, which cites a bracketed key of `docs/references.bib` and the paper's own numbering;
+  - a doc comment states the mathematics so that it matches the Lean code exactly: every hypothesis, including type classes with mathematical content, the same strength of conclusion, the same order of quantifiers, and the same degenerate cases;
+  - each difference from the paper is recorded, with its kind (correction, reading, restriction, reformulation or generalization) and the reason, in the declaration's doc comment and in one line of the module doc comment of `GLCinLean.Statement.Conjecture`;
+  - the doc comment of a placeholder states the object it stands for;
+  - doc comments and comments describe the code as it is: no status text, work history, or mention of agents, sessions, the plan or reviews.
 
 ## Sources of code
 
@@ -40,8 +47,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Lean code
 
-- Follow Mathlib's [style guide](https://mathlib.org/contribute/style.html), [naming conventions](https://mathlib.org/contribute/naming.html) and [documentation style](https://mathlib.org/contribute/doc.html), with a docstring on every definition. The `Authors:` line names the contributors and the AI models, as Tau Ceti does.
-- Docstrings cite a bracketed key of `docs/references.bib` and the paper's own numbering. They describe the code as it is: no status text, work history or agent discussion.
+- Follow Mathlib's [style guide](https://mathlib.org/contribute/style.html) and [naming conventions](https://mathlib.org/contribute/naming.html); doc comments follow "Writing". The `Authors:` line names the contributors and the AI models, as Tau Ceti does.
 - No warnings, apart from the `sorry` of the main theorem.
 - Never duplicate Mathlib or Tau Ceti, not even as a thin wrapper, a restatement or a parallel API: what they have need not be written again. The one exception is an object with which the goal cannot be reached even in principle. Then write the new object, and its docstring says why the existing one cannot serve. Factor near-copies in this repository into one construction.
 - Read every statement adversarially: check quantifiers, the direction of implications and degenerate cases (empty, zero). In the statement and in every definition it reaches, never move a conclusion into a hypothesis or a structure field, use a `True`-like stand-in, or weaken a statement to make it provable or to remove a placeholder: each of these makes the statement weaker than the paper's. A lemma used in a proof may be weaker than the paper's, as long as it still proves what it is used for. A new `Prop`-valued definition needs a theorem that uses it or an example where it holds non-trivially.
