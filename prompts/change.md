@@ -6,7 +6,7 @@
 
 **Done when**
 - with agreement: the change is on `main`, the done check passes, and "Decisions taken" in `STATUS.md` records what changed, why, and that both agreed;
-- without agreement after three rounds: the change and its reports are on the branch `proposal/<topic>`, and the question is under "Waiting for the owner" in `STATUS.md`, in at most ten lines: what and why, the options, both positions, and the branch.
+- without agreement after five rounds: the change and its reports are on the branch `proposal/<topic>`, and the question is under "Waiting for the owner" in `STATUS.md`, in at most ten lines: what and why, the options, both positions, and the branch.
 
 **Steps**
 1. The planner writes down the problem with its evidence: the Lean error or the lines of the paper, and the nodes it touches (`lake exe tracker show`).

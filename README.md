@@ -18,11 +18,11 @@ Agents do the work. The owner starts a session with one line:
 
 | Prompt | What it does |
 |---|---|
-| [`start.md`](prompts/start.md) | one pass: bring the Tau Ceti workers in line with the plan, fold in merged upstream work, and write each ready module |
-| [`check.md`](prompts/check.md) | a checker judges each commit against the papers and the rules before the push |
-| [`change.md`](prompts/change.md) | a big change of the plan: the planner proposes, Codex checks, and the change is applied when both agree |
 | [`audit.md`](prompts/audit.md) | when due, judge whether the statement, the plan and the workflow still reach the goal in the simplest way |
 | [`clean.md`](prompts/clean.md) | delete the files that are no longer needed, and keep `STATUS.md` thin |
+| [`start.md`](prompts/start.md) | bring the Tau Ceti workers in line with the plan, fold in merged upstream work, and write each ready module |
+| [`check.md`](prompts/check.md) | a checker judges each commit against the papers and the rules before the push |
+| [`change.md`](prompts/change.md) | a big change of the plan: the planner proposes, Codex checks, and the change is applied when both agree |
 
 [`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
 
