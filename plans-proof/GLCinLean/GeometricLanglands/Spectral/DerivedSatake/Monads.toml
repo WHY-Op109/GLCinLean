@@ -4,7 +4,7 @@ desc = 'Planned proof inputs for the derived Satake equivalence. The source theo
 id = 'GLCinLean.SpectralProof.equivariantRegularSheaf_cohomology'
 kind = 'theorem'
 desc = 'For the semisimple simply connected geometric group and its adjoint dual in ABG, compute equivariant cohomology of the Satake regular sheaf and its action by the universal centralizer over the adjoint quotient. Use the perverse fiber functor, Chevalley restriction and the regular-locus calculation. Provider: here.'
-deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.Satake.cohomologyFiberFunctor', 'GLCinLean.Groups.chevalleyMap']
+deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.Satake.cohomologyFiberFunctor', 'GLCinLean.Groups.chevalleyMap', 'GLCinLean.Groups.chevalleyRestriction']
 source = '[LoopGrassmannianExt] Lemma 7.6.3 and §6; [FactorizableDerivedSatake] proof of Proposition 9.2.2'
 
 [[node]]
@@ -46,7 +46,7 @@ source = '[FactorizableDerivedSatake] §9.3 (required algebraic step, with cente
 id = 'GLCinLean.SpectralProof.derivedSphericalSatake_equiv'
 kind = 'theorem'
 desc = 'The full derived Satake transform is an equivalence of monoidal unital factorization categories. Compare the cohomology of the actual E1 monad map, prove it invertible on invariants via the torus and Borel restriction square, detect the whole Lie algebra by invariant quadratics, then use ULA pointwise detection and monadicity. This is stronger than naive Satake. Provider: here.'
-deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.SpectralProof.factorizationVacuum_almostULA', 'GLCinLean.SpectralProof.geometricSatakeMonad_cohomology', 'GLCinLean.SpectralProof.spectralSatakeMonad_is_symmetricAlgebra', 'GLCinLean.SpectralProof.torusDerivedSatake_equiv', 'GLCinLean.SpectralProof.invariantQuadratics_detect_equiv']
+deps = ['GLCinLean.SpectralProof.derivedSatakeTransform', 'GLCinLean.SpectralProof.factorizationVacuum_almostULA', 'GLCinLean.SpectralProof.geometricSatakeMonad_cohomology', 'GLCinLean.SpectralProof.spectralSatakeMonad_is_symmetricAlgebra', 'GLCinLean.SpectralProof.torusDerivedSatake_equiv', 'GLCinLean.SpectralProof.invariantQuadratics_detect_equiv', 'GLCinLean.Groups.chevalleyRestriction']
 source = '[FactorizableDerivedSatake] Theorem 6.6.1, proof §§6.13, 9.1–9.4; [GLC2] Theorem 1.7.2'
 
 [[node]]
