@@ -1,6 +1,6 @@
 # Provider record
 
-The one snapshot of what Mathlib, Tau Ceti and the Tau Ceti roadmaps supply to the plan. A plan node names its provider only as "here" or as a roadmap area and target; the revisions and the detail are here. `prompts/audit.md` brings this file up to date in place.
+The one snapshot of what Mathlib, Tau Ceti and the Tau Ceti roadmaps supply to the plan. A plan node names its provider only as "here" or as a roadmap area and target; the revisions and the detail are here. The audit (`prompts/review.md`, part "Audit") brings this file up to date in place.
 
 ## Snapshot
 
@@ -214,7 +214,7 @@ Against the earlier snapshots (Tau Ceti main `1e668f5e`, TauCetiRoadmap main `00
 
 ## Roadmap candidates (deferred)
 
-The owner deferred on 2026-11-11 the decision to write or submit Tau Ceti roadmaps for the parts of the plan that no roadmap owns. The candidates are recorded here so that a later decision can rest on the state of this project, of Tau Ceti and of the roadmaps at that time. Each audit (`prompts/audit.md`) checks the triggers below and updates the column "State"; the decision is the owner's.
+The owner deferred on 2026-11-11 the decision to write or submit Tau Ceti roadmaps for the parts of the plan that no roadmap owns. The candidates are recorded here so that a later decision can rest on the state of this project, of Tau Ceti and of the roadmaps at that time. Each audit (`prompts/review.md`, part "Audit") checks the triggers below and updates the column "State"; the decision is the owner's.
 
 A candidate is put to the owner only when all four triggers hold:
 
