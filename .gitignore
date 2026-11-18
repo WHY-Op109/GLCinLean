@@ -22,3 +22,6 @@ references/papers/
 .env
 *.pem
 *.key
+
+# Worktrees of subagents
+.claude/worktrees/
