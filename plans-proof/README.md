@@ -23,3 +23,9 @@ Two planned theorems in `GLCinLean/GeometricLanglands/Functor/Coarse.toml` conne
 
 - `Langlands.isLanglandsFunctor_iff_comp_psi_iso_coarse`: the second property of `Statement.IsLanglandsFunctor` holds exactly when `Ψ ∘ F ≃ 𝕃_{G,coarse}` as functors of ∞-categories ([GLC1] Thm. 1.2.4).
 - `Langlands.isEquivalence_iff_of_isLanglandsFunctor`: two functors with the two properties are naturally equivalent as functors of ∞-categories, so one is an equivalence exactly when the other is. With the comparison theorem, `𝕃_G` of [GLC1] Cor. 1.6.5 is one such functor.
+
+## Notes for the session that starts the proof
+
+- **The uniqueness theorem has two conclusions.** `Langlands.isEquivalence_iff_of_isLanglandsFunctor` states both `F ≃ F′` and "`F` is an equivalence iff `F′` is", but its name spells only the second. The review of `c4f67f1` suggests a separate theorem for `F ≃ F′`; this is not done yet.
+- **Non-unital monoidal categories.** No roadmap provides non-unital monoidal categories. Since the review this concerns `plans-proof/` only (`Hecke.ranConvolution`, `Hecke.action_associativity`, `Satake.factorizationConvolution`); [GLC2] Appendix H shows a route through unital local actions.
+- **Proof-plan gaps from the review of `82c8619`.** No node gives a twisted *-pushforward, which `SpectralProof.constantTerm` (along q^−) and `SpectralProof.localizationCDO_is_diagonal` (along the diagonal) use; `SpectralProof.constantTerm` reaches neither the half-twisted category nor the root gerbe; `SemiInfinite.parabolicVacuumShriek` reaches no gerbe on Gr_G. `Satake.regularSheafExt_complexComparison` may need an equivariant constructible category with convolution, which the ordinary constructible category of decision 3 does not give. The generic Ran nodes of `plans-proof/` (`Hecke.ranHomology_connective`, `Hecke.ranHomology_is_unit`, `Hecke.ranSupersetPullback_fullyFaithful`) keep the `Hecke` namespace until the proof starts.
