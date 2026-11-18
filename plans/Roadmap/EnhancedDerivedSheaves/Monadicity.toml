@@ -1,4 +1,4 @@
-desc = 'The Barr–Beck–Lurie theorem. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+desc = 'The Barr–Beck–Lurie theorem and its application to finite products of vector-space categories. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
 
 [[node]]
 id = 'GLCinLean.Infinity.barrBeckLurie'
