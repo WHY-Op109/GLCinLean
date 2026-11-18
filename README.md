@@ -36,7 +36,7 @@ Agents do the work, each session started from a prompt in `prompts/`:
 | `docs/references.bib` | the papers cited, with their arXiv versions |
 | `docs/papers.md` | one line per paper on what it covers, and how to search its TeX |
 | `docs/blueprint-providers.md` | the Mathlib, Tau Ceti and roadmap snapshot the plan was checked against |
-| `notes/` | review and audit reports, while their findings are open |
+| `notes/` | check and audit reports, while their findings are open |
 
 ## Build
 
