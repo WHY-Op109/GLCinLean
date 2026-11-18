@@ -4,7 +4,7 @@
 
 **Done when**
 - the chosen work is written, checked and reviewed (steps 3–5);
-- `STATUS.md` says what was done, what waits for the owner, and what the next session takes on;
+- `STATUS.md` records the current state, the open decisions, and the next work;
 - the work is committed and pushed.
 
 **Steps**

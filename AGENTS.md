@@ -6,8 +6,9 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 - Use plain, understandable, structured words in all text.
 - In text that agents read (`AGENTS.md`, `prompts/`, `STATUS.md`, the plan, `docs/`, and the briefs given to subagents), state the current facts, the actions to take, and the reasons needed to act. Leave out who the text is for or not for, what it replaces, how it came about, and what changed since an earlier version. Keep what the next session needs: the questions waiting for the owner, the decisions still in force, and the last reviewed and audited commits.
-- Lean doc comments and comments are for a person who reads the code and has not seen the papers, the plan or any agent's work. Follow Mathlib's [documentation style](https://mathlib.org/contribute/doc.html), and:
-  - every definition has a doc comment, which cites a bracketed key of `docs/references.bib` and the paper's own numbering;
+- In Lean doc comments and comments, follow Mathlib's [documentation style](https://mathlib.org/contribute/doc.html), and:
+  - every definition has a doc comment;
+  - a doc comment that uses a paper cites its bracketed key of `docs/references.bib` and the paper's own numbering;
   - a doc comment states the mathematics so that it matches the Lean code exactly: every hypothesis, including type classes with mathematical content, the same strength of conclusion, the same order of quantifiers, and the same degenerate cases;
   - each difference from the paper is recorded, with its kind (correction, reading, restriction, reformulation or generalization) and the reason, in the declaration's doc comment and in one line of the module doc comment of `GLCinLean.Statement.Conjecture`;
   - the doc comment of a placeholder states the object it stands for;
