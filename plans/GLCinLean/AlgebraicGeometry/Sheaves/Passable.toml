@@ -3,9 +3,9 @@ desc = 'Passability, QCoh tensor base change and kernel descriptions on prestack
 [[node]]
 id = 'GLCinLean.Sheaves.passable'
 kind = 'definition'
-desc = 'A prestack with quasi-affine diagonal, compact structure sheaf and dualizable QCoh. Retain all three conditions. Its example in this plan: every quasi-compact separated scheme is passable (affine diagonal, compact structure sheaf, and QCoh compactly generated, hence dualizable); this is proved with the definition and used by Sheaves.qcSeparatedScheme_oneAffine. The spread classifying stack ([RaskinCPSII] Corollary A.8.1) and the stacks of SpectralProof.localizationPassability are examples in the plan of the proof. Provider: here.'
+desc = 'A prestack whose diagonal is schematic, quasi-compact and quasi-affine ([OneAffineness] Definition 5.1.2), with compact structure sheaf and dualizable QCoh. Retain all three conditions. Its example in this plan: every quasi-compact separated scheme is passable (affine diagonal, compact structure sheaf, and QCoh compactly generated, hence dualizable); this is proved with the definition and used by Sheaves.qcSeparatedScheme_oneAffine. The spread classifying stack ([RaskinCPSII] Corollary A.8.1) and the stacks of SpectralProof.localizationPassability are examples in the plan of the proof. Provider: here.'
 deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Sheaves.QCoh', 'GLCinLean.Sheaves.schemeQCoh', 'GLCinLean.Infinity.compactObject', 'GLCinLean.Infinity.dualizableCategory']
-source = '[GRQCoh] §3.5.1'
+source = '[GRQCoh] §3.5.1; [OneAffineness] Definition 5.1.2'
 
 [[node]]
 id = 'GLCinLean.Sheaves.passable_tensorBaseChange'

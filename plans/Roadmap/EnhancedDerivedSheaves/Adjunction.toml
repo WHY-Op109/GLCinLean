@@ -1,4 +1,4 @@
-desc = 'Right adjoints of continuous functors. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
+desc = 'Right adjoints of continuous functors and their continuity. Owner: the Tau Ceti roadmap EnhancedDerivedSheaves.'
 
 [[node]]
 id = 'GLCinLean.Infinity.rightAdjoint'
@@ -6,3 +6,10 @@ kind = 'definition'
 desc = 'Adjunctions of enhanced categories, by the mapping-space equivalence, and the adjoint functor theorem: a colimit-preserving functor between presentable categories has a right adjoint, which need not preserve colimits. Linearity of the right adjoint is a separate statement where it holds. Provider: roadmap EnhancedDerivedSheaves, `adjointFunctorTheorem` (“Representability, adjoints and localizations”).'
 deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits', 'GLCinLean.Infinity.presentableCategory']
 source = '[GLC1] §1.4.5'
+
+[[node]]
+id = 'GLCinLean.Infinity.rightAdjoint_continuous'
+kind = 'theorem'
+desc = 'A right adjoint is continuous when the left adjoint preserves compact generators; prove rather than assume it. Provider: roadmap EnhancedDerivedSheaves, `rightAdjoint_preservesCoproducts_iff` (“Stable colimits and compact generation”).'
+deps = ['GLCinLean.Infinity.rightAdjoint', 'GLCinLean.Infinity.compactGeneration']
+source = '[GLC1] §§1.4.2, 1.4.5; [CompactGeneration] §1.2'
