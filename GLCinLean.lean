@@ -5,6 +5,7 @@ Authors: The GLCinLean contributors, Claude Opus 5.5, GPT-6, Claude Fable 5.2
 -/
 module
 
+public import GLCinLean.CategoryTheory.Monoidal.TensorPow
 public import GLCinLean.Placeholder
 public import GLCinLean.Statement.Enhanced
 public import GLCinLean.Statement.Conjecture
