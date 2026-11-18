@@ -1,6 +1,6 @@
 # Review
 
-**Goal.** Check that the Lean definitions mean what the papers say. It is run by an agent that did not write the code: a fresh session, or a subagent that another session starts. It only reads the Lean files, and writes a report.
+**Goal.** Check that the Lean definitions mean what the papers say.
 
 **Done when**
 - each item in scope has a verdict: *agree*, *same object, different presentation*, *mismatch* or *unsure*, with the exact lines of the Lean code and of the paper. The scope is what the calling session names, from these kinds: definitions (planned ones and helpers), the statement of the main theorem, and the statements of theorems that serve as evidence for a definition (examples, characterisations, independence of a choice). If the session names nothing, the scope is the items of these kinds that changed since the last reviewed commit, which `STATUS.md` names;
