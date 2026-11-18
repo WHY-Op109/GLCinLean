@@ -47,7 +47,7 @@ universe u
 /-- Standing geometric data for [GLC1] §§1.1–1.3: a smooth proper connected curve,
 a pinned reductive group, a theta characteristic and an identified Langlands dual group.
 The theta characteristic is a line bundle together with its squaring isomorphism. -/
-@[placeholder] structure Setting (k : Type u) [Field k] [CharZero k] [IsAlgClosed k] where
+@[placeholder] structure Setting (k : Type u) [Field k] where
   /-- The curve. -/
   X : Scheme.{u}
   [over : X.Over (Spec (.of k))]
@@ -71,42 +71,46 @@ The theta characteristic is a line bundle together with its squaring isomorphism
 
 attribute [instance] Setting.over Setting.smooth Setting.proper Setting.connected
 
-variable {k : Type u} [Field k] [CharZero k] [IsAlgClosed k]
+variable {k : Type u} [Field k]
 
 /-- The DG category `QCoh(LS_Ǧ)` of quasi-coherent sheaves on the derived stack of de Rham
 local systems ([GLC1] §§0.1.1, 1.2.2). -/
-@[placeholder] opaque QCohLS (S : Setting k) : DGCat k
+@[placeholder] opaque QCohLS [CharZero k] [IsAlgClosed k] (S : Setting k) : DGCat k
 
 /-- The DG category `Dmod_½(Bun_G)` of half-twisted D-modules on `Bun_G`
 ([GLC1] §§1.1.1–1.1.5). The twist is the gerbe of square roots of `det_BunG`; the chosen
 theta characteristic trivializes it. -/
-@[placeholder] opaque DmodHalf (S : Setting k) : DGCat k
+@[placeholder] opaque DmodHalf [CharZero k] [IsAlgClosed k] (S : Setting k) : DGCat k
 
 /-- Ind-coherent sheaves with nilpotent singular support on the derived local-system stack,
 with their standard t-structure ([GLC1] §1.6.3; [ArinkinGaitsgory] §11.1.5). -/
-@[placeholder] opaque IndCohNilp (S : Setting k) : TStructuredDGCat k
+@[placeholder] opaque IndCohNilp [CharZero k] [IsAlgClosed k] (S : Setting k) :
+    TStructuredDGCat k
 
 /-- The continuous coarsening functor `Ψ_Nilp,{0} : IndCoh_Nilp(LS_Ǧ) → QCoh(LS_Ǧ)`
 ([GLC1] §1.6.3; [ArinkinGaitsgory] Prop. 4.4.5). -/
-@[placeholder] opaque Psi (S : Setting k) : DGFun (IndCohNilp S).toDGCat (QCohLS S)
+@[placeholder] opaque Psi [CharZero k] [IsAlgClosed k] (S : Setting k) :
+    DGFun (IndCohNilp S).toDGCat (QCohLS S)
 
 /-- The DG category `Rep(Ǧ)_Ran`: the de Rham version of the category `Rep(Ǧ)` spread over
 the Ran space of the curve ([GLC1] §1.2.1; [GaitsgoryOutline] §4.2). -/
-@[placeholder] opaque RepRan (S : Setting k) : DGCat k
+@[placeholder] opaque RepRan [CharZero k] [IsAlgClosed k] (S : Setting k) : DGCat k
 
 /-- The spectral localization functor `Loc_Ǧ^spec : Rep(Ǧ)_Ran → QCoh(LS_Ǧ)`
 ([GLC1] §1.2.2; [GaitsgoryOutline] §4.3). -/
-@[placeholder] opaque Loc (S : Setting k) : DGFun (RepRan S) (QCohLS S)
+@[placeholder] opaque Loc [CharZero k] [IsAlgClosed k] (S : Setting k) : DGFun (RepRan S) (QCohLS S)
 
 /-- The Hecke action of `Rep(Ǧ)_Ran` on `Dmod_½(Bun_G)`, defined by the naive geometric
 Satake functor and the Hecke functors ([GLC1] §1.2.1), on a fixed object `M`:
 the continuous functor `V ↦ V ⋆ M`. -/
-@[placeholder] opaque heckeActionRight (S : Setting k) (M : (DmodHalf S).Obj) :
-    DGFun (RepRan S) (DmodHalf S)
+@[placeholder] opaque heckeActionRight [CharZero k] [IsAlgClosed k] (S : Setting k)
+    (M : (DmodHalf S).Obj) : DGFun (RepRan S) (DmodHalf S)
 
 /-- The vacuum Poincaré object `Poinc^{Vac,glob}_{G,!} = 𝔭_! χ^*(exp)` of `Dmod_½(Bun_G)`
 ([GLC1] §1.3.7). -/
-@[placeholder] opaque vacuumPoincare (S : Setting k) : (DmodHalf S).Obj
+@[placeholder] opaque vacuumPoincare [CharZero k] [IsAlgClosed k] (S : Setting k) : (DmodHalf S).Obj
+
+variable [CharZero k] [IsAlgClosed k]
 
 /-- The two characterizing properties of [GLC1] Cor. 1.6.5, for a continuous functor `F`
 from `Dmod_½(Bun_G)` to `IndCoh_Nilp(LS_Ǧ)`.
