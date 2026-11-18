@@ -9,7 +9,7 @@ lintDriver = "batteries/runLinter"
 weak.linter.mathlibStandardSet = true
 
 # Tau Ceti at a fixed commit of its `main`; Mathlib and Lean come through Tau Ceti. The pin moves
-# only by the owner's decision or when merged Tau Ceti contributions are needed (`AGENTS.md`).
+# as "Builds" in `AGENTS.md` says.
 [[require]]
 name = "TauCeti"
 git = "https://github.com/TauCetiProject/TauCeti"
