@@ -12,13 +12,13 @@ The one snapshot of what Mathlib, Tau Ceti and the Tau Ceti roadmaps supply to t
 | TauCetiRoadmap main | `7342e8fdd66944f4b6774ca84fc3ba304b4f7299`, for the provider check and the target titles in `plans/Roadmap/` | 2026-11-13 |
 | TauCetiWorker main | `d981e0aafb21357ec31ab7de5f0aa8b06f45c0d4` (the flags `--roadmap-only` and `--extra-roadmap-prompt` are unchanged) | 2026-11-13 |
 
-The previous snapshot (2026-11-10) was Tau Ceti main `7a6772d920699412927989888cd1c7b61ac67cee`, TauCetiRoadmap main `651d08225204b26a3ef0ce99599ae7c006dc734e` (titles at `4ec889e8f0480e2cdb21a524eb76e48215c9ad94`) and TauCetiWorker `f65aafb2ed0c93c31f2be3ecdc4fc01ee57c439a`. The audit of 2026-11-13 (`notes/audit-2026-11-13.md`) compared against it.
+The previous snapshot (2026-11-10) was Tau Ceti main `7a6772d920699412927989888cd1c7b61ac67cee`, TauCetiRoadmap main `651d08225204b26a3ef0ce99599ae7c006dc734e` (titles at `4ec889e8f0480e2cdb21a524eb76e48215c9ad94`) and TauCetiWorker `f65aafb2ed0c93c31f2be3ecdc4fc01ee57c439a`. The audit of 2026-11-13 compared against it.
 
 Tau Ceti's `AGENTS.md` and `COORDINATION.md` (at the pin) say that new mathematics must advance an existing roadmap target or its genuine prerequisite, and that an agent opens no new roadmap pull request or issue. Contributions go through the Worker, from the fork `WHY-Op109/TauCeti`.
 
 ## Upstream declarations the plan uses
 
-These exist. The node that uses one names it and its module in its `desc`. The note says where it falls short of the paper's object. All are at the pin since the pin move of 2026-11-16. All 45 Tau Ceti rows of the audit were checked on 2026-11-13: each still exists on Tau Ceti main in the same module. The review of `b8587fb` (`notes/reviews/b8587fb.md`) added the rows of `derivedGroupScheme`, `standardPinning` and the projective line. The rows marked "(no node names it yet)" were found on 2026-11-13 and supply nodes that the plan still plans (`notes/audit-2026-11-13.md`).
+These exist. The node that uses one names it and its module in its `desc`. The note says where it falls short of the paper's object. All are at the pin since the pin move of 2026-11-16. All 45 Tau Ceti rows of the audit were checked on 2026-11-13: each still exists on Tau Ceti main in the same module. The review of `b8587fb` added the rows of `derivedGroupScheme`, `standardPinning` and the projective line. The rows marked "(no node names it yet)" were found on 2026-11-13 and supply nodes that the plan still plans (`notes/audit-2026-11-13.md`).
 
 | Declaration | Module | Note |
 |---|---|---|

@@ -13,7 +13,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Subagents
 
-- The main agent gives each subagent its goal, its brief (`lake exe tracker show <module>` for a module, `prompts/review.md` for a review), the sources it needs, the expected scope and the expected time. A subagent that writes code works in its own git worktree, and its work is squash-merged as one commit.
+- The main agent gives each subagent its goal, its brief, the sources it needs, the expected scope and the expected time. A subagent that writes code works in its own git worktree, and its work is squash-merged as one commit.
 - A subagent may finish without completing its task if the task is ill-specified, impossible, or far larger than expected, and may raise suspicions about its task or nearby code.
 
 ## Plan
