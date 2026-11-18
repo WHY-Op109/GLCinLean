@@ -5,7 +5,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 ## Writing
 
 - Use plain, understandable, structured words in all text. Use one term for each concept.
-- In text that agents read (`AGENTS.md`, `prompts/`, `STATUS.md`, the plan, `docs/`, and the briefs given to subagents), state the current facts, the actions to take, and the reasons needed to act. Leave out who the text is for or not for, what it replaces, how it came about, and what changed since an earlier version. Keep what the next session needs: the questions waiting for the owner, the decisions still in force, and the last checked and audited commits.
+- In text that agents read (`AGENTS.md`, `prompts/`, `.claude/agents/`, `STATUS.md`, the plan, `docs/`, and the briefs given to subagents), state the current facts, the actions to take, and the reasons needed to act. Leave out who the text is for or not for, what it replaces, how it came about, and what changed since an earlier version. Keep what the next session needs: the questions waiting for the owner, the decisions still in force, and the last checked and audited commits.
 - In Lean doc comments and comments, follow Mathlib's [documentation style](https://mathlib.org/contribute/doc.html), and:
   - every definition has a doc comment;
   - a doc comment that uses a paper cites its bracketed key of `docs/references.bib` and the paper's own numbering;
@@ -14,13 +14,32 @@ A Lean library for geometric representation theory, on which a faithful statemen
   - the doc comment of a placeholder states the object it stands for;
   - doc comments and comments describe the code as it is: no status text, work history, or mention of agents, sessions, the plan or reviews.
 
-## Prompts
+## Workflow
 
-- `prompts/work.md`: a session that implements the plan. Its step 3 says how it chooses the work.
-- `prompts/check.md`: a fresh agent checks each change of a work session, on a local commit, before the change goes to `main` or to the owner.
-- `prompts/audit.md`: a session of its own, when the owner asks for one, before the first placeholder is replaced, when a Tau Ceti roadmap that owns plan nodes is merged, changed or replaced, and otherwise after about ten work sessions.
-- `prompts/clean.md`: the owner starts a cleanup session. An audit may recommend one.
-- The session that updates `STATUS.md` records in "Next" the next task and any audit that is due.
+- The first goal is the faithful formalisation of the definitions: every placeholder of the statement is replaced by a real definition, and the done check passes.
+- A session that is asked to run the workflow repeats these steps in order, until the first goal is reached or no step can continue:
+  1. `prompts/start.md`: bring the Tau Ceti workers in line with the plan, fold in merged upstream work, and write each ready module.
+  2. `prompts/check.md`: a checker checks each commit of step 1 before the push.
+  3. `prompts/change.md`: for each line of work where the plan is blocked or needs a big change.
+  4. `prompts/audit.md`: when an audit is due: before the first placeholder is replaced, when a Tau Ceti roadmap that owns plan nodes is merged, changed or replaced, and otherwise after about ten passes.
+  5. `prompts/clean.md`: after an audit that names files or text that are no longer needed.
+- No step can continue when every open module is held, waits for the owner, or waits for a Tau Ceti pull request that no worker can advance. The session then records the state in `STATUS.md` and reports to the owner. While only the workers have work, the session waits for the monitor and then repeats the steps.
+- The plan says what to formalise: `lake exe tracker ready` lists the modules that can be written now, and `lake exe tracker show <module>` is the brief of one. A module under `GLCinLean.` is written here. A module under `Roadmap.<area>.` is a target of the Tau Ceti Worker. `STATUS.md` records the state: the checked and audited commits, the pins, the workers and their pull requests, the held nodes, the open items, the questions for the owner, and the decisions in force.
+- The roles. The owner starts the session on Fable 5.2 at high effort. The definitions in `.claude/agents/` set the model and the effort of each subagent, so the session passes neither when it starts one.
+
+  | Role | Model, effort | Task |
+  |---|---|---|
+  | Session | Fable 5.2, high | Coordinates: chooses the work, starts the other roles, merges their results and keeps `STATUS.md` current. It writes no module itself. |
+  | Planner | Fable 5.2, high | Solves a problem that a writer hands over, proposes a big change (`prompts/change.md`), and runs the audit. |
+  | Writer | Opus 5.5, high | Writes one ready module. Modules that do not depend on each other have writers in parallel. A writer that fails twice on the same goal hands the problem to the planner. |
+  | Checker | Fable 5.2, high | Checks one commit or branch with `prompts/check.md`. |
+  | Blind reader | Opus 5.5, high | Gives the checker its blind reading. |
+  | Searcher | Opus 5.5, medium | Searches Mathlib and Tau Ceti, and does other tasks with a clear scope. |
+  | Codex | its most capable model, high | The second checker of a big change, read-only (`codex exec`). |
+  | Author workers | Opus 5.5, high (`--agent claude`) | One persistent Tau Ceti worker for each roadmap area with a ready module: the `roadmap` phase only, pinned to that area, guided to the targets of `lake exe tracker show`. |
+  | Maintenance worker | `--agent auto` | One persistent Tau Ceti worker with the Worker's default phases except `roadmap`: it repairs and rebases our pull requests first, and then reviews pull requests of other contributors. |
+  | Monitor | no model | A background shell task that watches the workers and our pull requests, and wakes the session when one merges, fails or stops. |
+- The workers act as the owner's GitHub account, from the fork `WHY-Op109/TauCeti`, under Tau Ceti's `AGENTS.md` and `COORDINATION.md`. The Worker's README (https://github.com/TauCetiProject/TauCetiWorker) is the authority on its commands. A target that the roadmap's generated `STATUS.md` lists as done is already in Tau Ceti and is not a target.
 
 ## Sources of code
 
@@ -38,21 +57,23 @@ A Lean library for geometric representation theory, on which a faithful statemen
 - Once a declaration exists, the Lean code and its doc comment are the truth.
 - `plans-proof/` holds the nodes that only the proof of the main theorem needs (`plans-proof/README.md`). The tracker does not read it, and no node in `plans/` depends on it.
 - The tracker counts a placeholder as proved, since it has no `sorry`. Remaining placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`.
+- A node of `plans/Roadmap/` is deleted only when its declaration is at the pin, its interface is checked, and a checker has checked its meaning. In the same commit, the nodes that used it name the upstream declaration and its module in their `desc`.
+- Before a commit that changes the plan or adds a module, `lake exe tracker lint` has no errors and `python3 tools/check-module-cycles.py` finds no cycle.
 
 ## Small and big changes
 
 - Correct the nodes needed for the current work: the nodes a session is about to write and the nodes these use. Leave the other nodes until the work reaches them.
 - A session makes small changes itself and names each one in its commit message. Small changes are: the wording, `deps` or `source` of a node; splitting, merging or moving modules; a new helper declaration or node; a lemma stated in a form that still proves what it is used for; a rename, with every use updated.
-- A big change needs the owner's decision, even when it only edits a node's `desc`, `deps` or `source`. Big changes are:
+- A big change is made with `prompts/change.md`, even when it only edits a node's `desc`, `deps` or `source`. Big changes are:
   - any change to `GLCinLean/Statement/`;
   - a change to the meaning of a definition that the statement uses or will use (the object it is, its generality or its hypotheses), unless a check with `prompts/check.md` finds its meaning unchanged;
   - a change of route: a different construction or source for an object, or a claim of the source that the plan drops or cannot prove;
   - dropping or weakening a theorem or an example that the plan asks for;
   - a change of provider: work moved between this project and Tau Ceti;
-  - the removal of a planned definition (a roadmap node whose declaration is now at the pin is removed as `prompts/work.md` says), and holding or releasing a node under "Held" in `STATUS.md`.
-- When unsure whether a change is big, treat it as big. A change that the owner has already decided, as `STATUS.md` records it, needs no new decision within that scope.
+  - the removal of a planned definition (a roadmap node whose declaration is now at the pin is removed as "Plan" says), and holding or releasing a node under "Held" in `STATUS.md`.
+- When unsure whether a change is big, treat it as big. A change within the scope of a decision that `STATUS.md` records needs no new agreement.
 - A node found false or unprovable as stated is marked `wrong`, with the reason (`tools/tracker/README.md`). Changing its claim is a big change.
-- For a big change, or a change with an open *mismatch* or *unsure* verdict, the session stops that line of work. It writes the question under "Waiting for the owner" in `STATUS.md`, in at most ten lines: what and why, the options, and its recommendation. The change, its check report and any code go on a branch `proposal/<topic>`, which the question names; `main` gets the change only after the owner's decision. The session then continues with other ready work.
+- For a big change, or a *mismatch* or *unsure* verdict that the writer cannot fix, the session stops that line of work and runs `prompts/change.md` on it. The planner proposes the change on a branch `proposal/<topic>`, and Codex checks it, until both agree that the change is right by the papers, by Mathlib's principles and by this file. The session then applies it and records it under "Decisions taken" in `STATUS.md`. Without agreement after three rounds, the question goes under "Waiting for the owner". The session continues with the other ready work.
 
 ## Lean code
 
@@ -62,6 +83,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 - Read every statement adversarially: check quantifiers, the direction of implications and degenerate cases (empty, zero). In the statement and in every definition it reaches, never move a conclusion into a hypothesis or a structure field, use a `True`-like stand-in, or weaken a statement to make it provable or to remove a placeholder: each of these makes the statement weaker than the paper's. A lemma used in a proof may be weaker than the paper's, as long as it still proves what it is used for. A new `Prop`-valued definition needs a theorem that uses it or an example where it holds non-trivially.
 - Use the natural generality: the weakest assumptions and the weakest structure the mathematics needs, the general result first and special cases from it. No unused or over-strong hypotheses or instances, and no abstraction that nothing uses.
 - Give each definition the API that lets other files use it without unfolding it, including its universal property where it has one. Bundle a named concept instead of repeating its assumptions, and instantiate the Mathlib structures that emerge (module, ring, topology).
+- Give each new definition examples or test lemmas that show it behaves as expected.
 - Put each declaration in its canonical home, in subject folders as in Mathlib: one concept per file, under 1,000 lines, with minimal imports (never `import Mathlib`).
 - Prefer robust automation (`simp`, `grind`, `omega`) to long rewrite chains, and split long proofs into lemmas.
 - A theorem's name spells its conclusion. Never name a declaration after its source; the source goes in the doc comment.
@@ -71,8 +93,8 @@ A Lean library for geometric representation theory, on which a faithful statemen
 ## The statement
 
 - The only `sorry` is the proof of the main theorem. Everything the statement uses (definitions, instances, lemmas, well-definedness) is fully proved. The conjecture is stated through the characterisation of `𝕃_G`: a functor with the two properties of [GLC1] Cor. 1.6.5 exists, and every such functor is an equivalence. The second property is stated with the Hecke action of `Rep(Ǧ)_Ran`, which needs no action of `QCoh(LS_Ǧ)`. By [GLC1] Thm. 1.2.4 it is the paper's property in an equivalent form for the underlying functors of ∞-categories.
-- An object not defined yet is a placeholder: an `opaque`, or a definition built over one, marked `@[placeholder]` (`GLCinLean/Placeholder.lean`); its doc comment follows "Writing". Placeholders live only in the statement, never in the library or in code meant for Tau Ceti: library code must be real mathematics, or a gap would hide below the statement. One is replaced only together with examples that show the new definition behaves as expected.
-- A fresh agent checks every new or changed definition, planned or helper, with `prompts/check.md`. A *mismatch* or *unsure* verdict goes to the owner, as "Small and big changes" says.
+- An object not defined yet is a placeholder: an `opaque`, or a definition built over one, marked `@[placeholder]` (`GLCinLean/Placeholder.lean`); its doc comment follows "Writing". Placeholders live only in the statement, never in the library or in code meant for Tau Ceti: library code must be real mathematics, or a gap would hide below the statement. One is replaced only together with examples that show the new definition behaves as expected. It is replaced only when every node below it is proved and none of them is a placeholder (`lake exe tracker show <id>`), and together with the examples of the plan that rule out a trivial reading.
+- A checker checks every new or changed definition, planned or helper, with `prompts/check.md`. A *mismatch* or *unsure* verdict is handled as "Small and big changes" says.
 
 ## Builds
 
@@ -86,4 +108,4 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Git
 
-- Commit at each important step and push to `main` of `WHY-Op109/GLCinLean`. A change that waits for the owner's decision goes to its branch, as "Small and big changes" says.
+- Commit at each important step and push to `main` of `WHY-Op109/GLCinLean`. A big change stays on its branch `proposal/<topic>` until it is agreed, as "Small and big changes" says.
