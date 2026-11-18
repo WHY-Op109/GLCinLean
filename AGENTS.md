@@ -27,13 +27,15 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 - The plan is a guide, not a contract. It is corrected where the work reaches it: a session fixes the nodes it is about to write and the nodes these use. Nodes that no ready work needs are not reviewed or polished.
 - A session makes small changes itself and names each one in its commit message. Small changes are: the wording, `deps` or `source` of a node; splitting, merging or moving modules; a new helper declaration or node; a lemma stated in a form that still proves what it is used for; a rename, with every use updated.
-- A big change needs the owner's decision. Big changes are:
+- A big change needs the owner's decision, even when it only edits a node's `desc`, `deps` or `source`. Big changes are:
   - any change to `GLCinLean/Statement/`;
   - a change to the meaning of a definition that the statement uses or will use (the object it is, its generality or its hypotheses), unless a review with `prompts/review.md` finds its meaning unchanged;
   - a change of route: a different construction or source for an object, or a claim of the source that the plan drops or cannot prove;
+  - dropping or weakening a theorem or an example that the plan asks for;
   - a change of provider: work moved between this project and Tau Ceti;
-  - the removal of a planned definition, and holding or releasing a node under "Held" in `STATUS.md`.
-- When unsure whether a change is big, treat it as big.
+  - the removal of a planned definition (a roadmap node whose declaration is now at the pin is removed as `prompts/work.md` says), and holding or releasing a node under "Held" in `STATUS.md`.
+- When unsure whether a change is big, treat it as big. A change that the owner has already decided, as `STATUS.md` records it, needs no new decision within that scope.
+- A node found false or unprovable as stated is marked `wrong`, with the reason (`tools/tracker/README.md`). Changing its claim is a big change.
 - For a big change, the session stops that line of work. It writes the question under "Waiting for the owner" in `STATUS.md`, in at most ten lines: what and why, the options, and its recommendation. Details and any code go on a branch `proposal/<topic>`, which the question names. The session then continues with other ready work; it does not wait for the answer.
 
 ## Lean code
