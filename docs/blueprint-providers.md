@@ -6,9 +6,9 @@ The one snapshot of what Mathlib, Tau Ceti and the Tau Ceti roadmaps supply to t
 
 | Repository | Revision | Read on |
 |---|---|---|
-| Mathlib (pinned) | `e8ba86fa9744dd8d90f48c1752bc735f61a4ca81` | 2026-11-16 |
-| Tau Ceti (pinned) | `086028a6d8d186715b52fac7f3e7b23175ed2dc9` (Tau Ceti main of 2026-11-16, Lean `v4.36.0-rc2`) | 2026-11-16 |
-| Tau Ceti main, as last compared with the plan | `4d91513e4d30746eb1fa96658c18e051c772e55e` (Mathlib `2ddf59c8f1`); the 1,906 commits from it to the pin are not yet compared | 2026-11-13 |
+| Mathlib (pinned) | `048fffa1dbcd080d3058fab41d8c188168595c22` | 2026-11-18 |
+| Tau Ceti (pinned) | `91942aa9ff8cea04d0d9905b80f75c07ce2379c4` (Tau Ceti main of 2026-11-18, Lean `v4.36.0-rc2`) | 2026-11-18 |
+| Tau Ceti main, as last compared with the plan | `4d91513e4d30746eb1fa96658c18e051c772e55e` (Mathlib `2ddf59c8f1`); the 2,651 commits from it to the pin are not yet compared | 2026-11-13 |
 | TauCetiRoadmap main | `7342e8fdd66944f4b6774ca84fc3ba304b4f7299`, for the provider check and the target titles in `plans/Roadmap/` | 2026-11-13 |
 | TauCetiWorker main | `d981e0aafb21357ec31ab7de5f0aa8b06f45c0d4` (the flags `--roadmap-only` and `--extra-roadmap-prompt` are unchanged) | 2026-11-13 |
 
