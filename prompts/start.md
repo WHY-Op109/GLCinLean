@@ -7,5 +7,3 @@
 - each merged Tau Ceti pull request that supplies a plan node is folded in ("Plan" in `AGENTS.md`);
 - each ready module here is written, checked with `prompts/check.md` and pushed, or its line of work is with `prompts/change.md`;
 - `STATUS.md` records the state.
-
-**Rules.** `AGENTS.md` governs every step: "Workflow" for the roles and the choice of work; "Sources of code", "Lean code" and "Writing" for code; "The statement" for placeholders; "Plan" and "Small and big changes" for the plan; "Builds" and "Git" for checks and commits.

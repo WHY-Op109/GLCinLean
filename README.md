@@ -10,9 +10,9 @@ The statement is in `GLCinLean/Statement/`. Its main theorem says that a functor
 
 ## How the work runs
 
-Agents do the work. The owner starts a session with one line:
+Agents do the work. The owner starts a session on Fable 5.2, in auto mode, with one goal:
 
-    Run the workflow of `AGENTS.md` until the first goal is reached.
+    /goal Run the workflow of `AGENTS.md`. The goal is met when the session's reply shows either (a) that no `@[placeholder]` is left in `GLCinLean/Statement` and the done check passes, or (b) that every remaining line of work is under "Waiting for the owner" in `STATUS.md`.
 
 "Workflow" in [`AGENTS.md`](AGENTS.md) gives the first goal, the order of the steps, the roles with their models, and when the session stops. Each step has a prompt in `prompts/`:
 

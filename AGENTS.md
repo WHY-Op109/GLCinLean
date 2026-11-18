@@ -17,13 +17,13 @@ A Lean library for geometric representation theory, on which a faithful statemen
 ## Workflow
 
 - The first goal is the faithful formalisation of the definitions: every placeholder of the statement is replaced by a real definition, and the done check passes.
-- A session that is asked to run the workflow repeats these steps in order, one cycle after another, until the first goal is reached or no step can continue:
+- A session that is asked to run the workflow repeats these steps in order, one cycle after another:
   1. `prompts/audit.md`: when an audit is due: before the first placeholder is replaced, when a Tau Ceti roadmap that owns plan nodes is merged, changed or replaced, and otherwise after about ten cycles.
   2. `prompts/clean.md`: after an audit that names files or text that are no longer needed.
   3. `prompts/start.md`: bring the Tau Ceti workers in line with the plan, fold in merged upstream work, and write each ready module.
   4. `prompts/check.md`: a checker checks each commit of step 3 before the push.
   5. `prompts/change.md`: for each line of work where the plan is blocked or needs a big change, also when an audit finds it.
-- No step can continue when every open module is held, waits for the owner, or waits for a Tau Ceti pull request that no worker can advance. The session then records the state in `STATUS.md` and reports to the owner. While only the workers have work, the session waits for the monitor and then repeats the steps.
+- The session stops only when the first goal is reached, or when every remaining line of work is under "Waiting for the owner" in `STATUS.md`. While work waits only for Tau Ceti, the session waits for the monitor. At the end of each cycle the session records the state in `STATUS.md` and states in its reply: the number of placeholders left, the result of the done check, and each remaining line of work with what it waits for.
 - The plan says what to formalise: `lake exe tracker ready` lists the modules that can be written now, and `lake exe tracker show <module>` is the brief of one. A module under `GLCinLean.` is written here. A module under `Roadmap.<area>.` is a target of the Tau Ceti Worker. The nodes under "Held" in `STATUS.md` and the main theorem's module are left alone. `STATUS.md` records the state: the progress of the plan, the checked and audited commits, the last build checks, the pins, the workers and their pull requests, the held nodes, the open items, the questions for the owner, and the decisions in force.
 - The roles are in the table. The owner starts the session on Fable 5.2 at high effort. The definitions in `.claude/agents/` set the model and the effort of each subagent, so the session passes neither when it starts one.
 
@@ -39,17 +39,14 @@ A Lean library for geometric representation theory, on which a faithful statemen
   | Author workers | Opus 5.5, high (`agent = "claude"`) | Persistent Tau Ceti workers for the `roadmap` phase only, each pinned to one roadmap area with a ready module and guided to the targets of `lake exe tracker show`. The session decides how many run at once, from the plan and the quota. |
   | Maintenance worker | `agent = "auto"` | One persistent Tau Ceti worker with every phase of the Worker except `roadmap`: it repairs and rebases our pull requests first, and then reviews pull requests of other contributors. |
   | Monitor | no model | A background shell task that watches the workers and our pull requests, and wakes the session when one merges, fails or stops. |
+- The session gives each subagent its goal, its brief, the sources it needs, the expected scope and the expected time. Writers and the planner work in their own git worktrees, and the session squash-merges the work of each as one commit.
+- A subagent may finish without completing its task if the task is ill-specified, impossible, or far larger than expected, and may raise suspicions about its task or nearby code.
 - The workers act as the owner's GitHub account ("Sources of code"). The Worker's README (https://github.com/TauCetiProject/TauCetiWorker) is the authority on its commands. A persistent worker is an entry of the Worker's `workers.toml` with the fields `agent`, `only`, `roadmap_only`, `extra_roadmap_prompt` and `author_effort` (its `docs/workers.md`); `tauceti workers apply --check` validates the file, and `tauceti workers` shows the state. A target that the roadmap's generated `STATUS.md` lists as done is already in Tau Ceti and is not a target.
 
 ## Sources of code
 
 - Use Mathlib first, then Tau Ceti. Search both before defining anything, and before a proof longer than a few lines (its goal and its key steps): Mathlib at the pin, Tau Ceti at the pin and on its `main`.
-- Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`, from the fork `WHY-Op109/TauCeti`. The roadmap owns these parts, so a second copy here would compete with it. Everything else is written here.
-
-## Subagents
-
-- The session gives each subagent its goal, its brief, the sources it needs, the expected scope and the expected time. A subagent that writes code works in its own git worktree, and its work is squash-merged as one commit.
-- A subagent may finish without completing its task if the task is ill-specified, impossible, or far larger than expected, and may raise suspicions about its task or nearby code.
+- Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`, from the fork `WHY-Op109/TauCeti`. The roadmap owns these parts, so a second copy here would compete with it. Everything else is written here. Apart from the Tau Ceti workers, agents only read Tau Ceti and its roadmaps: they open no pull request, issue or comment there.
 
 ## Plan
 
@@ -58,6 +55,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 - `plans-proof/` holds the nodes that only the proof of the main theorem needs (`plans-proof/README.md`). The tracker does not read it, and no node in `plans/` depends on it.
 - The tracker counts a placeholder as proved, since it has no `sorry`. Remaining placeholders are found with `grep -rn '@\[placeholder\]' GLCinLean`.
 - A node of `plans/Roadmap/` is deleted only when its declaration is at the pin, its interface is checked, and a checker has checked its meaning. In the same commit, the nodes that used it name the upstream declaration and its module in their `desc`.
+- An error or a gap found in a paper, and a claim that is given up as too hard, is recorded in three places: the node (its `desc`, and `wrong` with the reason when its claim is false or unprovable as stated), the doc comment of the declaration once it exists, and one line in `docs/papers.md`, "Errors and gaps in the sources": the paper's key and number, what is wrong or missing, and the node id.
 - Before a commit that changes the plan or adds a module, `lake exe tracker lint` has no errors and `python3 tools/check-module-cycles.py` finds no cycle.
 
 ## Small and big changes
