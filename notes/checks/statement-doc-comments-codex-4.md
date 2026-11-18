@@ -1,0 +1,13 @@
+# Codex, round 4: `proposal/statement-doc-comments` at `46d13da`
+
+Run with `codex exec -s read-only`, model `gpt-6.2-astra`, high reasoning effort, on 2026-11-18. The prompt named the branch, the three earlier reports and the open objection of round 3. The report follows unchanged.
+
+**The round‑3 objection is resolved at `46d13da`.** Both revised passages in `RootDatumDuality` and the corresponding sentence in `Setting` now say that the geometric duality datum *need not* determine the dual group up to \(k\)-isomorphism. This allows uniqueness over a separably closed field, where every connected reductive group is split and its root datum determines its isomorphism class. It also preserves the uniqueness claimed over the algebraically closed field of the statement. [ConradRGS, Thm. 6.1.17](/Users/why/Documents/Projects/GLCinLean/references/papers/ConradRGS/src/luminysga3-excerpt.tex:158) · [ConradRGS, §7.1](/Users/why/Documents/Projects/GLCinLean/references/papers/ConradRGS/src/luminysga3-excerpt.tex:236)
+
+The revised real-torus example proves exactly the qualified claim. For \(G=\mathbb G_m\), both the split real torus and the norm-one torus of \(\mathbb C/\mathbb R\) have the required geometric based root datum. Complex conjugation acts on their character lattices by \(+1\) and \(-1\), respectively, which rules out an isomorphism over \(\mathbb R\). The comment describes the intended meaning of the opaque `RootDatumDuality` type. [Revised example and Lean declaration](/Users/why/Documents/Projects/GLCinLean/.claude/worktrees/agent-a37d90214460df396/GLCinLean/Statement/Conjecture.lean:139) · [ConradRGS, Rem. 7.1.2](/Users/why/Documents/Projects/GLCinLean/references/papers/ConradRGS/src/luminysga3-excerpt.tex:266)
+
+The pinning clause in `Setting` is also correct. `Setting.pinning` gives \(G\) a split maximal torus over \(k\), so \(G\) is split. The `dualGroup` field requires only a connected reductive group with a duality witness. This lets the real-torus example apply even with \(G\) pinned. [Setting fields](/Users/why/Documents/Projects/GLCinLean/.claude/worktrees/agent-a37d90214460df396/GLCinLean/Statement/Conjecture.lean:213) · [Tau Ceti’s pinning](/Users/why/Documents/Projects/GLCinLean/.lake/packages/TauCeti/TauCeti/Algebra/AlgebraicGroup/Pinning/Basic.lean:94)
+
+**Only comments changed in the three Lean files.** I compared each of the four commits individually with `6e2cc61` after stripping Lean comments. Every nonblank code line, including indentation, matched in `GLCinLean.lean`, `Conjecture.lean`, and `Enhanced.lean`. The only other files in the branch diff are four review reports. I made no file changes.
+
+No open objection
