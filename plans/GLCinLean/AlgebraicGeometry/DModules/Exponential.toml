@@ -3,6 +3,6 @@ desc = 'The exponential D-module on the additive group.'
 [[node]]
 id = 'GLCinLean.DModules.exponential'
 kind = 'definition'
-desc = 'Exponential D-module on the additive group, normalized in heart[-1], with add-star multiplicativity. Provider: here.'
-deps = ['GLCinLean.DModules.rightCrystals_equiv_dModules', 'GLCinLean.DModules.RightCrystals', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.shriekTensor']
+desc = 'Exponential D-module on the additive group, normalized in heart[-1], with add-star multiplicativity; it is holonomic (DModules.IsHolonomic). Provider: here.'
+deps = ['GLCinLean.DModules.rightCrystals_equiv_dModules', 'GLCinLean.DModules.RightCrystals', 'GLCinLean.Infinity.tStructure', 'GLCinLean.DModules.starPullback', 'GLCinLean.DModules.shriekTensor', 'GLCinLean.DModules.IsHolonomic']
 source = '[GLC1] §1.3.7'
