@@ -2,7 +2,8 @@
 # The monitor of the workflow (AGENTS.md, "Workflow"): it watches the Tau Ceti workers, our pull
 # requests in Tau Ceti and the watched pull requests of others. It prints the events and exits
 # when one of these happens, and its exit wakes the session:
-#   - a worker is not alive, has failed or has restarted, or the Worker's manager is offline;
+#   - an enabled worker is not alive, has failed or has restarted, or the Worker's manager is
+#     offline (a worker that workers.toml disables is not watched);
 #   - a pull request of ours is opened, merged or closed, or its CI fails;
 #   - a watched pull request is merged or closed;
 #   - no event happened for DAY_SECONDS (one day).
@@ -48,6 +49,9 @@ try:
     d = json.loads(run(["tauceti", "workers", "status", "--json"], 120))
     workers = {}
     for w in d.get("workers", []):
+        if w.get("desired") == "stopped":  # disabled in workers.toml: stopped on purpose
+            workers[w["id"]] = {"bad": False, "restarts": w.get("restart_count", 0)}
+            continue
         bad = (not w.get("alive")) or bool(w.get("failure_reason")) or w.get("actual") in (
             "failed", "stopped", "exited", "crashed")
         prev = (old or {}).get("workers", {}).get(w["id"], {})

@@ -1,0 +1,10 @@
+# Answers to Codex, round 4
+
+Codex's report is `notes/checks/tannakian-reconstruction-codex-4.md`. Its five objections of round 3 are resolved. It has four blocking objections, each with its replacement wording. The session applied the four replacements with Codex's wording. Before that it compared objection 2 with the declaration `TauCeti.ConvolutionDual` in the pinned `TauCeti/Algebra/HopfAlgebra/FiniteDual/Basic.lean`, and objection 3 with the "Dependencies" paragraph of Layer 6 in the README of MotivesAndAlgebraicCycles at TauCetiRoadmap `fe56342a`.
+
+- **Objection 1.** Proposal §5, "The counts": "one planned declaration outside `GLCinLean.Statement` is proved, `GLCinLean.CategoryTheory.tensorPowFunctor`".
+- **Objection 2.** "the linear dual with convolution multiplication when the input is a coalgebra", in five places: `plans/Roadmap/MotivesAndAlgebraicCycles/NeutralReconstruction.toml`; `docs/blueprint-providers.md`, the row of `TauCeti.ConvolutionDual` and the row of `Roadmap.MotivesAndAlgebraicCycles.NeutralReconstruction`; the proposal, §2.3 and the worker's guidance in §6.
+- **Objection 3.** `NeutralReconstruction.toml`: "Layer 5 supplies the diagram category and geometric comparison for the Nori applications in Layer 6." `docs/blueprint-providers.md`, the row of `Roadmap.MotivesAndAlgebraicCycles.NeutralReconstruction`, and the worker's guidance in §6 of the proposal: "the Nori applications use Layer 5". The proposal, §2.1, has the same correction in its own sentence.
+- **Objection 4.** Proposal §5, the open item on `SpectralProof.geometricCenter_operMap`: its last sentence is the sentence that Codex gives.
+
+A search of `plans/`, `plans-proof/`, `docs/`, the proposal and `GLCinLean.lean` finds no other sentence that states one of the four corrected claims. The words "with the convolution product" remain in clause (4) of `Tannaka.neutralReconstruction`, where they describe the group law on the algebra maps `B → R`. The worker's guidance has 3,991 characters after the replacements. No Lean file changed in this round.
