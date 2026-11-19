@@ -24,7 +24,7 @@ Agents do the work. The owner starts a session on Fable 5.2, in auto mode, with 
 | [`check.md`](prompts/check.md) | a checker judges each commit against the papers and the rules before the push |
 | [`change.md`](prompts/change.md) | a big change of the plan: the planner proposes, Codex checks, and the change is applied when both agree |
 
-[`AGENTS.md`](AGENTS.md) holds the rules every session follows: Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
+[`AGENTS.md`](AGENTS.md) holds the rules every session follows, for every agent ([`CLAUDE.md`](CLAUDE.md) imports it for Claude Code): Mathlib first, then Tau Ceti; parts on a Tau Ceti roadmap are contributed to Tau Ceti; Mathlib's style; and only one `sorry`, the proof of the main theorem.
 
 ## Layout
 
@@ -41,6 +41,9 @@ Agents do the work. The owner starts a session on Fable 5.2, in auto mode, with 
 | `tools/keep-workers-running.sh` | runs on the host of the Tau Ceti workers every half hour and starts the Worker's manager when it is not running |
 | `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |
 | `prompts/` | the prompts of the steps of the workflow |
+| `AGENTS.md` | the rules of the project, read by every agent |
+| `CLAUDE.md` | one line, `@AGENTS.md`: Claude Code reads `CLAUDE.md`, and this import gives it the same rules |
+| `STATUS.md` | the current state of the work |
 | `.claude/agents/` | the subagent roles of the workflow, each with its model and effort |
 | `docs/references.bib` | the papers cited, with their arXiv versions |
 | `docs/papers.md` | one line per paper on what it covers, and how to search its TeX |

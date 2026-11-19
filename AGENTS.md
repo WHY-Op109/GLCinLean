@@ -5,6 +5,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 ## Writing
 
 - Use plain, understandable, structured words in all text. Use one term for each concept.
+- This file holds every rule of the project, for every agent. `CLAUDE.md` only imports it for Claude Code, with the line `@AGENTS.md`: write each rule here, and none there.
 - In text that agents read (`AGENTS.md`, `prompts/`, `.claude/agents/`, `STATUS.md`, the plan, `docs/`, and the briefs given to subagents), state the current facts, the actions to take, and the reasons needed to act. Leave out who the text is for or not for, what it replaces, how it came about, and what changed since an earlier version. In `STATUS.md`, keep the state that "Workflow" lists.
 - In Lean doc comments and comments, follow Mathlib's [documentation style](https://mathlib.org/contribute/doc.html), and:
   - every definition has a doc comment;
