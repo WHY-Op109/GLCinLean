@@ -80,6 +80,14 @@ comment records the difference with its reason.
   does not carry out this descent for the categories over the powers of the curve.
 * [IndCoh] Theorem 5.6.3, on which the symmetric monoidal structure of the `!`-tensor product
   rests, is stated without proof.
+* [DG2] §§5.2.1–5.2.3: the de Rham direct image of D-modules along a quasi-compact map of DG
+  schemes locally almost of finite type is quoted from the classical theory; the introduction
+  of §5 calls this material well known at the level of triangulated categories. The functor of
+  ∞-categories on the correspondences of schemes, which holds the direct images, the
+  `!`-pullbacks and their base change together, is used without a construction: §5.2.3 states
+  that the literature had no reference for it when the paper was written. [Crystals] constructs
+  the pullback of crystals and leaves the direct image along a general map to a later work
+  (Introduction, §0.3).
 * [OneAffineness] Theorem 2.6.3: the gluing step over a finite affine open cover is left to the
   reader.
 * [CompactGeneration] §§1.1.7 and 1.2.2 identify detection of zero by degree-zero `Hom` from a
