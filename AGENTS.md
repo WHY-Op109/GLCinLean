@@ -25,13 +25,13 @@ A Lean library for geometric representation theory, on which a faithful statemen
   5. `prompts/change.md`: for each line of work where the plan is blocked or needs a big change, also when an audit finds it.
 - The session stops only when the first goal is reached, or when every remaining line of work is under "Waiting for the owner" in `STATUS.md`. While work waits only for Tau Ceti, the session waits for the monitor. At the end of each cycle the session records the state in `STATUS.md` and states in its reply: the number of placeholders left, the result of the done check, and each remaining line of work with what it waits for.
 - The plan says what to formalise: `lake exe tracker ready` lists the modules that can be written now, and `lake exe tracker show <module>` is the brief of one. A module under `GLCinLean.` is written here. A module under `Roadmap.<area>.` is a target of the Tau Ceti Worker. The nodes under "Held" in `STATUS.md` and the main theorem's module are left alone. `STATUS.md` records the state: the progress of the plan, the checked and audited commits, the last build checks, the pins, the workers and their pull requests, the held nodes, the open items, the questions for the owner, and the decisions in force.
-- The roles are in the table. The owner starts the session on Fable 5.2 at high effort. The definitions in `.claude/agents/` set the model and the effort of each subagent, so the session passes neither when it starts one.
+- The roles are in the table. The owner starts the session on Fable 5.2 at high effort. The definitions in `.claude/agents/` set the model and the effort of each subagent, so the session passes neither when it starts one. The one exception is the second writer on a goal, which the session starts at high effort.
 
   | Role | Model, effort | Task |
   |---|---|---|
   | Session | Fable 5.2, high | Coordinates: chooses the work, starts the other roles, merges their results and keeps `STATUS.md` current. It writes no module itself. |
   | Planner | Fable 5.2, high | Solves a problem that a writer hands over, proposes a big change (`prompts/change.md`), and runs the audit. |
-  | Writer | Opus 5.5, high | Writes one ready module. Modules that do not depend on each other have writers in parallel. A writer that fails twice on the same goal hands the problem to the planner. |
+  | Writer | Opus 5.5, medium; high for the second writer on a goal | Writes one ready module. Modules that do not depend on each other have writers in parallel. A writer that fails twice on the same goal returns the goal. The session then starts one writer at high effort on that goal. When this writer fails too, the problem goes to the planner. |
   | Checker | Fable 5.2, high | Checks one commit or branch with `prompts/check.md`. |
   | Blind reader | Opus 5.5, high | Gives the checker its blind reading. |
   | Searcher | Opus 5.5, xhigh | Searches Mathlib and Tau Ceti deeply, so that nothing they have is written again, and does other tasks with a clear scope. |
