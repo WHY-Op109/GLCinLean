@@ -4,7 +4,7 @@ desc = 'Commutative differential-graded D-algebras and central coefficients on a
 id = 'GLCinLean.DModules.commutativeDAlgebra'
 kind = 'definition'
 desc = 'Commutative unital DG algebras in left D_X-modules, with their right-D-module chiral realization. A central chiral R-module is a DG module over R^l[D_X]; include its scalar extension and the graded square-zero D-algebra R{M} with degree-zero part R and degree-one part M[-1]. Provide the equivalence with the corresponding commutative factorization algebra/module and its unit data. Provider: here, over the operadic algebras of roadmap EnhancedDerivedSheaves.'
-deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.Derived.commutativeAlgebra', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Infinity.moduleCategory']
+deps = ['GLCinLean.DModules.RightCrystals', 'GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.Infinity.moduleCategory']
 source = '[BDChiral] §§2.2, 3.3, 4.2.19 and 4.6.3; [GLC2] §§C.8–C.9'
 
 [[node]]

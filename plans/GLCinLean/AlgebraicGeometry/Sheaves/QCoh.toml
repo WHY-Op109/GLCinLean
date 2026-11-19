@@ -4,7 +4,7 @@ desc = 'Quasi-coherent sheaves on derived prestacks, and their global sections.'
 id = 'GLCinLean.Sheaves.QCoh'
 kind = 'definition'
 desc = 'Enhanced quasicoherent sheaves: derived modules on affines, extended by descent; symmetric monoidal structure and pullbacks. Provider: here, by right Kan extension from `Derived.affineModules`. Roadmap EnhancedDerivedSheaves does not own QCoh on prestacks.'
-deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Infinity.linearCategory', 'GLCinLean.Derived.affineModules', 'GLCinLean.Sheaves.schemeQCoh']
+deps = ['GLCinLean.Derived.Prestack', 'GLCinLean.Infinity.linearCategory', 'GLCinLean.Infinity.rightKanExtension', 'GLCinLean.Derived.affineModules', 'GLCinLean.Sheaves.schemeQCoh']
 source = '[IndCoh] §0.6.7'
 
 [[node]]

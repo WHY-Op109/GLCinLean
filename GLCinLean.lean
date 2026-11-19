@@ -66,6 +66,18 @@ comment records the difference with its reason.
 * Reformulation, in `Setting`: the groups $G$ and $\check G$ are given by their coordinate Hopf
   algebras (`TauCeti.ReductiveCommHopfAlgCat`).
 
+### Differences in the definitions that the statement uses
+
+* Reformulation of the derived affine tests for $\mathrm{LS}_{\check G}$, the stack of de Rham
+  $\check G$-local systems of [GLC1] §0.1.1 named in the doc comments of `QCohLS` and
+  `IndCohNilp`. This stack can be evaluated on spectra of animated commutative $k$-algebras.
+  [AGKRRV] §0.9.6 uses
+  the connective commutative algebra objects of $\mathrm{Vect}_k$, and [Crystals] §0.6.4 uses the
+  connective commutative DG algebras. Over the ground field, which has characteristic $0$, these
+  models are equivalent by [LurieHA] Theorem 7.1.2.13, Propositions 7.1.4.11 and 7.1.4.20 and
+  Warning 7.1.4.21. Animation gives the category of the affine schemes without the derived tensor
+  product and without module categories.
+
 ### Errors and gaps found in the sources
 
 * [RaskinCPSI] §6.10: the proof that the factorization functors of the category `C_{X^I}` are

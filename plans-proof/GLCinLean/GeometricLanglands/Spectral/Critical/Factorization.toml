@@ -4,7 +4,7 @@ desc = 'Unital factorization categories and their global sections needed for cri
 id = 'GLCinLean.SpectralProof.factorizationCategory'
 kind = 'definition'
 desc = 'Unital sheaf of presentable stable categories on the Ran space, with coherent factorization on disjoint configurations; include lax-unital functors and independent categories. Provider: here.'
-deps = ['GLCinLean.Ran', 'GLCinLean.Infinity.presentableCategory', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits']
+deps = ['GLCinLean.Ran', 'GLCinLean.Infinity.presentableCategory', 'GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.linearCategory', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits']
 source = '[GLC2] §§C.6–C.8, H.1'
 
 [[node]]
