@@ -3,8 +3,8 @@ desc = 'Infinite-type and Ran inputs used by oper localization. No LAFT category
 [[node]]
 id = 'GLCinLean.SpectralProof.opers_indPlacid'
 kind = 'theorem'
-desc = 'Regular opers are inverse limits of smooth finite-type quotients of the relevant Tate vector space; meromorphic opers are a pro-smooth torsor over the Laurent/arc quotient and hence ind-placid. Prove LSreg→LSmer is ind-closed locally almost of finite presentation and transfer ind-placidity to monodromy-free opers by its Cartesian square. Retain the relative versions on smooth finite-power charts of Ran. Provider: here.'
-deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation', 'GLCinLean.LoopGroups.LoopGroup']
+desc = 'Regular opers are inverse limits of smooth finite-type quotients of the relevant Tate vector space; meromorphic opers are a pro-smooth torsor over the Laurent/arc quotient and hence ind-placid. Prove LSreg→LSmer is ind-closed locally almost of finite presentation and transfer ind-placidity to monodromy-free opers by its Cartesian square. Retain the relative versions on smooth finite-power charts of Ran. The Laurent/arc quotient is the quotient of the loops by the arcs into the vector bundle 𝔞(ǧ)_{ω_X} on X: the centralizer of a regular nilpotent element, twisted by ω_X through its grading ([GLC2] §§3.1.7 and 3.2.4). This bundle can be non-constant along X, and in general it has no specified trivialization; on an elliptic curve an invariant differential trivializes it. LoopGroups.RanLoopGroup states the loops and arcs into a constant target only. This node constructs the loops and arcs into this vector bundle: as the maps over X from the discs, with the map from the disc to S × X of LoopGroups.RanLoopGroup (1), or from the constant case over the opens of X on which ω_X is trivialized, glued by the transition functions of ω_X. Provider: here.'
+deps = ['GLCinLean.SpectralProof.localOpers', 'GLCinLean.Derived.indPlacid_of_locallyAlmostFinitePresentation', 'GLCinLean.LoopGroups.LoopGroup', 'GLCinLean.LoopGroups.RanLoopGroup']
 source = '[GLC2] §§3.2.2–3.2.6 and B.7.12–B.7.13; Corollary A.9.10'
 
 [[node]]
