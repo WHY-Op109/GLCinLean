@@ -1,5 +1,0 @@
-The four lines at [GLCinLean.lean:71](/Users/why/Documents/Projects/GLCinLean/.claude/worktrees/agent-afc55e3f8063f3e42/GLCinLean.lean:71) match the round-four replacement byte for byte.
-
-The full entry follows `AGENTS.md`’s Writing rules. It identifies the reformulation and its reason, cites the relevant sections, and refers to the stack through the doc comments of `QCohLS` and `IndCohNilp`. The wording “can be evaluated” states the mathematical fact accurately for those opaque declarations. The cited equivalences justify the change of affine tests over the characteristic-zero ground field. [GLC I §0.1.1](https://arxiv.org/html/2405.03599v3), [AGKRRV §0.9.6](https://arxiv.org/pdf/2010.01906v2#page=22), [Crystals §0.6.4](https://arxiv.org/pdf/1111.2087v4#page=11), [Higher Algebra §7.1](https://www.math.ias.edu/~lurie/papers/HA.pdf)
-
-I have no open blocking objection: the change can be applied to main.
