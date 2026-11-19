@@ -21,7 +21,7 @@ All were opened on 2026-11-19 or later, and none is merged. The session compares
 
 | Worker | Pull requests | Plan node they serve |
 |---|---|---|
-| `author-infinity` | #44138 (fully faithful maps of quasicategories reflect equivalences), #44184 (two-sided mapping spaces and their comparison with the right mapping spaces), #44191 (postcomposition with an edge on right mapping spaces) | `Infinity.mappingSpaces` |
+| `author-infinity` | #44138 (fully faithful maps of quasicategories reflect equivalences), #44184 (two-sided mapping spaces and their comparison with the right mapping spaces), #44191 (postcomposition with an edge on right mapping spaces), #44200 (equivalences in functor quasicategories are detected pointwise) | `Infinity.mappingSpaces` |
 | `author-tannaka` | #44139 (finite comodules satisfy the hypotheses of neutral reconstruction), #44190 (the endomorphism algebra of the fibre functor on the subquotient hull of an object), #44197 (antipodes from rigidity of finite comodules) | `Tannaka.neutralReconstruction` |
 | `author-groups` | #44140 (the sum of the positive coroots as a cocharacter), #44188 (the functor of points from schemes to topological spaces), #44193 (projective schemes over a complex algebra are proper on complex points) | `Groups.twoRho`; `Constructible.ComplexPoints` |
 | `author-stacks` | #44141 (the Kummer sequence on the big étale site), #44196 (the 2-fibre product of stacks over a site) | `Etale.kummer_shortExact`; `Stacks.stackification` |
