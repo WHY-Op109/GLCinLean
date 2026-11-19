@@ -1,8 +1,0 @@
-desc = 'Coherent diagrams and their limits in enhanced categories. Owner: the Tau Ceti roadmap BordismFormalGroups.'
-
-[[node]]
-id = 'GLCinLean.Infinity.limits'
-kind = 'definition'
-desc = 'Small limits and colimits characterized by mapping-space universal properties. Provider: roadmap BordismFormalGroups, “Coherent model diagrams and stable enhancements”.'
-deps = ['GLCinLean.Infinity.mappingSpaces']
-source = '[IndCoh] §§0.6.2–0.6.4'

@@ -1,0 +1,15 @@
+desc = 'Continuous linear functors between module categories, and linear equivalences. Owner: the Tau Ceti roadmap GeneralizedCohomology, G2.11 “Enriched, quasicategorical and monoidal foundations”.'
+
+[[node]]
+id = 'GLCinLean.Infinity.continuousLinearFunctor'
+kind = 'definition'
+desc = 'Colimit-preserving coherent module functors and their natural equivalences; composition, identities and mapping spaces. Provider: roadmap GeneralizedCohomology, G2.11, “Categorical model and functor spaces” and the monoidal/fibration sub-lane inside “Coherent model diagrams and stable enhancements”, with roadmap EnhancedDerivedSheaves “Algebras, modules and the monoidal envelope”.'
+deps = ['GLCinLean.Infinity.linearCategory', 'GLCinLean.Infinity.moduleCategory', 'GLCinLean.Infinity.limits']
+source = '[GLC1] Corollary 1.6.5 and Proposition 1.7.2'
+
+[[node]]
+id = 'GLCinLean.Infinity.linearEquivalence'
+kind = 'definition'
+desc = 'Two-sided inverses up to coherent natural equivalence; equivalent to categorical full faithfulness and essential surjectivity. Provider: roadmap GeneralizedCohomology, G2.11, the monoidal/fibration sub-lane inside “Coherent model diagrams and stable enhancements”.'
+deps = ['GLCinLean.Infinity.continuousLinearFunctor']
+source = '[GLC1] Conjecture 1.6.7'

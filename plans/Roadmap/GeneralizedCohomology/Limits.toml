@@ -1,0 +1,8 @@
+desc = 'Coherent diagrams and their limits in enhanced categories. Owner: the Tau Ceti roadmap GeneralizedCohomology, G2.11 “Enriched, quasicategorical and monoidal foundations”.'
+
+[[node]]
+id = 'GLCinLean.Infinity.limits'
+kind = 'definition'
+desc = 'Small limits and colimits characterized by mapping-space universal properties. Provider: roadmap GeneralizedCohomology, G2.11, “Coherent model diagrams and stable enhancements”. In Tau Ceti: limit cones and colimit cocones of a diagram in a simplicial set, as terminal and initial vertices of the slice and the coslice, `SSet.slice.IsLimit` and `SSet.coslice.IsColimit` (`TauCeti.AlgebraicTopology.Quasicategory.Limit`), with their uniqueness up to equivalence. Still to do: the characterization by mapping spaces.'
+deps = ['GLCinLean.Infinity.mappingSpaces']
+source = '[IndCoh] §§0.6.2–0.6.4'

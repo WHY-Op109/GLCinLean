@@ -1,0 +1,8 @@
+desc = 'Coherent module categories over a monoidal enhanced category. Owner: the Tau Ceti roadmap GeneralizedCohomology, G2.11 “Enriched, quasicategorical and monoidal foundations”.'
+
+[[node]]
+id = 'GLCinLean.Infinity.moduleCategory'
+kind = 'definition'
+desc = 'A coherent module category for a specified monoidal enhanced category, with action, unit and associativity data. Provider: roadmap GeneralizedCohomology, G2.11, the monoidal/fibration sub-lane inside “Coherent model diagrams and stable enhancements” (LM operad and module fibres), with roadmap EnhancedDerivedSheaves “Algebras, modules and the monoidal envelope”.'
+deps = ['GLCinLean.Infinity.monoidalCategory']
+source = '[AGKRRV] §0.9.4; [ArinkinGaitsgory] §1.5.2(viii)'

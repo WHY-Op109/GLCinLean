@@ -1,8 +1,0 @@
-desc = 'Compact objects of an enhanced category. Owner: the Tau Ceti roadmap BordismFormalGroups.'
-
-[[node]]
-id = 'GLCinLean.Infinity.compactObject'
-kind = 'definition'
-desc = 'Objects whose mapping-space functors preserve filtered colimits; provide membership iff and nonzero examples. Provider: roadmap BordismFormalGroups, the coherent quotient/Ind constructions inside “Coherent model diagrams and stable enhancements”, with roadmap EnhancedDerivedSheaves “Compact generation and Ind-completion”. Upstream declarations used: `SSet.rightMappingSpace` (`TauCeti.AlgebraicTopology.Quasicategory.RightMappingSpace`).'
-deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits']
-source = '[AGKRRV] §0.9.2; [CompactGeneration] §1.2.1'
