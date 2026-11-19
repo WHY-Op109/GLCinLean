@@ -1,0 +1,8 @@
+desc = 'Over C, the stratifications of finite Schubert unions by L+G-orbits and by I-orbits are good for constructible complexes.'
+
+[[node]]
+id = 'GLCinLean.AffineGrassmannian.isGood_schubertStratification'
+kind = 'theorem'
+desc = 'Over C, for every coefficient field E: on a finite union of Schubert varieties in Gr_G, the stratification by L+G-orbits (AffineGrassmannian.schubertStratification) is good with coefficients E in the sense of Constructible.StratifiedDerivedCategory; and on a finite union of I-Schubert varieties in LG/I or in Gr_G, the stratification by I-orbits (AffineGrassmannian.iwahoriStratification) is good. These are instances of Constructible.isGood_orbitStratification. In each case the group, L+G or I, acts on the finite union through a quotient H that is an affine group scheme of finite type over C and is connected; the strata are the orbits of H, and they are finitely many; and the strata are simply connected (affine spaces, or affine-space bundles over partial flag varieties), so every local system of finite rank on a stratum is constant. Provider: here.'
+deps = ['GLCinLean.Constructible.isGood_orbitStratification', 'GLCinLean.Constructible.StratifiedDerivedCategory', 'GLCinLean.AffineGrassmannian.schubertStratification', 'GLCinLean.AffineGrassmannian.iwahoriStratification', 'GLCinLean.AffineGrassmannian']
+source = '[MV] §2 (the orbits and their closures); [JuteauMautnerWilliamson] Proposition 4.3'
