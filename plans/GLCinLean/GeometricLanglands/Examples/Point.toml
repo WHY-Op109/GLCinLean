@@ -3,8 +3,8 @@ desc = 'The constructions over a point, and for the trivial group the identity a
 [[node]]
 id = 'GLCinLean.Examples.pointQCohEquivVect'
 kind = 'definition'
-desc = 'The equivalences of QCoh and IndCoh on Spec k with the enhanced complexes of k-vector spaces (Infinity.derivedVect), compatible with the tensor units, the coarsening Ψ and the t-structures. Provider: here.'
-deps = ['GLCinLean.Sheaves.QCoh', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Sheaves.psi', 'GLCinLean.Infinity.derivedVect']
+desc = 'The equivalences of QCoh and IndCoh on Spec k with the enhanced complexes of k-vector spaces (Infinity.derivedVect), compatible with the tensor units, the coarsening Ψ and the t-structures (on the vector spaces, that of Infinity.enhancedDerivedCategoryTStructure). Provider: here.'
+deps = ['GLCinLean.Sheaves.QCoh', 'GLCinLean.Sheaves.IndCoh', 'GLCinLean.Sheaves.psi', 'GLCinLean.Infinity.derivedVect', 'GLCinLean.Infinity.enhancedDerivedCategoryTStructure']
 source = '[IndCoh] Lemma 1.1.6 and §0.6.4'
 
 [[node]]

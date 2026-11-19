@@ -10,8 +10,8 @@ source = '[FactorizableDerivedSatake] §§2.4–2.9; Propositions 3.5.2–3.5.3'
 [[node]]
 id = 'GLCinLean.SpectralProof.factorizationVacuum_almostULA'
 kind = 'theorem'
-desc = 'For a connective commutative factorization algebra almost of finite type, the vacuum module is almost ULA. Prove first for finite symmetric algebras, pass through nonnegative filtrations, finite presentations and connective approximations. This supports renormalization and the local semi-infinite proof. Provider: here.'
-deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.factorizationRenormalization', 'GLCinLean.Derived.commutativeAlgebra', 'GLCinLean.Infinity.compactObject']
+desc = 'Let A be a connective commutative algebra in Rep(H). Assume that its underlying connective algebra in Vect_k corresponds under Derived.commutativeAlgebraToConnectiveCommAlg to an almost finite type animated k-algebra. Prove that the vacuum module of the factorization algebra associated to A is almost ULA. Prove first for finite symmetric algebras, pass through nonnegative filtrations, finite presentations and connective approximations. This supports renormalization and the local semi-infinite proof. Provider: here.'
+deps = ['GLCinLean.SpectralProof.factorizationAlgebra', 'GLCinLean.SpectralProof.factorizationRenormalization', 'GLCinLean.Groups.RepresentationCategory', 'GLCinLean.Derived.commutativeAlgebra', 'GLCinLean.Derived.commutativeAlgebraToConnectiveCommAlg', 'GLCinLean.Infinity.compactObject']
 source = '[FactorizableDerivedSatake] Theorem 4.6.1, proof §§4.7–4.10'
 
 [[node]]
