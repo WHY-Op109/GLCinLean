@@ -82,6 +82,14 @@ comment records the difference with its reason.
   rests, is stated without proof.
 * [OneAffineness] Theorem 2.6.3: the gluing step over a finite affine open cover is left to the
   reader.
+* [MV] §11, the end of the proof of Proposition 11.1: on the objects of the spherical category
+  whose total cohomology is a projective module over the coefficient ring, the source defines the
+  anti-involution `A ↦ 𝔻(i^*A)` (Verdier duality after pullback along the inversion of the loop
+  group). It states without proof that this makes the category of the representations of the
+  group scheme of Proposition 11.1 on finitely generated projective modules a rigid tensor
+  category. It gives no evaluation map, no coevaluation map and no triangle identity. Over a
+  field, every object of the spherical category has projective total cohomology. For a field of
+  characteristic 0, [MV] §7 obtains rigidity from [DeligneMilne] Proposition 1.20 instead.
 
 ## Not formalized
 
