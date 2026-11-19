@@ -7,8 +7,8 @@ The one snapshot of what Mathlib, Tau Ceti and the Tau Ceti roadmaps supply to t
 | Repository | Revision | Read on |
 |---|---|---|
 | Mathlib (pinned) | `048fffa1dbcd080d3058fab41d8c188168595c22` | 2026-11-18 |
-| Tau Ceti (pinned) | `91942aa9ff8cea04d0d9905b80f75c07ce2379c4` (Tau Ceti main of 2026-11-18, Lean `v4.36.0-rc2`) | 2026-11-18 |
-| Tau Ceti main, as last compared with the plan | `91942aa9ff8cea04d0d9905b80f75c07ce2379c4`, the pin; the comparison covers every added, deleted and renamed file from `4d91513e4d30746eb1fa96658c18e051c772e55e` to it (2,651 commits) under `AlgebraicGeometry`, `Algebra/AlgebraicGroup`, `Algebra/Lie`, `Algebra/Coalgebra`, `Algebra/Homology`, `Algebra/Category`, `Algebra/Module`, `AlgebraicTopology`, `CategoryTheory`, `LinearAlgebra/RootSystem`, `RingTheory`, `RepresentationTheory` and `Topology/Algebra/PointTopology` | 2026-11-18 |
+| Tau Ceti (pinned) | `b2350004c40546f72a9ed4f47921b94b9517174e` (Tau Ceti main of 2026-11-19, Lean `v4.36.0-rc2`) | 2026-11-19 |
+| Tau Ceti main, as last compared with the plan | `91942aa9ff8cea04d0d9905b80f75c07ce2379c4`, 395 commits before the pin; the comparison covers every added, deleted and renamed file from `4d91513e4d30746eb1fa96658c18e051c772e55e` to it (2,651 commits) under `AlgebraicGeometry`, `Algebra/AlgebraicGroup`, `Algebra/Lie`, `Algebra/Coalgebra`, `Algebra/Homology`, `Algebra/Category`, `Algebra/Module`, `AlgebraicTopology`, `CategoryTheory`, `LinearAlgebra/RootSystem`, `RingTheory`, `RepresentationTheory` and `Topology/Algebra/PointTopology` | 2026-11-18 |
 | TauCetiRoadmap main | `87035f358244422b9e8967658c8f3f1e5cba5c0c`, for the provider check and the target titles in `plans/Roadmap/` | 2026-11-18 |
 | TauCetiWorker main | `e30da91cc33b611cb7e3308e43bc42dfb4bc03a0` (the fields `agent`, `only`, `roadmap_only`, `extra_roadmap_prompt` and `author_effort` of `workers.toml` are in its `docs/workers.md`) | 2026-11-18 |
 
