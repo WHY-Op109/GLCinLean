@@ -82,6 +82,12 @@ comment records the difference with its reason.
   rests, is stated without proof.
 * [OneAffineness] Theorem 2.6.3: the gluing step over a finite affine open cover is left to the
   reader.
+* [CompactGeneration] §§1.1.7 and 1.2.2 identify detection of zero by degree-zero `Hom` from a
+  specified family with generation as a full stable subcategory closed under small colimits. For
+  a family of compact objects, the detection criterion agrees with stable generation when it tests
+  every integer shift of every member. In the derived category of a field `k`, the smallest full
+  stable subcategory closed under small colimits and containing `k` is the whole category,
+  although `Hom(k, k[1]) = 0` and `k[1]` is nonzero.
 * [MV] §11, the end of the proof of Proposition 11.1: on the objects of the spherical category
   whose total cohomology is a projective module over the coefficient ring, the source defines the
   anti-involution `A ↦ 𝔻(i^*A)` (Verdier duality after pullback along the inversion of the loop

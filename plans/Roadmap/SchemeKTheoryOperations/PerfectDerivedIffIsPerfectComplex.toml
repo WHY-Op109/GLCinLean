@@ -1,0 +1,8 @@
+desc = 'The perfect objects of the enhanced quasi-coherent derived category of a scheme are those with a perfect complex as image. Owner: the Tau Ceti roadmap SchemeKTheoryOperations.'
+
+[[node]]
+id = 'GLCinLean.Sheaves.perfectDerived_iff_isPerfectComplex'
+kind = 'theorem'
+desc = '''For every quasi-compact quasi-separated scheme X, an object of Sheaves.schemeQCoh X is in `PerfectDerived X` if and only if its image in `DQCoh X`, under the homotopy-category comparison of Sheaves.schemeQCoh, is a perfect object (Sheaves.IsPerfectComplex). Both directions are stated: the first gives that the image of a perfect object is perfect, and the second that an object of Sheaves.schemeQCoh X whose image is perfect lies in `PerfectDerived X`. Checks: for the empty scheme both sides hold for every object; for Spec of a field k both sides say that the total cohomology is finite-dimensional; the unit is on both sides; on Spec ℤ the object ⊕_ℕ ℤ in degree 0 is on neither side. User: Sheaves.schemeQCoh_compactGeneration. Provider: roadmap SchemeKTheoryOperations, §1.3 “Perfect objects and derived operations”, the item of its interface “For qcqs X, membership is equivalent to local quasi-isomorphism to the strict sheaf models of §1.1.”, where membership is in `PerfectDerived X` of EnhancedDerivedSheaves E1.8 (“the full subcategory of complexes locally representable by bounded complexes of finite projective modules”). In Tau Ceti at the pin: none of its inputs.'''
+deps = ['GLCinLean.Sheaves.IsPerfectComplex', 'GLCinLean.Sheaves.schemeQCoh', 'GLCinLean.Sheaves.derivedQCoh']
+source = '[StacksProject] Definition 20.49.1 (tag 08CM)'
