@@ -1,6 +1,6 @@
 # Status
 
-Updated 2026-11-19. No question waits for the owner. "Workflow" in `AGENTS.md` says how the work runs, and the plan says what to formalise.
+Updated 2026-11-19. One question waits for the owner. "Workflow" in `AGENTS.md` says how the work runs, and the plan says what to formalise.
 
 ## Current state
 
@@ -26,7 +26,12 @@ A node on this list is not started, here or through the Worker. The list covers 
 
 ## Waiting for the owner
 
-No question waits for the owner.
+- **Tau Ceti's merge queue sets the speed of the first goal. Does the rule "roadmap parts merge in Tau Ceti first" stay as it is?** The work continues as now until the owner answers.
+  - Facts, read on 2026-11-19. Tau Ceti merges only through its queue (the bot `tauceti-queue`), 15 to 61 pull requests a day in the last four days. 1,055 open pull requests are labelled ready to merge (550 created on 2026-11-10 to 15, 384 on 16 to 18, 110 on 19), so the queue grows. The pull requests merged on 2026-11-19 were mostly created on 2026-11-13 and 14. Our pull requests are labelled ready within hours and then wait in this queue; none of the thirteen opened on 2026-11-19 is merged.
+  - Why it matters: Tau Ceti allows no stacked pull request, so a worker starts the next step of a chain only after the step before is merged (`author-langlands` is stopped for this reason). Below the statement the plan has chains of up to 12 roadmap nodes (for example from `Infinity.mappingSpaces` to `Sheaves.perfectDerived_iff_isPerfectComplex`), each node one or more pull requests, and chains of up to 46 nodes in all. With about a week from ready to merged, the roadmap chains alone take many months, whatever the pace of the workers.
+  - Option 1, keep the rule (`AGENTS.md`, "Sources of code"): every roadmap part is written and merged in Tau Ceti before this project uses it. No second copy exists. The speed is that of Tau Ceti's queue.
+  - Option 2, build on our open pull requests: this project pins a branch of the fork `WHY-Op109/TauCeti` that holds Tau Ceti's `main` and our open pull requests. Modules written here can then use our upstream work before it is merged. It does not shorten the chains inside Tau Ceti, where most of the depth is, and the pin is then no commit of Tau Ceti's `main` ("Builds").
+  - Option 3, write the roadmap chains here first and send them upstream after: writers of this session write the roadmap nodes in this repository in the form Tau Ceti asks for, the statement is built on them, and the workers send them to Tau Ceti piece by piece. The queue is then off the critical path. It reverses the rule that a roadmap part is not written a second time, the two copies can drift apart when Tau Ceti's review changes an interface, and the session does much more of the writing.
 
 ## Open items
 
