@@ -4,5 +4,5 @@ desc = 'The enhanced derived category of k-vector spaces, with its tensor produc
 id = 'GLCinLean.Infinity.derivedVect'
 kind = 'definition'
 desc = 'Enhanced localization of complexes of k-vector spaces at quasi-isomorphisms, with derived tensor product and standard t-structure. The category with its localization functor is Infinity.enhancedDerivedCategory for the k-vector spaces. Provider: roadmap EnhancedDerivedSheaves, `enhancedDerived`, `derivedTensor` and `derivedTensor_symmetricMonoidal`. Upstream declarations used: `CochainComplex` (`Mathlib.Algebra.Homology.HomologicalComplex`), `TauCeti.DGCategory` (`TauCeti.CategoryTheory.DG.Basic`), `TauCeti.dgNerve` (`TauCeti.AlgebraicTopology.DGNerve.Basic`), `TauCeti.KInjectiveDGCategory` (`TauCeti.CategoryTheory.DG.CochainComplex.KInjective`), `TauCeti.KInjectiveDGCategory.dgNerveHomotopyCategoryEquiv` (`TauCeti.CategoryTheory.DG.CochainComplex.KInjective`), `DerivedCategory.TStructure.t` (`Mathlib.Algebra.Homology.DerivedCategory.TStructure`).'
-deps = ['GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.enhancedDerivedCategory']
+deps = ['GLCinLean.Infinity.stableCategory', 'GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.enhancedDerivedCategory', 'GLCinLean.Infinity.presentableCategory']
 source = '[AGKRRV] §0.9.3; [IndCoh] §0.6.4'

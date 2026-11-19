@@ -3,6 +3,6 @@ desc = 'Ind-completion of a small enhanced category. Owner: the Tau Ceti roadmap
 [[node]]
 id = 'GLCinLean.Infinity.indCompletion'
 kind = 'definition'
-desc = 'Filtered-colimit completion with its fully faithful Yoneda embedding and universal property; that the Ind-completion of a small category with finite colimits is presentable is a separate statement. Provider: roadmap EnhancedDerivedSheaves, “Compact generation and Ind-completion”.'
-deps = ['GLCinLean.Infinity.presentableCategory']
+desc = 'Filtered-colimit completion with its fully faithful Yoneda embedding and universal property; that the Ind-completion of a small category with finite colimits is presentable is a separate statement. Provider: roadmap EnhancedDerivedSheaves, “Compact generation and Ind-completion”, which takes `Ind_κ(C)` from roadmap GeneralizedCohomology, G2.11: “Define Ind_κ(C) as its full subcategory of κ-filtered colimits of representables; construct its universal property for κ-filtered colimit-preserving functors”, inside the presheaves with values in Kan spaces. The construction uses mapping spaces, the Yoneda embedding and filtered colimits (Infinity.mappingSpaces, Infinity.limits), and no presentable category. Upstream declarations used: `SSet.IsCardinalFiltered` (`TauCeti.AlgebraicTopology.SimplicialSet.CardinalFiltered`), `SSet.coslice.IsColimit` (`TauCeti.AlgebraicTopology.Quasicategory.Limit`).'
+deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.limits']
 source = '[CompactGeneration] §1.3; [IndCoh] Definition 1.1.3'
