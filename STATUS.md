@@ -1,6 +1,6 @@
 # Status
 
-Updated 2026-11-19. One question waits for the owner. "Workflow" in `AGENTS.md` says how the work runs, and the plan says what to formalise.
+Updated 2026-11-19. Two questions wait for the owner. "Workflow" in `AGENTS.md` says how the work runs, and the plan says what to formalise.
 
 ## Current state
 
@@ -32,6 +32,10 @@ A node on this list is not started, here or through the Worker. The list covers 
   - Positions: a checker and Codex agree with the provider and the route. Codex's eight objections of round 1 are resolved. Its five objections of round 2 are open (`notes/checks/decomposition-theorem-codex-2.md` on the branch); all concern the wording of nodes around the theorem.
   - Options: (a) the session resumes round 2 from this state; (b) the line stops, and `Constructible.exists_iso_directSum_ic_properPushforward` stays under "Held"; (c) the owner gives another direction.
   - Also for the owner's view: the proposal names a possible second change (its section 8), an algebraic argument that would make the first goal independent of the decomposition theorem. The checker and Codex found a gap in it (the root datum needs the route of [MV] §12), so it is an open question and no part of the proposal.
+
+- **The workers do not run while the session works.** All six workers have the linear pace and share the weekly Claude allowance with the session. On 2026-11-19 the session's planners and checkers moved the week's usage above the pace line, and since then every worker sleeps until the line catches up: about a day at the gap of that morning, and longer with each further round of the session. No worker has opened a pull request yet, and the first goal waits for their work in Tau Ceti.
+  - Options: (a) keep the settings, so the workers run only after the session has been idle long enough; (b) set `ignore_quota` for chosen author workers, the next step that the decision "The settings of the Tau Ceti workers" names; (c) another pace curve for the workers; (d) the session runs fewer roles at once.
+  - The session keeps the workers' settings and its own work unchanged until the owner decides.
 
 ## Open items
 
