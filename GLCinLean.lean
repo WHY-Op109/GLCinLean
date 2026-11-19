@@ -96,6 +96,12 @@ comment records the difference with its reason.
   category. It gives no evaluation map, no coevaluation map and no triangle identity. Over a
   field, every object of the spherical category has projective total cohomology. For a field of
   characteristic 0, [MV] §7 obtains rigidity from [DeligneMilne] Proposition 1.20 instead.
+* [GLys] §7.1.3: the section says that the prestacks `𝔏⁺(Z)` and `𝔏(Z)` of arcs and loops over the
+  Ran space are factorization prestacks for every prestack `Z`. This needs that `Z` sends the
+  disjoint union of two affine schemes to the product of its values, because the disc of the union
+  of two disjoint points is the disjoint union of the two discs, which is one affine scheme. For
+  the constant functor with value a set of two elements the claim is false. [GLC2] §§B.3.2 and
+  B.4.1 state the condition.
 
 ## Not formalized
 
