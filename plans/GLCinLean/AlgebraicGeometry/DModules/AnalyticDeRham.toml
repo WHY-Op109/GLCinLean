@@ -1,0 +1,8 @@
+desc = 'The analytic de Rham functor from holonomic D-modules on a separated C-scheme of finite type to constructible complexes on its complex points.'
+
+[[node]]
+id = 'GLCinLean.DModules.analyticDeRham'
+kind = 'definition'
+desc = 'For a separated scheme Y of finite type over C, analytification of algebraic D-modules on Y to analytic D-modules on Y(C), and the normalized analytic de Rham functor DR. It carries bounded holonomic complexes to D^b_c(Y, C) of Constructible.DerivedCategory, commutes with holonomic duality (DModules.verdierDuality) and Verdier duality, and takes holonomic modules to perverse sheaves (Constructible.PerverseSheaves). Let M be a bounded regular holonomic complex (DModules.IsRegularHolonomic). If for every stratum inclusion i_T of a stratification S the D-module star-pullback i_T^*M (DModules.starPullback) has lisse cohomology, then DR(M) belongs to D^b_S(Y, C) of Constructible.StratifiedDerivedCategory. For a good S, the restricted t-exact comparison is stated in DModules.analyticDeRham_isEquivalence. Provider: here.'
+deps = ['GLCinLean.Constructible.ComplexPoints', 'GLCinLean.Constructible.DerivedCategory', 'GLCinLean.Constructible.PerverseSheaves', 'GLCinLean.Constructible.StratifiedDerivedCategory', 'GLCinLean.DModules.IsHolonomic', 'GLCinLean.DModules.IsRegularHolonomic', 'GLCinLean.DModules.verdierDuality']
+source = '[HottaTakeuchiTanisaki] Chapter 4 (analytic D-modules and the de Rham functor)'
