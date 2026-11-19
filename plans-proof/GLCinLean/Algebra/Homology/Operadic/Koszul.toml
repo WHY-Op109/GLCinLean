@@ -3,7 +3,7 @@ desc = 'The Com–Lie Koszul calculation needed for arbitrary-degree complexes i
 [[node]]
 id = 'GLCinLean.Homology.commutativeLieKoszulComplex'
 kind = 'definition'
-desc = 'Construct the finite-arity Com/Lie Koszul complexes with symmetric-group actions, tree/partition differential, suspension signs and augmentation in arity one. Identify evaluation on a complex V with the cofree conilpotent Lie-coalgebra complex on Sym^{>0}(V)[1] whose differential is induced by commutative multiplication. Use direct sums of arities, not completed products. Provider: here, over the operad framework of roadmaps BordismFormalGroups and EnhancedDerivedSheaves.'
+desc = 'Construct the finite-arity Com/Lie Koszul complexes with symmetric-group actions, tree/partition differential, suspension signs and augmentation in arity one. Identify evaluation on a complex V with the cofree conilpotent Lie-coalgebra complex on Sym^{>0}(V)[1] whose differential is induced by commutative multiplication. Use direct sums of arities, not completed products. Provider: here, over the operad framework of roadmaps GeneralizedCohomology (G2.11) and EnhancedDerivedSheaves.'
 deps = ['GLCinLean.Infinity.derivedVect', 'GLCinLean.Infinity.monoidalCategory', 'GLCinLean.Infinity.limits']
 source = '[OperadicKoszul] §§4.1.8–4.1.12 and 4.2.1–4.2.6; [BDChiral] §4.6.2(iv)'
 

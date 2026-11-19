@@ -1,0 +1,8 @@
+desc = 'Coherent monoidal enhanced categories. Owner: the Tau Ceti roadmap GeneralizedCohomology, G2.11 “Enriched, quasicategorical and monoidal foundations”.'
+
+[[node]]
+id = 'GLCinLean.Infinity.monoidalCategory'
+kind = 'definition'
+desc = 'Coherent monoidal enhanced categories (E₁), with a symmetric monoidal (E∞) structure as additional structure, including the unit and associativity coherences; module categories are a separate node. The spherical category acts through a monoidal structure that is not symmetric. Provider: roadmap GeneralizedCohomology, G2.11, the monoidal/fibration sub-lane inside “Coherent model diagrams and stable enhancements”, with roadmap EnhancedDerivedSheaves “Symmetric monoidal ∞-categories and ∞-operads”.'
+deps = ['GLCinLean.Infinity.mappingSpaces', 'GLCinLean.Infinity.presentableCategory']
+source = '[AGKRRV] §0.9.4'

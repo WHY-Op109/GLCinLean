@@ -1,8 +1,0 @@
-desc = 'Stable enhanced categories. Owner: the Tau Ceti roadmap BordismFormalGroups.'
-
-[[node]]
-id = 'GLCinLean.Infinity.stableCategory'
-kind = 'definition'
-desc = 'Pointed enhanced categories with finite limits and colimits and coincident pullback and pushout squares. Provider: roadmap BordismFormalGroups, “Coherent model diagrams and stable enhancements”. Upstream declarations used: `TauCeti.dgNerve` (`TauCeti.AlgebraicTopology.DGNerve.Basic`).'
-deps = ['GLCinLean.Infinity.limits']
-source = '[IndCoh] §0.6.4'
