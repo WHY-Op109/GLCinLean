@@ -6,8 +6,8 @@
 #     offline (a worker that workers.toml disables is not watched);
 #   - a pull request of ours is opened, merged or closed, or its CI fails;
 #   - a watched pull request is merged or closed;
-#   - the free disk space of the volume that holds the repository falls below MIN_FREE_GB: the
-#     session then runs prompts/clean.md;
+#   - the free disk space of the volume that holds the repository falls below MIN_FREE_GB (checked
+#     every DISK_SECONDS): the session then runs prompts/clean.md;
 #   - no event happened for DAY_SECONDS (one day).
 # It runs no model. The state is kept in a file, so a new run reports only what changed.
 #
@@ -18,6 +18,7 @@
 # DAY_SECONDS (default 86400), TAUCETI (default tauceti): the command of the Worker; when the
 # workers run on another host, a local command that runs the Worker there. MIN_FREE_GB (default
 # 20): a move of the pins can need about 10 GB for a new Mathlib cache and a new Lean toolchain.
+# DISK_SECONDS (default 10800): the time between two checks of the free disk space.
 
 STATE="${MONITOR_STATE:-.lake/monitor-state.json}"
 POLL_SECONDS="${POLL_SECONDS:-900}"
@@ -26,14 +27,15 @@ start=$(date +%s)
 
 while true; do
   events=$(python3 - "$STATE" "$@" <<'EOF'
-import json, os, shlex, shutil, subprocess, sys
+import json, os, shlex, shutil, subprocess, sys, time
 
 state_path, watched = sys.argv[1], sys.argv[2:]
 try:
     old = json.load(open(state_path))
 except Exception:
     old = None  # the first run records the state and reports no pull request
-new = {"workers": {}, "prs": {}, "watched": {}, "manager": True, "disk_low": False}
+new = {"workers": {}, "prs": {}, "watched": {}, "manager": True, "disk_low": False,
+       "disk_checked": 0}
 if old:
     new.update({k: old.get(k, new[k]) for k in new})
 events = []
@@ -105,14 +107,17 @@ for item in watched:
     except Exception:
         pass
 
-# The event is reported once, when the free space falls below the limit.
+# The free space is checked every DISK_SECONDS. The event is reported once, when the free space
+# falls below the limit.
 try:
-    min_gb = float(os.environ.get("MIN_FREE_GB", "20"))
-    free_gb = shutil.disk_usage(".").free / 2**30
-    new["disk_low"] = free_gb < min_gb
-    if new["disk_low"] and not (old or {}).get("disk_low"):
-        events.append(f"DISK free space is {free_gb:.0f} GB, below {min_gb:.0f} GB: "
-                      "run prompts/clean.md")
+    if time.time() - new["disk_checked"] >= float(os.environ.get("DISK_SECONDS", "10800")):
+        min_gb = float(os.environ.get("MIN_FREE_GB", "20"))
+        free_gb = shutil.disk_usage(".").free / 2**30
+        was_low = new["disk_low"]
+        new["disk_low"], new["disk_checked"] = free_gb < min_gb, time.time()
+        if new["disk_low"] and not was_low:
+            events.append(f"DISK free space is {free_gb:.0f} GB, below {min_gb:.0f} GB: "
+                          "run prompts/clean.md")
 except Exception:
     pass
 
