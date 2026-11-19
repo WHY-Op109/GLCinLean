@@ -1,9 +1,0 @@
-# Codex, round 4: `proposal/coadjoint-quotient-provider` at `4319f1f`
-
-Run with `codex exec -s read-only`, model `gpt-6.2-astra`, high reasoning effort, on 2026-11-18. The prompt named the branch, the three earlier reports and the open objection of round 3. The report follows unchanged.
-
-**The round 3 objection is resolved at `4319f1f`.** The new `source` field cites [ArinkinGaitsgory] §11.1.2. Lines 7883–7886 of the TeX define \(\mathfrak c(\check{\mathfrak g})=\operatorname{Spec}(\operatorname{Sym}(\check{\mathfrak g})^{\check G})\) and give the Chevalley map \(\varpi\) from \(\check{\mathfrak g}^{*}\) to that spectrum. This is precisely the projection induced by inclusion of the invariant algebra for \(A=\operatorname{Sym}(\check{\mathfrak g})\). The field explicitly identifies this as a special case, so it satisfies the plan’s paper-locator rule without attributing the general bialgebra construction or its universal property to the paper. [Paper TeX](/Users/why/Documents/Projects/GLCinLean/references/papers/1201.6343v4/src/singsupp.tex:7883) · [Projection node](/Users/why/Documents/Projects/GLCinLean/.claude/worktrees/agent-a42505c470f234b80/plans-proof/Roadmap/ArithmeticGaloisRepresentations/AffineQuotient.toml:7) · [Plan rule](/Users/why/Documents/Projects/GLCinLean/.claude/worktrees/agent-a42505c470f234b80/plans/README.md:7)
-
-The diff from `5e0f844` to `4319f1f` adds exactly one plan line, the `source` field. Its only other change is to archive the round 3 report. [Round 3 report](/Users/why/Documents/Projects/GLCinLean/.claude/worktrees/agent-a42505c470f234b80/notes/checks/coadjoint-quotient-provider-codex-3.md)
-
-No open objection
