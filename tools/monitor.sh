@@ -13,7 +13,8 @@
 #   tools/monitor.sh [OWNER/REPO#NUMBER ...]
 # The arguments are the watched pull requests that STATUS.md lists under "Workers".
 # Environment: MONITOR_STATE (default .lake/monitor-state.json), POLL_SECONDS (default 900),
-# DAY_SECONDS (default 86400).
+# DAY_SECONDS (default 86400), TAUCETI (default tauceti): the command of the Worker; when the
+# workers run on another host, a local command that runs the Worker there.
 
 STATE="${MONITOR_STATE:-.lake/monitor-state.json}"
 POLL_SECONDS="${POLL_SECONDS:-900}"
@@ -22,7 +23,7 @@ start=$(date +%s)
 
 while true; do
   events=$(python3 - "$STATE" "$@" <<'EOF'
-import json, subprocess, sys
+import json, os, shlex, subprocess, sys
 
 state_path, watched = sys.argv[1], sys.argv[2:]
 try:
@@ -46,7 +47,8 @@ def pr_state(p):
 
 # A failure of a command (network, GitHub) is not an event: the old state is kept.
 try:
-    d = json.loads(run(["tauceti", "workers", "status", "--json"], 120))
+    tauceti = shlex.split(os.environ.get("TAUCETI", "tauceti"))
+    d = json.loads(run(tauceti + ["workers", "status", "--json"], 120))
     workers = {}
     for w in d.get("workers", []):
         if w.get("desired") == "stopped":  # disabled in workers.toml: stopped on purpose
