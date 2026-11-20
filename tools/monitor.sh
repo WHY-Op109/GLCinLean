@@ -62,10 +62,11 @@ try:
         if w.get("desired") == "stopped":  # disabled in workers.toml: stopped on purpose
             workers[w["id"]] = {"bad": False, "restarts": w.get("restart_count", 0)}
             continue
-        # A worker without the phase `roadmap` has "no eligible work" when no pull request of its
-        # area needs a repair: this is its expected state, and no event.
+        # A worker that finds nothing to do reports "no eligible work" (no pull request needs a
+        # repair) or "not due" (its periodic report is recent): its expected state, and no event.
         reason = w.get("failure_reason") or ""
-        bad = (not w.get("alive")) or bool(reason and "no eligible work" not in reason) or w.get(
+        idle = "no eligible work" in reason or "not due" in reason
+        bad = (not w.get("alive")) or bool(reason and not idle) or w.get(
             "actual") in ("failed", "stopped", "exited", "crashed")
         prev = (old or {}).get("workers", {}).get(w["id"], {})
         workers[w["id"]] = {"bad": bad, "restarts": w.get("restart_count", 0)}
