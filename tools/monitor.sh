@@ -3,7 +3,8 @@
 # requests in Tau Ceti and the watched pull requests of others. It prints the events and exits
 # when one of these happens, and its exit wakes the session:
 #   - an enabled worker is not alive, has failed or has restarted, or the Worker's manager is
-#     offline (a worker that workers.toml disables is not watched);
+#     offline (a worker that workers.toml disables is not watched, and a worker that only
+#     repairs and finds nothing to repair is no event);
 #   - a pull request of ours is opened, merged or closed, or its CI fails;
 #   - a watched pull request is merged or closed;
 #   - the free disk space of the volume that holds the repository falls below MIN_FREE_GB (checked
@@ -59,8 +60,11 @@ try:
         if w.get("desired") == "stopped":  # disabled in workers.toml: stopped on purpose
             workers[w["id"]] = {"bad": False, "restarts": w.get("restart_count", 0)}
             continue
-        bad = (not w.get("alive")) or bool(w.get("failure_reason")) or w.get("actual") in (
-            "failed", "stopped", "exited", "crashed")
+        # A worker without the phase `roadmap` has "no eligible work" when no pull request of its
+        # area needs a repair: this is its expected state, and no event.
+        reason = w.get("failure_reason") or ""
+        bad = (not w.get("alive")) or bool(reason and "no eligible work" not in reason) or w.get(
+            "actual") in ("failed", "stopped", "exited", "crashed")
         prev = (old or {}).get("workers", {}).get(w["id"], {})
         workers[w["id"]] = {"bad": bad, "restarts": w.get("restart_count", 0)}
         if bad and not prev.get("bad"):
