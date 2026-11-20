@@ -13,6 +13,13 @@
 [ -f "$HOME/.profile" ] && . "$HOME/.profile" >/dev/null 2>&1
 export PATH="$HOME/.local/bin:$HOME/.elan/bin:$PATH"
 
+# The stack limit of the manager and of every worker it starts: 1 GiB, soft and hard. The Worker
+# raises its soft limit to the hard limit. With the hard limit "unlimited", `leantar` 0.1.21 of
+# Lean v4.37.0-rc1 ends with SIGABRT when it unpacks a large olean, and no round of a worker
+# starts; with a large finite limit it works.
+ulimit -Hs 1048576 2>/dev/null
+ulimit -Ss 1048576 2>/dev/null
+
 LOG="${XDG_STATE_HOME:-$HOME/.local/state}/tauceti/keep-workers-running.log"
 mkdir -p "$(dirname "$LOG")"
 exec 9>"$LOG.lock"
