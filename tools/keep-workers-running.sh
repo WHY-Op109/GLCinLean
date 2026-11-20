@@ -2,7 +2,7 @@
 # Keeps the Tau Ceti workers running on the host where they run (AGENTS.md, "Workflow").
 # The Worker's manager restarts a worker that fails. This script starts the manager again when
 # it is not running, or when an enabled worker has no process, and writes one line per run to
-# its log. It runs no model.
+# its log. It also ends a Lean process of a worker that sleeps without end. It runs no model.
 #
 # Install on the workers' host as ~/.local/bin/keep-workers-running, with these crontab lines:
 #   */30 * * * * "$HOME/.local/bin/keep-workers-running"
@@ -42,6 +42,22 @@ print(("ok " if manager_ok and not dead else "bad ") + summary)'
 }
 
 now() { date -u +%Y-%m-%dT%H:%M:%SZ; }
+
+# A `lean` process that an agent of a worker started can sleep without end; the agent then waits
+# for it, and the round of the worker does not end. A Lean process that works uses CPU time. So
+# end each `lean` process in the Worker's folders that is older than 45 minutes and has used
+# less than one minute of CPU time; the agent then gets its command back.
+end_sleeping_lean() {
+  local root="${XDG_DATA_HOME:-$HOME/.local/share}/tauceti/" pid age cpu comm cwd
+  ps -eo pid=,etimes=,cputimes=,comm= | while read -r pid age cpu comm; do
+    [ "$comm" = lean ] && [ "$age" -ge 2700 ] && [ "$cpu" -lt 60 ] || continue
+    cwd=$(readlink "/proc/$pid/cwd" 2>/dev/null) || continue
+    case "$cwd/" in "$root"*) ;; *) continue ;; esac
+    kill "$pid" 2>/dev/null &&
+      echo "$(now) ended a sleeping lean process: pid $pid, ${age} s old, ${cpu} s of CPU time, in $cwd" >> "$LOG"
+  done
+}
+end_sleeping_lean
 
 result=$(check)
 if [ "${result%% *}" = ok ]; then
