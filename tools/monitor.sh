@@ -20,6 +20,8 @@
 # workers run on another host, a local command that runs the Worker there. MIN_FREE_GB (default
 # 20): a move of the pins can need about 10 GB for a new Mathlib cache and a new Lean toolchain.
 # DISK_SECONDS (default 10800): the time between two checks of the free disk space.
+# CI_FAILED_EVENTS (default 1): with 0, a failed CI of a pull request of ours is no event; the
+# workers repair it by themselves, and after a change of Tau Ceti's toolchain many fail at once.
 
 STATE="${MONITOR_STATE:-.lake/monitor-state.json}"
 POLL_SECONDS="${POLL_SECONDS:-900}"
@@ -81,7 +83,7 @@ except Exception:
 try:
     prs = {}
     for p in json.loads(run(["gh", "pr", "list", "-R", "TauCetiProject/TauCeti", "--author", "@me",
-                             "--state", "all", "--limit", "100",
+                             "--state", "all", "--limit", "300",
                              "--json", "number,title,state,labels"], 120)):
         key, st = str(p["number"]), pr_state(p)
         failed = "ci-failed" in [label["name"] for label in p.get("labels", [])]
@@ -93,7 +95,7 @@ try:
             events.append(f"PR #{key} opened: {p['title']}")
         elif prev["state"] != st:
             events.append(f"PR #{key} {st}: {p['title']}")
-        if failed and not (prev or {}).get("failed"):
+        if failed and not (prev or {}).get("failed") and os.environ.get("CI_FAILED_EVENTS", "1") != "0":
             events.append(f"PR #{key} CI failed: {p['title']}")
     new["prs"] = prs
 except Exception:
