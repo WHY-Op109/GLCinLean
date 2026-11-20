@@ -102,8 +102,8 @@ A Lean library for geometric representation theory, on which a faithful statemen
 - A new git worktree builds in under a minute when it uses the dependencies of the main checkout: run `git submodule update --init`, link `.lake/packages` and `tools/tracker/.lake` to the same folders of the main checkout (`ln -s`), and set `LAKE_CACHE_DIR` to the main checkout's `.lake/cache`. It then rebuilds no module of Mathlib or Tau Ceti.
 - The done check passes when `lake build` and `lake lint` pass, and `lake env lean tools/check-statement-axioms.lean`, which lists every declaration of the statement, shows `sorryAx` only for the main theorem, and for it only `propext`, `Classical.choice`, `Quot.sound` and `sorryAx`.
 - At the start of each session, check Tau Ceti's tags (`git ls-remote --tags https://github.com/TauCetiProject/TauCeti`) and the `lean-toolchain` of its `main`.
-- A session may move the Tau Ceti pin forward, to a newer `main` commit or tag on the same Lean toolchain, when the done check passes there. Prefer a tag. Mathlib moves to the commit that Tau Ceti names. The pin move is a commit of its own.
-- The Lean toolchain changes only to a Tau Ceti tag `vX` of a Lean release (not a release candidate), and then to the newest such tag. Tau Ceti's tag promises a full published cache.
+- A session may move the Tau Ceti pin forward, to a newer `main` commit or tag, when the done check passes there. Prefer a tag: Tau Ceti's tag promises a full published cache. Mathlib moves to the commit that Tau Ceti names. The pin move is a commit of its own.
+- The Lean toolchain follows Tau Ceti's `main`, also onto a release candidate of Lean, so that a merged pull request of ours can be used here without a wait for a release. It changes with a pin move: first to Tau Ceti's tag of the new toolchain when that tag exists, and then to later `main` commits as the plan needs them.
 - If the tracker or this project fails to build at a new pin, keep the old pin and report the failure in `STATUS.md`.
 
 ## Git
