@@ -44,7 +44,7 @@ Updated 2026-11-20. No question waits for the owner. "Workflow" in `AGENTS.md` s
 
 ### Our pull requests in Tau Ceti
 
-All were opened on 2026-11-19 or later, and none is merged. #44206 defines the homeomorphism for the reduction of a scheme, which is on Tau Ceti main since 2026-11-20 (`TauCeti.SchemePointTopology.reductionHomeomorph`); only its case of thickenings is new, and the session checks after its rebase that it reuses the upstream declaration. The session compares each new one with the plan. `gh pr list -R TauCetiProject/TauCeti --author @me` gives the labels of the moment.
+All were opened on 2026-11-19 or later, and none is merged. #44206 has the homeomorphism on points for a thickening (`homeomorphOfIsThickening`); for the reduction of a scheme it refers to `TauCeti.SchemePointTopology.reductionHomeomorph` of Tau Ceti main and defines no second copy (checked 2026-11-20). The session compares each new one with the plan. `gh pr list -R TauCetiProject/TauCeti --author @me` gives the labels of the moment.
 
 | Worker | Pull requests | Plan node they serve |
 |---|---|---|
