@@ -44,7 +44,7 @@ Updated 2026-11-20. No question waits for the owner. "Workflow" in `AGENTS.md` s
 
 ### Our pull requests in Tau Ceti
 
-All were opened on 2026-11-19 or later, and none is merged. #44206 has the homeomorphism on points for a thickening (`homeomorphOfIsThickening`); for the reduction of a scheme it refers to `TauCeti.SchemePointTopology.reductionHomeomorph` of Tau Ceti main and defines no second copy (checked 2026-11-20). The session compares each new one with the plan. `gh pr list -R TauCetiProject/TauCeti --author @me` gives the labels of the moment.
+All were opened on 2026-11-19 or later, and none is merged. A pull request with the queue's label `bors-staging` belongs to the merge queue: the Worker (from its version of 2026-11-20) does not rebase or repair it, also when it has the labels `merge-conflict` or `awaiting-author` (`survey.py`: `allow_queue_owned`), and the queue's own agents repair it when they build its batch (it then gets the label `repaired-in-queue`). So only a pull request without that label counts as one that our workers must repair. #44206 has the homeomorphism on points for a thickening (`homeomorphOfIsThickening`); for the reduction of a scheme it refers to `TauCeti.SchemePointTopology.reductionHomeomorph` of Tau Ceti main and defines no second copy (checked 2026-11-20). The session compares each new one with the plan. `gh pr list -R TauCetiProject/TauCeti --author @me` gives the labels of the moment.
 
 | Worker | Pull requests | Plan node they serve |
 |---|---|---|
