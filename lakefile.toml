@@ -13,7 +13,7 @@ weak.linter.mathlibStandardSet = true
 [[require]]
 name = "TauCeti"
 git = "https://github.com/TauCetiProject/TauCeti"
-rev = "e0e414ce57522ba17560057ad0d7f2edab91bf0c"
+rev = "84d74ceda46673fd5de242a7e16d9ff3fac39027"
 
 # bridgekat/tracker @ c223b67, a git submodule: reads the plan in plans/ and the compiled code.
 [[require]]
