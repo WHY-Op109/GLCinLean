@@ -125,5 +125,14 @@ comment records the difference with its reason.
 
 ## Not formalized
 
-No claim of the sources is given up.
+* [HottaTakeuchiTanisaki] Theorem 4.6.3, Corollary 4.6.5 and Theorem 4.6.6: for a holonomic
+  D-module on a complex manifold, regular or not, the de Rham complex is constructible, its
+  formation commutes with duality, and it is a perverse sheaf. Theorem 4.7.7 and formula (7.1.1)
+  give the first two statements for the bounded complexes of algebraic D-modules with holonomic
+  cohomology on a smooth complex algebraic variety, where the de Rham complex is that of the
+  analytification. These statements belong to the analytic comparison, between D-modules and
+  the constructible complexes on a complex manifold or on the complex points of a variety. They
+  are not formalized for the holonomic modules that are not regular, nor for the bounded
+  complexes with holonomic cohomology that is not regular: nothing here uses the de Rham complex
+  of such a module or complex.
 -/

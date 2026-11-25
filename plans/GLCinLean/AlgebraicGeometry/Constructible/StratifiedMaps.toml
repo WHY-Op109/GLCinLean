@@ -1,4 +1,4 @@
-desc = 'Maps of stratified complex schemes along which pullback and proper pushforward preserve the complexes that are constructible along the strata. The constructible derived category, its perverse t-structure and its subcategories along a fixed stratification are nodes of the roadmap EtaleDualityAndPerverseSheaves.'
+desc = 'Maps of stratified complex schemes along which pullback and proper pushforward preserve the complexes that are constructible along the strata. The constructible derived category, its perverse t-structure and its subcategories along a fixed stratification are nodes of the roadmap MixedHodgeModulesAndIrregularHodgeTheory.'
 
 [[node]]
 id = 'GLCinLean.Constructible.IsStratifiedMap'
