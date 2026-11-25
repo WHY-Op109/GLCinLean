@@ -8,6 +8,7 @@ module
 public import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 public import Mathlib.CategoryTheory.Monoidal.NaturalTransformation
 public import Mathlib.CategoryTheory.Monoidal.Types.Basic
+public import TauCeti.CategoryTheory.Monoidal.Braided.TensorPow
 public import TauCeti.CategoryTheory.Monoidal.TensorPow.Basic
 
 /-!
@@ -29,6 +30,13 @@ $$μ_{n+1}(X, Y) = \mathrm{tensorμ}(X, X^{\otimes n}, Y, Y^{\otimes n}) ≫ (X 
 where `tensorμ` exchanges the two middle factors of $(X ⊗ X^{\otimes n}) ⊗ (Y ⊗ Y^{\otimes n})$
 by the braiding $β_{X^{\otimes n}, Y}$. When `C` is symmetric, the functor is braided.
 
+The unit comparison $ε_n$ is the inverse of `TauCeti.tensorPowUnitIso n`. The tensor comparison
+$μ_n(X, Y)$ is the inverse of `TauCeti.tensorPowTensorIso X Y n` formed for the reverse braiding
+`CategoryTheory.reverseBraiding C`, since the inverse of `TauCeti.tensorPowTensorIso X Y (n + 1)`
+exchanges the middle factors by $β_{Y, X^{\otimes n}}^{-1}$, where $μ_{n+1}(X, Y)$ uses
+$β_{X^{\otimes n}, Y}$. So when `C` is symmetric, $μ_n(X, Y)$ is the inverse of
+`TauCeti.tensorPowTensorIso X Y n`; when `C` is braided and not symmetric, the two can differ.
+
 The functor commutes with every braided monoidal functor `G : C ⥤ D`: there is an isomorphism
 $G(X^{\otimes n}) \cong G(X)^{\otimes n}$, natural in `X` and monoidal. It sends an object with a
 tensor inverse to an object with a tensor inverse, and $(X^{\otimes n})^{-1} \cong
@@ -47,6 +55,11 @@ dual of such pairs need.
   with the formulas `tensorPowFunctor_ε_zero`, `tensorPowFunctor_μ_zero`,
   `tensorPowFunctor_ε_succ` and `tensorPowFunctor_μ_succ` (and the same for `η` and `δ`); it is
   braided for a symmetric `C`.
+* `GLCinLean.CategoryTheory.tensorPowFunctor_εIso`,
+  `GLCinLean.CategoryTheory.tensorPowFunctor_μ_eq_reverseBraiding_tensorPowTensorIso_inv` and
+  `GLCinLean.CategoryTheory.tensorPowFunctor_μIso`: the comparisons are the inverses of
+  `TauCeti.tensorPowUnitIso` and, for a symmetric `C`, of `TauCeti.tensorPowTensorIso` (for a
+  braided `C`, with the reverse braiding).
 * `GLCinLean.CategoryTheory.tensorPowFunctorZeroIso`, `tensorPowFunctorSuccIso` and
   `tensorPowFunctorOneIso`: the functor for `0` is the constant functor at the unit, the functor
   for `n + 1` is the pairing with the identity followed by the tensor product, and the functor for
@@ -319,6 +332,87 @@ instance (n : ℕ) : (tensorPowFunctor C n).Braided where
   braided := tensorPowFunctor_μ_comp_map_braiding C n
 
 end Symmetric
+
+/-! ### Comparison with the isomorphisms of `TauCeti.tensorPow` -/
+
+section Comparison
+
+variable [BraidedCategory C]
+
+/-- In a braided monoidal category, the unit comparison $ε_n : 𝟙 → 𝟙^{\otimes n}$ of the `n`-th
+tensor power functor is the inverse of `TauCeti.tensorPowUnitIso n : tensorPow (𝟙_ C) n ≅ 𝟙_ C`.
+-/
+theorem tensorPowFunctor_ε (n : ℕ) : ε (tensorPowFunctor C n) = (tensorPowUnitIso n).inv := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    rw [tensorPowFunctor_ε_succ, ih, tensorPowUnitIso_succ_inv, leftUnitor_inv_naturality]
+
+/-- In a braided monoidal category, the unit isomorphism $𝟙 ≅ 𝟙^{\otimes n}$ of the `n`-th tensor
+power functor is the inverse of `TauCeti.tensorPowUnitIso n`. -/
+theorem tensorPowFunctor_εIso (n : ℕ) :
+    Functor.Monoidal.εIso (tensorPowFunctor C n) = (tensorPowUnitIso n).symm :=
+  Iso.ext (tensorPowFunctor_ε C n)
+
+/-- In a braided monoidal category, the inverse unit comparison $η_n : 𝟙^{\otimes n} → 𝟙$ of the
+`n`-th tensor power functor is `TauCeti.tensorPowUnitIso n`. -/
+theorem tensorPowFunctor_η (n : ℕ) : η (tensorPowFunctor C n) = (tensorPowUnitIso n).hom := by
+  rw [← Functor.Monoidal.εIso_inv, tensorPowFunctor_εIso, Iso.symm_inv]
+
+/-- In a braided monoidal category `C`, the tensor comparison
+$μ_n(X, Y) : X^{\otimes n} ⊗ Y^{\otimes n} → (X ⊗ Y)^{\otimes n}$ of the `n`-th tensor power
+functor is the inverse of `TauCeti.tensorPowTensorIso X Y n` formed for the reverse braiding
+`CategoryTheory.reverseBraiding C`, whose braiding $X ⊗ Y ≅ Y ⊗ X$ is $β_{Y,X}^{-1}$. The reason:
+for `n + 1`, `μ` braids $X^{\otimes n}$ past `Y` by $β_{X^{\otimes n}, Y}$
+(`tensorPowFunctor_μ_succ`), while the inverse of `TauCeti.tensorPowTensorIso X Y (n + 1)` uses
+$β_{Y, X^{\otimes n}}^{-1}$ (`TauCeti.tensorPowTensorIso_succ_inv`). -/
+theorem tensorPowFunctor_μ_eq_reverseBraiding_tensorPowTensorIso_inv (n : ℕ) (X Y : C) :
+    μ (tensorPowFunctor C n) X Y =
+      (@tensorPowTensorIso C _ _ (reverseBraiding C) X Y n).inv := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    rw [tensorPowFunctor_μ_succ, ih, @tensorPowTensorIso_succ_inv C _ _ (reverseBraiding C)]
+    rfl
+
+end Comparison
+
+section SymmetricComparison
+
+variable [SymmetricCategory C]
+
+/-- In a symmetric monoidal category, the tensor comparison
+$μ_n(X, Y) : X^{\otimes n} ⊗ Y^{\otimes n} → (X ⊗ Y)^{\otimes n}$ of the `n`-th tensor power
+functor is the inverse of `TauCeti.tensorPowTensorIso X Y n`.
+
+In a braided monoidal category that is not symmetric, the two can differ: `μ_n(X, Y)` is the
+inverse of `TauCeti.tensorPowTensorIso X Y n` for the reverse braiding
+(`tensorPowFunctor_μ_eq_reverseBraiding_tensorPowTensorIso_inv`). For `n + 1`, the comparison
+`μ` uses the braiding $β_{X^{\otimes n}, Y}$, and the inverse of
+`TauCeti.tensorPowTensorIso X Y (n + 1)` uses $β_{Y, X^{\otimes n}}^{-1}$. The two are equal
+when `C` is symmetric. -/
+theorem tensorPowFunctor_μ (n : ℕ) (X Y : C) :
+    μ (tensorPowFunctor C n) X Y = (tensorPowTensorIso X Y n).inv := by
+  rw [tensorPowFunctor_μ_eq_reverseBraiding_tensorPowTensorIso_inv,
+    SymmetricCategory.reverseBraiding_eq]
+
+/-- In a symmetric monoidal category, the tensor isomorphism
+$X^{\otimes n} ⊗ Y^{\otimes n} ≅ (X ⊗ Y)^{\otimes n}$ of the `n`-th tensor power functor is the
+inverse of `TauCeti.tensorPowTensorIso X Y n`. As for `tensorPowFunctor_μ`, the two
+can differ when `C` is braided and not symmetric. -/
+theorem tensorPowFunctor_μIso (n : ℕ) (X Y : C) :
+    Functor.Monoidal.μIso (tensorPowFunctor C n) X Y = (tensorPowTensorIso X Y n).symm :=
+  Iso.ext (tensorPowFunctor_μ C n X Y)
+
+/-- In a symmetric monoidal category, the inverse tensor comparison
+$δ_n(X, Y) : (X ⊗ Y)^{\otimes n} → X^{\otimes n} ⊗ Y^{\otimes n}$ of the `n`-th tensor power
+functor is `TauCeti.tensorPowTensorIso X Y n`. As for `tensorPowFunctor_μ`, the two
+can differ when `C` is braided and not symmetric. -/
+theorem tensorPowFunctor_δ (n : ℕ) (X Y : C) :
+    δ (tensorPowFunctor C n) X Y = (tensorPowTensorIso X Y n).hom := by
+  rw [← Functor.Monoidal.μIso_inv, tensorPowFunctor_μIso, Iso.symm_inv]
+
+end SymmetricComparison
 
 /-- The first tensor power functor is isomorphic to the identity functor, by the right unitors
 $X ⊗ 𝟙 ≅ X$. For a braided `C` this is a monoidal isomorphism. -/
