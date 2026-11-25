@@ -52,7 +52,7 @@ Every worker is enabled. Each author worker has the phases `rebase`, `fix-ci`, `
 
 The 58 pull requests that the workers opened from 2026-11-19 to 2026-11-21 are all on Tau Ceti main and at the pin; `docs/blueprint-providers.md` and the plan name what they supply. Tau Ceti's queue lands a pull request as a commit on `main` whose subject ends with its number, and GitHub closes the pull request hours later (title `[Merged by Bors] - …`). So the session reads what landed from `git log` of Tau Ceti main and not from the state of the pull request. On 2026-11-20 and 2026-11-21 a pull request waited from 8 to 30 hours in the queue; the queue, not the workers, sets the pace of a chain of dependent targets.
 
-Open, all opened on 2026-11-25 (ten); the session compared each with its target of the plan:
+Open, all opened on 2026-11-25 (twelve); the session compared each with its target of the plan:
 
 | Pull request | Worker | Content | Plan node |
 |---|---|---|---|
@@ -65,6 +65,8 @@ Open, all opened on 2026-11-25 (ten); the session compared each with its target 
 | #45836 | `author-langlands` | the coadjoint nilpotent cone, with the checks on `GL₂` and `𝔾_m` | `Groups.nilpotentCoadjointCone` |
 | #45839 | `author-groups` | complements of a vector group with a linear diagonalizable action are conjugate (the second step of Milne 16.33(d)) | `Groups.rootDatum` |
 | #45842 | `author-tannaka` | the group functor of tensor automorphisms of a fibre functor | `Tannaka.neutralReconstruction` |
+| #45844 | `author-moduli` | the sheaf of isomorphisms of two objects of a banded gerbe is a torsor under the band (§§4.9, 4.9a) | `Stacks.abelianBandedGerbe` |
+| #45846 | `author-stable` | the categories of operators of the associative operad and of the operad of left modules | `Infinity.monoidalCategory`, `Infinity.moduleCategory` |
 | #45827 | `author-moduli` | `InvertibleSheaf.pullback` is strong symmetric monoidal, with monoidal `pullbackId` and `pullbackComp`; `Functor.mapTensorPowIso : F (X^{⊗n}) ≅ (F X)^{⊗n}` for a strong monoidal functor, and with it `f^*(L^{⊗n}) ≅ (f^*L)^{⊗n}` | `LineBundle.pullbackBraided`, `LineBundle.Root` |
 
 Closed without merge: #45819 (`author-dmodules`: `D_X = O_X` for `Spec k`). The rubric `scope` of Tau Ceti's review found it a special case of the C5.1 comparison over an affine open that brings the target no closer, and the worker closed it. So a target of a worker is a step on the way to a roadmap target, not a corollary or a check of it: a corollary goes into the pull request of the statement it follows from.
