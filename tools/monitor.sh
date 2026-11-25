@@ -38,6 +38,9 @@
 # workers repair it by themselves, and after a change of Tau Ceti's toolchain many fail at once.
 # OPENED_EVENTS (default 1): with 0, a new pull request of ours is no event; the session then
 # compares the new pull requests with the plan at the next event.
+# MERGED_EVENTS (default 1): with 0, a merged pull request of ours is no event; the session then
+# folds the merged pull requests into the plan together at the next event or at the wake after
+# DAY_SECONDS. A pull request of ours that is closed without a merge stays an event.
 # WORKER_FAULT_MINUTES (default 30): the time that a fault of a worker must last. With 0, each
 # fault and each new start of a worker is an event at the first poll that shows it.
 # HOST_SSH (default empty): a command that runs its last argument as a shell command on the
@@ -172,7 +175,8 @@ try:
             if os.environ.get("OPENED_EVENTS", "1") != "0":
                 events.append(f"PR #{key} opened: {p['title']}")
         elif prev["state"] != st:
-            events.append(f"PR #{key} {st}: {p['title']}")
+            if st != "MERGED" or os.environ.get("MERGED_EVENTS", "1") != "0":
+                events.append(f"PR #{key} {st}: {p['title']}")
         if failed and not (prev or {}).get("failed") and os.environ.get("CI_FAILED_EVENTS", "1") != "0":
             events.append(f"PR #{key} CI failed: {p['title']}")
     new["prs"] = prs
