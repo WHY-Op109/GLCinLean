@@ -37,8 +37,11 @@ Agents do the work. The owner starts a session on Fable 5.2, in auto mode, with 
 | `tools/check-statement-axioms.lean` | prints the axioms of the statement's declarations (the done check) |
 | `tools/check-module-cycles.py` | checks that no module plan of `plans/` imports another in a cycle, which the tracker does not check |
 | `tools/check-upstream-names.py` | checks that each Mathlib or Tau Ceti declaration that the plan names is in the module it names, at the pins |
-| `tools/monitor.sh` | the monitor of the workflow: wakes the session when a worker or a watched pull request changes state, when the disk is nearly full, and once a day |
-| `tools/keep-workers-running.sh` | runs on the host of the Tau Ceti workers every half hour: starts the Worker's manager when it is not running, starts it again when it runs without the host's proxy, and ends a Lean process of a worker that sleeps without end |
+| `tools/monitor.sh` | the monitor of the workflow: wakes the session when a worker has a fault that persists, when a watched pull request changes state, when the disk is nearly full, when the workers' host is short of memory or its `/tmp` is nearly full, and once a day |
+| `tools/keep-workers-running.sh` | runs on the host of the Tau Ceti workers every half hour: starts the Worker's manager when it is not running, starts it again when it runs without the host's proxy, ends a Lean process of a worker that sleeps without end, and removes the stale scratch files of the workers' agents from `/tmp` |
+| `tools/keep-reviews-below-merges.sh` | runs on the host of the Tau Ceti workers every ten minutes: counts the merges and the reviews of the workers' GitHub account as Tau Ceti's dashboard does, and enables or disables the review worker so that the reviews stay just below the merges |
+| `tools/worker-waste-report.py` | runs on the host of the Tau Ceti workers, by hand or once a week: reports where the model tokens of the workers went (per worker, per phase, per class of run), how long the workers waited for quota, and which share of the cost was lost |
+| `tools/deploy-worker-targets.py` | validates the target list and the author workers of `docs/worker-targets/` on the workers' host and puts them there |
 | `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |
 | `prompts/` | the prompts of the steps of the workflow |
 | `AGENTS.md` | the rules of the project, read by every agent |
