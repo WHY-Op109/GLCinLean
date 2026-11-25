@@ -9,8 +9,13 @@
 #   @reboot sleep 60; "$HOME/.local/bin/keep-workers-running"
 # Log: ~/.local/state/tauceti/keep-workers-running.log (the last 2000 lines are kept).
 
-# The network settings of a login shell (a proxy, when the host has one); cron does not load them.
+# The network settings of the host (a proxy, when it has one). Cron loads none, and the profile of
+# a host can set them for some logins only. So the host states them in
+# ~/.config/tauceti/network-env.sh (`export` lines), and this script reads that file. Without them
+# the Worker cannot renew the login of its agents, and every worker waits.
 [ -f "$HOME/.profile" ] && . "$HOME/.profile" >/dev/null 2>&1
+NETWORK_ENV="${XDG_CONFIG_HOME:-$HOME/.config}/tauceti/network-env.sh"
+[ -f "$NETWORK_ENV" ] && . "$NETWORK_ENV"
 export PATH="$HOME/.local/bin:$HOME/.elan/bin:$PATH"
 
 # The stack limit of the manager and of every worker it starts: 1 GiB, soft and hard. The Worker
@@ -65,6 +70,26 @@ end_sleeping_lean() {
   done
 }
 end_sleeping_lean
+
+# A manager that was started without the proxy of the host gives none to its workers. Stop it;
+# the check below then starts a manager with the settings of this script.
+stop_manager_without_proxy() {
+  local pid
+  [ -n "${https_proxy:-}" ] || return 0
+  pid=$(tauceti workers status --json 2>/dev/null | python3 -c '
+import json, sys
+try:
+    m = json.load(sys.stdin).get("manager")
+    print(m.get("pid") or "" if isinstance(m, dict) else "")
+except Exception:
+    pass')
+  [ -n "$pid" ] && [ -r "/proc/$pid/environ" ] || return 0
+  tr '\0' '\n' < "/proc/$pid/environ" | grep -qi '^https_proxy=' && return 0
+  echo "$(now) the manager (pid $pid) runs without the proxy of the host: tauceti workers manager-stop" >> "$LOG"
+  tauceti workers manager-stop >> "$LOG" 2>&1
+  sleep 5
+}
+stop_manager_without_proxy
 
 result=$(check)
 if [ "${result%% *}" = ok ]; then

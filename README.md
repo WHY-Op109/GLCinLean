@@ -38,7 +38,7 @@ Agents do the work. The owner starts a session on Fable 5.2, in auto mode, with 
 | `tools/check-module-cycles.py` | checks that no module plan of `plans/` imports another in a cycle, which the tracker does not check |
 | `tools/check-upstream-names.py` | checks that each Mathlib or Tau Ceti declaration that the plan names is in the module it names, at the pins |
 | `tools/monitor.sh` | the monitor of the workflow: wakes the session when a worker or a watched pull request changes state, when the disk is nearly full, and once a day |
-| `tools/keep-workers-running.sh` | runs on the host of the Tau Ceti workers every half hour and starts the Worker's manager when it is not running |
+| `tools/keep-workers-running.sh` | runs on the host of the Tau Ceti workers every half hour: starts the Worker's manager when it is not running, starts it again when it runs without the host's proxy, and ends a Lean process of a worker that sleeps without end |
 | `tools/tex-locator.awk` | gives the paper's number (for example Conj. 1.6.7) of a line of its TeX |
 | `prompts/` | the prompts of the steps of the workflow |
 | `AGENTS.md` | the rules of the project, read by every agent |
