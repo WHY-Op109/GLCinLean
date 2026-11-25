@@ -30,7 +30,7 @@ Updated 2026-11-25. No question waits for the owner; one optional action of the 
 
 ### The workers
 
-Every worker is enabled. Each author worker has the phases `rebase`, `fix-ci`, `fix`, `roadmap`, and its guidance of 2026-11-25, which a searcher wrote from Tau Ceti main `553f7926`. "Now" marks the targets that build only on Tau Ceti main.
+Every worker is enabled. Each author worker has its guidance of 2026-11-25, which a searcher wrote from Tau Ceti main `553f7926`, and the phases `rebase`, `fix-ci`, `fix`, `roadmap`. Three of them have no `roadmap` phase now, because each of their targets is an open pull request or waits for a merge: `author-dmodules` (until #43231 merges), `author-loops` (until #45829 or #45847 merges; the area then has no further target) and `author-torsors` (until #45828 merges). The session gives the phase back at that merge (the configuration takes `only = ["rebase", "fix-ci", "fix", "roadmap"]`). "Now" marks the targets that build only on Tau Ceti main.
 
 | Worker | Area | Targets, in order | Plan nodes |
 |---|---|---|---|
