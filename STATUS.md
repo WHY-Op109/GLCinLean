@@ -54,7 +54,9 @@ The 58 pull requests that the workers opened from 2026-11-19 to 2026-11-21 are a
 
 Merged on 2026-11-25 and at the pin: #45828 (`author-torsors`: every torsor under the sheaf of points of a group scheme affine over any base is representable; a step of `Stacks.groupTorsor`) and #45836 (`author-langlands`: the coadjoint nilpotent cone, with the checks on `GL₂` and `𝔾_m`). #45836 supplies the whole roadmap node of the coadjoint nilpotent cone: a checker compared it item by item with the pin, the node is removed from `plans/`, and `LocalSystems.nilpotentCone` names `TauCeti.coadjointNilpotentConeIdeal`.
 
-Open, all opened on 2026-11-25 (nineteen, at 20:30 UTC); the session compared each with its target of the plan:
+Merged on 2026-11-25 and not yet at the pin: #45872 (`author-moduli`: the restriction of a gerbe, its banding, band-preserving transformations and neutralizations to a slice site; the plan node `Stacks.gerbeSliceRestriction`). The session folds merged pull requests into the plan in batches, to save model use: at the next pin move a planner compares #45872 and the pull requests that merged by then with their plan nodes, and a checker checks the result. Six pull requests of ours are in Tau Ceti's merge queue (#45818, #45824, #45827, #45833, #45848), so the next pin move comes when they have landed or at the daily wake of the monitor.
+
+Open, all opened on 2026-11-25 (eighteen, at 22:45 UTC); the session compared each with its target of the plan:
 
 | Pull request | Worker | Content | Plan node |
 |---|---|---|---|
@@ -73,7 +75,6 @@ Open, all opened on 2026-11-25 (nineteen, at 20:30 UTC); the session compared ea
 | #45854 | `author-infinity` | right and left fibrations over Kan complexes are Kan fibrations, and the criterion for trivial fibrations (HTT 2.1.3.3, 2.1.3.4) | `Infinity.mappingSpaces`, `Infinity.limits` |
 | #45856 | `author-stacks` | the stackification of a prestack is a stack (`Stack.isStack_stackification`) | `Stacks.stackification` |
 | #45827 | `author-moduli` | `InvertibleSheaf.pullback` is strong symmetric monoidal, with monoidal `pullbackId` and `pullbackComp`; `Functor.mapTensorPowIso : F (X^{⊗n}) ≅ (F X)^{⊗n}` for a strong monoidal functor, and with it `f^*(L^{⊗n}) ≅ (f^*L)^{⊗n}` | `LineBundle.pullbackBraided`, `LineBundle.Root` |
-| #45872 | `author-moduli` | the restriction to a slice site of a gerbe (`Pseudofunctor.isGerbe_over`), of its banding (`AbelianBanding.over`), of a band-preserving transformation, and of neutralizations (`Neutralization.overEquiv`, `isNeutral_over_iff`) | `Stacks.gerbeSliceRestriction` |
 | #45874 | `author-infinity` | the left mapping space `SSet.leftMappingSpace` of a simplicial set, with its API (target (3) of the worker's guidance) | `Infinity.mappingSpaces` |
 | #45878 | `author-dqcoh` | on `D(𝒪_X)`, the derived tensor product with `L` is left adjoint to the derived internal Hom from `L`, with no bound (Stacks 08DI, 08J7) | `Sheaves.derivedQCoh` |
 | #45890 | `author-groups` | a proper morphism of schemes over an algebraically closed topological field with compact projective spaces of points (so over `ℂ`), with locally Noetherian target, induces a proper map of points; a proper scheme has compact points (§3A.5c) | `Constructible.ComplexPoints` |
