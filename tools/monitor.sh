@@ -22,6 +22,8 @@
 # DISK_SECONDS (default 10800): the time between two checks of the free disk space.
 # CI_FAILED_EVENTS (default 1): with 0, a failed CI of a pull request of ours is no event; the
 # workers repair it by themselves, and after a change of Tau Ceti's toolchain many fail at once.
+# OPENED_EVENTS (default 1): with 0, a new pull request of ours is no event; the session then
+# compares the new pull requests with the plan at the next event.
 
 STATE="${MONITOR_STATE:-.lake/monitor-state.json}"
 POLL_SECONDS="${POLL_SECONDS:-900}"
@@ -93,7 +95,8 @@ try:
             continue
         prev = old.get("prs", {}).get(key)
         if prev is None:
-            events.append(f"PR #{key} opened: {p['title']}")
+            if os.environ.get("OPENED_EVENTS", "1") != "0":
+                events.append(f"PR #{key} opened: {p['title']}")
         elif prev["state"] != st:
             events.append(f"PR #{key} {st}: {p['title']}")
         if failed and not (prev or {}).get("failed") and os.environ.get("CI_FAILED_EVENTS", "1") != "0":
