@@ -13,7 +13,9 @@ every entry whose id does not start with `author-` as it is, and drops every oth
 It checks the list with `tauceti _targets-inspect` and the settings with `tauceti workers apply
 --check` on the host, and only then replaces the two files and runs `tauceti workers apply`.
 A worker reads the list at the start of each round, and the Worker restarts a changed worker after
-its round, so a deploy ends no round. With `--check` nothing on the host changes.
+its round. A worker that is no longer in `workers.tsv` stops at once, also in the middle of a round:
+set it to `off` first and drop its line when it is between rounds. With `--check` nothing on the
+host changes.
 
 `HOST_SSH` is the command that runs a shell command on the host. It is not stored in the repository.
 """
@@ -91,7 +93,8 @@ def main():
     host(f"cat > {REMOTE_DIR}/workers.toml.new", new)
     summary = json.loads(host(f"{TAUCETI} _targets-inspect --file {targets_path}.new"))["summary"]
     print("target list:", summary)
-    print(host(f"{TAUCETI} workers --config {REMOTE_DIR}/workers.toml.new apply --check 2>&1 | tail -1").strip())
+    # No pipe here: `host` stops the script when the check refuses the settings.
+    print(host(f"{TAUCETI} workers --config {REMOTE_DIR}/workers.toml.new apply --check 2>&1").strip().splitlines()[-1])
     if check_only:
         host(f"rm -f {REMOTE_DIR}/targets.md.new {REMOTE_DIR}/workers.toml.new")
         print("checked; nothing changed on the host")
@@ -100,7 +103,7 @@ def main():
         f"cd {REMOTE_DIR} && cp -p workers.toml workers.toml.before-deploy && mv targets.md.new targets.md"
         " && mv workers.toml.new workers.toml"
     )
-    print(host(f"{TAUCETI} workers apply 2>&1 | tail -1").strip())
+    print(host(f"{TAUCETI} workers apply 2>&1").strip().splitlines()[-1])
     for worker, area, enabled in rows:
         print(f"{worker}: {area}, {'on' if enabled else 'off'}")
 

@@ -2,8 +2,9 @@
 # Keeps the Tau Ceti workers running on the host where they run (AGENTS.md, "Workflow").
 # The Worker's manager restarts a worker that fails. This script starts the manager again when
 # it is not running, or when an enabled worker has no process, and writes one line per run to
-# its log. It also ends a Lean process of a worker that sleeps without end, and removes the
-# stale scratch files of the workers' agents from /tmp. It runs no model.
+# its log. It also ends a Lean process of a worker that sleeps without end, ends a process of
+# the Worker that is in a loop without a pause, and removes the stale scratch files of the
+# workers' agents from /tmp. It runs no model.
 #
 # Install on the workers' host as ~/.local/bin/keep-workers-running, with these crontab lines:
 #   */30 * * * * "$HOME/.local/bin/keep-workers-running"
@@ -73,19 +74,36 @@ end_sleeping_lean() {
 end_sleeping_lean
 
 # The agents of the workers leave scratch files in /tmp that are named after a pull request
-# (`pr45823-body.md`, `tauceti-45823-local-checks.log`, `t44507/`). On a host that keeps /tmp in
+# (`pr45823-body.md`, `tauceti-45823-local-checks.log`, `t44507/`). The Worker's own runtime
+# folder `/tmp/tauceti-<uid>` is not one of them and stays. On a host that keeps /tmp in
 # memory they take memory until someone deletes them. Remove those that this account owns and
 # that are older than three days. Only these name patterns are removed; every other entry of
 # /tmp stays, also when another program of the same account made it.
 remove_stale_scratch() {
   local n
-  n=$(find /tmp -maxdepth 1 -user "$(id -un)" -mtime +3 \( -name 'pr[0-9]*' -o -name 'tauceti-[0-9]*' \
+  n=$(find /tmp -maxdepth 1 -user "$(id -un)" -mtime +3 \( -name 'pr[0-9]*' -o -name 'tauceti-[0-9]*-*' \
         -o -name 'body[0-9]*' -o -name 'verify[0-9]*' -o -name 'reply[0-9]*' -o -name 'diag[0-9]*' \
         -o -name 't[0-9][0-9][0-9][0-9][0-9]*' -o -name 'local-checks-*' \) -print -exec rm -rf -- {} + 2>/dev/null | wc -l)
   [ "$n" -gt 0 ] && echo "$(now) removed $n stale scratch entries of the workers from /tmp" >> "$LOG"
   return 0
 }
 remove_stale_scratch
+
+# A process of the Worker waits for its children or for the network and uses little CPU time. One
+# that has used CPU time for nearly all of its life is in a loop without a pause (the Worker of
+# 2026-11-25 has such a loop in its GitHub reads) and holds its round until the round limit of six
+# hours. End each process of the Worker that has used at least 15 minutes of CPU time and at least
+# 90 % of its age; the worker then starts its next round.
+end_spinning_worker_process() {
+  local pid age cpu args
+  ps -eo pid=,etimes=,cputimes=,args= | while read -r pid age cpu args; do
+    case "$args" in *tauceti_worker*) ;; *) continue ;; esac
+    [ "$cpu" -ge 900 ] && [ $((cpu * 10)) -ge $((age * 9)) ] || continue
+    kill "$pid" 2>/dev/null &&
+      echo "$(now) ended a Worker process in a loop: pid $pid, ${age} s old, ${cpu} s of CPU time: ${args:0:120}" >> "$LOG"
+  done
+}
+end_spinning_worker_process
 
 # A manager that was started without the proxy of the host gives none to its workers. Stop it;
 # the check below then starts a manager with the settings of this script.
