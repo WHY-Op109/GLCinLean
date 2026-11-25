@@ -52,7 +52,7 @@ Every worker is enabled. Each author worker has its guidance of 2026-11-25, whic
 
 The 58 pull requests that the workers opened from 2026-11-19 to 2026-11-21 are all on Tau Ceti main and at the pin; `docs/blueprint-providers.md` and the plan name what they supply. Tau Ceti's queue lands a pull request as a commit on `main` whose subject ends with its number, and GitHub closes the pull request hours later (title `[Merged by Bors] - …`). So the session reads what landed from `git log` of Tau Ceti main and not from the state of the pull request. On 2026-11-20 and 2026-11-21 a pull request waited from 8 to 30 hours in the queue; the queue, not the workers, sets the pace of a chain of dependent targets.
 
-Open, all opened on 2026-11-25 (seventeen, at 15:50 UTC); the session compared each with its target of the plan:
+Open, all opened on 2026-11-25 (twenty, at 17:20 UTC); the session compared each with its target of the plan:
 
 | Pull request | Worker | Content | Plan node |
 |---|---|---|---|
@@ -73,6 +73,9 @@ Open, all opened on 2026-11-25 (seventeen, at 15:50 UTC); the session compared e
 | #45854 | `author-infinity` | right and left fibrations over Kan complexes are Kan fibrations, and the criterion for trivial fibrations (HTT 2.1.3.3, 2.1.3.4) | `Infinity.mappingSpaces`, `Infinity.limits` |
 | #45856 | `author-stacks` | the stackification of a prestack is a stack (`Stack.isStack_stackification`) | `Stacks.stackification` |
 | #45827 | `author-moduli` | `InvertibleSheaf.pullback` is strong symmetric monoidal, with monoidal `pullbackId` and `pullbackComp`; `Functor.mapTensorPowIso : F (X^{⊗n}) ≅ (F X)^{⊗n}` for a strong monoidal functor, and with it `f^*(L^{⊗n}) ≅ (f^*L)^{⊗n}` | `LineBundle.pullbackBraided`, `LineBundle.Root` |
+| #45872 | `author-moduli` | the restriction to a slice site of a gerbe (`Pseudofunctor.isGerbe_over`), of its banding (`AbelianBanding.over`), of a band-preserving transformation, and of neutralizations (`Neutralization.overEquiv`, `isNeutral_over_iff`); the restriction of modifications is not in it | `Stacks.gerbeSliceRestriction` |
+| #45874 | `author-infinity` | the left mapping space `SSet.leftMappingSpace` of a simplicial set, with its API (target (3) of the worker's guidance) | `Infinity.mappingSpaces` |
+| #45878 | `author-dqcoh` | on `D(𝒪_X)`, the derived tensor product with `L` is left adjoint to the derived internal Hom from `L`, with no bound (Stacks 08DI, 08J7) | `Sheaves.derivedQCoh` |
 
 Closed without merge: #45819 (`author-dmodules`: `D_X = O_X` for `Spec k`). The rubric `scope` of Tau Ceti's review found it a special case of the C5.1 comparison over an affine open that brings the target no closer, and the worker closed it. So a target of a worker is a step on the way to a roadmap target, not a corollary or a check of it: a corollary goes into the pull request of the statement it follows from.
 
