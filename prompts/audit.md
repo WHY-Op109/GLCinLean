@@ -13,3 +13,5 @@
 3. Is there a simpler faithful formulation or route, and what would it save?
 4. Which rule, prompt or tool got in the way, and what simpler one would do? Which files and which parts of `STATUS.md` are no longer needed?
 5. For each roadmap candidate in `docs/blueprint-providers.md`, "Roadmap candidates (deferred)": do all four triggers hold? Update its column "State", and put a candidate whose triggers all hold under "Waiting for the owner" in `STATUS.md`.
+
+**Sources.** Tau Ceti takes pull requests on GitHub and on its Forgejo site (`git.taucetiproject.org`); both land on the same `main`, so read the open pull requests of both. For the files that a range of Tau Ceti's history added, deleted or renamed, clone Tau Ceti without file contents into a scratch folder (`git clone --filter=blob:none --no-checkout`) and use `git log --name-status` there: the checkout under `.lake/packages` has no history.
