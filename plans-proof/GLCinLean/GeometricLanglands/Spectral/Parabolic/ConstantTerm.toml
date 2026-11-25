@@ -25,8 +25,8 @@ source = '[GeometricConstantTerm] §§0.2.1, 1.1.2; [GLC3] §8.1'
 [[node]]
 id = 'GLCinLean.SpectralProof.cuspidalCategory'
 kind = 'definition'
-desc = 'Full stable subcategory annihilated by CT_* for every proper parabolic; equivalently the right orthogonal to the Eisenstein images. Its support theorem provides a nontrivial use of this definition. Provider: here.'
-deps = ['GLCinLean.SpectralProof.constantTerm', 'GLCinLean.SpectralProof.eisensteinLeftAdjoint', 'GLCinLean.Infinity.stableCategory']
+desc = 'Full stable subcategory annihilated by CT_* for every proper parabolic; equivalently the right orthogonal to the Eisenstein images. Its support theorem provides a nontrivial use of this definition. Provider: here. Stable quasicategories are those with the Tau Ceti predicate `SSet.IsStable` (`TauCeti.AlgebraicTopology.Quasicategory.Stable`): a zero vertex, a limit cone and a colimit cocone for every diagram indexed by a finite simplicial set, and a square is a pullback square exactly when it is a pushout square.'
+deps = ['GLCinLean.SpectralProof.constantTerm', 'GLCinLean.SpectralProof.eisensteinLeftAdjoint']
 source = '[GeometricConstantTerm] §§1.4.1–1.4.4'
 
 [[node]]
