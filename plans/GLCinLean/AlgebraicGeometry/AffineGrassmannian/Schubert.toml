@@ -1,11 +1,4 @@
-desc = 'The Schubert stratification of the affine Grassmannian by L+G-orbits, and the de Rham cohomology of its strata.'
-
-[[node]]
-id = 'GLCinLean.AffineGrassmannian.schubertStratification'
-kind = 'definition'
-desc = 'L+G-orbits indexed by dominant coweights, finite-dimensional projective closures, closure order, dimension and stabilizer connectedness; include rank-one and torus cases. Provider: here.'
-deps = ['GLCinLean.AffineGrassmannian', 'GLCinLean.Groups.basedRootDatum']
-source = '[BDHitchin] §§4.5.8–4.5.12; [MV] §2, equations (2.1)–(2.3)'
+desc = 'The de Rham cohomology of the strata of the Schubert stratification of the affine Grassmannian.'
 
 [[node]]
 id = 'GLCinLean.AffineGrassmannian.deRhamCohomology_schubertStratum_eq_zero_of_odd'

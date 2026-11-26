@@ -3,8 +3,8 @@ desc = 'Convolution of spherical D-modules on the affine Grassmannian, and its e
 [[node]]
 id = 'GLCinLean.Satake.convolution'
 kind = 'definition'
-desc = 'The twisted-product convolution diagram Gr_G tilde-times Gr_G → Gr_G with its descended external tensor product and proper pushforward; retain associativity and unit constraints. Provider: here.'
-deps = ['GLCinLean.AffineGrassmannian', 'GLCinLean.Satake.sphericalHeart', 'GLCinLean.DModules.holonomicShriek']
+desc = 'The convolution of spherical D-modules on Gr_G: for the convolution diagram Gr_G × Gr_G ← LG × Gr_G → Gr_G tilde-times Gr_G → Gr_G, the descent of the external tensor product to the twisted product and the proper pushforward along the convolution map; retain associativity and unit constraints. The diagram is the roadmap node AffineGrassmannian.ConvolutionGrassmannian: the convolution Grassmannian LG ×^{L⁺G} Gr_G with its projection and its convolution map, its r-fold form, and the twisted products of Schubert varieties, which are projective schemes and Zariski-locally products. This node does not construct the diagram again. It carries the diagram to the prestacks of the plan (GLCinLean.AffineGrassmannian) and constructs the functor on D-modules, which no roadmap states: the convolution of roadmap SheafTheoreticSmithTheory is for étale sheaves. Provider: here.'
+deps = ['GLCinLean.AffineGrassmannian', 'GLCinLean.AffineGrassmannian.ConvolutionGrassmannian', 'GLCinLean.Satake.sphericalHeart', 'GLCinLean.DModules.holonomicShriek']
 source = '[MV] §4'
 
 [[node]]

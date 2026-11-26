@@ -4,7 +4,7 @@ desc = 'The spherical heart on the affine Grassmannian, its semisimplicity, and 
 id = 'GLCinLean.Satake.sphericalHeart'
 kind = 'definition'
 desc = 'Finite-Schubert-support L+G-equivariant perverse regular-holonomic D-modules on Gr_G, with its actual morphisms, abelian structure and IC generators. This is the Satake heart, not the whole equivariant DG category. Provider: here.'
-deps = ['GLCinLean.AffineGrassmannian.schubertStratification', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.DModules.perverseHeart', 'GLCinLean.DModules.intermediateExtension', 'GLCinLean.DModules.IsRegularHolonomic']
+deps = ['GLCinLean.AffineGrassmannian', 'GLCinLean.AffineGrassmannian.schubertStratification', 'GLCinLean.DModules.EquivariantIndscheme', 'GLCinLean.DModules.perverseHeart', 'GLCinLean.DModules.intermediateExtension', 'GLCinLean.DModules.IsRegularHolonomic']
 source = '[MV] §2 and Propositions 2.1–2.2; [GLys] §§9.1.1, 9.2.1'
 
 [[node]]

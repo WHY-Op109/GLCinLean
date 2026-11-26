@@ -64,6 +64,7 @@ One line per paper, to choose which one to search:
 | [PappasRapoport] | `math-0607130v2/src/TwistedLoops08fi.tex` | 4.5k | connected components of affine flag varieties (Thm. 5.1); the simply connected cover and the neutral component (§6.1.1, stated in characteristic p); Iwahori–Weyl group (§8) |
 | [BBD] | not pinned | book | the decomposition theorem (Thm. 6.2.5) |
 | [Kumar] | not pinned | book | Kac–Moody flag varieties and Bott–Samelson varieties (§7.1) |
+| [Zhu] | not pinned | paper | the loop Grassmannian over a field: representability, ind-projectivity, Schubert varieties, convolution and semi-infinite orbits, as roadmap SheafTheoreticSmithTheory §3.0 cites it |
 
 ## Searching
 
