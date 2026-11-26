@@ -44,8 +44,8 @@ The targets of the author workers are the items of `docs/worker-targets/targets.
 | AlgebraicModuliForArithmeticGeometry | `author-moduli` | one item can start (`band-morphism-full-faithful`) |
 | MotivesAndAlgebraicCycles | `author-tannaka`, `author-moduli2` | two items can start (`coalgebra-reconstruction`, `hopf-connected-char-zero`) |
 | ReductiveGroups | `author-groups` | one item can start (`pinning-base-change`); the chain to the root datum waits for #45823 |
-| EnhancedDerivedSheaves | `author-enhanced` | no item can start: each open item waits for an item of GeneralizedCohomology; the area holds nodes 3 to 5 of the longest chain, which wait for `Infinity.limits` |
-| SheafTheoreticSmithTheory | `author-dqcoh` | four items can start on Tau Ceti main alone (`grassmannian-stable-submodule-locus`, `bounded-lattices-stable-submodules`, `gl-n-arc-orbits-on-lattices`, `arc-group-preimage-of-subgroup`); `repair` and `maintenance` repair the open pull requests that this worker opened in SchemeAndStackFoundations |
+| EnhancedDerivedSheaves | none | no item can start: each open item waits for an item of GeneralizedCohomology; the area holds nodes 3 to 5 of the longest chain. A worker returns when an item can start |
+| SheafTheoreticSmithTheory | `author-dqcoh`, `author-enhanced` | four items can start on Tau Ceti main alone (`grassmannian-stable-submodule-locus`, `bounded-lattices-stable-submodules`, `gl-n-arc-orbits-on-lattices`, `arc-group-preimage-of-subgroup`); `repair` and `maintenance` repair the open pull requests that these workers opened in their earlier areas |
 
 In SheafTheoreticSmithTheory a fifth item, `affine-weyl-coxeter-system`, can start too; it builds on files that the open Tau Ceti #41735 and #41791 of another contributor change, so its worker reads both first.
 
