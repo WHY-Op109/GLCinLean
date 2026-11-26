@@ -30,7 +30,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "docs" / "worker-targets"
 REMOTE_DIR = "$HOME/.config/tauceti"
 TAUCETI = "$HOME/.local/bin/tauceti"
-PACE = "0:15,50:70,90:95"
+PACE = "0:95,90:95"
 PROMPT_LIMIT = 4096
 
 
