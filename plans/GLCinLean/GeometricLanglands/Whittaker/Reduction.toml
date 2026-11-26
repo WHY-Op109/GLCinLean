@@ -10,8 +10,8 @@ source = '[GLC1] §§1.3.2–1.3.4'
 [[node]]
 id = 'GLCinLean.Whittaker.ReductionStack'
 kind = 'definition'
-desc = 'Bun_B ×_{Bun_T} {ρ(ω_X)} and its projection p to Bun_G. The map Bun_B → Bun_T is induced by the projection B → T with kernel N (Groups.borelUnipotentRadical). Provider: here.'
-deps = ['GLCinLean.Whittaker.rhoTorsor', 'GLCinLean.Stacks.BundleStack', 'GLCinLean.Groups.pinnedData', 'GLCinLean.Groups.borelUnipotentRadical']
+desc = 'Bun_B ×_{Bun_T} {ρ(ω_X)} and its projection p to Bun_G. The map Bun_B → Bun_T is induced by the projection B → T with kernel N (Groups.borelUnipotentRadical). B and T are the Borel subgroup and the torus of the pinning, the fields `borel` and `torus` of `TauCeti.Pinning`. Provider: here. Upstream declarations used: `TauCeti.Pinning` (`TauCeti.Algebra.AlgebraicGroup.Pinning.Basic`).'
+deps = ['GLCinLean.Whittaker.rhoTorsor', 'GLCinLean.Stacks.BundleStack', 'GLCinLean.Groups.borelUnipotentRadical']
 source = '[GLC1] §§1.3.1, 1.3.4'
 
 [[node]]
