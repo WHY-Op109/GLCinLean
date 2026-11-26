@@ -29,7 +29,7 @@ Updated 2026-11-26. No question waits for the owner; two actions of the owner th
     8. *`/tmp` entries owned by `root` after a restart of the server's container.* Sign: a Claude agent ends at once with `Temp directory /tmp/claude-<uid> is owned by uid 65534`, or its commands fail with `EACCES: permission denied, mkdir '/tmp/claude-<uid>/…'`. Check: the owners of the entries of `/tmp`; they may return to the account by themselves within about half an hour, so first wait and look again. Repair: the account owns `/tmp/claude-<uid>` and can rename the `root`-owned folders in it; only `root` can change the owner of the rest (every entry of `/tmp` apart from `.X11-unix`, `.ICE-unix`, `.XIM-unix` and `.font-unix`). The Worker's runtime folder is `/run/user/<uid>`, so a `root`-owned `/tmp/tauceti-<uid>` does not stop it.
     9. *HTTP 429 of the usage reading after all workers start at once.* Sign: the author workers show `waiting-quota` with "usage endpoint rate-limited; cooling down". Repair: none; they read the usage again after one hour, and `repair` and the two workers on GPT 6.1 Sol work meanwhile.
     10. *A fault that a local correction of the Worker prevents* (a lost claim on a failed renewal, a read of GitHub in a loop without a pause, a blocked cache preparation): the signs and the checks are in "Decisions taken", "Where the author workers run".
-    11. *The Worker closes a pull request of ours.* Sign: the monitor reports `PR #N CLOSED`, and the last comment of the pull request says that the review asked for changes again after six repair rounds with no approval in between; the branch of the fork is kept. Check: the rubrics of the last review that are not approved (the last comment that starts with `<!--tauceti-scoreboard-->`). Repair: set the item of the target list back to `[ ]`, without `in flight:`, and say in it which branch is kept and exactly what the last review asked, so that a worker opens a new pull request from that branch; then deploy the list. On 2026-11-26 this was #45846 (`category-of-operators-assoc-lm`), with only the rubrics reuse and proof quality open.
+    11. *The Worker closes a pull request of ours.* Sign: the monitor reports `PR #N CLOSED`, and the last comment of the pull request says that the review asked for changes again after six repair rounds with no approval in between; the branch of the fork is kept. Check: the rubrics of the last review that are not approved (the last comment that starts with `<!--tauceti-scoreboard-->`). Repair: set the item of the target list back to `[ ]`, without `in flight:`, and say in it which branch is kept and exactly what the last review asked, so that a worker opens a new pull request from that branch; then deploy the list. On 2026-11-26 this was #45846 (`category-of-operators-assoc-lm`, open again as #46438), with only the rubrics reuse and proof quality open, and #46330 (`affine-weyl-coxeter-system`), with only the rubric generality open.
   - **Targets.** The rules that the Worker's docs do not state: a new item of `docs/worker-targets/targets.md` must not reuse a marker id that an earlier pull request of the same area carries, and `partial: #N` tells the Worker that a merged pull request did not complete the item. An item that waits for a pull request of another contributor is under the heading `## Notes (not targets)` in item syntax; the session moves its line under its area when that pull request is on main. A target is a step on the way to a roadmap target that brings its plan node closer, not a corollary or a check of it: a corollary goes into the pull request of the statement it follows from, because the rubric `scope` of Tau Ceti's review refuses it as a pull request of its own. Tau Ceti takes pull requests on GitHub and on its Forgejo site (`git.taucetiproject.org`); both land on the same `main`.
   - **Areas of the plan without an author worker.** JacobianChallenge: its one plan node is `Curves.serreTrace`; another contributor writes Layer B, so no worker of ours writes there ("Open items"). SchemeKTheoryOperations: "Open items". FormalConnectionsOpers and ComplexComparisonPartII: "The workers" below. HermitianKTheoryOfPoincareCategories, SpringerResolutionAndCharacteristicCycles, EtaleDualityAndPerverseSheaves, ReductiveGroupsPartII and MixedHodgeModulesAndIrregularHodgeTheory: no module of theirs is ready (`Constructible.DerivedCategory` waits for `Infinity.enhancedDerivedCategory` and `Infinity.derivedBimoduleTransfer`, and `DModules.regularHolonomicDeRham` for `DModules.regularHolonomicDModule_directImage_inverseImage_complex`). `author-enhanced` works in EnhancedDerivedSheaves (`docs/worker-targets/workers.tsv`); it gets `Roadmap.EnhancedDerivedSheaves.EnhancedDerivedTStructure` when `Infinity.enhancedDerivedCategory` and `Infinity.tStructure` are at the pin. Before a worker starts `Roadmap.EnhancedDerivedSheaves.AnimatedRings`, the session checks that Tau Ceti has the roadmap interfaces for spaces and space-valued presheaves, `PrL`, sifted colimits, accessible localization and the restriction theorem for left Kan extensions; the tracker does not see these waits.
   - **Monitor.** The session starts `tools/monitor.sh` as a background task with `TAUCETI=tauceti-server`, `HOST_SSH` (the SSH command of the workers' host, for the check of its memory and `/tmp`), `CI_FAILED_EVENTS=0` (the workers repair a failed CI run by themselves), `OPENED_EVENTS=0` (the session compares new pull requests with the plan at the next event and adds them to the table "Our pull requests in Tau Ceti"), `MERGED_EVENTS=0` (the session folds merged pull requests in batches) and the watched pull requests as its arguments (`OWNER/REPO#NUMBER`): TauCetiRoadmap #1687, #2450, #2270 (they would own held nodes), and Tau Ceti #41289, #43025, #43034, #43231, #41782, #41396, #42682, #42695, #42960, #41735, #41791 (items of the target list wait for them or must not repeat them; when one is closed as stale, as Tau Ceti's `COORDINATION.md` Section 5 allows, its target is free for a worker). A worker fault is an event when it lasts 30 minutes or returns three times in a day (`WORKER_FAULT_MINUTES`). The monitor does not see Forgejo: the session reads the state of the Forgejo pull requests that it follows (#3412, #4614, #4711, #4666, and those that the target list names) when it edits the list or retargets a worker.
@@ -58,36 +58,40 @@ The session reads what landed from `git log` of Tau Ceti `main`, because Tau Cet
 
 At the pin `ea7f36aa` and folded into the plan (2026-11-26): #45872, #45833, #45818, #45824 and #45848. They supply four roadmap nodes in full, which are removed from the plan: `Stacks.gerbeSliceRestriction`, `LineBundle.pullbackBraided`, `LineBundle.picardGroupoid` and `Etale.kummer_shortExact`; `Infinity.mappingSpaces` and `Infinity.monoidalCategory` are supplied in part. Our open #45827 defines the monoidal structure of the pullback a second time and needs a rebase that removes its copy ("Open items"). The session folds merged pull requests into the plan in batches: at a pin move, a planner compares the pull requests that landed with their plan nodes, and a checker checks the result.
 
-Merged on Tau Ceti `main` after the pin, on 2026-11-26, and not yet folded into the plan: #45839, #45842, #45844 and #45856; the target list marks their items done.
+Merged on Tau Ceti `main` after the pin, on 2026-11-26, and not yet folded into the plan: #45839, #45842, #45844, #45847, #45856, #45874, #46128, #46147, #45878, #46132, #45829, #46126, #46174, #46179 and #46137; the target list marks their items done. Tau Ceti's merge queue merges a pull request into `main` itself, so GitHub shows it as closed, not merged; its last comment is "Pull request successfully merged into main".
 
-Open on 2026-11-26 (twenty-four). The plan node is the one that the item of the target list serves (`serves:`); the pull requests from #46123 on are not yet compared with the plan (the session does this at the next wake).
+Open on 2026-11-26 at 20:30 UTC (twenty-eight). The plan node is the one that the item of the target list serves (`serves:`); the pull requests from #46123 on are not yet compared with the plan (the session does this at the next wake).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
-| #45823 | `central-vector-subgroup-unipotent-radical` | `Groups.rootDatum` |
+| #45823 | `unipotent-radical-center` | `Groups.rootDatum` |
 | #45827 | `pullback-tensorpow-iso` | `LineBundle.Root` |
-| #45829 | `coordinate-action-on-loops` | `LoopGroups.coordinateChange` |
-| #45847 | `proalgebraic-presentation-of-l-g-by-jets` | `LoopGroups.FormalLoopGroup` |
 | #45853 | `dqcoh-affineequiv` | `Sheaves.derivedQCoh`, `Sheaves.derivedQCoh_perfectGenerator` |
-| #45854 | `rightfibration-kan-complex-trivial-fibration` | `Infinity.mappingSpaces`, `Infinity.limits` |
-| #45874 | `leftmappingspace` | `Infinity.mappingSpaces` |
-| #45878 | `derivedtensor-derivedhom-adj` | `Sheaves.derivedQCoh_perfectGenerator` |
+| #45854 | `rightfibration-kan-complex` | `Infinity.mappingSpaces`, `Infinity.limits` |
 | #45890 | `proper-maps-complex-points` | `Constructible.ComplexPoints` |
 | #46123 | `tensor-closed-hull` | `Tannaka.connected_iff_not_tensorClosed_hull` |
-| #46126 | `relative-gerbe` | `Stacks.relativeGerbe` |
-| #46128 | `isgerbe-equivalence-iff` | `Stacks.bandPreserving_isEquivalence` |
-| #46129 | `kappa-filtered-colimits` (partial) | `Infinity.compactObject`, `Infinity.indCompletion`, `Infinity.presentableCategory` |
-| #46132 | `stackification-map` | `Stacks.stackification` |
-| #46137 | `mappingspace-composition` | `Infinity.mappingSpaces` |
+| #46129 | `kappa-filtered-colimits` | `Infinity.compactObject`, `Infinity.indCompletion`, `Infinity.presentableCategory` |
 | #46140 | `groupoid-prestack` | `Stacks.quotientStack` |
-| #46147 | `sheaf-stack` | `Stacks.quotientStack`, `Stacks.groupTorsor` |
 | #46150 | `torsor-contracted-product-abelian` | `Stacks.neutralGerbeEquiv` |
 | #46156 | `categorical-equivalence-fully-faithful` | `Infinity.mappingSpaces` |
 | #46165 | `contracted-product-scheme` | `Stacks.groupTorsor` |
-| #46174 | `stackification-discrete` | `Stacks.stackification` |
 | #46177 | `banded-gerbe-product` | `Stacks.gerbeContractedSum` |
-| #46179 | `derived-gluing-two-opens` | `Sheaves.derivedQCoh_perfectGenerator` |
-| #46224 | `cocartesian-lift-uniqueness` (partial) | `Infinity.monoidalCategory` |
+| #46224 | `cocartesian-lift-uniqueness` | `Infinity.monoidalCategory` |
+| #46237 | `prestackification` | `Stacks.stackification` |
+| #46253 | `small-limits-and-colimits` | `Infinity.limits`, `Infinity.presentableCategory`, `Infinity.continuousLinearFunctor` |
+| #46266 | `symmetric-monoidal-category-nerve` | `Infinity.monoidalCategory`, `Infinity.symmetricMonoidalLocalization`, `Infinity.derivedVect` |
+| #46271 | `stackingroupoids-limit` | `Stacks.algebraicStack` |
+| #46279 | `pinning-base-change` | `Groups.splitReductiveGroup`, `Groups.langlandsDual` |
+| #46281 | `quasicategory-localization` | `Infinity.IsLocalization` |
+| #46322 | `grassmannian-stable-submodule-locus` | `AffineGrassmannian.LoopGrassmannian` |
+| #46373 | `gl-n-arc-orbits-on-lattices` | `AffineGrassmannian.schubertStratification` |
+| #46380 | `coalgebra-reconstruction` | `Tannaka.neutralReconstruction` |
+| #46387 | `band-morphism-full-faithful` | `Stacks.bandPreserving_isEquivalence` |
+| #46388 | `bounded-lattices-stable-submodules` | `AffineGrassmannian.LoopGrassmannian` |
+| #46425 | `torsor-stack` | `Stacks.quotientStack`, `Stacks.groupTorsor`, `Stacks.classifyingAbelianGerbe` |
+| #46438 | `category-of-operators-assoc-lm` | `Infinity.monoidalCategory`, `Infinity.moduleCategory` |
+| #46450 | `arc-group-preimage-of-subgroup` | `AffineGrassmannian.iwahoriStratification` |
+| #46455 | `stackification-universal` | `Stacks.stackification`, `Stacks.quotientStack`, `Stacks.gerbeChangeOfBand` |
 
 ## Held
 
