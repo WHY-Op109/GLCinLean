@@ -3,6 +3,6 @@ desc = 'Eventually coconnective objects of a t-structured category. Owner: the T
 [[node]]
 id = 'GLCinLean.Infinity.eventuallyCoconnective'
 kind = 'definition'
-desc = 'Union over integer n of C^{≥n}; bounded below, with shift and membership API. On the homotopy category it is the predicate `TStructure.plus` of Mathlib, which the enhanced statement is to use; no second boundedness theory is written. Provider: roadmap EnhancedDerivedSheaves, the bounded-below subcategories of “The enhanced derived category”. Upstream declarations used: `CategoryTheory.Triangulated.TStructure.plus` (`Mathlib.CategoryTheory.Triangulated.TStructure.Basic`).'
+desc = 'Union over integer n of C^{≥n}; bounded below, with shift and membership API. On the homotopy category it is the predicate `TStructure.plus` of Mathlib, which the enhanced statement is to use; no second boundedness theory is written. Provider: roadmap EnhancedDerivedSheaves, the bounded-below subcategories of “The enhanced derived category”. In Mathlib at the pin: `TStructure.plus` is `∃ n, t.IsGE X n`, with the instances `IsClosedUnderIsomorphisms` and `IsStableUnderShift ℤ` and the lemma `CategoryTheory.Triangulated.TStructure.isGE_shift` (`Mathlib.CategoryTheory.Triangulated.TStructure.Basic`). Still to do: only Infinity.tStructure. Upstream declarations used: `CategoryTheory.Triangulated.TStructure.plus` (`Mathlib.CategoryTheory.Triangulated.TStructure.Basic`).'
 deps = ['GLCinLean.Infinity.tStructure']
 source = '[GLC1] §1.6.3; [IndCoh] §0.6.5'

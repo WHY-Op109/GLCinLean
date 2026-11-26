@@ -5,9 +5,9 @@ author-stable	GeneralizedCohomology	on
 author-infinity2	GeneralizedCohomology	on
 author-stacks	SchemeAndStackFoundations	on
 author-torsors	SchemeAndStackFoundations	on
-author-dqcoh	SchemeAndStackFoundations	on
+author-dqcoh	SchemeAndStackFoundations	off
 author-moduli	AlgebraicModuliForArithmeticGeometry	on
-author-moduli2	AlgebraicModuliForArithmeticGeometry	on
+author-moduli2	MotivesAndAlgebraicCycles	on
 author-tannaka	MotivesAndAlgebraicCycles	on
 author-groups	ReductiveGroups	on
 author-enhanced	EnhancedDerivedSheaves	on
