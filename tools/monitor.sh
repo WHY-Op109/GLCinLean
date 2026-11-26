@@ -81,8 +81,9 @@ def pr_state(p):
 
 def is_idle(reason):
     # A worker that finds nothing to do reports "no eligible work" (no pull request needs a
-    # repair) or "not due" (its periodic report is recent): its expected state, and no event.
-    return "no eligible work" in reason or "not due" in reason
+    # repair), "not due" (its periodic report is recent) or "the target list offers nothing" (no
+    # target of its area can start): its expected state, and no event.
+    return any(text in reason for text in ("no eligible work", "not due", "the target list offers nothing"))
 
 
 def worker_at_once(w, prev, restarts):
