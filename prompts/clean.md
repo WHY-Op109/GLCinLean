@@ -11,4 +11,4 @@
 
 For each file, ask what it is needed for. Look at the tools in `tools/`, the reports in `notes/` whose findings are applied, and the local files that git ignores. Git history keeps what is deleted.
 
-For low disk space, look first at what takes the most space on the host: the build outputs and caches under `.lake`, the worktrees and branches of work that is merged, the temporary files of sessions, and Lean toolchains that neither `lean-toolchain` nor Tau Ceti's `main` names. Delete what belongs to this project. Name in the reply what other projects of the owner may use, and leave it.
+For low disk space, look first at what takes the most space on the host: the build outputs and caches under `.lake`, the worktrees and branches of work that is merged, the temporary files of sessions, and Lean toolchains that no `lean-toolchain` file on the host names (search the owner's other projects first: `elan` shares the toolchains between all projects) and that Tau Ceti's `main` does not name. Delete what belongs to this project. Name in the reply what other projects of the owner may use, and leave it.
