@@ -10,6 +10,6 @@ source = '[DrinfeldCompactificationSchieder] Lemma 7.2.2'
 [[node]]
 id = 'GLCinLean.Groups.zExtension_exists'
 kind = 'theorem'
-desc = 'Construct a z-extension from the simply connected derived cover and a torus embedding of its finite central kernel, with compatible parabolic and Levi preimages. Prove splitting of a further central-torus extension when the derived group is simply connected; use this to compare choices through their fiber product. Provider: roadmap ReductiveGroupsPartII, `z-extension-existence`.'
-deps = ['GLCinLean.Groups.zExtension', 'GLCinLean.Groups.basedRootDatum']
+desc = 'Construct a z-extension from the simply connected cover of the derived group (Groups.SimplyConnectedCover) and a torus embedding of its finite central kernel, with compatible parabolic and Levi preimages. Prove splitting of a further central-torus extension when the derived group is simply connected; use this to compare choices through their fiber product. Provider: roadmap ReductiveGroupsPartII, `z-extension-existence`.'
+deps = ['GLCinLean.Groups.zExtension', 'GLCinLean.Groups.basedRootDatum', 'GLCinLean.Groups.SimplyConnectedCover']
 source = '[DrinfeldCompactificationSchieder] Lemmas 7.2.2–7.2.3 and proof of Proposition 7.2.5'

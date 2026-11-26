@@ -4,7 +4,7 @@ desc = 'Parabolic Jacquet kernels and the independent proof of their Casselman�
 id = 'GLCinLean.SemiInfinite.whittakerJacquet'
 kind = 'definition'
 desc = 'Construct Jacquet functors on spherical Whittaker factorization categories from the parabolic IC kernel and its zero-stratum shriek kernel. Identify the relative kernel space with Gr_G times Gr_M over Ran, use the diagonal P-loop action and restrict the Whittaker character to N_M. The IC Hecke structure gives Rep(dualG)-linearity for restriction to dualM; the enhanced Drinfeld–Plucker structure gives the Chevalley-module linearity for the shriek functor. Preserve units and every diagonal/disjoint base-change comparison. Initially use the simply-connected-derived FH construction. Provider: here.'
-deps = ['GLCinLean.SemiInfinite.parabolicIC_koszulBoundary', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.dualizableCategory']
+deps = ['GLCinLean.SemiInfinite.parabolicIC_koszulBoundary', 'GLCinLean.SpectralProof.sphericalWhittaker_equiv_representations', 'GLCinLean.DModules.deRhamPushforward', 'GLCinLean.DModules.extraordinaryPullback', 'GLCinLean.Infinity.dualizableCategory', 'GLCinLean.Groups.simpleRootCharacter']
 source = '[ParabolicEisensteinFH] §§6.1–6.2'
 
 [[node]]
