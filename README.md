@@ -49,7 +49,9 @@ Agents do the work. The owner starts a session on Fable 5.2, in auto mode, with 
 | `docs/references.bib` | the papers cited, with their arXiv versions |
 | `docs/papers.md` | one line per paper on what it covers, and how to search its TeX |
 | `docs/blueprint-providers.md` | the Mathlib, Tau Ceti and roadmap snapshot the plan was checked against |
-| `notes/` | check and audit reports, while their findings are open |
+| `docs/worker-targets/` | the target list of the Tau Ceti workers (`targets.md`), the author workers and their areas (`workers.tsv`), and what Tau Ceti main has for each area (`notes/<Area>.txt`) |
+| `.lake-config/` | the Lake configuration that the builds use (`LAKE_CONFIG`): it names Tau Ceti's public build cache |
+| `notes/` | check and audit reports: `prompts/check.md` and `prompts/audit.md` create the folder, and it is deleted when the findings are applied |
 
 ## Build
 
