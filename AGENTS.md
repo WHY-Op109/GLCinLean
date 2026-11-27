@@ -54,6 +54,7 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 - Use Mathlib first, then Tau Ceti. Search both before defining anything, and before a proof longer than a few lines (its goal and its key steps): Mathlib at the pin, Tau Ceti at the pin and on its `main`.
 - Parts covered by a Tau Ceti roadmap go to Tau Ceti, through Tau Ceti's Worker, under Tau Ceti's own `AGENTS.md` and `COORDINATION.md`, from the fork `WHY-Op109/TauCeti`. The roadmap owns these parts, so a second copy here would compete with it. Everything else is written here. Apart from the Tau Ceti workers, agents only read Tau Ceti and its roadmaps: they open no pull request, issue or comment there.
+- Every persistent worker on the workers' host has `github_account = "WHY-Op109"`. Pass `--github-account WHY-Op109` to any manual `tauceti work` command on that host. The selected login governs GitHub requests, pushes and Git author and committer identity regardless of the active `gh` login.
 
 ## Plan
 

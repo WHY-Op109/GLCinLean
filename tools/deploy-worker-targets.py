@@ -8,9 +8,9 @@ Inputs, all under `docs/worker-targets/`:
   workers.tsv        one author worker per line: id, roadmap area, `on` or `off`
   notes/<Area>.txt   what Tau Ceti main has for the area; it becomes the worker's `extra_roadmap_prompt`
 
-The script reads the host's `workers.toml`, writes one entry for each line of `workers.tsv`, keeps
-every other entry whose id does not start with `author-` as it is, apart from the model settings of
-`repair` and `maintenance` below, and drops every other `author-` entry.
+The script reads the host's `workers.toml`, writes one entry per line of `workers.tsv`, drops
+unlisted `author-` entries and keeps the other workers. It sets `github_account` for every worker
+and sets the model and pace of `repair` and `maintenance` as described below.
 
 `AGENT` is the agent of the author workers and of `repair`: `claude` (Claude, `author_effort = "high"`)
 or `codex` (Codex at the Worker's default model and effort, so no `author_model` and no
@@ -37,6 +37,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "docs" / "worker-targets"
 REMOTE_DIR = "$HOME/.config/tauceti"
 TAUCETI = "$HOME/.local/bin/tauceti"
+GITHUB_ACCOUNT = "WHY-Op109"
 AGENT = "codex"
 PACE = "0:95,90:95" if AGENT == "claude" else "0:100"
 PROMPT_LIMIT = 4096
@@ -56,6 +57,7 @@ def host(command, data=None):
 def author_entry(worker, area, enabled, targets_path):
     lines = [
         f'id = "{worker}"',
+        f'github_account = "{GITHUB_ACCOUNT}"',
         f"enabled = {'true' if enabled else 'false'}",
         'only = ["rebase", "fix-ci", "fix", "roadmap"]',
         "auto_refresh = true",
@@ -77,9 +79,11 @@ def model_lines(agent):
     return [f'agent = "{agent}"'] + (['author_effort = "high"'] if agent == "claude" else []) + [f'pace = "{PACE}"']
 
 
-def with_model(block):
-    """`repair` takes `AGENT`, and `maintenance` keeps Codex; both take `PACE`."""
+def retained_entry(block):
+    """Pin a retained worker's GitHub account and set the models of repair and maintenance."""
     worker = re.search(r'(?m)^id = "([^"]+)"', block).group(1)
+    block = re.sub(r"(?m)^[ \t]*github_account[ \t]*=[^\n]*(?:\n|$)", "", block)
+    block = f'github_account = "{GITHUB_ACCOUNT}"\n' + block
     if worker not in ("repair", "maintenance"):
         return block
     agent = AGENT if worker == "repair" else "codex"
@@ -107,7 +111,7 @@ def main():
     current = host(f"cat {REMOTE_DIR}/workers.toml")
     head, *blocks = re.split(r"(?m)^\[\[workers\]\]\n", current)
     kept = [b for b in blocks if not re.search(r'(?m)^id = "author-', b)]
-    entries = [with_model(b.rstrip("\n") + "\n") for b in kept] + [author_entry(w, a, e, targets_path) for w, a, e in rows]
+    entries = [retained_entry(b.rstrip("\n") + "\n") for b in kept] + [author_entry(w, a, e, targets_path) for w, a, e in rows]
     new = head + "".join("[[workers]]\n" + e + "\n" for e in entries)
 
     host(f"cat > {REMOTE_DIR}/targets.md.new", targets)
