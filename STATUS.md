@@ -46,6 +46,8 @@ Mode: Codex (since 2026-11-27)
 
 The SheafTheoreticSmithTheory authors have two open pull requests. #47293 supplies the fpqc loop Grassmannian quotient and its basic API. Its torsor square, product and field-extension comparisons, and nonreduced check remain. #47292 supplies length and Bruhat order for an intermediate lattice of an irreducible root system. The construction for a full cocharacter lattice still needs its corresponding product and central-torus results. The subsequent Schubert, flag, convolution and semi-infinite geometry is in the target list notes with its prerequisites.
 
+The GLₙ finite-jet action on a bounded interval of projective lattices can start on main. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
+
 `author-groups` is enabled for ReductiveGroups. Its available item is `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The target list notes record the later steps toward the pinned group over ℤ. `author-torsors` is also enabled for ReductiveGroups, for the rational center–derived decomposition using supplied constants. The two items can run in different files.
 
 `author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
