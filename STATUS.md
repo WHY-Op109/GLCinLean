@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fifteen author workers are enabled and live, including `author-kostant` in ReductiveGroups. The Codex usage reading at 18:24 UTC was 30% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 59 open pull requests, 32 are labelled `awaiting-CI`.
+Fifteen author workers are enabled and live, including `author-kostant` in ReductiveGroups. The Codex usage reading at 19:18 UTC was 36% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 60 open pull requests, 32 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -46,7 +46,7 @@ The native Kan fibration homotopy-group criterion is in #47299. It uses the long
 
 `author-infinity3` and `author-moduli2` cover the independent GeneralizedCohomology items. The pointwise right-Kan comma cones are in #47304. The full pointwise extension needs this PR and #46745. The walking-equivalence attachment is in #47368. Localization existence needs it and the localization predicate of #46281. The concrete Cartesian fibre comparison is in #47409. The Cartesian edge criterion and its coCartesian dual need this comparison and the fibrewise trivial-fibration theorem of #47364.
 
-The comparisons for `Hom•(Z, Cone f)` and `Hom•(Cone f, Z)` are in #47392 and #47449. `author-infinity2` is constructing `dg-nerve-candidate-cone-squares` from the two native triangles and lifting them to K-injectives. The combined mapping-cone comparison uses these three pieces. The independent `k-injective-dg-nerve-shift` target restricts the signed cochain shift to K-injectives and compares its action with the ordinary derived shift. Its identification with stable suspension needs the universal properties of the cone squares. The stability proof still needs the mapping-space universal-property criteria of #46745. The native localization proof still needs #46281.
+The comparisons for `Hom•(Z, Cone f)` and `Hom•(Cone f, Z)` are in #47392 and #47449. The candidate cone squares and their lift to K-injectives are in #47477. The combined mapping-cone comparison uses these three pieces. The independent `k-injective-dg-nerve-shift` target restricts the signed cochain shift to K-injectives and compares its action with the ordinary derived shift. Its identification with stable suspension needs the universal properties of the cone squares. The stability proof still needs the mapping-space universal-property criteria of #46745. The native localization proof still needs #46281.
 
 The general one-sided anodyne pushout-join lemmas are in #47393. The selected-vertex corollaries still need the point-cone results of #46745. The relative universal property of joins and the join pullback lemmas are in #47424. The `simplicial-join-associator-iterated-slices` target still needs the comparison of the two bracketings over Δ[2], the natural associator and the comparison of iterated slices. These give the gluing step for finite limits from terminal vertices and pullbacks, with the dual results. The AlgebraicTopology work needs #47294 and #47329 before the remaining realization and approximation proofs.
 
@@ -72,7 +72,9 @@ The Tannakian connectedness criterion along a supplied equivalence with finite c
 
 The affine DQCoh repair in #45853 is at `b848fe8a32ee`. It splits the K-injective tower into basic and limit modules and revises the affine derived sections comparison. The new head awaits Tau Ceti CI and review. Recovery patches and base SHAs from the quota interruption are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
-In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. The comparison using a functorial K-flat resolution is in #47457. The independent `derived-tensor-pointwise-kflat-comparison` target gives the canonical map and its invertibility from resolutions of individual objects. The affine comparison uses that criterion with #47441 and #47443. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. The cochain projection formula and preservation of K-flatness by open restriction remain. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor.
+The independent `stackification-abelian-banding` target supplies the band on a stackification and tests preservation on the unit. Change of band uses it once the changed-band prestack is assembled from #47440 and the torsor restriction comparison.
+
+In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. The comparison using a functorial K-flat resolution is in #47457. The independent `derived-tensor-pointwise-kflat-comparison` target gives the canonical map and its invertibility from resolutions of individual objects. The affine comparison uses that criterion with #47441 and #47443. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. The independent `cochain-projection-formula-kflat` target passes the ordinary projection isomorphism to unbounded cochains and proves the K-flatness criterion. The scheme application will use it with #47442. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor.
 
 The workers repair eligible pull requests and wait when the target list offers no independent work. The Worker's live assignments use the pull request markers, including those of partial pull requests. The solvable group decomposition waits for #46719. `repair` and `maintenance` handle eligible repairs across all areas.
 
@@ -92,7 +94,7 @@ At the pin `df6509e`, ChevalleyGroups #41428 (`0255d3b856a9`) supplies `Chevalle
 
 At the pin `dde09e0`, #46709 (`ad01df09fb8a`) supplies `TauCeti.CategoryOfOperators.toFinPointed`, the ordinary strongly coCartesian lifts and `fiberEquivalence`. `author-moduli2` is writing `symmetric-operator-nerve-segal-fibres` for the inert cylinders, Segal maps and strict singleton fibre. Assembling `SSet.SymmetricMonoidal` also needs the classical-to-simplicial coCartesian bridge in #46940.
 
-Open on GitHub on 2026-11-27 (59). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-27 (60). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -155,6 +157,7 @@ Open on GitHub on 2026-11-27 (59). The plan node is the one that the item of the
 | #47461 | `chevalley-simple-root-coordinate-quotient` | `Groups.splitReductiveGroup`, `Groups.simpleRootCharacter` |
 | #47464 | `lattice-coefficient-window-flag` | `AffineGrassmannian.LoopGrassmannian` |
 | #47467 | `cartan-binomial-bounded-span` | `Groups.splitReductiveGroup` |
+| #47477 | `dg-nerve-candidate-cone-squares` | `Infinity.enhancedDerivedCategory` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
