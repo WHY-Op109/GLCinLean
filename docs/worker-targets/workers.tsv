@@ -2,12 +2,12 @@
 # An area gets at most as many workers as it has targets that can start now and touch different files.
 author-infinity	GeneralizedCohomology	on
 author-stable	AlgebraicTopology	on
-author-infinity2	GeneralizedCohomology	off
-author-stacks	SchemeAndStackFoundations	off
-author-torsors	SchemeAndStackFoundations	off
+author-infinity2	GeneralizedCohomology	on
+author-stacks	SchemeAndStackFoundations	on
+author-torsors	SchemeAndStackFoundations	on
 author-dqcoh	SheafTheoreticSmithTheory	on
-author-moduli	AlgebraicModuliForArithmeticGeometry	off
-author-moduli2	MotivesAndAlgebraicCycles	off
-author-tannaka	MotivesAndAlgebraicCycles	off
+author-moduli	AlgebraicModuliForArithmeticGeometry	on
+author-moduli2	MotivesAndAlgebraicCycles	on
+author-tannaka	MotivesAndAlgebraicCycles	on
 author-groups	ReductiveGroups	on
 author-enhanced	SheafTheoreticSmithTheory	on
