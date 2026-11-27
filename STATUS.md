@@ -99,6 +99,8 @@ Open on 2026-11-27 (24). The plan node is the one that the item of the target li
 | #47299 | `kan-fibration-homotopy-groups-criterion` | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
 | #47304 | `right-kan-extension-comma-cones` | `Infinity.rightKanExtension` |
 
+The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
+
 ## Held
 
 A node on this list is not started, here or through the Worker. The list covers `plans/`; the open ownership checks in `plans-proof/` are in `plans-proof/README.md`.
