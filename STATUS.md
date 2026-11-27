@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fifteen author workers are enabled and live. At 20:25 UTC, nine had active rounds and six were between rounds. The Codex usage reading at 20:09 UTC was 43% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. GitHub shows 73 of our pull requests open, including two already on main. Of these, 38 are labelled `awaiting-CI`.
+Fifteen author workers are enabled and live. At 20:38 UTC, eight were running. `author-moduli2` was finishing its #46281 round before restarting in ReductiveGroups. The Codex usage reading at 20:09 UTC was 43% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. GitHub shows 73 of our pull requests open, including one already on main. Of these, 42 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -60,7 +60,7 @@ In ReductiveGroups, #47351 supplies the scalar extension of a chosen base and #4
 
 In ReductiveGroups, `author-moduli2` covers the independent steps for splitting the quotient by the unipotent radical. `amitsur-degree-one-exactness` supplies descent for a local vector-torsor point. `regular-vector-extension-cocycle` turns the factor set of a supplied regular section into a native cocycle and corrects the section given a primitive. The section construction uses the Amitsur step, and the solvable-group decomposition uses both constructions with the native averaging theorem of #47356 once it lands.
 
-The additive simple-root coordinates and quotient by the nonsimple positive root groups on a supplied Chevalley model are in #47461. It uses #41428 at the pin. The comparison with the characters of an arbitrary pinned reductive group still uses the based root datum and the unipotent radical of its Borel subgroup. `author-groups` is writing `chevalley-root-product-closed-immersion` to recover the ordered root parameters from the integral GL coordinates for both root signs. The opposite point subgroup and scheme monomorphisms are in #43411.
+The additive simple-root coordinates and quotient by the nonsimple positive root groups on a supplied Chevalley model are in #47461. It uses #41428 at the pin. The comparison with the characters of an arbitrary pinned reductive group still uses the based root datum and the unipotent radical of its Borel subgroup. #47514 recovers the ordered root parameters from the integral GL coordinates and proves the product map is a closed immersion over ℤ for a duplicate-free list positive for one rational degree on the weight lattice. The opposite point subgroup and scheme monomorphisms are in #43411.
 
 The extended sheaves of isomorphisms for `change-band-prestack` are in #47344. Their composition, identities and inverses on a fixed slice are in #47440. The comparison of torsor extension with restriction is in #47420. The prestack uses these to assemble coherent outer slice restrictions. The final `change-band` construction uses the stackification universal property of #46455 at the pin.
 
@@ -98,7 +98,7 @@ At the pin `dde09e0`, #46709 (`ad01df09fb8a`) supplies `TauCeti.CategoryOfOperat
 
 At the pin `fba9bfb`, #47385 (`e5ec28d3fbe6`) supplies `TauCeti.AlgebraicGeometry.LineBundle.Root` on a fixed scheme and #47408 (`00f39b975e5a`) supplies preservation of integer root-coroot pairings under Cartan-matching root bijections. Both target-list items are done.
 
-Open on GitHub on 2026-11-27 (73, including two already on main). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-27 (73, including one already on main). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -140,7 +140,6 @@ Open on GitHub on 2026-11-27 (73, including two already on main). The plan node 
 | #47392 | `dg-nerve-mapping-cone-model` (partial) | `Infinity.enhancedDerivedCategory` |
 | #47393 | `simplicial-join-one-sided-anodyne` (partial) | `Infinity.enhancedDerivedCategory` |
 | #47405 | `coalgebra-map-of-natural-tensor-coaction` (partial) | `Tannaka.neutralReconstruction` |
-| #47408 | `root-index-cartan-pairing-comparison` (on main) | `Groups.splitReductiveGroup` |
 | #47409 | `cartesian-edge-relative-fibre-model` | `Infinity.mappingSpaces`, `Infinity.monoidalCategory` |
 | #47414 | `stable-grassmannian-window-transition` (partial) | `AffineGrassmannian.LoopGrassmannian` |
 | #47419 | `root-components-under-rationalization` | `Groups.splitReductiveGroup` |
@@ -175,6 +174,7 @@ Open on GitHub on 2026-11-27 (73, including two already on main). The plan node 
 | #47506 | `dg-nerve-left-mapping-space-model` (partial) | `Infinity.enhancedDerivedCategory` |
 | #47508 | `module-derived-compact-generator` | `Sheaves.derivedQCoh_perfectGenerator` |
 | #47512 | `finite-projective-scheme-coproduct` | `AffineGrassmannian.LoopGrassmannian` |
+| #47514 | `chevalley-root-product-closed-immersion` | `Groups.splitReductiveGroup` |
 
 The CI jobs at the current heads of #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These five heads carry `awaiting-CI` and have no published `build` status. The Worker found no `fix-ci` action for #46745. #46281 carries `awaiting-author` at `3513262d7749`, and GitHub reports it mergeable. The session's local done check is recorded above.
 
