@@ -48,13 +48,13 @@ The coCartesian-preserving relative functor quasicategory can start on main, wit
 
 The SheafTheoreticSmithTheory authors have two open pull requests. #47293 supplies the fpqc loop Grassmannian quotient and its basic API. Its torsor square, product and field-extension comparisons, and nonreduced check remain. #47292 supplies length and Bruhat order for an intermediate lattice of an irreducible root system. The construction for a full cocharacter lattice still needs its corresponding product and central-torus results. The subsequent Schubert, flag, convolution and semi-infinite geometry is in the target list notes with its prerequisites.
 
-`author-dqcoh` is writing the GLₙ finite-jet action on a bounded interval of projective lattices. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
+The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
 
 In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The target list notes record the later steps toward the pinned group over ℤ. `author-groups` is writing the rational center–derived decomposition using supplied constants. The two items run in different files.
 
 `author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
 
-`author-roots` can take the groupoid of line-bundle roots on a fixed scheme, with its automorphism and Picard-class criteria. The pullback and its coherence still need #45827. The change-of-band prestack and the roots groupoid use different files.
+`author-roots` is writing the groupoid of line-bundle roots on a fixed scheme, with its automorphism and Picard-class criteria. The pullback and its coherence still need #45827. The change-of-band prestack and the roots groupoid use different files.
 
 `author-tannaka` is transporting the connectedness criterion along a supplied equivalence with finite comodules. The pinned Hopf algebra criterion covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka2` is extending the finite Hopf subalgebra criterion to arbitrary fields by pulling back finite Hopf subalgebras from the algebraic closure. The sufficient direction used by geometric Satake needs that extension. Reconstruction of the equivalence itself starts with #46380.
 
@@ -72,7 +72,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (24). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (25). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -100,6 +100,7 @@ Open on 2026-11-27 (24). The plan node is the one that the item of the target li
 | #47294 | `simplicial-set-subdivision-last-vertex` | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
 | #47299 | `kan-fibration-homotopy-groups-criterion` | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
 | #47304 | `right-kan-extension-comma-cones` | `Infinity.rightKanExtension` |
+| #47328 | `gl-n-bounded-lattice-jet-action` | `AffineGrassmannian.schubertStratification` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
