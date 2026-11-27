@@ -46,11 +46,9 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Codex mode
 
-- While Claude's usage is used up, Codex runs the session. Codex mode is on while the first line of "Current state" in `STATUS.md` is "Mode: Codex". The owner starts it with `prompts/codex-setup.md`, then sets the goal of `prompts/codex-goal.md`, and returns to Claude Code when Claude's usage is free again.
-- In Codex mode the author workers and `repair` run Codex at the Worker's default model and effort (`AGENT` in `tools/deploy-worker-targets.py`). The Tau Ceti work goes on as before: only through the Worker on the workers' host, which writes, repairs and reviews.
-- Codex has only the session's role of coordinating, by `prompts/codex-goal.md`. It changes nothing in `plans/`, `plans-proof/`, `GLCinLean/` or `docs/worker-targets/notes/`, writes no new target and changes no target's text, except the two edits that `prompts/codex-goal.md` names. It writes no module and starts no planner, writer, checker, blind reader or searcher.
-- When work needs a change of the plan or of a module, a check, or a new target, Codex records it under "Waiting for Claude" in `STATUS.md`, with what is needed and why, and does nothing else about it. When it needs a big change ("Small and big changes"), Codex records it under "Waiting for the owner". In both cases Codex goes on with the work that the change does not touch.
-- A Claude session that finds "Mode: Codex" first does what "Waiting for Claude" lists, sets `AGENT = "claude"` and deploys, and sets "Mode: Claude".
+- While `STATUS.md` says "Mode: Codex", Codex runs the session by `prompts/codex-goal.md` (the owner starts it with `prompts/codex-setup.md`), and the author workers and `repair` run Codex at the Worker's default model and effort (`AGENT` in `tools/deploy-worker-targets.py`).
+- Codex leaves the planner's work and every change that needs the agreement of Claude and Codex (`prompts/change.md`) under "Waiting for Claude" in `STATUS.md`.
+- A Claude session that finds "Mode: Codex" first does what "Waiting for Claude" lists, then sets `AGENT = "claude"`, deploys, and sets "Mode: Claude".
 
 ## Sources of code
 
