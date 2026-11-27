@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fifteen author workers are enabled and live. All fifteen had active rounds at 19:27 UTC. The Codex usage reading at 19:18 UTC was 36% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 62 open pull requests, 32 are labelled `awaiting-CI`.
+Fifteen author workers are enabled and live. All fifteen had active rounds at 19:27 UTC. The Codex usage reading at 19:18 UTC was 36% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 63 open pull requests, 32 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -68,13 +68,13 @@ The fixed-site groupoid of torsor lifts and its positive kernel band are in #473
 
 The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. The extension of the finite Hopf subalgebra criterion to arbitrary fields is in #47363. The external tensor of comodules and its corestriction along a supplied coalgebra map are in #47405. Recovery of a coalgebra map from the matrix coefficients of a natural tensor coaction is in #47455. The comparison with the external tensor uses it and #47405. The bialgebra laws from supplied maps and matrix coefficient identities are in #47426. The construction of the reconstruction coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
 
-`marked-monoidal-comodule-equivalence` gives the monoidal and braided comparison with the fibre functor once the bialgebra and tensor coefficient identity are supplied. The unit case follows by testing the tensor on a preimage of the trivial comodule. `author-tannaka` is writing this target while `author-tannaka2` repairs #47405.
+The marked monoidal and braided lift from a supplied colinear tensorator is in #47484. It derives unit colinearity from a preimage of the trivial comodule. The criterion that identifies tensor colinearity with multiplication of the pure matrix coefficients remains.
 
 The affine DQCoh repair in #45853 is at `b848fe8a32ee`. It splits the K-injective tower into basic and limit modules and revises the affine derived sections comparison. The new head awaits Tau Ceti CI and review. Recovery patches and base SHAs from the quota interruption are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
 `author-moduli` is writing `stackification-abelian-banding` to construct the band on a stackification and test preservation on the unit. Change of band uses it once the changed-band prestack is assembled from #47440 and the torsor restriction comparison.
 
-In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. The comparison using a functorial K-flat resolution is in #47457. The canonical map and its invertibility from resolutions of individual objects are in #47483. The affine comparison uses that criterion with #47441 and #47443. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. `author-stacks` is writing `cochain-projection-formula-kflat` to pass the ordinary projection isomorphism to unbounded cochains and prove the K-flatness criterion. The scheme application will use it with #47442. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor.
+In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. The comparison using a functorial K-flat resolution is in #47457. The canonical map and its invertibility from resolutions of individual objects are in #47483. The affine comparison uses that criterion with #47441 and #47443. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. `author-stacks` is writing `cochain-projection-formula-kflat` to pass the ordinary projection isomorphism to unbounded cochains and prove the K-flatness criterion. The scheme application will use it with #47442. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor. The independent `module-derived-compact-generator` target proves the coproduct comparison and shift detection for the rank-one free module in the ordinary derived category. The affine application also needs #45853 and the compactness interface of #43034.
 
 The workers repair eligible pull requests and wait when the target list offers no independent work. The Worker's live assignments use the pull request markers, including those of partial pull requests. The solvable group decomposition waits for #46719. `repair` and `maintenance` handle eligible repairs across all areas.
 
@@ -94,7 +94,7 @@ At the pin `df6509e`, ChevalleyGroups #41428 (`0255d3b856a9`) supplies `Chevalle
 
 At the pin `dde09e0`, #46709 (`ad01df09fb8a`) supplies `TauCeti.CategoryOfOperators.toFinPointed`, the ordinary strongly coCartesian lifts and `fiberEquivalence`. `author-moduli2` is writing `symmetric-operator-nerve-segal-fibres` for the inert cylinders, Segal maps and strict singleton fibre. Assembling `SSet.SymmetricMonoidal` also needs the classical-to-simplicial coCartesian bridge in #46940.
 
-Open on GitHub on 2026-11-27 (62). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-27 (63). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -160,6 +160,7 @@ Open on GitHub on 2026-11-27 (62). The plan node is the one that the item of the
 | #47477 | `dg-nerve-candidate-cone-squares` | `Infinity.enhancedDerivedCategory` |
 | #47479 | `ordered-integral-word-straightening` | `Groups.splitReductiveGroup` |
 | #47483 | `derived-tensor-pointwise-kflat-comparison` | `Sheaves.derivedQCoh_perfectGenerator` |
+| #47484 | `marked-monoidal-comodule-equivalence` (partial) | `Tannaka.neutralReconstruction` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
