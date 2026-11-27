@@ -50,7 +50,7 @@ The SheafTheoreticSmithTheory authors have two open pull requests. #47293 suppli
 
 The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
 
-In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The rational center and derived ideal decomposition with supplied constants is in #47336. The target list notes give the later steps toward the pinned group over ℤ.
+In ReductiveGroups, `author-torsors` and `author-groups` selected `full-root-datum-chevalley-constants` (§9A) after a shared claim attempt failed. The target list also offers `full-kostant-pbw-rank-one`, in a separate enveloping-algebra file. It proves integral straightening with all cocharacters for a pair of opposite roots and takes the constants as input. The rational center and derived ideal decomposition with supplied constants is in #47336. The target list notes give the later steps toward the pinned group over ℤ.
 
 `author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
 
