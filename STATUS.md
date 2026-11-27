@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fifteen author workers are enabled and live, including `author-kostant` in ReductiveGroups. The Codex usage reading at 18:24 UTC was 30% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 60 open pull requests, 32 are labelled `awaiting-CI`.
+Fifteen author workers are enabled and live, including `author-kostant` in ReductiveGroups. The Codex usage reading at 18:24 UTC was 30% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 59 open pull requests, 32 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -54,7 +54,7 @@ The coCartesian-preserving relative functor quasicategory, its composition and i
 
 In SheafTheoreticSmithTheory, #47293 supplies the fpqc loop Grassmannian quotient and its basic API. Its torsor square, product and field-extension comparisons, and nonreduced check remain. #47292 supplies length and Bruhat order for an intermediate lattice of an irreducible root system. The construction for a full cocharacter lattice still needs its corresponding product and central-torus results. The Iwahori coset presheaf and the reduction comparison with the homogeneous quotient presheaf are in #47437. The sheaf fibre uses #47437 and #47293. The subsequent Schubert, flag, convolution and semi-infinite geometry is in the target list notes with its prerequisites.
 
-The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. The stable Grassmannian closed immersions imposing lower and upper containment are in #47414 and #47447. The equivariant projection, inclusion and their coefficient change are in #47464. The window transition uses these maps and both immersions. The independent `stable-grassmannian-varying-rank` target assembles the rank pieces of a finite projective quotient over arbitrary rings. The `finite-projective-scheme-coproduct` target gives projectivity of the union using the Plücker embeddings of its rank pieces. The lattice chart uses it and the bounded-lattice comparison of #46388, whose naturality in the coefficient ring remains.
+The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. The stable Grassmannian closed immersions imposing lower and upper containment are in #47414 and #47447. The equivariant projection, inclusion and their coefficient change are in #47464. The window transition uses these maps and both immersions. `author-infinity` is writing `stable-grassmannian-varying-rank` to assemble the rank pieces of a finite projective quotient over arbitrary rings. The `finite-projective-scheme-coproduct` target gives projectivity of the union using the Plücker embeddings of its rank pieces. The lattice chart uses it and the bounded-lattice comparison of #46388, whose naturality in the coefficient ring remains.
 
 In ReductiveGroups, #47351 supplies the scalar extension of a chosen base and #47372 assembles the integral Chevalley constants given component tables and Cartan-matching root bijections. The comparison of all integer root-coroot pairings across coefficient rings is in #47408. The comparison of rational component supports and their pairings with those of the original integral datum is in #47419. These give the Cartan-matching inputs for `full-root-datum-chevalley-constants` (§9A). The rank-one Kostant basis and the opposite-root straightening identities for arbitrary rank are in #47386. The commuting, central-bracket and double-string divided-power collection identities in the full-cocharacter Chevalley enveloping algebra are in #47430. The exceptional signed short–long and short-pair identities in the full-cocharacter enveloping algebra are in #47453. `author-kostant` is writing `ordered-integral-word-straightening`. The degree bound on binomials of shifted coroots is in #47467. The full ordered-basis assembly uses both along with the collection results. The rational center and derived ideal decomposition with supplied constants is in #47336.
 
@@ -92,7 +92,7 @@ At the pin `df6509e`, ChevalleyGroups #41428 (`0255d3b856a9`) supplies `Chevalle
 
 At the pin `dde09e0`, #46709 (`ad01df09fb8a`) supplies `TauCeti.CategoryOfOperators.toFinPointed`, the ordinary strongly coCartesian lifts and `fiberEquivalence`. `author-moduli2` is writing `symmetric-operator-nerve-segal-fibres` for the inert cylinders, Segal maps and strict singleton fibre. Assembling `SSet.SymmetricMonoidal` also needs the classical-to-simplicial coCartesian bridge in #46940.
 
-Open on GitHub on 2026-11-27 (60). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-27 (59). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -107,7 +107,6 @@ Open on GitHub on 2026-11-27 (60). The plan node is the one that the item of the
 | #46425 | `torsor-stack` | `Stacks.quotientStack`, `Stacks.groupTorsor`, `Stacks.classifyingAbelianGerbe` |
 | #46623 | `prestackification` | `Stacks.stackification` |
 | #46669 | `essentially-surjective-trivial-fibration` (partial) | `Infinity.mappingSpaces` |
-| #46709 | `symmetric-monoidal-category-nerve` (partial, in Tau Ceti main at `ad01df09fb8a`) | `Infinity.monoidalCategory`, `Infinity.symmetricMonoidalLocalization`, `Infinity.derivedVect` |
 | #46719 | `solvable-group-maximal-torus-decomposition` (partial) | `Groups.rootDatum`, `Groups.borelUnipotentRadical` |
 | #46745 | `limit-mapping-space-criterion` | `Infinity.limits` |
 | #46768 | `mappingspace-comparison-weak-equivalence` | `Infinity.mappingSpaces` |
