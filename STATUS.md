@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fourteen author workers are enabled and live. The Codex usage reading at 15:42 UTC was 11% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 30 open pull requests, 16 are labelled `awaiting-CI`.
+Fourteen author workers are enabled and live. The Codex usage reading at 15:55 UTC was 13% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 31 open pull requests, 15 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -64,7 +64,7 @@ The extended sheaves of isomorphisms for `change-band-prestack` are in #47344. T
 
 `lifting-gerbe-fibre` is the groupoid of torsor lifts on a fixed site, with the positive action of the kernel on lift automorphisms. Its pseudofunctor and gerbe proof still need the stack of torsors in #46425 and the classifying abelian gerbe. `author-dqcoh` and `author-moduli` selected it after the first shared claim request failed with exit code 2. The subsequent round acquired a claim. Check the branches for overlap before assigning another round on this item.
 
-The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. It covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka` is repairing it. `author-tannaka2` is extending the finite Hopf subalgebra criterion to arbitrary fields, as needed for the sufficient direction used by geometric Satake. The `coalgebra-map-of-natural-tensor-coaction` target is ready after the repair and supplies the multiplication map for a given reconstruction coalgebra. The construction of that coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
+The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. It covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka` is repairing it. The extension of the finite Hopf subalgebra criterion to arbitrary fields is in #47363. The `coalgebra-map-of-natural-tensor-coaction` target is ready and supplies the multiplication map for a given reconstruction coalgebra. The construction of that coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
 
 The loop-Grassmannian quotient has been published as #47293 and the repair of #45853 is running again after a weekly quota interruption. The interrupted rounds’ recovery patches and exact base SHAs are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
@@ -80,7 +80,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (30). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (31). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -114,6 +114,7 @@ Open on 2026-11-27 (30). The plan node is the one that the item of the target li
 | #47336 | `full-chevalley-lie-rational-decomposition` | `Groups.splitReductiveGroup` |
 | #47344 | `change-band-prestack` (partial) | `Stacks.gerbeChangeOfBand` |
 | #47351 | `full-root-datum-chevalley-constants` (partial) | `Groups.splitReductiveGroup` |
+| #47363 | `hopf-idempotent-finite-subalgebra-arbitrary-field` | `Tannaka.connected_iff_not_tensorClosed_hull` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
