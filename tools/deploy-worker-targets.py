@@ -9,7 +9,14 @@ Inputs, all under `docs/worker-targets/`:
   notes/<Area>.txt   what Tau Ceti main has for the area; it becomes the worker's `extra_roadmap_prompt`
 
 The script reads the host's `workers.toml`, writes one entry for each line of `workers.tsv`, keeps
-every entry whose id does not start with `author-` as it is, and drops every other `author-` entry.
+every other entry whose id does not start with `author-` as it is, apart from the model settings of
+`repair` and `maintenance` below, and drops every other `author-` entry.
+
+`AGENT` is the agent of the author workers and of `repair`: `claude` (Claude, `author_effort = "high"`)
+or `codex` (Codex at the Worker's default model and effort, so no `author_model` and no
+`author_effort`). With `codex`, the author workers, `repair` and `maintenance` run until the
+provider's limit (`pace = "0:100"`); with `claude`, they keep the last 5% of the week (`PACE`).
+`reviewer` keeps its own settings.
 It checks the list with `tauceti _targets-inspect` and the settings with `tauceti workers apply
 --check` on the host, and only then replaces the two files and runs `tauceti workers apply`.
 A worker reads the list at the start of each round, and the Worker restarts a changed worker after
@@ -30,7 +37,8 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "docs" / "worker-targets"
 REMOTE_DIR = "$HOME/.config/tauceti"
 TAUCETI = "$HOME/.local/bin/tauceti"
-PACE = "0:95,90:95"
+AGENT = "codex"
+PACE = "0:95,90:95" if AGENT == "claude" else "0:100"
 PROMPT_LIMIT = 4096
 
 
@@ -49,7 +57,6 @@ def author_entry(worker, area, enabled, targets_path):
     lines = [
         f'id = "{worker}"',
         f"enabled = {'true' if enabled else 'false'}",
-        'agent = "claude"',
         'only = ["rebase", "fix-ci", "fix", "roadmap"]',
         "auto_refresh = true",
         f'roadmap_only = "{area}"',
@@ -62,8 +69,22 @@ def author_entry(worker, area, enabled, targets_path):
         if len(text) > PROMPT_LIMIT:
             sys.exit(f"{notes}: {len(text)} characters, the limit is {PROMPT_LIMIT}")
         lines.append("extra_roadmap_prompt = " + json.dumps(text, ensure_ascii=False))
-    lines += ['author_effort = "high"', f'pace = "{PACE}"']
-    return "\n".join(lines) + "\n"
+    return "\n".join(lines + model_lines(AGENT)) + "\n"
+
+
+def model_lines(agent):
+    """The lines of a worker's entry that set its agent, its effort and its pace."""
+    return [f'agent = "{agent}"'] + (['author_effort = "high"'] if agent == "claude" else []) + [f'pace = "{PACE}"']
+
+
+def with_model(block):
+    """`repair` takes `AGENT`, and `maintenance` keeps Codex; both take `PACE`."""
+    worker = re.search(r'(?m)^id = "([^"]+)"', block).group(1)
+    if worker not in ("repair", "maintenance"):
+        return block
+    agent = AGENT if worker == "repair" else "codex"
+    lines = [l for l in block.rstrip("\n").split("\n") if not re.match(r"(agent|author_effort|author_model|pace) =", l)]
+    return "\n".join(lines + model_lines(agent)) + "\n"
 
 
 def main():
@@ -86,7 +107,7 @@ def main():
     current = host(f"cat {REMOTE_DIR}/workers.toml")
     head, *blocks = re.split(r"(?m)^\[\[workers\]\]\n", current)
     kept = [b for b in blocks if not re.search(r'(?m)^id = "author-', b)]
-    entries = [b.rstrip("\n") + "\n" for b in kept] + [author_entry(w, a, e, targets_path) for w, a, e in rows]
+    entries = [with_model(b.rstrip("\n") + "\n") for b in kept] + [author_entry(w, a, e, targets_path) for w, a, e in rows]
     new = head + "".join("[[workers]]\n" + e + "\n" for e in entries)
 
     host(f"cat > {REMOTE_DIR}/targets.md.new", targets)
