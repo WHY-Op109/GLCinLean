@@ -6,7 +6,7 @@ You run the session for a time only: the owner returns to Claude Code when Claud
 
 **Steps**
 1. Read `AGENTS.md` and `STATUS.md` in full.
-2. Run `prompts/clean.md`, and delete no branch or worktree that `STATUS.md` names.
+2. Run `prompts/clean.md`, within the limits of Codex mode: delete no file of `plans/`, `plans-proof/`, `GLCinLean/` or `docs/worker-targets/notes/`, and no branch or worktree that "Waiting for Claude" names.
 3. Check the access, without changing anything:
    - `set -a; . ./.env; set +a` gives `HOST_SSH` and `TAUCETI`; `.env` is local and git ignores it. Write neither value into a tracked file.
    - `gh auth status`, and `gh pr list -R TauCetiProject/TauCeti --author WHY-Op109 --state open`.
