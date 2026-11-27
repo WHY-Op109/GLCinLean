@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fourteen author workers are enabled and live. The Codex usage reading at 17:11 UTC was 22% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 45 open pull requests, 22 are labelled `awaiting-CI`.
+Fourteen author workers are enabled and live. The Codex usage reading at 17:11 UTC was 22% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 46 open pull requests, 26 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -64,9 +64,11 @@ The groupoid of line-bundle roots on a fixed scheme, including its automorphism 
 
 The fixed-site groupoid of torsor lifts and its positive kernel band are in #47374. The pseudofunctor and gerbe proof still need the stack of torsors in #46425 and the classifying abelian gerbe. The two branches #47344 and #47374 both declare `CategoryTheory.Sheaf.Torsor.mapFunctor` and `mapFunctor_obj` in different files. When one lands, the other branch must use the landed functor and keep the distinct identity and kernel-band results. `author-moduli` is repairing #47344.
 
-The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. The extension of the finite Hopf subalgebra criterion to arbitrary fields is in #47363. The external tensor of comodules and its corestriction along a supplied coalgebra map are in #47405. Recovering the multiplication map from a natural tensor coaction remains. The independent `coalgebra-bialgebra-coherence-from-comodules` gives the bialgebra laws from supplied maps and matrix coefficient identities. The construction of the reconstruction coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
+The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. The extension of the finite Hopf subalgebra criterion to arbitrary fields is in #47363. The external tensor of comodules and its corestriction along a supplied coalgebra map are in #47405. Recovering the multiplication map from a natural tensor coaction remains. The bialgebra laws from supplied maps and matrix coefficient identities are in #47426. The construction of the reconstruction coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
 
 The affine DQCoh repair in #45853 is at `b848fe8a32ee`. It splits the K-injective tower into basic and limit modules and revises the affine derived sections comparison. The new head awaits Tau Ceti CI and review. Recovery patches and base SHAs from the quota interruption are in `.lake/worker-recovery/2026-11-27/` on the session host.
+
+`author-stacks` and `author-roots` cover the two independent tensor prerequisites in SchemeAndStackFoundations. `cochain-map-tensor-compatibility` compares the unbounded cochain tensor with the degreewise tilde functor. `affine-tilde-free-kflat-resolution` gives a resolution that remains K-flat under tilde. Their affine derived comparison and #45853 feed the global closure of DQCoh under derived tensor.
 
 The workers repair eligible pull requests and wait when the target list offers no independent work. The Worker's live assignments use the pull request markers, including those of partial pull requests. In particular, the symmetric monoidal nerve waits for #46709 and the solvable group decomposition waits for #46719. `repair` and `maintenance` handle eligible repairs across all areas.
 
@@ -82,7 +84,7 @@ On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356
 
 At the pin `3019e077`, awaiting fold-in into the plan: #46455 (`0687572d61dd`) supplies `TauCeti.Stack.stackificationUniversal` and `TauCeti.Stack.stackificationOfIsStack`. #46450 (`a731e1565e96`) supplies `TauCeti.HopfAlgebra.positiveLoopPreimage`. Both targets are done.
 
-Open on 2026-11-27 (45). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (46). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -131,6 +133,7 @@ Open on 2026-11-27 (45). The plan node is the one that the item of the target li
 | #47419 | `root-components-under-rationalization` | `Groups.splitReductiveGroup` |
 | #47420 | `torsor-extension-restriction-comparison` | `Stacks.gerbeChangeOfBand`, `Stacks.schemeRootGerbe` |
 | #47424 | `simplicial-join-associator-iterated-slices` (partial) | `Infinity.enhancedDerivedCategory` |
+| #47426 | `coalgebra-bialgebra-coherence-from-comodules` | `Tannaka.neutralReconstruction` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
