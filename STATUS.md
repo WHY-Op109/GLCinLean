@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fourteen author workers are enabled and live. The Codex usage reading at 17:41 UTC was 25% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 52 open pull requests, 26 are labelled `awaiting-CI`.
+Fourteen author workers are enabled and live. The Codex usage reading at 17:41 UTC was 25% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 53 open pull requests, 28 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -54,11 +54,11 @@ The coCartesian-preserving relative functor quasicategory, its composition and i
 
 In SheafTheoreticSmithTheory, #47293 supplies the fpqc loop Grassmannian quotient and its basic API. Its torsor square, product and field-extension comparisons, and nonreduced check remain. #47292 supplies length and Bruhat order for an intermediate lattice of an irreducible root system. The construction for a full cocharacter lattice still needs its corresponding product and central-torus results. The Iwahori coset presheaf and the reduction comparison with the homogeneous quotient presheaf are in #47437. The sheaf fibre uses #47437 and #47293. The subsequent Schubert, flag, convolution and semi-infinite geometry is in the target list notes with its prerequisites.
 
-The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. The stable Grassmannian closed immersion imposing lower containment is in #47414. `author-enhanced` is writing `stable-grassmannian-upper-incidence`, which imposes upper containment by reusing the incidence ideal. The window transition uses both immersions. Identifying the windows with the bounded lattice functor still needs #46388.
+The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. The stable Grassmannian closed immersions imposing lower and upper containment are in #47414 and #47447. The window transition uses both immersions. Identifying the windows with the bounded lattice functor still needs #46388.
 
 In ReductiveGroups, #47351 supplies the scalar extension of a chosen base and #47372 assembles the integral Chevalley constants given component tables and Cartan-matching root bijections. The comparison of all integer root-coroot pairings across coefficient rings is in #47408. The comparison of rational component supports and their pairings with those of the original integral datum is in #47419. These give the Cartan-matching inputs for `full-root-datum-chevalley-constants` (§9A). The rank-one Kostant basis and the opposite-root straightening identities for arbitrary rank are in #47386. The commuting, central-bracket and double-string divided-power collection identities in the full-cocharacter Chevalley enveloping algebra are in #47430. `author-torsors` is writing `kostant-g2-root-collection`, which applies the signed short–long and short-pair identities to the full-cocharacter enveloping algebra. The full ordered-basis assembly uses these collection results. The rational center and derived ideal decomposition with supplied constants is in #47336.
 
-`chevalley-simple-root-coordinate-quotient` uses #41428 at the pin to obtain the additive simple-root coordinates and the quotient by the nonsimple positive root groups on a supplied Chevalley model. The comparison with the characters of an arbitrary pinned reductive group still uses the based root datum and the unipotent radical of its Borel subgroup.
+`author-groups` is writing `chevalley-simple-root-coordinate-quotient`. It uses #41428 at the pin to obtain the additive simple-root coordinates and the quotient by the nonsimple positive root groups on a supplied Chevalley model. The comparison with the characters of an arbitrary pinned reductive group still uses the based root datum and the unipotent radical of its Borel subgroup.
 
 The extended sheaves of isomorphisms for `change-band-prestack` are in #47344. Their composition, identities and inverses on a fixed slice are in #47440. The comparison of torsor extension with restriction is in #47420. The prestack uses these to assemble coherent outer slice restrictions. The final `change-band` construction uses the stackification universal property of #46455 at the pin.
 
@@ -68,11 +68,11 @@ The fixed-site groupoid of torsor lifts and its positive kernel band are in #473
 
 The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. The extension of the finite Hopf subalgebra criterion to arbitrary fields is in #47363. The external tensor of comodules and its corestriction along a supplied coalgebra map are in #47405. `author-tannaka` is writing `recover-coalgebra-map-from-tensor-coefficients`, which recovers the multiplication map from a natural tensor coaction by its matrix coefficients. The comparison with the external tensor uses it and #47405. The bialgebra laws from supplied maps and matrix coefficient identities are in #47426. The construction of the reconstruction coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
 
-`marked-monoidal-comodule-equivalence` gives the monoidal and braided comparison with the fibre functor once the bialgebra and tensor coefficient identity are supplied. The unit case follows by testing the tensor on a preimage of the trivial comodule. This comparison can be written independently of the reconstruction of the coalgebra and multiplication.
+`marked-monoidal-comodule-equivalence` gives the monoidal and braided comparison with the fibre functor once the bialgebra and tensor coefficient identity are supplied. The unit case follows by testing the tensor on a preimage of the trivial comodule. The target is ready while `author-tannaka2` repairs #47405.
 
 The affine DQCoh repair in #45853 is at `b848fe8a32ee`. It splits the K-injective tower into basic and limit modules and revises the affine derived sections comparison. The new head awaits Tau Ceti CI and review. Recovery patches and base SHAs from the quota interruption are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
-In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. `derived-tensor-comparison-of-kflat-resolutions` gives the descent to derived categories using those two inputs in the affine case. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. The cochain projection formula and preservation of K-flatness by open restriction remain. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor.
+In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. `author-dqcoh` is writing `derived-tensor-comparison-of-kflat-resolutions`, which gives the descent to derived categories using those two inputs in the affine case. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. The cochain projection formula and preservation of K-flatness by open restriction remain. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor.
 
 The workers repair eligible pull requests and wait when the target list offers no independent work. The Worker's live assignments use the pull request markers, including those of partial pull requests. In particular, the symmetric monoidal nerve waits for #46709 and the solvable group decomposition waits for #46719. `repair` and `maintenance` handle eligible repairs across all areas.
 
@@ -90,7 +90,7 @@ At the pin `3019e077`, awaiting fold-in into the plan: #46455 (`0687572d61dd`) s
 
 At the pin `df6509e`, ChevalleyGroups #41428 (`0255d3b856a9`) supplies `ChevalleyDatum.positiveRootEquiv` and `ChevalleyDatum.isClosedImmersion_rootSubgroup` for a supplied Chevalley datum. The comparison of that model with the split reductive group of a full root datum remains in ReductiveGroups.
 
-Open on 2026-11-27 (52). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (53). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -146,6 +146,7 @@ Open on 2026-11-27 (52). The plan node is the one that the item of the target li
 | #47441 | `affine-tilde-free-kflat-resolution` | `Sheaves.derivedQCoh_perfectGenerator` |
 | #47442 | `open-restriction-kflat` (partial) | `Sheaves.derivedQCoh_perfectGenerator` |
 | #47443 | `cochain-map-tensor-compatibility` | `Sheaves.derivedQCoh_perfectGenerator` |
+| #47447 | `stable-grassmannian-upper-incidence` | `AffineGrassmannian.LoopGrassmannian` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
