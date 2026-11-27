@@ -44,6 +44,8 @@ The native Kan fibration homotopy-group criterion is in #47299. It uses the long
 
 `author-infinity2`, `author-infinity3` and `author-moduli2` are enabled for GeneralizedCohomology as well. The pointwise right-Kan comma cones are in #47304. The full pointwise extension needs this PR and #46745. The other independent items are the walking-equivalence attachment and the Cartesian edge mapping-space criterion. Localization existence waits for the localization predicate #46281 and uses the attachment. The Cartesian edge criterion uses the intrinsic weak homotopy equivalence and can start before the comparison with realization.
 
+The coCartesian-preserving relative functor quasicategory can start on main, with composition, identities and evaluation on fibres. The fixed-restriction construction then uses `SSet.ihomOver.pre` from #47046. The linear functors also need the left-tensored quasicategories over the operad LM.
+
 The SheafTheoreticSmithTheory authors have two open pull requests. #47293 supplies the fpqc loop Grassmannian quotient and its basic API. Its torsor square, product and field-extension comparisons, and nonreduced check remain. #47292 supplies length and Bruhat order for an intermediate lattice of an irreducible root system. The construction for a full cocharacter lattice still needs its corresponding product and central-torus results. The subsequent Schubert, flag, convolution and semi-infinite geometry is in the target list notes with its prerequisites.
 
 `author-dqcoh` is writing the GLₙ finite-jet action on a bounded interval of projective lattices. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
@@ -52,7 +54,7 @@ In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-const
 
 `author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
 
-`author-tannaka` is transporting the connectedness criterion along a supplied equivalence with finite comodules. The pinned Hopf algebra criterion covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka2` can extend the finite Hopf subalgebra criterion to arbitrary fields by pulling back finite Hopf subalgebras from the algebraic closure. The sufficient direction used by geometric Satake needs that extension. Reconstruction of the equivalence itself starts with #46380.
+`author-tannaka` is transporting the connectedness criterion along a supplied equivalence with finite comodules. The pinned Hopf algebra criterion covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka2` is extending the finite Hopf subalgebra criterion to arbitrary fields by pulling back finite Hopf subalgebras from the algebraic closure. The sufficient direction used by geometric Satake needs that extension. Reconstruction of the equivalence itself starts with #46380.
 
 The loop-Grassmannian quotient has been published as #47293 and the repair of #45853 is running again after a weekly quota interruption. The interrupted rounds’ recovery patches and exact base SHAs are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
