@@ -68,7 +68,7 @@ The fixed-site groupoid of torsor lifts and its positive kernel band are in #473
 
 The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. The extension of the finite Hopf subalgebra criterion to arbitrary fields is in #47363. The external tensor of comodules and its corestriction along a supplied coalgebra map are in #47405. Recovery of a coalgebra map from the matrix coefficients of a natural tensor coaction is in #47455. The comparison with the external tensor uses it and #47405. The bialgebra laws from supplied maps and matrix coefficient identities are in #47426. The construction of the reconstruction coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
 
-The marked monoidal and braided lift from a supplied colinear tensorator is in #47484. It derives unit colinearity from a preimage of the trivial comodule. The criterion that identifies tensor colinearity with multiplication of the pure matrix coefficients remains.
+The marked monoidal and braided lift from a supplied colinear tensorator is in #47484. It derives unit colinearity from a preimage of the trivial comodule. The independent `tensor-matrix-coefficients-detect-colinearity` target identifies tensor colinearity with multiplication of the pure matrix coefficients. The marked comparison will use it with #47484.
 
 The affine DQCoh repair in #45853 is at `b848fe8a32ee`. It splits the K-injective tower into basic and limit modules and revises the affine derived sections comparison. The new head awaits Tau Ceti CI and review. Recovery patches and base SHAs from the quota interruption are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
