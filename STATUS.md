@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fifteen author workers are enabled and live. At 21:21 UTC, `author-moduli2` was running in ReductiveGroups after completing the #46281 repair. The Codex usage reading at 21:19 UTC was 49% of the weekly allowance. In the 24 hours to 21:18 UTC, GitHub recorded 70 pull requests opening and 15 landed in the history of Tau Ceti main. The median from opening to landing for those 15 was 11.2 hours. GitHub shows 72 of our pull requests open. Of these, 46 are labelled `awaiting-CI`.
+Fifteen author workers are enabled and live. At 21:21 UTC, `author-moduli2` was running in ReductiveGroups after completing the #46281 repair. The Codex usage reading at 21:19 UTC was 49% of the weekly allowance. In the 24 hours to 21:18 UTC, GitHub recorded 70 pull requests opening and 15 landed in the history of Tau Ceti main. The median from opening to landing for those 15 was 11.2 hours. GitHub shows 73 of our pull requests open. Of these, 46 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -58,7 +58,7 @@ The GLₙ finite-jet action on a bounded interval of projective lattices is in #
 
 In ReductiveGroups, the scalar extension of a chosen base from #47351 is at the pin. #47372 assembles the integral Chevalley constants given component tables and Cartan-matching root bijections. The comparison of all integer root-coroot pairings across coefficient rings in #47408 is at the pin. The comparison of rational component supports and their pairings with those of the original integral datum is in #47419. These give the Cartan-matching inputs for `full-root-datum-chevalley-constants` (§9A). The rank-one Kostant basis and the opposite-root straightening identities for arbitrary rank are in #47386. The commuting, central-bracket and double-string divided-power collection identities in the full-cocharacter Chevalley enveloping algebra are in #47430. The exceptional signed short–long and short-pair identities in the full-cocharacter enveloping algebra are in #47453. The bounded integral word straightening and the mixed PBW criterion are in #47479. The degree bound on binomials of shifted coroots is in #47467. #47519 gives the mixed Kostant lattice an integral coalgebra with coefficient-one coproduct on the ordered basis and identifies its rational scalar extension with the enveloping coalgebra. The full ordered-basis assembly uses the coalgebra comparison and the collection results to identify the integral Hopf structure. The rational center and derived ideal decomposition with supplied constants is in #47336.
 
-In ReductiveGroups, #47531 proves degree-one Amitsur exactness in `TauCeti/RingTheory/Flat/Amitsur.lean`, with the formulas for the differentials and the ambiguity of a primitive. The regular section uses exactness to descend a local vector-torsor point. `author-torsors` is writing `regular-vector-extension-cocycle` to turn the factor set of a supplied regular section into a native cocycle and correct the section given a primitive. The solvable-group decomposition uses the regular section and factor-set comparison with the native averaging theorem of #47356 once it lands.
+In ReductiveGroups, #47531 proves degree-one Amitsur exactness in `TauCeti/RingTheory/Flat/Amitsur.lean`, with the formulas for the differentials and the ambiguity of a primitive. The regular section uses exactness to descend a local vector-torsor point. #47552 makes the factor set of a supplied regular section into a native cocycle and turns a supplied regular primitive into a group-scheme section. The solvable-group decomposition uses the regular section and factor-set comparison with the native averaging theorem of #47356 once it lands.
 
 The additive simple-root coordinates and quotient by the nonsimple positive root groups on a supplied Chevalley model are in #47461. It uses #41428 at the pin. The comparison with the characters of an arbitrary pinned reductive group still uses the based root datum and the unipotent radical of its Borel subgroup. #47514 recovers the ordered root parameters from the integral GL coordinates and proves the product map is a closed immersion over ℤ for a duplicate-free list positive for one rational degree on the weight lattice. The opposite point subgroup and scheme monomorphisms are in #43411.
 
@@ -100,7 +100,7 @@ At the pin `fba9bfb`, #47385 (`e5ec28d3fbe6`) supplies `TauCeti.AlgebraicGeometr
 
 At the pin `9acbc9a`, #47351 (`b4dd7d976af4`) supplies `RootPairing.Base.baseChange`, #47392 (`cf507c30dd6f`) supplies `TauCeti.linearHomComplexMappingConeIso`, and #47449 (`7a26904a7925`) supplies `TauCeti.linearHomComplexMappingConePrecompIso`.
 
-Open on GitHub on 2026-11-27 (72). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-27 (73). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -176,6 +176,7 @@ Open on GitHub on 2026-11-27 (72). The plan node is the one that the item of the
 | #47519 | `mixed-kostant-lattice-coalgebra` | `Groups.splitReductiveGroup` |
 | #47529 | `dg-nerve-opposite` | `Infinity.enhancedDerivedCategory` |
 | #47531 | `amitsur-degree-one-exactness` | `Groups.rootDatum`, `Groups.borelUnipotentRadical` |
+| #47552 | `regular-vector-extension-cocycle` | `Groups.rootDatum`, `Groups.borelUnipotentRadical` |
 
 The CI jobs at the current heads of #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These five heads carry `awaiting-CI` and have no published `build` status. The Worker found no `fix-ci` action for #46745. #46281 at `8cd561e8b119` shares the precomposition vertex comparison proof. The sandboxed build and published `build` status at that head passed. The pull request carries `awaiting-review`. The session's local done check is recorded above.
 
