@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fourteen author workers are enabled and live. The Codex usage reading at 17:41 UTC was 25% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 53 open pull requests, 28 are labelled `awaiting-CI`.
+Fourteen author workers are enabled and live. The Codex usage reading at 17:41 UTC was 25% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 54 open pull requests, 28 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -46,7 +46,7 @@ The native Kan fibration homotopy-group criterion is in #47299. It uses the long
 
 `author-infinity3` and `author-moduli2` cover the independent GeneralizedCohomology items. The pointwise right-Kan comma cones are in #47304. The full pointwise extension needs this PR and #46745. The walking-equivalence attachment is in #47368. Localization existence needs it and the localization predicate of #46281. The concrete Cartesian fibre comparison is in #47409. The Cartesian edge criterion and its coCartesian dual need this comparison and the fibrewise trivial-fibration theorem of #47364.
 
-The comparison for `Hom•(Z, Cone f)` is in #47392. The comparison for `Hom•(Cone f, Z)` can start as `linear-hom-out-of-mapping-cone` in a separate file. The candidate fibre and cofiber squares in `dg-nerve-mapping-cone-model` use these comparisons. The stability proof still needs the mapping-space universal-property criteria of #46745. The native localization proof still needs #46281.
+The comparisons for `Hom•(Z, Cone f)` and `Hom•(Cone f, Z)` are in #47392 and #47449. The independently ready `dg-nerve-candidate-cone-squares` target constructs the squares from the two native triangles and lifts them to K-injectives. The combined mapping-cone comparison uses these three pieces. The stability proof still needs the mapping-space universal-property criteria of #46745. The native localization proof still needs #46281.
 
 The general one-sided anodyne pushout-join lemmas are in #47393. The selected-vertex corollaries still need the point-cone results of #46745. The relative universal property of joins and the join pullback lemmas are in #47424. The `simplicial-join-associator-iterated-slices` target still needs the comparison of the two bracketings over Δ[2], the natural associator and the comparison of iterated slices. These give the gluing step for finite limits from terminal vertices and pullbacks, with the dual results. The AlgebraicTopology work needs #47294 and #47329 before the remaining realization and approximation proofs.
 
@@ -147,6 +147,7 @@ Open on 2026-11-27 (53). The plan node is the one that the item of the target li
 | #47442 | `open-restriction-kflat` (partial) | `Sheaves.derivedQCoh_perfectGenerator` |
 | #47443 | `cochain-map-tensor-compatibility` | `Sheaves.derivedQCoh_perfectGenerator` |
 | #47447 | `stable-grassmannian-upper-incidence` | `AffineGrassmannian.LoopGrassmannian` |
+| #47449 | `linear-hom-out-of-mapping-cone` | `Infinity.enhancedDerivedCategory` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
