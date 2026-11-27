@@ -1,6 +1,6 @@
 # Status
 
-Updated 2026-11-26. No question waits for the owner; two actions of the owner that block no work are under "Waiting for the owner". "Workflow" in `AGENTS.md` says how the work runs, and the plan says what to formalise.
+Updated 2026-11-27.
 
 ## Current state
 
@@ -62,7 +62,7 @@ At the pin `ea7f36aa` and folded into the plan (2026-11-26): #45872, #45833, #45
 
 At the pin `d395922` and folded into the plan by the planner's commit `d7d4a6f` on the branch `worktree-agent-aa97650d7dc4fda69`, which is not merged: its check with `prompts/check.md` was stopped when the session ended, and the target-list changes of the planner's report (reopen `symmetric-monoidal-category-nerve`, new items `nerve-coslice-cocones`, `tensor-aut-functor-of-comodules` and `loop-group-checks-mu-p-and-ga`, and the `serves:` of `isom-sheaf-torsor`, `relative-gerbe` and `coordinate-action-on-loops`) wait for that check. The pull requests: #45823, #45829, #45839, #45842, #45844, #45847, #45854, #45856, #45874, #45878, #45890, #46123, #46126, #46128, #46129, #46132, #46137, #46147, #46174, #46177, #46179, #46253, #46263, #46266, #46279, #46322, #46373, #46387 and #46438; the target list marks their items done. At the pin move, nine upstream declarations that the plan names had moved to new modules, and the plan names the new modules; `TauCeti.AlgebraicGeometry.whiskerLeft_pullbackIhomComparison_app_comp_ev`, which `plans/GLCinLean/AlgebraicGeometry/LineBundle/RootTensorProductPullback.toml` names, is no longer at the pin, and the planner corrects that node. Tau Ceti's merge queue merges a pull request into `main` itself, so GitHub shows it as closed, not merged; its last comment is "Pull request successfully merged into main".
 
-Open on 2026-11-27 at 06:40 UTC (21). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (22). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -87,6 +87,7 @@ Open on 2026-11-27 at 06:40 UTC (21). The plan node is the one that the item of 
 | #46768 | `mappingspace-comparison-weak-equivalence` | `Infinity.mappingSpaces` |
 | #46787 | `band-morphism-equivalence` | `Stacks.bandPreserving_isEquivalence` |
 | #46940 | `monoidal-quasicategory` | `Infinity.monoidalCategory` |
+| #47046 | `cocartesian-lift-uniqueness` | `Infinity.monoidalCategory` |
 
 ## Held
 
@@ -220,7 +221,7 @@ The decisions that still guide the work. The plan, the code and `AGENTS.md` carr
 
 - **The git identity of the workers' commits** (the owner, 2026-11-26). Before the first commit on a host, check `git var GIT_AUTHOR_IDENT`: the address is the one of this repository's commits.
 
-- **The settings of the Tau Ceti workers** (the owner, 2026-11-19 to 2026-11-26). The author workers and `maintenance` have `pace = "0:95,90:95"`: a worker runs while less than 95% of the week is used, and the last 5% is left for the session. Every worker that runs Claude or repairs has `auto_refresh = true`, so that the Worker renews the Claude access token of the server's login from its refresh token; `reviewer` runs only Codex and has none. Only `repair` has `ignore_quota = true`, so that the repairs and rebases of our pull requests go on while the provider's usage service refuses; a worker with it keeps no reserve, so no author worker has it. The author workers have `full_quality = true`, because Tau Ceti's review sent back most of the first pull requests on the rubrics `api-design`, `reuse` and `generality`. `reviewer` has `pace_codex = "0:100"` and runs up to the provider’s limit. The session reports the usage only when a worker stops on a limit of the provider.
+- **The settings of the Tau Ceti workers** (the owner, 2026-11-19 to 2026-11-26). The author workers and `maintenance` have `pace = "0:100"` in Codex mode. In Claude mode they have `pace = "0:95,90:95"`, reserving the last 5% of the week for the session. Every worker that runs Claude or repairs has `auto_refresh = true`, so that the Worker renews the Claude access token of the server's login from its refresh token; `reviewer` runs only Codex and has none. Only `repair` has `ignore_quota = true`, so that the repairs and rebases of our pull requests go on while the provider's usage service refuses; a worker with it keeps no reserve, so no author worker has it. The author workers have `full_quality = true`, because Tau Ceti's review sent back most of the first pull requests on the rubrics `api-design`, `reuse` and `generality`. `reviewer` has `pace_codex = "0:100"` and runs up to the provider’s limit. The session reports the usage only when a worker stops on a limit of the provider.
 - **Roadmap proposals: deferred** (the owner, 2026-11-11). The candidates and their triggers are in `docs/blueprint-providers.md`, "Roadmap candidates (deferred)". Each audit checks the triggers and puts a candidate to the owner when all of them hold.
 - **Generality** (2026-11-11 and 2026-11-13). A definition gets its natural generality. A theorem stated more narrowly than its source is under-generalization. A theorem that serves only a proof is stated under the hypotheses its proof uses, with the case used as an instance.
 - **The ∞-categorical layer** (2026-11-10). Build the enhanced theory on Mathlib quasicategories and Tau Ceti's DG nerve and K-injective models, following the accepted targets of EnhancedDerivedSheaves and of GeneralizedCohomology G2.11. Do not start a competing foundation, and do not replace enhanced categories by triangulated ones. The constructible category is the exception by design: an ordinary triangulated category built from Mathlib (2026-11-13).
