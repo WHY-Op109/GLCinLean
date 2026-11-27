@@ -16,7 +16,7 @@ and sets the model and pace of `repair` and `maintenance` as described below.
 or `codex` (Codex at the Worker's default model and effort, so no `author_model` and no
 `author_effort`). With `codex`, the author workers, `repair` and `maintenance` run until the
 provider's limit (`pace = "0:100"`); with `claude`, they keep the last 5% of the week (`PACE`).
-`reviewer` keeps its own settings.
+`reviewer` runs up to the Codex provider's limit (`pace_codex = "0:100"`).
 It checks the list with `tauceti _targets-inspect` and the settings with `tauceti workers apply
 --check` on the host, and only then replaces the two files and runs `tauceti workers apply`.
 A worker reads the list at the start of each round, and the Worker restarts a changed worker after
@@ -80,10 +80,13 @@ def model_lines(agent):
 
 
 def retained_entry(block):
-    """Pin a retained worker's GitHub account and set the models of repair and maintenance."""
+    """Pin a retained worker's GitHub account and set its model or pace where specified."""
     worker = re.search(r'(?m)^id = "([^"]+)"', block).group(1)
     block = re.sub(r"(?m)^[ \t]*github_account[ \t]*=[^\n]*(?:\n|$)", "", block)
     block = f'github_account = "{GITHUB_ACCOUNT}"\n' + block
+    if worker == "reviewer":
+        block = re.sub(r"(?m)^[ \t]*pace_codex[ \t]*=[^\n]*(?:\n|$)", "", block)
+        return 'pace_codex = "0:100"\n' + block
     if worker not in ("repair", "maintenance"):
         return block
     agent = AGENT if worker == "repair" else "codex"
