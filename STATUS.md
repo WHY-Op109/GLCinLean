@@ -38,6 +38,8 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
+Fourteen author workers are enabled and live. The latest Codex usage reading at 15:42 UTC was 11% of the weekly allowance. In the 24 hours to 15:44 UTC, 23 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 29 open pull requests, 16 are labelled `awaiting-CI`.
+
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
 The native Kan fibration homotopy-group criterion is in #47299. It uses the long exact sequence and fibre criterion independently of the realization-unit comparison. GeneralizedCohomology also waits for #46745 before the right mapping-space postcomposition theorem, because that pull request changes the shared cone and edge composition code.
@@ -52,7 +54,7 @@ The GLₙ finite-jet action on a bounded interval of projective lattices is in #
 
 In ReductiveGroups, `author-torsors` and `author-groups` selected `full-root-datum-chevalley-constants` (§9A) after a shared claim attempt failed. The target list also offers `full-kostant-pbw-rank-one`, in a separate enveloping-algebra file. It proves integral straightening with all cocharacters for a pair of opposite roots and takes the constants as input. The rational center and derived ideal decomposition with supplied constants is in #47336. The target list notes give the later steps toward the pinned group over ℤ.
 
-`author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
+The extended sheaves of isomorphisms for `change-band-prestack` are in #47344. The groupoid laws, coherence under restriction, and band-compatible map into the resulting prestack remain. The `change-band` construction uses this prestack and the stackification universal property in #46455.
 
 `author-roots` is writing the groupoid of line-bundle roots on a fixed scheme, with its automorphism and Picard-class criteria. The pullback and its coherence still need #45827. The change-of-band prestack and the roots groupoid use different files.
 
@@ -74,7 +76,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (28). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (29). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -106,6 +108,7 @@ Open on 2026-11-27 (28). The plan node is the one that the item of the target li
 | #47329 | `simplicial-subdivision-realization-standard-simplex` (partial) | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
 | #47332 | `tannakian-connected-criterion-transport` | `Tannaka.connected_iff_not_tensorClosed_hull` |
 | #47336 | `full-chevalley-lie-rational-decomposition` | `Groups.splitReductiveGroup` |
+| #47344 | `change-band-prestack` (partial) | `Stacks.gerbeChangeOfBand` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
