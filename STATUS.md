@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-`author-stable` is writing the realization comparison on subdivided standard simplices. The native last-vertex map is in #47294. Relative simplicial approximation needs both. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
+`author-stable` is writing the realization comparison on subdivided standard simplices. The native last-vertex map is in #47294. The relative approximation needs both. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
 The native Kan fibration homotopy-group criterion is in #47299. It uses the long exact sequence and fibre criterion independently of the realization-unit comparison. GeneralizedCohomology also waits for #46745 before the right mapping-space postcomposition theorem, because that pull request changes the shared cone and edge composition code.
 
