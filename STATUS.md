@@ -38,13 +38,13 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fourteen author workers are enabled and live. The Codex usage reading at 15:55 UTC was 13% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 32 open pull requests, 15 are labelled `awaiting-CI`.
+Fourteen author workers are enabled and live. The Codex usage reading at 15:55 UTC was 13% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 33 open pull requests, 17 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
 The native Kan fibration homotopy-group criterion is in #47299. It uses the long exact sequence and fibre criterion independently of the realization-unit comparison. The mapping-space comparison #46768 has a green build at `f773f81a8a0a` and waits for review. The postcomposition theorem still needs #46745, which changes the shared cone and edge composition code.
 
-`author-infinity`, `author-infinity3` and `author-moduli2` cover the independent GeneralizedCohomology items. The pointwise right-Kan comma cones are in #47304. The full pointwise extension needs this PR and #46745. Localization existence uses the walking-equivalence attachment and waits for #46281. The Cartesian edge mapping-space criterion uses the fibrewise trivial-fibration theorem of #47364. The `cartesian-edge-relative-fibre-model` target can start on main and supplies the concrete comparison of fibres in a separate file. The final criterion and its dual need both.
+`author-infinity`, `author-infinity3` and `author-moduli2` cover the independent GeneralizedCohomology items. The pointwise right-Kan comma cones are in #47304. The full pointwise extension needs this PR and #46745. The walking-equivalence attachment is in #47368. Localization existence needs it and the localization predicate of #46281. The Cartesian edge mapping-space criterion uses the fibrewise trivial-fibration theorem of #47364. The `cartesian-edge-relative-fibre-model` target can start on main and supplies the concrete comparison of fibres in a separate file. The final criterion and its dual need both.
 
 `author-stable` is writing the signed Hom-complex comparisons and the candidate fibre and cofiber squares in `dg-nerve-mapping-cone-model`. The stability proof still needs the mapping-space universal-property criteria of #46745. The native localization proof still needs #46281.
 
@@ -80,7 +80,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (32). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (33). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -116,6 +116,7 @@ Open on 2026-11-27 (32). The plan node is the one that the item of the target li
 | #47351 | `full-root-datum-chevalley-constants` (partial) | `Groups.splitReductiveGroup` |
 | #47363 | `hopf-idempotent-finite-subalgebra-arbitrary-field` | `Tannaka.connected_iff_not_tensorClosed_hull` |
 | #47364 | `cartesian-edge-mapping-space-criterion` (partial) | `Infinity.mappingSpaces`, `Infinity.monoidalCategory` |
+| #47368 | `walking-equivalence-attachment` | `Infinity.IsLocalization` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
