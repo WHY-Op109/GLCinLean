@@ -50,7 +50,7 @@ The SheafTheoreticSmithTheory authors have two open pull requests. #47293 suppli
 
 The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
 
-In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The target list notes record the later steps toward the pinned group over ℤ. `author-groups` is writing the rational center–derived decomposition using supplied constants. The two items run in different files.
+In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The rational center and derived ideal decomposition with supplied constants is in #47336. The target list notes give the later steps toward the pinned group over ℤ.
 
 `author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
 
@@ -58,7 +58,7 @@ In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-const
 
 `author-dqcoh` can take the groupoid of torsor lifts on a fixed site, with the positive action of the kernel on lift automorphisms. The pseudofunctor and gerbe proof still need the stack of torsors in #46425 and the classifying abelian gerbe. The extension functor and lift groupoid use separate files from the two other AlgebraicModuliForArithmeticGeometry targets.
 
-`author-tannaka` is transporting the connectedness criterion along a supplied equivalence with finite comodules. The pinned Hopf algebra criterion covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka2` is extending the finite Hopf subalgebra criterion to arbitrary fields by pulling back finite Hopf subalgebras from the algebraic closure. The sufficient direction used by geometric Satake needs that extension. Reconstruction of the equivalence itself starts with #46380.
+The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. It covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka2` is extending the finite Hopf subalgebra criterion to arbitrary fields by pulling back finite Hopf subalgebras from the algebraic closure. The sufficient direction used by geometric Satake needs that extension. Reconstruction of the equivalence itself starts with #46380.
 
 The loop-Grassmannian quotient has been published as #47293 and the repair of #45853 is running again after a weekly quota interruption. The interrupted rounds’ recovery patches and exact base SHAs are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
@@ -74,7 +74,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (26). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (28). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -104,6 +104,8 @@ Open on 2026-11-27 (26). The plan node is the one that the item of the target li
 | #47304 | `right-kan-extension-comma-cones` | `Infinity.rightKanExtension` |
 | #47328 | `gl-n-bounded-lattice-jet-action` | `AffineGrassmannian.schubertStratification` |
 | #47329 | `simplicial-subdivision-realization-standard-simplex` (partial) | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
+| #47332 | `tannakian-connected-criterion-transport` | `Tannaka.connected_iff_not_tensorClosed_hull` |
+| #47336 | `full-chevalley-lie-rational-decomposition` | `Groups.splitReductiveGroup` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
