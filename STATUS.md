@@ -56,6 +56,8 @@ In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-const
 
 `author-roots` is writing the groupoid of line-bundle roots on a fixed scheme, with its automorphism and Picard-class criteria. The pullback and its coherence still need #45827. The change-of-band prestack and the roots groupoid use different files.
 
+`author-dqcoh` can take the groupoid of torsor lifts on a fixed site, with the positive action of the kernel on lift automorphisms. The pseudofunctor and gerbe proof still need the stack of torsors in #46425 and the classifying abelian gerbe. The extension functor and lift groupoid use separate files from the two other AlgebraicModuliForArithmeticGeometry targets.
+
 `author-tannaka` is transporting the connectedness criterion along a supplied equivalence with finite comodules. The pinned Hopf algebra criterion covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka2` is extending the finite Hopf subalgebra criterion to arbitrary fields by pulling back finite Hopf subalgebras from the algebraic closure. The sufficient direction used by geometric Satake needs that extension. Reconstruction of the equivalence itself starts with #46380.
 
 The loop-Grassmannian quotient has been published as #47293 and the repair of #45853 is running again after a weekly quota interruption. The interrupted rounds’ recovery patches and exact base SHAs are in `.lake/worker-recovery/2026-11-27/` on the session host.
