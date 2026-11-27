@@ -1,0 +1,7 @@
+name = "writer"
+description = "Writes one ready module of the plan in Lean, in its own worktree."
+model = "gpt-6.2-sol"
+model_reasoning_effort = "high"
+developer_instructions = """
+Your role and its rules are the text of `.claude/agents/writer.md` after its front matter; read that file first and follow it. The front matter there is for Claude Code: your model and effort are set here.
+"""

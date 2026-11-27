@@ -1,0 +1,7 @@
+name = "searcher"
+description = "Searches Mathlib and Tau Ceti for existing declarations, and does other tasks with a clear scope."
+model = "gpt-6.2-sol"
+model_reasoning_effort = "max"
+developer_instructions = """
+Your role and its rules are the text of `.claude/agents/searcher.md` after its front matter; read that file first and follow it. The front matter there is for Claude Code: your model and effort are set here. Edit no file and make no commit.
+"""

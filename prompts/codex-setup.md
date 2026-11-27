@@ -1,12 +1,14 @@
 # Codex setup
 
+Start Codex in this folder with `codex -m gpt-6.2-sol -c model_reasoning_effort=high`.
+
 **Goal.** Prepare this checkout and the workers' host so that Codex can run the session in Codex mode (`AGENTS.md`, "Codex mode"). The owner sets the goal of `prompts/codex-goal.md` after this setup replies "ready".
 
 You run the session for a time only: the owner returns to Claude Code when Claude's usage is free again. Leave every line of work so that a Claude session can take it up from `STATUS.md`.
 
 **Steps**
 1. Read `AGENTS.md` and `STATUS.md` in full.
-2. Run `prompts/clean.md`, within the limits of Codex mode: delete no file of `plans/`, `plans-proof/`, `GLCinLean/` or `docs/worker-targets/notes/`, and no branch or worktree that "Waiting for Claude" names.
+2. Run `prompts/clean.md`, and delete no branch or worktree that `STATUS.md` names.
 3. Check the access, without changing anything:
    - `set -a; . ./.env; set +a` gives `HOST_SSH` and `TAUCETI`; `.env` is local and git ignores it. Write neither value into a tracked file.
    - `gh auth status`, and `gh pr list -R TauCetiProject/TauCeti --author WHY-Op109 --state open`.

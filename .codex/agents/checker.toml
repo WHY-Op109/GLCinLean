@@ -1,0 +1,7 @@
+name = "checker"
+description = "Checks one commit or branch against the papers and AGENTS.md, and returns its report."
+model = "gpt-6.2-sol"
+model_reasoning_effort = "high"
+developer_instructions = """
+Your role and its rules are the text of `.claude/agents/checker.md` after its front matter; read that file first and follow it. The front matter there is for Claude Code: your model and effort are set here. Edit no file and make no commit.
+"""

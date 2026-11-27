@@ -30,12 +30,12 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
   | Role | Model, effort | Task |
   |---|---|---|
-  | Session | Fable 5.2, high; in Codex mode Codex | Coordinates: chooses the work, starts the other roles, merges their results and keeps `STATUS.md` current. It writes no module itself. |
+  | Session | Fable 5.2, high; in Codex mode GPT-6.2 Sol, high | Coordinates: chooses the work, starts the other roles, merges their results and keeps `STATUS.md` current. It writes no module itself. |
   | Planner | Fable 5.2, high | Solves a problem that a writer hands over, proposes a big change (`prompts/change.md`), and runs the audit. |
   | Writer | Opus 5.5, high | Writes one ready module of this repository. Modules that do not depend on each other have writers in parallel. A writer that fails twice on the same goal returns the goal. The session then starts a second writer on that goal. When this writer fails too, the problem goes to the planner. |
   | Checker | Fable 5.2, high | Checks one commit or branch with `prompts/check.md`. |
   | Blind reader | Opus 5.5, high | Gives the checker its blind reading. |
-  | Searcher | Opus 5.5, xhigh | Searches Mathlib and Tau Ceti deeply, so that nothing they have is written again, and does other tasks with a clear scope. |
+  | Searcher | Opus 5.5, max | Searches Mathlib and Tau Ceti deeply, so that nothing they have is written again, and does other tasks with a clear scope. |
   | Codex | its most capable model, high | The second checker of a big change, read-only (`codex exec`). |
   | Author workers | Opus 5.5, high (`agent = "claude"`); in Codex mode Codex at the Worker's default model and effort (`agent = "codex"`) | Persistent Tau Ceti workers, each pinned to one roadmap area. Each repairs the open pull requests of its area first (the phases `rebase`, `fix-ci`, `fix`) and writes a new target only when none needs repair (`roadmap`). It takes that target from the target list `docs/worker-targets/targets.md`: an open target of its area whose prerequisites are on Tau Ceti main. When the list offers none, it starts no model. The session decides how many workers each area has (`docs/worker-targets/workers.tsv`), from the plan and the quota: an area gets at most as many workers as it has targets that can start now and touch different files, and the areas on the longest chains of the plan come first. |
   | Maintenance workers | `maintenance` and `reviewer`: GPT 6.1 Sol, high (`agent = "codex"`); `repair`: Opus 5.5, high (`agent = "claude"`); in Codex mode `repair` runs Codex at the Worker's default model and effort | Three persistent Tau Ceti workers that are pinned to no area. `repair` has only the phases `rebase`, `fix-ci` and `fix`, for our pull requests of every area, so that a repair does not wait for an author worker that is busy or absent. `maintenance` has the Worker's other phases for our pull requests (`rebase`, `bump`, `lint-repair`, `progress`, `fix-ci`, `fix`, `overlap-fix`). Its phase `progress` writes the generated status files of a roadmap area, which is the only kind of pull request of ours in the roadmap repository. `reviewer` has only the phase `review`: it reviews pull requests of other contributors, so every review of ours is by GPT 6.1 Sol. |
@@ -46,11 +46,9 @@ A Lean library for geometric representation theory, on which a faithful statemen
 
 ## Codex mode
 
-- While Claude's usage is used up, Codex runs the session. Codex mode is on while the first line of "Current state" in `STATUS.md` is "Mode: Codex". The owner starts it with `prompts/codex-setup.md`, then sets the goal of `prompts/codex-goal.md`, and returns to Claude Code when Claude's usage is free again.
-- In Codex mode the author workers and `repair` run Codex at the Worker's default model and effort (`AGENT` in `tools/deploy-worker-targets.py`). The Tau Ceti work goes on as before: only through the Worker on the workers' host, which writes, repairs and reviews.
-- Codex has only the session's role of coordinating, by `prompts/codex-goal.md`. It changes nothing in `plans/`, `plans-proof/`, `GLCinLean/` or `docs/worker-targets/notes/`, writes no new target and changes no target's text, except the two edits that `prompts/codex-goal.md` names. It writes no module and starts no planner, writer, checker, blind reader or searcher.
-- When work needs a change of the plan or of a module, a check, or a new target, Codex records it under "Waiting for Claude" in `STATUS.md`, with what is needed and why, and does nothing else about it. When it needs a big change ("Small and big changes"), Codex records it under "Waiting for the owner". In both cases Codex goes on with the work that the change does not touch.
-- A Claude session that finds "Mode: Codex" first does what "Waiting for Claude" lists, sets `AGENT = "claude"` and deploys, and sets "Mode: Claude".
+- While `STATUS.md` says "Mode: Codex", Codex runs the session by `prompts/codex-goal.md`, with the subagents of `.codex/agents/`, and the author workers and `repair` run Codex at the Worker's default model and effort (`AGENT` in `tools/deploy-worker-targets.py`).
+- Codex leaves the planner's work and every change that needs the agreement of Claude and Codex (`prompts/change.md`) under "Waiting for Claude" in `STATUS.md`.
+- A Claude session that finds "Mode: Codex" first does what "Waiting for Claude" lists, then sets `AGENT = "claude"`, deploys, and sets "Mode: Claude".
 
 ## Sources of code
 
