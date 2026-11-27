@@ -12,8 +12,8 @@ Updated 2026-11-26. No question waits for the owner; two actions of the owner th
 - **Plan of the proof.** `plans-proof/` holds the 195 nodes that only the proof of the main theorem needs (187 to be written here, 8 owned by five roadmaps), in 74 module plans. `plans-proof/README.md` says how it is used, names the two theorems that connect the statement with [GLC1], and holds the notes for the session that starts the proof.
 - **Checked commits.** Lean code: the last checked commit is `5b0bc7f` (2026-11-25), which adds to `GLCinLean/CategoryTheory/Monoidal/TensorPow.lean` the comparison with Tau Ceti's `tensorPowUnitIso` and `tensorPowTensorIso`. Statement: its code is unchanged since the checked commit `bf3b2fd`, its doc comments since the checked commit `e73241d` (2026-11-18), and each later entry of the module doc comment of `GLCinLean.lean` was checked with its change. Plan: the last checked commit is `7c269b1` (2026-11-26), checked before its merge.
 - **Audit.** The last audit is of `e38e33d` (2026-11-25; its commit is `f5bfe9a`). It compared the plan with TauCetiRoadmap main `b24abdf7` and with Tau Ceti main `553f7926`. The roadmap SheafTheoreticSmithTheory merged on 2026-11-26 with the same text that this audit compared at the pull request's head, and the change that released its held nodes compared it again node by node ("Decisions taken", "The loop Grassmannian"); so the merge alone needs no second audit. The next audit is due when a Tau Ceti roadmap that owns plan nodes is merged, changed or replaced, and otherwise after about ten cycles from it. That audit also shortens `docs/blueprint-providers.md` ("Open items").
-- **Build checks.** Run on 2026-11-26 at the pins: `lake build` passes with only the main theorem's `sorry` warning (8,769 jobs), `lake lint` passes, and `lake env lean tools/check-statement-axioms.lean` shows `sorryAx` only for the main theorem. `lake exe tracker lint` has no errors; its 61 warnings are the superseded `desc` and `deps` of the declarations of the statement, which `plans/README.md` explains. `python3 tools/check-module-cycles.py` finds no cycle. `python3 tools/check-upstream-names.py` confirms every pair of an upstream declaration and its module that the plan and `docs/blueprint-providers.md` name (522 pairs).
-- **Pins.** Lean `v4.37.0-rc1`, Tau Ceti `ea7f36aa9d31d22b2b362a282632d3956a8d22de` (its `main` of 2026-11-26, 06:04 UTC, with our #45872, #45833, #45818, #45824 and #45848; it has a published cache, and a checkout compiles no Tau Ceti module), Mathlib `31ce06eaadf4a200c0e1407c5f10953cf606b8f8` (the commit Tau Ceti names). Tau Ceti's newest tag is `v4.37.0-rc1` (`e0e414ce`).
+- **Build checks.** Run on 2026-11-27 at the pins: `lake build` passes with only the main theorem's `sorry` warning (8,863 jobs), `lake lint` passes, and `lake env lean tools/check-statement-axioms.lean` shows `sorryAx` only for the main theorem. `lake exe tracker lint` has no errors; its 61 warnings are the superseded `desc` and `deps` of the declarations of the statement, which `plans/README.md` explains. `python3 tools/check-module-cycles.py` finds no cycle. `python3 tools/check-upstream-names.py` confirms every pair of an upstream declaration and its module that the plan and `docs/blueprint-providers.md` name (522 pairs).
+- **Pins.** Lean `v4.37.0-rc1`, Tau Ceti `d395922ff828cf4f882727fb92c05161ac48f521` (its `main` of 2026-11-27, 04:57 UTC, with 31 pull requests of ours that merged since the earlier pin `ea7f36aa`; its cache is published, and a checkout compiles no Tau Ceti module), Mathlib `31ce06eaadf4a200c0e1407c5f10953cf606b8f8` (the commit Tau Ceti names). Tau Ceti's newest tag is `v4.37.0-rc1` (`e0e414ce`).
 - **Workers.** Fourteen Tau Ceti workers run on a Linux server of the owner ("Decisions taken", "Where the author workers run"): eleven author workers, `repair`, `maintenance` and `reviewer`. The installed Worker is its `main` of 2026-11-25 (commit `6917199f`), with the local corrections that "Where the author workers run" lists; their settings are in "Decisions taken", "The settings of the Tau Ceti workers".
   - **Shared accounts.** The session, its subagents and the workers share one Claude account and one GitHub account. The requests of the session and its subagents to GitHub count against the account's 5,000 requests an hour, which the workers need: a subagent that searches GitHub in a loop pauses between requests, and the session starts no more than one such subagent at a time. The session wakes for a fault, a closed pull request, a watched merge or after one day, and folds the merged pull requests into the plan together at one wake.
   - **Configuration.** On the session's host, `tauceti-server` (in `~/.local/bin`, with the server's address and the SSH key) runs a command of the Worker on the server, for example `tauceti-server workers`. `tools/deploy-worker-targets.py` writes the entries of the author workers in `~/.config/tauceti/workers.toml` and keeps the entries of `repair`, `maintenance` and `reviewer` as they are; the session changes one of these three entries on the server itself (`tauceti workers --config workers.toml.new apply --check`, then `tauceti workers apply`). `tauceti workers disable <id>` stops a worker at once. `tauceti status` of this version takes several minutes, because it reads the state of every open pull request.
@@ -58,38 +58,33 @@ The session reads what landed from `git log` of Tau Ceti `main`, because Tau Cet
 
 At the pin `ea7f36aa` and folded into the plan (2026-11-26): #45872, #45833, #45818, #45824 and #45848. They supply four roadmap nodes in full, which are removed from the plan: `Stacks.gerbeSliceRestriction`, `LineBundle.pullbackBraided`, `LineBundle.picardGroupoid` and `Etale.kummer_shortExact`; `Infinity.mappingSpaces` and `Infinity.monoidalCategory` are supplied in part. Our open #45827 defines the monoidal structure of the pullback a second time and needs a rebase that removes its copy ("Open items"). The session folds merged pull requests into the plan in batches: at a pin move, a planner compares the pull requests that landed with their plan nodes, and a checker checks the result.
 
-Merged on Tau Ceti `main` after the pin, on 2026-11-26, and not yet folded into the plan: #45839, #45842, #45844, #45847, #45856, #45874, #46128, #46147, #45878, #46132, #45829, #46126, #46174, #46179 and #46137; the target list marks their items done. Tau Ceti's merge queue merges a pull request into `main` itself, so GitHub shows it as closed, not merged; its last comment is "Pull request successfully merged into main".
+At the pin `d395922` and not yet folded into the plan (a planner compares them with their plan nodes on 2026-11-27): #45823, #45829, #45839, #45842, #45844, #45847, #45854, #45856, #45874, #45878, #45890, #46123, #46126, #46128, #46129, #46132, #46137, #46147, #46174, #46177, #46179, #46253, #46263, #46266, #46279, #46322, #46373, #46387 and #46438; the target list marks their items done. At the pin move, nine upstream declarations that the plan names had moved to new modules, and the plan names the new modules; `TauCeti.AlgebraicGeometry.whiskerLeft_pullbackIhomComparison_app_comp_ev`, which `plans/GLCinLean/AlgebraicGeometry/LineBundle/RootTensorProductPullback.toml` names, is no longer at the pin, and the planner corrects that node. Tau Ceti's merge queue merges a pull request into `main` itself, so GitHub shows it as closed, not merged; its last comment is "Pull request successfully merged into main".
 
-Open on 2026-11-27 at 06:10 UTC (twenty-six). The plan node is the one that the item of the target list serves (`serves:`); the pull requests from #46123 on are not yet compared with the plan (the session does this at the next wake).
+Open on 2026-11-27 at 06:40 UTC (21). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
-| #45823 | `unipotent-radical-center` | `Groups.rootDatum` |
 | #45827 | `pullback-tensorpow-iso` | `LineBundle.Root` |
 | #45853 | `dqcoh-affineequiv` | `Sheaves.derivedQCoh`, `Sheaves.derivedQCoh_perfectGenerator` |
-| #45854 | `rightfibration-kan-complex` | `Infinity.mappingSpaces`, `Infinity.limits` |
-| #45890 | `proper-maps-complex-points` | `Constructible.ComplexPoints` |
-| #46123 | `tensor-closed-hull` | `Tannaka.connected_iff_not_tensorClosed_hull` |
-| #46129 | `kappa-filtered-colimits` | `Infinity.compactObject`, `Infinity.indCompletion`, `Infinity.presentableCategory` |
 | #46140 | `groupoid-prestack` | `Stacks.quotientStack` |
 | #46150 | `torsor-contracted-product-abelian` | `Stacks.neutralGerbeEquiv` |
-| #46156 | `categorical-equivalence-fully-faithful` | `Infinity.mappingSpaces` |
 | #46165 | `contracted-product-scheme` | `Stacks.groupTorsor` |
-| #46177 | `banded-gerbe-product` | `Stacks.gerbeContractedSum` |
-| #46253 | `small-limits-and-colimits` | `Infinity.limits`, `Infinity.presentableCategory`, `Infinity.continuousLinearFunctor` |
-| #46266 | `symmetric-monoidal-category-nerve` | `Infinity.monoidalCategory`, `Infinity.symmetricMonoidalLocalization`, `Infinity.derivedVect` |
 | #46271 | `stackingroupoids-limit` | `Stacks.algebraicStack` |
-| #46279 | `pinning-base-change` | `Groups.splitReductiveGroup`, `Groups.langlandsDual` |
 | #46281 | `quasicategory-localization` | `Infinity.IsLocalization` |
-| #46322 | `grassmannian-stable-submodule-locus` | `AffineGrassmannian.LoopGrassmannian` |
-| #46373 | `gl-n-arc-orbits-on-lattices` | `AffineGrassmannian.schubertStratification` |
 | #46380 | `coalgebra-reconstruction` | `Tannaka.neutralReconstruction` |
-| #46387 | `band-morphism-full-faithful` | `Stacks.bandPreserving_isEquivalence` |
 | #46388 | `bounded-lattices-stable-submodules` | `AffineGrassmannian.LoopGrassmannian` |
 | #46425 | `torsor-stack` | `Stacks.quotientStack`, `Stacks.groupTorsor`, `Stacks.classifyingAbelianGerbe` |
-| #46438 | `category-of-operators-assoc-lm` | `Infinity.monoidalCategory`, `Infinity.moduleCategory` |
 | #46450 | `arc-group-preimage-of-subgroup` | `AffineGrassmannian.iwahoriStratification` |
 | #46455 | `stackification-universal` | `Stacks.stackification`, `Stacks.quotientStack`, `Stacks.gerbeChangeOfBand` |
+| #46574 | `affine-weyl-coxeter-system` | `Groups.iwahoriWeylLength` |
+| #46623 | `prestackification` | `Stacks.stackification` |
+| #46669 | `essentially-surjective-trivial-fibration` | `Infinity.mappingSpaces` |
+| #46709 | `operator-category-symmetric-monoidal` (no item of the list; GeneralizedCohomology G2.11) | — |
+| #46719 | `solvable-torus-center-conjugacy` (no item of the list; ReductiveGroups Layer 5, Solvable groups) | — |
+| #46745 | `limit-mapping-space-criterion` | `Infinity.limits` |
+| #46768 | `mappingspace-comparison-weak-equivalence` | `Infinity.mappingSpaces` |
+| #46787 | `band-morphism-equivalence` | `Stacks.bandPreserving_isEquivalence` |
+| #46940 | `monoidal-quasicategory` | `Infinity.monoidalCategory` |
 
 ## Held
 
