@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fourteen author workers are enabled and live. The Codex usage reading at 15:55 UTC was 13% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 36 open pull requests, 17 are labelled `awaiting-CI`.
+Fourteen author workers are enabled and live. The Codex usage reading at 16:30 UTC was 17% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 38 open pull requests, 22 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -46,9 +46,9 @@ The native Kan fibration homotopy-group criterion is in #47299. It uses the long
 
 `author-infinity`, `author-infinity3` and `author-moduli2` cover the independent GeneralizedCohomology items. The pointwise right-Kan comma cones are in #47304. The full pointwise extension needs this PR and #46745. The walking-equivalence attachment is in #47368. Localization existence needs it and the localization predicate of #46281. The Cartesian edge mapping-space criterion uses the fibrewise trivial-fibration theorem of #47364. The `cartesian-edge-relative-fibre-model` target can start on main and supplies the concrete comparison of fibres in a separate file. The final criterion and its dual need both.
 
-`author-stable` is writing the signed Hom-complex comparisons and the candidate fibre and cofiber squares in `dg-nerve-mapping-cone-model`. The stability proof still needs the mapping-space universal-property criteria of #46745. The native localization proof still needs #46281.
+The comparison for `Hom•(Z, Cone f)` is in #47392. The comparison for `Hom•(Cone f, Z)` can start as `linear-hom-out-of-mapping-cone` in a separate file. The candidate fibre and cofiber squares in `dg-nerve-mapping-cone-model` use these comparisons. The stability proof still needs the mapping-space universal-property criteria of #46745. The native localization proof still needs #46281.
 
-`author-infinity2` is writing the one-sided anodyne join lemma in EnhancedDerivedSheaves. It is followed by the shape-pushout comparison and the theorem that terminal vertices and pullbacks give finite limits, with the dual results. The AlgebraicTopology work needs #47294 and #47329 before the remaining realization and approximation proofs.
+The general one-sided anodyne pushout-join lemmas are in #47393. The selected-vertex corollaries still need the point-cone results of #46745. These lemmas feed the shape-pushout comparison and the theorem that terminal vertices and pullbacks give finite limits, with the dual results. The AlgebraicTopology work needs #47294 and #47329 before the remaining realization and approximation proofs.
 
 The coCartesian-preserving relative functor quasicategory, its composition and identities, and evaluation on fibres are in #47382. The fixed-restriction construction also needs `SSet.ihomOver.pre` from #47046. #47382 moves the internal-hom module to `InternalHom.Basic`, while #47046 adds the restriction to the original module. The later rebase must put the restriction in the surviving module. The linear functors also need the left-tensored quasicategories over the operad LM.
 
@@ -56,11 +56,11 @@ The SheafTheoreticSmithTheory authors have two open pull requests. #47293 suppli
 
 The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. `author-enhanced` is writing `stable-grassmannian-window-transition`, the closed immersions between the finite t-stable Grassmannian schemes. Identifying these schemes with the bounded lattice functor still needs #46388.
 
-In ReductiveGroups, #47351 supplies the scalar extension of a chosen base and #47372 assembles the integral Chevalley constants given component tables and Cartan-matching root bijections. The `root-index-cartan-pairing-comparison` target proves that the existing index equivalence preserves all integer root-coroot pairings across coefficient rings. This can start on main. To complete `full-root-datum-chevalley-constants` (§9A), use it to match the original components to the simply connected Dynkin models and apply the assembly. `author-torsors` is writing `full-kostant-pbw-rank-one` in a separate enveloping-algebra file. The rational center and derived ideal decomposition with supplied constants is in #47336.
+In ReductiveGroups, #47351 supplies the scalar extension of a chosen base and #47372 assembles the integral Chevalley constants given component tables and Cartan-matching root bijections. `author-groups` is working on `root-index-cartan-pairing-comparison`, which preserves all integer root-coroot pairings across coefficient rings. The independent `root-components-under-rationalization` identifies the rational component supports and their pairings with those of the original integral datum. Together they give the Cartan-matching inputs for `full-root-datum-chevalley-constants` (§9A). The rank-one Kostant basis and the opposite-root straightening identities for arbitrary rank are in #47386. The remaining full-rank steps include straightening between other roots and assembly of the ordered basis. The rational center and derived ideal decomposition with supplied constants is in #47336.
 
 The extended sheaves of isomorphisms for `change-band-prestack` are in #47344. The groupoid laws, coherence under restriction, and band-compatible map into the resulting prestack remain. The `torsor-extension-restriction-comparison` target can start on main and supplies the comparison for both change of band and restriction of torsor lifts. The `change-band` construction uses this prestack and the stackification universal property in #46455.
 
-`author-roots` is writing the groupoid of line-bundle roots on a fixed scheme, with its automorphism and Picard-class criteria. The pullback and its coherence still need #45827. The change-of-band prestack and the roots groupoid use different files.
+The groupoid of line-bundle roots on a fixed scheme, including its automorphism and Picard-class criteria, is in #47385. The coherent scheme pullback for `line-bundle-root-groupoid` still needs #45827.
 
 The fixed-site groupoid of torsor lifts and its positive kernel band are in #47374. The pseudofunctor and gerbe proof still need the stack of torsors in #46425 and the classifying abelian gerbe. The two branches #47344 and #47374 both declare `CategoryTheory.Sheaf.Torsor.mapFunctor` and `mapFunctor_obj` in different files. When one lands, the other branch must use the landed functor and keep the distinct identity and kernel-band results. `author-moduli` is repairing #47344.
 
@@ -80,7 +80,9 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (36). The plan node is the one that the item of the target list serves (`serves:`).
+On Tau Ceti main since `9f9b83d`: #46455 (`0687572d61dd`) supplies `TauCeti.Stack.stackificationUniversal` and `TauCeti.Stack.stackificationOfIsStack`. #46450 (`a731e1565e96`) supplies `TauCeti.HopfAlgebra.positiveLoopPreimage`. Both targets are done, and `3019e077` is the candidate pin for their plan fold-in.
+
+Open on 2026-11-27 (38). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -93,8 +95,6 @@ Open on 2026-11-27 (36). The plan node is the one that the item of the target li
 | #46380 | `coalgebra-reconstruction` | `Tannaka.neutralReconstruction` |
 | #46388 | `bounded-lattices-stable-submodules` (partial) | `AffineGrassmannian.LoopGrassmannian` |
 | #46425 | `torsor-stack` | `Stacks.quotientStack`, `Stacks.groupTorsor`, `Stacks.classifyingAbelianGerbe` |
-| #46450 | `arc-group-preimage-of-subgroup` | `AffineGrassmannian.iwahoriStratification` |
-| #46455 | `stackification-universal` | `Stacks.stackification`, `Stacks.quotientStack`, `Stacks.gerbeChangeOfBand` |
 | #46623 | `prestackification` | `Stacks.stackification` |
 | #46669 | `essentially-surjective-trivial-fibration` (partial) | `Infinity.mappingSpaces` |
 | #46709 | `symmetric-monoidal-category-nerve` (partial) | `Infinity.monoidalCategory`, `Infinity.symmetricMonoidalLocalization`, `Infinity.derivedVect` |
@@ -120,6 +120,10 @@ Open on 2026-11-27 (36). The plan node is the one that the item of the target li
 | #47372 | `full-root-datum-chevalley-constants` (partial) | `Groups.splitReductiveGroup` |
 | #47374 | `lifting-gerbe-fibre` | `Stacks.schemeRootGerbe` |
 | #47382 | `relative-cocartesian-functors` | `Infinity.continuousLinearFunctor` |
+| #47385 | `line-bundle-root-fibre` | `LineBundle.Root` |
+| #47386 | `full-kostant-pbw-rank-one` | `Groups.splitReductiveGroup` |
+| #47392 | `dg-nerve-mapping-cone-model` (partial) | `Infinity.enhancedDerivedCategory` |
+| #47393 | `simplicial-join-one-sided-anodyne` (partial) | `Infinity.enhancedDerivedCategory` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
