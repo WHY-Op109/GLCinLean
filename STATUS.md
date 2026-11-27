@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-`author-stable` is enabled for AlgebraicTopology. The native simplicial subdivision last-vertex map is in #47294. Relative simplicial approximation can start when it lands. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
+`author-stable` is writing the realization comparison on subdivided standard simplices. The native last-vertex map is in #47294. Relative simplicial approximation needs both. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
 The native Kan fibration homotopy-group criterion is in #47299. It uses the long exact sequence and fibre criterion independently of the realization-unit comparison. GeneralizedCohomology also waits for #46745 before the right mapping-space postcomposition theorem, because that pull request changes the shared cone and edge composition code.
 
@@ -51,6 +51,8 @@ The SheafTheoreticSmithTheory authors have two open pull requests. #47293 suppli
 In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The target list notes record the later steps toward the pinned group over ℤ. `author-groups` is writing the rational center–derived decomposition using supplied constants. The two items run in different files.
 
 `author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
+
+`author-tannaka` is transporting the connectedness criterion along a supplied equivalence with finite comodules. The pinned Hopf algebra criterion covers characteristic zero and gives the sufficient direction over perfect fields. Over imperfect fields the sufficient direction still needs the finite quotient of a disconnected affine group. Reconstruction of the equivalence itself starts with #46380.
 
 The loop-Grassmannian quotient has been published as #47293 and the repair of #45853 is running again after a weekly quota interruption. The interrupted rounds’ recovery patches and exact base SHAs are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
