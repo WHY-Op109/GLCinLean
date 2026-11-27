@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-`author-stable` is writing the realization comparison on subdivided standard simplices. The native last-vertex map is in #47294. The relative approximation needs both. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
+The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
 The native Kan fibration homotopy-group criterion is in #47299. It uses the long exact sequence and fibre criterion independently of the realization-unit comparison. GeneralizedCohomology also waits for #46745 before the right mapping-space postcomposition theorem, because that pull request changes the shared cone and edge composition code.
 
@@ -72,7 +72,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (25). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (26). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -101,6 +101,7 @@ Open on 2026-11-27 (25). The plan node is the one that the item of the target li
 | #47299 | `kan-fibration-homotopy-groups-criterion` | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
 | #47304 | `right-kan-extension-comma-cones` | `Infinity.rightKanExtension` |
 | #47328 | `gl-n-bounded-lattice-jet-action` | `AffineGrassmannian.schubertStratification` |
+| #47329 | `simplicial-subdivision-realization-standard-simplex` (partial) | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
