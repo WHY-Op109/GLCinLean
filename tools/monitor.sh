@@ -83,9 +83,11 @@ def is_idle(reason):
     # A worker that finds nothing to do reports "no eligible work" (no pull request needs a
     # repair), "not due" (its periodic report is recent), "the target list offers nothing" (no
     # target of its area can start) or "eligible target(s) ... can be taken" (another worker has
-    # each one): its expected state, and no event.
+    # each one) or "waiting out the attempt gap" (a phase waits its fixed gap between two
+    # attempts): its expected state, and no event.
     return any(text in reason for text in (
-        "no eligible work", "not due", "the target list offers nothing", "can be taken"))
+        "no eligible work", "not due", "the target list offers nothing", "can be taken",
+        "waiting out the attempt gap"))
 
 
 def worker_at_once(w, prev, restarts):
