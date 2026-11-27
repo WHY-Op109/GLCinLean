@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fourteen author workers are enabled and live. The Codex usage reading at 15:55 UTC was 13% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 33 open pull requests, 17 are labelled `awaiting-CI`.
+Fourteen author workers are enabled and live. The Codex usage reading at 15:55 UTC was 13% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 35 open pull requests, 17 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -56,13 +56,13 @@ The SheafTheoreticSmithTheory authors have two open pull requests. #47293 suppli
 
 The GLₙ finite-jet action on a bounded interval of projective lattices is in #47328. The target `stable-grassmannian-window-transition` supplies the closed immersions between the finite t-stable Grassmannian schemes and can start on main. Identifying these schemes with the bounded lattice functor still needs #46388.
 
-In ReductiveGroups, #47351 supplies the scalar extension of a chosen base as a step toward `full-root-datum-chevalley-constants` (§9A). The based component bijections and their assembled constants remain. `author-groups` is still in the round started on that item before #47351. `author-torsors` is writing `full-kostant-pbw-rank-one` in a separate enveloping-algebra file. It proves integral straightening with all cocharacters for a pair of opposite roots and takes the constants as input. The rational center and derived ideal decomposition with supplied constants is in #47336.
+In ReductiveGroups, #47351 supplies the scalar extension of a chosen base and #47372 assembles the integral Chevalley constants given component tables and Cartan-matching root bijections. The `root-index-cartan-pairing-comparison` target proves that the existing index equivalence preserves all integer root-coroot pairings across coefficient rings. This can start on main. To complete `full-root-datum-chevalley-constants` (§9A), use it to match the original components to the simply connected Dynkin models and apply the assembly. `author-torsors` is writing `full-kostant-pbw-rank-one` in a separate enveloping-algebra file. The rational center and derived ideal decomposition with supplied constants is in #47336.
 
 The extended sheaves of isomorphisms for `change-band-prestack` are in #47344. The groupoid laws, coherence under restriction, and band-compatible map into the resulting prestack remain. The `change-band` construction uses this prestack and the stackification universal property in #46455.
 
 `author-roots` is writing the groupoid of line-bundle roots on a fixed scheme, with its automorphism and Picard-class criteria. The pullback and its coherence still need #45827. The change-of-band prestack and the roots groupoid use different files.
 
-`lifting-gerbe-fibre` is the groupoid of torsor lifts on a fixed site, with the positive action of the kernel on lift automorphisms. Its pseudofunctor and gerbe proof still need the stack of torsors in #46425 and the classifying abelian gerbe. `author-dqcoh` and `author-moduli` selected it after the first shared claim request failed with exit code 2. The subsequent round acquired a claim. Check the branches for overlap before assigning another round on this item.
+The fixed-site groupoid of torsor lifts and its positive kernel band are in #47374. The pseudofunctor and gerbe proof still need the stack of torsors in #46425 and the classifying abelian gerbe. The two branches #47344 and #47374 both declare `CategoryTheory.Sheaf.Torsor.mapFunctor` and `mapFunctor_obj` in different files. When one lands, the other branch must use the landed functor and keep the distinct identity and kernel-band results. At 16:23 UTC the Worker found no eligible repair on either branch. #47344 had a green build and was waiting for its first review. `author-moduli` still has a round on the torsor-lift target from before #47374 opened.
 
 The Tannakian connectedness criterion along a supplied equivalence with finite comodules is in #47332. It covers characteristic zero and gives the sufficient direction over perfect fields. `author-tannaka` is repairing it. The extension of the finite Hopf subalgebra criterion to arbitrary fields is in #47363. The `coalgebra-map-of-natural-tensor-coaction` target is ready and supplies the multiplication map for a given reconstruction coalgebra. The construction of that coalgebra is in #46380. Its build passed at `5bcf3bb9196a`, and the Worker is waiting for review at that head before it can select another repair.
 
@@ -80,7 +80,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (33). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (35). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -117,6 +117,8 @@ Open on 2026-11-27 (33). The plan node is the one that the item of the target li
 | #47363 | `hopf-idempotent-finite-subalgebra-arbitrary-field` | `Tannaka.connected_iff_not_tensorClosed_hull` |
 | #47364 | `cartesian-edge-mapping-space-criterion` (partial) | `Infinity.mappingSpaces`, `Infinity.monoidalCategory` |
 | #47368 | `walking-equivalence-attachment` | `Infinity.IsLocalization` |
+| #47372 | `full-root-datum-chevalley-constants` (partial) | `Groups.splitReductiveGroup` |
+| #47374 | `lifting-gerbe-fibre` | `Stacks.schemeRootGerbe` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
