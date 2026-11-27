@@ -5,7 +5,7 @@ author-stable	GeneralizedCohomology	on
 author-infinity2	GeneralizedCohomology	off
 author-stacks	SchemeAndStackFoundations	off
 author-torsors	SchemeAndStackFoundations	off
-author-dqcoh	SheafTheoreticSmithTheory	off
+author-dqcoh	SheafTheoreticSmithTheory	on
 author-moduli	AlgebraicModuliForArithmeticGeometry	off
 author-moduli2	MotivesAndAlgebraicCycles	off
 author-tannaka	MotivesAndAlgebraicCycles	off
