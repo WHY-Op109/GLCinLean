@@ -38,21 +38,21 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-`author-stable` is enabled for AlgebraicTopology. Two rounds for `realization-weak-equivalence-kan-fibration` identified the missing positive-degree comparison for the realization unit, owned by AlgebraicTopology §8.2. Tau Ceti has its component comparison and the Kan homotopy groups. The author worker can start the last-vertex map on native simplicial subdivisions. The relative approximation and positive-degree comparison follow, and the GeneralizedCohomology G2.1 target waits for them. It supplies the boundary-lifting input for #46669.
+`author-stable` is enabled for AlgebraicTopology. The native simplicial subdivision last-vertex map is in #47294. Relative simplicial approximation can start when it lands. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
-`author-infinity` is enabled for GeneralizedCohomology. Its available item is `kan-fibration-homotopy-groups-criterion`. It uses the long exact sequence and fibre criterion already on main, independently of the realization-unit comparison. Both results gate the realization-based Kan–Quillen criterion. GeneralizedCohomology also waits for #46745 before the right mapping-space postcomposition theorem, because that pull request changes the shared cone and edge composition code.
+The native Kan fibration homotopy-group criterion is in #47299. It uses the long exact sequence and fibre criterion independently of the realization-unit comparison. GeneralizedCohomology also waits for #46745 before the right mapping-space postcomposition theorem, because that pull request changes the shared cone and edge composition code.
 
 `author-infinity2`, `author-infinity3` and `author-moduli2` are enabled for GeneralizedCohomology as well. The other independent items in the area are the pointwise right-Kan comma cones, the walking-equivalence attachment and the Cartesian edge mapping-space criterion. The full pointwise extension waits for #46745. Localization existence waits for the localization predicate #46281 and uses the attachment. The Cartesian edge criterion uses the intrinsic weak homotopy equivalence and can start before the comparison with realization.
 
 The SheafTheoreticSmithTheory authors have two open pull requests. #47293 supplies the fpqc loop Grassmannian quotient and its basic API. Its torsor square, product and field-extension comparisons, and nonreduced check remain. #47292 supplies length and Bruhat order for an intermediate lattice of an irreducible root system. The construction for a full cocharacter lattice still needs its corresponding product and central-torus results. The subsequent Schubert, flag, convolution and semi-infinite geometry is in the target list notes with its prerequisites.
 
-The GLₙ finite-jet action on a bounded interval of projective lattices can start on main. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
+`author-dqcoh` is writing the GLₙ finite-jet action on a bounded interval of projective lattices. It uses the existing arc action and the kernel of jet reduction. The representable charts still wait for the bounded-lattice comparison of #46388.
 
-`author-groups` is enabled for ReductiveGroups. Its available item is `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The target list notes record the later steps toward the pinned group over ℤ. `author-torsors` is also enabled for ReductiveGroups, for the rational center–derived decomposition using supplied constants. The two items can run in different files.
+In ReductiveGroups, `author-torsors` is writing `full-root-datum-chevalley-constants` (§9A). The Dynkin-type tables provide the irreducible components. The integral table on the full lattice retains the central torus, and its construction starts from abstract data, independently of the extraction of a based root datum from a group. The target list notes record the later steps toward the pinned group over ℤ. `author-groups` is writing the rational center–derived decomposition using supplied constants. The two items run in different files.
 
 `author-moduli` can take `change-band-prestack`. It extends the existing sheaves of isomorphisms along the homomorphism of bands and supplies the groupoid and restriction laws. The resulting prestack is the input to `change-band`, which waits for the stackification universal property in #46455.
 
-The loop-Grassmannian quotient has been published as #47293 and the repair of #45853 is running again after a weekly quota interruption. The interrupted rounds’ recovery patches and exact base SHAs are in `.lake/worker-recovery/2026-11-27/` on the session host. `author-groups` is waiting for its next quota check.
+The loop-Grassmannian quotient has been published as #47293 and the repair of #45853 is running again after a weekly quota interruption. The interrupted rounds’ recovery patches and exact base SHAs are in `.lake/worker-recovery/2026-11-27/` on the session host.
 
 The workers repair eligible pull requests and wait when the target list offers no independent work. The Worker's live assignments use the pull request markers, including those of partial pull requests. In particular, the symmetric monoidal nerve waits for #46709 and the solvable group decomposition waits for #46719. `repair` and `maintenance` handle eligible repairs across all areas.
 
@@ -66,7 +66,7 @@ At the pin `d395922`, awaiting fold-in into the plan ("Waiting for Claude"): #45
 
 On Tau Ceti main since `d395922`: #46574 (`110d7a1f1c73`), #46787 (`1781095fa356`) and #46165 (`86da13858c38`). The list marks the three items done. All three are at the current pin and their plan fold-in waits for Claude.
 
-Open on 2026-11-27 (21). The plan node is the one that the item of the target list serves (`serves:`).
+Open on 2026-11-27 (23). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -91,6 +91,8 @@ Open on 2026-11-27 (21). The plan node is the one that the item of the target li
 | #47046 | `cocartesian-lift-uniqueness` | `Infinity.monoidalCategory` |
 | #47292 | `lattice-affine-weyl-length` | `Groups.iwahoriWeylLength` |
 | #47293 | `loop-grassmannian-fpqc-quotient` (partial) | `AffineGrassmannian.LoopGrassmannian` |
+| #47294 | `simplicial-set-subdivision-last-vertex` | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
+| #47299 | `kan-fibration-homotopy-groups-criterion` | `Infinity.mappingSpaces`, `Infinity.linearEquivalence` |
 
 ## Held
 
