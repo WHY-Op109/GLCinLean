@@ -1,7 +1,7 @@
 # The author workers: id, roadmap area, on or off. `tools/deploy-worker-targets.py` puts them on the workers' host.
 # An area gets at most as many workers as it has targets that can start now and touch different files.
 author-infinity	GeneralizedCohomology	on
-author-stable	AlgebraicTopology	on
+author-stable	EnhancedDerivedSheaves	on
 author-infinity2	EnhancedDerivedSheaves	on
 author-infinity3	GeneralizedCohomology	on
 author-stacks	SchemeAndStackFoundations	on
