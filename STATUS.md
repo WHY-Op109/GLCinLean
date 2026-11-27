@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fifteen author workers are enabled and live. At 21:21 UTC, `author-moduli2` was running in ReductiveGroups after completing the #46281 repair. The Codex usage reading at 21:19 UTC was 49% of the weekly allowance. In the 24 hours to 21:18 UTC, GitHub recorded 70 pull requests opening and 15 landed in the history of Tau Ceti main. The median from opening to landing for those 15 was 11.2 hours. GitHub shows 75 of our pull requests open. Of these, 42 are labelled `awaiting-CI`.
+Fifteen author workers are enabled and live. At 21:21 UTC, `author-moduli2` was running in ReductiveGroups after completing the #46281 repair. The Codex usage reading at 21:19 UTC was 49% of the weekly allowance. In the 24 hours to 21:18 UTC, GitHub recorded 70 pull requests opening and 15 landed in the history of Tau Ceti main. The median from opening to landing for those 15 was 11.2 hours. GitHub shows 75 of our pull requests open. Of these, 44 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -178,7 +178,7 @@ Open on GitHub on 2026-11-27 (75). The plan node is the one that the item of the
 | #47529 | `dg-nerve-opposite` | `Infinity.enhancedDerivedCategory` |
 | #47531 | `amitsur-degree-one-exactness` | `Groups.rootDatum`, `Groups.borelUnipotentRadical` |
 
-The CI jobs at the current heads of #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These five heads carry `awaiting-CI` and have no published `build` status. The Worker found no `fix-ci` action for #46745. #46281 at `8cd561e8b119` shares the precomposition vertex comparison proof. The new head awaits Tau Ceti CI and review. The session's local done check is recorded above.
+The CI jobs at the current heads of #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These five heads carry `awaiting-CI` and have no published `build` status. The Worker found no `fix-ci` action for #46745. #46281 at `8cd561e8b119` shares the precomposition vertex comparison proof. At 21:25 UTC the sandboxed build at that head was running. The new head still needs review. The session's local done check is recorded above.
 
 ## Held
 
