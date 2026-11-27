@@ -1,13 +1,13 @@
 # The author workers: id, roadmap area, on or off. `tools/deploy-worker-targets.py` puts them on the workers' host.
 # An area gets at most as many workers as it has targets that can start now and touch different files.
-author-infinity	GeneralizedCohomology	on
+author-infinity	GeneralizedCohomology	off
 author-stable	GeneralizedCohomology	on
-author-infinity2	GeneralizedCohomology	on
-author-stacks	SchemeAndStackFoundations	on
-author-torsors	SchemeAndStackFoundations	on
-author-dqcoh	SheafTheoreticSmithTheory	on
-author-moduli	AlgebraicModuliForArithmeticGeometry	on
-author-moduli2	MotivesAndAlgebraicCycles	on
-author-tannaka	MotivesAndAlgebraicCycles	on
-author-groups	ReductiveGroups	on
-author-enhanced	SheafTheoreticSmithTheory	on
+author-infinity2	GeneralizedCohomology	off
+author-stacks	SchemeAndStackFoundations	off
+author-torsors	SchemeAndStackFoundations	off
+author-dqcoh	SheafTheoreticSmithTheory	off
+author-moduli	AlgebraicModuliForArithmeticGeometry	off
+author-moduli2	MotivesAndAlgebraicCycles	off
+author-tannaka	MotivesAndAlgebraicCycles	off
+author-groups	ReductiveGroups	off
+author-enhanced	SheafTheoreticSmithTheory	off
