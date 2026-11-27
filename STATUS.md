@@ -38,7 +38,7 @@ Mode: Codex (since 2026-11-27)
 
 ### The workers
 
-Fifteen author workers are enabled and live. All fifteen had active rounds at 19:27 UTC. The Codex usage reading at 19:18 UTC was 36% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 61 open pull requests, 32 are labelled `awaiting-CI`.
+Fifteen author workers are enabled and live. All fifteen had active rounds at 19:27 UTC. The Codex usage reading at 19:18 UTC was 36% of the weekly allowance. In the 24 hours to 15:55 UTC, 25 pull requests opened and 17 landed on Tau Ceti main. The median from opening to landing for those 17 was 13 hours. Of our 62 open pull requests, 32 are labelled `awaiting-CI`.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -58,7 +58,7 @@ The GLₙ finite-jet action on a bounded interval of projective lattices is in #
 
 In ReductiveGroups, #47351 supplies the scalar extension of a chosen base and #47372 assembles the integral Chevalley constants given component tables and Cartan-matching root bijections. The comparison of all integer root-coroot pairings across coefficient rings is in #47408. The comparison of rational component supports and their pairings with those of the original integral datum is in #47419. These give the Cartan-matching inputs for `full-root-datum-chevalley-constants` (§9A). The rank-one Kostant basis and the opposite-root straightening identities for arbitrary rank are in #47386. The commuting, central-bracket and double-string divided-power collection identities in the full-cocharacter Chevalley enveloping algebra are in #47430. The exceptional signed short–long and short-pair identities in the full-cocharacter enveloping algebra are in #47453. The bounded integral word straightening and the mixed PBW criterion are in #47479. The degree bound on binomials of shifted coroots is in #47467. The full ordered-basis assembly uses both along with the collection results. The rational center and derived ideal decomposition with supplied constants is in #47336.
 
-The additive simple-root coordinates and quotient by the nonsimple positive root groups on a supplied Chevalley model are in #47461. It uses #41428 at the pin. The comparison with the characters of an arbitrary pinned reductive group still uses the based root datum and the unipotent radical of its Borel subgroup. The independent `chevalley-root-product-closed-immersion` target recovers the ordered root parameters from the integral GL coordinates for both root signs. The opposite point subgroup and scheme monomorphisms are in #43411.
+The additive simple-root coordinates and quotient by the nonsimple positive root groups on a supplied Chevalley model are in #47461. It uses #41428 at the pin. The comparison with the characters of an arbitrary pinned reductive group still uses the based root datum and the unipotent radical of its Borel subgroup. `author-groups` is writing `chevalley-root-product-closed-immersion` to recover the ordered root parameters from the integral GL coordinates for both root signs. The opposite point subgroup and scheme monomorphisms are in #43411.
 
 The extended sheaves of isomorphisms for `change-band-prestack` are in #47344. Their composition, identities and inverses on a fixed slice are in #47440. The comparison of torsor extension with restriction is in #47420. The prestack uses these to assemble coherent outer slice restrictions. The final `change-band` construction uses the stackification universal property of #46455 at the pin.
 
@@ -74,7 +74,7 @@ The affine DQCoh repair in #45853 is at `b848fe8a32ee`. It splits the K-injectiv
 
 `author-moduli` is writing `stackification-abelian-banding` to construct the band on a stackification and test preservation on the unit. Change of band uses it once the changed-band prestack is assembled from #47440 and the torsor restriction comparison.
 
-In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. The comparison using a functorial K-flat resolution is in #47457. The independent `derived-tensor-pointwise-kflat-comparison` target gives the canonical map and its invertibility from resolutions of individual objects. The affine comparison uses that criterion with #47441 and #47443. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. `author-stacks` is writing `cochain-projection-formula-kflat` to pass the ordinary projection isomorphism to unbounded cochains and prove the K-flatness criterion. The scheme application will use it with #47442. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor.
+In SchemeAndStackFoundations, #47443 supplies the comparison of the unbounded cochain tensor with the degreewise tilde functor. The free resolution that remains K-flat under tilde is in #47441. The comparison using a functorial K-flat resolution is in #47457. The canonical map and its invertibility from resolutions of individual objects are in #47483. The affine comparison uses that criterion with #47441 and #47443. #47442 supplies exact extension by zero, its ordinary projection formula and the unit isomorphism. `author-stacks` is writing `cochain-projection-formula-kflat` to pass the ordinary projection isomorphism to unbounded cochains and prove the K-flatness criterion. The scheme application will use it with #47442. The affine and restriction comparisons and #45853 feed the global closure of DQCoh under derived tensor.
 
 The workers repair eligible pull requests and wait when the target list offers no independent work. The Worker's live assignments use the pull request markers, including those of partial pull requests. The solvable group decomposition waits for #46719. `repair` and `maintenance` handle eligible repairs across all areas.
 
@@ -94,7 +94,7 @@ At the pin `df6509e`, ChevalleyGroups #41428 (`0255d3b856a9`) supplies `Chevalle
 
 At the pin `dde09e0`, #46709 (`ad01df09fb8a`) supplies `TauCeti.CategoryOfOperators.toFinPointed`, the ordinary strongly coCartesian lifts and `fiberEquivalence`. `author-moduli2` is writing `symmetric-operator-nerve-segal-fibres` for the inert cylinders, Segal maps and strict singleton fibre. Assembling `SSet.SymmetricMonoidal` also needs the classical-to-simplicial coCartesian bridge in #46940.
 
-Open on GitHub on 2026-11-27 (61). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-27 (62). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -159,6 +159,7 @@ Open on GitHub on 2026-11-27 (61). The plan node is the one that the item of the
 | #47467 | `cartan-binomial-bounded-span` | `Groups.splitReductiveGroup` |
 | #47477 | `dg-nerve-candidate-cone-squares` | `Infinity.enhancedDerivedCategory` |
 | #47479 | `ordered-integral-word-straightening` | `Groups.splitReductiveGroup` |
+| #47483 | `derived-tensor-pointwise-kflat-comparison` | `Sheaves.derivedQCoh_perfectGenerator` |
 
 The CI jobs at the current heads of #46281, #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. All six still carry `awaiting-CI` and their heads have no published `build` status. The Worker found no `fix-ci` action for #46281 or #46745. These heads wait for Tau Ceti CI to run again. The session's local done check is recorded above.
 
