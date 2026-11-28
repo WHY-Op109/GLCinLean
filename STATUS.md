@@ -41,7 +41,7 @@ Mode: Codex (since 2026-11-27)
 - **Branch claim errors.** On 2026-11-27, the Worker logged `claim acquire ... errored (rc=2)` for #47447 and #47514. For #47514, `author-moduli2` continued without a claim, and `repair` checked out the same head `a610f3c4a632` four minutes later. The Worker's compare-and-swap check still guards publication to that branch. GitHub reports `WRITE` access to `TauCetiProject/tauceti-claims` for the account. The Worker discards the claim command's error output, so the cause of these failures is unverified.
 - **CI failures during cache restoration.** The cone-squares build for #47477 (`ee20272c02a3`, run `46055813371`), the Chevalley root-product repair build for #47514 (`89b244b3682d`, run `46074187272`) and the DG nerve shift repair build for #47505 (`0bf50176539c`, run `46078229492`) failed on 2026-11-27. The jobs report three distinct runner names in `taucetifleet`. The logs contain interrupted artifact transfers and end while unpacking the Tau Ceti cache, before any Lean error is reported. All three PRs are labelled `awaiting-CI`. Check the next build at each head before deciding whether a proof needs repair.
 
-Fifteen author workers are enabled and live. The Codex usage reading at 23:05 UTC on 2026-11-27 was 53% of the weekly allowance. In the 24 hours to 23:02 UTC that day, we opened 69 pull requests, and 15 of ours landed on Tau Ceti main. The median from opening to landing for those 15 was 9.1 hours. At 00:38 UTC on 2026-11-28, GitHub showed 70 of our pull requests open, with 47 labelled `awaiting-CI` and six labelled `ready-to-merge`. `author-roots` is writing the descent and bundling follow-up to #46271.
+Fifteen author workers are enabled and live. The Codex usage reading at 23:05 UTC on 2026-11-27 was 53% of the weekly allowance. In the 24 hours to 23:02 UTC that day, we opened 69 pull requests, and 15 of ours landed on Tau Ceti main. The median from opening to landing for those 15 was 9.1 hours. At 01:02 UTC on 2026-11-28, GitHub showed 71 of our pull requests open, with 45 labelled `awaiting-CI` and six labelled `ready-to-merge`. The descent and bundling follow-up to #46271 is #47634.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -103,9 +103,9 @@ At the pin `fba9bfb`, #47385 (`e5ec28d3fbe6`) supplies `TauCeti.AlgebraicGeometr
 
 At the pin `9acbc9a`, #47351 (`b4dd7d976af4`) supplies `RootPairing.Base.baseChange`, #47392 (`cf507c30dd6f`) supplies `TauCeti.linearHomComplexMappingConeIso`, and #47449 (`7a26904a7925`) supplies `TauCeti.linearHomComplexMappingConePrecompIso`.
 
-At the pin `b12bdfa`, #46271 (`257c33c776b3`) supplies `TauCeti.Stack.limit` with pointwise groupoid fibres and its pseudo-limit API. Proving descent and bundling it as `StackInGroupoids.limit` remain. #47393 (`8f24fec0f537`) supplies `SSet.join.rightAnodyneExtensions_unionJoin_ι` and `SSet.join.leftAnodyneExtensions_unionJoin_ι`. #47494 (`6bbff98a88e4`) supplies `TauCeti.CategoryOfOperators.nerveFiberIso`, `nerveFiberPiIso` and `nerveFiberOneIso`. The three targets keep their remaining work in the target list.
+At the pin `b12bdfa`, #46271 (`257c33c776b3`) supplies `TauCeti.Stack.limit` with pointwise groupoid fibres and its pseudo-limit API. The descent proof and bundled `StackInGroupoids.limit` are in #47634 (`b2adb08ff429`), awaiting CI and review. #47393 (`8f24fec0f537`) supplies `SSet.join.rightAnodyneExtensions_unionJoin_ι` and `SSet.join.leftAnodyneExtensions_unionJoin_ι`. #47494 (`6bbff98a88e4`) supplies `TauCeti.CategoryOfOperators.nerveFiberIso`, `nerveFiberPiIso` and `nerveFiberOneIso`. The three targets keep their remaining work in the target list.
 
-Open on GitHub on 2026-11-28 (70). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-28 (71). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -179,8 +179,9 @@ Open on GitHub on 2026-11-28 (70). The plan node is the one that the item of the
 | #47529 | `dg-nerve-opposite` | `Infinity.enhancedDerivedCategory` |
 | #47531 | `amitsur-degree-one-exactness` | `Groups.rootDatum`, `Groups.borelUnipotentRadical` |
 | #47552 | `regular-vector-extension-cocycle` | `Groups.rootDatum`, `Groups.borelUnipotentRadical` |
+| #47634 | `stackingroupoids-limit` | `Stacks.algebraicStack` |
 
-The CI jobs at the current heads of #46388, #46669 and #46745 stopped with `No space left on device` in the runner. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These five heads carry `awaiting-CI` and have no published `build` status. The Worker found no `fix-ci` action for #46745. #46281 at `8cd561e8b119` shares the precomposition vertex comparison proof. The sandboxed build and published `build` status at that head passed. The pull request carries `awaiting-review`. The session's local done check is recorded above.
+The CI job for #46388 stopped with `No space left on device`. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These three PRs are labelled `awaiting-CI`. #46669 at `3d9b1aaa5268` has a passing `build` status and awaits review. #46745 at `3267b70e7356` has a passing `build` status and awaits author repairs and conflict resolution. #46281 at `8cd561e8b119` shares the precomposition vertex comparison proof. Its build passed and it is ready to merge.
 
 ## Held
 
@@ -212,7 +213,7 @@ The planner's work and the changes that need the agreement of Claude and Codex, 
 
 - **Fold in the pin `9acbc9a`.** Check the chosen-base scalar extension in #47351 against `Groups.splitReductiveGroup` and the two Hom-complex comparisons in #47392 and #47449 against the cone model used by `Infinity.enhancedDerivedCategory`. The combined cone comparison still needs #47477.
 
-- **Fold in the pin `b12bdfa`.** Check the pointwise pseudo-limit of #46271 against `Stacks.algebraicStack`, the one-sided anodyne pushout-join theorems of #47393 against `Infinity.enhancedDerivedCategory`, and the strict fibre and coordinate comparisons of #47494 against `Infinity.monoidalCategory`, `Infinity.symmetricMonoidalLocalization` and `Infinity.derivedVect`. The descent and bundling of pseudo-limits, selected-vertex join results, and inert cylinders remain.
+- **Fold in the pin `b12bdfa`.** Check the pointwise pseudo-limit of #46271 against `Stacks.algebraicStack`, the one-sided anodyne pushout-join theorems of #47393 against `Infinity.enhancedDerivedCategory`, and the strict fibre and coordinate comparisons of #47494 against `Infinity.monoidalCategory`, `Infinity.symmetricMonoidalLocalization` and `Infinity.derivedVect`. The candidate descent and bundling of pseudo-limits are in #47634. The selected-vertex join results and inert cylinders remain.
 
 ## Open items
 
