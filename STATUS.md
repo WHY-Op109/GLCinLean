@@ -41,7 +41,7 @@ Mode: Codex (since 2026-11-27)
 - **Branch claim errors.** On 2026-11-27, the Worker logged `claim acquire ... errored (rc=2)` for #47447 and #47514. For #47514, `author-moduli2` continued without a claim, and `repair` checked out the same head `a610f3c4a632` four minutes later. The Worker's compare-and-swap check still guards publication to that branch. GitHub reports `WRITE` access to `TauCetiProject/tauceti-claims` for the account. The Worker discards the claim command's error output, so the cause of these failures is unverified.
 - **CI failures during cache restoration.** The cone-squares build for #47477 (`ee20272c02a3`, run `46055813371`), the Chevalley root-product repair build for #47514 (`89b244b3682d`, run `46074187272`) and the DG nerve shift repair build for #47505 (`0bf50176539c`, run `46078229492`) failed on 2026-11-27. The jobs report three distinct runner names in `taucetifleet`. The logs contain interrupted artifact transfers and end while unpacking the Tau Ceti cache, before any Lean error is reported. All three PRs are labelled `awaiting-CI`. Check the next build at each head before deciding whether a proof needs repair.
 
-Fifteen author workers are enabled and live. The Codex usage reading at 23:05 UTC on 2026-11-27 was 53% of the weekly allowance. In the 24 hours to 23:02 UTC that day, we opened 69 pull requests, and 15 of ours landed on Tau Ceti main. The median from opening to landing for those 15 was 9.1 hours. At 00:34 UTC on 2026-11-28, GitHub showed 71 of our pull requests open, with 47 labelled `awaiting-CI` and seven labelled `ready-to-merge`. #47494 is among those counted open while GitHub records its landing.
+Fifteen author workers are enabled and live. The Codex usage reading at 23:05 UTC on 2026-11-27 was 53% of the weekly allowance. In the 24 hours to 23:02 UTC that day, we opened 69 pull requests, and 15 of ours landed on Tau Ceti main. The median from opening to landing for those 15 was 9.1 hours. At 00:38 UTC on 2026-11-28, GitHub showed 70 of our pull requests open, with 47 labelled `awaiting-CI` and six labelled `ready-to-merge`. `author-roots` is writing the descent and bundling follow-up to #46271.
 
 The realization comparison for nerves of partial orders and their order complexes is in #47329. The barycentric comparison on subdivided standard simplices remains. Relative simplicial approximation needs it and the last-vertex map in #47294. For embedded subdivided subcomplexes, Mathlib #45532 supplies `SSet.sd.PreservesMonomorphisms` once incorporated at the pin. Subdivision already preserves pushouts as a left adjoint. The comparison of relative singular homotopies with topological homotopies fixed on the realized subcomplex uses the cylinder homeomorphism of #42628. The positive-degree comparison for the realization unit follows under AlgebraicTopology §8.2. The GeneralizedCohomology G2.1 criterion for realization-based weak equivalences waits for both this comparison and the native Kan lifting criterion. It supplies the boundary-lifting input for #46669.
 
@@ -105,7 +105,7 @@ At the pin `9acbc9a`, #47351 (`b4dd7d976af4`) supplies `RootPairing.Base.baseCha
 
 At the pin `b12bdfa`, #46271 (`257c33c776b3`) supplies `TauCeti.Stack.limit` with pointwise groupoid fibres and its pseudo-limit API. Proving descent and bundling it as `StackInGroupoids.limit` remain. #47393 (`8f24fec0f537`) supplies `SSet.join.rightAnodyneExtensions_unionJoin_ι` and `SSet.join.leftAnodyneExtensions_unionJoin_ι`. #47494 (`6bbff98a88e4`) supplies `TauCeti.CategoryOfOperators.nerveFiberIso`, `nerveFiberPiIso` and `nerveFiberOneIso`. The three targets keep their remaining work in the target list.
 
-Open on GitHub on 2026-11-28 (71). The plan node is the one that the item of the target list serves (`serves:`).
+Open on GitHub on 2026-11-28 (70). The plan node is the one that the item of the target list serves (`serves:`).
 
 | Pull request | Target of the list | Plan node |
 |---|---|---|
@@ -165,7 +165,6 @@ Open on GitHub on 2026-11-28 (71). The plan node is the one that the item of the
 | #47479 | `ordered-integral-word-straightening` | `Groups.splitReductiveGroup` |
 | #47483 | `derived-tensor-pointwise-kflat-comparison` | `Sheaves.derivedQCoh_perfectGenerator` |
 | #47484 | `marked-monoidal-comodule-equivalence` (partial) | `Tannaka.neutralReconstruction` |
-| #47494 | `symmetric-operator-nerve-segal-fibres` (partial, at the pin) | `Infinity.monoidalCategory`, `Infinity.symmetricMonoidalLocalization`, `Infinity.derivedVect` |
 | #47496 | `stable-grassmannian-varying-rank` (partial) | `AffineGrassmannian.LoopGrassmannian` |
 | #47498 | `tensor-matrix-coefficients-detect-colinearity` | `Tannaka.neutralReconstruction` |
 | #47499 | `cocartesian-transport-base-change` | `Infinity.monoidalCategory`, `Infinity.moduleCategory` |
