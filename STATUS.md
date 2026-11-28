@@ -181,7 +181,7 @@ Open on GitHub on 2026-11-28 (67). The plan node is the one that the item of the
 | #47552 | `regular-vector-extension-cocycle` | `Groups.rootDatum`, `Groups.borelUnipotentRadical` |
 | #47634 | `stackingroupoids-limit` | `Stacks.algebraicStack` |
 
-The CI job for #46388 stopped with `No space left on device`. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These three PRs are labelled `awaiting-CI`. #46669 at `3d9b1aaa5268` has a passing `build` status and awaits review. #46745 at `3267b70e7356` has a passing `build` status and awaits author repairs and conflict resolution. #46281 at `8cd561e8b119` shares the precomposition vertex comparison proof. Its build passed and it is ready to merge.
+The CI job for #46388 stopped with `No space left on device`. The jobs for #46425 and #46719 reported a cancelled operation and 94% memory use. These three PRs are labelled `awaiting-CI`. #46669 at `3d9b1aaa5268` passed CI. Review cleared the API finding and still asks for the theorem to move to `CategoricalEquivalence.lean`. #46745 at `3267b70e7356` passed CI and is with `author-infinity3` for review repairs and conflict resolution. #46281 at `8cd561e8b119` shares the precomposition vertex comparison proof and passed CI. GitHub reported a merge conflict at 01:34 UTC on 2026-11-28, and the queue applied `bors-staging` at 01:38 UTC. The Worker waits while the staging label remains. Localization existence still needs this PR and #47368.
 
 ## Held
 
